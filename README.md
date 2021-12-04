@@ -1,5 +1,5 @@
-# KoP_Locale
-Localisation for Kingdom of Pixels ! https://leagueofpixels.eu
+# KoP_Locale 
+Localization for Kingdom of Pixels ! https://leagueofpixels.eu
 
 # GIT TUTORIAL
 1. You need github account, create one if you dont have any
