@@ -5,6 +5,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.KUMIHU_NAME]: {
         en: "Kumihu",
         ru: "Кумиху",
+        br: "The early bird catches the worm"
     },
 
     [LOCALE.BELLE_NAME]: {
