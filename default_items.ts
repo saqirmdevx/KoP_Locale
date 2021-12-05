@@ -9,40 +9,51 @@ const _getLocaleItemDescription = (itemId: number): { [key in string]: string } 
             return {
                 en: `UNIQUE: Your autoattack deals additional magic damage ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy max health`,
                 ru: `УНИКАЛЬНО(Пассивно): Ваши атаки наносят дополнительный магический урон по героям, который равен ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% от макс. здоровья цели`,
+                br: `ÚNICO: Seu ataque automático causa dano mágico adicional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de vida máxima do inimigo.`,
 			}
 
         case Shared.ItemList.Divine_Sword:
             return {
                 en: `On Equip: Provide unobstructed vision! Provie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
                 ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
+                br: `Equipado: Fornece visão desobstruída! ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
+
 			}
         case Shared.ItemList.Divine_Katana:
             return {
                 en: "Drops on death! (Cant be sold!)",
                 ru: `Выпадает при смерти! (Нельзя продать!)`,
+                br: "Dropa na sua morte! (Não pode ser vendido!)",
 			}
         case Shared.ItemList.Iron_Basher:
             return {
                 en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
                 ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют 20% шанс оглушить вражеского героя на 0.8 сек. и нанести дополнительно 60 урона`,
+                br: "ÚNICO: Seus ataques têm 20% de chance de atordoar o inimigo por 0,8 s e causa 60 de dano adicional.",
 			}
 
         case Shared.ItemList.Cold_Sword:
             return {
                 en: `UNIQUE: Attacks lower enemy movement by ${ItemAbilityData.COLD_SWORD_SLOW} for 1 seconds`,
                 ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают скорость передвижения цели на ${ItemAbilityData.COLD_SWORD_SLOW} на 1 сек.`,
+                br: `ÚNICO: Ataques reduzem o movimento do inimigo por${ItemAbilityData.COLD_SWORD_SLOW} por 1 segundo.`,
+
 			}
 
         case Shared.ItemList.Demon_Sabre:
             return {
                 en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} for 4 seconds`,
                 ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} на 4 сек.`,
+                br: `ÚNICO: Seus ataques reduzem a armadura inimiga por ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} por 4 segundos.`,
+
 			}
 
         case Shared.ItemList.Corrupted_Light_Slayer:
             return {
                 en: `Active: Increases your lifesteal by ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% for ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} sec cd`,
                 ru: `УНИКАЛЬНО(Активно): Увеличивает ваш вампиризм на ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% на ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} сек.)`,
+                br: `Ativo: Aumenta sua regeneração de vida em ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% por ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} seg - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} seg cd.`,
+
 			}
 
         /** Wooden Bow */
@@ -50,6 +61,8 @@ const _getLocaleItemDescription = (itemId: number): { [key in string]: string } 
             return {
                 en: `UNIQUE: Every time you hit enemy hero, increases your attack speed by ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. At 5th stack it heals you for 15% of max health and reset stacks`,
                 ru: `УНИКАЛЬНО(Пассивно): Попадая атаками по врагу, вы увеличиваете свою скорость атаки на ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% на ${(ItemAbilityData.BERSERKER_BOW_DURATION/1000).toFixed(1)} сек. Складывается до 5 раз. На 5 зарядах вы исцеляетесь на 15% от макс. здоровья и обнуляете количество зарядов`,
+                en: `UNIQUE: Every time you hit enemy hero, increases your attack speed by ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. At 5th stack it heals you for 15% of max health and reset stacks`,
+
 			}
         case Shared.ItemList.Magical_Bow:
             return {
