@@ -178,7 +178,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "Будьте осторожны! Вражеская башня выберет Вас целью, если Вы начнёте атаковать вражеского героя в её радиусе!" +
             "\n\n[Нажмите пробел для продолжения!]",
         cz: "Ale nejprve musíte zničit nepřátelskou věž!\n" +
-            "NEÚTOČTE NA VĚŽ BEZ PĚŠÁKŮ"! K tankování poškození věže potřebujete pesaky!\n" +
+            "NEÚTOČTE NA VĚŽ BEZ PĚŠÁKŮ! K tankování poškození věže potřebujete pěšáky!\n" +
             "Buďte opatrní! Když zaútočíte na nepřátelského hrdinu v dosahu věže, stanete se terčem vy!" +
             "\n\n[Pokračujte stisknutím mezerníku!]",
     },
