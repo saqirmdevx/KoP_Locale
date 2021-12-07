@@ -13,7 +13,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Kumihu's fires 4 bullets each deals ${basic_damage} normal damage <br /> Passive: Using Dash enchants Kumihu's next basic attack to deal ${enh_damage} magic damage and apply charm for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
                 ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: Использование Тайного рывка зачаровывает следующую атаку Кумиху, которая нанесёт ${enh_damage} магического урона и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-                cz: `Kumihu vystřelí 4 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
+                cz: `Kumihu vystřelí 4 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magického poškození a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
             }
         }
 
