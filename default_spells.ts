@@ -90,7 +90,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 ru: `Ай'сит скользит по земле, получая ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} скорости передвижения на ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} и оставляя ледяной след позади, ` +
                     `наносящий  ${base_damage} магического урона в секунду, а также замедляющий всех наступивших врагов.`,
                 cz: `I'ceat se začne klouzat, tím si zvyšuje rychlost o ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} na ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} a zanechává za sebout ledovou vrstvu ` +
-                    `,která uděluje ${base_damage} poškození za vteřinu nepřátelům na vrcholu ledu a zpomalí je.`
+                    `, která uděluje ${base_damage} poškození za vteřinu nepřátelům na vrcholu ledu a zpomalí je.`
             }
         }
 
@@ -99,6 +99,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Belle fires an explosive thorn from her wand dealing ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} AoE damage in a small area.`,
                 ru: `Белла выпускает взрывной шип из своей палочки, наносящий ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} физического урона по площади.`,
+                cz: `Belle vystřelí výbušný trn ze své hůlky a způsobí ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * poškození)} poškození v malé oblasti.`,
             }
 
         case Shared.SpellList.BELLE_PRICKLY_VINE: {
@@ -110,6 +111,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                     `<br /> <br /> After a short time, if the vine is still attached, the vine disappears and stuns the enemy for ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} and does ${attach_damage} damage`,
                 ru: `Белла бросает лозу вперёд, которая прикрепляется к первому вражескому герою на пути, нанося ${base_damage} магического урона и дополнительно замедляя цель. <br />Способность может быть прервана, если вражеский герой отойдёт слишком далеко от Беллы.` +
                     `<br /> <br /> Спустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)}, нанося ${attach_damage} магического урона.`,
+                cz: `Belle vrhne vinnou révu která se připojí k nepříteli způsobujícímu ${base_damage} poškození a zpomalí pohyb. <br />Lze je zlomit, pokud se nepřítel vydálí dostatečně daleko od Belle.` +
+                    `<br /> <br /> Po krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} a způsobí ${attach_damage} poškození.`,
             }
         }
 
@@ -120,6 +123,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                     `<br /><br />After staying on the ground for ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, the seeds explode dealing ${base_damage} AoE damage to surrounding enemies. Enemy that step on bomb while carrying one will immediately trigger explosion`,
                 ru: `Белла подпрыгивает и сбрасывает три цветочные бомбы перед собой, которые приклепляются к вражескому герою, если он наступит на них, нанося цели ${base_damage} урона в течение 2 секунд, взрываясь после этого, нанося ${base_damage} урона по площади` +
                     `<br /><br />После пребывания на земле в течение ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, цветы взрываются, нанося ${base_damage} урона по площади ближайшим врагам. Враг, ступивший на бомбу с уже прикреплённой до этого, моментально взорвёт предыдущую.`,
+                cz: `Belle vyskočí do vzduchu a shodí pod sebe tři semenné bomby, které se přichytí k nepříteli pokud na ně vstoupí a způsobí ${base_damage} poškození během 2 sekund a po uplynutí této doby exploduje, čímž způsobí ${base_damage} poškození v malé oblasti` +
+                    `<br /><br />Pokud se bomby neprichtí do ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, semínka explodují a způsobí ${base_damage} poškození okolním nepřátelům. Nepřítel, který šlápne na bombu a zároveň ji nese, okamžitě spustí explozi.`
             }
         }
 
