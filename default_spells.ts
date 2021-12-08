@@ -133,6 +133,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Bunninja slashes with his carrot and deals ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
                 ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
+                cz: `Bunninja seká svou mrkví a udělí ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
             }
 
         case Shared.SpellList.BUNNINJA_SHURIKEN_TOSS: {
@@ -141,6 +142,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Bunninja throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
                 ru: `Банниндзя бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
+                cz: `Bunninja hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
             }
         }
 
@@ -152,6 +154,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                     `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
                 ru: `<b>Первое применение: </b>Банниндзя бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
                     `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Банниндзя оглушает этого врага на ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
+                cz: `První použití: Bunninja hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
+                    + `Druhé použití: Bunninja se teleportuje k mrkvi. Pokud je připojena k nepříteli, Bunninja omráčí tohoto nepřítele na ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
             }
         }
         /** Veil */
