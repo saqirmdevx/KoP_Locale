@@ -1,10 +1,176 @@
 import Shared, { ItemAbilityData } from "@/misc/shared";
 import { LANG } from "../lang";
 
-const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: string }, desc: { [key in string]: string } } => {
+const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: string }, desc?: { [key in string]: string } } => {
     switch (itemId) {
-        /** Tier 2 */
-        /** Wooden Sword */
+        case Shared.ItemList.Wooden_Sword:
+            return {
+                name: {
+                    en: "Wooden Sword",
+                },
+            }
+        case Shared.ItemList.Wooden_Bow:
+            return {
+                name: {
+                    en: "Wooden Bow",
+                },
+            }
+        case Shared.ItemList.Novice_Staff:
+            return {
+                name: {
+                    en: "Novice Staff",
+                },
+            }
+        case Shared.ItemList.Iron_Ring:
+            return {
+                name: {
+                    en: "Iron Ring",
+                },
+            }
+        case Shared.ItemList.Buckler:
+            return {
+                name: {
+                    en: "Buckler",
+                },
+            }
+        case Shared.ItemList.Shirt:
+            return {
+                name: {
+                    en: "Shirt",
+                },
+            }
+        case Shared.ItemList.Iron_Ring:
+            return {
+                name: {
+                    en: "Iron Ring",
+                },
+            }
+        case Shared.ItemList.Light_Slayer:
+            return {
+                name: {
+                    en: "Light Slayer",
+                },
+            }
+        case Shared.ItemList.Katana:
+            return {
+                name: {
+                    en: "Katana",
+                },
+            }
+        case Shared.ItemList.Corrupted_Katana:
+            return {
+                name: {
+                    en: "Corrupted Katana",
+                },
+            }
+        case Shared.ItemList.Iron_Sword:
+            return {
+                name: {
+                    en: "Iron Sword",
+                },
+            }
+        case Shared.ItemList.Reckless_Longbow:
+            return {
+                name: {
+                    en: "Reckless Longbow",
+                },
+            }
+        case Shared.ItemList.Rapids_Longbow:
+            return {
+                name: {
+                    en: "Rapid's Longbow",
+                },
+            }
+        case Shared.ItemList.Enduring_Shield:
+            return {
+                name: {
+                    en: "Enduring Shield",
+                },
+            }
+        case Shared.ItemList.Iron_Buckler:
+            return {
+                name: {
+                    en: "Iron Buckler",
+                },
+            }
+        case Shared.ItemList.Magical_Shield:
+            return {
+                name: {
+                    en: "Magical Shield",
+                },
+            }
+        case Shared.ItemList.Rod_Of_Nature:
+            return {
+                name: {
+                    en: "Rod of Nature",
+                },
+            }
+        case Shared.ItemList.Wizard_Staff:
+            return {
+                name: {
+                    en: "Wizard Staff",
+                },
+            }
+        case Shared.ItemList.Ring_Of_Regeneration:
+            return {
+                name: {
+                    en: "Ring of Regeneration",
+                },
+            }
+        case Shared.ItemList.Ring_Of_Time:
+            return {
+                name: {
+                    en: "Ring of Time",
+                },
+            }
+        case Shared.ItemList.Leather_Armor:
+            return {
+                name: {
+                    en: "Leather Armor",
+                },
+            }
+        case Shared.ItemList.Iron_Armor:
+            return {
+                name: {
+                    en: "Iron Armor",
+                },
+            }
+        case Shared.ItemList.Plate_Armor:
+            return {
+                name: {
+                    en: "Iron Armor",
+                },
+            }
+        case Shared.ItemList.Wizard_Shoes:
+            return {
+                name: {
+                    en: "Wizard Shoes",
+                },
+            }
+        case Shared.ItemList.Agility_Boots:
+            return {
+                name: {
+                    en: "Agility Boots",
+                },
+            }
+        case Shared.ItemList.Boots:
+            return {
+                name: {
+                    en: "Boots",
+                },
+            }
+        case Shared.ItemList.Divine_Boots:
+            return {
+                name: {
+                    en: "Iron Boots",
+                },
+            }
+        case Shared.ItemList.Traveling_Boots:
+            return {
+                name: {
+                    en: "Swift Boots",
+                },
+            }
         case Shared.ItemList.Shadow_Slayer:
             return {
                 name: {
@@ -460,14 +626,17 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 }
             }
         default: return {
-            name: { en: "unk" },
-            desc: { en: "unk" }
+            name: { en: "" },
+            desc: { en: "" }
         }
     }
 }
 
 export const getLocaleItemDescription = (itemId: number): string => {
     const result = _getLocaleItemDescription(itemId);
+    if (!result.desc)
+        return "";
+
     return result.desc[LANG] ? result.desc[LANG] : result.desc['en'];
 }
 
