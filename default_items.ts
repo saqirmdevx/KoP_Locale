@@ -7,174 +7,196 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Wooden Sword",
+                    ru: "Деревянный меч",
                 },
             }
         case Shared.ItemList.Wooden_Bow:
             return {
                 name: {
                     en: "Wooden Bow",
+                    ru: "Деревянный лук",
                 },
             }
         case Shared.ItemList.Novice_Staff:
             return {
                 name: {
                     en: "Novice Staff",
+                    ru: "Посох новичка",
                 },
             }
         case Shared.ItemList.Iron_Ring:
             return {
                 name: {
                     en: "Iron Ring",
+                    ru: "Железное кольцо",
                 },
             }
         case Shared.ItemList.Buckler:
             return {
                 name: {
                     en: "Buckler",
+                    ru: "Баклер",
                 },
             }
         case Shared.ItemList.Shirt:
             return {
                 name: {
                     en: "Shirt",
-                },
-            }
-        case Shared.ItemList.Iron_Ring:
-            return {
-                name: {
-                    en: "Iron Ring",
+                    ru: "Рубаха",
                 },
             }
         case Shared.ItemList.Light_Slayer:
             return {
                 name: {
                     en: "Light Slayer",
+                    ru: "Истребитель света",
                 },
             }
         case Shared.ItemList.Katana:
             return {
                 name: {
                     en: "Katana",
+                    ru: "Катана",
                 },
             }
         case Shared.ItemList.Corrupted_Katana:
             return {
                 name: {
                     en: "Corrupted Katana",
+                    ru: "Искажённая катана",
                 },
             }
         case Shared.ItemList.Iron_Sword:
             return {
                 name: {
                     en: "Iron Sword",
+                    ru: "Железный меч",
                 },
             }
         case Shared.ItemList.Reckless_Longbow:
             return {
                 name: {
                     en: "Reckless Longbow",
+                    ru: "Безрассудный длинный лук",
                 },
             }
         case Shared.ItemList.Rapids_Longbow:
             return {
                 name: {
-                    en: "Rapid's Longbow",
+                    en: "Rapid Longbow",
+                    ru: "Быстрый длинный лук",
                 },
             }
         case Shared.ItemList.Enduring_Shield:
             return {
                 name: {
                     en: "Enduring Shield",
+                    ru: "Стойкий щит",
                 },
             }
         case Shared.ItemList.Iron_Buckler:
             return {
                 name: {
                     en: "Iron Buckler",
+                    ru: "Железный баклер",
                 },
             }
         case Shared.ItemList.Magical_Shield:
             return {
                 name: {
                     en: "Magical Shield",
+                    ru: "Магический щит",
                 },
             }
         case Shared.ItemList.Rod_Of_Nature:
             return {
                 name: {
                     en: "Rod of Nature",
+                    ru: "Жезл природы",
                 },
             }
         case Shared.ItemList.Wizard_Staff:
             return {
                 name: {
                     en: "Wizard Staff",
+                    ru: "Посох волшебника",
                 },
             }
         case Shared.ItemList.Ring_Of_Regeneration:
             return {
                 name: {
                     en: "Ring of Regeneration",
+                    ru: "Кольцо регенерации",
                 },
             }
         case Shared.ItemList.Ring_Of_Time:
             return {
                 name: {
                     en: "Ring of Time",
+                    ru: "Кольцо времени",
                 },
             }
         case Shared.ItemList.Leather_Armor:
             return {
                 name: {
                     en: "Leather Armor",
+                    ru: "Кожанная броня",
                 },
             }
         case Shared.ItemList.Iron_Armor:
             return {
                 name: {
                     en: "Iron Armor",
+                    ru: "Железная броня",
                 },
             }
         case Shared.ItemList.Plate_Armor:
             return {
                 name: {
-                    en: "Iron Armor",
+                    en: "Plate Armor",
+                    ru: "Латная броня",
                 },
             }
         case Shared.ItemList.Wizard_Shoes:
             return {
                 name: {
                     en: "Wizard Shoes",
+                    ru: "Башмаки волшебника",
                 },
             }
         case Shared.ItemList.Agility_Boots:
             return {
                 name: {
                     en: "Agility Boots",
+                    ru: "Ботинки скорости",
                 },
             }
         case Shared.ItemList.Boots:
             return {
                 name: {
                     en: "Boots",
+                    ru: "Ботинки",
                 },
             }
         case Shared.ItemList.Divine_Boots:
             return {
                 name: {
-                    en: "Iron Boots",
+                    en: "Divine Boots",
+                    ru: "Божественные ботинки",
                 },
             }
         case Shared.ItemList.Traveling_Boots:
             return {
                 name: {
-                    en: "Swift Boots",
+                    en: "Traveling Boots",
+                    ru: "Ботинки странствий",
                 },
             }
         case Shared.ItemList.Shadow_Slayer:
             return {
                 name: {
                     en: "Shadow Slayer",
+                    ru: " ",
                 },
                 desc: {
                     en: `UNIQUE: Your autoattack deals additional magic damage ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy max health`,
@@ -187,6 +209,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Sword",
+                    ru: " ",
                 },
                 desc: {
                     en: `On Equip: Provide unobstructed vision! Provie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
@@ -198,6 +221,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Katana",
+                    ru: " ",
                 },
                 desc: {
                     en: "Drops on death! (Cant be sold!)",
@@ -209,6 +233,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Iron Basher",
+                    ru: " ",
                 },
                 desc: {
                     en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
@@ -221,6 +246,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Cold Sword",
+                    ru: " ",
                 },
                 desc: {
                     en: `UNIQUE: Attacks lower enemy movement by ${ItemAbilityData.COLD_SWORD_SLOW} for 1 seconds`,
@@ -233,6 +259,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Demon Sabre",
+                    ru: " ",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} for 4 seconds`,
@@ -244,6 +271,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Light Slayer",
+                    ru: "Искажённый ",
                 },
                 desc: {
                     en: `Active: Increases your lifesteal by ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% for ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} sec cd`,
@@ -256,6 +284,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Berserker Bow",
+                    ru: "Лук берсерка",
                 },
                 desc: {
                     en: `UNIQUE: Every time you hit enemy hero, increases your attack speed by ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. At 5th stack it heals you for 15% of max health and reset stacks`,
@@ -267,6 +296,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Magical Bow",
+                    ru: "Волшебный лук",
                 },
                 desc: {
                     en: "UNIQUE: Sucessful hit with your abilites increases your movement speed by 10 for 1.5 sec <br /> <br />" + getLocaleItemDescription(Shared.ItemList.Poison_Bow),
@@ -278,6 +308,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Poison Bow",
+                    ru: "Ядовитый лук",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks apply deadly poison on enemy hero slows target for ${ItemAbilityData.POISON_BOW_SLOW} and deals ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} damage per sec for ${(ItemAbilityData.POISON_BOW_DURATION / 1000).toFixed(1)} sec. (This effect can stack up 5 times, every attack refresh duration)`,
@@ -290,6 +321,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Longbow",
+                    ru: "Искажённый длинный лук",
                 },
                 desc: {
                     en: `Active: Empowers you and increases your attack speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% and movement speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} for ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} sec.<br />` +
@@ -307,7 +339,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
         case Shared.ItemList.Rapids_Longbow_T2:
             return {
                 name: {
-                    en: "Rapid's Longbow",
+                    en: "Rapid Longbow",
+                    ru: "Быстрый длинный лук",
                 },
                 desc: {
                     en: `UNIQUE - Active: Consume the item and gains permanent ${(ItemAbilityData.RAPIDS_LONGBOW_ATTACKSPEED_BUFF * 100).toFixed()}% attack speed bonus!`,
@@ -320,6 +353,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Burning Rod",
+                    ru: "Пылающий жезл",
                 },
                 desc: {
                     en: `UNIQUE: Your abilites ignites the enemy and deals additional damage of ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100).toFixed()}% max health per sec for ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec`,
@@ -331,6 +365,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Vampiric Rod",
+                    ru: "Вампирический жезл",
                 },
                 desc: {
                     en: `UNIQUE: When your ability hits the enemy hero, it will steals his ${ItemAbilityData.VAMPIRIC_ROD_HP_STEAL} health - ${(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
@@ -342,6 +377,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Kirin Staff",
+                    ru: "Посох Кирина",
                 },
                 desc: {
                     en: "UNIQUE: Your abilites penetrate target's magic resistance by 25% for 4 sec, this effect does not stack with other sources",
@@ -353,6 +389,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Frozen Staff",
+                    ru: "Замёрзший посох",
                 },
                 desc: {
                     en: `UNIQUE: Your abilites lowers enemy movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} movespeed for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
@@ -364,6 +401,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Iron Rod",
+                    ru: "Железный жезл",
                 },
                 desc: {
                     en: `UNIQUE: When your abilites hits enemy hero, your next normal attack deals bonus ${ItemAbilityData.IRON_ROD_BONUS_DAMAGE} damage`,
@@ -375,6 +413,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Magic Harpoon",
+                    ru: "Волшебный гарпун",
                 },
                 desc: {
                     en: `UNIQUE: When your abilites hits enemy hero, your next normal attack deals bonus ${ItemAbilityData.MAGIC_HARPOON_BONUS_DAMAGE} damage`,
@@ -386,6 +425,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Orchid of Malevolence",
+                    ru: "Орхидея злобы",
                 },
                 desc: {
                     en: `Active: Releases dark arrow in your direction that pierce throu enemies, silences them for ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} sec and at the end of silence, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% of the damage received while silenced is inflicted as bonus magical damage. - ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -397,6 +437,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Staff",
+                    ru: "Божественный посох",
                 },
                 desc: {
                     en: `Active: Heals all nearby units in ${ItemAbilityData.DIVINE_STAFF_RADIUS}px radius for ${ItemAbilityData.DIVINE_STAFF_HEAL_T2}, apply ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} bonus speed and remove all negative effects for ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.DIVINE_STAFF_COOLDOWN / 1000).toFixed(1)} sec cd 
@@ -413,6 +454,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Vampiric Shield",
+                    ru: "Вампирический щит",
                 },
                 desc: {
                     en: `UNIQUE: Whenever you take a damage, you will be he healead for ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL}`,
@@ -426,6 +468,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Shield",
+                    ru: "Божественный щит",
                 },
                 desc: {
                     en: `Active: Gives additional ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} armor and ${(ItemAbilityData.DIVINE_SHIELD_BONUS_MAGIC_DEF * 100).toFixed()}% magic defense to all friendly units in close proximity ${(ItemAbilityData.DIVINE_SHIELD_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.DIVINE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -439,6 +482,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Spike Shield",
+                    ru: "Шипастый щит",
                 },
                 desc: {
                     en: `Active: When active, returns back 100% of received damage back to attacker (after reduction) for ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -452,6 +496,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Garun's Defender",
+                    ru: "Защитник Гаруна",
                 },
                 desc: {
                     en: `Active: Smashes all enemies around the hero in small radius, deals ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} damage and stuns all enemies for ${(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -464,6 +509,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Plate Shield",
+                    ru: "Латный щит",
                 },
                 desc: {
                     en: `Active: Shockwaves travel through the air dealing ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} damage and reduce enemy's movement speed by ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} and makes all affected units visible for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -475,6 +521,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Kirin's Defender",
+                    ru: "Защитник Кирина",
                 },
                 desc: {
                     en: `UNIQUE: When you receive magical damage, Kirin's creates barrier around you reduce all negative effects duration by 50% and decrease additional ${(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE * 100).toFixed()}% magic damage for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} cooldown`,
@@ -487,6 +534,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Demonic Ring",
+                    ru: "Демоническое кольцо",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_RING_ARMOR_REDUCTION} for 4 seconds`,
@@ -498,6 +546,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Gold Ring",
+                    ru: "Золотое кольцо",
                 },
                 desc: {
                     en: "UNIQUE: Killing an enemy unit or assisting for hero kill gives additional 25 golds",
@@ -510,6 +559,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Frost Ring",
+                    ru: "Морозное кольцо",
                 },
                 desc: {
                     en: `Active: Create an frozen bolt that freeze target on impact for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} sec and deals ${ItemAbilityData.FROST_RING_DAMAGE} damage - ${(ItemAbilityData.FROST_RING_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -522,6 +572,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Chronos Ring",
+                    ru: "Кольцо Хроноса",
                 },
                 desc: {
                     en: `Active: Refresh all abilites and items cooldown - ${(ItemAbilityData.CHRONOS_RING_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
@@ -533,6 +584,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Ring",
+                    ru: "Искажённое кольцо",
                 },
                 desc: {
                     en: `Active: Dash you in your direction - ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
@@ -545,6 +597,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Berserker Ring",
+                    ru: "Кольцо берсерка",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks deal ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG} more damage for each 10% HP you are missing.`,
@@ -558,6 +611,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Frost Armor",
+                    ru: "Морозная броня",
                 },
                 desc: {
                     en: `UNIQUE: When you take damage, attacker will be cursed and his movement speed slows down by ${ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION} and attack speed by ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%`,
@@ -570,6 +624,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Void Armor",
+                    ru: "Броня пустоты",
                 },
                 desc: {
                     en: `Active: Makes you invisible for ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} sec in addition increase your movement speed by ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} and damage by ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} - ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)} sec cd\n (removes on attack or spell cast)`,
@@ -582,6 +637,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Titan's Armor",
+                    ru: "Броня титана",
                 },
                 desc: {
                     en: `Active: Increase your health regen by ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove all negative effects and makes you immune to all incoming damage for ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} sec. You can't do any action during this effect!! - ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -593,6 +649,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Chest of Malevolence",
+                    ru: "Нагрудник злобы",
                 },
                 desc: {
                     en: `UNIQUE: When you take magical damage, attacker will be silenced for ${(ItemAbilityData.CHEST_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CHEST_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} sec cd`,
@@ -606,6 +663,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Healing Potion",
+                    ru: "Исцеляющее зелье",
                 },
                 desc: {
                     en: `Active: Grants ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} health regeneration for ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)} sec <br /> If you are attacked, the effect is lost!`,
@@ -618,6 +676,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Scroll of Detection",
+                    ru: "Свиток обнаружения",
                 },
                 desc: {
                     en: `Active: Reveals all enemy invisible units in area! Revealed enemies are slowed by ${ItemAbilityData.SCROLL_OF_DETECTION_SLOW} ms for ${(ItemAbilityData.SCROLL_OF_DETECTION_SLOW_DURATION / 1000).toFixed(1)} sec`,
