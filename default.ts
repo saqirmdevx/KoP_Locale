@@ -769,49 +769,60 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.AN_GOT_A]: {
         en: "got a ",
+        ru: "получил ",
         cz: "dostal ",
     },
     [LOCALE.AN_IS_ON]: {
         en: "is on ",
+        ru: " ",
         cz: "má ",
     },
 
-    [LOCALE.AN_FIRST_BLOOD]:{
+    [LOCALE.AN_FIRST_BLOOD]: {
         en: "First blood",
+        ru: "Первую кровь",
         cz: "První zabití",
     },
 
-    [LOCALE.AN_DOUBLE_KILL]:{
+    [LOCALE.AN_DOUBLE_KILL]: {
         en: "Double kill",
+        ru: "Даблкилл",
         cz: "Dvojité zabití",
     },
-    [LOCALE.AN_TRIPLE_KILL]:{
+    [LOCALE.AN_TRIPLE_KILL]: {
         en: "TRIPLE KILL",
+        ru: "ТРИПЛКИЛЛ",
         cz: "TROJITÝ ZÁSAH",
     },
 
-    [LOCALE.AN_KILLING_SPREE]:{
+    [LOCALE.AN_KILLING_SPREE]: {
         en: "Killing spree",
+        ru: "получает серию убийств",
         cz: "Zabíjející řádění",
     },
-    [LOCALE.AN_MEGA_KILL]:{
+    [LOCALE.AN_MEGA_KILL]: {
         en: "Mega kill",
+        ru: "совершает мега-убийство",
         cz: "Mega zabít",
     },
-    [LOCALE.AN_DOMINATING]:{
+    [LOCALE.AN_DOMINATING]: {
         en: "Dominating",
+        ru: "доминирует",
         cz: "Dominujicí",
     },
-    [LOCALE.AN_RAMPAGE]:{
+    [LOCALE.AN_RAMPAGE]: {
         en: "Rampage",
+        ru: "в ярости",
         cz: "Krveprolití",
     },
-    [LOCALE.AN_OWNAGE]:{
+    [LOCALE.AN_OWNAGE]: {
         en: "OWNAGE!",
+        ru: "ПРЕВОСХОДЕН!",
         cz: "OWNI!",
     },
-    [LOCALE.AN_GODLIKE]:{
+    [LOCALE.AN_GODLIKE]: {
         en: "GODLIKE!",
+        ru: "БОЖЕСТВЕНЕН!",
         cz: "BOŽSKÝ!",
     },
 }
