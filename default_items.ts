@@ -49,7 +49,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Light Slayer",
-                    ru: "Истребитель света",
+                    ru: "Губитель света",
                 },
             }
         case Shared.ItemList.Katana:
@@ -168,7 +168,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Agility Boots",
-                    ru: "Ботинки скорости",
+                    ru: "Ботинки ловкости",
                 },
             }
         case Shared.ItemList.Boots:
@@ -188,15 +188,15 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
         case Shared.ItemList.Traveling_Boots:
             return {
                 name: {
-                    en: "Traveling Boots",
-                    ru: "Ботинки странствий",
+                    en: "Swift Boots",
+                    ru: "Ботинки стремительности",
                 },
             }
         case Shared.ItemList.Shadow_Slayer:
             return {
                 name: {
                     en: "Shadow Slayer",
-                    ru: " ",
+                    ru: "Губитель теней",
                 },
                 desc: {
                     en: `UNIQUE: Your autoattack deals additional magic damage ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy max health`,
@@ -209,7 +209,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Sword",
-                    ru: " ",
+                    ru: "Божественный меч",
                 },
                 desc: {
                     en: `On Equip: Provide unobstructed vision! Provie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
@@ -221,7 +221,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Divine Katana",
-                    ru: " ",
+                    ru: "Божественная катана",
                 },
                 desc: {
                     en: "Drops on death! (Cant be sold!)",
@@ -233,7 +233,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Iron Basher",
-                    ru: " ",
+                    ru: "Железный крушитель",
                 },
                 desc: {
                     en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
@@ -246,7 +246,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Cold Sword",
-                    ru: " ",
+                    ru: "Меч холода",
                 },
                 desc: {
                     en: `UNIQUE: Attacks lower enemy movement by ${ItemAbilityData.COLD_SWORD_SLOW} for 1 seconds`,
@@ -259,7 +259,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Demon Sabre",
-                    ru: " ",
+                    ru: "Сабля демона",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} for 4 seconds`,
@@ -271,7 +271,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Light Slayer",
-                    ru: "Искажённый ",
+                    ru: "Искажённый губитель света",
                 },
                 desc: {
                     en: `Active: Increases your lifesteal by ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% for ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} sec cd`,
