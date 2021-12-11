@@ -703,7 +703,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "GUEST MODE!",
         ru: "РЕЖИМ ГОСТЯ!",
         br: "MODO CONVIDADO!",
-        cz: "JSTE HOST!",
+        cz: "JSTE V REŽIME GUEST!",
     },
     [LOCALE.POPUP_SELECT_GUESTMODE_OPT]: {
         en: "Connect GMAIL Account",
@@ -826,69 +826,69 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "BOŽSKÝ!",
     },
         /** Runes */
-    [LOCALE.AN_HASTE_RUNE]: {
+    [LOCALE.HASTE_RUNE]: {
         en: "Haste Rune",
         ru: "Руна спешки",
     },
-    [LOCALE.AN_DAMAGE_RUNE]: {
+    [LOCALE.DAMAGE_RUNE]: {
         en: "Damage Rune",
         ru: "Руна урона",
     },
-    [LOCALE.AN_ARCANE_RUNE]: {
+    [LOCALE.ARCANE_RUNE]: {
         en: "Arcane Rune",
         ru: "Руна магии",
     },
-    [LOCALE.AN_HEALING_RUNE]: {
+    [LOCALE.HEALING_RUNE]: {
         en: "Healing Rune",
         ru: "Руна исцеления",
     },
 
     /** Stats */
-    [LOCALE.AN_ABILITY_POWER]: {
+    [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
         ru: "Силы умений",
     },
-    [LOCALE.AN_DAMAGE]: {
+    [LOCALE.DAMAGE]: {
         en: "Damage",
         ru: "Урона",
     },
-    [LOCALE.AN_ATTACK_SPEED]: {
+    [LOCALE.ATTACK_SPEED]: {
         en: "Attack Speed",
         ru: "Скорости атаки",
     },
-    [LOCALE.AN_CRITICAL_CHANCE]: {
+    [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
         ru: "Шанса крита",
     },
-    [LOCALE.AN_COOLDOWN_REDUCTION]: {
+    [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
         ru: "Сокращения перезарядки",
     },
-    [LOCALE.AN_LIFESTEAL]: {
+    [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
         ru: "Кражи здоровья",
     },
-    [LOCALE.AN_MAGICAL_DEFENSE]: {
+    [LOCALE.MAGICAL_DEFENSE]: {
         en: "Magical Defense",
         ru: "Защиты от магии",
     },
-    [LOCALE.AN_ARMOR]: {
+    [LOCALE.ARMOR]: {
         en: "Armor",
         ru: "Брони",
     },
-    [LOCALE.AN_HEALTH]: {
+    [LOCALE.HEALTH]: {
         en: "Health",
         ru: "Здоровья",
     },
-    [LOCALE.AN_HEALTH_REGEN]: {
+    [LOCALE.HEALTH_REGEN]: {
         en: "Health Regen",
         ru: "Регенерации здоровья",
     },
-    [LOCALE.AN_MOVE_SPEED]: {
+    [LOCALE.MOVE_SPEED]: {
         en: "Movement Speed",
         ru: "Скорости передвижения",
     },
-    [LOCALE.AN_CONSUMABLE]: {
+    [LOCALE.CONSUMABLE]: {
         en: "Consumable",
         ru: "Расходуемое",
     },
