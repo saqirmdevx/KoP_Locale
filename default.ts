@@ -19,7 +19,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ICEAT_NAME]: {
         en: "I'Ceat",
         ru: "Ай'сит",
-        br: "ICeat",
+        br: "Iceat",
         cz: "I'Ceat",
     },
 
@@ -498,7 +498,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Losses",
         ru: "Поражений",
         br: "Derrotas",
-
         cz: "Prohry",
     },
     [LOCALE.RANK]: {
@@ -516,7 +515,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.CHOOSE_HERO]: {
         en: "CHOOSE YOUR HERO",
         ru: "ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ",
-        br: "Escolha seu Personagem",
+        br: "PERSONAGENS",
         cz: "VYBER HRDINU",
     },
     [LOCALE.TRAINING_MATCH]: {
@@ -528,7 +527,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.PRACTICE_MATCH]: {
         en: "Test hero",
         ru: "Пробный герой",
-        br: "Personagem de teste",
+        br: "Modo de Treino",
         cz: "Vyzkoušet hrdinu",
     },
     [LOCALE.PLAY_NOW]: {
@@ -745,7 +744,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "For the first time you must pass throu training otherwise you can not play against players!",
         ru: "Зайдя впервые, вам нужно пройти обучение, иначе вы не сможете играть против других игроков!",
         br: "Como é sua primeira vez, você deve passar pelo treinamento, caso contrário você não poderá jogar contra outros jogadores!",
-
         cz: "Nejprve musíš projít tréninkem než budeš moct hrát proti hráčům!",
     },
     [LOCALE.POPUP_SELECT_FIRST_TIME_TRAINING_START]: {
