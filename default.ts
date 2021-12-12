@@ -37,11 +37,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Sparrow",
     },
 
-    [LOCALE.BUNNINJA_NAME]: {
-        en: "Bunninja",
-        ru: "Банниндзя",
-        br: "Bunninja",
-        cz: "Bunninja",
+    [LOCALE.THOMAS_NAME]: {
+        en: "Thomas",
+        ru: "Томас",
+        br: "Thomas",
+        cz: "Thomas",
     },
 
     [LOCALE.KUMIHU_DESCRIPTION]: {
@@ -56,11 +56,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Pertencente a uma colônia de pinguins na região ártica de Civia, I'ceat se destacou entre os demais. Possuindo poderes mágicos que apenas demônios tem, I'ceat pode manifestar pedras de gelo e neve da ponta de suas nadadeiras. Ninguém sabe de onde veio seus poderes, mas todos o aceitam no grupo acreditando não ter ligação com os demônios. Passando pelas árvores altas da floresta das fadas, I'ceat está determinado a encontrar o verdadeiro significado por trás dos poderes que ele usou para proteger sua colônia.",
         cz: "I'ceat patřil ke kolonii tučňáků v arktické oblasti Civia, ale vždy vyčníval mezi ostatními. Díky magickým schopnostem dokáže I'ceat vztvořit led a sníh na špičce svých křidel. Nikdo neví, kde se jeho schopnosti vzaly , ale každý přijímá jeho jedinečnost ve kmenu. Kolébájíc se kolem vysokých stromů v hustém lese je I'ceat odhodlán najít skutečný význam za schopnostmi, které kdysi používal k ochraně své rodiny.",
     },
-    [LOCALE.BUNNINJA_DESCRIPTION]: {
-        en: "Coming from an underground laboratory in the heated war zone of Rotite, Bunninja fought for Etygia's guerilla force and partook in ambushes focused on the upper ranks of the enemy forces. He gained notoriety among allies and foes alike because of his unique style of killing. During a secret experiment gone wrong, the test subject blasted the laboratory wide open. Wanting to leave the hectic environment and hellish landscape, Bunninja dared to leave the guerilla force for good. Through the spray of bullets, he managed to swiftly make it past as he witnessed the loss of many lives in the chaos. For Bunninja, he wanted freedom, but at the cost of betraying the kingdom. Keeping a low profile and lurking in the shadows, it's only a matter of time. The hunter has become the hunted.",
-        ru: "Выйдя из подземной лаборатории в жаркой зоне боевых действий Ротита, Банниндзя сражался на стороне партизан Этигии и участвовал в засадах, сосредоточенных на верхних званиях вражеских сил. Он получил известность как среди союзников, так и среди врагов из-за своего уникального стиля убийств. Во время секретного эксперимента, который закончился неудачей, испытуемый полностью взорвал лабораторию. Желая покинуть суету и адские пейзажи, Банниндзя осмелился навсегда покинуть партизанские отряды. Ему удалось быстро миновать осколки пуль, становясь свидетелем гибели многих людей в происходящем хаосе. Банниндзя просто хотел свободы, даже ценой предательства целого королевства. Незаметность и скрытность в тени - это лишь вопрос времени. Охотник превратился в добычу.",
+    [LOCALE.THOMAS_DESCRIPTION]: {
+        en: "Coming from an underground laboratory in the heated war zone of Rotite, Thomas fought for Etygia's guerilla force and partook in ambushes focused on the upper ranks of the enemy forces. He gained notoriety among allies and foes alike because of his unique style of killing. During a secret experiment gone wrong, the test subject blasted the laboratory wide open. Wanting to leave the hectic environment and hellish landscape, Thomas dared to leave the guerilla force for good. Through the spray of bullets, he managed to swiftly make it past as he witnessed the loss of many lives in the chaos. For Thomas, he wanted freedom, but at the cost of betraying the kingdom. Keeping a low profile and lurking in the shadows, it's only a matter of time. The hunter has become the hunted.",
+        ru: "Выйдя из подземной лаборатории в жаркой зоне боевых действий Ротита, Томас сражался на стороне партизан Этигии и участвовал в засадах, сосредоточенных на верхних званиях вражеских сил. Он получил известность как среди союзников, так и среди врагов из-за своего уникального стиля убийств. Во время секретного эксперимента, который закончился неудачей, испытуемый полностью взорвал лабораторию. Желая покинуть суету и адские пейзажи, Томас осмелился навсегда покинуть партизанские отряды. Ему удалось быстро миновать осколки пуль, становясь свидетелем гибели многих людей в происходящем хаосе. Томас просто хотел свободы, даже ценой предательства целого королевства. Незаметность и скрытность в тени - это лишь вопрос времени. Охотник превратился в добычу.",
         br: "Vindo de um laboratório subterrâneo na zona de guerra aquecida de Rotite, Thomas foi obrigado a lutar pelas forças de guerrilha de Etygia e sua especialidade era de emboscadas focadas nas fileiras superiores das forças inimigas. Ele ganhou notoriedade entre aliados e inimigos por causa de seu estilo único de luta com uma espada demoníaca. Durante um experimento secreto que deu errado, uma das cobaias explodiu um laboratório subterrâneo perto de onde ele patrulhava. Ele testemunhou a perda de muitas vidas no caos. Thomas aproveitou a oportunidade e se atreveu a deixar as forças de guerrilha, mas ao custo de trair o reino e virar um fugitivo.",
-        cz: "Bunninja, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Bunninja chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
+        cz: "Thomas, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Thomas chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
     },
     [LOCALE.SPARROW_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -154,7 +154,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Seconds",
         ru: "сек.",
         br: "Segundos",
-        cz: "Vteřina",
+        cz: "Vteřin",
     },
 
     [LOCALE.WARNING_NOT_IN_BASE]: {

@@ -1,5 +1,5 @@
 import { toSec } from "@/misc/constants";
-import Shared, { BelleAbilityData, BunninjaAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData } from "@/misc/shared";
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData } from "@/misc/shared";
 import { SpellType, getDamage } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
 
@@ -128,34 +128,34 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             }
         }
 
-        /** Bunninja */
-        case Shared.SpellList.BUNNINJA_AUTOATTACK:
+        /** Thomas */
+        case Shared.SpellList.THOMAS_AUTOATTACK:
             return {
-                en: `Bunninja slashes with his carrot and deals ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
-                ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
-                br: `Bunninja faz um corte com espada e causa ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
+                en: `Thomas slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
+                ru: `Томас взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
+                br: `Thomas faz um corte com espada e causa ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
             }
 
-        case Shared.SpellList.BUNNINJA_SHURIKEN_TOSS: {
-            const base_damage = getDamage(BunninjaAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * abilityPower, type, BunninjaAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + BunninjaAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1));
+        case Shared.SpellList.THOMAS_SHURIKEN_TOSS: {
+            const base_damage = getDamage(ThomasAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * abilityPower, type, ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1));
 
             return {
-                en: `Bunninja throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
-                ru: `Банниндзя бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
-                br: `Bunninja lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
+                en: `Thomas throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
+                ru: `Томас бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
+                br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
             }
         }
 
-        case Shared.SpellList.BUNNINJA_SHADOW_CARROT: {
-            const base_damage = getDamage(damage, type, BunninjaAbilityData.SHADOW_CARROT_BASE_DAMAGE);
+        case Shared.SpellList.THOMAS_SHADOW_CARROT: {
+            const base_damage = getDamage(damage, type, ThomasAbilityData.SHADOW_CARROT_BASE_DAMAGE);
 
             return {
-                en: `<b>First cast: </b>Bunninja throws an attaching carrot. He can teleport to it with ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
-                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
-                ru: `<b>Первое применение: </b>Банниндзя бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
-                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Банниндзя оглушает этого врага на ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
-                br: `<b>Primeira Ativação: </b>Bunninja joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
-                    `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, ele Teleporta-se para o inimigo o atordoando por ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} e causando ${base_damage} de dano.`,
+                en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
+                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Thomas stuns that enemy for ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
+                ru: `<b>Первое применение: </b>Томас бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
+                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Томас оглушает этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
+                br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
+                    `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, ele Teleporta-se para o inimigo o atordoando por ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} e causando ${base_damage} de dano.`,
             }
         }
         /** Veil */
@@ -294,22 +294,22 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 br: "Emboscada floral",
             }
 
-        /** Bunninja */
-        case Shared.SpellList.BUNNINJA_AUTOATTACK:
+        /** Thomas */
+        case Shared.SpellList.THOMAS_AUTOATTACK:
             return {
                 en: "Attack",
                 ru: "Атака",
                 br: "Ataque básico",
             }
 
-        case Shared.SpellList.BUNNINJA_SHURIKEN_TOSS:
+        case Shared.SpellList.THOMAS_SHURIKEN_TOSS:
             return {
                 en: "Shuriken Toss",
                 ru: "Бросок сюрикена",
                 br: "Shuriken Demoníaca",
             }
 
-        case Shared.SpellList.BUNNINJA_SHADOW_CARROT:
+        case Shared.SpellList.THOMAS_SHADOW_CARROT:
             return {
                 en: "Shadow Carrot",
                 ru: "Теневая морковь",
