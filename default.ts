@@ -184,7 +184,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "You need to push 4 minions in to win the game!" +
             "\n\n[Press space to continue!]",
         ru: "Ваша цель - уничтожить вражеский кристалл! \n" +
-            "Только Ваши миньоны могут нанести ему урон! Своими силами его уничтожить не удастся!\n" +
+            "Только Ваши миньоны могут нанести ему урон! Своими атаками его уничтожить не удастся!\n" +
             "Вам надо привести к нему 4 союзных миньона, чтобы победить!" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Seu objetivo é destruir o Cristal na Base do inimigo! \n" +
@@ -246,7 +246,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "First gold rune spawns at 00:00 in-game time!\n" +
             "\n\n[Press space to continue!]",
         ru: "Здесь Вы можете найти руну золота! \n" +
-            "Руна золота даёт вам 60+ золота!\n" +
+            "Руна золота даёт вам 50+ золота по ходу игры!\n" +
             "Первая руна золота появляется в 0:00 по времени матча!\n" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "No topo do mapa, você pode encontrar uma Runa amarela de Ouro! \n" +
@@ -306,8 +306,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Press space to continue!]",
         ru: "Используйте Вашу мышь для покупки предметов! Наведите на пустой слот, а затем ПКМ по желаемому предмету для покупки!\n" +
             "Покупайте предметы с умом! Вы можете нажать правой кнопкой мыши для продажи предмета.\n" +
-            "Продажа предмета по истечению 5 секунд после покупки возвратит всего лишь 50% от изначальной стоимости!" +
-            "Активные предметы можно использовать, нажав клавиши [1, 2, 3, 4], в соответствии с номером слота!" +
+            "Продажа предмета по истечению 5 секунд после покупки возвратит всего лишь 50% от изначальной стоимости!\n" +
+            "Активные предметы можно использовать, нажав клавиши [1, 2, 3, 4], в соответствии с номером слота!\n" +
             "ЗАПОМНИТЕ! Вы можете покупать предметы только находясь на своей базе!" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Use seu mouse para comprar itens, escolha seus itens com sabedoria!\n" +
@@ -332,7 +332,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Press space to continue!]",
         ru: "Внизу Вы можете увидеть способности своего героя\n" +
             "[J] [K] [L] - горячие клавиши для использования\n" +
-            "[B] - возвращение на базу!" +
+            "[B] - возвращение на базу! Возвращение занимает 5 секунд, прежде чем вы телепортируетесь.\n" +
             "Вы можете навести на любую из способностей, чтобы раскрыть её описание!" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Na parte inferior, você pode ver as habilidades do seu personagem!\n" +
@@ -527,13 +527,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.PRACTICE_MATCH]: {
         en: "Test hero",
-        ru: "Пробный герой",
+        ru: "Тренировка",
         br: "Personagem de teste",
         cz: "Vyzkoušet hrdinu",
     },
     [LOCALE.PLAY_NOW]: {
         en: "Play now!",
-        ru: "Играй сейчас!",
+        ru: "Сыграть сейчас!",
         br: "Jogar agora!",
         cz: "Hrát teď!",
     },
@@ -694,7 +694,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_SELECT_MESS_GUESTMODE]: {
         en: "You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style='color: red'>G-Mail account</b> to access all features. and no ADS!",
-        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утерена, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!",
+        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!",
         br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta do G-Mail</b> para acessar todos os recursos, e sem anúncios!",
 
         cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet G-Mail</b> a získejte přístup ke všem funkcím. A žádné reklamy !",
@@ -822,10 +822,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.AN_GODLIKE]: {
         en: "GODLIKE!",
-        ru: "БОЖЕСТВЕНЕН!",
+        ru: "БОГОПОДОБЕН!",
         cz: "BOŽSKÝ!",
     },
-        /** Runes */
+    /** Runes */
     [LOCALE.HASTE_RUNE]: {
         en: "Haste Rune",
         ru: "Руна спешки",
@@ -846,47 +846,47 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
-        ru: "Силы умений",
+        ru: "Сила умений",
     },
     [LOCALE.DAMAGE]: {
         en: "Damage",
-        ru: "Урона",
+        ru: "Урон",
     },
     [LOCALE.ATTACK_SPEED]: {
         en: "Attack Speed",
-        ru: "Скорости атаки",
+        ru: "Скорость атаки",
     },
     [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
-        ru: "Шанса крита",
+        ru: "Шанс крита",
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
-        ru: "Сокращения перезарядки",
+        ru: "Сокращение перезарядки",
     },
     [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
-        ru: "Кражи здоровья",
+        ru: "Кража здоровья",
     },
     [LOCALE.MAGICAL_DEFENSE]: {
         en: "Magical Defense",
-        ru: "Защиты от магии",
+        ru: "Защита от магии",
     },
     [LOCALE.ARMOR]: {
         en: "Armor",
-        ru: "Брони",
+        ru: "Броня",
     },
     [LOCALE.HEALTH]: {
         en: "Health",
-        ru: "Здоровья",
+        ru: "Здоровье",
     },
     [LOCALE.HEALTH_REGEN]: {
         en: "Health Regen",
-        ru: "Регенерации здоровья",
+        ru: "Регенерация здоровья",
     },
     [LOCALE.MOVE_SPEED]: {
         en: "Movement Speed",
-        ru: "Скорости передвижения",
+        ru: "Скорость передвижения",
     },
     [LOCALE.CONSUMABLE]: {
         en: "Consumable",
