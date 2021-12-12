@@ -892,6 +892,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Consumable",
         ru: "Расходуемое",
     },
- 
+
+    [LOCALE.PICKUP]: {
+        en: "pickup",
+        ru: "подобрал",
+        cz: "vzal",
+        br: "escolho",
+    }
+
 }
 export default locale_data;
