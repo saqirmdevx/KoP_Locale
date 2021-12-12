@@ -897,7 +897,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "pickup",
         ru: "подобрал",
         cz: "vzal",
-        br: "escolho",
+        br: "pegou",
     }
 
 }
