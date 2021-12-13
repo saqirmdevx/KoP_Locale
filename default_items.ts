@@ -8,6 +8,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wooden Sword",
                     ru: "Деревянный меч",
+                    cz: "Dřevěný Meč",
                 },
             }
         case Shared.ItemList.Wooden_Bow:
@@ -15,6 +16,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wooden Bow",
                     ru: "Деревянный лук",
+                    cz: "Dřevěný Luk",
                 },
             }
         case Shared.ItemList.Novice_Staff:
@@ -22,6 +24,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Novice Staff",
                     ru: "Посох новичка",
+                    cz: "Učňova Hůl",
                 },
             }
         case Shared.ItemList.Iron_Ring:
@@ -29,6 +32,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Ring",
                     ru: "Железное кольцо",
+                    cz: "Železný Prsten",
                 },
             }
         case Shared.ItemList.Buckler:
@@ -36,6 +40,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Buckler",
                     ru: "Баклер",
+                    cz: "Pukléř",
                 },
             }
         case Shared.ItemList.Shirt:
@@ -43,6 +48,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Shirt",
                     ru: "Рубаха",
+                    cz: "Svetr",
                 },
             }
         case Shared.ItemList.Light_Slayer:
@@ -50,6 +56,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Light Slayer",
                     ru: "Губитель света",
+                    cz: "Kosič Světla",
                 },
             }
         case Shared.ItemList.Katana:
@@ -57,6 +64,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Katana",
                     ru: "Катана",
+                    cz: "Katana",
                 },
             }
         case Shared.ItemList.Corrupted_Katana:
@@ -64,6 +72,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Corrupted Katana",
                     ru: "Искажённая катана",
+                    cz: "Zvrácená Katana",
                 },
             }
         case Shared.ItemList.Iron_Sword:
@@ -71,6 +80,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Sword",
                     ru: "Железный меч",
+                    cz: "Ocelový Meč",
                 },
             }
         case Shared.ItemList.Reckless_Longbow:
@@ -78,6 +88,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Reckless Longbow",
                     ru: "Безрассудный длинный лук",
+                    cz: "Hazardní Dlouhý Luk",
                 },
             }
         case Shared.ItemList.Rapids_Longbow:
@@ -85,6 +96,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Rapid Longbow",
                     ru: "Быстрый длинный лук",
+                    cz: "Radpidní Dlouhý Luk",
                 },
             }
         case Shared.ItemList.Enduring_Shield:
@@ -92,6 +104,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Enduring Shield",
                     ru: "Стойкий щит",
+                    cz: "Odolný Štít",
                 },
             }
         case Shared.ItemList.Iron_Buckler:
@@ -99,6 +112,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Buckler",
                     ru: "Железный баклер",
+                    cz: "Železný Pukléř",
                 },
             }
         case Shared.ItemList.Magical_Shield:
@@ -106,6 +120,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Magical Shield",
                     ru: "Магический щит",
+                    cz: "Magický Štít",
                 },
             }
         case Shared.ItemList.Rod_Of_Nature:
@@ -113,6 +128,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Rod of Nature",
                     ru: "Жезл природы",
+                    cz: "Prut Přírody",
                 },
             }
         case Shared.ItemList.Wizard_Staff:
@@ -120,6 +136,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wizard Staff",
                     ru: "Посох волшебника",
+                    cz: "Hůl Kouzelníka",
                 },
             }
         case Shared.ItemList.Ring_Of_Regeneration:
@@ -127,6 +144,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Ring of Regeneration",
                     ru: "Кольцо регенерации",
+                    cz: "Prsten Regenerace",
                 },
             }
         case Shared.ItemList.Ring_Of_Time:
@@ -134,6 +152,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Ring of Time",
                     ru: "Кольцо времени",
+                    cz: "Prsten Času",
                 },
             }
         case Shared.ItemList.Leather_Armor:
@@ -141,6 +160,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Leather Armor",
                     ru: "Кожанная броня",
+                    cz: "Kožená Zbroj",
                 },
             }
         case Shared.ItemList.Iron_Armor:
@@ -148,6 +168,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Armor",
                     ru: "Железная броня",
+                    cz: "Železná Zbroj",
                 },
             }
         case Shared.ItemList.Plate_Armor:
@@ -155,6 +176,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Plate Armor",
                     ru: "Латная броня",
+                    cz: "Plátová Zbroj",
                 },
             }
         case Shared.ItemList.Wizard_Shoes:
@@ -162,6 +184,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wizard Shoes",
                     ru: "Башмаки волшебника",
+                    cz: "Boty Kouzelníka",
                 },
             }
         case Shared.ItemList.Agility_Boots:
@@ -169,6 +192,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Agility Boots",
                     ru: "Ботинки ловкости",
+                    cz: "Boty Obratnosti",
                 },
             }
         case Shared.ItemList.Boots:
@@ -176,6 +200,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Boots",
                     ru: "Ботинки",
+                    cz: "Boty",
                 },
             }
         case Shared.ItemList.Divine_Boots:
@@ -183,6 +208,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Boots",
                     ru: "Божественные ботинки",
+                    cz: "Svaté Sandále",
                 },
             }
         case Shared.ItemList.Traveling_Boots:
@@ -190,6 +216,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Swift Boots",
                     ru: "Ботинки стремительности",
+                    cz: "Cestovní Obuv",
                 },
             }
         case Shared.ItemList.Shadow_Slayer:
