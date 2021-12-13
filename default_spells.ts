@@ -63,7 +63,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 en: `Sparrow quickly dashes while thrusting her sword forward, stunning enemies she hits for ${toSec(SparrowAbilityData.DASH_STUN_DURATION + (SparrowAbilityData.DASH_STUN_DURATION_PER_LEVEL * (level - 1)))} and dealing ${getDamage(0, type, SparrowAbilityData.DASH_BASE_DAMAGE)}.`,
                 ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(SparrowAbilityData.DASH_STUN_DURATION + (SparrowAbilityData.DASH_STUN_DURATION_PER_LEVEL * (level - 1)))} и нанося ${getDamage(0, type, SparrowAbilityData.DASH_BASE_DAMAGE)} урона.`,
 
-                cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(SparrowAbilityData.DASH_STUN_DURATION + (SparrowAbilityData.DASH_STUN_DURATION_PER_LEVEL * (úroveň - 1)))} a způsobí ${getDamage(0, type, SparrowAbilityData.DASH_BASE_DAMAGE)}.`,            
+                cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(SparrowAbilityData.DASH_STUN_DURATION + (SparrowAbilityData.DASH_STUN_DURATION_PER_LEVEL * (level - 1)))} a způsobí ${getDamage(0, type, SparrowAbilityData.DASH_BASE_DAMAGE)}.`,            
 
                 br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${toSec(SparrowAbilityData.DASH_STUN_DURATION + (SparrowAbilityData.DASH_STUN_DURATION_PER_LEVEL * (level - 1)))} e dando ${getDamage(0, type, SparrowAbilityData.DASH_BASE_DAMAGE)} de dano.`,
 
@@ -134,7 +134,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 en: `Belle fires an explosive thorn from her wand dealing ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} AoE damage in a small area.`,
                 ru: `Белла выпускает взрывной шип из своей палочки, наносящий ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} физического урона по площади.`,
 
-                cz: `Belle vystřelí výbušný trn ze své hůlky a způsobí ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * poškození)} poškození v malé oblasti.`,
+                cz: `Belle vystřelí výbušný trn ze své hůlky a způsobí ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} poškození v malé oblasti.`,
 
                 br: `Belle atira uma flor explosiva de sua varinha causando ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} de dano em área.`,
 
@@ -180,9 +180,9 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
         case Shared.SpellList.THOMAS_AUTOATTACK:
             return {
 
-                en: `Bunninja slashes with his carrot and deals ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
-                ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
-                cz: `Bunninja seká svou mrkví a udělí ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
+                en: `Bunninja slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
+                ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
+                cz: `Bunninja seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
                 br: `Thomas faz um corte com espada e causa ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
 
             }
@@ -204,12 +204,12 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const base_damage = getDamage(damage, type, ThomasAbilityData.SHADOW_CARROT_BASE_DAMAGE);
 
             return {
-                en: `<b>First cast: </b>Bunninja throws an attaching carrot. He can teleport to it with ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
-                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
-                ru: `<b>Первое применение: </b>Банниндзя бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
-                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Банниндзя оглушает этого врага на ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
-                cz: `První použití: Bunninja hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(BunninjaAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
-                    + `Druhé použití: Bunninja se teleportuje k mrkvi. Pokud je připojena k nepříteli, Bunninja omráčí tohoto nepřítele na ${toSec(BunninjaAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
+                en: `<b>First cast: </b>Bunninja throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
+                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
+                ru: `<b>Первое применение: </b>Банниндзя бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
+                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Банниндзя оглушает этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
+                cz: `První použití: Bunninja hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
+                    + `Druhé použití: Bunninja se teleportuje k mrkvi. Pokud je připojena k nepříteli, Bunninja omráčí tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
                 br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
                     `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, ele Teleporta-se para o inimigo o atordoando por ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} e causando ${base_damage} de dano.`,
             }

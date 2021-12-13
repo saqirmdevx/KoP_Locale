@@ -829,36 +829,44 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.HASTE_RUNE]: {
         en: "Haste Rune",
         ru: "Руна спешки",
+        cz: "Runa rýchlosti"
     },
     [LOCALE.DAMAGE_RUNE]: {
         en: "Damage Rune",
         ru: "Руна урона",
+        cz: "Runa poškození"
     },
     [LOCALE.ARCANE_RUNE]: {
         en: "Arcane Rune",
         ru: "Руна магии",
+        cz: "Runa kouzel",
     },
     [LOCALE.HEALING_RUNE]: {
         en: "Healing Rune",
         ru: "Руна исцеления",
+        cz: "Runa zdraví",
     },
 
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
         ru: "Сила умений",
+        cz: "Síla kouzel"
     },
     [LOCALE.DAMAGE]: {
         en: "Damage",
         ru: "Урон",
+        cz: "Zraněni"
     },
     [LOCALE.ATTACK_SPEED]: {
         en: "Attack Speed",
         ru: "Скорость атаки",
+        cz: "Rýchlost útoku"
     },
     [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
         ru: "Шанс крита",
+        cz: "Kritický zásah",
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
