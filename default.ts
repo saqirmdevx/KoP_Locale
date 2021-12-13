@@ -898,7 +898,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "подобрал",
         cz: "vzal",
         br: "pegou",
+    },
+    [LOCALE.POPUP_DISCONNECTED]: {
+        en: "You've been disconected from the server, please refresh the page!",
+        ru: "Потеряно соединение с сервером. Пожалуйста, обновите to перезагрузите!",
+        cz: "Nebylo možné navázat spojení s hrou. Refreshnite webovu stránku.",
+    },
+    [LOCALE.POPUP_REFRESH]: {
+        en: "refresh",
+        ru: "обновит",
+        cz: "refresh",
     }
-
 }
 export default locale_data;
