@@ -164,7 +164,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower, SpellType.MAGICAL, VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1));
             return {
                 en: `Veil slashes with her weapons and deals ${base_damage} damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} damage (consume enhanced state)`,
-                ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> Усиленная: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} урона (поглощает эффект усиления)`
+                ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> Усиленная: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} урона (поглощает эффект усиления)`,
+                cz: `Veil sekne svými zbraněmi a způsobí ${base_damage} poškození. <br /> Posílení: Veil používá svého astrálního ducha a udělí dalšíh ${enhanced_dmg} poškození (spotřebuje Posílení stav)`,
             }
         }
 
@@ -174,6 +175,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Veil jumps and throws her astral blades downward at a 45° angle which deal ${base_damage}. If ability hits an enemy hero, it will enhance veil`,
                 ru: `Вэйл подпрыгивает и бросает свои астральные клинки вниз под углом 45°, которые наносят ${base_damage} магического урона. Если способность попала по вражескому герою, Вэйл получит усиление.`,
+                cz: `Veil skočí a vrhne své astrální čepele dolů pod úhlem 45°, což způsobí ${base_damage} poškození. Pokud schopnost zasáhne nepřátelského hrdinu, získá Posílení.`,
             }
         }
 
@@ -186,6 +188,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                     `Enhanced: Veil steps into an astral realm and deals additional ${enh_dmg} damage and slows enemy. (consume enhanced state) <b> Sucessful hit reset Astral Step cooldown! </b>`,
                 ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} магического урона и останавливает Вэйл на первом герое на своём пути. (Попадание по вражескому герою активирует усиление)<br /> <br />` +
                     `Усиленная: Вэйл шагает в астральное измерение и наносит дополнительно ${enh_dmg} урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага! </b>`,
+                cz: `Veil použije astrální krok, aby vykročila vpřed vysokou rychlostí a způsobí ${base_damage} poškození. Zastaví se u prvního hrdiny, kterého zasáhne. (Při zasažení hrdiny použije Posílení stav)<br /> <br />` +
+                    `Posílení: Veil vstoupí do astrální říše a způsobí další ${enh_dmg} poškození a zpomalí nepřítele. (spotřebuje vylepšený stav) <b> Úspěšný zásah resetuje cooldown! </b>`,
             }
         }
 
@@ -194,9 +198,10 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: "Teleport back to spawn after 5 seconds. During its cast, you cannot move or attack, and the cast is interrupted when you take damage.",
                 ru: "Телепорт обратно на свою базу спустя 5 секунд. Во время возвращения вы не можете двигаться или атаковать, но любой полученный урон перырвает подготовку.",
+                cz: "Po 5 sekundách se teleportujte zpět do základny. Během sesílání se nemůžete pohybovat ani útočit a sesílání je přerušeno, pokud utrpíte poškození.",
             }
 
-        default: return { en: "" }
+        default: return { en: "", cz:  ""}
     }
 }
 
@@ -207,17 +212,20 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.KUMIHU_MAGICAL_ORB:
             return {
                 en: "Magical Orb",
                 ru: "Волшебная сфера",
+                cz: "Magická Koule",
             }
         case Shared.SpellList.KUMIHU_DASH:
             return {
                 en: "Arcane Dash",
                 ru: "Тайный рывок",
+                cz: "Tajemný Krok",
             }
 
         /** Sparrow */
@@ -225,18 +233,21 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.SPARROW_DASH:
             return {
                 en: "Dash",
                 ru: "Рывок",
+                cz: "Zteč",
             }
 
         case Shared.SpellList.SPARROW_GROUND_SLAM:
             return {
                 en: "Ground Slam",
                 ru: "Удар по земле",
+                cz: "Úder Země",
             }
 
         /** I'Ceat */
@@ -244,18 +255,21 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.ICEAT_ICICLE_BOLT:
             return {
                 en: "Icicle Bolt",
                 ru: "Сосульки",
+                cz: "Sprška Rampouchů",
             }
 
         case Shared.SpellList.ICEAT_COLD_EMBRACE:
             return {
                 en: "Cold Embrace",
                 ru: "Объятья холода",
+                cz: "Chladné objetí",
             }
 
         /** Belle */
@@ -263,18 +277,21 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.BELLE_PRICKLY_VINE:
             return {
                 en: "Prickly Vine",
                 ru: "Колючая лоза",
+                cz: "Bodavá Réva",
             }
 
         case Shared.SpellList.BELLE_FLORAL_AMBUSH:
             return {
                 en: "Floral Ambush",
                 ru: "Цветочная ловушка",
+                cz: "Bouchací Kytky",
             }
 
         /** Bunninja */
@@ -282,18 +299,21 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.BUNNINJA_SHURIKEN_TOSS:
             return {
                 en: "Shuriken Toss",
                 ru: "Бросок сюрикена",
+                cz: "Vrh Shurikenu",
             }
 
         case Shared.SpellList.BUNNINJA_SHADOW_CARROT:
             return {
                 en: "Shadow Carrot",
                 ru: "Теневая морковь",
+                cz: "Stínová Mrkev",
             }
 
         /** Veil */
@@ -301,18 +321,21 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Attack",
                 ru: "Атака",
+                cz: "Útok",
             }
 
         case Shared.SpellList.VEIL_ASTRAL_BLADES:
             return {
                 en: "Astral Blades",
                 ru: "Астральные клинки",
+                cz: "Astrální Čepele",
             }
 
         case Shared.SpellList.VEIL_ASTRAL_STEP:
             return {
                 en: "Astral Step",
                 ru: "Астральный шаг",
+                cz: "Astrální Krok",
             }
 
         /** Default */
@@ -320,6 +343,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             return {
                 en: "Recall",
                 ru: "Возвращение",
+                cz: "Odvolání",
             }
         default: return {en: ""}
     }
