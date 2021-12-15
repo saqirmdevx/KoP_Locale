@@ -248,15 +248,15 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower, SpellType.MAGICAL, VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1));
 
             return {
-                en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} damage and will stop on first hero she hits. (Upon hitting an hero it will apply enhanced state)<br /> <br />` +
+                en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} damage.<br /> <br />` +
                     `Enhanced: Veil steps into an astral realm and deals additional ${enh_dmg} damage and slows enemy. (consume enhanced state) <b> Sucessful hit reset Astral Step cooldown! </b>`,
-                ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} магического урона и останавливает Вэйл на первом герое на своём пути. (Попадание по вражескому герою активирует усиление)<br /> <br />` +
+                ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} магического урона.<br /> <br />` +
                     `Усиленная: Вэйл шагает в астральное измерение и наносит дополнительно ${enh_dmg} урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага! </b>`,
 
-                cz: `Veil použije astrální krok, aby vykročila vpřed vysokou rychlostí a způsobí ${base_damage} poškození. Zastaví se u prvního hrdiny, kterého zasáhne. (Při zasažení hrdiny použije Posílení stav)<br /> <br />` +
+                cz: `Veil použije astrální krok, aby vykročila vpřed vysokou rychlostí a způsobí ${base_damage} poškození.<br /> <br />` +
                     `Posílení: Veil vstoupí do astrální říše a způsobí další ${enh_dmg} poškození a zpomalí nepřítele. (spotřebuje vylepšený stav) <b> Úspěšný zásah resetuje cooldown! </b>`,
 
-                br: `Veil avança em alta velocidade para frente causando ${base_damage} de dano e irá parar no primeiro personagem inimigo que ela acertar.<br /> (Ao atingir um personagem inimigo, ela aplicará a Maldição dos caídos.)<br /> <br />` +
+                br: `Veil avança em alta velocidade para frente causando ${base_damage} de dano.<br /> <br />` +
                     `<b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enh_dmg} de dano e dando lentidão.<br /> (consume o estado Maldição dos caídos.)<br /><br /> <b> Se acertar o hit, reseta sua habilidade! </b>`,
 
             }
