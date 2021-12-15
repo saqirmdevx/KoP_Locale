@@ -693,11 +693,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Vyberte si svou prezdivku. Pozor, změna jména není zadarmo!",
     },
     [LOCALE.POPUP_SELECT_MESS_GUESTMODE]: {
-        en: "You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style='color: red'>G-Mail account</b> to access all features. and no ADS!",
-        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!",
-        br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta do G-Mail</b> para acessar todos os recursos, e sem anúncios!",
+        en: "You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style='color: red'>account</b> to access all features.",
+        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт</b> для получения доступа ко всем функциям.",
+        br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta</b> para acessar todos os recursos",
 
-        cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet G-Mail</b> a získejte přístup ke všem funkcím. A žádné reklamy !",
+        cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet</b> a získejte přístup ke všem funkcím.",
     },
     [LOCALE.POPUP_SELECT_NAME_GUESTMODE]: {
         en: "GUEST MODE!",
