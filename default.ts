@@ -916,6 +916,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "refresh",
         ru: "обновит",
         cz: "refresh",
-    }
+    },
+    [LOCALE.YES]: {
+        en: "yes",
+        ru: "да",
+        cz: "áno",
+    },
+    [LOCALE.NO]: {
+        en: "no",
+        ru: "нет",
+        cz: "nie",
+    },
+    [LOCALE.POPUP_LOGOUT_TITLE]: {
+        en: "Are you sure?",
+        ru: "Уверены ли вы?",
+        cz: "Jste si jisti?",
+    },
 }
 export default locale_data;
