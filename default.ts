@@ -939,5 +939,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Уверены ли вы?",
         cz: "Jste si jisti?",
     },
+    [LOCALE.MSAA]: {
+        en: "Anti-aliasing",
+        cz: "Vyhlazovaní",
+        ru: "сглаживание",
+    }
 }
 export default locale_data;
