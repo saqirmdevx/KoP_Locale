@@ -285,7 +285,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Press space to continue!]",
         ru: "Вы можете прятаться от противников в кустах! \n" +
             "Они не увидят Вас там, поэтому Вы с лёгкостью можете устраивать засады!\n" +
-            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам даже если вы находитесь там, поэтому будьте осторожны!\n" +
+            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам, даже если вы находитесь там, поэтому будьте осторожны!\n" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Você pode se esconder de seus inimigos dentro de arbustos! \n" +
             "Você não pode ser visto por inimigos dentro de arbustos, então você pode fazer armadilhas!\n" +
