@@ -871,6 +871,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
         ru: "Сокращение перезарядки",
+        cz: "Redukce cooldownu",
     },
     [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
@@ -879,26 +880,32 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.MAGICAL_DEFENSE]: {
         en: "Magical Defense",
         ru: "Защита от магии",
+        cz: "Magické brnění",
     },
     [LOCALE.ARMOR]: {
         en: "Armor",
         ru: "Броня",
+        cz: "Brnění",
     },
     [LOCALE.HEALTH]: {
         en: "Health",
         ru: "Здоровье",
+        cz: "Zdraví",
     },
     [LOCALE.HEALTH_REGEN]: {
         en: "Health Regen",
         ru: "Регенерация здоровья",
+        cz: "Regenerace zdraví",
     },
     [LOCALE.MOVE_SPEED]: {
         en: "Movement Speed",
         ru: "Скорость передвижения",
+        cz: "Rychlost pohybu",
     },
     [LOCALE.CONSUMABLE]: {
         en: "Consumable",
         ru: "Расходуемое",
+        cz: "Spotrební",
     },
 
     [LOCALE.PICKUP]: {
