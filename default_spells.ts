@@ -1,5 +1,5 @@
 import { toSec } from "@/misc/constants";
-import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData } from "@/misc/shared";
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData } from "@/misc/shared";
 import { SpellType, getDamage } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
 
@@ -262,6 +262,32 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             }
         }
 
+        /** Flin  */
+        case Shared.SpellList.FLIN_AUTOATTACK: {
+            const basic_damage = getDamage(FlinAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+            const enh_damage = getDamage(FlinAbilityData.MARKSMANSHIP_BONUS_DAMAGE_MOD * damage);
+
+            return {
+                en: `Flin fires an arrow and deals ${basic_damage} normal damage. <br /> If marksmanship is active, flin deals ${enh_damage} and arrows pierce all enemy units.`,
+                cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození <br /> Ak je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození` ,
+            }
+        }
+
+        case Shared.SpellList.FLIN_PRECISE_SHOT: {
+            const base_damage = getDamage(FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + (FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)));
+            return {
+                en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all units`,
+                cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} magického poškození a odkopne nepřítele dál od tebe. <br /> Ak střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
+            }
+        }
+
+        case Shared.SpellList.FLIN_MARKSMANSHIP:
+            return {
+                en: `Flin increases his focus for ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} or next ${FlinAbilityData.MARKSMANSHIP_STACKS} basic shots will deal additional damage and pierce enemy units.`,
+                cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky.`,
+            }
+
+
         /** Default */
         case Shared.SpellList.RECALL:
             return {
@@ -434,6 +460,30 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 ru: "Астральный шаг",
                 cz: "Astrální Krok",
                 br: "Regente do mal",
+            }
+
+        case Shared.SpellList.FLIN_AUTOATTACK:
+            return {
+                en: "Attack",
+                ru: "Атака",
+                cz: "Útok",
+                br: "Ataque básico",
+            }
+
+        case Shared.SpellList.FLIN_PRECISE_SHOT:
+            return {
+                en: "Precise shot",
+                ru: "Точный выстрел",
+                cz: "Přesná střela",
+                br: "Tiro preciso",
+            }
+
+        case Shared.SpellList.FLIN_MARKSMANSHIP:
+            return {
+                en: "Marksmanship",
+                ru: "меткая стрельба",
+                cz: "Strelecké umenie",
+                br: "pontaria",
             }
 
         /** Default */

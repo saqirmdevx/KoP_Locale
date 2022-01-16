@@ -44,6 +44,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Thomas",
     },
 
+    [LOCALE.FLIN_NAME]: {
+        en: "Flin",
+        br: "Flin",
+        cz: "Flin",
+        ru: "Флин"
+    },
+
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
@@ -74,6 +81,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Brzy bude přidáno!",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+
+    [LOCALE.FLIN_DESCRIPTION]: {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
@@ -567,23 +581,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "SUPPORTE",
         cz: "SUPPORT",
     },
-    [LOCALE.TAG_INITIATOR]: {
-        en: "INITIATOR",
-        ru: "ИНИЦИАТОР",
-        br: "INICIADOR",
-        cz: "INICIÁTOR",
-    },
-    [LOCALE.TAG_CARRY]: {
-        en: "CARRY",
-        ru: "КЕРРИ",
-        br: "DANO",
-        cz: "CARRY"
-    },
-    [LOCALE.TAG_DISABLER]: {
-        en: "DISABLER",
-        ru: "КОНТРОЛЬ",
-        br: "DESABILITADOR",
-        cz: "DISABLER",
+    [LOCALE.TAG_RANGE]: {
+        en: "RANGED",
+        ru: "ДАЛЬНИЙ БОЙ",
+        br: "A DISTANCIA",
+        fr: "À DISTANCE",
+        cz: "NA DÁLKU",
     },
 
     /** POST SCENE */
