@@ -269,6 +269,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
 
             return {
                 en: `Flin fires an arrow and deals ${basic_damage} normal damage. <br /> If marksmanship is active, flin deals ${enh_damage} and arrows pierce all enemy units.`,
+                ru: `Флин выпускает стрелу, наносящую ${basic_damage} ед. физического урона. <br /> Если активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} урона и пронзает все вражеские цели на своём пути.`,
                 cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození <br /> Ak je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození` ,
             }
         }
@@ -277,6 +278,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const base_damage = getDamage(FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + (FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)));
             return {
                 en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all units`,
+                ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} ед. магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать все вражеские цели на своём пути.`,
                 cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} magického poškození a odkopne nepřítele dál od tebe. <br /> Ak střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
             }
         }
@@ -284,6 +286,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
         case Shared.SpellList.FLIN_MARKSMANSHIP:
             return {
                 en: `Flin increases his focus for ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} or next ${FlinAbilityData.MARKSMANSHIP_STACKS} basic shots will deal additional damage and pierce enemy units.`,
+                ru: `Флин повышает свою точность на ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} или на ${FlinAbilityData.MARKSMANSHIP_STACKS} следующих атак. В течение этого времени базовые атаки наносят дополнительный урон и пронзают вражеские цели.`,
                 cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky.`,
             }
 
@@ -481,7 +484,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.FLIN_MARKSMANSHIP:
             return {
                 en: "Marksmanship",
-                ru: "меткая стрельба",
+                ru: "Меткая стрельба",
                 cz: "Strelecké umenie",
                 br: "pontaria",
             }
