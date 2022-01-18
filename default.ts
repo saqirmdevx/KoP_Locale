@@ -854,6 +854,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Руна золота",
         cz: "Runa zlata",
     },
+    
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
