@@ -924,12 +924,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_DISCONNECTED]: {
         en: "You've been disconected from the server, please refresh the page!",
-        ru: "Потеряно соединение с сервером. Пожалуйста, обновите to перезагрузите!",
+        ru: "Потеряно соединение с сервером. Пожалуйста, обновите страницу!",
         cz: "Nebylo možné navázat spojení s hrou. Refreshnite webovu stránku.",
     },
     [LOCALE.POPUP_REFRESH]: {
         en: "refresh",
-        ru: "обновит",
+        ru: "обновить",
         cz: "refresh",
     },
     [LOCALE.YES]: {
@@ -950,7 +950,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.MSAA]: {
         en: "Anti-aliasing",
         cz: "Vyhlazovaní",
-        ru: "сглаживание",
+        ru: "Сглаживание",
     }
 }
 export default locale_data;
