@@ -849,7 +849,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Руна исцеления",
         cz: "Runa zdraví",
     },
-
+    [LOCALE.BOUNTY_RUNE]: {
+        en: "Bounty Rune",
+        ru: "Руна золота",
+        cz: "Runa zlata",
+    },
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
