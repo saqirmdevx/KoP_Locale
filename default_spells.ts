@@ -1,5 +1,5 @@
 import { toSec } from "@/misc/constants";
-import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData } from "@/misc/shared";
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData } from "@/misc/shared";
 import { SpellType, getDamage } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
 
@@ -290,6 +290,33 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky.`,
             }
 
+        /** Flin  */
+        case Shared.SpellList.KIRA_AUTOATTACK: {
+            const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+            const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
+
+            return {
+                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest enemy, dealing ${enh_damage}`,
+            }
+        }
+
+        case Shared.SpellList.KIRA_RAIN_OF_SPARKS: {
+            const damage = getDamage(KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.VOID_RAIN_BASE_DAMAGE + (KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)));
+        
+            return {
+                en: `Kira summons 4 void missiles that rain down from above, each missile dealing ${damage} magic damage that pierces through enemies. 
+                <br /> <b>[Enhanced]: (Torrential Abyss)</b> Kira summons a total of 8 void missiles.`,
+            }
+        }
+
+        case Shared.SpellList.KIRA_VOID_PHANTASM: {
+            const damage = getDamage(KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + (KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)));
+
+            return {
+                en: `Kira deceives her enemies and leaves behind her a distorted afterimage, which she returns to after ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
+                <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kira's afterimage follows her and phases through enemies, dealing ${damage} magical damage and silencing them for ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
+            }
+        }
 
         /** Default */
         case Shared.SpellList.RECALL:
@@ -487,6 +514,30 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 ru: "Меткая стрельба",
                 cz: "Strelecké umenie",
                 br: "pontaria",
+            }
+
+        case Shared.SpellList.KIRA_AUTOATTACK:
+            return {
+                en: "Attack",
+                ru: "Атака",
+                cz: "Útok",
+                br: "Ataque básico",
+            }
+
+        case Shared.SpellList.KIRA_RAIN_OF_SPARKS:
+            return {
+                en: "Rain of Sparks",
+                ru: "Дождь искр",
+                cz: "Dážď iskier",
+                br: "Chuva de faíscas",
+            }
+
+        case Shared.SpellList.KIRA_VOID_PHANTASM:
+            return {
+                en: "Void Phantasm",
+                ru: "Фантазм Пустоты",
+                cz: "Prázdné fantazie",
+                br: "Fantasma do Vazio",
             }
 
         /** Default */

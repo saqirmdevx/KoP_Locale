@@ -51,6 +51,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Флин"
     },
 
+    [LOCALE.KIRA_NAME]: {
+        en: "Kira",
+        ru: "Кира",
+    },
+
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
@@ -88,6 +93,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.FLIN_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+    [LOCALE.KIRA_DESCRIPTION]: {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
