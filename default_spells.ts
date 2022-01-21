@@ -296,8 +296,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
 
             return {
-                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest enemy, dealing ${enh_damage} / sec`,
-                cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu nepříteli a uděluje ${enh_damage} / sec`,
+                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, dealing ${enh_damage}/sec and decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. If target is friendly hero instead increase attack speed nad heal for 50% /sec`,
+                cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> <b>[Vylepšené]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi, čímž uděluje ${enh_damage}/s a snižuje rychlost útoku o ${( KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} %. Pokud je cílem přátelský hrdina, zvyši rychlost útoku a uzdravi ho o 50% / sec`,
             }
         }
 
