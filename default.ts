@@ -783,7 +783,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.AN_GOT_A]: {
         en: "got a ",
-        ru: "получил ",
+        ru: "получает ",
         cz: "dostal ",
     },
     [LOCALE.AN_IS_ON]: {
@@ -842,27 +842,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     /** Runes */
     [LOCALE.HASTE_RUNE]: {
         en: "Haste Rune",
-        ru: "Руна спешки",
+        ru: "Руну спешки",
         cz: "Runa rýchlosti"
     },
     [LOCALE.DAMAGE_RUNE]: {
         en: "Damage Rune",
-        ru: "Руна урона",
+        ru: "Руну урона",
         cz: "Runa poškození"
     },
     [LOCALE.ARCANE_RUNE]: {
         en: "Arcane Rune",
-        ru: "Руна магии",
+        ru: "Руну магии",
         cz: "Runa kouzel",
     },
     [LOCALE.HEALING_RUNE]: {
         en: "Healing Rune",
-        ru: "Руна исцеления",
+        ru: "Руну исцеления",
         cz: "Runa zdraví",
     },
     [LOCALE.BOUNTY_RUNE]: {
         en: "Bounty Rune",
-        ru: "Руна золота",
+        ru: "Руну золота",
         cz: "Runa zlata",
     },
     

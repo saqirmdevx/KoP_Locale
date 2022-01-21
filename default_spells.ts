@@ -181,7 +181,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
 
                 en: `Bunninja slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
-                ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
+                ru: `Томас взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
                 cz: `Bunninja seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
                 br: `Thomas faz um corte com espada e causa ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
 
@@ -193,7 +193,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
 
                 en: `Bunninja throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
-                ru: `Банниндзя бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
+                ru: `Томас бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
                 cz: `Bunninja hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
                 br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
 
@@ -206,8 +206,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `<b>First cast: </b>Bunninja throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
                     `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
-                ru: `<b>Первое применение: </b>Банниндзя бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
-                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Банниндзя оглушает этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
+                ru: `<b>Первое применение: </b>Томас бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
+                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Томас оглушает этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
                 cz: `První použití: Bunninja hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
                     + `Druhé použití: Bunninja se teleportuje k mrkvi. Pokud je připojena k nepříteli, Bunninja omráčí tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
                 br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
@@ -220,7 +220,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower, SpellType.MAGICAL, VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1));
             return {
                 en: `Veil slashes with her weapons and deals ${base_damage} damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} damage (consume enhanced state)`,
-                ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> Усиленная: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} урона (поглощает эффект усиления)`,
+                ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> [Усиленная]: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} урона (поглощает эффект усиления)`,
 
                 cz: `Veil sekne svými zbraněmi a způsobí ${base_damage} poškození. <br /> Posílení: Veil používá svého astrálního ducha a udělí dalšíh ${enhanced_dmg} poškození (spotřebuje Posílení stav)`,
 
@@ -251,7 +251,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} damage.<br /> <br />` +
                     `Enhanced: Veil steps into an astral realm and deals additional ${enh_dmg} damage and slows enemy. (consume enhanced state) <b> Sucessful hit reset Astral Step cooldown! </b>`,
                 ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} магического урона.<br /> <br />` +
-                    `Усиленная: Вэйл шагает в астральное измерение и наносит дополнительно ${enh_dmg} урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага! </b>`,
+                    `[Усиленная]: Вэйл шагает в астральное измерение и наносит дополнительно ${enh_dmg} урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага! </b>`,
 
                 cz: `Veil použije astrální krok, aby vykročila vpřed vysokou rychlostí a způsobí ${base_damage} poškození.<br /> <br />` +
                     `Posílení: Veil vstoupí do astrální říše a způsobí další ${enh_dmg} poškození a zpomalí nepřítele. (spotřebuje vylepšený stav) <b> Úspěšný zásah resetuje cooldown! </b>`,
@@ -269,7 +269,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
 
             return {
                 en: `Flin fires an arrow and deals ${basic_damage} normal damage. <br /> If marksmanship is active, flin deals ${enh_damage} and arrows pierce all enemy units.`,
-                ru: `Флин выпускает стрелу, наносящую ${basic_damage} ед. физического урона. <br /> Если активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} урона и пронзает все вражеские цели на своём пути.`,
+                ru: `Флин выпускает стрелу, наносящую ${basic_damage} физического урона. <br /> Если активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} урона и пронзает все вражеские цели на своём пути.`,
                 cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození <br /> Ak je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození` ,
             }
         }
@@ -278,7 +278,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const base_damage = getDamage(FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + (FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)));
             return {
                 en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all units`,
-                ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} ед. магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать все вражеские цели на своём пути.`,
+                ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать все вражеские цели на своём пути.`,
                 cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} magického poškození a odkopne nepřítele dál od tebe. <br /> Ak střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
             }
         }
@@ -286,7 +286,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
         case Shared.SpellList.FLIN_MARKSMANSHIP:
             return {
                 en: `Flin increases his focus for ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} or next ${FlinAbilityData.MARKSMANSHIP_STACKS} basic shots will deal additional damage and pierce enemy units.`,
-                ru: `Флин повышает свою точность на ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} или на ${FlinAbilityData.MARKSMANSHIP_STACKS} следующих атак. В течение этого времени базовые атаки наносят дополнительный урон и пронзают вражеские цели.`,
+                ru: `Флин повышает свою точность на ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} или на следующее количество атак: (${FlinAbilityData.MARKSMANSHIP_STACKS}). В течение этого времени базовые атаки наносят дополнительный урон и пронзают вражеские цели.`,
                 cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky.`,
             }
 
@@ -296,7 +296,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
 
             return {
-                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, dealing ${enh_damage}/sec and decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. If target is friendly hero instead increase attack speed nad heal for 50% /sec`,
+                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, dealing ${enh_damage}/sec and decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. If target is friendly hero instead increase attack speed and heal for 50% /sec`,
+                ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> <b>[Усиленная]: (Вьющаяся молния)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя, нанося ${enh_damage} урона в секунду и уменьшая его скорость атаки на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. Если целью стал союзный герой, его скорость атаки повышается, а также он исцеляется на 50% от изначального урона в секунду.`,
                 cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> <b>[Vylepšené]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi, čímž uděluje ${enh_damage}/s a snižuje rychlost útoku o ${( KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} %. Pokud je cílem přátelský hrdina, zvyši rychlost útoku a uzdravi ho o 50% / sec`,
             }
         }
@@ -307,6 +308,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Kira summons 4 void missiles that rain down from above, each missile dealing ${damage} magic damage that pierces through enemies. 
                 <br /> <b>[Enhanced]: (Torrential Abyss)</b> Kira summons a total of 8 void missiles.`,
+                ru: `Кира призывает 4 снаряда бездны, которые падают с неба, нанося ${damage} магического урона каждый и пронзая вражеские цели. 
+                <br /> <b>[Усиленная]: (Проливная бездна)</b> Количество призываемых снарядов увеличивается до 8.`,
                 cz: `Kira vyvolá 4 prázdné střely, které prší shora, přičemž každá střela způsobí ${damage} magické poškození, které prorazí nepřátele.
                 <br /> <b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`
             }
@@ -318,6 +321,8 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             return {
                 en: `Kira deceives her enemies and leaves behind her a distorted afterimage, which she returns to after ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kira's afterimage follows her and phases through enemies, dealing ${damage} magical damage and silencing them for ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
+                ru: `Кира обманывает своих противников, совершая рывок вперёд и оставляя позади себя свою искажённую копию, возвращаясь к ней через ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
+                <br /> <b>[Усиленная]: (Беспорядочный клон)</b> Копия Киры следует за ней и проходит через врагов на своём пути, нанося им ${damage} магического урона и накладывая немоту на ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
                 cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
             }
@@ -540,7 +545,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.KIRA_VOID_PHANTASM:
             return {
                 en: "Void Phantasm",
-                ru: "Фантазм Пустоты",
+                ru: "Фантазм пустоты",
                 cz: "Prázdné fantazie",
                 br: "Fantasma do Vazio",
             }
