@@ -436,10 +436,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Baguette brûlante`,
                 },
                 desc: {
-                    en: `UNIQUE: Your abilites ignites the enemy and deals additional damage of ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100).toFixed()}% max health per sec for ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности поджигают врага и он получает дополнительный урон в размере ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100).toFixed()}% от своего макс. здоровья в сек. в течение ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} сек.`,
-                    br: `[Único]: Suas habilidades incineram os inimigo causando dano adicional de ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100).toFixed()}% vida máxima por seg, por ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} seg.`,
-                    fr: `[UNIQUE]: Tes compétences K et L brûlent tes ennemies et font des dégâts additionnels pour ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100).toFixed()}% de leurs points de vie maximum pour ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec.`,
+                    en: `UNIQUE: Your abilites ignites the enemy and deals additional damage of ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 1000).toFixed()}% max health per sec for ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности поджигают врага и он получает дополнительный урон в размере ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 1000).toFixed()}% от своего макс. здоровья в сек. в течение ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} сек.`,
+                    br: `[Único]: Suas habilidades incineram os inimigo causando dano adicional de ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 1000).toFixed()}% vida máxima por seg, por ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} seg.`,
+                    fr: `[UNIQUE]: Tes compétences K et L brûlent tes ennemies et font des dégâts additionnels pour ${(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 1000).toFixed()}% de leurs points de vie maximum pour ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec.`,
                 }
             }
         case Shared.ItemList.Vampiric_Rod:
