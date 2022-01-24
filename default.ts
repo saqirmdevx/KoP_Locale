@@ -965,17 +965,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.TWOVSTWO_COOP]: {
         en: "2 v 2 Co-op vs AI",
-        ru: "Совместная игра 2 на 2 против ИИ",
+        ru: "Совместная игра 2 vs 2 против ИИ",
         cz: "2 v 2 proti UI"
     },
     [LOCALE.EASY_BOT]: {
         en: "1 v 1 Easy Bot",
-        ru: "1 на 1 Легкий бот",
+        ru: "1 vs 1 Лёгкий бот",
         cz: "1 v 1 Ľahký Bot"
     },
     [LOCALE.HARD_BOT]: {
         en: "1 v 1 Hard Bot",
-        ru: "1 на 1 Хард Бот",
+        ru: "1 vs 1 Сложный Бот",
         cz: "1 v 1 Ťažký Bot"
     },
 }
