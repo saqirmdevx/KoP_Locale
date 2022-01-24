@@ -293,12 +293,15 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
         /** Flin  */
         case Shared.SpellList.KIRA_AUTOATTACK: {
             const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-            const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
+            const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.HEAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
 
             return {
-                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, dealing ${enh_damage}/sec and decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. If target is friendly hero instead increase attack speed and heal for 50% /sec`,
-                ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> <b>[Усиленная]: (Вьющаяся молния)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя, нанося ${enh_damage} урона в секунду и уменьшая его скорость атаки на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. Если целью стал союзный герой, его скорость атаки повышается, а также он исцеляется на 50% от изначального урона в секунду.`,
-                cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> <b>[Vylepšené]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi, čímž uděluje ${enh_damage}/s a snižuje rychlost útoku o ${( KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} %. Pokud je cílem přátelský hrdina, zvyši rychlost útoku a uzdravi ho o 50% / sec`,
+                en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br />
+                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. If target is friendly hero instead increase attack speed and heal for ${enh_damage} /sec`,
+                ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> 
+                <br /> <b>[Усиленная]: (Вьющаяся молния)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя, нанося ${enh_damage} урона в секунду и уменьшая его скорость атаки на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%. Если целью стал союзный герой, его скорость атаки повышается, а также он исцеляется на 50% от изначального урона в секунду.`,
+                cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
+                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi, snižuje rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. Pokud je cílem přátelský hrdina, zvyšte rychlost útoku a vyléčte se za ${enh_damage} /s`,
             }
         }
 
