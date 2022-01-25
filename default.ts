@@ -541,6 +541,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.PLAYERS]: {
         en: "Players",
         br: "Jogador",
+        ru: "Игроки",
         cz: "Hráči",
     },
     [LOCALE.CHOOSE_HERO]: {
