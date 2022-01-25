@@ -1008,6 +1008,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Free Camera",
         ru: "Свободная камера",
         cz: "Voľná Kamera"
+    },
+    [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
+        en: "Spectators in game: ",
+        cz: "Divákov v hre: "
     }
 }
 export default locale_data;
