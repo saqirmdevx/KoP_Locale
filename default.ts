@@ -985,22 +985,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.SPECTATE]: {
         en: "Spectate",
+        ru: "Наблюдать",
         cz: "Sledovať"
     },
     [LOCALE.WATCH]: {
-        en: "Watch",
-        cz: "Sledovať"
+        en: "Battles",
+        ru: "Сражения",
+        cz: "Bitvy"
     },
     [LOCALE.VIEWERS]: {
         en: "Viewers",
+        ru: "Зрителей",
         cz: "Sleduje"
     },
     [LOCALE.POPUP_NO_GAMES_TO_SPECTATE]: {
-        en: "There are no games to spectate",
+        en: "There are no games to spectate.",
+        ru: "Не найдено игр для просмотра.",
         cz: "Nenašli sa žiadne hry na pozeranie."
     },
     [LOCALE.FREE_CAMERA]: {
         en: "Free Camera",
+        ru: "Свободная камера",
         cz: "Voľná Kamera"
     }
 }
