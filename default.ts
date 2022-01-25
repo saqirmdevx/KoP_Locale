@@ -538,6 +538,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Jogador",
         cz: "Hráč",
     },
+    [LOCALE.PLAYERS]: {
+        en: "Players",
+        br: "Jogador",
+        cz: "Hráči",
+    },
     [LOCALE.CHOOSE_HERO]: {
         en: "CHOOSE YOUR HERO",
         ru: "ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ",
@@ -978,5 +983,25 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "1 vs 1 Сложный Бот",
         cz: "1 v 1 Ťažký Bot"
     },
+    [LOCALE.SPECTATE]: {
+        en: "Spectate",
+        cz: "Sledovať"
+    },
+    [LOCALE.WATCH]: {
+        en: "Watch",
+        cz: "Sledovať"
+    },
+    [LOCALE.VIEWERS]: {
+        en: "Viewers",
+        cz: "Sleduje"
+    },
+    [LOCALE.POPUP_NO_GAMES_TO_SPECTATE]: {
+        en: "There are no games to spectate",
+        cz: "Nenašli sa žiadne hry na pozeranie."
+    },
+    [LOCALE.FREE_CAMERA]: {
+        en: "Free Camera",
+        cz: "Voľná Kamera"
+    }
 }
 export default locale_data;
