@@ -258,6 +258,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: "Drops on death! (Cant be sold!)",
                     ru: `Выпадает при смерти! (Нельзя продать!)`,
                     br: "Dropa seu item quando você morre, o inimigo pode pegar essa espada.\n (Não pode ser vendido!)",
+                    cz: "Upuštěn při smrti, nemůže být prodán!",
                 }
             }
         case Shared.ItemList.Iron_Basher:
@@ -270,6 +271,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют 20% шанс оглушить вражеского героя на 0.8 сек. и нанести дополнительно 60 урона`,
                     br: "[Único]: Seus ataques têm 20% de chance de atordoar o inimigo por 0,8 s e causa 60 de dano adicional.",
+                    cz: "JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na é.á vteřin a způsobí další 60 poškození",
                 }
             }
 
