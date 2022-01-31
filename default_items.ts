@@ -271,7 +271,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют 20% шанс оглушить вражеского героя на 0.8 сек. и нанести дополнительно 60 урона`,
                     br: "[Único]: Seus ataques têm 20% de chance de atordoar o inimigo por 0,8 s e causa 60 de dano adicional.",
-                    cz: "JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na é.á vteřin a způsobí další 60 poškození",
+                    cz: "JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na 0.8 vteřin a způsobí další 60 poškození",
                 }
             }
 
