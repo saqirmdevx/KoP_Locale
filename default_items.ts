@@ -224,11 +224,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Shadow Slayer",
                     ru: "Губитель теней",
+                    cz: "Stínovrah",
                 },
                 desc: {
                     en: `UNIQUE: Your autoattack deals additional magic damage ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy max health`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки наносят дополнительный магический урон по героям, который равен ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% от макс. здоровья цели`,
                     br: `[Único]: Seus ataques causam dano mágico adicional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de vida máxima do inimigo.`,
+                    cz: "JEDINEČNÉ: Tvůj útok způsobí bonusové poškození o velikosti ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)} % protivníkova maximálního zdravý. ",
                 }
             }
 
@@ -237,11 +239,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Sword",
                     ru: "Божественный меч",
+                    cz: "Božský meč",
                 },
                 desc: {
-                    en: `On Equip: Provide unobstructed vision! Provie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
+                    en: `On Equip: Provide unobstructed vision! Provdie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
                     ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
                     br: `[Equipado]: Fornece visão desobstruída, ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
+                    cz: "VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.",
                 }
             }
         case Shared.ItemList.Divine_Katana:
