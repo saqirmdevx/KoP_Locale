@@ -180,9 +180,9 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
         case Shared.SpellList.THOMAS_AUTOATTACK:
             return {
 
-                en: `Bunninja slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
+                en: `Thomas slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
                 ru: `Томас взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
-                cz: `Bunninja seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
+                cz: `Thomas seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
                 br: `Thomas faz um corte com espada e causa ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
 
             }
@@ -192,9 +192,9 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
 
             return {
 
-                en: `Bunninja throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
+                en: `Thomas throws three carrot-like shurikens which deals ${base_damage} damage to all enemies on the way. They return to him after a short time dealing ${base_damage} damage to all enemies in the way.`,
                 ru: `Томас бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} магического урона всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} магического урона всем врагам на своём пути.`,
-                cz: `Bunninja hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
+                cz: `Thomas hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
                 br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
 
             }
@@ -204,12 +204,12 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             const base_damage = getDamage(damage, type, ThomasAbilityData.SHADOW_CARROT_BASE_DAMAGE);
 
             return {
-                en: `<b>First cast: </b>Bunninja throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
-                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Bunninja stuns that enemy for ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
+                en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
+                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy, Thomas stuns that enemy for ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} and deals ${base_damage} damage to them.`,
                 ru: `<b>Первое применение: </b>Томас бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
                     `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Томас оглушает этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} и наносит ему ${base_damage} физического урона.`,
-                cz: `První použití: Bunninja hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
-                    + `Druhé použití: Bunninja se teleportuje k mrkvi. Pokud je připojena k nepříteli, Bunninja omráčí tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
+                cz: `První použití: Thomas hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
+                    + `Druhé použití: Thomas se teleportuje k mrkvi. Pokud je připojena k nepříteli, Thomas omráčí tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} a udělí ${base_damage} poškození.`,
                 br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
                     `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, ele Teleporta-se para o inimigo o atordoando por ${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)} e causando ${base_damage} de dano.`,
             }
