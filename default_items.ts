@@ -319,7 +319,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 }
             }
 
-        case Shared.ItemList.Demon_Sabre:
+        case Shared.ItemList.Demon_Sword:
             return {
                 name: {
                     en: "Demon Sabre",
@@ -327,10 +327,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Sabre du démon`,
                 },
                 desc: {
-                    en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} for 4 seconds`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} на 4 сек.`,
-                    br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
-                    fr: `[UNIQUE]: Tes attaques J diminuent l'armure de l'ennemie de ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} pour 4 secondes`,
+                    en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек.`,
+                    br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
+                    fr: `[UNIQUE]: Tes attaques J diminuent l'armure de l'ennemie de ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} pour 4 secondes`,
                 }
             }
         case Shared.ItemList.Corrupted_Light_Slayer:
