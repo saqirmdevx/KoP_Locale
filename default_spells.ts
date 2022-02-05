@@ -297,11 +297,11 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
 
             return {
                 en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br />
-                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero, decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. If target is friendly hero instead increase attack speed and heal for ${enh_damage} /sec`,
+                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira casts a continuous flow of electricity towards the nearest hero (Prioritize friendly hero), decrease attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. If target is friendly hero instead increase attack speed and heal for ${enh_damage} /sec`,
                 ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> 
                 <br /> <b>[Усиленная]: (Вьющаяся молния)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя, уменьшая его скорость атаки на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% и скорость передвижения на ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. Если целью стал союзный герой, его скорость атаки повышается, а также он исцеляется на ${enh_damage} в секунду.`,
                 cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
-                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi, snižuje rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. Pokud je cílem přátelský hrdina, zvyšte rychlost útoku a vyléčte se za ${enh_damage} /s`,
+                <br /> <b>[Enhanced]: (Coiling Lightning)</b> Kira vrhá nepřetržitý tok elektřiny směrem k nejbližšímu hrdinovi (Upřednostňuje přátelského hrdinu), snižuje rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED}. Pokud je cílem přátelský hrdina, zvyšte rychlost útoku a vyléčte se za ${enh_damage} /s`,
             }
         }
 
