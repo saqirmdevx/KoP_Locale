@@ -44,6 +44,18 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Thomas",
     },
 
+    [LOCALE.FLIN_NAME]: {
+        en: "Flin",
+        br: "Flin",
+        cz: "Flin",
+        ru: "Флин"
+    },
+
+    [LOCALE.KIRA_NAME]: {
+        en: "Kira",
+        ru: "Кира",
+    },
+
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
@@ -75,6 +87,19 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Brzy bude přidáno!",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+
+    [LOCALE.FLIN_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+    [LOCALE.KIRA_DESCRIPTION]: {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
@@ -286,7 +311,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Press space to continue!]",
         ru: "Вы можете прятаться от противников в кустах! \n" +
             "Они не увидят Вас там, поэтому Вы с лёгкостью можете устраивать засады!\n" +
-            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам даже если вы находитесь там, поэтому будьте осторожны!\n" +
+            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам, даже если вы находитесь там, поэтому будьте осторожны!\n" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Você pode se esconder de seus inimigos dentro de arbustos! \n" +
             "Você não pode ser visto por inimigos dentro de arbustos, então você pode fazer armadilhas!\n" +
@@ -513,6 +538,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Jogador",
         cz: "Hráč",
     },
+    [LOCALE.PLAYERS]: {
+        en: "Players",
+        br: "Jogador",
+        ru: "Игроки",
+        cz: "Hráči",
+    },
     [LOCALE.CHOOSE_HERO]: {
         en: "CHOOSE YOUR HERO",
         ru: "ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ",
@@ -567,23 +598,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "SUPPORTE",
         cz: "SUPPORT",
     },
-    [LOCALE.TAG_INITIATOR]: {
-        en: "INITIATOR",
-        ru: "ИНИЦИАТОР",
-        br: "INICIADOR",
-        cz: "INICIÁTOR",
-    },
-    [LOCALE.TAG_CARRY]: {
-        en: "CARRY",
-        ru: "КЕРРИ",
-        br: "DANO",
-        cz: "CARRY"
-    },
-    [LOCALE.TAG_DISABLER]: {
-        en: "DISABLER",
-        ru: "КОНТРОЛЬ",
-        br: "DESABILITADOR",
-        cz: "DISABLER",
+    [LOCALE.TAG_RANGE]: {
+        en: "RANGED",
+        ru: "ДАЛЬНИЙ БОЙ",
+        br: "A DISTANCIA",
+        fr: "À DISTANCE",
+        cz: "NA DÁLKU",
     },
 
     /** POST SCENE */
@@ -767,7 +787,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.AN_GOT_A]: {
         en: "got a ",
-        ru: "получил ",
+        ru: "получает ",
         cz: "dostal ",
     },
     [LOCALE.AN_IS_ON]: {
@@ -844,12 +864,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Руна исцеления",
         cz: "Runa Léčení",
     },
-
+    [LOCALE.BOUNTY_RUNE]: {
+        en: "Bounty Rune",
+        ru: "Руну золота",
+        cz: "Runa zlata",
+    },
+    
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
         ru: "Сила умений",
-        cz: "Runa Dovednosti",
+        cz: "Síla kouzel"
     },
     [LOCALE.DAMAGE]: {
         en: "Damage",
@@ -864,12 +889,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
         ru: "Шанс крита",
-        cz: "Šance Kritického Úderu",
+        cz: "Kritický zásah",
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
         ru: "Сокращение перезарядки",
-        cz: "Snížení Cooldownu",
+        cz: "Redukce cooldownu",
     },
     [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
@@ -915,13 +940,77 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_DISCONNECTED]: {
         en: "You've been disconected from the server, please refresh the page!",
-        ru: "Потеряно соединение с сервером. Пожалуйста, обновите to перезагрузите!",
+        ru: "Потеряно соединение с сервером. Пожалуйста, обновите страницу!",
         cz: "Nebylo možné navázat spojení s hrou. Refreshnite webovu stránku.",
     },
     [LOCALE.POPUP_REFRESH]: {
         en: "refresh",
-        ru: "обновит",
+        ru: "обновить",
         cz: "refresh",
+    },
+    [LOCALE.YES]: {
+        en: "yes",
+        ru: "да",
+        cz: "áno",
+    },
+    [LOCALE.NO]: {
+        en: "no",
+        ru: "нет",
+        cz: "nie",
+    },
+    [LOCALE.POPUP_LOGOUT_TITLE]: {
+        en: "Are you sure?",
+        ru: "Уверены ли вы?",
+        cz: "Jste si jisti?",
+    },
+    [LOCALE.MSAA]: {
+        en: "Anti-aliasing",
+        cz: "Vyhlazovaní",
+        ru: "Сглаживание",
+    },
+    [LOCALE.TWOVSTWO_COOP]: {
+        en: "2 v 2 Co-op vs AI",
+        ru: "Совместная игра 2 vs 2 против ИИ",
+        cz: "2 v 2 proti UI"
+    },
+    [LOCALE.EASY_BOT]: {
+        en: "1 v 1 Easy Bot",
+        ru: "1 vs 1 Лёгкий бот",
+        cz: "1 v 1 Ľahký Bot"
+    },
+    [LOCALE.HARD_BOT]: {
+        en: "1 v 1 Hard Bot",
+        ru: "1 vs 1 Сложный Бот",
+        cz: "1 v 1 Ťažký Bot"
+    },
+    [LOCALE.SPECTATE]: {
+        en: "Spectate",
+        ru: "Наблюдать",
+        cz: "Sledovať"
+    },
+    [LOCALE.WATCH]: {
+        en: "Battles",
+        ru: "Сражения",
+        cz: "Bitvy"
+    },
+    [LOCALE.VIEWERS]: {
+        en: "Viewers",
+        ru: "Зрителей",
+        cz: "Sleduje"
+    },
+    [LOCALE.POPUP_NO_GAMES_TO_SPECTATE]: {
+        en: "There are no games to spectate.",
+        ru: "Не найдено игр для просмотра.",
+        cz: "Nenašli sa žiadne hry na pozeranie."
+    },
+    [LOCALE.FREE_CAMERA]: {
+        en: "Free Camera",
+        ru: "Свободная камера",
+        cz: "Voľná Kamera"
+    },
+    [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
+        en: "Spectators in game: ",
+        cz: "Divákov v hre: "
     }
 }
 export default locale_data;
