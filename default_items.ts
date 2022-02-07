@@ -271,18 +271,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     cz: "Božský meč",
                 },
                 desc: {
-                    en: `On Equip: Provide unobstructed vision! Provdie additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
-                    ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
-                    br: `[Equipado]: Fornece visão desobstruída, ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
-                    cz: "VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.",
-                    fr: "Épée divine",
-                },
-                desc: {
                     en: `On Equip: Provide unobstructed vision! Provide additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
                     ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
                     br: `[Equipado]: Fornece visão desobstruída, ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
                     fr: `[À L'ACHAT]: Fourni une vision traversante ! Fourni ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de vision supplémentaire !`,
-                }
+                    cz: "VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.",
+                },
             }
         case Shared.ItemList.Divine_Katana:
             return {
