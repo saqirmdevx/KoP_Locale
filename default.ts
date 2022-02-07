@@ -78,6 +78,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
     },
     [LOCALE.BELLE_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -523,7 +524,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Losses",
         ru: "Поражений",
         br: "Derrotas",
-
         cz: "Prohry",
     },
     [LOCALE.RANK]: {
@@ -713,11 +713,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Vyberte si svou prezdivku. Pozor, změna jména není zadarmo!",
     },
     [LOCALE.POPUP_SELECT_MESS_GUESTMODE]: {
-        en: "You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style='color: red'>account</b> to access all features.",
-        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт</b> для получения доступа ко всем функциям.",
-        br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta</b> para acessar todos os recursos",
-
-        cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet</b> a získejte přístup ke všem funkcím.",
+        en: "You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style='color: red'>G-Mail account</b> to access all features. and no ADS!",
+        ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!",
+        br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta do G-Mail</b> para acessar todos os recursos, e sem anúncios!",
+        cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet G-Mail</b> a získejte přístup ke všem funkcím. A žádné reklamy !",
     },
     [LOCALE.POPUP_SELECT_NAME_GUESTMODE]: {
         en: "GUEST MODE!",
@@ -765,7 +764,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "For the first time you must pass throu training otherwise you can not play against players!",
         ru: "Зайдя впервые, вам нужно пройти обучение, иначе вы не сможете играть против других игроков!",
         br: "Como é sua primeira vez, você deve passar pelo treinamento, caso contrário você não poderá jogar contra outros jogadores!",
-
         cz: "Nejprve musíš projít tréninkem než budeš moct hrát proti hráčům!",
     },
     [LOCALE.POPUP_SELECT_FIRST_TIME_TRAINING_START]: {
@@ -838,7 +836,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.AN_OWNAGE]: {
         en: "OWNAGE!",
         ru: "ПРЕВОСХОДЕН!",
-        cz: "OWNI!",
+        cz: "VYNIKAJÍCÍ!",
     },
     [LOCALE.AN_GODLIKE]: {
         en: "GODLIKE!",
@@ -848,23 +846,23 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     /** Runes */
     [LOCALE.HASTE_RUNE]: {
         en: "Haste Rune",
-        ru: "Руну спешки",
-        cz: "Runa rýchlosti"
+        ru: "Руна спешки",
+        cz: "Runa Spěchu",
     },
     [LOCALE.DAMAGE_RUNE]: {
         en: "Damage Rune",
-        ru: "Руну урона",
-        cz: "Runa poškození"
+        ru: "Руна урона",
+        cz: "Runa Poškození",
     },
     [LOCALE.ARCANE_RUNE]: {
         en: "Arcane Rune",
-        ru: "Руну магии",
-        cz: "Runa kouzel",
+        ru: "Руна магии",
+        cz: "Runa Magie",
     },
     [LOCALE.HEALING_RUNE]: {
         en: "Healing Rune",
-        ru: "Руну исцеления",
-        cz: "Runa zdraví",
+        ru: "Руна исцеления",
+        cz: "Runa Léčení",
     },
     [LOCALE.BOUNTY_RUNE]: {
         en: "Bounty Rune",
@@ -881,12 +879,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.DAMAGE]: {
         en: "Damage",
         ru: "Урон",
-        cz: "Zraněni"
+        cz: "Poškození",
     },
     [LOCALE.ATTACK_SPEED]: {
         en: "Attack Speed",
         ru: "Скорость атаки",
-        cz: "Rýchlost útoku"
+        cz: "Rychlost útoku",
     },
     [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
@@ -901,36 +899,37 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
         ru: "Кража здоровья",
+        cz: "Krádež Zdraví",
     },
     [LOCALE.MAGICAL_DEFENSE]: {
         en: "Magical Defense",
         ru: "Защита от магии",
-        cz: "Magické brnění",
+        cz: "Protimagická obrana",
     },
     [LOCALE.ARMOR]: {
         en: "Armor",
         ru: "Броня",
-        cz: "Brnění",
+        cz: "Zbroj",
     },
     [LOCALE.HEALTH]: {
         en: "Health",
         ru: "Здоровье",
-        cz: "Zdraví",
+        cz: "Zdravý",
     },
     [LOCALE.HEALTH_REGEN]: {
         en: "Health Regen",
         ru: "Регенерация здоровья",
-        cz: "Regenerace zdraví",
+        cz: "Regenerace Zdravý",
     },
     [LOCALE.MOVE_SPEED]: {
         en: "Movement Speed",
         ru: "Скорость передвижения",
-        cz: "Rychlost pohybu",
+        cz: "Rychlost Pohybu",
     },
     [LOCALE.CONSUMABLE]: {
         en: "Consumable",
         ru: "Расходуемое",
-        cz: "Spotrební",
+        cz: "Spotřebič",
     },
 
     [LOCALE.PICKUP]: {
