@@ -1022,6 +1022,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
         en: "Spectators in game: ",
+        ru: "Наблюдают за игрой: ",
         cz: "Divákov v hre: "
     }
 }
