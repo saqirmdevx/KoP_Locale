@@ -1,9 +1,9 @@
 import { toSec } from "@/misc/constants";
-import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData } from "@/misc/shared";
-import { SpellType, getDamage } from "@/lang/ability_desc";
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData } from "@/misc/shared";
+import { SpellType, getDamage, IAbilityTooltipsData } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
 
-const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower: number, level: number, cdr: number, type: SpellType): { [key in string]: string } => {
+const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, health, cooldownReduction, level}: IAbilityTooltipsData, type: SpellType): { [key in string]: string } => {
     switch (id) {
         /** Kumihu  */
         case Shared.SpellList.KUMIHU_AUTOATTACK: {
@@ -266,7 +266,7 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
                 cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky.`,
             }
 
-        /** Flin  */
+        /** Kira  */
         case Shared.SpellList.KIRA_AUTOATTACK: {
             const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
             const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.HEAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
@@ -307,6 +307,32 @@ const _getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower
             }
         }
 
+        /** Hazel  */
+        case Shared.SpellList.HAZEL_AUTOATTACK: {
+            const baseDamage = getDamage(HazelAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+    
+            return {
+                en: `Hazel strikes her foes down with her hammer, dealing ${baseDamage} normal damage.`,
+                cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`
+            }
+        }
+
+        case Shared.SpellList.HAZEL_SHOCKWAVE: {
+            const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * abilityPower, SpellType.NORMAL);
+        
+            return {
+                en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} normal damage (15% of Hazel's max health), slows down and push all units in distance.`,
+            }
+        }
+
+        case Shared.SpellList.HAZEL_HEROIC_SLASH: {
+            const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, SpellType.NORMAL, HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
+
+            return {
+                en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} and knocking up enemies for  ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`
+            }
+        }        
+
         /** Default */
         case Shared.SpellList.RECALL:
             return {
@@ -325,12 +351,19 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
     switch (id) {
         /** Kumihu  */
         case Shared.SpellList.KUMIHU_AUTOATTACK:
+        case Shared.SpellList.VEIL_AUTOATTACK:
+        case Shared.SpellList.FLIN_AUTOATTACK:
+        case Shared.SpellList.HAZEL_AUTOATTACK:
+        case Shared.SpellList.KIRA_AUTOATTACK:
+        case Shared.SpellList.SPARROW_AUTOATTACK:
+        case Shared.SpellList.ICEAT_AUTOATTACK:
+        case Shared.SpellList.BELLE_AUTOATTACK:
+        case Shared.SpellList.THOMAS_AUTOATTACK:
             return {
                 en: "Attack",
                 ru: "Атака",
                 cz: "Útok",
                 br: "Ataque básico",
-
             }
 
         case Shared.SpellList.KUMIHU_MAGICAL_ORB:
@@ -350,14 +383,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             }
 
         /** Sparrow */
-        case Shared.SpellList.SPARROW_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
-
         case Shared.SpellList.SPARROW_DASH:
             return {
                 en: "Dash",
@@ -375,13 +400,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             }
 
         /** I'Ceat */
-        case Shared.SpellList.ICEAT_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
 
         case Shared.SpellList.ICEAT_ICICLE_BOLT:
             return {
@@ -400,13 +418,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             }
 
         /** Belle */
-        case Shared.SpellList.BELLE_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
 
         case Shared.SpellList.BELLE_PRICKLY_VINE:
             return {
@@ -425,13 +436,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             }
 
         /** Thomas */
-        case Shared.SpellList.THOMAS_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
 
         case Shared.SpellList.THOMAS_SHURIKEN_TOSS:
             return {
@@ -450,14 +454,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
             }
 
         /** Veil */
-        case Shared.SpellList.VEIL_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
-
         case Shared.SpellList.VEIL_ASTRAL_BLADES:
             return {
                 en: "Astral Blades",
@@ -472,14 +468,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 ru: "Астральный шаг",
                 cz: "Astrální Krok",
                 br: "Regente do mal",
-            }
-
-        case Shared.SpellList.FLIN_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
             }
 
         case Shared.SpellList.FLIN_PRECISE_SHOT:
@@ -498,14 +486,6 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 br: "pontaria",
             }
 
-        case Shared.SpellList.KIRA_AUTOATTACK:
-            return {
-                en: "Attack",
-                ru: "Атака",
-                cz: "Útok",
-                br: "Ataque básico",
-            }
-
         case Shared.SpellList.KIRA_RAIN_OF_SPARKS:
             return {
                 en: "Rain of Sparks",
@@ -522,6 +502,18 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 br: "Fantasma do Vazio",
             }
 
+        case Shared.SpellList.HAZEL_HEROIC_SLASH:
+            return {
+                en: "Justice's Wrath",
+                cz: "Hněv spravedlnosti",
+            }
+
+        case Shared.SpellList.HAZEL_SHOCKWAVE:
+            return {
+                en: "Triumphant Upheaval",
+                cz: "Triumfálne prevraty",
+            }
+
         /** Default */
         case Shared.SpellList.RECALL:
             return {
@@ -534,8 +526,8 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
     }
 }
 
-export const getSpellDescription = (id: Shared.SpellList, damage: number, abilityPower: number, level: number, cdr: number, type: SpellType): string => {
-    const result = _getSpellDescription(id, damage, abilityPower, level, cdr, type);
+export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsData, type: SpellType): string => {
+    const result = _getSpellDescription(id, unitStats, type);
 
     if (result[LANG])
         return result[LANG];

@@ -258,7 +258,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Your autoattack deals additional magic damage ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy max health`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки наносят дополнительный магический урон по героям, который равен ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% от макс. здоровья цели`,
                     br: `[Único]: Seus ataques causam dano mágico adicional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de vida máxima do inimigo.`,
-                    cz: "JEDINEČNÉ: Tvůj útok způsobí bonusové poškození o velikosti ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)} % protivníkova maximálního zdravý. ",
+                    cz: `JEDINEČNÉ: Tvůj útok způsobí bonusové poškození o velikosti ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)} % protivníkova maximálního zdravý. `,
                     fr: `[UNIQUE]: Ton attaque J fait des dommages magiques additionnels de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% des points de vie de l'enemie`,
                 }
             }
@@ -275,7 +275,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
                     br: `[Equipado]: Fornece visão desobstruída, ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
                     fr: `[À L'ACHAT]: Fourni une vision traversante ! Fourni ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de vision supplémentaire !`,
-                    cz: "VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.",
+                    cz: `VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.`,
                 },
             }
         case Shared.ItemList.Divine_Katana:
@@ -304,7 +304,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют 20% шанс оглушить вражеского героя на 0.8 сек. и нанести дополнительно 60 урона`,
                     br: "[Único]: Seus ataques têm 20% de chance de atordoar o inimigo por 0,8 s e causa 60 de dano adicional.",
-                    cz: "JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na 0.8 vteřin a způsobí další 60 poškození",
+                    cz: `JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na 0.8 vteřin a způsobí další 60 poškození`,
                     fr: `[UNIQUE]: Tes attaques J ont 20% de chance d'assommer l'ennemie pour 0,8 sec et font 60 points de dégâts supplémentaires`,
                 }
             }
@@ -320,7 +320,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Attacks lower enemy movement by ${ItemAbilityData.COLD_SWORD_SLOW} for 1 seconds`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают скорость передвижения цели на ${ItemAbilityData.COLD_SWORD_SLOW} на 1 сек.`,
                     br: `[Único]: Seus ataques reduzem o movimento do inimigo em ${ItemAbilityData.COLD_SWORD_SLOW} por 1 segundo.`,
-                    cz: "JEDINEČNÉ: Útoky zpomalují nepřátele o ${ItemAbilityData.COLD_SWORD_SLOW} za vteřinu",
+                    cz: `JEDINEČNÉ: Útoky zpomalují nepřátele o ${ItemAbilityData.COLD_SWORD_SLOW} za vteřinu`,
                     fr: `[UNIQUE]: Tes attaques J réduisent la vitesse de déplacement de ton ennemie de ${ItemAbilityData.COLD_SWORD_SLOW} points de vitesse pendant 1 seconde`,
                 }
             }
@@ -336,7 +336,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек.`,
                     br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
-                    cz: "JEDINEČNÉ: Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} na 4 vteřiny",
+                    cz: `JEDINEČNÉ: Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} na 4 vteřiny`,
                     fr: `[UNIQUE]: Tes attaques J diminuent l'armure de l'ennemie de ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} pour 4 secondes`,
                 }
             }
@@ -351,7 +351,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `Active: Increases your lifesteal by ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% for ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} sec cd`,
                     ru: `УНИКАЛЬНО(Активно): Увеличивает ваш вампиризм на ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% на ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} сек.)`,
                     br: `[Ativo]: Aumenta sua regeneração de vida em ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% por ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} seg.]`,
-                    cz: "AKTIVNÍ: Zvýší tvojí krádež zdravý o ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% na ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} vteřin",
+                    cz: `AKTIVNÍ: Zvýší tvojí krádež zdravý o ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% na ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} vteřin`,
                     fr: `[ACTIVATION]: Augmente ton vol de vie de ${Math.round(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100)}% pour ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DURATION / 1000).toFixed(1)} sec. \n [Délai de récupération : ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_COOLOWN / 1000).toFixed(1)} sec]`,
                 }
             }
@@ -367,7 +367,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Every time you hit enemy hero, increases your attack speed by ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. At 5th stack it heals you for 15% of max health and reset stacks`,
                     ru: `УНИКАЛЬНО(Пассивно): Попадая атаками по врагу, вы увеличиваете свою скорость атаки на ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% на ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} сек. Складывается до 5 раз. На 5 зарядах вы исцеляетесь на 15% от макс. здоровья и обнуляете количество зарядов`,
                     br: `[Único]: Cada vez que você atinge o personagem inimigo, aumenta sua velocidade de ataque em ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% por ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} seg.\n Na 5ª stack ele cura você em 15% de vida máxima e reseta os stacks.`,
-                    cz: "JEDINEČNÉ: Pokaždé když zasáhneš protivnika tak si zvýšís rychlost útoků o ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% na ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} vteřin. Při pátém útoku vás vyléčí o 15% maximálního zdravý a resetuje efekt",
+                    cz: `JEDINEČNÉ: Pokaždé když zasáhneš protivnika tak si zvýšís rychlost útoků o ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% na ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} vteřin. Při pátém útoku vás vyléčí o 15% maximálního zdravý a resetuje efekt`,
                     fr: `[UNIQUE]: Chaque attaque J réussie augmente ta vitesse d'attaque de ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% pour ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. \n Lorsque tu atteins la 5e charge, tu es soigné pour 15% du maximum de tes points de vie et les charges sont remises à zéro.`,
                 }
             }
@@ -459,10 +459,11 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Baguette vampirique`,
                 },
                 desc: {
-                    en: `UNIQUE: When your ability hits the enemy hero, it will steals his ${ItemAbilityData.VAMPIRIC_ROD_HP_STEAL} health - ${(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
-                    ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности похищают у цели ${ItemAbilityData.VAMPIRIC_ROD_HP_STEAL} здоровья. (Перезарядка: ${(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                    br: `[Único]: Quando sua habilidade atinge o personagem inimigo, ela rouba ${ItemAbilityData.VAMPIRIC_ROD_HP_STEAL} de vida.\n [Tempo de recarga: ${(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000).toFixed(1)} seg.]`,
-                    fr: `[UNIQUE]: Quand tes compétences K et L touchent l'ennemie, cela vole ${ItemAbilityData.VAMPIRIC_ROD_HP_STEAL} points de vie. \n [Délai de récupération: ${(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000).toFixed(1)} sec.]`,
+                    en: `UNIQUE: When your ability hits the enemy hero, it will heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% of damage dealt - ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} sec cooldown`,
+                    // OLD //
+                    //ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности похищают у цели ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% здоровья. (Перезарядка: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} сек.)`,
+                    // br: `[Único]: Quando sua habilidade atinge o personagem inimigo, ela rouba ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de vida.\n [Tempo de recarga: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} seg.]`,
+                    // fr: `[UNIQUE]: Quand tes compétences K et L touchent l'ennemie, cela vole ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% points de vie. \n [Délai de récupération: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} sec.]`,
                 }
             }
         case Shared.ItemList.Kirin_Staff:
