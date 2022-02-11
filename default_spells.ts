@@ -319,7 +319,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         }
 
         case Shared.SpellList.HAZEL_SHOCKWAVE: {
-            const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * abilityPower, SpellType.NORMAL);
+            const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, SpellType.NORMAL);
         
             return {
                 en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} normal damage (15% of Hazel's max health), slows down and push all units in distance.`,
@@ -331,7 +331,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, SpellType.NORMAL, HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
 
             return {
-                en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} and knocking up enemies for  ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`
+                en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} and knocking up enemies for  ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
                 ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`
             }
         }        
@@ -508,7 +508,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.HAZEL_HEROIC_SLASH:
             return {
                 en: "Justice's Wrath",
-                en: "Гнев правосудия",
+                ru: "Гнев правосудия",
                 cz: "Hněv spravedlnosti",
             }
 
