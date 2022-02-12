@@ -362,9 +362,9 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         
             return {
                 en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} normal damage to all surrounding enemies.
-                <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} normal damage`,
+                <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} normal damage and stun carrier for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
-                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození`
+                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`
             }
         }
 
