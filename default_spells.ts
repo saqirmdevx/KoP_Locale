@@ -1,5 +1,5 @@
 import { toSec } from "@/misc/constants";
-import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData } from "@/misc/shared";
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData } from "@/misc/shared";
 import { SpellType, getDamage, IAbilityTooltipsData } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
 
@@ -334,7 +334,39 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} and knocking up enemies for  ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
                 ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`
             }
-        }        
+        }
+
+        /** Arel  */
+        case Shared.SpellList.AREL_AUTOATTACK: {
+            const baseDamage = getDamage(ArelAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+            const enhDamage = getDamage(ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD * damage);
+    
+            return {
+                en: `Arel fires a bullet from his gun dealing ${baseDamage} normal damage. <br /> 
+                <br />[PASSIVE]: Whenever Arel uses an ability, arel will charge another bullet in his gun firing additional shot and dealing additional ${enhDamage} normal damage`,
+                cz: `Arel vystřelí kulku ze své zbraně a způsobí ${baseDamage} normální poškození <br />
+                <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`
+            }
+        }
+
+        case Shared.SpellList.AREL_TUMBLE: {
+            return {
+                en: `Arel rolls forward.`,
+                cz: `Arel se převalí dopředu`
+            }
+        }
+
+        case Shared.SpellList.AREL_TICKING_BOMB: {
+            const baseDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage, SpellType.NORMAL, ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)));
+            const enhDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * 1.5, SpellType.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * 1.5);
+        
+            return {
+                en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} normal damage to all surrounding enemies.
+                <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} normal damage`,
+                cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
+                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození`
+            }
+        }
 
         /** Default */
         case Shared.SpellList.RECALL:
@@ -362,6 +394,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.ICEAT_AUTOATTACK:
         case Shared.SpellList.BELLE_AUTOATTACK:
         case Shared.SpellList.THOMAS_AUTOATTACK:
+        case Shared.SpellList.AREL_AUTOATTACK:
             return {
                 en: "Attack",
                 ru: "Атака",
@@ -517,6 +550,18 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 en: "Triumphant Upheaval",
                 ru: "Триумфальный переворот",
                 cz: "Triumfálne prevraty",
+            }
+
+        case Shared.SpellList.AREL_TUMBLE:
+            return {
+                en: "Tumble",
+                cz: "Kotrmelec",
+            }
+
+        case Shared.SpellList.AREL_TICKING_BOMB:
+            return {
+                en: "Ticking Bomb",
+                cz: "Tikající bomba",
             }
 
         /** Default */
