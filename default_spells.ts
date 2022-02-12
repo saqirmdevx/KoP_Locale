@@ -344,6 +344,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Arel fires a bullet from his gun dealing ${baseDamage} normal damage. <br /> 
                 <br />[PASSIVE]: Whenever Arel uses an ability, arel will charge another bullet in his gun firing additional shot and dealing additional ${enhDamage} normal damage`,
+                ru: `Арел выпускает пулю из своего оружия, нанося ${baseDamage} физического урона. <br /> 
+                <br />[ПАССИВНО]: Всякий раз, когда Арел использует способность, он заряжает еще одну пулю, делая дополнительный выстрел и нанося ${enhDamage} физического урона.`,
                 cz: `Arel vystřelí kulku ze své zbraně a způsobí ${baseDamage} normální poškození <br />
                 <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`
             }
@@ -352,6 +354,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         case Shared.SpellList.AREL_TUMBLE: {
             return {
                 en: `Arel rolls forward.`,
+                ru: `Арел катится вперёд.`,
                 cz: `Arel se převalí dopředu`
             }
         }
@@ -363,6 +366,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} normal damage to all surrounding enemies.
                 <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} normal damage and stun carrier for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
+                ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, нанося ${baseDamage} физического урона всем ближайшим врагам.
+                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`
             }
@@ -555,12 +560,14 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.AREL_TUMBLE:
             return {
                 en: "Tumble",
+                ru: "Кувырок",
                 cz: "Kotrmelec",
             }
 
         case Shared.SpellList.AREL_TICKING_BOMB:
             return {
                 en: "Ticking Bomb",
+                ru: "Тикающая бомба",
                 cz: "Tikající bomba",
             }
 
