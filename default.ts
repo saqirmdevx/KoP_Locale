@@ -1031,34 +1031,42 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.PRIVATE_LOBBY]: {
         en: "Private lobby",
+        ru: "Приватное лобби",
         cz: "Privatná lobby"
     },
     [LOCALE.FIND_LOBBY]: {
         en: "Find a lobby",
+        ru: "Найти лобби",
         cz: "Nájsť lobby"
     },
     [LOCALE.CREATE_LOBBY]: {
         en: "Create a lobby",
+        ru: "Создать лобби",
         cz: "Vytvořte lobby"
     },
     [LOCALE.TEAM_NAME]: {
         en: "Team name: ",
+        ru: "Название команды: ",
         cz: "Názov tímu: "
     },
     [LOCALE.JOIN]: {
         en: "Join",
+        ru: "Присоединиться",
         cz: "Pridať sa"
     },
     [LOCALE.LEAVE]: {
         en: "Leave",
+        ru: "Выйти",
         cz: "Opustiť"
     },
     [LOCALE.START]: {
         en: "Start",
+        ru: "Начать игру",
         cz: "Začít"
     },
     [LOCALE.LOBBY_ID]: {
         en: "Lobby Id: (Click to copy) ",
+        ru: "Код лобби: (Нажмите, чтобы скопировать) ",
     }
 }
 export default locale_data;
