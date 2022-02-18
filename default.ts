@@ -1028,6 +1028,37 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Spectators in game: ",
         ru: "Наблюдают за игрой: ",
         cz: "Divákov v hre: "
+    },
+    [LOCALE.PRIVATE_LOBBY]: {
+        en: "Private lobby",
+        cz: "Privatná lobby"
+    },
+    [LOCALE.FIND_LOBBY]: {
+        en: "Find a lobby",
+        cz: "Nájsť lobby"
+    },
+    [LOCALE.CREATE_LOBBY]: {
+        en: "Create a lobby",
+        cz: "Vytvořte lobby"
+    },
+    [LOCALE.TEAM_NAME]: {
+        en: "Team name: ",
+        cz: "Názov tímu: "
+    },
+    [LOCALE.JOIN]: {
+        en: "Join",
+        cz: "Pridať sa"
+    },
+    [LOCALE.LEAVE]: {
+        en: "Leave",
+        cz: "Opustiť"
+    },
+    [LOCALE.START]: {
+        en: "Start",
+        cz: "Začít"
+    },
+    [LOCALE.LOBBY_ID]: {
+        en: "Lobby Id: (Click to copy) ",
     }
 }
 export default locale_data;
