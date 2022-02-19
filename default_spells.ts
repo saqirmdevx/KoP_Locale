@@ -323,7 +323,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         
             return {
                 en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} magical damage (10% of Hazel's max health), slows down and push all units in distance.`,
-                ru: `Хейзел начинает накапливать энергию в течение ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} урона (+10% от максимального здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
+                ru: `Хейзел начинает накапливать энергию в течение ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} магического урона (+10% от максимального здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
             }
         }
 
