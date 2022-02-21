@@ -5,15 +5,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.KUMIHU_NAME]: {
         en: "Kumihu",
         ru: "Кумиху",
-        br: "Kumihu",
-        cz: "Kumihu",
     },
 
     [LOCALE.BELLE_NAME]: {
         en: "Belle",
         ru: "Белла",
-        br: "Belle",
-        cz: "Belle",
     },
 
     [LOCALE.ICEAT_NAME]: {
@@ -26,15 +22,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.VEIL_NAME]: {
         en: "Veil",
         ru: "Вэйл",
-        br: "Veil",
-        cz: "Veil",
     },
 
     [LOCALE.SPARROW_NAME]: {
         en: "Sparrow",
         ru: "Спарроу",
-        br: "Sparrow",
-        cz: "Sparrow",
     },
 
     [LOCALE.THOMAS_NAME]: {
@@ -44,6 +36,23 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Tomáš",
     },
 
+    [LOCALE.FLIN_NAME]: {
+        en: "Flin",
+        ru: "Флин"
+    },
+
+    [LOCALE.KIRA_NAME]: {
+        en: "Kira",
+        ru: "Кира",
+    },
+    [LOCALE.HAZEL_NAME]: {
+        en: "Hazel",
+        ru: "Хейзел"
+    },
+    [LOCALE.AREL_NAME]: {
+        en: "Arel",
+        ru: "Арел",
+    },
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
@@ -63,10 +72,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Tomáš, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Thomas chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
     },
     [LOCALE.SPARROW_DESCRIPTION]: {
-        en: "Will be added soon!",
-        ru: "Скоро будет добавлено!",
-        br: "Será adicionado em breve!",
-        cz: "Brzy bude přidáno!",
+        en: `A courageous and fierce woman previously a Hermit, Sparrow committed most of her life following the demon Artuklas. She and her family lived in a village deep within the dense Sasugroen Rainforest. Her strong sense of adventure distinguished her from the timid and discreet natured children of her generation. Together with her family, they pursued the path that Artuklas set for the Hermits.
+        <br />Artuklas, being akin to discovery and knowledge, was intrigued by the curious Sparrow and her bravery to venture out, seeking the unknown and discovering information. He slowly forged his path to cater to Sparrow's needs, dismissing the other Hermits who wanted to follow and worship him. Sparrow noticed the changes, but Artuklas assured her that destiny chose this path for her to take. During the following years of training and preparing, the bond between the hermit and demon grew closer, and Artuklas divulged information about his kin to Sparrow.
+        <br />Unfortunately, even with the training and rituals all complimenting Sparrow's strengths, the child could not fully grasp the power Artuklas extends to share. Artuklas, growing impatient and infuriated at the child's incompetency, decided to force a fraction of his power to flow through her body. This power would prove too much for Sparrow, and she would have to expel a lot of this to stay conscious.
+        <br />A small scouting team of Guardians would take notice of the immense demonic energy concentrated in one spot. Upon arrival, they would see the shape of a greater demon trying to take control of a collapsed woman. They seized the opportunity to strike, but Sparrow retaliated, allowing Artuklas to escape in the chaos. After a long-drawn-out fight, the Guardians would subdue and overpower her because she could not effectively use her newfound abilities.`,
+        ru: `Спарроу - смелая и свирепая девушка, в прошлом отшельник, большую часть своей жизни посвятившая следованию демону Артукласу. Она и ее семья жили в деревне глубоко в густом тропическом лесу Сасугроен. Её сильное стремление к приключениям отличало её от робких и сдержанных детей её возраста. Вместе с её семьей они пошли по пути, который Артуклас указал отшельникам. 
+        <br />Артукласу были по душе открытия и новые знания, и он был очень заинтригован любопытной Спарроу и ее храбростью, когда она отправлялась на поиски неизвестного. Он медленно прокладывал свой путь, чтобы удовлетворить потребности Спарроу, увольняя других отшельников, которые хотели следовать за ним и поклоняться ему. Спарроу замечала изменения, но Артуклас заверял, что сама судьба избрала для неё этот путь. В последующие годы обучения и подготовки связь между отшельницей и демоном стала теснее, и Артуклас выдал Спарроу информацию о своём с ней родстве.
+        <br />К сожалению, даже с обучением и ритуалами, дополняющими сильные стороны Спарроу, ребёнок не мог полностью осознать силу, которой Артуклас делится. Артуклас, теряя терпение и гневаясь из-за некомпетентности ребёнка, решил заставить часть своей силы течь через её тело. Эта сила оказалась бы слишком большой для Спарроу, и ей пришлось бы исключить многое из этого, чтобы оставаться в сознании. 
+        <br />Небольшая разведывательная группа стражей вскоре заметит огромную демоническую энергию, сосредоточенную в одном месте. По прибытии они увидят очертания огромного демона, пытающегося взять под контроль лежащую в обмороке девушку. Они воспользовались возможностью нанести удар, но Спарроу контратаковала, позволив Артукласу сбежать в хаосе. После затяжной битвы стражи подавили и усмирили её пыл, поскольку она не могла эффективно использовать свои новообретённые способности.`,
     },
     [LOCALE.BELLE_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -75,6 +88,31 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Brzy bude přidáno!",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+
+    [LOCALE.FLIN_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+    [LOCALE.KIRA_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+    [LOCALE.HAZEL_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+    },
+    [LOCALE.AREL_DESCRIPTION]: {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
@@ -286,7 +324,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Press space to continue!]",
         ru: "Вы можете прятаться от противников в кустах! \n" +
             "Они не увидят Вас там, поэтому Вы с лёгкостью можете устраивать засады!\n" +
-            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам даже если вы находитесь там, поэтому будьте осторожны!\n" +
+            "Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам, даже если вы находитесь там, поэтому будьте осторожны!\n" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Você pode se esconder de seus inimigos dentro de arbustos! \n" +
             "Você não pode ser visto por inimigos dentro de arbustos, então você pode fazer armadilhas!\n" +
@@ -513,6 +551,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Jogador",
         cz: "Hráč",
     },
+    [LOCALE.PLAYERS]: {
+        en: "Players",
+        br: "Jogador",
+        ru: "Игроки",
+        cz: "Hráči",
+    },
     [LOCALE.CHOOSE_HERO]: {
         en: "CHOOSE YOUR HERO",
         ru: "ВЫБЕРИТЕ ВАШЕГО ГЕРОЯ",
@@ -567,23 +611,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "SUPPORTE",
         cz: "SUPPORT",
     },
-    [LOCALE.TAG_INITIATOR]: {
-        en: "INITIATOR",
-        ru: "ИНИЦИАТОР",
-        br: "INICIADOR",
-        cz: "INICIÁTOR",
+    [LOCALE.TAG_RANGE]: {
+        en: "RANGED",
+        ru: "ДАЛЬНИЙ БОЙ",
+        br: "A DISTANCIA",
+        fr: "À DISTANCE",
+        cz: "NA DÁLKU",
     },
-    [LOCALE.TAG_CARRY]: {
-        en: "CARRY",
-        ru: "КЕРРИ",
-        br: "DANO",
-        cz: "CARRY"
-    },
-    [LOCALE.TAG_DISABLER]: {
-        en: "DISABLER",
-        ru: "КОНТРОЛЬ",
-        br: "DESABILITADOR",
-        cz: "DISABLER",
+    [LOCALE.TAG_RECOMMENDED]: {
+        en: "RECOMMENDED",
+        ru: "РЕКОМЕНДУЕМЫЕ",
+        cz: "ODPORÚČAME",
     },
 
     /** POST SCENE */
@@ -767,7 +805,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.AN_GOT_A]: {
         en: "got a ",
-        ru: "получил ",
+        ru: "получает ",
         cz: "dostal ",
     },
     [LOCALE.AN_IS_ON]: {
@@ -844,12 +882,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Руна исцеления",
         cz: "Runa Léčení",
     },
-
+    [LOCALE.BOUNTY_RUNE]: {
+        en: "Bounty Rune",
+        ru: "Руну золота",
+        cz: "Runa zlata",
+    },
+    
     /** Stats */
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
         ru: "Сила умений",
-        cz: "Runa Dovednosti",
+        cz: "Síla kouzel"
     },
     [LOCALE.DAMAGE]: {
         en: "Damage",
@@ -864,12 +907,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.CRITICAL_CHANCE]: {
         en: "Critical Chance",
         ru: "Шанс крита",
-        cz: "Šance Kritického Zásahu",
+        cz: "Kritický zásah",
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: "Cooldown Reduction",
         ru: "Сокращение перезарядки",
-        cz: "Snížení Cooldownu",
+        cz: "Redukce cooldownu",
     },
     [LOCALE.LIFESTEAL]: {
         en: "Lifesteal",
@@ -922,6 +965,110 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "refresh",
         ru: "обновит",
         cz: "obnovení",
+    },
+    [LOCALE.YES]: {
+        en: "yes",
+        ru: "да",
+        cz: "ano",
+    },
+    [LOCALE.NO]: {
+        en: "no",
+        ru: "нет",
+        cz: "ne",
+    },
+    [LOCALE.POPUP_LOGOUT_TITLE]: {
+        en: "Are you sure?",
+        ru: "Уверены ли вы?",
+        cz: "Jste si jisti?",
+    },
+    [LOCALE.MSAA]: {
+        en: "Anti-aliasing",
+        cz: "Vyhlazovaní",
+        ru: "Сглаживание",
+    },
+    [LOCALE.TWOVSTWO_COOP]: {
+        en: "2 v 2 Co-op vs AI",
+        ru: "Совместная игра 2 vs 2 против ИИ",
+        cz: "2 v 2 proti UI"
+    },
+    [LOCALE.EASY_BOT]: {
+        en: "1 v 1 Easy Bot",
+        ru: "1 vs 1 Лёгкий бот",
+        cz: "1 v 1 Lehký Bot"
+    },
+    [LOCALE.HARD_BOT]: {
+        en: "1 v 1 Hard Bot",
+        ru: "1 vs 1 Сложный Бот",
+        cz: "1 v 1 Těžký Bot"
+    },
+    [LOCALE.SPECTATE]: {
+        en: "Spectate",
+        ru: "Наблюдать",
+        cz: "Sledovat"
+    },
+    [LOCALE.WATCH]: {
+        en: "Battles",
+        ru: "Сражения",
+        cz: "Bitvy"
+    },
+    [LOCALE.VIEWERS]: {
+        en: "Viewers",
+        ru: "Зрителей",
+        cz: "Sleduje"
+    },
+    [LOCALE.POPUP_NO_GAMES_TO_SPECTATE]: {
+        en: "There are no games to spectate.",
+        ru: "Не найдено игр для просмотра.",
+        cz: "Nenašli sa žádné hry na sledování."
+    },
+    [LOCALE.FREE_CAMERA]: {
+        en: "Free Camera",
+        ru: "Свободная камера",
+        cz: "Volná Kamera"
+    },
+    [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
+        en: "Spectators in game: ",
+        ru: "Наблюдают за игрой: ",
+        cz: "Diváků v hře: "
+    },
+    [LOCALE.PRIVATE_LOBBY]: {
+        en: "Private lobby",
+        ru: "Приватное лобби",
+        cz: "Privátní lobby"
+    },
+    [LOCALE.FIND_LOBBY]: {
+        en: "Find a lobby",
+        ru: "Найти лобби",
+        cz: "Najít lobby"
+    },
+    [LOCALE.CREATE_LOBBY]: {
+        en: "Create a lobby",
+        ru: "Создать лобби",
+        cz: "Vytvořte lobby"
+    },
+    [LOCALE.TEAM_NAME]: {
+        en: "Team name: ",
+        ru: "Название команды: ",
+        cz: "Název týmu: "
+    },
+    [LOCALE.JOIN]: {
+        en: "Join",
+        ru: "Присоединиться",
+        cz: "Přida se"
+    },
+    [LOCALE.LEAVE]: {
+        en: "Leave",
+        ru: "Выйти",
+        cz: "Opustit"
+    },
+    [LOCALE.START]: {
+        en: "Start",
+        ru: "Начать игру",
+        cz: "Začít"
+    },
+    [LOCALE.LOBBY_ID]: {
+        en: "Lobby Id: (Click to copy) ",
+        ru: "Код лобби: (Нажмите, чтобы скопировать) ",
     }
 }
 export default locale_data;
