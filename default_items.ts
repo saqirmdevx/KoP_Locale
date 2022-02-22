@@ -394,12 +394,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Ядовитый лук",
                     fr: "Arc empoisonné",
                 },
-                desc: {
-                    en: `UNIQUE: Your attacks apply deadly poison on enemy hero slows target for ${ItemAbilityData.POISON_BOW_SLOW} and deals ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} damage per sec for ${(ItemAbilityData.POISON_BOW_DURATION / 1000).toFixed(1)} sec. (This effect can stack up 5 times, every attack refresh duration)`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки накладывают смертельный яд на вражеских героев, замедляя их на ${ItemAbilityData.POISON_BOW_SLOW} и нанося ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} урона в секунду в течение ${(ItemAbilityData.POISON_BOW_DURATION / 1000).toFixed(1)} сек. (Этот эффект может складываться до 5 раз. Каждая последующая атака обновляет длительность зарядов)`,
-                    br: `[Único]: Seus ataques aplicam veneno no personagem inimigo e retarda o alvo por ${ItemAbilityData.POISON_BOW_SLOW} e adiciona ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} de dano por seg, por ${(ItemAbilityData.POISON_BOW_DURATION / 1000).toFixed(1)} seg.\n (Este efeito pode acumular 5 vezes, cada duração de atualização de ataque.)`,
-                    cz: "JEDINEČNÉ: Tvé útoky aplikují smrtelný jed na hrdiny které zpomalí cíl na ${ItemAbilityData.POISON_BOW_SLOW} and způsobí ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} poškození za vteřinu po dobu ${(ItemAbilityData.POISON_BOW_DURATION / 1000).toFixed(1)} sec. (Tento efekt se stakuje 5 krát)",
-                }
+                desc: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1)
             }
 
         case Shared.ItemList.Corrupted_Longbow:
