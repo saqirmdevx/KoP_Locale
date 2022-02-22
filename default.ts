@@ -32,6 +32,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.THOMAS_NAME]: {
         en: "Thomas",
         ru: "Томас",
+        br: "Thomas",
+        cz: "Tomáš",
     },
 
     [LOCALE.FLIN_NAME]: {
@@ -67,7 +69,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Coming from an underground laboratory in the heated war zone of Rotite, Thomas fought for Etygia's guerilla force and partook in ambushes focused on the upper ranks of the enemy forces. He gained notoriety among allies and foes alike because of his unique style of killing. During a secret experiment gone wrong, the test subject blasted the laboratory wide open. Wanting to leave the hectic environment and hellish landscape, Thomas dared to leave the guerilla force for good. Through the spray of bullets, he managed to swiftly make it past as he witnessed the loss of many lives in the chaos. For Thomas, he wanted freedom, but at the cost of betraying the kingdom. Keeping a low profile and lurking in the shadows, it's only a matter of time. The hunter has become the hunted.",
         ru: "Выйдя из подземной лаборатории в жаркой зоне боевых действий Ротита, Томас сражался на стороне партизан Этигии и участвовал в засадах, сосредоточенных на верхних званиях вражеских сил. Он получил известность как среди союзников, так и среди врагов из-за своего уникального стиля убийств. Во время секретного эксперимента, который закончился неудачей, испытуемый полностью взорвал лабораторию. Желая покинуть суету и адские пейзажи, Томас осмелился навсегда покинуть партизанские отряды. Ему удалось быстро миновать осколки пуль, становясь свидетелем гибели многих людей в происходящем хаосе. Томас просто хотел свободы, даже ценой предательства целого королевства. Незаметность и скрытность в тени - это лишь вопрос времени. Охотник превратился в добычу.",
         br: "Vindo de um laboratório subterrâneo na zona de guerra aquecida de Rotite, Thomas foi obrigado a lutar pelas forças de guerrilha de Etygia e sua especialidade era de emboscadas focadas nas fileiras superiores das forças inimigas. Ele ganhou notoriedade entre aliados e inimigos por causa de seu estilo único de luta com uma espada demoníaca. Durante um experimento secreto que deu errado, uma das cobaias explodiu um laboratório subterrâneo perto de onde ele patrulhava. Ele testemunhou a perda de muitas vidas no caos. Thomas aproveitou a oportunidade e se atreveu a deixar as forças de guerrilha, mas ao custo de trair o reino e virar um fugitivo.",
-        cz: "Thomas, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Thomas chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
+        cz: "Tomáš, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Thomas chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
     },
     [LOCALE.SPARROW_DESCRIPTION]: {
         en: `A courageous and fierce woman previously a Hermit, Sparrow committed most of her life following the demon Artuklas. She and her family lived in a village deep within the dense Sasugroen Rainforest. Her strong sense of adventure distinguished her from the timid and discreet natured children of her generation. Together with her family, they pursued the path that Artuklas set for the Hermits.
@@ -156,7 +158,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Buff",
         ru: "Усиление",
         br: "Buff",
-        cz: "Zesílení",
+        cz: "Posílení",
     },
 
     [LOCALE.COOLDOWN]: {
@@ -535,7 +537,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Losses",
         ru: "Поражений",
         br: "Derrotas",
-        cz: "Prohry",
+        cz: "Proher",
     },
     [LOCALE.RANK]: {
         en: "Rank",
@@ -738,7 +740,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "GUEST MODE!",
         ru: "РЕЖИМ ГОСТЯ!",
         br: "MODO CONVIDADO!",
-        cz: "JSTE V REŽIME GUEST!",
+        cz: "JSTE V REŽIME HOST!",
     },
     [LOCALE.POPUP_SELECT_GUESTMODE_OPT]: {
         en: "Connect GMAIL Account",
@@ -826,7 +828,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.AN_TRIPLE_KILL]: {
         en: "TRIPLE KILL",
         ru: "ТРИПЛКИЛЛ",
-        cz: "TROJITÝ ZÁSAH",
+        cz: "TROJITÉ ZABITÍ",
     },
 
     [LOCALE.AN_KILLING_SPREE]: {
@@ -837,7 +839,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.AN_MEGA_KILL]: {
         en: "Mega kill",
         ru: "совершает мега-убийство",
-        cz: "Mega zabít",
+        cz: "Mega zabití",
     },
     [LOCALE.AN_DOMINATING]: {
         en: "Dominating",
@@ -956,23 +958,23 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_DISCONNECTED]: {
         en: "You've been disconected from the server, please refresh the page!",
-        ru: "Потеряно соединение с сервером. Пожалуйста, обновите страницу!",
-        cz: "Nebylo možné navázat spojení s hrou. Refreshnite webovu stránku.",
+        ru: "Потеряно соединение с сервером. Пожалуйста, обновите to перезагрузите!",
+        cz: "Nebylo možné navázat spojení s hrou. Obnovte webovu stránku.",
     },
     [LOCALE.POPUP_REFRESH]: {
         en: "refresh",
-        ru: "обновить",
-        cz: "refresh",
+        ru: "обновит",
+        cz: "obnovení",
     },
     [LOCALE.YES]: {
         en: "yes",
         ru: "да",
-        cz: "áno",
+        cz: "ano",
     },
     [LOCALE.NO]: {
         en: "no",
         ru: "нет",
-        cz: "nie",
+        cz: "ne",
     },
     [LOCALE.POPUP_LOGOUT_TITLE]: {
         en: "Are you sure?",
@@ -992,17 +994,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.EASY_BOT]: {
         en: "1 v 1 Easy Bot",
         ru: "1 vs 1 Лёгкий бот",
-        cz: "1 v 1 Ľahký Bot"
+        cz: "1 v 1 Lehký Bot"
     },
     [LOCALE.HARD_BOT]: {
         en: "1 v 1 Hard Bot",
         ru: "1 vs 1 Сложный Бот",
-        cz: "1 v 1 Ťažký Bot"
+        cz: "1 v 1 Těžký Bot"
     },
     [LOCALE.SPECTATE]: {
         en: "Spectate",
         ru: "Наблюдать",
-        cz: "Sledovať"
+        cz: "Sledovat"
     },
     [LOCALE.WATCH]: {
         en: "Battles",
@@ -1017,27 +1019,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.POPUP_NO_GAMES_TO_SPECTATE]: {
         en: "There are no games to spectate.",
         ru: "Не найдено игр для просмотра.",
-        cz: "Nenašli sa žiadne hry na pozeranie."
+        cz: "Nenašli sa žádné hry na sledování."
     },
     [LOCALE.FREE_CAMERA]: {
         en: "Free Camera",
         ru: "Свободная камера",
-        cz: "Voľná Kamera"
+        cz: "Volná Kamera"
     },
     [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
         en: "Spectators in game: ",
         ru: "Наблюдают за игрой: ",
-        cz: "Divákov v hre: "
+        cz: "Diváků v hře: "
     },
     [LOCALE.PRIVATE_LOBBY]: {
         en: "Private lobby",
         ru: "Приватное лобби",
-        cz: "Privatná lobby"
+        cz: "Privátní lobby"
     },
     [LOCALE.FIND_LOBBY]: {
         en: "Find a lobby",
         ru: "Найти лобби",
-        cz: "Nájsť lobby"
+        cz: "Najít lobby"
     },
     [LOCALE.CREATE_LOBBY]: {
         en: "Create a lobby",
@@ -1047,17 +1049,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.TEAM_NAME]: {
         en: "Team name: ",
         ru: "Название команды: ",
-        cz: "Názov tímu: "
+        cz: "Název týmu: "
     },
     [LOCALE.JOIN]: {
         en: "Join",
         ru: "Присоединиться",
-        cz: "Pridať sa"
+        cz: "Přida se"
     },
     [LOCALE.LEAVE]: {
         en: "Leave",
         ru: "Выйти",
-        cz: "Opustiť"
+        cz: "Opustit"
     },
     [LOCALE.START]: {
         en: "Start",
