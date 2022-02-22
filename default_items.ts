@@ -380,10 +380,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: "Arc magique",
                 },
                 desc: {
-                    en: "UNIQUE: Sucessful hit with your abilites increases your movement speed by 10 for 1.5 sec <br /> <br />" + getLocaleItemDescription(Shared.ItemList.Poison_Bow),
-                    ru: "УНИКАЛЬНО(Пассивно): Успешное попадание способностями увеличивает вашу скорость передвижения на 10 на 1.5 сек. <br /> <br />" + getLocaleItemDescription(Shared.ItemList.Poison_Bow),
-                    br: "[Único]: Um golpe bem-sucedido com suas habilidades aumenta sua velocidade de movimento em 10 por 1.5 seg. <br /> <br />" + getLocaleItemDescription(Shared.ItemList.Poison_Bow),
-                    cz: "JEDINEČNÉ: Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin <br /> <br />" + getLocaleItemDescription(Shared.ItemList.Poison_Bow),
+                    en: "UNIQUE: Sucessful hit with your abilites increases your movement speed by 10 for 1.5 sec <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+                    ru: "УНИКАЛЬНО(Пассивно): Успешное попадание способностями увеличивает вашу скорость передвижения на 10 на 1.5 сек. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+                    br: "[Único]: Um golpe bem-sucedido com suas habilidades aumenta sua velocidade de movimento em 10 por 1.5 seg. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+                    cz: "JEDINEČNÉ: Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                     fr: `[UNIQUE]: Chaque compétence K ou L réussie augmente ta vitesse de déplacement de 10 points de déplacement pour 1.5 sec. <br /> <br />` + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 }
             }
@@ -394,7 +394,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Ядовитый лук",
                     fr: "Arc empoisonné",
                 },
-                desc: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1)
+                desc: { en: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1) }
             }
 
         case Shared.ItemList.Corrupted_Longbow:
