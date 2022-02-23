@@ -482,9 +482,11 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Staff",
+                    ru: "Искажённый посох",
                 },
                 desc: {
                     en: `UNIQUE: Provide additional ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}% ability power!`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваша сила умений дополнительно увеличивается на ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}%!`,
                 }
             }
         case Shared.ItemList.Frozen_Staff:
