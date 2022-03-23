@@ -895,9 +895,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Síla kouzel"
     },
     [LOCALE.DAMAGE]: {
-        en: "Damage",
-        ru: "Урон",
-        cz: "Poškození",
+        en: "Attack damage",
+        ru: "Урон от атаки",
+        cz: "Poškození útoku",
     },
     [LOCALE.ATTACK_SPEED]: {
         en: "Attack Speed",

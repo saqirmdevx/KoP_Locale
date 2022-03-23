@@ -201,6 +201,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     cz: "Plátová Zbroj",
                     fr: "Armure à plaques",
                 },
+                desc: {
+                    en: `UNIQUE: Every time you kill enemy hero, minion or you get assist you gain ${ItemAbilityData.PLATE_ARMOR_STACK_HP} health permanently (max ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS})`,
+                }
             }
         case Shared.ItemList.Wizard_Shoes:
             return {
@@ -326,7 +329,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 }
             }
 
-        case Shared.ItemList.Demon_Sword:
+        case Shared.ItemList.Demon_Sabre:
             return {
                 name: {
                     en: "Demon Sabre",
@@ -334,11 +337,16 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Sabre du démon`,
                 },
                 desc: {
-                    en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек.`,
-                    br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
-                    cz: `JEDINEČNÉ: Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} na 4 vteřiny`,
-                    fr: `[UNIQUE]: Tes attaques J diminuent l'armure de l'ennemie de ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} pour 4 secondes`,
+                    en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds 
+                        <br />
+                        UNIQUE: Every time you kill enemy hero or you get assist you gain ${ItemAbilityData.DEMON_SABRE_STACK_DMG} damage permanently (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS})`,
+                    cz: `JEDINEČNÉ: Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} na 4 vteřiny
+                        <br />
+                        JEDINEČNÉ: Pokud zabiješ nepřátelského hrdinu nebo assistujes dostaneš ${ItemAbilityData.DEMON_SABRE_STACK_DMG} zraneni permanentne, (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS})`,
+                    // Need Update others
+                //     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек.`,
+                //     br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
+                //     fr: `[UNIQUE]: Tes attaques J diminuent l'armure de l'ennemie de ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} pour 4 secondes`,
                 }
             }
         case Shared.ItemList.Corrupted_Light_Slayer:
@@ -472,10 +480,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Bâton de Kirin`,
                 },
                 desc: {
-                    en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 sec, this effect does not stack with other sources`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% на 4 сек. Этот эффект не складывается с другими источниками`,
-                    br: `[Único]: Suas habilidades penetram a resistência mágica do alvo em ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% por 4 seg, este efeito não se acumula com outras fontes.`,
-                    fr: `[UNIQUE]: Tes compétences K et L pénétrent les résistances magiques de ta cible pour ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% pour 4 sec. Cet effet ne se cumule pas avec d'autres sources.`,
+                    en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 sec, this effect does not stack with other sources
+                    <br />
+                    UNIQUE: Every time you kill enemy hero or you get assist you gain ${ItemAbilityData.KIRIN_STAFF_STACK_AP} ability power permanently (max ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS})`,
+
+                    // Need Update
+                    // ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% на 4 сек. Этот эффект не складывается с другими источниками`,
+                    // br: `[Único]: Suas habilidades penetram a resistência mágica do alvo em ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% por 4 seg, este efeito não se acumula com outras fontes.`,
+                    // fr: `[UNIQUE]: Tes compétences K et L pénétrent les résistances magiques de ta cible pour ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% pour 4 sec. Cet effet ne se cumule pas avec d'autres sources.`,
                 }
             }
         case Shared.ItemList.Corrupted_Staff:
