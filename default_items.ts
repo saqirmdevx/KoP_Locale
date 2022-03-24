@@ -1,4 +1,4 @@
-import { calculateMagicDefense } from "@/misc/constants";
+import { calculateMagicDefense, toSec } from "@/misc/constants";
 import Shared, { fixed, ItemAbilityData } from "@/misc/shared";
 import { LANG } from "../lang";
 
@@ -290,11 +290,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: "Katana divin",
                 },
                 desc: {
-                    en: "Drops on death! (Cant be sold!)",
-                    ru: `Выпадает при смерти! (Нельзя продать!)`,
-                    br: "Dropa seu item quando você morre, o inimigo pode pegar essa espada.\n (Não pode ser vendido!)",
-                    cz: "Upuštěn při smrti, nemůže být prodán!",
-                    fr: `Le Katana divin tombe au sol en cas de mort. Tout héros avec une case d'inventaire vide peut le ramasser. (Ne peut pas être vendu)`,
+                    en: `[ACTIVE]: Throws a fragment of katana next to you, upon impact it will silence and slow all enemy heroes in distance. (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} sec duration of fragment)`,
                 }
             }
         case Shared.ItemList.Iron_Basher:
