@@ -202,7 +202,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: "Armure à plaques",
                 },
                 desc: {
-                    en: `UNIQUE: Every time you kill enemy hero, minion or you get assist you gain ${ItemAbilityData.PLATE_ARMOR_STACK_HP} health permanently (max ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS})`,
+                    en: `UNIQUE: Every time you kill enemy hero, minion or you get assist (+5 per hero) you gain ${ItemAbilityData.PLATE_ARMOR_STACK_HP} max health (max ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}). All stacks are lost upon death.`,
                 }
             }
         case Shared.ItemList.Wizard_Shoes:
@@ -339,10 +339,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 desc: {
                     en: `UNIQUE: Your attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds 
                         <br />
-                        UNIQUE: Every time you kill enemy hero or you get assist you gain ${ItemAbilityData.DEMON_SABRE_STACK_DMG} damage permanently (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS})`,
+                        UNIQUE: Every time you kill minion, hero or you get assist (+5 for hero) you gain ${ItemAbilityData.DEMON_SABRE_STACK_DMG} damage permanently (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}). All stacks are lost upon death.`,
                     cz: `JEDINEČNÉ: Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} na 4 vteřiny
                         <br />
-                        JEDINEČNÉ: Pokud zabiješ nepřátelského hrdinu nebo assistujes dostaneš ${ItemAbilityData.DEMON_SABRE_STACK_DMG} zraneni permanentne, (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS})`,
+                        JEDINEČNÉ: Pokud zabiješ nepřátelského miniona, hrdinu nebo assistujes (+5 za hrdinu) dostaneš ${ItemAbilityData.DEMON_SABRE_STACK_DMG} zraneni permanentne, (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}). Efekt sa zresetuje po smrti.`,
                     // Need Update others
                 //     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек.`,
                 //     br: `[Único]: Seus ataques reduzem ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} da armadura inimiga por 4 segundos.`,
@@ -482,7 +482,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 desc: {
                     en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 sec, this effect does not stack with other sources
                     <br />
-                    UNIQUE: Every time you kill enemy hero or you get assist you gain ${ItemAbilityData.KIRIN_STAFF_STACK_AP} ability power permanently (max ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS})`,
+                    UNIQUE: Every time you kill minion, hero or you get assist (+5 for hero) you gain ${ItemAbilityData.KIRIN_STAFF_STACK_AP} ability power (max ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}). All stacks are lost upon death.`,
 
                     // Need Update
                     // ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% на 4 сек. Этот эффект не складывается с другими источниками`,
