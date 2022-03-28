@@ -896,7 +896,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.DAMAGE]: {
         en: "Attack damage",
-        ru: "Урон от атаки",
+        ru: "Сила атаки",
         cz: "Poškození útoku",
     },
     [LOCALE.ATTACK_SPEED]: {
@@ -958,12 +958,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_DISCONNECTED]: {
         en: "You've been disconected from the server, please refresh the page!",
-        ru: "Потеряно соединение с сервером. Пожалуйста, обновите to перезагрузите!",
+        ru: "Потеряно соединение с сервером. Пожалуйста, обновите страницу!",
         cz: "Nebylo možné navázat spojení s hrou. Obnovte webovu stránku.",
     },
     [LOCALE.POPUP_REFRESH]: {
         en: "refresh",
-        ru: "обновит",
+        ru: "обновить",
         cz: "obnovení",
     },
     [LOCALE.YES]: {
