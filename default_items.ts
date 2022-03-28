@@ -290,8 +290,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: "Katana divin",
                 },
                 desc: {
-                    en: `[ACTIVE]: Throws a fragment of katana next to you, upon impact it will silence and slow all enemy heroes in distance. (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} sec duration of fragment)`,
-                    ru: `УНИКАЛЬНО(Активно): Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев в течение ${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} сек. (Перезарядка: ${(ItemAbilityData.DIVINE_KATANA_COOLDOWN / 1000).toFixed(1)} сек.)`,
+                    // Require update
+                    //ru: `УНИКАЛЬНО(Активно): Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев в течение ${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} сек. (Перезарядка: ${(ItemAbilityData.DIVINE_KATANA_COOLDOWN / 1000).toFixed(1)} сек.)`,
+                    en: `[ACTIVE]: Throws a fragment of katana next to you, upon impact provide unobstructed vision, silence and slow all enemy heroes in distance. In addition it will reveal all invisible units in area. (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION)} sec duration of fragment). (Cooldown: ${toSec(ItemAbilityData.DIVINE_KATANA_COOLDOWN)})`,
                 }
             }
         case Shared.ItemList.Iron_Basher:
