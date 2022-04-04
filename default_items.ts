@@ -291,7 +291,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     // Require update
-                    //ru: `УНИКАЛЬНО(Активно): Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев в течение ${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} сек. (Перезарядка: ${(ItemAbilityData.DIVINE_KATANA_COOLDOWN / 1000).toFixed(1)} сек.)`,
+                    ru: `УНИКАЛЬНО(Активно): Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев в течение ${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} сек., а также раскрывает все невидимые цели вокруг себя в течение этого времени. (Перезарядка: ${(ItemAbilityData.DIVINE_KATANA_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     en: `[ACTIVE]: Throws a fragment of katana next to you, upon impact provide unobstructed vision, silence and slow all enemy heroes in distance. In addition it will reveal all invisible units in area. (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION)} sec duration of fragment). (Cooldown: ${toSec(ItemAbilityData.DIVINE_KATANA_COOLDOWN)})`,
                 }
             }
@@ -512,6 +512,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     en: `UNIQUE: Your abilites lowers enemy movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} and attack speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     
                     // NEED UPDATE
                     //ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
@@ -819,18 +820,22 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Observer Ward",
+                    ru: "Тотем-наблюдатель",
                 },
                 desc: {
                     en: `Active: Place a ward which provide ${ItemAbilityData.WARD_VISION} vision for ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
+                    ru: `Активно: Вы устанавливаете тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
                 }
             }
         case Shared.ItemList.Sentry_Ward:
             return {
                 name: {
                     en: "Sentry Ward",
+                    ru: "Сторожевой тотем",
                 },
                 desc: {
                     en: `Active: Place a sentry ward which reveals invisible units and wards in ${ItemAbilityData.SENTRY_WARD_VISION}px radius for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
+                    ru: `Активно: Вы устанавливаете сторожевой тотем, раскрывающий невидимых противников и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
                 }
             }
         default: return {

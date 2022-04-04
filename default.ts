@@ -1072,18 +1072,23 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.LOBBY_INIT_GOLDS]: {
         en: "Initial Golds",
+        ru: "Начальное золото",
     },
     [LOCALE.LOBBY_DRAFT_PHASE]: {
         en: "Draft Mode",
+        ru: "Режим выбора",
     },
     [LOCALE.DRAFT_BLIND_PICK]: {
         en: "Blind Pick",
+        ru: "Выбор вслепую",
     },
     [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
         en: "Captain Draft",
+        ru: "Режим выбора (Капитаны)",
     },
     [LOCALE.DRAFT_ALL_RANDOM]: {
         en: "All Random",
+        ru: "Случайный выбор",
     }
 }
 export default locale_data;
