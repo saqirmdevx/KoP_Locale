@@ -464,8 +464,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Baguette vampirique`,
                 },
                 desc: {
-                    en: `UNIQUE: When your ability hits the enemy hero, it will heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% of damage dealt - ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} sec cooldown`,
-                    ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% от нанесённого урона. (Перезарядка: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} сек.)`,
+                    en: `UNIQUE: When your ability hits the enemy hero, it will heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% of damage dealt.`,
+                    ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% от нанесённого урона.`,
                     // OLD //
                     //ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности похищают у цели ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% здоровья. (Перезарядка: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} сек.)`,
                     // br: `[Único]: Quando sua habilidade atinge o personagem inimigo, ela rouba ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de vida.\n [Tempo de recarga: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} seg.]`,
@@ -511,10 +511,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Baguette gelée`,
                 },
                 desc: {
-                    en: `UNIQUE: Your abilites lowers enemy movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} movespeed for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                    br: `[Único]: Suas habilidades reduzem ${ItemAbilityData.FROZEN_STAFF_SLOW} de velocidade de movimento por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]`,
-                    fr: `[UNIQUE]: Tes compétences K et L diminuent la vitesse de déplacement de ton ennemie de ${ItemAbilityData.FROZEN_STAFF_SLOW} points de vitesse pour ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec.\n [Délai de récupération: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec.]`,
+                    en: `UNIQUE: Your abilites lowers enemy movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} and attack speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
+                    
+                    // NEED UPDATE
+                    //ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
+                    //br: `[Único]: Suas habilidades reduzem ${ItemAbilityData.FROZEN_STAFF_SLOW} de velocidade de movimento por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]`,
+                    //fr: `[UNIQUE]: Tes compétences K et L diminuent la vitesse de déplacement de ton ennemie de ${ItemAbilityData.FROZEN_STAFF_SLOW} points de vitesse pour ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec.\n [Délai de récupération: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec.]`,
                 }
             }
         case Shared.ItemList.Iron_Rod:
@@ -813,16 +815,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 }
             }
 
-        case Shared.ItemList.Scroll_Of_Detection:
+        case Shared.ItemList.Observer_Ward:
             return {
                 name: {
-                    en: "Scroll of Detection",
-                    ru: "Свиток обнаружения",
+                    en: "Observer Ward",
                 },
                 desc: {
-                    en: `Active: Reveals all enemy invisible units in area! Revealed enemies are slowed by ${ItemAbilityData.SCROLL_OF_DETECTION_SLOW} ms for ${(ItemAbilityData.SCROLL_OF_DETECTION_SLOW_DURATION / 1000).toFixed(1)} sec`,
-                    ru: `Активно: Раскрывает всех невидимых вражеских героев вокруг вас. Раскрытые враги замедляются на ${ItemAbilityData.SCROLL_OF_DETECTION_SLOW} на ${(ItemAbilityData.SCROLL_OF_DETECTION_SLOW_DURATION / 1000).toFixed(1)} сек.`,
-                    br: `[Ativo]: Revela todas as unidades invisíveis inimigas na área! Inimigos revelados tem sua velocidade de movimento diminuída por ${ItemAbilityData.SCROLL_OF_DETECTION_SLOW} ms por ${(ItemAbilityData.SCROLL_OF_DETECTION_SLOW_DURATION / 1000).toFixed(1)} seg.`,
+                    en: `Active: Place a ward which provide ${ItemAbilityData.WARD_VISION} vision for ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
                 }
             }
         default: return {

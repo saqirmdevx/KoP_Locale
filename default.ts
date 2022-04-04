@@ -1069,6 +1069,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.LOBBY_ID]: {
         en: "Lobby Id: (Click to copy) ",
         ru: "Код лобби: (Нажмите, чтобы скопировать) ",
+    },
+    [LOCALE.LOBBY_INIT_GOLDS]: {
+        en: "Initial Golds",
+    },
+    [LOCALE.LOBBY_DRAFT_PHASE]: {
+        en: "Draft Mode",
+    },
+    [LOCALE.DRAFT_BLIND_PICK]: {
+        en: "Blind Pick",
+    },
+    [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
+        en: "Captain Draft",
+    },
+    [LOCALE.DRAFT_ALL_RANDOM]: {
+        en: "All Random",
     }
 }
 export default locale_data;
