@@ -824,6 +824,15 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `Active: Place a ward which provide ${ItemAbilityData.WARD_VISION} vision for ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
                 }
             }
+        case Shared.ItemList.Sentry_Ward:
+            return {
+                name: {
+                    en: "Sentry Ward",
+                },
+                desc: {
+                    en: `Active: Place a sentry ward which reveals invisible units and wards in ${ItemAbilityData.SENTRY_WARD_VISION}px radius for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
+                }
+            }
         default: return {
             name: { en: "" },
             desc: { en: "" }
