@@ -823,8 +823,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Тотем-наблюдатель",
                 },
                 desc: {
-                    en: `Active: Place a ward which provide ${ItemAbilityData.WARD_VISION} vision for ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
-                    ru: `Активно: Вы устанавливаете невидимый тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
+                   ru: `Активно: Вы устанавливаете невидимый тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
+                   en: `[ACTIVE]: Plants an Observer Ward, an invisible watcher that gives obstructed vision in a ${ItemAbilityData.WARD_VISION} radius to your team. Lasts ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} secs. If ward is visible to enemy team, they can destroy it!`,
                 }
             }
         case Shared.ItemList.Sentry_Ward:
@@ -834,8 +834,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Сторожевой тотем",
                 },
                 desc: {
-                    en: `Active: Place a sentry ward which reveals invisible units and wards in ${ItemAbilityData.SENTRY_WARD_VISION}px radius for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
                     ru: `Активно: Вы устанавливаете невидимый сторожевой тотем, раскрывающий невидимых противников и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
+                    en: `[ACTIVE]: Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
                 }
             }
         default: return {
