@@ -494,7 +494,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Выбрать героя",
         br: "Confirmar",
         cz: "Vyber Hrdinu",
-
+    },
+    [LOCALE.BAN_HERO]: {
+        en: "Ban Hero",
+        cz: "Ban Hrdinu",
     },
     [LOCALE.ONLINE_PLAYERS]: {
         en: "Online Players",
@@ -666,17 +669,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Voltar ao inicio",
         cz: "Opustit Hru",
     },
-    [LOCALE.POST_WIN_GAME]: {
-        en: "You have Won!",
-        ru: "Вы победили!",
-        br: "Você ganhou essa partida!",
-        cz: "Vyhrál jsi!",
+    [LOCALE.POST_BLUE_TEAM_WIN]: {
+        en: "Blue team won!",
+        cz: "Vyhrál modrý tím!",
     },
-    [LOCALE.POST_LOSE_GAME]: {
-        en: "You have Lost!",
-        ru: "Вы проиграли!",
-        br: "Você perdeu essa partida!",
-        cz: "Prohrál jsi!",
+    [LOCALE.POST_RED_TEAM_WIN]: {
+        en: "Red team won!",
+        cz: "Vyhrál rudý tím!",
     },
 
     /** Chat */
@@ -1079,8 +1078,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Режим выбора",
     },
     [LOCALE.DRAFT_BLIND_PICK]: {
+<<<<<<< HEAD
         en: "Blind Pick",
         ru: "Выбор вслепую",
+=======
+        en: "All Pick",
+>>>>>>> b6cca44 (Add LOCALE for Draft phase)
     },
     [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
         en: "Captain Draft",
@@ -1088,7 +1091,32 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.DRAFT_ALL_RANDOM]: {
         en: "All Random",
+<<<<<<< HEAD
         ru: "Случайный выбор",
     }
+=======
+    },
+    [LOCALE.CAPTAIN_DRAFT_SELECT_CAPTAIN]: {
+        en: "Select captain!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_BAN]: {
+        en: "Enemy turn to ban!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_BAN]: {
+        en: "Your turn to ban!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_PICK]: {
+        en: "Enemy turn to pick!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_PICK]: {
+        en: "Your turn to pick!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_SELECT_HERO]: {
+        en: "Select a hero!",
+    },
+    [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
+        en: "Become captain!",
+    },
+>>>>>>> b6cca44 (Add LOCALE for Draft phase)
 }
 export default locale_data;
