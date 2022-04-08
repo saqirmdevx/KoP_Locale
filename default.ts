@@ -1078,12 +1078,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Режим выбора",
     },
     [LOCALE.DRAFT_BLIND_PICK]: {
-<<<<<<< HEAD
-        en: "Blind Pick",
         ru: "Выбор вслепую",
-=======
         en: "All Pick",
->>>>>>> b6cca44 (Add LOCALE for Draft phase)
     },
     [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
         en: "Captain Draft",
@@ -1091,10 +1087,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.DRAFT_ALL_RANDOM]: {
         en: "All Random",
-<<<<<<< HEAD
         ru: "Случайный выбор",
-    }
-=======
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_CAPTAIN]: {
         en: "Select captain!",
@@ -1117,6 +1110,5 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
         en: "Become captain!",
     },
->>>>>>> b6cca44 (Add LOCALE for Draft phase)
 }
 export default locale_data;
