@@ -1091,24 +1091,31 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_CAPTAIN]: {
         en: "Select captain!",
+        ru: "Выберите капитана!",
     },
     [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_BAN]: {
         en: "Enemy turn to ban!",
+        ru: "Вражеская очередь блокировать!",
     },
     [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_BAN]: {
         en: "Your turn to ban!",
+        ru: "Ваша очередь блокировать!",
     },
     [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_PICK]: {
         en: "Enemy turn to pick!",
+        ru: "Вражеская очередь выбирать!",
     },
     [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_PICK]: {
         en: "Your turn to pick!",
+        ru: "Ваша очередь выбирать!",
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_HERO]: {
         en: "Select a hero!",
+        ru: "Выберите героя!",
     },
     [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
         en: "Become captain!",
+        ru: "Станьте капитаном!",
     },
 }
 export default locale_data;
