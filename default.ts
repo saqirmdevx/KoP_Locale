@@ -1117,5 +1117,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Become captain!",
         ru: "Станьте капитаном!",
     },
+    [LOCALE.TOURNAMENT_GAME]: {
+        en: "Tournament game!",
+    },
 }
 export default locale_data;
