@@ -203,6 +203,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     en: `UNIQUE: Every time you kill enemy hero, minion, hero (+5 stacks) or you get assist (+2 stacks) you gain ${ItemAbilityData.PLATE_ARMOR_STACK_HP} max health (max ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}). All stacks are lost upon death.`,
+                    ru: `УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает максимальное здоровье на ${ItemAbilityData.PLATE_ARMOR_STACK_HP} (Максимум зарядов: ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}). Все заряды теряются после смерти.`,
                 }
             }
         case Shared.ItemList.Wizard_Shoes:
@@ -276,6 +277,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     en: `[ACTIVE]: Divine Shield - Makes you immune to all effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and reduce your attack damage to 0. ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} cooldown`,
+                    ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша сила атаки становится равна 0. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
                 },
             }
         case Shared.ItemList.Divine_Katana:
@@ -295,9 +297,11 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Spiked Mace",
+                    ru: "Шипастая булава",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks have ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% chance to deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 50%)`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% шанс нанести дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и наложить на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 50%)`,
                 }
             }
 
