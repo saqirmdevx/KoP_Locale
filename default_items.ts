@@ -275,11 +275,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     cz: "Božský meč",
                 },
                 desc: {
-                    en: `On Equip: Provide unobstructed vision! Provide additional ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px vision!`,
-                    ru: `УНИКАЛЬНО(Пассивно): Даёт беспрепятственный обзор! Также добавляет ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION} пикселей к обзору!`,
-                    br: `[Equipado]: Fornece visão desobstruída, ganha ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de visão a mais.`,
-                    fr: `[À L'ACHAT]: Fourni une vision traversante ! Fourni ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px de vision supplémentaire !`,
-                    cz: `VYBAVENÍ: Poskytuje vám nepřerušený pohled! Také dodá ${ItemAbilityData.DIVINE_SWORD_BONUS_VISION}px pohledu.`,
+                    en: `[ACTIVE]: Divine Shield - Makes you immune to all effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and reduce your attack damage to 0. ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} cooldown`,
                 },
             }
         case Shared.ItemList.Divine_Katana:
@@ -298,16 +294,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
         case Shared.ItemList.Iron_Basher:
             return {
                 name: {
-                    en: "Iron Basher",
-                    ru: "Железный крушитель",
-                    fr: `Destructeur métallique`,
+                    en: "Spiked Mace",
                 },
                 desc: {
-                    en: "UNIQUE: Your attacks have 20% chance to stun enemy for 0.8 sec and deals additional 60 damage",
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют 20% шанс оглушить вражеского героя на 0.8 сек. и нанести дополнительно 60 урона`,
-                    br: "[Único]: Seus ataques têm 20% de chance de atordoar o inimigo por 0,8 s e causa 60 de dano adicional.",
-                    cz: `JEDINEČNÉ: Tvé útoky mají 20% šanci na to že omráčí protivnika na 0.8 vteřin a způsobí další 60 poškození`,
-                    fr: `[UNIQUE]: Tes attaques J ont 20% de chance d'assommer l'ennemie pour 0,8 sec et font 60 points de dégâts supplémentaires`,
+                    en: `UNIQUE: Your attacks have ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% chance to deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 50%)`,
                 }
             }
 
@@ -664,10 +654,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     fr: `Bouclier de Kirin`,
                 },
                 desc: {
-                    en: `UNIQUE: When you receive magical damage, Kirin's Defender creates barrier around you reduce all negative effects duration by 50% and decrease additional ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% magic damage for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} cooldown`,
-                    ru: `УНИКАЛЬНО(Пассивно): Когда вы получаете магический урон, вокруг вас появляется барьер, снижающий длительность всех негативных эффектов на 50% и получаемый магический урон на ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек. (Перезарядка: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек.)`,
-                    br: `[Único]: Quando você recebe dano mágico, o Kirin cria uma barreira ao seu redor, reduzindo a duração de todos os efeitos negativos em 50% e diminuindo ainda mais ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% do dano mágico por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.\n [Tempo de recarga: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg.]`,
-                    fr: `[UNIQUE]: Lorsque tu reçois des dégâts magiques, le Bouclier de Kirin créer une barrière autour de toi qui réduit la durée de tous les effets négatifs de 50% et diminue les dégâts magiques de ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% pour ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. \n [Délai de récupération: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} sec.]`,
+                    en: `UNIQUE: When you receive magical damage, Kirin's Defender creates barrier around you reduce all negative effects duration by 75% and decrease additional ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% magic damage for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} cooldown`,
+                    ru: `УНИКАЛЬНО(Пассивно): Когда вы получаете магический урон, вокруг вас появляется барьер, снижающий длительность всех негативных эффектов на 75% и получаемый магический урон на ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек. (Перезарядка: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек.)`,
+                    br: `[Único]: Quando você recebe dano mágico, o Kirin cria uma barreira ao seu redor, reduzindo a duração de todos os efeitos negativos em 75% e diminuindo ainda mais ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% do dano mágico por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.\n [Tempo de recarga: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg.]`,
+                    fr: `[UNIQUE]: Lorsque tu reçois des dégâts magiques, le Bouclier de Kirin créer une barrière autour de toi qui réduit la durée de tous les effets négatifs de 75% et diminue les dégâts magiques de ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% pour ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. \n [Délai de récupération: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} sec.]`,
                 }
             }
         /** Rings */

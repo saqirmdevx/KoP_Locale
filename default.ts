@@ -82,10 +82,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         <br />Небольшая разведывательная группа стражей вскоре заметит огромную демоническую энергию, сосредоточенную в одном месте. По прибытии они увидят очертания огромного демона, пытающегося взять под контроль лежащую в обмороке девушку. Они воспользовались возможностью нанести удар, но Спарроу контратаковала, позволив Артукласу сбежать в хаосе. После затяжной битвы стражи подавили и усмирили её пыл, поскольку она не могла эффективно использовать свои новообретённые способности.`,
     },
     [LOCALE.BELLE_DESCRIPTION]: {
-        en: "Will be added soon!",
-        ru: "Скоро будет добавлено!",
-        br: "Será adicionado em breve!",
-        cz: "Brzy bude přidáno!",
+        en: "Part of an ancient race of fay creatures in the ancient woods, Belle was born with arcane control over plants unmatched by any before her,  she was a kindred elementalist and used her knowledge of nature to heal those in need, however both sides tried to recruit her but failed and while the guardians were merely disappointed, the hermits made repetitive attempts to augment her into their forces. Eventually the cultists decided to remove the threat and they brought a trio of hermit leaders: Flin, Kumihu, and Puppeteer to either taint her of kill her, Belle successfully defeated Flin before succumbing to the charm spells cast by Kumihu with her last fragment of consciousness she threw a pod at Kumihu which exploded in her face, as Belle got back onto her feet she was bound by strings materializing from Puppeteer's fingers and lost control over her body, as she was forced to walk back to the hermit camp she struggled against the glowing threads but she was no match for a major demon. At the hands of the hermits Belle was tortured and violated until her original happy and joyous self was trapped in the deepest corners of her mind while a new hateful personality arose and she was never the same again, maybe some arcane healer might come along and reawaken her old self or perhaps he shall be trapped as an insane hermit for eternity.",
+        ru: "Она, — частичка древней расы сказочных существ, живущих в древних лесах, родилась с волшебным даром контроля над растениями, и никто из её вида прежде не имел этой способности. Она была потомственной повелительницей элементов и использовала свои знания о природе, чтобы исцелять нуждающихся. Обе стороны предпринимали попытки завербовать её, но они были тщетны. В то время как стражи опустили руки, отшельники предпринимали неоднократные попытки усилить её, пытаясь сделать частью своей армии. В конце концов культисты решили решить всё раз и навсегда и привели троих лидеров-отшельников: Флина, Кумиху и Кукловода, чтобы либо осквернить ее до конца, либо убить. Белла успешно победила Флина, и прежде чем поддаться очаровывающим заклинаниям Кумиху, она смогла бросить взрывной бутон прямо в лицо ведьме. Нити Кукловода, появившиеся из его пальцев, оплетали Беллу, и в конце концов она потеряла контроль над своим телом. Ей был отдан приказ возвращаться в лагерь отшельников. Светящиеся нити не давали ей и шанса хоть как-то дать отпор и победить главного демона, и она вынуждена была подчиниться. Отшельники многочисленными истязаниями превратили прежде жизнерадостную и отзывчивую личность Беллы в нечто бесчувственное и ненавистное. Может быть, когда-то какой-нибудь целитель-волшебник и сможет пробудить её от зловещего контроля, но пока Белла остаётся узницей своих глубоких уголков разума, где её прежнее 'я' уже, возможно, никогда не станет прежним.",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -101,10 +99,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Brzy bude přidáno!",
     },
     [LOCALE.KIRA_DESCRIPTION]: {
-        en: "Will be added soon!",
-        ru: "Скоро будет добавлено!",
-        br: "Será adicionado em breve!",
-        cz: "Brzy bude přidáno!",
+        en: "As a young girl Kira used to sit at the window of her home and watch the lightning, as she grew up she began a hobby of chasing storm clouds hoping to see flashes of electricity in the sky, the rain did not bother her, the wind could not deter her, only when she felt the true power of the storm did she stop, as Kira reached the highest peak of a mountain she was struck by the thunder she chased, as she fell she was found by a hermit and brought back to a hidden encampment watched over by a demonic vassal, she was forged into whatever they wanted her to be against any free will, they made her into an electromancer to aid the dark forces, they did not expect her to fight back as she called forth fury from above, most of the hermits were caught unprepared and annihilated while the demonic leader named Draklavain strode through the barrage and would have killed her if not for hunting party of guardians attracted by the chaos, as she left with them she found a tome and with it became an important asset to the crusade against the demons, although some say the tome found her.",
+        ru: "В юности Кира любила сидеть у окна своего дома и наблюдать за молниями, а повзрослев, увлеклась погоней за грозовыми тучами в надежде увидеть в небе вспышки молний. Дождь её совершенно не беспокоил, а ветер не мог удержать её порыв. Лишь только почувствовав истинную силу бури она смогла остановиться. Она и не заметила, как достигла самой высокой вершины горы. Гром, за которым она гналась, поразил её, из-за чего она сорвалась и упала, потеряв сознание, но чудом выжив. Её обнаружил отшельник и отнёс в скрытый лагерь под покровительством демонического вассала. Против её воли они провели тёмный ритуал,  превратив в электроманта, в надежде, что она поможет тёмным силам. Неожиданным стал для всех оказанный ею отпор: вызванная ярость с небес застала врасплох многих отшельников, стерев их с лица земли в одно мгновение. В это время, лидер демонов Драклавейн пробирался через заградительный огонь из вспышек молний в надежде уничтожить отступницу. К счастью, стражи, охотящиеся на силы хаоса нашли её и помогли сбежать, сокрыв от опасности. Во время побега Кира обнаружила старинную книгу на своём пути, которую она сумела использовать в дальнейшем походе против армии демонов. Поговаривают, что не она нашла книгу, а книга нашла её.",
     },
     [LOCALE.HAZEL_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -1072,6 +1068,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.LOBBY_INIT_GOLDS]: {
         en: "Initial Golds",
         ru: "Начальное золото",
+        cz: "Počáteční zlaťaky"
     },
     [LOCALE.LOBBY_DRAFT_PHASE]: {
         en: "Draft Mode",
@@ -1080,45 +1077,96 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.DRAFT_BLIND_PICK]: {
         ru: "Выбор вслепую",
         en: "All Pick",
+        cz: "Výber ze všech"
     },
     [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
         en: "Captain Draft",
         ru: "Режим выбора (Капитаны)",
+        cz: "Draft kapitánů"
     },
     [LOCALE.DRAFT_ALL_RANDOM]: {
         en: "All Random",
         ru: "Случайный выбор",
+        cz: "všichni náhodně"
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_CAPTAIN]: {
         en: "Select captain!",
         ru: "Выберите капитана!",
+        cz: "Vyber kapitána"
     },
     [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_BAN]: {
         en: "Enemy turn to ban!",
         ru: "Вражеская очередь блокировать!",
+        cz: "Nepřítel na tahu, Zakazování hrdinů!"
     },
     [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_BAN]: {
         en: "Your turn to ban!",
         ru: "Ваша очередь блокировать!",
+        cz: "Jsi na tahu, Zakazování hrdinů!"
     },
     [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_PICK]: {
         en: "Enemy turn to pick!",
         ru: "Вражеская очередь выбирать!",
+        cz: "Nepřítel na tahu, vyberáni hrdinů!"
     },
     [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_PICK]: {
         en: "Your turn to pick!",
         ru: "Ваша очередь выбирать!",
+        cz: "Jsi na tahu, vyberáni hrdinů!"
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_HERO]: {
         en: "Select a hero!",
         ru: "Выберите героя!",
+        cz: "Vybrat hrdinu",
     },
     [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
         en: "Become captain!",
         ru: "Станьте капитаном!",
+        cz: "Stát se kapitánem"
     },
     [LOCALE.TOURNAMENT_GAME]: {
         en: "Tournament game!",
+    },
+    [LOCALE.BANNED_HEROES]: {
+        en: "Banned heroes",
+        cz: "Zakazaní hrdinové"
+    },
+    [LOCALE.RANKED_MATCH]: {
+        en: "Ranked battles:",
+        cz: "Hodnocení zápasi"
+    },
+    [LOCALE.AI_MATCH]: {
+        en: "AI Matches (PvAI):",
+        cz: "Zápasi proti botúm (PvUI):"
+    },
+    [LOCALE.PLAYER_STATS]: {
+        en: "Player stats",
+    },
+    [LOCALE.WINRATE]: {
+        en: "Winrate",
+    },
+    [LOCALE.RECORD]: {
+        en: "Record",
+    },
+    [LOCALE.MATCH_WON]: {
+        en: "Won match",
+        cz: "Výhra"
+    },
+    [LOCALE.MATCH_LOSE]: {
+        en: "Lost match",
+        cz: "Prohra"
+    },
+    [LOCALE.VERY_HIGH_SKILL]: {
+        en: "Very high skill",
+        cz: "Velmi vysoká dovednost"
+    },
+    [LOCALE.HIGH_SKILL]: {
+        en: "High skill",
+        cz: "Vysoká dovednost"
+    },
+    [LOCALE.NORMAL_SKILL]: {
+        en: "Normal skill",
+        cz: "Normální dovednost"
     },
 }
 export default locale_data;
