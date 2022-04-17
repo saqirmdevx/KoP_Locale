@@ -836,18 +836,22 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Potion of Magic",
+                    ru: "Зелье волшебства",
                 },
                 desc: {
                     en: `[ACTIVE]: Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
+                    ru: `Активно: Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} силы умений навсегда. Эффект складывается до 5 раз!`,
                 }
             }
         case Shared.ItemList.Corrupted_Potion:
             return {
                 name: {
                     en: "Corrupted Potion",
+                    ru: "Искажённое зелье",
                 },
                 desc: {
                     en: `[ACTIVE]: Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
+                    ru: `Активно: Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} силы атаки навсегда. Эффект складывается до 5 раз!`,
                 }
             }
         default: return {
