@@ -828,6 +828,24 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `[ACTIVE]: Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
                 }
             }
+        case Shared.ItemList.Potion_Of_Magic:
+            return {
+                name: {
+                    en: "Potion of Magic",
+                },
+                desc: {
+                    en: `[ACTIVE]: Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
+                }
+            }
+        case Shared.ItemList.Corrupted_Potion:
+            return {
+                name: {
+                    en: "Corrupted Potion",
+                },
+                desc: {
+                    en: `[ACTIVE]: Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
+                }
+            }
         default: return {
             name: { en: "" },
             desc: { en: "" }
