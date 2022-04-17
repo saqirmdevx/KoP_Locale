@@ -1140,7 +1140,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: "Zápasi proti botúm (PvUI):"
     },
     [LOCALE.PLAYER_STATS]: {
-        en: "Player stats",
+        en: "Stats",
     },
     [LOCALE.WINRATE]: {
         en: "Winrate",
