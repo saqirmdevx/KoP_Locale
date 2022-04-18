@@ -179,7 +179,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         }
 
         case Shared.SpellList.THOMAS_SHADOW_CARROT: {
-            const base_damage = getDamage(damage, type, ThomasAbilityData.SHADOW_CARROT_BASE_DAMAGE);
+            const base_damage = getDamage(damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD, type);
 
             return {
                 en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
