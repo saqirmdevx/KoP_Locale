@@ -83,7 +83,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.BELLE_DESCRIPTION]: {
         en: "Part of an ancient race of fay creatures in the ancient woods, Belle was born with arcane control over plants unmatched by any before her,  she was a kindred elementalist and used her knowledge of nature to heal those in need, however both sides tried to recruit her but failed and while the guardians were merely disappointed, the hermits made repetitive attempts to augment her into their forces. Eventually the cultists decided to remove the threat and they brought a trio of hermit leaders: Flin, Kumihu, and Puppeteer to either taint her of kill her, Belle successfully defeated Flin before succumbing to the charm spells cast by Kumihu with her last fragment of consciousness she threw a pod at Kumihu which exploded in her face, as Belle got back onto her feet she was bound by strings materializing from Puppeteer's fingers and lost control over her body, as she was forced to walk back to the hermit camp she struggled against the glowing threads but she was no match for a major demon. At the hands of the hermits Belle was tortured and violated until her original happy and joyous self was trapped in the deepest corners of her mind while a new hateful personality arose and she was never the same again, maybe some arcane healer might come along and reawaken her old self or perhaps he shall be trapped as an insane hermit for eternity.",
-        ru: "Она, — частичка древней расы сказочных существ, живущих в древних лесах, родилась с волшебным даром контроля над растениями, и никто из её вида прежде не имел этой способности. Она была потомственной повелительницей элементов и использовала свои знания о природе, чтобы исцелять нуждающихся. Обе стороны предпринимали попытки завербовать её, но они были тщетны. В то время как стражи опустили руки, отшельники предпринимали неоднократные попытки усилить её, пытаясь сделать частью своей армии. В конце концов культисты решили решить всё раз и навсегда и привели троих лидеров-отшельников: Флина, Кумиху и Кукловода, чтобы либо осквернить ее до конца, либо убить. Белла успешно победила Флина, и прежде чем поддаться очаровывающим заклинаниям Кумиху, она смогла бросить взрывной бутон прямо в лицо ведьме. Нити Кукловода, появившиеся из его пальцев, оплетали Беллу, и в конце концов она потеряла контроль над своим телом. Ей был отдан приказ возвращаться в лагерь отшельников. Светящиеся нити не давали ей и шанса хоть как-то дать отпор и победить главного демона, и она вынуждена была подчиниться. Отшельники многочисленными истязаниями превратили прежде жизнерадостную и отзывчивую личность Беллы в нечто бесчувственное и ненавистное. Может быть, когда-то какой-нибудь целитель-волшебник и сможет пробудить её от зловещего контроля, но пока Белла остаётся узницей своих глубоких уголков разума, где её прежнее 'я' уже, возможно, никогда не станет прежним.",
+        ru: "Она, — частичка древней расы сказочных существ, живущих в древних лесах, родилась с волшебным даром контроля над растениями, и никто из её вида прежде не имел этой способности. Она была потомственной повелительницей элементов и использовала свои знания о природе, чтобы исцелять нуждающихся. Обе стороны предпринимали попытки завербовать её, но они были тщетны. В то время как стражи опустили руки, отшельники предпринимали неоднократные попытки усилить её, пытаясь сделать частью своей армии. В конце концов культисты решили решить всё раз и навсегда и привели троих лидеров-отшельников: Флина, Кумиху и Кукловода, чтобы либо осквернить ее до конца, либо убить. Белла успешно победила Флина, и прежде чем поддаться очаровывающим заклинаниям Кумиху, она смогла бросить взрывной бутон прямо в лицо ведьме. Нити Кукловода, появившиеся из его пальцев, оплетали Беллу, и в конце концов она потеряла контроль над своим телом. Ей был отдан приказ возвращаться в лагерь отшельников. Светящиеся нити не давали ей и шанса хоть как-то дать отпор и победить главного демона, и она вынуждена была подчиниться. Отшельники многочисленными истязаниями превратили прежде жизнерадостную и отзывчивую личность Беллы в нечто бесчувственное и ненавистное. Может быть, когда-то какой-нибудь целитель-волшебник и сможет пробудить её от зловещего контроля, но пока Белла остаётся узницей своих глубоких уголков разума, где её 'я' уже, возможно, никогда не станет прежним.",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -1126,46 +1126,58 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.TOURNAMENT_GAME]: {
         en: "Tournament game!",
+        ru: "Турнирная игра!",
     },
     [LOCALE.BANNED_HEROES]: {
         en: "Banned heroes",
+        ru: "Заблокированные герои",
         cz: "Zakazaní hrdinové"
     },
     [LOCALE.RANKED_MATCH]: {
         en: "Ranked battles:",
+        ru: "Ранговые игры:",
         cz: "Hodnocení zápasi"
     },
     [LOCALE.AI_MATCH]: {
         en: "AI Matches (PvAI):",
+        ru: "Игры против ботов:",
         cz: "Zápasi proti botúm (PvUI):"
     },
     [LOCALE.PLAYER_STATS]: {
-        en: "Stats",
+        en: "Player stats",
+        ru: "Статистика игрока",
     },
     [LOCALE.WINRATE]: {
         en: "Winrate",
+        ru: "Доля побед",
     },
     [LOCALE.RECORD]: {
         en: "Record",
+        ru: "Матчи",
     },
     [LOCALE.MATCH_WON]: {
         en: "Won match",
+        ru: "Победа",
         cz: "Výhra"
     },
     [LOCALE.MATCH_LOSE]: {
         en: "Lost match",
+        ru: "Поражение",
         cz: "Prohra"
     },
     [LOCALE.VERY_HIGH_SKILL]: {
         en: "Very high skill",
+        ru: "Очень высокий уровень",
         cz: "Velmi vysoká dovednost"
     },
     [LOCALE.HIGH_SKILL]: {
         en: "High skill",
+        ru: "Высокий уровень",
         cz: "Vysoká dovednost"
     },
     [LOCALE.NORMAL_SKILL]: {
         en: "Normal skill",
+        ru: "Нормальный уровень",
         cz: "Normální dovednost"
     },
 }
