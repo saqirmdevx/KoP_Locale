@@ -300,8 +300,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Шипастая булава",
                 },
                 desc: {
-                    en: `UNIQUE: Your attacks have ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% chance to deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 50%)`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% шанс нанести дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и наложить на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 50%)`,
+                    en: `UNIQUE: Your attacks have ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% chance to deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 80%)`,
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% шанс нанести дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и наложить на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 80%)`,
                 }
             }
 
