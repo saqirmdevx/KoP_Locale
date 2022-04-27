@@ -1184,87 +1184,110 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ST_GENERAL]: {
         en: "General",
         cz: "Hlávne",
+        ru: "Общие",
     },
     [LOCALE.ST_AUDIO]: {
         en: "Audio",
+        ru: "Звук",
     },
     [LOCALE.ST_HOTKEYS]: {
         en: "Hotkeys",
+        ru: "Горячие клавиши",
     },
     [LOCALE.ST_MISC]: {
         en: "Misc",
+        ru: "Прочее",
     },
     [LOCALE.ST_AUDIO_MASTER_VOLUME]: {
         en: "Master volume",
+        ru: "Общая громкость",
     },
     [LOCALE.MOVEMENT]: {
         en: "Movement",
         cz: "Pohyb",
+        ru: "Передвижение",
     },
     [LOCALE.ABILITES]: {
         en: "Abilites",
         cz: "Schopnosti",
+        ru: "Способности",
     },
     [LOCALE.ITEMS]: {
         en: "Items",
-        cz: "Předměty"
+        cz: "Předměty",
+        ru: "Предметы",
     },
     [LOCALE.ST_KEYBIND_MOVEUP]: {
         en: "Jump",
         cz: "Skok",
+        ru: "Прыжок",
     },
     [LOCALE.ST_KEYBIND_MOVEDOWN]: {
         en: "Move down",
         cz: "pohyb dolů",
+        ru: "Движение вниз",
     },
     [LOCALE.ST_KEYBIND_MOVELEFT]: {
         en: "Move left",
         cz: "pohyb doleva",
+        ru: "Движение влево",
     },
     [LOCALE.ST_KEYBIND_MOVERIGHT]: {
         en: "Move right",
-        cz: "pohyb vpravo"
+        cz: "pohyb vpravo",
+        ru: "Движение вправо",
     },
     [LOCALE.ST_KEYBIND_ATTACK]: {
         en: "Attack",
         cz: "Útok",
+        ru: "Атака",
     },
     [LOCALE.ST_KEYBIND_ABILITY]: {
         en: "Ability",
         cz: "Schopnost",
+        ru: "Способность",
     },
     [LOCALE.ST_KEYBIND_ITEM]: {
         en: "Item",
-        cz: "Předmět"
+        cz: "Předmět",
+        ru: "Предмет",
     },
     [LOCALE.ST_KEYBIND_RECALL]: {
         en: "Recall",
-        cz: "Odvolání"
+        cz: "Odvolání",
+        ru: "Возвращение",
     },
     [LOCALE.SCOREBOARD]: {
         en: "Scoreboard",
-        cz: "Tabulka"
+        cz: "Tabulka",
+        ru: "Таблица счёта",
     },
     [LOCALE.VIDEO]: {
         en: "Video",
+        ru: "Графика",
     },
     [LOCALE.ANTIALIASING]: {
         en: "Antialiasing",
+        ru: "Сглаживание",
     },
     [LOCALE.RESOLUTION]: {
         en: "Resolution",
         cz: "Rozlišenie",
+        ru: "Разрешение",
     },
     [LOCALE.ST_MOUSE_SUPPORT_TOOLTIPS]: {
-        en: "This feature will enable mouse buttons to be used for abilites and facing. Be careful, your hero will face to mouse direction. "
+        en: "This feature will enable mouse buttons to be used for abilites and facing. Be careful, your hero will face to mouse direction. ",
+        ru: "Эта функция позволит использовать кнопки мыши для способностей. Будьте осторожны, если функция включена, ваш герой будет смотреть в сторону мыши. ",
     },
     [LOCALE.ST_LANGUAGE]: {
         en: "Language",
         cz: "Jazýk",
+        ru: "Язык",
     },
     [LOCALE.ST_FILTER_BAD_WORDS]: {
         en: "Filter of bad words",
-        cz: "Filtr špatných slov"
+        cz: "Filtr špatných slov",
+        ru: "Фильтр плохих слов",
     }
 }
 export default locale_data;
