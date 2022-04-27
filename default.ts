@@ -428,7 +428,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.GLOBAL_CHAT]: {
         en: "Global Chat",
         ru: "Глобальный чат",
-        br: "Chat Global",
         cz: "Globální chat",
     },
     [LOCALE.HOME]: {
@@ -1180,5 +1179,92 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Нормальный уровень",
         cz: "Normální dovednost"
     },
+
+    /** Settings */
+    [LOCALE.ST_GENERAL]: {
+        en: "General",
+        cz: "Hlávne",
+    },
+    [LOCALE.ST_AUDIO]: {
+        en: "Audio",
+    },
+    [LOCALE.ST_HOTKEYS]: {
+        en: "Hotkeys",
+    },
+    [LOCALE.ST_MISC]: {
+        en: "Misc",
+    },
+    [LOCALE.ST_AUDIO_MASTER_VOLUME]: {
+        en: "Master volume",
+    },
+    [LOCALE.MOVEMENT]: {
+        en: "Movement",
+        cz: "Pohyb",
+    },
+    [LOCALE.ABILITES]: {
+        en: "Abilites",
+        cz: "Schopnosti",
+    },
+    [LOCALE.ITEMS]: {
+        en: "Items",
+        cz: "Předměty"
+    },
+    [LOCALE.ST_KEYBIND_MOVEUP]: {
+        en: "Jump",
+        cz: "Skok",
+    },
+    [LOCALE.ST_KEYBIND_MOVEDOWN]: {
+        en: "Move down",
+        cz: "pohyb dolů",
+    },
+    [LOCALE.ST_KEYBIND_MOVELEFT]: {
+        en: "Move left",
+        cz: "pohyb doleva",
+    },
+    [LOCALE.ST_KEYBIND_MOVERIGHT]: {
+        en: "Move right",
+        cz: "pohyb vpravo"
+    },
+    [LOCALE.ST_KEYBIND_ATTACK]: {
+        en: "Attack",
+        cz: "Útok",
+    },
+    [LOCALE.ST_KEYBIND_ABILITY]: {
+        en: "Ability",
+        cz: "Schopnost",
+    },
+    [LOCALE.ST_KEYBIND_ITEM]: {
+        en: "Item",
+        cz: "Předmět"
+    },
+    [LOCALE.ST_KEYBIND_RECALL]: {
+        en: "Recall",
+        cz: "Odvolání"
+    },
+    [LOCALE.SCOREBOARD]: {
+        en: "Scoreboard",
+        cz: "Tabulka"
+    },
+    [LOCALE.VIDEO]: {
+        en: "Video",
+    },
+    [LOCALE.ANTIALIASING]: {
+        en: "Antialiasing",
+    },
+    [LOCALE.RESOLUTION]: {
+        en: "Resolution",
+        cz: "Rozlišenie",
+    },
+    [LOCALE.ST_MOUSE_SUPPORT_TOOLTIPS]: {
+        en: "This feature will enable mouse buttons to be used for abilites and facing. Be careful, your hero will face to mouse direction. "
+    },
+    [LOCALE.ST_LANGUAGE]: {
+        en: "Language",
+        cz: "Jazýk",
+    },
+    [LOCALE.ST_FILTER_BAD_WORDS]: {
+        en: "Filter of bad words",
+        cz: "Filtr špatných slov"
+    }
 }
 export default locale_data;

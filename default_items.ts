@@ -1,4 +1,5 @@
-import { calculateMagicDefense, toSec } from "@/misc/constants";
+import { calculateMagicDefense } from "@/misc/constant";
+import { toSec } from "@/misc/misc";
 import Shared, { fixed, ItemAbilityData } from "@/misc/shared";
 import { LANG } from "../lang";
 
@@ -300,8 +301,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: "Шипастая булава",
                 },
                 desc: {
-                    en: `UNIQUE: Your attacks have ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% chance to deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 80%)`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши атаки имеют ${fixed(ItemAbilityData.SPIKED_MACE_CHANCE * 100, 1)}% шанс нанести дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и наложить на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 80%)`,
+                    en: `UNIQUE: Your attacks deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 50%). Cooldown ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}`,
+                    ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 80%). (Перезарядка:  ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)} сек.)`
                 }
             }
 
@@ -869,7 +870,7 @@ const getPoisonBowDescription = (duration: number) => {
         fr: `[UNIQUE]: Tes attaques J empoisonne ton ennemie pour ${(duration / 1000).toFixed(1)} sec. Pendant cette période, il est ralenti de ${ItemAbilityData.POISON_BOW_SLOW} et reçoit ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} dégâts supplémentaires. \n (Cet effet peut se cumuler jusqu'à 5 fois, le délai d'empoisennement est remis à zéro à chaque attaque)`,
     }
     
-    return text[LANG] ? text[LANG] : text['en'];
+    return text[LANG.value] ? text[LANG.value] : text['en'];
 }
 
 export const getLocaleItemDescription = (itemId: number): string => {
@@ -877,10 +878,10 @@ export const getLocaleItemDescription = (itemId: number): string => {
     if (!result.desc)
         return "";
 
-    return result.desc[LANG] ? result.desc[LANG] : result.desc['en'];
+    return result.desc[LANG.value] ? result.desc[LANG.value] : result.desc['en'];
 }
 
 export const getLocaleItemName = (itemId: number): string => {
     const result = _getLocaleItemDescription(itemId);
-    return result.name[LANG] ? result.name[LANG] : result.name['en'];
+    return result.name[LANG.value] ? result.name[LANG.value] : result.name['en'];
 }

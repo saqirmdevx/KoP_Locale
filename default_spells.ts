@@ -1,4 +1,4 @@
-import { toSec } from "@/misc/constants";
+import { toSec } from "@/misc/misc";
 import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData } from "@/misc/shared";
 import { SpellType, getDamage, IAbilityTooltipsData } from "@/lang/ability_desc";
 import { LANG } from "@/lang/lang";
@@ -587,8 +587,8 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
 export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsData, type: SpellType): string => {
     const result = _getSpellDescription(id, unitStats, type);
 
-    if (result[LANG])
-        return result[LANG];
+    if (result[LANG.value])
+        return result[LANG.value];
     else
         return result['en'];
 }
@@ -596,8 +596,8 @@ export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityToo
 export const getSpellName = (id: Shared.SpellList): string => {
     const result = _getSpellName(id);
 
-    if (result[LANG])
-        return result[LANG];
+    if (result[LANG.value])
+        return result[LANG.value];
     else
         return result['en'];
 }
