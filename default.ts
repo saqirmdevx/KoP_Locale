@@ -824,7 +824,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "ТРИПЛКИЛЛ",
         cz: "TROJITÉ ZABITÍ",
     },
-
+    [LOCALE.AN_ULTRA_KILL]: {
+        en: "ULTRA KILL!!",
+    },
     [LOCALE.AN_KILLING_SPREE]: {
         en: "Killing spree",
         ru: "получает серию убийств",
@@ -1288,6 +1290,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Filter of bad words",
         cz: "Filtr špatných slov",
         ru: "Фильтр плохих слов",
+    },
+    [LOCALE.ST_AUDIO_BGMUSIC_VOLUME]: {
+        en: "Background Music",
+        cz: "Hudba v pozadi"
+    },
+    [LOCALE.LOBBY_SHARE_GAME]: {
+        en: "Copy sharable link",
+    },
+    [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
+        en: "Atmospheric details"
     }
 }
 export default locale_data;
