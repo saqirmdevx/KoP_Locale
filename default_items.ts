@@ -308,9 +308,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "聖劍",
                 },
                 desc: {
-                    en: `[ACTIVE]: Divine Shield - Makes you immune to all effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and reduce your attack damage to 0. ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} cooldown`,
-                    ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша сила атаки становится равна 0. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
-                    zh: `主動技：神聖護盾 - 使你${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}秒無視所有效果並將你受到的攻擊傷害降至為零。${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)}秒冷卻時間`,
+                    en: `[ACTIVE]: Divine Shield - Makes you immune to all effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and reduce your attack damage by 50%. ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} cooldown`,
+                    ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша сила атаки становится равна 50%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
+                    zh: `主動技：神聖護盾 - 使你${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}秒無視所有效果並將你受到的攻擊傷害降至為50%。${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)}秒冷卻時間`,
                 },
             }
         case Shared.ItemList.Divine_Katana:
@@ -337,7 +337,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     en: `UNIQUE: Your attacks deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 65%). Cooldown ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}`,
-                    ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 65%). (Перезарядка:  ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)} сек.)``
+                    ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 65%). (Перезарядка: ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)} сек.)`
                     zh: `特殊：你的攻擊給予額外${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}秒創傷。(創傷降低目標物的所有治癒即回血效果65%)。${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}秒冷卻時間`,
                 }
             }
