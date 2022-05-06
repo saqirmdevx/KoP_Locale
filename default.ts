@@ -1,4 +1,5 @@
-import LOCALE from "../locales";
+//@ts-ignore
+import LOCALE from "@/lang/locales";
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     /** Hero section */

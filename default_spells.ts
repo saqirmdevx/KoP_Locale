@@ -1,6 +1,10 @@
+//@ts-ignore
 import { toSec } from "@/misc/misc";
+//@ts-ignore
 import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData } from "@/misc/shared";
+//@ts-ignore
 import { SpellType, getDamage, IAbilityTooltipsData } from "@/lang/ability_desc";
+//@ts-ignore
 import { LANG } from "@/lang/lang";
 
 const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, health, cooldownReduction, level}: IAbilityTooltipsData, type: SpellType): { [key in string]: string } => {

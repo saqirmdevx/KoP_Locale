@@ -1,7 +1,11 @@
+//@ts-ignore
 import { calculateMagicDefense } from "@/misc/constant";
+//@ts-ignore
 import { toSec } from "@/misc/misc";
+//@ts-ignore
 import Shared, { fixed, ItemAbilityData } from "@/misc/shared";
-import { LANG } from "../lang";
+//@ts-ignore
+import { LANG } from "@/lang/lang";
 
 const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: string }, desc?: { [key in string]: string } } => {
     switch (itemId) {
@@ -863,7 +867,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
 }
 
 const getPoisonBowDescription = (duration: number) => {
-    const text = {
+    const text: {[key: string]: string} = {
         en: `UNIQUE: Your attacks apply deadly poison on enemy hero slows target for ${ItemAbilityData.POISON_BOW_SLOW} and deals ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} damage per sec for ${(duration / 1000).toFixed(1)} sec. (This effect can stack up 5 times, every attack refresh duration)`,
         ru: `УНИКАЛЬНО(Пассивно): Ваши атаки накладывают смертельный яд на вражеских героев, замедляя их на ${ItemAbilityData.POISON_BOW_SLOW} и нанося ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} урона в секунду в течение ${(duration / 1000).toFixed(1)} сек. (Этот эффект может складываться до 5 раз. Каждая последующая атака обновляет длительность зарядов)`,
         br: `[Único]: Seus ataques aplicam veneno no personagem inimigo e retarda o alvo por ${ItemAbilityData.POISON_BOW_SLOW} e adiciona ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} de dano por seg, por ${(duration / 1000).toFixed(1)} seg.\n (Este efeito pode acumular 5 vezes, cada duração de atualização de ataque.)`,
