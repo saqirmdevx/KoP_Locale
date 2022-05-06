@@ -56,7 +56,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         case Shared.SpellList.SPARROW_DASH:
             return {
                 en: `Sparrow quickly dashes while thrusting her sword forward, stunning enemies she hits for ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} and dealing ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normal damage.`,
-                ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} и нанося ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} физического урона.`,     
+                ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} и нанося им ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} физического урона.`,     
                 cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} a způsobí ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normalního poškozeni.`,            
                 br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} e dando ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} de dano.`,
                 zh: `史佩羅迅速衝刺猛力向前揮劍，暈眩${toSec(SparrowAbilityData.DASH_STUN_DURATION)}秒擊中的敵方並給予${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}點一般傷害。`,
@@ -68,7 +68,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Sparrow unleashes the power of her sword to create a crescent-shaped sword beam dealing ${base_damage} magical damage (plus ${percDamage}% of target's missing health) to enemies that get hit.`,
-                ru: `Спарроу высвобождает силу своего меча, создавая волну в форме полумесяца, наносящую ${base_damage} (плюс ${percDamage}% от недостающего здоровья цели) чистого урона задетым врагам.`,
+                ru: `Спарроу высвобождает силу своего меча, создавая волну в форме полумесяца, наносящую ${base_damage} (плюс ${percDamage}% от недостающего здоровья цели) магического урона задетым врагам.`,
                 cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
                 br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
                 zh: `史佩羅釋放劍的力量產生新月形刀光，給予被擊中敵方${base_damage}點魔法傷害 (加上${percDamage}%敵方損失血量)。`,
@@ -395,7 +395,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`
-                zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}秒後爆炸，給予周圍所有敵方${baseDamage}點一般傷害。 <br />
+                zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}秒後爆炸，給予周圍所有敵方${baseDamage}點一般傷害。
                 <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予${enhDamage}點一般傷害並暈眩${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}秒炸彈負載者。`,
             }
         }

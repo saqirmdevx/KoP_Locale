@@ -900,7 +900,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 },
                 desc: {
                     en: `UNIQUE: Whenever you take magical damage, attacker will be cursed and their ability power will by decreased by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
-                    ru: `УНИКАЛЬНО(Пассивно): Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а сила его способностей уменьшится на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
+                    ru: `УНИКАЛЬНО(Пассивно): Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а его Сила умений уменьшится на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
                     zh: `特殊：每當你受到魔法傷害，攻擊者將會受到詛咒，技能威力被減少${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%。`,
                 }
             }

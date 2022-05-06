@@ -1542,15 +1542,19 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.ST_AUDIO_BGMUSIC_VOLUME]: {
         en: "Background Music",
-        cz: "Hudba v pozadi"
+        cz: "Hudba v pozadi",
         zh: "背景音樂",
     },
     [LOCALE.LOBBY_SHARE_GAME]: {
         en: "Copy sharable link",
+        ru: "Скопировать ссылку на лобби",
         zh: "複製分享連結",
     },
     [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
-        en: "Atmospheric details"
+        en: "Atmospheric details",
+        ru: "Атмосферные детали",
+        cz: "Hudba v pozadi",
+        ru: "Фоновая музыка",
         zh: "氛圍渲染",
     }
 
