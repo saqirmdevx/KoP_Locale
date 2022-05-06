@@ -296,7 +296,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
                 <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED} na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
                 zh: `奇菈發射一束閃電飛箭，造成${basic_damage}點一般傷害。<br />
-                <br /> <b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄 (友方英雄優先) 施展一束衝擊電流，短時間內降低敵方或增加友方英雄${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%攻擊速度與移動速度值${KiraAbilityData.ENHATTACK_MOVE_SPEED}，並立即給予${enh_damage}點魔法傷害或是治癒友方英雄${enh_damage_heal}點生命。`,
+                <br /> <b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄施展一束衝擊電流，短時間內降低敵方或增加友方英雄${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%攻擊速度與移動速度值${KiraAbilityData.ENHATTACK_MOVE_SPEED}，並立即給予${enh_damage}點魔法傷害或是治癒友方英雄${enh_damage_heal}點生命。`,
             }
         }
 
