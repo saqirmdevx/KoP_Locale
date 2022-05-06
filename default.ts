@@ -45,7 +45,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.FLIN_NAME]: {
         en: "Flin",
-        ru: "Флин"
+        ru: "Флин",
         zh: "弗林",
     },
 
@@ -56,7 +56,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.HAZEL_NAME]: {
         en: "Hazel",
-        ru: "Хейзел"
+        ru: "Хейзел",
         zh: "哈歇爾",
     },
     [LOCALE.AREL_NAME]: {
@@ -322,7 +322,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "這些是你的小兵們，每隔20秒他們會從你的水晶生成！\n" +
             "消滅一個敵方小兵給予你額外黃金！。\n" +
             "運用那些小兵來抵禦城池傷害以及摧毀敵方水晶\n" +
-            "敵方小兵能對你造成傷害，所以也要小心他們！\n！",
+            "敵方小兵能對你造成傷害，所以也要小心他們！\n！" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -423,7 +423,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "操控你的滑鼠購買物品\n" +
             "謹慎選擇物品！如果你不想要這物品，你可以按右鍵售出。\n" +
             "若在五秒後售出物品，只能退還50%的金額\n" +
-            "有許多物品（可發動）可以按[1、2、3、4]鍵發動效果！\n！",
+            "有許多物品（可發動）可以按[1、2、3、4]鍵發動效果！\n！" +
             "\n\n按空白鍵以繼續！",
 
     },
@@ -452,7 +452,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "在底部你可以看見你的英雄技能！\n" +
             "[J]、[K]、[L] 鍵是你的技能發動鍵\n" +
             "[B] 鍵用來將你召回基地！在回到基地前需要花費五秒時間完成傳送作業\n" +
-            "你可以移動游標來觀看技能詳細資訊\n！",
+            "你可以移動游標來觀看技能詳細資訊\n！" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -1053,7 +1053,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ABILITY_POWER]: {
         en: "Ability Power",
         ru: "Сила умений",
-        cz: "Síla kouzel"
+        cz: "Síla kouzel",
         zh: "技能威力",
     },
     [LOCALE.DAMAGE]: {
@@ -1211,26 +1211,26 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.FREE_CAMERA]: {
         en: "Free Camera",
         ru: "Свободная камера",
-        cz: "Volná Kamera"
+        cz: "Volná Kamera",
         zh: "自由鏡頭",
     },
     [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
         en: "Spectators in game: ",
         ru: "Наблюдают за игрой: ",
-        cz: "Diváků v hře: "
+        cz: "Diváků v hře: ",
         zh: "觀戰訊息",
 
     },
     [LOCALE.PRIVATE_LOBBY]: {
         en: "Private lobby",
         ru: "Приватное лобби",
-        cz: "Privátní lobby"
+        cz: "Privátní lobby",
         zh: "私人開房",
     },
     [LOCALE.FIND_LOBBY]: {
         en: "Find a lobby",
         ru: "Найти лобби",
-        cz: "Najít lobby"
+        cz: "Najít lobby",
         zh: "尋找房間",
     },
     [LOCALE.CREATE_LOBBY]: {
@@ -1248,19 +1248,19 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.JOIN]: {
         en: "Join",
         ru: "Присоединиться",
-        cz: "Přida se"
+        cz: "Přida se",
         zh: "加入",
     },
     [LOCALE.LEAVE]: {
         en: "Leave",
         ru: "Выйти",
-        cz: "Opustit"
+        cz: "Opustit",
         zh: "離開",
     },
     [LOCALE.START]: {
         en: "Start",
         ru: "Начать игру",
-        cz: "Začít"
+        cz: "Začít",
         zh: "開始",
     },
     [LOCALE.LOBBY_ID]: {
@@ -1543,6 +1543,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ST_AUDIO_BGMUSIC_VOLUME]: {
         en: "Background Music",
         cz: "Hudba v pozadi",
+        ru: "Фоновая музыка",
         zh: "背景音樂",
     },
     [LOCALE.LOBBY_SHARE_GAME]: {
@@ -1554,7 +1555,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Atmospheric details",
         ru: "Атмосферные детали",
         cz: "Hudba v pozadi",
-        ru: "Фоновая музыка",
         zh: "氛圍渲染",
     }
 

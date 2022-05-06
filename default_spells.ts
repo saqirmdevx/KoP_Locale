@@ -188,7 +188,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         }
 
         case Shared.SpellList.THOMAS_SHADOW_CARROT: {
-            const base_damage = getDamage(damage, type, ThomasAbilityData.SHADOW_CARROT_BASE_DAMAGE);
+            const base_damage = getDamage(damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD, type);
 
             return {
                 en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
@@ -200,7 +200,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
                     `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, Ele se teletransporta para o inimigo retardando-o ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} e causando ${base_damage} de dano.`,
                 zh: `<b>第一次施展：</b>湯瑪士丟出附著性羅波。他可以在${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)}秒內瞬移到蘿蔔所在地。<br /> <br />` +
-                    `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度${toSec(ThomasAbilityData.SHADOW_CARROT_STUN_DURATION)}秒並造成${base_damage}點一般傷害。`,
+                    `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)}秒並造成${base_damage}點一般傷害。`,
             }
         }
         /** Veil */
@@ -290,7 +290,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br />
-                <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira casts a shock of electricity towards the nearest hero (Prioritize friendly hero), decrease or increase hero attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for short period and instantly deals ${enh_damage} magical damage or heal if hero is friendly for ${enh_damage_heal}.`,
+                <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira casts a shock of electricity towards the nearest hero, decrease or increase hero attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for short period and instantly deals ${enh_damage} magical damage or heal if hero is friendly for ${enh_damage_heal}.`,
                 ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> 
                 <br /> <b>[Усиленная]: (Удар молнии)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% и скорость передвижения на ${KiraAbilityData.ENHATTACK_MOVE_SPEED}, а также он единожды получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он единожды исцеляется на ${enh_damage_heal}`,
                 cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
@@ -309,7 +309,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Кира призывает 4 снаряда бездны, которые падают с неба, нанося ${damage} магического урона каждый и пронзая вражеские цели. 
                 <br /> <b>[Усиленная]: (Проливная бездна)</b> Количество призываемых снарядов увеличивается до 8.`,
                 cz: `Kira vyvolá 4 prázdné střely, které prší shora, přičemž každá střela způsobí ${damage} magické poškození, které prorazí nepřátele.
-                <br /> <b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`
+                <br /> <b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`,
                 zh: `奇菈召喚四束虛空飛彈從上方如雨淋下，每束飛彈給予${damage}點魔法傷害並貫穿敵方。<br />
                 <br /> <b>[強化後]：(滔天深淵) 奇菈召喚總共八束虛空飛彈。`,
             }
@@ -337,7 +337,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Hazel strikes her foes down with her hammer, dealing ${baseDamage} normal damage.`,
                 ru: `Хейзел поражает врагов своим молотом, нанося ${baseDamage} физического урона.`,
-                cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`
+                cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`,
                 zh: `哈歇爾用她的鐵鎚打擊敵人，給予${baseDamage}點一般傷害。`,
             }
         }
@@ -357,7 +357,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
-                ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`
+                ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
                 zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予${normalDamage}點一般傷害並擊昇敵方暈眩${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}秒。`,
             }
         }
@@ -373,7 +373,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Арел выпускает пулю из своего оружия, нанося ${baseDamage} физического урона. <br /> 
                 <br />[ПАССИВНО]: Всякий раз, когда Арел использует способность, он заряжает еще одну пулю, делая дополнительный выстрел и нанося ${enhDamage} физического урона.`,
                 cz: `Arel vystřelí kulku ze své zbraně a způsobí ${baseDamage} normální poškození <br />
-                <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`
+                <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`,
                 zh: `艾瑞爾從他的槍發射一發子彈，給予${baseDamage}點一般傷害。 <br />
                 <br />被動技：每當艾瑞爾發動技能後，艾瑞爾會從他的槍裝填另一發子彈，多補一發射擊給予額外${enhDamage}點一般傷害。`,
             }
@@ -383,7 +383,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Arel rolls forward.`,
                 ru: `Арел катится вперёд.`,
-                cz: `Arel se převalí dopředu`
+                cz: `Arel se převalí dopředu`,
                 zh: `艾瑞爾向前翻滾。`,
             }
         }
@@ -398,7 +398,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, нанося ${baseDamage} физического урона всем ближайшим врагам.
                 <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
-                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`
+                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}秒後爆炸，給予周圍所有敵方${baseDamage}點一般傷害。
                 <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予${enhDamage}點一般傷害並暈眩${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}秒炸彈負載者。`,
             }
