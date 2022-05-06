@@ -1293,13 +1293,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.ST_AUDIO_BGMUSIC_VOLUME]: {
         en: "Background Music",
-        cz: "Hudba v pozadi"
+        cz: "Hudba v pozadi",
+        ru: "Фоновая музыка",
     },
     [LOCALE.LOBBY_SHARE_GAME]: {
         en: "Copy sharable link",
+        ru: "Скопировать ссылку на лобби",
     },
     [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
-        en: "Atmospheric details"
+        en: "Atmospheric details",
+        ru: "Атмосферные детали",
     }
 }
 export default locale_data;
