@@ -336,9 +336,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "尖刺錘",
                 },
                 desc: {
-                    en: `UNIQUE: Your attacks deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 50%). Cooldown ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}`,
-                    ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 80%). (Перезарядка:  ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)} сек.)`
-                    zh: `特殊：你的攻擊給予額外${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}秒創傷。(創傷降低目標物的所有治癒即回血效果50%)。${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}秒冷卻時間`,
+                    en: `UNIQUE: Your attacks deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 65%). Cooldown ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}`,
+                    ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 65%). (Перезарядка:  ${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)} сек.)``
+                    zh: `特殊：你的攻擊給予額外${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}秒創傷。(創傷降低目標物的所有治癒即回血效果65%)。${toSec(ItemAbilityData.SPIKED_MACE_COOLDOWN)}秒冷卻時間`,
                 }
             }
 
@@ -356,8 +356,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     br: `[Único]: Seus ataques reduzem o movimento do inimigo em ${ItemAbilityData.COLD_SWORD_SLOW} por 1 segundo.`,
                     cz: `JEDINEČNÉ: Útoky zpomalují nepřátele o ${ItemAbilityData.COLD_SWORD_SLOW} za vteřinu`,
                     fr: `[UNIQUE]: Tes attaques J réduisent la vitesse de déplacement de ton ennemie de ${ItemAbilityData.COLD_SWORD_SLOW} points de vitesse pendant 1 seconde`,
-                    zh: `特殊：攻擊降低1秒敵方移動速度值${ItemAbilityData.COLD_SWORD_SLOW}
-                    `,
+                    zh: `特殊：攻擊降低1秒敵方移動速度值${ItemAbilityData.COLD_SWORD_SLOW}`,
                 }
             }
 
@@ -732,7 +731,6 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     ru: `УНИКАЛЬНО(Активно): Создаёт ударную волну, которая наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} урона и уменьшает скорость передвижения на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} у всех врагов на своём пути на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     zh: `主動技：釋放衝擊波，給予${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}點傷害並降低${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)}秒敵方的移動速度值${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} - ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                     // need fix
-                    //ru: `УНИКАЛЬНО(Активно): Создаёт ударную волну, которая наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} урона и уменьшает скорость передвижения на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} у всех врагов на своём пути, также делая их видимыми на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     //br: `[Ativo]: Ondas de choque viajam pelo ar causando ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} de dano e reduzindo a velocidade de movimento do inimigo em ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} , torna todas as unidades afetadas visíveis por ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     //fr: `[ACTIVATION]: Envoi une onde de choc qui se propage en faisant ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} dégâts and en réduisant la vitesse de déplacement des ennemis de ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} points de vitesse. Toutes les unités affectés sont visible pour ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec. \n [Délai de récupération: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec.]`,
                 }
@@ -921,57 +919,57 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 }
             }
 
-            case Shared.ItemList.Observer_Ward:
-                return {
-                    name: {
-                        en: "Observer Ward",
-                        ru: "Тотем-наблюдатель",
-                        zh: "偵查守衛",
-                    },
-                    desc: {
-                        en: `[ACTIVE]: Plants an Observer Ward, an invisible watcher that gives obstructed vision in a ${ItemAbilityData.WARD_VISION} radius to your team. Lasts ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} secs. If ward is visible to enemy team, they can destroy it!`,
-                        ru: `Активно: Вы устанавливаете невидимый тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
-                        zh: `主動技：植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊${ItemAbilityData.WARD_VISION}範圍內的受限視線。持續${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
-                    }
+        case Shared.ItemList.Observer_Ward:
+            return {
+                name: {
+                    en: "Observer Ward",
+                    ru: "Тотем-наблюдатель",
+                    zh: "偵查守衛",
+                },
+                desc: {
+                    en: `[ACTIVE]: Plants an Observer Ward, an invisible watcher that gives obstructed vision in a ${ItemAbilityData.WARD_VISION} radius to your team. Lasts ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} secs. If ward is visible to enemy team, they can destroy it!`,
+                    ru: `Активно: Вы устанавливаете невидимый тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
+                    zh: `主動技：植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊${ItemAbilityData.WARD_VISION}範圍內的受限視線。持續${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
                 }
-            case Shared.ItemList.Sentry_Ward:
-                return {
-                    name: {
-                        en: "Sentry Ward",
-                        ru: "Сторожевой тотем",
-                        zh: "哨兵守衛",
-                    },
-                    desc: {
-                        en: `[ACTIVE]: Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
-                        ru: `Активно: Вы устанавливаете невидимый сторожевой тотем, раскрывающий невидимых противников и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
-                        zh: `主動技：植入一個哨兵守衛，一個隱蔽的觀察者賜予真實視線，有能夠給友軍在範圍內看見隱蔽敵方單位與守衛的能力。持續${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
-                    }
+            }
+        case Shared.ItemList.Sentry_Ward:
+            return {
+                name: {
+                    en: "Sentry Ward",
+                    ru: "Сторожевой тотем",
+                    zh: "哨兵守衛",
+                },
+                desc: {
+                    en: `[ACTIVE]: Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
+                    ru: `Активно: Вы устанавливаете невидимый сторожевой тотем, раскрывающий невидимых противников и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
+                    zh: `主動技：植入一個哨兵守衛，一個隱蔽的觀察者賜予真實視線，有能夠給友軍在範圍內看見隱蔽敵方單位與守衛的能力。持續${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
                 }
-            case Shared.ItemList.Potion_Of_Magic:
-                return {
-                    name: {
-                        en: "Potion of Magic",
-                        ru: "Зелье волшебства",
-                        zh: "魔法藥水",
-                    },
-                    desc: {
-                        en: `[ACTIVE]: Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
-                        ru: `Активно: Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} силы умений навсегда. Эффект складывается до 5 раз!`,
-                        zh: `主動技：永久提供${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
-                    }
+            }
+        case Shared.ItemList.Potion_Of_Magic:
+            return {
+                name: {
+                    en: "Potion of Magic",
+                    ru: "Зелье волшебства",
+                    zh: "魔法藥水",
+                },
+                desc: {
+                    en: `[ACTIVE]: Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
+                    ru: `Активно: Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} силы умений навсегда. Эффект складывается до 5 раз!`,
+                    zh: `主動技：永久提供${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
                 }
-            case Shared.ItemList.Corrupted_Potion:
-                return {
-                    name: {
-                        en: "Corrupted Potion",
-                        ru: "Искажённое зелье",
-                        zh: "腐化的藥水",
-                    },
-                    desc: {
-                        en: `[ACTIVE]: Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
-                        ru: `Активно: Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} силы атаки навсегда. Эффект складывается до 5 раз!`,
-                        zh: `主動技：永久提供${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害，疊加最多五次！`,
-                    }
+            }
+        case Shared.ItemList.Corrupted_Potion:
+            return {
+                name: {
+                    en: "Corrupted Potion",
+                    ru: "Искажённое зелье",
+                    zh: "腐化的藥水",
+                },
+                desc: {
+                    en: `[ACTIVE]: Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
+                    ru: `Активно: Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} силы атаки навсегда. Эффект складывается до 5 раз!`,
+                    zh: `主動技：永久提供${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害，疊加最多五次！`,
+                }
             }
         default: return {
             name: { en: "" },
@@ -997,7 +995,7 @@ export const getLocaleItemDescription = (itemId: number): string => {
     if (!result.desc)
         return "";
 
-        return result.desc[LANG.value] ? result.desc[LANG.value] : result.desc['en'];
+    return result.desc[LANG.value] ? result.desc[LANG.value] : result.desc['en'];
 }
 
 export const getLocaleItemName = (itemId: number): string => {
