@@ -1556,6 +1556,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Атмосферные детали",
         cz: "Hudba v pozadi",
         zh: "氛圍渲染",
+    },
+    [LOCALE.ADD_HARD_BOT]: {
+        en: "Add hard bot",
+        cz: "Prídat těžkého bota",
+        
     }
 
 }
