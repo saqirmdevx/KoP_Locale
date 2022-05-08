@@ -69,21 +69,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
         br: "Kumihu é um Demônio que roubou o corpo de uma Bela mulher que está sempre faminta por almas. Mas tome cuidado, em um piscar de olhos ela pode mostrar sua verdadeira forma, destruindo qualquer chance de sua vítima sobreviver, encantando até as pessoas mais cautelosas.",
         cz: "Kumihu je zlý duch v převleku krásné ženy, která neustále touží po nových duších. Ale buďte opatrní: mrknutím oka může ukázat svou pravou podobu a zničit jakoukoli šanci na přežití, protože její sféra duše zachytí i ti nejhouževnatější blázni.",
-        zh: "庫咪戶是一個偽裝成貌美女性的惡靈，總是渴求著新鮮的靈魂。萬分注意：一旦被靈魂球體逮到，只需眨眼之間，她就能現出真實面目將任何一絲存活的機會通通摧毀，縱使是最頑強的愚者也不例外。",
+        zh: "　　庫咪戶是一個偽裝成貌美女性的惡靈，總是渴求著新鮮的靈魂。萬分注意：一旦被靈魂球體逮到，只需眨眼之間，她就能現出真實面目將任何一絲存活的機會通通摧毀，縱使是最頑強的愚者也不例外。",
     },
     [LOCALE.ICEAT_DESCRIPTION]: {
         en: "Belonging to a colony of penguins in the arctic region of Civia, I'ceat stood out among the rest. Possessing magical powers, I'ceat can manifest ice and snow at the tip of his flippers. No one knows where his powers came from, but everyone embraces his uniqueness among the group. Waddling past the tall trees in the dense forest, I'ceat is determined to find the true meaning behind the powers he once used to protect his family.",
         ru: "Принадлежащий к колонии пингвинов в арктическом регионе Кливии, Ай'сит выделялся среди остальных. Обладая магическими способностями, Ай'сит может создавать лёд и снег на кончиках ласт. Никто не знает, откуда взялись его силы, но все в группе принимают его уникальность. Пробираясь мимо высоких деревьев в густом лесу, Ай'сит наполнен решимостью разыскать истинный смысл своих сил, которые он когда-то использовал для защиты своей семьи.",
         br: "Pertencente a uma colônia de pinguins na região ártica de Civia, I'ceat se destacou entre os demais. Possuindo poderes mágicos que apenas demônios tem, I'ceat pode manifestar pedras de gelo e neve da ponta de suas nadadeiras. Ninguém sabe de onde veio seus poderes, mas todos o aceitam no grupo acreditando não ter ligação com os demônios. Passando pelas árvores altas da floresta das fadas, I'ceat está determinado a encontrar o verdadeiro significado por trás dos poderes que ele usou para proteger sua colônia.",
         cz: "I'ceat patřil ke kolonii tučňáků v arktické oblasti Civia, ale vždy vyčníval mezi ostatními. Díky magickým schopnostem dokáže I'ceat vztvořit led a sníh na špičce svých křidel. Nikdo neví, kde se jeho schopnosti vzaly , ale každý přijímá jeho jedinečnost ve kmenu. Kolébájíc se kolem vysokých stromů v hustém lese je I'ceat odhodlán najít skutečný význam za schopnostmi, které kdysi používal k ochraně své rodiny.",
-        zh: "隸屬於北極地帶希維亞的企鵝群，艾希特在企鵝群中脫穎而出。擁有魔法之力，艾希特可以在他的腳蹼間現出冰雪。沒人知曉他的能力從何而來，但大家都接納他在群體中的獨特性。搖搖擺擺地走過了重重的高樹茂林，艾希特下定了決心，去尋找他那曾經用來保護整個家族的力量其背後的真實意涵。",
+        zh: "　　隸屬於北極地帶希維亞的企鵝群，艾希特在企鵝群中脫穎而出。擁有魔法之力，艾希特可以在他的腳蹼間現出冰雪。沒人知曉他的能力從何而來，但大家都接納他在群體中的獨特性。搖搖擺擺地走過了重重的高樹茂林，艾希特下定了決心，去尋找他那曾經用來保護整個家族的力量其背後的真實意涵。",
     },
     [LOCALE.THOMAS_DESCRIPTION]: {
         en: "Coming from an underground laboratory in the heated war zone of Rotite, Thomas fought for Etygia's guerilla force and partook in ambushes focused on the upper ranks of the enemy forces. He gained notoriety among allies and foes alike because of his unique style of killing. During a secret experiment gone wrong, the test subject blasted the laboratory wide open. Wanting to leave the hectic environment and hellish landscape, Thomas dared to leave the guerilla force for good. Through the spray of bullets, he managed to swiftly make it past as he witnessed the loss of many lives in the chaos. For Thomas, he wanted freedom, but at the cost of betraying the kingdom. Keeping a low profile and lurking in the shadows, it's only a matter of time. The hunter has become the hunted.",
         ru: "Выйдя из подземной лаборатории в жаркой зоне боевых действий Ротита, Томас сражался на стороне партизан Этигии и участвовал в засадах, сосредоточенных на верхних званиях вражеских сил. Он получил известность как среди союзников, так и среди врагов из-за своего уникального стиля убийств. Во время секретного эксперимента, который закончился неудачей, испытуемый полностью взорвал лабораторию. Желая покинуть суету и адские пейзажи, Томас осмелился навсегда покинуть партизанские отряды. Ему удалось быстро миновать осколки пуль, становясь свидетелем гибели многих людей в происходящем хаосе. Томас просто хотел свободы, даже ценой предательства целого королевства. Незаметность и скрытность в тени - это лишь вопрос времени. Охотник превратился в добычу.",
         br: "Vindo de um laboratório subterrâneo na zona de guerra aquecida de Rotite, Thomas foi obrigado a lutar pelas forças de guerrilha de Etygia e sua especialidade era de emboscadas focadas nas fileiras superiores das forças inimigas. Ele ganhou notoriedade entre aliados e inimigos por causa de seu estilo único de luta com uma espada demoníaca. Durante um experimento secreto que deu errado, uma das cobaias explodiu um laboratório subterrâneo perto de onde ele patrulhava. Ele testemunhou a perda de muitas vidas no caos. Thomas aproveitou a oportunidade e se atreveu a deixar as forças de guerrilha, mas ao custo de trair o reino e virar um fugitivo.",
         cz: "Tomáš, králík pocházející z podzemní laboratoře ve válečné zóně Rotite, bojoval za partyzánské síly Etygie a účastnil se přepadení zaměřených na vyšší řady nepřátelských sil. Díky svému jedinečnému stylu zabíjení si získal proslulost mezi spojenci i nepřáteli. Během tajného experimentu, který se pokazil, testovaný subjekt znicil laboratoř. Thomas chtěl opustit hektické prostředí a pekelnou krajinu a odvážil se navždy opustit partyzány. Přes spršku kulek se mu podařilo rychle uniknout, když byl svědkem ztráty mnoha životů v chaosu. Bunninju chtěl svobodu, ale za cenu zrady království. Držejic se nízko a číhat ve stínu, je to jen otázka času. Z lovce se stal lovený.",
-        zh: "來自洛泰特激烈戰區的地下實驗室，湯瑪士作為艾提吉亞的游擊兵勢力一員作戰，並專門伏擊敵方勢力的高級階層。他因為獨特的殺戮風格，在敵友之間皆惡名昭彰。在某一次機密實驗出錯時，受試者爆裂將實驗室炸毀了。渴望著離開這奔波不斷的環境以及猶如地獄般的光景，湯瑪士毅然決然離開了游擊隊勢力。穿越四散的子彈，他設法迅速離開，同時親眼目睹了這混亂當中葬送的許多性命。對湯瑪士而言，他想要自由，然而代價是背叛了整個王國。要持續保持低調潛伏在影子中，一個獵殺者反成了獵物只會是時間上的問題。",
+        zh: "　　來自洛泰特激烈戰區的地下實驗室，湯瑪士作為艾提吉亞的游擊隊勢力一員作戰，並專門伏擊敵方勢力的高級階層。他因為其獨特的殺戮風格，在敵友之間皆惡名昭彰。在某一次機密實驗出錯時，受試者爆裂將實驗室炸毀了。渴望著離開這奔波不斷的環境以及猶如地獄般的光景，湯瑪士毅然決然離開了游擊隊勢力。他設法迅速離開，穿越過了漫天四散的子彈，同時親眼目睹了許多性命被葬送在這場混亂當中。對湯瑪士而言，他想要自由，然而代價則是背叛了整個王國。要時時刻刻保持低調潛伏在影子中，一個獵殺者反成了獵物，只會是時間上的問題。",
     },
     [LOCALE.SPARROW_DESCRIPTION]: {
         en: `A courageous and fierce woman previously a Hermit, Sparrow committed most of her life following the demon Artuklas. She and her family lived in a village deep within the dense Sasugroen Rainforest. Her strong sense of adventure distinguished her from the timid and discreet natured children of her generation. Together with her family, they pursued the path that Artuklas set for the Hermits.
@@ -94,15 +94,15 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         <br />Артукласу были по душе открытия и новые знания, и он был очень заинтригован любопытной Спарроу и ее храбростью, когда она отправлялась на поиски неизвестного. Он медленно прокладывал свой путь, чтобы удовлетворить потребности Спарроу, увольняя других отшельников, которые хотели следовать за ним и поклоняться ему. Спарроу замечала изменения, но Артуклас заверял, что сама судьба избрала для неё этот путь. В последующие годы обучения и подготовки связь между отшельницей и демоном стала теснее, и Артуклас выдал Спарроу информацию о своём с ней родстве.
         <br />К сожалению, даже с обучением и ритуалами, дополняющими сильные стороны Спарроу, ребёнок не мог полностью осознать силу, которой Артуклас делится. Артуклас, теряя терпение и гневаясь из-за некомпетентности ребёнка, решил заставить часть своей силы течь через её тело. Эта сила оказалась бы слишком большой для Спарроу, и ей пришлось бы исключить многое из этого, чтобы оставаться в сознании. 
         <br />Небольшая разведывательная группа стражей вскоре заметит огромную демоническую энергию, сосредоточенную в одном месте. По прибытии они увидят очертания огромного демона, пытающегося взять под контроль лежащую в обмороке девушку. Они воспользовались возможностью нанести удар, но Спарроу контратаковала, позволив Артукласу сбежать в хаосе. После затяжной битвы стражи подавили и усмирили её пыл, поскольку она не могла эффективно использовать свои новообретённые способности.`,
-        zh: `曾經作為一名隱士，史佩羅勇敢而兇猛，過往一直追隨著惡魔阿圖克拉斯。她與她的家人住在薩蘇古朗恩熱帶雨林深處的一個村落，她那強大的冒險意識將她與她那一代膽小而謹慎的孩子們區隔了開來。隨著她的家族一行，他們追隨著阿圖克拉斯替隱士們設下的道路。
-        <br />阿圖克拉斯，近乎於探索與見聞，對於史佩羅勇敢冒險，尋求未知以及探索情報的好奇心感到興趣。他漸漸打造出一條專門迎合史佩羅需求的道路，將其他想要追隨崇拜他的隱士們通通送遣走。史佩羅注意到了這些變動，但阿圖克拉斯向她保證，是命運選擇了這條道路，迎接她的到來。在接下來幾年的訓練及準備中，隱士與惡魔的關係越來越緊密，而阿圖克拉斯向史佩羅透漏了他親屬的訊息。
-        <br />不幸的是，縱然在訓練與儀式當中史佩羅的力量一致受到大家讚揚，這個孩子依然無法完全掌握阿圖克拉斯發放給她的能量。阿圖克拉斯開始感到不耐煩，被孩子的無能給激怒了，決定將他一小部分份的能量強行流過她的身體。這份能量對史佩羅來說太多了，她要驅散大量的能量才能保持意識清醒。
-        <br />一組守衛者的小偵查隊注意到了匯集在一點的邪惡能量。到達之後，他們看到了一個更大的惡魔形體正在試圖操控一個已經倒下的女人。他們逮到了機會迎擊，但史佩羅還擊了，使得阿圖克拉斯在這場混亂當中逃脫而出。在一場曠日持久的戰鬥後，守衛隊制伏並打敗了她，因為她無法有效使用她那新發現的能力。`,
+        zh: `　　曾經作為一名隱士，史佩羅勇敢而兇猛，過往一直追隨著惡魔阿圖克拉斯。她與她的家人住在薩蘇古隆恩熱帶雨林深處的一個村落，她那強大的冒險意識將她與她那一代膽小而謹慎的孩子們區分了開來。隨著她的家族一行，他們追隨著阿圖克拉斯替隱士們設下的道路。
+        <br />　　阿圖克拉斯，近乎於探索與見聞，對於史佩羅勇敢冒險，尋求未知以及探索情報的好奇心感到興趣。他漸漸打造出一條專門迎合史佩羅需求的道路，將其他想要追隨崇拜他的隱士們通通遣送走。史佩羅注意到了這些變動，但阿圖克拉斯向她保證，是命運選擇了這條道路，迎接她的到來。在接下來這幾年來的訓練及準備中，隱士與惡魔的關係越來越緊密，而阿圖克拉斯則透漏與史佩羅建立起親屬關係的消息。
+        <br />　　不幸的是，縱然在訓練與儀式當中史佩羅的力量一致受到大家讚揚，這個孩子依然無法完全掌握阿圖克拉斯共享給她的能量。阿圖克拉斯開始感到不耐煩，被孩子的無能給激怒了，決定將他一小部分份的能量強行灌輸到她的身體。這份能量對史佩羅來說太多了，她必須將大量的能量驅散才能保持意識清醒。
+        <br />　　一組守衛者的小偵查隊注意到了匯集在一點的邪惡能量。到達之後，他們看到了一個更大的惡魔形體正在試圖操控一個已經倒下的女人。他們逮到了機會迎擊，但史佩羅展開了反擊，使得阿圖克拉斯在這場混亂當中逃脫而出。在一場曠日持久的戰鬥後，守衛隊制伏並打敗了她，因為她無法有效使用她那新發現的能力。`,
     },
     [LOCALE.BELLE_DESCRIPTION]: {
         en: "Part of an ancient race of fay creatures in the ancient woods, Belle was born with arcane control over plants unmatched by any before her, she was a kindred elementalist and used her knowledge of nature to heal those in need, however both sides tried to recruit her but failed and while the guardians were merely disappointed, the hermits made repetitive attempts to augment her into their forces. Eventually the cultists decided to remove the threat and they brought a trio of hermit leaders: Flin, Kumihu, and Puppeteer to either taint her of kill her, Belle successfully defeated Flin before succumbing to the charm spells cast by Kumihu with her last fragment of consciousness she threw a pod at Kumihu which exploded in her face, as Belle got back onto her feet she was bound by strings materializing from Puppeteer's fingers and lost control over her body, as she was forced to walk back to the hermit camp she struggled against the glowing threads but she was no match for a major demon. At the hands of the hermits Belle was tortured and violated until her original happy and joyous self was trapped in the deepest corners of her mind while a new hateful personality arose and she was never the same again, maybe some arcane healer might come along and reawaken her old self or perhaps she shall be trapped as an insane hermit for eternity.",
         ru: "Она, — частичка древней расы сказочных существ, живущих в древних лесах, родилась с волшебным даром контроля над растениями, и никто из её вида прежде не имел этой способности. Она была потомственной повелительницей элементов и использовала свои знания о природе, чтобы исцелять нуждающихся. Обе стороны предпринимали попытки завербовать её, но они были тщетны. В то время как стражи опустили руки, отшельники предпринимали неоднократные попытки усилить её, пытаясь сделать частью своей армии. В конце концов культисты решили решить всё раз и навсегда и привели троих лидеров-отшельников: Флина, Кумиху и Кукловода, чтобы либо осквернить ее до конца, либо убить. Белла успешно победила Флина, и прежде чем поддаться очаровывающим заклинаниям Кумиху, она смогла бросить взрывной бутон прямо в лицо ведьме. Нити Кукловода, появившиеся из его пальцев, оплетали Беллу, и в конце концов она потеряла контроль над своим телом. Ей был отдан приказ возвращаться в лагерь отшельников. Светящиеся нити не давали ей и шанса хоть как-то дать отпор и победить главного демона, и она вынуждена была подчиниться. Отшельники многочисленными истязаниями превратили прежде жизнерадостную и отзывчивую личность Беллы в нечто бесчувственное и ненавистное. Может быть, когда-то какой-нибудь целитель-волшебник и сможет пробудить её от зловещего контроля, но пока Белла остаётся узницей своих глубоких уголков разума, где её 'я' уже, возможно, никогда не станет прежним.",
-        zh: "作為住在神木中的古老種族的妖精生物，蓓蕾生來就擁有任何植物無法比擬的奧術操控能力。她曾是有血統的元素師，並使用她大自然的知識治癒有需求者，然而兩派試圖招募她都失敗了，而當守護者一方打消主意之時，隱士們依然反覆試圖將她納入成為他們的一己之力。最終，邪教徒們決定抹除這份威脅，而他們帶來了三位領袖：弗林、庫咪戶與傀儡師來玷汙或是抹殺她。在屈服於庫咪戶的魅惑咒語前，蓓蕾擊敗了弗林，並竭盡她最後支離破碎的意識將一顆豆莢扔向庫咪戶，在她臉上炸裂。當蓓蕾要重新起身時，她被傀儡師手上操控的細線給束縛住，身體不由得她控制。她被迫走回隱士的營地，她奮力掙扎抵抗發光的絲線，但在強大惡魔的面前，她沒得抗衡。成了隱士們的囊中之物，蓓蕾不斷受到凌辱與侵犯，直到她原本的快樂與喜悅都被困在最深處的角落。此時，她生發了另一個充滿仇恨的人格，再也不是原本的她了。或許某位奧術治癒師會跟隨而來，重新喚醒原本的她，又或許她會永遠受困，成為一名瘋狂的隱士。",
+        zh: "　　作為住在神木中古老種族的妖精生物，蓓蕾生來就擁有任何植物無法比擬的奧術操控能力。她曾是有血統的元素師，並使用她大自然的知識治癒傷患，然而兩派勢力試圖徵召她加入都失敗了。而當守衛者一方打消主意之時，隱士們還是反覆試圖將她納入成為他們的一己之力。最終，邪教徒們決定抹除這份威脅，而他們帶來了三位領袖：弗林、庫咪戶與傀儡師來玷汙或抹殺她。在屈服於庫咪戶的魅惑咒術前，蓓蕾擊敗了弗林，並竭盡她那最後支離破碎的意識將一顆豆莢扔向庫咪戶，在她臉上炸裂。當蓓蕾要重新起身時，她被傀儡師手上操控的細線給束縛住，身體不得動彈。她被迫走回隱士的營地，她奮力掙扎抵抗發光的絲線，但在強大惡魔的面前，她完全無法抗衡。成了隱士們的囊中之物後，蓓蕾不斷受到凌辱與侵犯，直到她原本的快樂與喜悅都被困在最深處的角落。此時，她誕生了另一個充滿仇恨的人格，她已經不再是原本的她了。或許某位奧術治癒師會跟隨而來，重新將原本的她喚醒，又或許她會永遠受困，成為了一名瘋狂的隱士。",
     },
     [LOCALE.VEIL_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -120,9 +120,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "即將加入，敬請期待！",
     },
     [LOCALE.KIRA_DESCRIPTION]: {
-        en: "As a young girl Kira used to sit at the window of her home and watch the lightning, as she grew up she began a hobby of chasing storm clouds hoping to see flashes of electricity in the sky, the rain did not bother her, the wind could not deter her, only when she felt the true power of the storm did she stop, as Kira reached the highest peak of a mountain she was struck by the thunder she chased, as she fell she was found by a hermit and brought back to a hidden encampment watched over by a demonic vassal, she was forged into whatever they wanted her to be against any free will, they made her into an electromancer to aid the dark forces, they did not expect her to fight back as she called forth fury from above, most of the hermits were caught unprepared and annihilated while the demonic leader named Draklavain strode through the barrage and would have killed her if not for hunting party of guardians attracted by the chaos, as she left with them she found a tome and with it became an important asset to the crusade against the demons, although some say the tome found her.",
+        en: "As a young girl, Kira used to sit at the window of her home and watch the lightning. As she grew up, she began a hobby of chasing storm clouds, hoping to see flashes of electricity in the sky. The rain did not bother her, the wind could not deter her, only when she felt the true power of the storm did she stop. As Kira reached the highest peak of a mountain, she was struck by the thunder she chased. As she fell, she was found by a hermit and brought back to a hidden encampment watched over by a demonic vassal. She was forged into whatever they wanted her to be against any free will. They made her into an electromancer, to aid the dark forces. They did not expect her to fight back as she called forth fury from above. Most of the hermits were caught unprepared and annihilated while the demonic leader named Draklavain strode through the barrage and would have killed her if not for hunting party of guardians attracted by the chaos. As she left with them, she found a tome and with it became an important asset to the crusade against the demons, although some say the tome found her.",
         ru: "В юности Кира любила сидеть у окна своего дома и наблюдать за молниями, а повзрослев, увлеклась погоней за грозовыми тучами в надежде увидеть в небе вспышки молний. Дождь её совершенно не беспокоил, а ветер не мог удержать её порыв. Лишь только почувствовав истинную силу бури она смогла остановиться. Она и не заметила, как достигла самой высокой вершины горы. Гром, за которым она гналась, поразил её, из-за чего она сорвалась и упала, потеряв сознание, но чудом выжив. Её обнаружил отшельник и отнёс в скрытый лагерь под покровительством демонического вассала. Против её воли они провели тёмный ритуал,  превратив в электроманта, в надежде, что она поможет тёмным силам. Неожиданным стал для всех оказанный ею отпор: вызванная ярость с небес застала врасплох многих отшельников, стерев их с лица земли в одно мгновение. В это время, лидер демонов Драклавейн пробирался через заградительный огонь из вспышек молний в надежде уничтожить отступницу. К счастью, стражи, охотящиеся на силы хаоса нашли её и помогли сбежать, сокрыв от опасности. Во время побега Кира обнаружила старинную книгу на своём пути, которую она сумела использовать в дальнейшем походе против армии демонов. Поговаривают, что не она нашла книгу, а книга нашла её.",
-        zh: "曾是年輕少女時，奇菈習慣坐在她家中的窗邊觀望閃電。長大後，追尋著雷雲，期望能夠在空中看見閃電成了她的愛好，就連風雨也不能阻止她蓬勃的心，直到她感受到暴風的真實之力後才會就此打住。當她爬向山頂的巔峰，她被她不斷追逐的閃電擊中，她沉寂後被一名隱士發現，並帶回了一個祕密營地由惡魔附庸看守。違背了她的自由意志，他們想將她鍛造成任何他們想要的樣子，使她成為援助闇黑勢力的雷電巫師。而他們沒料想到她會召喚雷霆之怒展開逆襲，大部分的隱士因而毫無防備的被擒獲與殲滅，若不是此時此刻惡魔首領「德拉克拉文」正為了被混沌勢力吸引而來的守護狩獵隊而穿越槍林彈雨，他大概早已斷送她的性命。當她與守護者們同行離開後，她發現了一本魔道書，而有了這本書將成為與惡魔黨決一聖戰的重要資產。雖然，有人是這麼說的：「是這本書找到了她。」",
+        zh: "　　曾是年輕少女時，奇菈習慣坐在她家中的窗邊觀望閃電。長大後，追尋雷雲，期望能夠在空中看見閃電成為她的愛好，就連風雨也無法撼動她那蓬勃的心，直到她感受到暴風的真實之力後才會就此打住。當她爬向山頂的巔峰，她被她不斷追逐的閃電擊中，她沉寂後被一名隱士發現，並帶回了一個祕密營地交由惡魔附庸看守。違背了她的自由意志，他們想將她鍛造成任何他們想要的樣子，使她成為協助闇黑勢力的雷電巫師。但他們沒料想到她會召喚雷霆之怒展開逆襲，大部分的隱士因而毫無防備的被擒獲與殲滅，若不是此時此刻，惡魔首領「德拉克拉文」正為了被混沌勢力吸引而來的守衛狩獵隊而穿越槍林彈雨，他大概早已斷送她的性命。當她與守衛者們同行離開後，她發現了一本魔道書，而有了這本書，它將會成為與惡魔黨決一聖戰的重要資產。雖然有人是這麼說的：「是這本書找到了她。」",
     },
     [LOCALE.HAZEL_DESCRIPTION]: {
         en: "Will be added soon!",
@@ -216,7 +216,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Синяя команда",
         br: "Time Azul",
         cz: "Modrý tým",
-        zh: "籃隊",
+        zh: "藍隊",
     },
 
     [LOCALE.SECOND]: {
@@ -224,7 +224,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "сек.",
         br: "Segundos",
         cz: "Vteřin",
-        zh: "秒鐘",
+        zh: "秒",
     },
 
     [LOCALE.WARNING_NOT_IN_BASE]: {
@@ -271,7 +271,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Pokračujte stisknutím mezerníku!]",
         zh: "你的目標是摧毀敵方水晶！\n" +
             "只有你的小兵們可以造成傷害！你不能透過你的攻擊摧毀它！\n" +
-            "你需要推進四個小兵來獲得遊戲勝利！！\n" +
+            "你需要推進四個小兵來獲得遊戲勝利！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -779,7 +779,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Всего золота",
         br: "Total de dano",
         cz: "Majetek",
-        zh: "總體貢獻值",
+        zh: "獲得總價值",
     },
 
     [LOCALE.POST_LEAVE_GAME]: {
@@ -829,7 +829,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Отправить",
         br: "Mandar",
         cz: "Odeslat",
-        zh: "傳送",
+        zh: "ID進房",
     },
     [LOCALE.POPUP_SELECT_ACCEPT]: {
         en: "Accept",
@@ -864,7 +864,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style='color: red'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!",
         br: "Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style='color: red'>Conta do G-Mail</b> para acessar todos os recursos, e sem anúncios!",
         cz: "Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style='color: red'>účet G-Mail</b> a získejte přístup ke všem funkcím. A žádné reklamy !",
-        zh: "你以訪問受限進入遊戲！你的遊玩總計將在離開瀏覽器後遺失…<br /> 連結你的 <b style='color: red'>G-Mail 帳號</b> 以獲得所有功能，且無廣告！",
+        zh: "你以訪問受限狀態進入遊戲！你的遊玩紀錄將在離開瀏覽器後遺失…<br /> 連結你的 <b style='color: red'>G-Mail 帳號</b> 以獲得所有功能，且無任何廣告！",
     },
     [LOCALE.POPUP_SELECT_NAME_GUESTMODE]: {
         en: "GUEST MODE!",
@@ -920,7 +920,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Зайдя впервые, вам нужно пройти обучение, иначе вы не сможете играть против других игроков!",
         br: "Como é sua primeira vez, você deve passar pelo treinamento, caso contrário você não poderá jogar contra outros jogadores!",
         cz: "Nejprve musíš projít tréninkem než budeš moct hrát proti hráčům!",
-        zh: "你必須先從練習通關，否則無法與玩家對決！",
+        zh: "你必須先通過訓練合格，否則無法與玩家進行對決！",
     },
     [LOCALE.POPUP_SELECT_FIRST_TIME_TRAINING_START]: {
         en: "Get me into a tutorial!",
@@ -978,7 +978,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.AN_ULTRA_KILL]: {
         en: "ULTRA KILL!!",
-        zh: "爆殺！",
+        zh: "爆殺！！",
     },
     [LOCALE.AN_KILLING_SPREE]: {
         en: "Killing spree",
@@ -1212,13 +1212,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Free Camera",
         ru: "Свободная камера",
         cz: "Volná Kamera",
-        zh: "自由鏡頭",
+        zh: "自由視角",
     },
     [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
         en: "Spectators in game: ",
         ru: "Наблюдают за игрой: ",
         cz: "Diváků v hře: ",
-        zh: "觀戰訊息",
+        zh: "觀眾數量",
 
     },
     [LOCALE.PRIVATE_LOBBY]: {
@@ -1283,13 +1283,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "All Pick",
         ru: "Выбор вслепую",
         cz: "Výber ze všech",
-        zh: "所有選角",
+        zh: "無限制選角",
     },
     [LOCALE.DRAFT_CAPTAIN_DRAFT]: {
         en: "Captain Draft",
         ru: "Режим выбора (Капитаны)",
         cz: "Draft kapitánů",
-        zh: "隊長選拔",
+        zh: "隊長草案",
     },
     [LOCALE.DRAFT_ALL_RANDOM]: {
         en: "All Random",
@@ -1354,7 +1354,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Ranked battles:",
         ru: "Ранговые игры:",
         cz: "Hodnocení zápasi:",
-        zh: "階級戰：",
+        zh: "爬分賽：",
     },
     [LOCALE.AI_MATCH]: {
         en: "AI Matches (PvAI):",
@@ -1381,31 +1381,31 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Won match",
         ru: "Победа",
         cz: "Výhra",
-        zh: "戰鬥勝利",
+        zh: "勝利",
     },
     [LOCALE.MATCH_LOSE]: {
         en: "Lost match",
         ru: "Поражение",
         cz: "Prohra",
-        zh: "戰鬥敗北",
+        zh: "敗北",
     },
     [LOCALE.VERY_HIGH_SKILL]: {
         en: "Very high skill",
         ru: "Очень высокий уровень",
         cz: "Velmi vysoká dovednost",
-        zh: "卓越技術",
+        zh: "頂尖技術區間",
     },
     [LOCALE.HIGH_SKILL]: {
         en: "High skill",
         ru: "Высокий уровень",
         cz: "Vysoká dovednost",
-        zh: "高技術",
+        zh: "高技術區間",
     },
     [LOCALE.NORMAL_SKILL]: {
         en: "Normal skill",
         ru: "Нормальный уровень",
         cz: "Normální dovednost",
-        zh: "一般技術",
+        zh: "一般技術區間",
     },
 
     /** Settings */
@@ -1560,7 +1560,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ADD_HARD_BOT]: {
         en: "Add hard bot",
         cz: "Prídat těžkého bota",
-        
+        zh: "加入困難電腦",       
     }
 
 }
