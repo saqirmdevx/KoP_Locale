@@ -1264,9 +1264,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "開始",
     },
     [LOCALE.LOBBY_ID]: {
-        en: "Lobby Id: (Click to copy) ",
-        ru: "Код лобби: (Нажмите, чтобы скопировать) ",
-        zh: "私房ID (點擊以複製)",
+        en: "Lobby Id: ",
+        ru: "Код лобби: ",
+        zh: "私房ID ",
     },
     [LOCALE.LOBBY_INIT_GOLDS]: {
         en: "Initial Golds",
@@ -1561,6 +1561,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Add hard bot",
         cz: "Prídat těžkého bota",
         zh: "加入困難電腦",       
+    },
+    [LOCALE.LOBBY_SEND_TO_DISCORD]: {
+        en: "Share on Discord",
+        cz: "Zdílet na discordu",
     }
 
 }
