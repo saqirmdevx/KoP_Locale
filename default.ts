@@ -294,7 +294,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Pokračujte stisknutím mezerníku!]",
         zh: "但首先，你必須摧毀敵方城池！\n" +
             "不要在沒有小兵的情況下攻擊城池！你必須仰賴小兵來抵禦城池的傷害！\n" +
-            "小心！攻擊在敵方城池內英雄會導致城池攻擊鎖定你！\n" +
+            "小心！攻擊在城池內的敵方英雄會導致城池攻擊鎖定你！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -319,10 +319,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "Použijte tyto pěšáky k poškození věže a zničení nepřátelského krystalu\n" +
             "Nepřátelští pěšáci ti mohou ublížit, tak si na ně také dej pozor!" +
             "\n\n[Pokračujte stisknutím mezerníku!]",
-        zh: "這些是你的小兵們，每隔20秒他們會從你的水晶生成！\n" +
+        zh: "這些是你的小兵們，每隔 20秒他們會從你的水晶生成！\n" +
             "消滅一個敵方小兵給予你額外黃金！。\n" +
             "運用那些小兵來抵禦城池傷害以及摧毀敵方水晶\n" +
-            "敵方小兵能對你造成傷害，所以也要小心他們！\n！" +
+            "敵方小兵能對你造成傷害，所以也要小心他們！！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -344,8 +344,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "První zlatá runa se objeví 00:00 herniho casu!\n" +
             "\n\n[Pokračujte stisknutím mezerníku!]",
         zh: "在頂端，你可以找到黃金符文！\n" +
-            "黃金符文給予你50枚黃金，隨著遊戲進展而增加！\n" +
-            "第一個黃金符文於遊戲時間零分後生成！\n" +
+            "黃金符文給予你 50枚黃金，隨著遊戲進展而增加！\n" +
+            "第一個黃金符文於遊戲時間 0:00後生成！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -368,7 +368,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
             "\n\n[Pokračujte stisknutím mezerníku!]",
         zh: "在底部，你可以找到能量符文！\n" +
             "在這裡，你可以找到四種不同類型的符文\n" +
-            "第一個能量符文於遊戲時間一分後生成，並持續性的在每分鐘提供！\n" +
+            "第一個能量符文於遊戲時間 1:00後生成，並持續性的在每分鐘提供！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
@@ -399,31 +399,31 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Control your mouse to buy items\n" +
             "Choose your items wisely! If you don't want the item, you can right-click and sell the item.\n" +
             "Selling an item 5 seconds after buying it will only refund 50% of its value!\n" +
-            "Several items (Activable) can be used with the [1, 2, 3, 4] keybinds !\n" +
+            "Several items (Activable) can be used with the [1, 2, 3, 4, 5] keybinds !\n" +
             "REMEMBER! You can only buy inside your base!" +
             "\n\n[Press space to continue!]",
         ru: "Используйте Вашу мышь для покупки предметов! Наведите на пустой слот, а затем ПКМ по желаемому предмету для покупки!\n" +
             "Покупайте предметы с умом! Вы можете нажать правой кнопкой мыши для продажи предмета.\n" +
             "Продажа предмета по истечению 5 секунд после покупки возвратит всего лишь 50% от изначальной стоимости!\n" +
-            "Активные предметы можно использовать, нажав клавиши [1, 2, 3, 4], в соответствии с номером слота!\n" +
+            "Активные предметы можно использовать, нажав клавиши [1, 2, 3, 4, 5], в соответствии с номером слота!\n" +
             "ЗАПОМНИТЕ! Вы можете покупать предметы только находясь на своей базе!" +
             "\n\n[Нажмите пробел для продолжения!]",
         br: "Use seu mouse para comprar itens, escolha seus itens com sabedoria!\n" +
             "Dependendo do item que escolher, poderá mudar sua forma de jogar.\n" +
             "Vender um item 5 segundos depois de comprá-lo, reembolsará apenas 50% do seu valor!\n" +
-            "Vários itens (ativáveis) podem ser usados ​​com os números [1, 2, 3, 4] em seu teclado!\n" +
+            "Vários itens (ativáveis) podem ser usados ​​com os números [1, 2, 3, 4, 5] em seu teclado!\n" +
             "LEMBRE-SE! Você só pode comprar itens dentro da sua base!" +
             "\n\n[Pressione espaço para continuar!]",
         cz: "K nákupu předmětu použijte myš\n" +
             "Vybírejte své předměty moudře! Pokud jej nechcete, můžete kliknout pravým tlačítkem u myši a prodat.\n" +
             "Prodáte-li předmět 5 sekund po jeho zakoupení, vrátí se vam pouze 50 % jeho hodnoty!\n" +
-            "S klávesovými zkratkami [1, 2, 3, 4] lze použít některé (Aktivovatelné) předměty!\n" +
+            "S klávesovými zkratkami [1, 2, 3, 4, 5] lze použít některé (Aktivovatelné) předměty!\n" +
             "PAMATUJTE! Nakupovat můžete pouze ve své základne!" +
             "\n\n[Pokračujte stisknutím mezerníku!]",
         zh: "操控你的滑鼠購買物品\n" +
             "謹慎選擇物品！如果你不想要這物品，你可以按右鍵售出。\n" +
             "若在五秒後售出物品，只能退還50%的金額\n" +
-            "有許多物品（可發動）可以按[1、2、3、4]鍵發動效果！\n！" +
+            "有許多物品（可發動）可以按[1、2、3、4、5]鍵發動效果！！\n" +
             "\n\n按空白鍵以繼續！",
 
     },
@@ -452,7 +452,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "在底部你可以看見你的英雄技能！\n" +
             "[J]、[K]、[L] 鍵是你的技能發動鍵\n" +
             "[B] 鍵用來將你召回基地！在回到基地前需要花費五秒時間完成傳送作業\n" +
-            "你可以移動游標來觀看技能詳細資訊\n！" +
+            "你可以移動游標來觀看技能詳細資訊！\n" +
             "\n\n按空白鍵以繼續！",
     },
 
