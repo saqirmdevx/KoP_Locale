@@ -19,7 +19,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: Использование Тайного рывка зачаровывает следующую атаку Кумиху, которая нанесёт ${enh_damage} магического урона и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
                 cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
                 br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico e encantando o inimigo por ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}.`,
-                zh: `庫咪戶發射三發子彈，每發給予${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予${enh_damage}點魔法傷害並給予${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}秒魅惑狀態`,
+                zh: `庫咪戶發射三發子彈，每發給予${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予${enh_damage}點魔法傷害並給予${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}魅惑狀態`,
             }
         }
 
@@ -40,7 +40,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Кумиху совершает рывок на короткую дистанцию. Это активирует её пассивную способность на ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
                 cz: `Kumihu vykročí dopředu a tím aktivuje svou pasivní schopnost na ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
                 br: `Kumihu da um avanço em uma curta distância. Isso irá ativar sua passiva por ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
-                zh: `庫咪戶短距離衝刺，這會在${toSec(KumihuAbilityData.DASH_AURA_DURATION)}秒內激發她的被動技。`,
+                zh: `庫咪戶短距離衝刺，這會在${toSec(KumihuAbilityData.DASH_AURA_DURATION)}內激發她的被動技。`,
             }
 
         /** Sparrow */
@@ -53,7 +53,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Спарроу взмахивает и делает выпад своим мечом, нанося ${base_damage} физического урона за попадание. <br />Пассивно: Использование способностей зачаровывает меч Спарроу. Её следующая базовая атака подбрасывает врагов на ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} и наносит ${enh_damage} физического урона.`,
                 cz: `Sparrow máchá mečem a způsobuje ${base_damage} za zásah. <br />Pasivní: Použití schopnosti nabije meč. Její další základní útok srazí nepřátele na ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} a způsobí ${enh_damage} poškození.`,
                 br: `Sparrow corta seus inimigos causando ${base_damage} por ataque.<br /> <br /> <b>[Passiva]: </b> Usar uma habilidade, faz com que a espada de Sparrow fique carregada. Seu próximo ataque básico stuna os inimigos por ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} e da um bônus de ${enh_damage} de dano.`,
-                zh: `史佩羅猛力揮動她的劍，給予${base_damage}點一般傷害。 <br /> 被動技：使用一個能力蓄力史佩羅的劍，她的下一個基本攻擊擊昇敵方暈眩${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)}秒並給予${enh_damage}點一般傷害。`,
+                zh: `史佩羅猛力揮動她的劍，給予${base_damage}點一般傷害。 <br /> 被動技：使用一個能力蓄力史佩羅的劍，她的下一個基本攻擊擊昇敵方暈眩${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)}並給予${enh_damage}點一般傷害。`,
             }
         }
 
@@ -63,7 +63,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} и нанося им ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} физического урона.`,     
                 cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} a způsobí ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normalního poškozeni.`,            
                 br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} e dando ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} de dano.`,
-                zh: `史佩羅迅速衝刺猛力向前揮劍，暈眩${toSec(SparrowAbilityData.DASH_STUN_DURATION)}秒擊中的敵方並給予${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}點一般傷害。`,
+                zh: `史佩羅迅速衝刺猛力向前揮劍，暈眩${toSec(SparrowAbilityData.DASH_STUN_DURATION)}擊中的敵方並給予${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}點一般傷害。`,
             }
 
         case Shared.SpellList.SPARROW_GROUND_SLAM: {
@@ -75,7 +75,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Спарроу высвобождает силу своего меча, создавая волну в форме полумесяца, наносящую ${base_damage} (плюс ${percDamage}% от недостающего здоровья цели) магического урона задетым врагам.`,
                 cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
                 br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
-                zh: `史佩羅釋放劍的力量產生新月形刀光，給予被擊中敵方${base_damage}點魔法傷害 (加上${percDamage}%敵方損失血量)。`,
+                zh: `史佩羅釋放劍的能量產生新月形刃波，給予被擊中的敵方${base_damage}點魔法傷害 (加上${percDamage}%敵方損失血量)。`,
             }
         }
 
@@ -98,7 +98,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Ай'сит выпускает три осколка льда, каждый из которых замедляет врагов на ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}(замедление складывается) и наносит ${base_damage} магического урона. <br />Попадание всеми тремя сосульками обездвижит врага на ${toSec(ICeatAbilityData.ICICLE_ROOT_DURATION)}`,
                 cz: `I'ceat vystřelí tři střepy ledu, z nichž každý zpomalí nepřátele o ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}, což způsobí ${base_damage} při každém zásahu. <br />Zasáhnete-li všemi třemi, znehybní nepřítele na ${toSec(ICeatAbilityData.ICICLE_ROOT_DURATION)}`,
                 br: `Iceat dispara três estilhaços de gelo, cada estilhaço acertado reduz a velocidade do inimigo em ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}, adicionando ${base_damage} de dano para cada ataque. <br />Atingir todos os três estilhaços em um inimigo enraiza ele por ${toSec(ICeatAbilityData.ICICLE_ROOT_DURATION)}.`,
-                zh: `艾希特發射三枚寒冰碎片，每發降低${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點敵方移動速度並給予${base_damage}點魔法傷害。<br />對同一目標擊中所有碎冰時，牽制敵方${toSec(ICeatAbilityData.ICICLE_ROOT_DURATION)}秒。`,
+                zh: `艾希特發射三枚寒冰碎片，每發降低${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點敵方移動速度並給予${base_damage}點魔法傷害。<br />對同一目標擊中所有碎冰時，牽制敵方${toSec(ICeatAbilityData.ICICLE_ROOT_DURATION)}。`,
             }
         }
 
@@ -113,7 +113,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                     `, která uděluje ${base_damage} poškození za vteřinu nepřátelům na vrcholu ledu a zpomalí je.`,
                 br: `Iceat desliza no chão, aumentando sua velocidade em ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} por ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} e deixando uma trilha de gelo,` +
                     `dando ${base_damage} de dano por segundo aos inimigos que pisam na trilha.`,
-                zh: `艾希特在地上滑行，增加${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED}點他的速度${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)}秒並留下冰步道 ` +
+                zh: `艾希特在地上滑行，增加${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)}他的移動速度${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED}點並留下冰步道，` +
                     `給予所有位於冰步道上方的敵方每秒${base_damage}點魔法傷害並降低敵方移動速度。`,
             }
         }
@@ -143,14 +143,14 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 br: `Belle lança uma videira para frente que se liga a um inimigo causando ${base_damage} de dano e diminuindo a sua velocidade de movimento.` +
                     `<br /> Depois de 2 segundos, se a videira ainda estiver presa no inimigo, ela vai prender ele o atordoando por ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} e causando ${attach_damage} de dano. <br /> <br />(Ela pode ser quebrada se o inimigo se mover para longe o suficiente de Belle.)`,
                 zh: `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方${base_damage}點魔法傷害並附著於一個敵方英雄。 <br /> 當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
-                    `<br /> <br /> 經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)}秒敵方英雄並給予${attach_damage}點魔法傷害。`,
+                    `<br /> <br /> 經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)}敵方英雄並給予${attach_damage}點魔法傷害。`,
             }
         }
 
         case Shared.SpellList.BELLE_FLORAL_AMBUSH: {
             const base_damage = getDamage(BelleAbilityData.FLORAL_AMBUSH_DAMAGE_MOD * abilityPower, type, BelleAbilityData.FLORAL_AMBUSH_BASE_DAMAGE + BelleAbilityData.FLORAL_AMBUSH_DAMAGE_PER_LEVEL * (level - 1));
             return {
-                en: `Belle jumps in the air and drops three seed bombs in front of her that attaches to an enemy hero if they get near doing ${base_damage} magical damage over 2 seconds and exploding after the duration, doing ${base_damage} AoE mgaical damage` +
+                en: `Belle jumps in the air and drops three seed bombs in front of her that attaches to an enemy hero, exploding after 2 seconds and dealing ${base_damage} AoE magical damage surrounding the enemy hero` +
                     `<br /><br />After staying on the ground for ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, the seeds explode dealing ${base_damage} AoE magical damage to surrounding enemies. Enemy hero that step on bomb while carrying one will immediately trigger explosion`,
                 ru: `Белла подпрыгивает и сбрасывает три цветочные бомбы перед собой, которые приклепляются к вражескому герою, если он наступит на них, нанося цели ${base_damage} магического урона в течение 2 секунд, взрываясь после этого, нанося ${base_damage} урона по площади` +
                     `<br /><br />После пребывания на земле в течение ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, цветы взрываются, нанося ${base_damage} магического урона по площади ближайшим врагам. Враг, ступивший на бомбу с уже прикреплённой до этого, моментально взорвёт предыдущую.`,
@@ -158,8 +158,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                     `<br /><br />Pokud se bomby neprichtí do ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, semínka explodují a způsobí ${base_damage} poškození okolním nepřátelům. Nepřítel, který šlápne na bombu a zároveň ji nese, okamžitě spustí explozi.`,
                 br: `Belle plana no ar e lança três bombas de flor em sua frente, se prendendendo a um inimigo causando ${base_damage} de dano, depois de 2 segundos explode novamente se o inimigo estiver com uma semente, causando ${base_damage} de dano.` +
                     `<br /><br />Depois de ficar no chão por ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, as flores explodem causando ${base_damage} de dano nos inimigos por perto. Inimigos que pisarem nas bombas enquanto elas carregam, irám imediatamente desencadear uma explosão.`,
-                zh: `蓓蕾跳躍在空中，向前丟下三顆種子炸彈，如果敵方英雄接近會附著於他們身上並在2秒後造成${base_damage}點魔法傷害，並在時間結束後爆破，造成${base_damage}點全體魔法傷害。` +
-                    `<br /> <br /> 停留地面${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}秒後，種子爆炸並給予四周敵方${base_damage}點全體魔法傷害。當敵方英雄帶著種子又踩到地面種子時會立即觸發爆炸。`,
+                zh: `蓓蕾跳躍在空中，向前丟下三顆種子炸彈，如果敵方英雄接近會附著於他們身上，在2秒後爆破並給予鄰近敵方英雄${base_damage}點全體魔法傷害。` +
+                    `<br /> <br /> 停留地面${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}後，種子爆炸並給予四周敵方${base_damage}點全體魔法傷害。當敵方英雄帶著種子又踩到地面種子時會立即觸發爆炸。`,
             }
         }
 
@@ -199,8 +199,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                     + `Druhé použití: Thomas se teleportuje k mrkvi. Pokud je připojena k nepříteli, Thomas spomali tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} a udělí ${base_damage} poškození.`,
                 br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
                     `<b>Segunda Ativação: </b>Teleporta-se para a espada. Se estiver atingido um inimigo, Ele se teletransporta para o inimigo retardando-o ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} e causando ${base_damage} de dano.`,
-                zh: `<b>第一次施展：</b>湯瑪士丟出附著性羅波。他可以在${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)}秒內瞬移到蘿蔔所在地。<br /> <br />` +
-                    `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)}秒並造成${base_damage}點一般傷害。`,
+                zh: `<b>第一次施展：</b>湯瑪士丟出可附著蘿蔔。他可以在${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)}內瞬移到蘿蔔所在地。<br /> <br />` +
+                    `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)}並造成${base_damage}點一般傷害。`,
             }
         }
         /** Veil */
@@ -214,7 +214,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 cz: `Veil sekne svými zbraněmi a způsobí ${base_damage} poškození. <br /> Posílení: Veil používá svého astrálního ducha a udělí dalšíh ${enhanced_dmg} poškození (spotřebuje Posílení stav)`,
 
                 br: `Veil corta com suas espadas demoníacas causando ${base_damage} de dano.<br /> <br /> <b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enhanced_dmg} de dano.<br /> (Consume o estado Maldição dos caídos.)`,
-                zh: `維爾丟劈砍她的武器，給予${base_damage}點一般傷害。強化後：維爾使用她的星光魂魄造成額外的${enhanced_dmg}點魔法傷害 (消耗強化狀態)。`,
+                zh: `維爾劈砍她的武器，給予${base_damage}點一般傷害。<br />強化後：維爾利用她的星光魂魄造成額外的${enhanced_dmg}點魔法傷害 (消耗強化狀態)。`,
             }
         }
 
@@ -226,7 +226,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: `Вэйл подпрыгивает и бросает свои астральные клинки вниз под углом 45°, которые наносят ${base_damage} магического урона. Если способность попала по вражескому герою, Вэйл получит усиление.`,
                 cz: `Veil skočí a vrhne své astrální čepele dolů pod úhlem 45°, což způsobí ${base_damage} poškození. Pokud schopnost zasáhne nepřátelského hrdinu, získá Posílení.`,
                 br: `Veil salta e atira suas lâminas astrais para baixo em um ângulo de 45 ° causando ${base_damage} de dano.<br /> Se a habilidade atingir um personagem inimigo, ela ativa a [Maldição dos caídos].`,
-                zh: `維爾跳躍並向斜下前方45°角丟出星光刀刃，造成${base_damage}點魔法傷害。如果技能擊中敵方英雄，這將強化維爾。`,
+                zh: `維爾跳躍並向斜下前方45°角丟出星光刀刃，造成${base_damage}點魔法傷害。如果技能擊中敵方英雄，將會強化維爾。`,
             }
         }
 
@@ -246,7 +246,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 br: `Veil avança em alta velocidade para frente causando ${base_damage} de dano.<br /> <br />` +
                     `<b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enh_dmg} de dano e dando lentidão.<br /> (consume o estado Maldição dos caídos.)<br /><br /> <b> Se acertar o hit, reseta sua habilidade! </b>`,
                 zh: `維爾使用星光飛躍向前方高速衝刺，對敵方英雄造成${base_damage}點一般傷害。<br /> <br />` +
-                    `強化後：維爾踏入了星界，造成敵方英雄額外${enh_dmg}點魔法傷害並降低移動速度 (消耗強化狀態)。<b>成功擊中將重置星光飛躍冷卻時間！</b>`,
+                    `強化後：維爾飛向星界，造成敵方英雄額外${enh_dmg}點魔法傷害並降低移動速度 (消耗強化狀態)。<b>成功擊中將重置星光飛躍冷卻時間！</b>`,
 
             }
         }
@@ -270,7 +270,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all enemy units`,
                 ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать все вражеские цели на своём пути.`,
                 cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} magického poškození a odkopne nepřítele dál od tebe. <br /> Ak střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
-                zh: `弗林向前方發射精準射擊，如果弓箭擊中目標物，弓箭將給予${base_damage}點魔法傷害並將低方單位從你的方向打走。<br /> 如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
+                zh: `弗林向前方發射精準射擊，如果弓箭擊中目標物，弓箭將給予${base_damage}點魔法傷害並將敵方單位從你的方向打走。<br /> 如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
             }
         }
 
@@ -279,7 +279,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 en: `Flin increases his focus for ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} or next ${FlinAbilityData.MARKSMANSHIP_STACKS} basic shots will deal additional damage and pierce enemy units. Every piercing unit hit will reduce arrow damage by ${Math.floor(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)}%`,
                 ru: `Флин повышает свою точность на ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} или на следующее количество атак: (${FlinAbilityData.MARKSMANSHIP_STACKS}). В течение этого времени базовые атаки наносят дополнительный урон и пронзают вражеские цели. Урон от пронзающих выстрелов уменьшается на ${Math.floor(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)}% за каждую последующую цель.`,
                 cz: `Flin zvýší své soustředění na útok a po dobu ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky. Pokažde ak šip prejde přes nepřátelsku jednotku, poškození se sniží o ${Math.floor(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)}%`,
-                zh: `弗林增加${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)}秒他的集中力，並在接下來${FlinAbilityData.MARKSMANSHIP_STACKS}發基礎射擊造成額外傷害並貫穿敵方單位。每次貫穿擊中單位後將降低弓箭傷害${Math.floor(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)}%。`,
+                zh: `弗林增加${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)}他的集中力，並在接下來${FlinAbilityData.MARKSMANSHIP_STACKS}發基礎射擊造成額外傷害並貫穿敵方單位。每次貫穿擊中單位後將降低弓箭傷害${Math.floor(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)}%。`,
             }
 
         /** Kira  */
@@ -296,7 +296,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
                 <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED} na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
                 zh: `奇菈發射一束閃電飛箭，造成${basic_damage}點一般傷害。<br />
-                <br /> <b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄 (友方英雄優先) 施展一束衝擊電流，短時間內降低敵方或增加友方英雄${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%攻擊速度與移動速度值${KiraAbilityData.ENHATTACK_MOVE_SPEED}，並立即給予${enh_damage}點魔法傷害或是治癒友方英雄${enh_damage_heal}點生命。`,
+                <br /> <b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄施展一束衝擊電流，短時間內降低敵方或增加友方英雄${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}%攻擊速度與移動速度值${KiraAbilityData.ENHATTACK_MOVE_SPEED}，並立即給予敵方英雄${enh_damage}點魔法傷害或是治癒友方英雄${enh_damage_heal}點生命。`,
             }
         }
 
@@ -325,8 +325,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 <br /> <b>[Усиленная]: (Беспорядочный клон)</b> Копия Киры следует за ней и проходит через врагов на своём пути, нанося им ${damage} магического урона и накладывая немоту на ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
                 cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
-                zh: `奇菈用遺留的扭曲殘影欺騙敵方，${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}秒後她會回歸殘影處。<br />
-                <br /> <b>[強化後]：(混沌殘影) 奇菈的殘影跟隨她並沿路穿透敵方，給予${damage}點魔法傷害並沉默敵方${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}秒。`,
+                zh: `奇菈用滯留的扭曲殘影欺騙敵方，${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}後她會回歸殘影處。<br />
+                <br /> <b>[強化後]：(混沌殘影) 奇菈的殘影跟隨她並沿路穿透敵方，給予${damage}點魔法傷害並沉默敵方${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}。`,
             }
         }
 
@@ -348,7 +348,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} magical damage (10% of Hazel's max health), slows down and push all enemy units in distance.`,
                 ru: `Хейзел начинает накапливать энергию в течение ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} магического урона (+10% от максимального здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
-                zh: `哈歇爾開始蓄力${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}秒匯集能量。隨後在他四周釋放爆發衝擊波，給予${damage}點魔法傷害 (加成哈歇爾的最大血量值10%)，將所有距離內的敵方單位降速推開。`,
+                zh: `哈歇爾開始蓄力${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}匯集能量。隨後在她四周釋放爆發衝擊波，給予${damage}點魔法傷害 (加成哈歇爾的最大血量值10%)，將所有距離內的敵方單位減速推開。`,
             }
         }
 
@@ -358,7 +358,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
                 ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
-                zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予${normalDamage}點一般傷害並擊昇敵方暈眩${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}秒。`,
+                zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予${normalDamage}點一般傷害並擊昇敵方暈眩${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}。`,
             }
         }
 
@@ -399,8 +399,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
                 cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
-                zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}秒後爆炸，給予周圍所有敵方${baseDamage}點一般傷害。
-                <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予${enhDamage}點一般傷害並暈眩${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}秒炸彈負載者。`,
+                zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}後爆炸，給予周圍所有敵方${baseDamage}點一般傷害。
+                <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予${enhDamage}點一般傷害並暈眩炸彈負載者${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}。`,
             }
         }
 
@@ -411,7 +411,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 ru: "Телепорт обратно на свою базу спустя 5 секунд. Во время возвращения вы не можете двигаться или атаковать, но любой полученный урон перырвает подготовку.",
                 cz: "Po 5 sekundách se teleportujte zpět do základny. Během sesílání se nemůžete pohybovat ani útočit a sesílání je přerušeno, pokud utrpíte poškození.",
                 br: "Teleporte-se de volta para Base após 5 segundos. Durante isso você não pode se mover ou atacar, será interrompido se você receber qualquer tipo de dano.",
-                zh: `五秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。`,
+                zh: `5秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。`,
             }
 
         default: return { en: "", cz:  ""}
