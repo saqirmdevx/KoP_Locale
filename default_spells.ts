@@ -407,7 +407,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         /** Arel  */
         case Shared.SpellList.ALVAR_ATTACK: {
             const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-            const markDamage = getDamage(AlvarAbilityData.MARK_DAMAGE * damage);
+            const markDamage = getDamage(AlvarAbilityData.MARK_DAMAGE);
     
             return {
                 en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
