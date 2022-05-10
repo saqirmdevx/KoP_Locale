@@ -1561,12 +1561,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Add hard bot",
         cz: "Prídat těžkého bota",
         ru: "Добавить бота",
-        zh: "加入困難電腦",       
+        zh: "加入困難電腦",
     },
     [LOCALE.LOBBY_SEND_TO_DISCORD]: {
         en: "Share on Discord",
         cz: "Zdílet na discordu",
         ru: "Поделиться в Discord",
+        zh: "分享到Discord",
     }
 
 }
