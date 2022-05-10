@@ -1554,7 +1554,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
         en: "Atmospheric details",
         ru: "Атмосферные детали",
-        cz: "Hudba v pozadi",
+        cz: "Atmosfericke detaily",
         zh: "氛圍渲染",
     },
     [LOCALE.ADD_HARD_BOT]: {

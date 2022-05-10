@@ -539,10 +539,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "麒麟法棍",
                 },
                 desc: {
-                    en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 sec, this effect does not stack with other sources
+                    en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%, this effect does not stack with other sources
                     <br />
                     UNIQUE: Every time you kill minion (+1 stacks), enemy hero (+5 stacks) or you get assist (+2 stacks) you gain ${ItemAbilityData.KIRIN_STAFF_STACK_AP} ability power (max ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}). All stacks are lost upon death.`,
-                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% на 4 сек. Этот эффект не складывается с другими источниками
+                    ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%. Этот эффект не складывается с другими источниками
                     <br />
                     УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает силу умений на ${ItemAbilityData.KIRIN_STAFF_STACK_AP} (Максимум зарядов: ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}). Все заряды теряются после смерти.`,
                     zh: `特殊：你的技能拆穿4秒目標物的魔法抗性 ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%，此效果將不會疊加於其他資源
@@ -576,7 +576,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "冰結法棍",
                 },
                 desc: {
-                    en: `UNIQUE: Your magical attacks lower enemy movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} and attack speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
+                    en: `UNIQUE: Your abilites lower enemy's movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} and attack speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     zh: `特殊：你的魔法攻擊降低 ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)}秒對手 ${ItemAbilityData.FROZEN_STAFF_SLOW}移動速度值與 ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}%攻擊速度 - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                     // NEED UPDATE
@@ -826,7 +826,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "腐化的手環",
                 },
                 desc: {
-                    en: `Active: Dash you in your direction - ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
+                    en: `Active: Dashes you forward in your direction forward - ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
                     ru: `УНИКАЛЬНО(Активно): Вы совершаете рывок в направлении своего движения. (Перезарядка: ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     br: `[Ativo]: Lança seu personagem para frente na direção que ele está olhando.\n [Tempo de recarga: ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     zh: `主動技：朝你的方向衝刺 - ${(ItemAbilityData.CORRUPTED_RING_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
