@@ -64,6 +64,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "Арел",
         zh: "艾瑞爾",
     },
+    [LOCALE.ALVAR_NAME]: {
+        en: "Alvar",
+    },
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
         ru: "Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.",
@@ -132,6 +135,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: "即將加入，敬請期待！",
     },
     [LOCALE.AREL_DESCRIPTION]: {
+        en: "Will be added soon!",
+        ru: "Скоро будет добавлено!",
+        br: "Será adicionado em breve!",
+        cz: "Brzy bude přidáno!",
+        zh: "即將加入，敬請期待！",
+    },
+    [LOCALE.ALVAR_DESCRIPTION]: {
         en: "Will be added soon!",
         ru: "Скоро будет добавлено!",
         br: "Será adicionado em breve!",
@@ -709,7 +719,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "ASSASSINO",
         cz: "ASSASSÍN",
         zh: "刺客",
-
+    },
+    [LOCALE.TAG_BRUISER]: {
+        en: "BRUISER",
+        ru: "УБИЙЦА",
+        br: "ASSASSINO",
+        cz: "ASSASSÍN",
+        zh: "刺客",
     },
     [LOCALE.TAG_TANK]: {
         en: "TANK",
