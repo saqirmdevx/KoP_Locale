@@ -1,10 +1,10 @@
-//@ts-ignore
+//@ts-expect-error
 import { toSec } from "@/misc/misc";
-//@ts-ignore
-import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData } from "@/misc/shared";
-//@ts-ignore
+//@ts-expect-error
+import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from "@/misc/shared";
+//@ts-expect-error
 import { SpellType, getDamage, IAbilityTooltipsData } from "@/lang/ability_desc";
-//@ts-ignore
+//@ts-expect-error
 import { LANG } from "@/lang/lang";
 
 const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, health, cooldownReduction, level}: IAbilityTooltipsData, type: SpellType): { [key in string]: string } => {
@@ -404,6 +404,37 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             }
         }
 
+        /** Arel  */
+        case Shared.SpellList.ALVAR_ATTACK: {
+            const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+            const markDamage = getDamage(AlvarAbilityData.MARK_DAMAGE * damage);
+    
+            return {
+                en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
+                <br />[PASSIVE]: Every alvar's sucessful hit apply an debuff on the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
+                cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
+                <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec ​​​​(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
+            }
+        }
+
+        case Shared.SpellList.ALVAR_FURIOUS_KICK: {
+            const baseDamage = getDamage(AlvarAbilityData.FURIOUS_KICK_DAMAGE_MOD * damage);
+
+            return {
+                en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} and stunning for ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} the unit if it's an enemy.`,
+                cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} a omráčí za ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} jednotky, pokud je to nepřítel.`,
+            }
+        }
+
+        case Shared.SpellList.ALVAR_HEAVENLY_KICK: {
+            const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage);
+
+            return {
+                en: `Alvar teleports behind the closest market enemy, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no market enemy nearby, ability will do nothing.`,
+                cz: `Alvar se teleportuje za nejbližšího tržního nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`
+            }
+        }
+
         /** Default */
         case Shared.SpellList.RECALL:
             return {
@@ -431,6 +462,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.BELLE_AUTOATTACK:
         case Shared.SpellList.THOMAS_AUTOATTACK:
         case Shared.SpellList.AREL_AUTOATTACK:
+        case Shared.SpellList.ALVAR_ATTACK:
             return {
                 en: "Attack",
                 ru: "Атака",
@@ -620,6 +652,18 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
                 ru: "Тикающая бомба",
                 cz: "Tikající bomba",
                 zh: "定時炸彈",
+            }
+
+        case Shared.SpellList.ALVAR_FURIOUS_KICK:
+            return {
+                en: "Furious kick",
+                cz: "Zúrivý kopanec",
+            }
+
+        case Shared.SpellList.ALVAR_HEAVENLY_KICK:
+            return {
+                en: "Heavenly Kick",
+                cz: "Nebeský kop",
             }
 
         /** Default */
