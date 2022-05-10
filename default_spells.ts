@@ -413,7 +413,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
                 <br />[PASSIVE]: Every alvar's sucessful hit apply an debuff on the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
                 cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
-                <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec ​​​​(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
+                <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
             }
         }
 
