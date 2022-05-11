@@ -407,11 +407,11 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         /** Arel  */
         case Shared.SpellList.ALVAR_ATTACK: {
             const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-            const markDamage = getDamage(AlvarAbilityData.MARK_DAMAGE);
+            const markDamage = getDamage(0, 0, AlvarAbilityData.MARK_DAMAGE);
     
             return {
                 en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
-                <br />[PASSIVE]: Every alvar's sucessful hit apply an debuff on the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
+                <br />[PASSIVE]: Every alvar's sucessful hit apply an debuff to the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
                 cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
                 <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
             }
@@ -430,8 +430,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage);
 
             return {
-                en: `Alvar teleports behind the closest market enemy, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no market enemy nearby, ability will do nothing.`,
-                cz: `Alvar se teleportuje za nejbližšího tržního nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`
+                en: `Alvar teleports behind the closest marked enemy, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no market enemy nearby, ability will do nothing.`,
+                cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`
             }
         }
 
