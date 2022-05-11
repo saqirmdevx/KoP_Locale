@@ -425,10 +425,17 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             const baseDamage = getDamage(AlvarAbilityData.FURIOUS_KICK_DAMAGE_MOD * damage);
 
             return {
+<<<<<<< HEAD
                 en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} normal damage and stunning enemy units for ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
                 ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
                 cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} a omráčí za ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} jednotky, pokud je to nepřítel.`,
                 zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}。`,
+=======
+                en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} and stunning for ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} the unit if it's an enemy. <br />
+                <br/> Alvar apply an debuff on all targets it hits.`,
+                cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} a omráčí za ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} jednotky, pokud je to nepřítel. <br />
+                <br /> Alvar aplikuje debuff na všechný nepřatelské jednotky.`,
+>>>>>>> b903304 (Update alvar's tooltips)
             }
         }
 
@@ -436,10 +443,15 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage);
 
             return {
+<<<<<<< HEAD
                 en: `Alvar teleports behind the closest marked enemy hero, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no marked enemy nearby, ability can't be used.`,
                 ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его и нанося ${baseDamage} физического урона, и отталкивая его в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
                 cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`,
                 zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
+=======
+                en: `Alvar teleports behind the closest marked enemy, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no marked enemy nearby, ability will do nothing.`,
+                cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`
+>>>>>>> b903304 (Update alvar's tooltips)
             }
         }
 
