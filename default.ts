@@ -66,6 +66,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.ALVAR_NAME]: {
         en: "Alvar",
+        ru: "Алвар",
         zh: "阿爾瓦",
     },
     [LOCALE.KUMIHU_DESCRIPTION]: {
@@ -1577,7 +1578,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.ADD_HARD_BOT]: {
         en: "Add hard bot",
         cz: "Prídat těžkého bota",
-        ru: "Добавить бота",
+        ru: "Добавить сложного бота",
         zh: "加入困難電腦",
     },
     [LOCALE.LOBBY_SEND_TO_DISCORD]: {

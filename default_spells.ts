@@ -412,6 +412,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
             return {
                 en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
                 <br />[PASSIVE]: Every alvar's sucessful hit to enemy hero apply an debuff to the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
+                ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage} физического урона. <br /> 
+                <br />[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противнике ослабление на ${toSec(AlvarAbilityData.MARK_DURATION)}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage} физического урона.`,
                 cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
                 <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
                 zh: `阿爾瓦用他的拳頭向前打擊，造成 ${baseDamage}點一般傷害。<br /> 
@@ -424,6 +426,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} normal damage and stunning enemy units for ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
+                ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
                 cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} a omráčí za ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)} jednotky, pokud je to nepřítel.`,
                 zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}。`,
             }
@@ -434,6 +437,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Alvar teleports behind the closest marked enemy hero, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no marked enemy nearby, ability can't be used.`,
+                ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его и нанося ${baseDamage} физического урона, и отталкивая его в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
                 cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`,
                 zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
             }
@@ -661,6 +665,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.ALVAR_FURIOUS_KICK:
             return {
                 en: "Furious kick",
+                ru: "Яростный удар",
                 cz: "Zúrivý kopanec",
                 zh: "憤怒之踢",
             }
@@ -668,6 +673,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
         case Shared.SpellList.ALVAR_HEAVENLY_KICK:
             return {
                 en: "Heavenly Kick",
+                ru: "Небесный удар",
                 cz: "Nebeský kop",
                 zh: "天堂之踢",
             }
