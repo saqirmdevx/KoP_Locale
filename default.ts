@@ -66,6 +66,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.ALVAR_NAME]: {
         en: "Alvar",
+        zh: "阿爾瓦",
     },
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: "Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.",
@@ -725,7 +726,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: "УБИЙЦА",
         br: "ASSASSINO",
         cz: "ASSASSÍN",
-        zh: "刺客",
+        zh: "創擊者",
     },
     [LOCALE.TAG_TANK]: {
         en: "TANK",
