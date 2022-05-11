@@ -434,7 +434,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
             return {
                 en: `Alvar teleports behind the closest marked enemy hero, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no marked enemy nearby, ability can't be used.`,
-                cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`
+                cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný tržní nepřítel, schopnost neudělá nic.`,
                 zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
             }
         }
