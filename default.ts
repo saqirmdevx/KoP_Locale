@@ -2,7 +2,7 @@
 import LOCALE from "@/lang/locales";
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
-    /** Hero section */
+    /** Hero section */ 
     [LOCALE.KUMIHU_NAME]: {
         en: "Kumihu",
         ru: "Кумиху",
