@@ -14,6 +14,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wooden Sword",
                     ru: "Деревянный меч",
+                    br: "Espada de Madeira",
                     cz: "Dřevěný Meč",
                     fr: "Épée en bois",
                     zh: "木劍",
@@ -24,6 +25,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wooden Bow",
                     ru: "Деревянный лук",
+                    br: "Arco das Fadas",
                     cz: "Dřevěný Luk",
                     fr: "Arc en bois",
                     zh: "木弓",
@@ -34,6 +36,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Novice Staff",
                     ru: "Посох новичка",
+                    br: "Graveto Mágico",
                     cz: "Učňova Hůl",
                     fr: "Bâton de novice",
                     zh: "木杖",
@@ -44,6 +47,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Ring",
                     ru: "Железное кольцо",
+                    br: "Anel olho da Floresta",
                     cz: "Železný Prsten",
                     fr: "Anneau de fer",
                     zh: "鐵環",
@@ -54,6 +58,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Buckler",
                     ru: "Баклер",
+                    br: "Escudo joia Fluorita",
                     cz: "Pukléř",
                     fr: "Bouclier",
                     zh: "盾牌",
@@ -64,6 +69,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Shirt",
                     ru: "Рубаха",
+                    br: "Armadura dos Caídos",
                     cz: "Svetr",
                     fr: "Chemise",
                     zh: "襯衫",
@@ -74,6 +80,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Light Slayer",
                     ru: "Губитель света",
+                    br: "Espada Corta luz",
                     cz: "Kosič Světla",
                     fr: "Tueur de Lumière",
                     zh: "輕量殺手",
@@ -84,6 +91,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Katana",
                     ru: "Катана",
+                    br: "Katana",
                     cz: "Katana",
                     fr: "Katana",
                     zh: "武士刀",
@@ -94,6 +102,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Corrupted Katana",
                     ru: "Искажённая катана",
+                    br: "Katana Corrompida",
                     cz: "Zvrácená Katana",
                     fr: "Katana corrompu",
                     zh: "腐化的武士刀",
@@ -104,6 +113,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Sword",
                     ru: "Железный меч",
+                    br: "Espada dos Guerreiros de ferro",
                     cz: "Ocelový Meč",
                     fr: "Épée de fer",
                     zh: "鐵劍",
@@ -114,6 +124,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Reckless Longbow",
                     ru: "Безрассудный длинный лук",
+                    br: "Besta dos Corajosos",
                     cz: "Hazardní Dlouhý Luk",
                     fr: "Arc long téméraire",
                     zh: "魯莽長弓",
@@ -124,6 +135,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Rapid Longbow",
                     ru: "Быстрый длинный лук",
+                    br: "Besta da Velocidade",
                     cz: "Radpidní Dlouhý Luk",
                     fr: "Arc long rapide",
                     zh: "疾風長弓",
@@ -134,6 +146,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Enduring Shield",
                     ru: "Стойкий щит",
+                    br: "Escudo Real",
                     cz: "Odolný Štít",
                     fr: "Bouclier endurant",
                     zh: "耐久護盾",
@@ -144,6 +157,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Buckler",
                     ru: "Железный баклер",
+                    br: "Escudo dos Guerreiros de ferro",
                     cz: "Železný Pukléř",
                     fr: "Bouclier de fer",
                     zh: "鐵圓盾",
@@ -154,6 +168,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Magical Shield",
                     ru: "Магический щит",
+                    br: "Escudo Encantado",
                     cz: "Magický Štít",
                     fr: "Bouclier magique",
                     zh: "魔法護盾",
@@ -164,6 +179,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Rod of Nature",
                     ru: "Жезл природы",
+                    br: "Cajado das Fadas",
                     cz: "Prut Přírody",
                     fr: "Baguette naturelle",
                     zh: "大自然法棒",
@@ -174,6 +190,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wizard Staff",
                     ru: "Посох волшебника",
+                    br: "Cajado do mago esquecido",
                     cz: "Hůl Kouzelníka",
                     fr: "Bâton du magicien",
                     zh: "巫師法棍",
@@ -184,6 +201,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Ring of Regeneration",
                     ru: "Кольцо регенерации",
+                    br: "Anel da Regeneração",
                     cz: "Prsten Regenerace",
                     fr: "Anneau de régénération",
                     zh: "再生手環",
@@ -194,6 +212,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Ring of Time",
                     ru: "Кольцо времени",
+                    br: "Anel do Tempo",
                     cz: "Prsten Času",
                     fr: "Anneau du Temps",
                     zh: "時間手環",
@@ -204,6 +223,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Leather Armor",
                     ru: "Кожанная броня",
+                    br: "Armadura de Aprendiz",
                     cz: "Kožená Zbroj",
                     fr: "Armure de cuir",
                     zh: "皮革裝甲",
@@ -214,6 +234,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Armor",
                     ru: "Железная броня",
+                    br: "Armadura dos Guerreiros de ferro",
                     cz: "Železná Zbroj",
                     fr: "Armure de fer",
                     zh: "鐵裝甲",
@@ -224,12 +245,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Plate Armor",
                     ru: "Латная броня",
+                    br: "Armadura de Placas reforçadas",
                     cz: "Plátová Zbroj",
                     fr: "Armure à plaques",
                     zh: "金屬裝甲",
                 },
                 desc: {
                     en: `UNIQUE: Every time you kill minion (+1 stacks), enemy hero (+5 stacks) or you get assist (+2 stacks) you gain ${ItemAbilityData.PLATE_ARMOR_STACK_HP} max health (max ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}). All stacks are lost upon death.`,
+                    br: `[Único]: Toda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos) você ganha ${ItemAbilityData.PLATE_ARMOR_STACK_HP} máximo de vida (máximo ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}).\n Todas os acúmulos são perdidas após a morte.`,
                     ru: `УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает максимальное здоровье на ${ItemAbilityData.PLATE_ARMOR_STACK_HP} (Максимум зарядов: ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS}). Все заряды теряются после смерти.`,
                     zh: `特殊：每當你殺死小兵 (疊加 1)、敵方英雄 (疊加 5) 或是助攻 (疊加 2)，你獲得 ${ItemAbilityData.PLATE_ARMOR_STACK_HP}最大生命值 (最大值 ${ItemAbilityData.PLATE_ARMOR_STACK_HP * ItemAbilityData.PLATE_ARMOR_MAX_STACKS})。所有疊加在死亡後歸零。`,
                 }
@@ -239,6 +262,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Wizard Shoes",
                     ru: "Башмаки волшебника",
+                    br: "Sapatos do Mago esquecido",
                     cz: "Boty Kouzelníka",
                     fr: "Chaussures du magicien",
                     zh: "巫師魔鞋",
@@ -249,6 +273,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Agility Boots",
                     ru: "Ботинки ловкости",
+                    br: "Botas de Velocidade",
                     cz: "Boty Obratnosti",
                     fr: "Bottes d'agilité",
                     zh: "敏捷之靴",
@@ -259,6 +284,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Boots",
                     ru: "Ботинки",
+                    br: "Botas de Couro",
                     cz: "Boty",
                     fr: "Bottes",
                     zh: "靴子",
@@ -269,6 +295,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Boots",
                     ru: "Божественные ботинки",
+                    br: "Botas dos Guerreiros de ferro",
                     cz: "Svaté Sandále",
                     fr: "Bottes divines",
                     zh: "神聖之靴",
@@ -279,6 +306,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Swift Boots",
                     ru: "Ботинки стремительности",
+                    br: "Botas das Fadas",
                     cz: "Cestovní Obuv",
                     fr: "Bottes de vitesse",
                     zh: "神速之靴",
@@ -289,6 +317,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Shadow Slayer",
                     ru: "Губитель теней",
+                    br: "Espada Consome luz",
                     cz: "Stínovrah",
                     fr: "Tueur d'Ombre",
                     zh: "闇影殺手",
@@ -308,11 +337,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Sword",
                     ru: "Божественный меч",
+                    br: "Espada Divina",
                     cz: "Božský meč",
                     zh: "聖劍",
                 },
                 desc: {
                     en: `[ACTIVE]: Divine Shield - Makes you immune to all effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and reduce your attack damage by 50%. ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} cooldown`,
+                    br: `[Ativo]: Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 50%. \n [Tempo de recarga: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} seg.]`,
                     ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша сила атаки становится равна 50%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
                     zh: `主動技：神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 50%。${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)}冷卻時間`,
                 },
@@ -322,6 +353,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Katana",
                     ru: "Божественная катана",
+                    br: "Katana Divina",
                     fr: "Katana divin",
                     zh: "神聖武士刀",
                 },
@@ -329,6 +361,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     // Require update
                     ru: `УНИКАЛЬНО(Активно): Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев в течение ${toSec(ItemAbilityData.DIVINE_KATANA_DURATION / 1000)} сек., а также раскрывает все невидимые цели вокруг себя в течение этого времени. (Перезарядка: ${(ItemAbilityData.DIVINE_KATANA_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     en: `[ACTIVE]: Throws a fragment of katana next to you, upon impact provide unobstructed vision, silence and slow all enemy heroes in distance. In addition it will reveal all invisible units in area. (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION)} sec duration of fragment). (Cooldown: ${toSec(ItemAbilityData.DIVINE_KATANA_COOLDOWN)})`,
+                    br: `[Ativo]: Joga a katana divina perto de você, no momento do impacto fornece visão desobstruída, silencia e desacelera todos os heróis inimigos na área. Além disso, revelará todas as unidades invisíveis na área. \n (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION)} seg de duração da katana no chão).\n [Tempo de recarga: ${toSec(ItemAbilityData.DIVINE_KATANA_COOLDOWN)} seg.]`,
                     zh: `主動技：在你前方投擲片段武士刀，提供寬廣視野，沉默且減速在範圍內的敵方英雄。此外能揭發隱蔽單位 (${toSec(ItemAbilityData.DIVINE_KATANA_DURATION)}秒間斷性時長)。(冷卻時間：${toSec(ItemAbilityData.DIVINE_KATANA_COOLDOWN)})`,
                 }
             }
@@ -337,10 +370,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Spiked Mace",
                     ru: "Шипастая булава",
+                    br: "Maçã Cravada",
                     zh: "尖刺錘",
                 },
                 desc: {
                     en: `UNIQUE: Your normal attacks deal additional ${ItemAbilityData.SPIKED_MACE_DAMAGE} normal damage and apply griveous wound for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}. (Griveous wound reduces target's all healing and regeneration effects by 65%).`,
+                    br: `[Único]: Seus ataques normais causam dano adicional ${ItemAbilityData.SPIKED_MACE_DAMAGE} dano normal e aplica um ferimento grave por ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}.\n (Ferimento grave reduz todos os efeitos de cura e regeneração do alvo em 65%).`,
                     ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 65%).`,
                     zh: `特殊：你的一般攻擊給予額外 ${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予 ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}創傷。(創傷降低目標物的所有治癒即回血效果 65%).`,
                 }
@@ -351,6 +386,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Cold Sword",
                     ru: "Меч холода",
+                    br: "Espada do Imperador Congelado",
                     fr: `Épée gelée`,
                     zh: "寒冰之劍",
                 },
@@ -369,6 +405,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Demon Sabre",
                     ru: "Сабля демона",
+                    br: "Sabre Demoníaco",
                     fr: `Sabre du démon`,
                     zh: "惡魔軍刀",
                 },
@@ -376,6 +413,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Your normal attacks lower enemy armor by ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} for 4 seconds 
                         <br />
                         UNIQUE: Every time you kill minion (+1 stacks), enemy hero (+5 stacks) or you get assist (+2 stacks) you gain ${ItemAbilityData.DEMON_SABRE_STACK_DMG} damage (max ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}). All stacks are lost upon death.`,
+                    br: `[Único]: Seus ataques normais diminuem a armadura inimiga em ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} por 4 segundos.
+                        <br />
+                        [Único]: Toda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos), você ganha ${ItemAbilityData.DEMON_SABRE_STACK_DMG} de dano (máximo ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}).\n Todas os acúmulos são perdidas após a morte.`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую броню на ${ItemAbilityData.DEMON_SWORD_ARMOR_REDUCTION} на 4 сек. 
                         <br />
                         УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает силу атаки на ${ItemAbilityData.DEMON_SABRE_STACK_DMG} (Максимум зарядов: ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}). Все заряды теряются после смерти.`,
@@ -395,6 +435,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Corrupted Light Slayer",
                     ru: "Искажённый губитель света",
+                    br: "Corta Luz corrompido",
                     fr: `Tueur de Lumière Corrompu`,
                     zh: "腐化的輕量殺手",
                 },
@@ -413,13 +454,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Berserker Bow",
                     ru: "Лук берсерка",
+                    br: "Besta Incontrolável",
                     fr: `Arc du Berserker`,
                     zh: "狂戰士之弓",
                 },
                 desc: {
                     en: `UNIQUE: Every time your normal attacks hit enemy hero, increases your attack speed by ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. At 5th stack it heals you for 15% of max health and reset stacks`,
                     ru: `УНИКАЛЬНО(Пассивно): Попадая атаками по врагу, вы увеличиваете свою скорость атаки на ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% на ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} сек. Складывается до 5 раз. На 5 зарядах вы исцеляетесь на 15% от макс. здоровья и обнуляете количество зарядов`,
-                    br: `[Único]: Cada vez que você atinge o personagem inimigo, aumenta sua velocidade de ataque em ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% por ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} seg.\n Na 5ª stack ele cura você em 15% de vida máxima e reseta os stacks.`,
+                    br: `[Único]: Cada vez que você atinge o personagem inimigo, aumenta sua velocidade de ataque em ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% por ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} seg.\n No 5° acúmulo, ele cura você em 15% de vida máxima e reseta os acúmulos.`,
                     cz: `JEDINEČNÉ: Pokaždé když zasáhneš protivnika tak si zvýšís rychlost útoků o ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% na ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} vteřin. Při pátém útoku vás vyléčí o 15% maximálního zdravý a resetuje efekt`,
                     fr: `[UNIQUE]: Chaque attaque J réussie augmente ta vitesse d'attaque de ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}% pour ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec. \n Lorsque tu atteins la 5e charge, tu es soigné pour 15% du maximum de tes points de vie et les charges sont remises à zéro.`,
                     zh: `特殊：每當你的一般攻擊擊中敵方英雄，增加 ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)}秒你的攻擊速度 ${ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100}%。在第五次疊加時恢復你最大值 15%的血量並重置疊加`,
@@ -430,13 +472,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Magical Bow",
                     ru: "Волшебный лук",
+                    br: "Arco das Almas perdidas",
                     fr: "Arc magique",
                     zh: "魔法之弓",
                 },
                 desc: {
                     en: "UNIQUE: Sucessful hit enemy hero with your magical attacks increases your movement speed by 10 for 1.5 sec <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                     ru: "УНИКАЛЬНО(Пассивно): Успешное попадание способностями увеличивает вашу скорость передвижения на 10 на 1.5 сек. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
-                    br: "[Único]: Um golpe bem-sucedido com suas habilidades aumenta sua velocidade de movimento em 10 por 1.5 seg. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+                    br: "[Único]: Um golpe bem-sucedido com suas habilidades, aumenta sua velocidade de movimento em 10 por 1.5 seg. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                     cz: "JEDINEČNÉ: Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                     fr: "[UNIQUE]: Chaque compétence K ou L réussie augmente ta vitesse de déplacement de 10 points de déplacement pour 1.5 sec. <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                     zh: "特殊：你的魔法攻擊成功擊中敵方英雄時，增加 1.5秒你的移動速度值 10 <br /> <br />" + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
@@ -447,6 +490,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Poison Bow",
                     ru: "Ядовитый лук",
+                    br: "Arco de Veneno concentrado",
                     fr: "Arc empoisonné",
                     zh: "劇毒之弓",
                 },
@@ -458,6 +502,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Corrupted Longbow",
                     ru: "Искажённый длинный лук",
+                    br: "Arco Corrompido",
                     fr: "Arc long corrompu",
                     zh: "腐化的長弓",
                 },
@@ -484,6 +529,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Rapid Longbow",
                     ru: "Быстрый длинный лук",
+                    br: "Besta da Velocidade encantada",
                     fr: "Arc long rapide",
                     zh: "疾風長弓",
                 },
@@ -501,6 +547,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Burning Rod",
                     ru: "Пылающий жезл",
+                    br: "Cajado Incandescente",
                     fr: `Baguette brûlante`,
                     zh: "燃燒法棒",
                 },
@@ -517,11 +564,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Vampiric Rod",
                     ru: "Вампирический жезл",
+                    br: "Cajado Vampírico",
                     fr: `Baguette vampirique`,
                     zh: "吸血鬼法棒",
                 },
                 desc: {
                     en: `UNIQUE: When your magical attack hits the enemy hero, it will heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% of damage dealt.`,
+                    br: `[Único]: Quando seu ataque mágico atinge um personagem inimigo, ele curará você em ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de dano causado.`,
                     ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% от нанесённого урона.`,
                     zh: `特殊：當你的魔法攻擊擊中敵方英雄，從${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}%給予的傷害恢復自己生命值。`,
                     // OLD //
@@ -535,6 +584,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Kirin Staff",
                     ru: "Посох Кирина",
+                    br: "Cajado de Kirin",
                     fr: `Bâton de Kirin`,
                     zh: "麒麟法棍",
                 },
@@ -542,6 +592,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     en: `UNIQUE: Your abilites penetrate target's magic resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%, this effect does not stack with other sources
                     <br />
                     UNIQUE: Every time you kill minion (+1 stacks), enemy hero (+5 stacks) or you get assist (+2 stacks) you gain ${ItemAbilityData.KIRIN_STAFF_STACK_AP} ability power (max ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}). All stacks are lost upon death.`,
+                    br: `[Único]: Suas habilidades penetram a resistência mágica do alvo em ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%, este efeito não se acumula com outras fontes.
+                    <br />
+                    [Único]: Toda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos), você ganha ${ItemAbilityData.KIRIN_STAFF_STACK_AP} poder de habilidade (máximo ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}).\n Todas os acúmulos são perdidas após a morte.`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%. Этот эффект не складывается с другими источниками
                     <br />
                     УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает силу умений на ${ItemAbilityData.KIRIN_STAFF_STACK_AP} (Максимум зарядов: ${ItemAbilityData.KIRIN_STAFF_STACK_AP * ItemAbilityData.KIRIN_STAFF_MAX_STACKS}). Все заряды теряются после смерти.`,
@@ -558,11 +611,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Staff",
+                    br: "Cajado corrompido",
                     ru: "Искажённый посох",
                     zh: "腐化的法棍",
                 },
                 desc: {
                     en: `UNIQUE: Provide additional ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}% ability power!`,
+                    br: `[Único]: Fornece o adicional de ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}% de poder de habilidade!`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваша сила умений дополнительно увеличивается на ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}%!`,
                     zh: `特殊：提供額外的 ${fixed((ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100), 1)}%技能威力！`,
                 }
@@ -572,11 +627,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Frozen Staff",
                     ru: "Замёрзший посох",
+                    br: "Cajado da Imperatriz Congelada",
                     fr: `Baguette gelée`,
                     zh: "冰結法棍",
                 },
                 desc: {
                     en: `UNIQUE: Your abilites lower enemy's movement speed by ${ItemAbilityData.FROZEN_STAFF_SLOW} and attack speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} sec cooldown`,
+                    br: `[Único]: Suas habilidades reduzem a velocidade de movimento do inimigo em ${ItemAbilityData.FROZEN_STAFF_SLOW} e velocidade de ataque por ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     zh: `特殊：你的技能降低 ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)}秒對手的移動速度值 ${ItemAbilityData.FROZEN_STAFF_SLOW}與 ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}%攻擊速度 - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                     // NEED UPDATE
@@ -590,6 +647,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Iron Rod",
                     ru: "Железный жезл",
+                    br: "Cajado dos Guerreiros de ferro",
                     fr: `Baguette de fer`,
                     zh: "鐵之法棒",
                 },
@@ -606,6 +664,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Magic Harpoon",
                     ru: "Волшебный гарпун",
+                    br: "Arpão Mágico",
                     fr: `Harpon magique`,
                     zh: "魔法叉戟",
                 },
@@ -622,13 +681,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Orchid of Malevolence",
                     ru: "Орхидея злобы",
+                    br: "Cajado Orquídea da Malevolência",
                     fr: `Orchidée de Malveillance`,
                     zh: "惡毒蘭花",
                 },
                 desc: {
                     en: `Active: Releases dark arrow in your direction that pierce through enemies, silences them for ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} sec and at the end of silence, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% of the damage received while silenced is inflicted as bonus magical damage. - ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} sec cd`,
                     ru: `УНИКАЛЬНО(Активно): Выпускает тёмную стрелу в вашем направлении, которая пронзает несколько целей, накладывая на них немоту на ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} сек. По окончании эффекта цели получают ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% от полученного урона за время действия немоты в виде магического урона. (Перезарядка: ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                    br: `[Ativo]: Acumula maldade lançando na direção que seu personagem está olhando, perfurando os inimigos e os silenciando por ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} seg, e no final do silênciar, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% do dano recebido enquanto silenciado é infligido como dano mágico adicional.\n [Tempo de recarga: ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} seg.]`,
+                    br: `[Ativo]: Acumula maldade lançando na direção que seu personagem está olhando, perfurando os inimigos e os silenciando por ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} seg, e no final do silênciar, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% de dano enquanto silenciado infligindo como dano mágico adicional.\n [Tempo de recarga: ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     fr: `[ACTIVATION]: Envoie une sombre flèche dans ta direction, qui traverse tes ennemies et les réduits au silence pour ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} sec. À la fin de ce délai, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% des dégâts reçus par l'ennemi sont infligés sous forme de dégâts magiques supplémentaires. \n [Délai de récupération : ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)} sec.]`,
                     zh: `主動技：向前方釋放暗箭貫穿敵方，沉默 ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)}秒所有敵方並在沉默結束後，期間造成的傷害 ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}%追加為魔法傷害。 - ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                 }
@@ -638,6 +698,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Staff",
                     ru: "Божественный посох",
+                    br: "Cajado da Deusa da floresta",
                     fr: `Baguette divine`,
                     zh: "神聖法棍",
                 },
@@ -646,7 +707,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                         <br /> This effect has inner cooldown of 12 sec (Can not be reduced by cooldown reduction), during this time, this effect is fully ignored`,
                     ru: `УНИКАЛЬНО(Активно): Исцеляет ближайшим союзным целям в радиусе ${ItemAbilityData.DIVINE_STAFF_RADIUS} пикселей ${ItemAbilityData.DIVINE_STAFF_HEAL_T2} здоровья, снимая все негативные эффекты, а также накладывая ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} бонусной скорости передвижения на ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.DIVINE_STAFF_COOLDOWN / 1000).toFixed(1)} сек.) 
                         <br /> Этот эффект имеет внутреннюю перезарядку длительностью 12 сек. (Не может быть уменьшено сокращением перезарядки). В течение этого времени активный эффект этого предмета не работает на ранее задетых целях`,
-                    br: `[Ativo]: Cura todas as unidades próximas de ${ItemAbilityData.DIVINE_STAFF_RADIUS}px raio por ${ItemAbilityData.DIVINE_STAFF_HEAL_T2}, aplica ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} velocidade de bônus e remova todos os efeitos negativos por ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.DIVINE_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]
+                    br: `[Ativo]: Cura todas as unidades próximas de ${ItemAbilityData.DIVINE_STAFF_RADIUS}px raio por ${ItemAbilityData.DIVINE_STAFF_HEAL_T2}, aplica ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} velocidade de movimento bônus e remova todos os efeitos negativos por ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.DIVINE_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]
                         <br /> Este efeito tem o tempo de recarga de 12 segundos.(não pode ser reduzido pela redução de tempo de recarga), durante este tempo, este efeito é totalmente ignorado`,
                     fr: `[ACTIVATION]: Soigne toutes les unités dans un rayon de ${ItemAbilityData.DIVINE_STAFF_RADIUS}px pour ${ItemAbilityData.DIVINE_STAFF_HEAL_T2}. Fournit ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} points de vitesse de déplacement et supprime tous les effets négatifs pour ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} sec. \n [Délai de récupération : ${(ItemAbilityData.DIVINE_STAFF_COOLDOWN / 1000).toFixed(1)} sec.]
                         <br /> Cet effet a un délai de réduction interne de 12 sec qui ne peut pas être réduit. Pendant ce délai, l'effet est complétement ignoré.`,
@@ -660,6 +721,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Vampiric Shield",
                     ru: "Вампирический щит",
+                    br: "Escudo Vampírico",
                     fr: `Bouclier vampirique`,
                     zh: "吸血鬼護盾",
                 },
@@ -677,6 +739,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Divine Shield",
                     ru: "Божественный щит",
+                    br: "Escudo da Deusa da floresta",
                     fr: `Bouclier divin`,
                     zh: "神聖護盾",
                 },
@@ -694,6 +757,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Spike Shield",
                     ru: "Шипастый щит",
+                    br: "Escudo de Espinhos sombrio",
                     fr: `Bouclier piquant`,
                     zh: "尖刺護盾",
                 },
@@ -711,6 +775,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Garun's Defender",
                     ru: "Защитник Гаруна",
+                    br: "Defensor de Garun",
                     fr: `Bouclier de Garun`,
                     zh: "加侖的守護者",
                 },
@@ -727,11 +792,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Plate Shield",
                     ru: "Латный щит",
+                    br: "Escudo de Placas reforçadas",
                     fr: `Bouclier à plaque`,
                     zh: "金屬護盾",
                 },
                 desc: {
                     en: `Active: Shockwaves travel through the air dealing ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} normal damage and reduce enemy's movement speed by ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec - ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec cd`,
+                    br: `[Ativo]: Ondas de choque viajam pelo ar causando ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} dano normal e reduzindo a velocidade de movimento do inimigo em ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} por ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     ru: `УНИКАЛЬНО(Активно): Создаёт ударную волну, которая наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} урона и уменьшает скорость передвижения на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} у всех врагов на своём пути на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)} сек.)`,
                     zh: `主動技：釋放衝擊波，給予 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}點一般傷害並降低 ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)}秒敵方的移動速度值 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} - ${(ItemAbilityData.PLATE_SHIELD_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                     // need fix
@@ -744,11 +811,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Kirin's Defender",
                     ru: "Защитник Кирина",
+                    br: "Defensor de Kirin",
                     fr: `Bouclier de Kirin`,
                     zh: "麒麟的守護者",
                 },
                 desc: {
                     en: `UNIQUE: Kirin's Defender blocks next CC effect once every ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} sec, sucessful block provide ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% magic resistance for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec.`,
+                    br: `[Único]: Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg, se o bloqueio for bem sucedido, fornecer ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% de resistência mágica por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.`,
                     ru: `УНИКАЛЬНО (ПАССИВНО): Каждые ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек. Защитник Кирина блокирует следующий эффект контроля. Успешный блок повышает ваше сопротивление магии на  ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек.`,
                     zh: `特殊：麒麟的守護者每次發動 ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()}秒內格擋下一個有冷卻時間效果的招式，成功格擋時提供 ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()}秒 ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}%的魔法抗性。`,
                     // UPDATE
@@ -762,6 +831,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Demonic Ring",
                     ru: "Демоническое кольцо",
+                    br: "Anel Demoníaco",
                     fr: `Anneau démonique`,
                     zh: "惡魔手環",
                 },
@@ -778,6 +848,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Gold Ring",
                     ru: "Золотое кольцо",
+                    br: "Anel da Fortuna",
                     fr: "Anneau d'or",
                     zh: "黃金手環",
                 },
@@ -794,6 +865,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Frost Ring",
                     ru: "Морозное кольцо",
+                    br: "Anel Congelado da Imperatriz",
                     zh: "冰霜手環",
                 },
                 desc: {
@@ -808,6 +880,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Chronos Ring",
+                    br: "Anel do Mago do tempo",
                     ru: "Кольцо Хроноса",
                     zh: "時辰手環",
                 },
@@ -823,6 +896,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Corrupted Ring",
                     ru: "Искажённое кольцо",
+                    br: "Anel Corrompido",
                     zh: "腐化的手環",
                 },
                 desc: {
@@ -837,13 +911,14 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Berserker Ring",
+                    br: "Anel do Lutador",
                     ru: "Кольцо берсерка",
                     zh: "狂戰士手環",
                 },
                 desc: {
                     en: `UNIQUE: Your attacks deal ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG} more damage for each 10% HP you are missing.`,
                     ru: `УНИКАЛЬНО(Пассивно): Ваши атаки наносят на ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG} ед. больше физического урона за каждые недостающие 10% вашего здоровья`,
-                    br: `[Único]: Seus ataques dão ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG} mais dano para cada 10% de vida que você tenha perdido.`,
+                    br: `[Único]: Seus ataques dão ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG} a mais de dano para cada 10% de vida que você tenha perdido.`,
                     zh: `特殊：每當你的總HP減少 10%，你的攻擊造成 ${ItemAbilityData.BERSERKER_RING_DAMAGE_PER_FRAG}點更多的傷害`,
                 }
             }
@@ -854,6 +929,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Frost Armor",
                     ru: "Морозная броня",
+                    br: "Armadura do Lorde congelado",
                     zh: "冰霜鎧甲",
                 },
                 desc: {
@@ -869,12 +945,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Void Armor",
                     ru: "Броня пустоты",
+                    br: "Armadura do Abismo",
                     zh: "虛空鎧甲",
                 },
                 desc: {
                     en: `Active: Makes you invisible for ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} sec in addition increase your movement speed by ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} and normal damage by ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} - ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)} sec cd\n (removes on attack or spell cast)`,
                     ru: `УНИКАЛЬНО(Активно): Вы получаете невидимость на ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} сек., а также дополнительно получаете ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} скорости передвижения и ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} атаки. (Перезарядка: ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)} сек.)\n (эффект пропадает при атаке или использовании способностей)`,
-                    br: `[Ativo]: Torna você invisível por ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} seg além disso, aumente sua velocidade de movimento em ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} e dano por ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE}.\n [Tempo de recarga: ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)} seg.]\n (Acaba quando você usa algum ataque)`,
+                    br: `[Ativo]: Torna você invisível por ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} seg, além disso, aumente sua velocidade de movimento em ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} e dano por ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} seg.\n (Acaba quando você usa algum ataque.)\n [Tempo de recarga: ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     zh: `主動技：使你 ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)}秒隱蔽，額外增加你的移動速度值 ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}與一般傷害值 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} - ${(ItemAbilityData.VOID_ARMOR_COOLDOWN / 1000).toFixed(1)}秒冷卻時間 (效果在攻擊或發動技能後移除)`,
                 }
             }
@@ -884,12 +961,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Titan's Armor",
                     ru: "Броня титана",
+                    br: "Armadura do Titan",
                     zh: "泰坦的鎧甲",
                 },
                 desc: {
                     en: `Active: Increase your health regen by ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove all negative effects and makes you immune to all incoming damage for ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} sec. You can't do any action during this effect!! - ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)} sec cd`,
                     ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы, избавляетесь от негативных эффектов, а также получаете прибавку к регенерации здоровья в размере ${ItemAbilityData.TITAN_ARMOR_REGENERATION} на ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} сек. Вы не можете выполнять никакие действия, пока активен данный эффект! (Перезарядка: ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                    br: `[Ativo]: Aumente sua regeneração de vida em ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove todos os efeitos negativos e o torna imune a todos os danos recebidos por ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)} seg.]\n (Você não pode fazer nenhuma ação durante este efeito.)`,
+                    br: `[Ativo]: Aumente sua regeneração de vida em ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove todos os efeitos negativos e o torna imune a todos os danos recebidos por ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} seg.\n (Você não pode fazer nenhuma ação durante este efeito.)\n [Tempo de recarga: ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)} seg.]`,
                     zh: `主動技：增加你的回血速度 ${ItemAbilityData.TITAN_ARMOR_REGENERATION}點，移除所有負面效果並使你 ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)}秒內無視所有襲來的攻擊。效果期間你無法採取任何動作！ - ${(ItemAbilityData.TITAN_ARMOR_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
                 }
             }
@@ -897,11 +975,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Chest of Malevolence",
+                    br: "Armadura da Malevolência",
                     ru: "Нагрудник злобы",
                     zh: "惡毒胸甲",
                 },
                 desc: {
                     en: `UNIQUE: Whenever you take magical damage, attacker will be cursed and their ability power will by decreased by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
+                    br: `[Único]: Sempre que você sofrer dano mágico, o atacante será amaldiçoado e seu poder de habilidade será reduzido em ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
                     ru: `УНИКАЛЬНО(Пассивно): Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а его Сила умений уменьшится на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
                     zh: `特殊：每當你受到魔法傷害，攻擊者將會受到詛咒，其技能威力被降低 ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%。`,
                 }
@@ -913,6 +993,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Healing Potion",
                     ru: "Исцеляющее зелье",
+                    br: "Poção das fadas",
                     zh: "治癒藥水",
                 },
                 desc: {
@@ -928,10 +1009,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 name: {
                     en: "Observer Ward",
                     ru: "Тотем-наблюдатель",
+                    br: "Pedra do Observador da floresta",
                     zh: "偵查守衛",
                 },
                 desc: {
                     en: `[ACTIVE]: Plants an Observer Ward, an invisible watcher that gives obstructed vision in a ${ItemAbilityData.WARD_VISION} px radius to your team. Lasts ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} secs. If ward is visible to enemy team, they can destroy it!`,
+                    br: `[Ativo]: Planta uma pedra Observadora invisível que dá visão obstruída em ${ItemAbilityData.WARD_VISION} px raio para sua equipe.\n Dura ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
                     ru: `Активно: Вы устанавливаете невидимый тотем, который раскрывает область вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
                     zh: `主動技：植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊半徑 ${ItemAbilityData.WARD_VISION}像素範圍內的受限視線。持續 ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)}。如果守衛能被敵隊看見，他們能摧毀它！`,
                 }
@@ -940,11 +1023,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Sentry Ward",
+                    br: "Pedra do Observador corrompida",
                     ru: "Сторожевой тотем",
                     zh: "哨兵守衛",
                 },
                 desc: {
                     en: `[ACTIVE]: Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} sec. If ward is visible to enemy team, they can destroy it!`,
+                    br: `[Ativo]: Planta uma pedra Observadora corrompida invisível que concede Visão Verdadeira, a habilidade de ver unidades e sentinelas inimigas invisíveis, para qualquer visão aliada existente dentro de um raio. dura por ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
                     ru: `Активно: Вы устанавливаете невидимый сторожевой тотем, раскрывающий невидимых противников и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для противников, они могут уничтожить его!`,
                     zh: `主動技：植入一個哨兵守衛，一個隱蔽的觀察者賜予絕對視線，有能夠讓友軍在範圍內看見隱蔽敵方單位與守衛的能力。持續 ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
                 }
@@ -953,11 +1038,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Potion of Magic",
+                    br: "Poção de Magia corrompida",
                     ru: "Зелье волшебства",
                     zh: "魔法藥水",
                 },
                 desc: {
                     en: `[ACTIVE]: Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
+                    br: `[Ativo]: Da a quem beber ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} de Poder de habilidade permanentemente, acumula até 5 vezes!\n Sabor uva da floresta.`,
                     ru: `Активно: Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} силы умений навсегда. Эффект складывается до 5 раз!`,
                     zh: `主動技：永久提供 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
                 }
@@ -966,11 +1053,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             return {
                 name: {
                     en: "Corrupted Potion",
+                    br: "Poção de força corrompida",
                     ru: "Искажённое зелье",
                     zh: "腐化的藥水",
                 },
                 desc: {
                     en: `[ACTIVE]: Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
+                    br: `[Ativo]: Da a quem beber ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} de dano de ataque permanentemente, acumula até 5 vezes!\n Sabor cereja do campo.`,
                     ru: `Активно: Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} силы атаки навсегда. Эффект складывается до 5 раз!`,
                     zh: `主動技：永久提供 ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害，疊加最多五次！`,
                 }
