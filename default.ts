@@ -36,7 +36,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: "Sparrow",
         ru: "Спарроу",
         zh: "史佩羅",
-        br: "Sparrow",
+        br: "Sparrow" ,
     },
 
     [LOCALE.THOMAS_NAME]: {
