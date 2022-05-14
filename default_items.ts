@@ -1,6 +1,6 @@
 //@ts-ignore
 import { calculateMagicDefense } from "@/misc/constant";
-//@ts-ignore
+//@ts-ignore 
 import { toSec } from "@/misc/misc";
 //@ts-ignore
 import Shared, { fixed, ItemAbilityData } from "@/misc/shared";
