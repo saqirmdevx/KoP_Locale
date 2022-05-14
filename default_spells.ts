@@ -11,7 +11,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
     switch (id) {
         /** Kumihu  */
         case Shared.SpellList.KUMIHU_AUTOATTACK: {
-            const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
+            const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage); 
             const enh_damage = getDamage(KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower, SpellType.MAGICAL, KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1));
 
             return {
