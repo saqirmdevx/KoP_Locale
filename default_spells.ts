@@ -150,7 +150,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
         case Shared.SpellList.BELLE_FLORAL_AMBUSH: {
             const base_damage = getDamage(BelleAbilityData.FLORAL_AMBUSH_DAMAGE_MOD * abilityPower, type, BelleAbilityData.FLORAL_AMBUSH_BASE_DAMAGE + BelleAbilityData.FLORAL_AMBUSH_DAMAGE_PER_LEVEL * (level - 1));
             return {
-                en: `Belle jumps in the air and drops three seed bombs in front of her that attaches to an enemy hero, exploding after 2 seconds and dealing ${base_damage} AoE magical damage surrounding the enemy hero` +
+                en: `Belle jumps in the air and drops three seed bombs in front of her that attaches to an enemy hero. If they get near, dealing ${base_damage} magical damage lasting 2 seconds and exploding after the duration, dealing ${base_damage} AoE magical damage surrounding the enemy hero.` +
                     `<br /><br />After staying on the ground for ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, the seeds explode dealing ${base_damage} AoE magical damage to surrounding enemies. Enemy hero that step on bomb while carrying one will immediately trigger explosion`,
                 ru: `Белла подпрыгивает и сбрасывает три цветочные бомбы перед собой, которые приклепляются к вражескому герою, если он наступит на них, нанося цели ${base_damage} магического урона в течение 2 секунд, взрываясь после этого, нанося ${base_damage} урона по площади` +
                     `<br /><br />После пребывания на земле в течение ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, цветы взрываются, нанося ${base_damage} магического урона по площади ближайшим врагам. Враг, ступивший на бомбу с уже прикреплённой до этого, моментально взорвёт предыдущую.`,
@@ -158,7 +158,7 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                     `<br /><br />Pokud se bomby neprichtí do ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, semínka explodují a způsobí ${base_damage} poškození okolním nepřátelům. Nepřítel, který šlápne na bombu a zároveň ji nese, okamžitě spustí explozi.`,
                 br: `Belle plana no ar e lança três bombas de flor em sua frente, se prendendendo a um inimigo causando ${base_damage} de dano, depois de 2 segundos explode novamente se o inimigo estiver com uma semente, causando ${base_damage} de dano.` +
                     `<br /><br />Depois de ficar no chão por ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, as flores explodem causando ${base_damage} de dano nos inimigos por perto. Inimigos que pisarem nas bombas enquanto elas carregam, irám imediatamente desencadear uma explosão.`,
-                zh: `蓓蕾跳躍在空中，向前丟下三顆種子炸彈，如果敵方英雄接近會附著於他們身上，在2秒後爆破並給予鄰近敵方英雄 ${base_damage}點全體魔法傷害。` +
+                zh: `蓓蕾跳躍在空中，向前丟下三顆種子炸彈。如果敵方英雄接近會附著於他們身上，給予持續2秒 ${base_damage}點魔法傷害並且在時間結束後爆破，給予鄰近敵方英雄 ${base_damage}點全體魔法傷害。` +
                     `<br /> <br /> 停留地面 ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}後，種子爆炸並給予四周敵方 ${base_damage}點全體魔法傷害。當敵方英雄帶著種子又踩到地面種子時會立即觸發爆炸。`,
             }
         }
@@ -430,7 +430,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
                 cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} normalního poškozěni a omráčí nepřitele po dobu ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}. <br />
                 <br /> Alvar aplikuje debuff na všechný nepřatelské jednotky.`,
                 ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
-                zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}。`,
+                zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}。
+                <br/>阿爾瓦給予所有被擊中的目標一個負面狀態。`,
 
             }
         }
