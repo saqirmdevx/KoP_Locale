@@ -726,7 +726,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     zh: "吸血鬼護盾",
                 },
                 desc: {
-                    en: `UNIQUE: Whenever you take normal damage, you will be healead for ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL}`,
+                    en: `UNIQUE: Whenever you take normal damage, you will be healed for ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL}`,
                     ru: `УНИКАЛЬНО(Пассивно): При получении урона вы исцеляете себе ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL} здоровья`,
                     br: `[Único]: Sempre que você sofrer dano, você será curado em ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL} de vida.`,
                     fr: `[UNIQUE]: Pour chaque dégât reçu, tu es soigné de ${ItemAbilityData.VAMPIRIC_SHIELD_HEAL} points de vie.`,

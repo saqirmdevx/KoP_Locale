@@ -1706,6 +1706,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: "Compartilhar no Discord",
         ru: "Поделиться в Discord",
         zh: "分享到Discord",
+    },
+    [LOCALE.ST_UI_SCALE]: {
+        en: "UI Scale",
+        cz: "Velkost UI",
     }
 
 }
