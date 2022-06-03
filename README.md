@@ -91,3 +91,5 @@ case Shared.SpellList.BUNNINJA_AUTOATTACK:
       sk: `Your translated text to your language ${CONSTANT_VALUE}`,
    }
 ```
+
+- Check autocompiler on your PR if it has no errors
