@@ -82,6 +82,8 @@ case Shared.SpellList.BUNNINJA_AUTOATTACK:
 You are looking only at the returning part, all datas inside ${ .. } are constants (values taken from a game engine)
 If you wanna add new language you will do this (consider SK lang)
 
+Example:
+
 ```ts
 /** Bunninja */
 case Shared.SpellList.BUNNINJA_AUTOATTACK:
@@ -91,5 +93,3 @@ case Shared.SpellList.BUNNINJA_AUTOATTACK:
       sk: `Your translated text to your language ${CONSTANT_VALUE}`,
    }
 ```
-
-- Check autocompiler on your PR if it has no errors
