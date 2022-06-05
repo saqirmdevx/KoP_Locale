@@ -1,26 +1,28 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
-import { toSec } from '@/misc/misc';
+import { toSec } from './misc';
 // @ts-ignore
 import Shared, { BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from '@/misc/shared';
 // @ts-ignore
-import { SpellType, getDamage, IAbilityTooltipsData } from '@/lang/ability_desc';
+import { getDamage, IAbilityTooltipsDataFinal } from '@/lang/ability_desc';
 // @ts-ignore
 import { LANG } from '@/lang/lang';
+//@ts-ignore
+import { SpellType } from '@/lang/constants';
 
-const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, health, cooldownReduction, level}: IAbilityTooltipsData, type: SpellType): { [key in string]: string } => {
+const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, health, cooldownReduction, level, talents, hasTalent}: IAbilityTooltipsDataFinal, type: SpellType): { [key in string]: string } => {
 	switch (id) {
 	/** Kumihu  */
 	case Shared.SpellList.KUMIHU_AUTOATTACK: {
 		const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
 		const enh_damage = getDamage(KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower, SpellType.MAGICAL, KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1));
 
+		const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage);
 		return {
-			en: `Kumihu fires 3 bullets each deals ${basic_damage} normal damage <br /> Passive: Using Dash enchants Kumihu's next basic attack to deal ${enh_damage} magical damage and apply charm for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-			ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: Использование Тайного рывка зачаровывает следующую атаку Кумиху, которая нанесёт ${enh_damage} магического урона и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-			cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
-			br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico e encantando o inimigo por ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}.`,
-			zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}魅惑狀態`,
+			en: `Kumihu fires 3 bullets each deals ${basic_damage} normal damage <br /> Passive: Using Dash enchants Kumihu's next basic attack to deal ${enh_damage} magical damage + ${enh_damage_with_talent} normal damage and apply charm for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
+			ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: Использование Тайного рывка зачаровывает следующую атаку Кумиху, которая нанесёт ${enh_damage} магического урона + ${enh_damage_with_talent} и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
+			cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození + ${enh_damage_with_talent} a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
+			br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico + ${enh_damage_with_talent} e encantando o inimigo por ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}.`,
+			zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}魅惑狀態`, // Need update
 		};
 	}
 
@@ -68,11 +70,17 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 		};
 
 	case Shared.SpellList.SPARROW_GROUND_SLAM: {
-		const base_damage = getDamage(0, type, SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE);
-		const percDamage = Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100);
+		const damage = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? 
+			SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE: 
+			SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE;
+
+		const base_damage = getDamage(0, type, damage);
+		const percDamage =  hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? 
+			Math.floor((SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG + SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE) * 100) :
+			Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100);
 
 		return {
-			en: `Sparrow unleashes the power of her sword to create a crescent-shaped sword beam dealing ${base_damage} magical damage (plus ${percDamage}% of target's missing health) to enemies that get hit.`,
+			en: `Sparrow unleashes the power of her sword to create a crescent-shaped sword beam dealing ${base_damage} damage (plus ${percDamage}% of target's missing health) to enemies that get hit.`,
 			ru: `Спарроу высвобождает силу своего меча, создавая волну в форме полумесяца, наносящую ${base_damage} (плюс ${percDamage}% от недостающего здоровья цели) магического урона задетым врагам.`,
 			cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
 			br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
@@ -84,11 +92,11 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 	case Shared.SpellList.ICEAT_AUTOATTACK: {
 		const base_damage = getDamage(ICeatAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
 		return {
-			en: `I'ceat hurls a ball of snow a short distance dealing ${base_damage} AoE normal damage in a small area. <br />Passive: Basic attacks slow enemies by ${-ICeatAbilityData.AUTOATTACK_SLOW} speed and stacks with the slow of his abilities.`,
-			ru: `Ай'сит швырает снежок на короткую дистанцию, нанося ${base_damage} физического урона <br />Пассивно: Атаки замедляют врагов на ${-ICeatAbilityData.AUTOATTACK_SLOW}, складываясь с замедлением от способностей Ай'сита.`,
-			cz: `I'ceat mrští sněhovou kouli na krátkou vzdálenost a způsobí ${base_damage} poškození <br />Pasivní: Základní útoky zpomalí nepřátele o ${-ICeatAbilityData.AUTOATTACK_SLOW} a sčítá se s spomalením ostatních schopností.`,
-			br: `Iceat arremessa uma bola de neve a curta distância causando ${base_damage} de dano.<br /> <br /> <b>[Passiva]: </b> Ataques básicos dão lentidão nos inimigos de ${-ICeatAbilityData.AUTOATTACK_SLOW}, podendo somar com a lentidão de suas habilidades.`,
-			zh: `艾希特短距離投擲雪球，給予小範圍 ${base_damage}點全體一般傷害。<br /> 被動技：基礎攻擊降低敵方 ${-ICeatAbilityData.AUTOATTACK_SLOW}點移動速度並能與技能的減速效果疊加。`,
+			en: `I'ceat hurls a ball of snow a short distance dealing ${base_damage} AoE normal damage in a small area.`,
+			ru: `Ай'сит швырает снежок на короткую дистанцию, нанося ${base_damage} физического урона.`,
+			cz: `I'ceat mrští sněhovou kouli na krátkou vzdálenost a způsobí ${base_damage} poškození. `,
+			br: `Iceat arremessa uma bola de neve a curta distância causando ${base_damage} de dano.`,
+			zh: `艾希特短距離投擲雪球，給予小範圍 ${base_damage}點全體一般傷害`,
 		};
 	}
 	case Shared.SpellList.ICEAT_ICICLE_BOLT: {
@@ -105,16 +113,24 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
 	case Shared.SpellList.ICEAT_COLD_EMBRACE: {
 		const base_damage = getDamage(ICeatAbilityData.COLD_EMBRACE_DAMAGE_MOD * abilityPower, type, ICeatAbilityData.COLD_EMBRACE_BASE_DAMAGE + (ICeatAbilityData.COLD_EMBRACE_DAMAGE_PER_LEVEL * (level - 1)));
+		const duration = hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 1) ?
+			toSec(ICeatAbilityData.COLD_EMBRACE_DURATION + ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION) :
+			toSec(ICeatAbilityData.COLD_EMBRACE_DURATION);
+
+		const bonusSpeed = hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 0) ? 
+			ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED + ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS:
+			ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED;
+		
 		return {
-			en: `I'ceat slides on the ground, increasing his speed by ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} for ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} and leaving a ice trail ` +
+			en: `I'ceat slides on the ground, increasing his speed by ${bonusSpeed} for ${duration} and leaving a ice trail ` +
                     `dealing  ${base_damage} magical damage per second to enemies on top of the ice and slow them.`,
-			ru: `Ай'сит скользит по земле, получая ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} скорости передвижения на ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} и оставляя ледяной след позади, ` +
+			ru: `Ай'сит скользит по земле, получая ${bonusSpeed} скорости передвижения на ${duration} и оставляя ледяной след позади, ` +
                     `наносящий  ${base_damage} магического урона в секунду, а также замедляющий всех наступивших врагов.`,
-			cz: `I'ceat se začne klouzat, tím si zvyšuje rychlost o ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} na ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} a zanechává za sebout ledovou vrstvu ` +
+			cz: `I'ceat se začne klouzat, tím si zvyšuje rychlost o ${bonusSpeed} na ${duration} a zanechává za sebout ledovou vrstvu ` +
                     `, která uděluje ${base_damage} poškození za vteřinu nepřátelům na vrcholu ledu a zpomalí je.`,
-			br: `Iceat desliza no chão, aumentando sua velocidade em ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED} por ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)} e deixando uma trilha de gelo,` +
+			br: `Iceat desliza no chão, aumentando sua velocidade em ${bonusSpeed} por ${duration} e deixando uma trilha de gelo,` +
                     `dando ${base_damage} de dano por segundo aos inimigos que pisam na trilha.`,
-			zh: `艾希特在地上滑行，增加 ${toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)}他的移動速度 ${ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED}點並留下冰步道，` +
+			zh: `艾希特在地上滑行，增加 ${duration}他的移動速度 ${bonusSpeed}點並留下冰步道，` +
                     `給予所有位於冰步道上方的敵方每秒 ${base_damage}點魔法傷害並降低敵方移動速度。`,
 		};
 	}
@@ -133,18 +149,22 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 		const base_damage = getDamage(BelleAbilityData.PRICKLY_VINE_DAMAGE_MOD * abilityPower, type, BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE + (BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1)));
 		const attach_damage = getDamage(BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE_ATTACHED, type);
 
+		const stunDuration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? 
+			toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION + BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS) :
+			toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION);
+
 		return {
 			en: `Belle casts a pierce vine forward dealing ${base_damage} magical damage to enemies that get hit and attaches to an enemy hero. <br />It can be broken if the enemy moves far enough from Belle.` +
-                    `<br /> <br /> After a short time, if the vine is still attached, the vine disappears and stuns the enemy hero for ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} and does ${attach_damage} magical damage`,
+                    `<br /> <br /> After a short time, if the vine is still attached, the vine disappears and stuns the enemy hero for ${stunDuration} and does ${attach_damage} magical damage`,
 			ru: `Белла бросает лозу вперёд, которая прикрепляется к первому вражескому герою на пути, нанося ${base_damage} магического урона и дополнительно замедляя цель. <br />Способность может быть прервана, если вражеский герой отойдёт слишком далеко от Беллы.` +
-                    `<br /> <br /> Спустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)}, нанося ${attach_damage} магического урона.`,
+                    `<br /> <br /> Спустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${stunDuration}, нанося ${attach_damage} магического урона.`,
 			cz: `Belle vrhne vinnou révu která se připojí k nepříteli způsobujícímu ${base_damage} poškození a zpomalí pohyb. <br />Lze je zlomit, pokud se nepřítel vydálí dostatečně daleko od Belle.` +
-                    `<br /> <br /> Po krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} a způsobí ${attach_damage} poškození.`,
+                    `<br /> <br /> Po krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${stunDuration} a způsobí ${attach_damage} poškození.`,
 
 			br: `Belle lança uma videira para frente que se liga a um inimigo causando ${base_damage} de dano e diminuindo a sua velocidade de movimento.` +
-                    `<br /> Depois de 2 segundos, se a videira ainda estiver presa no inimigo, ela vai prender ele o atordoando por ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)} e causando ${attach_damage} de dano. <br /> <br />(Ela pode ser quebrada se o inimigo se mover para longe o suficiente de Belle.)`,
+                    `<br /> Depois de 2 segundos, se a videira ainda estiver presa no inimigo, ela vai prender ele o atordoando por ${stunDuration} e causando ${attach_damage} de dano. <br /> <br />(Ela pode ser quebrada se o inimigo se mover para longe o suficiente de Belle.)`,
 			zh: `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方 ${base_damage}點魔法傷害並附著於一個敵方英雄。 <br /> 當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
-                    `<br /> <br /> 經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)}敵方英雄並給予 ${attach_damage}點魔法傷害。`,
+                    `<br /> <br /> 經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${stunDuration}敵方英雄並給予 ${attach_damage}點魔法傷害。`,
 		};
 	}
 
@@ -189,7 +209,8 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 	}
 
 	case Shared.SpellList.THOMAS_SHADOW_CARROT: {
-		const base_damage = getDamage(damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD, type);
+		const bonusDamage = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE : 0;
+		const base_damage = getDamage(bonusDamage + damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD, type);
 
 		return {
 			en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
@@ -207,7 +228,9 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 	/** Veil */
 	case Shared.SpellList.VEIL_AUTOATTACK: {
 		const base_damage = getDamage(VeilAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-		const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower, SpellType.MAGICAL, VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1));
+		const modifier = (hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1);
+		const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, SpellType.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
+
 		return {
 			en: `Veil slashes with her weapons and deals ${base_damage} normal damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} magical damage (consume enhanced state)`,
 			ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> [Усиленная]: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} магического урона (поглощает эффект усиления)`,
@@ -233,7 +256,9 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 
 	case Shared.SpellList.VEIL_ASTRAL_STEP: {
 		const base_damage = getDamage(VeilAbilityData.ASTRAL_STEP_DAMAGE_MOD * damage);
-		const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower, SpellType.MAGICAL, VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1));
+
+		const modifier = (hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1);
+		const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, SpellType.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
 		return {
 			en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} normal damage to enemy hero.<br /> <br />` +
@@ -724,7 +749,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
 	}
 };
 
-export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsData, type: SpellType): string => {
+export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsDataFinal, type: SpellType): string => {
 	const result = _getSpellDescription(id, unitStats, type);
 
 	if (result[LANG.value])

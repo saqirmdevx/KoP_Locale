@@ -1752,5 +1752,44 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 		en: 'UI Scale',
 		cz: 'Velkost UI',
 	},
+	/** Chat command helpers */
+	[LOCALE.CHAT_COMMAND_GLOBAL]: {
+		en: '/global <message> - send message to all players',
+		ru: '/global <сообщение> - отправить сообщение всем игрокам',
+		br: '/global <mensagem> - enviar mensagem para todos os jogadores',
+		cz: '/global <zpráva> - poslat zprávu všem hráčům',
+		zh: '/global <消息> - 向所有玩家發送消息',
+	},
+	[LOCALE.CHAT_COMMAND_ALL]: {
+		en: '/all <message> - send message in current game',
+		ru: '/all <сообщение> - отправить сообщение в текущем игровом подземелье',
+		br: '/all <mensagem> - enviar mensagem para todos os jogadores',
+		cz: '/all <zpráva> - poslat zprávu všem hráčům',
+		zh: '/all <消息> - 向當前游戲中的所有玩家發送消息',
+	},
+	
+	[LOCALE.CHAT_COMMAND_WHISPER]: {
+		en: '/whisper <player> <message> - send a private message to a player',
+		ru: '/whisper <игрок> <сообщение> - отправить личное сообщение игроку',
+		br: '/whisper <jogador> <mensagem> - enviar mensagem privada para um jogador',
+		cz: '/whisper <hráč> <zpráva> - poslat soukromou zprávu hráči',
+		zh: '/whisper <玩家> <消息> - 向玩家發送私人消息',
+	},
+	
+	[LOCALE.CHAT_COMMAND_WHISPER2]: {
+		en: '/w <player> <message> - send a private message to a player',
+		ru: '/w <игрок> <сообщение> - отправить личное сообщение игроку',
+		br: '/w <jogador> <mensagem> - enviar mensagem privada para um jogador',
+		cz: '/w <hráč> <zpráva> - poslat soukromou zprávu hráči',
+		zh: '/w <玩家> <消息> - 向玩家發送私人消息',
+	},
+	
+	[LOCALE.CHAT_COMMAND_EXIT]: {
+		en: '/exit - exit the game (practice only)',
+		ru: '/exit - выйти из игры (только для практики)',
+		br: '/exit - sair do jogo (apenas para prática)',
+		cz: '/exit - opustit hru (pouze pro praktiku)',
+		zh: '/exit - 離開遊戲 (僅限於練習模式)',
+	},
 };
 export default locale_data;
