@@ -390,20 +390,32 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 	}
 
 	case Shared.SpellList.HAZEL_HEROIC_SLASH: {
-		const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, SpellType.NORMAL, HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
+		const baseDamage = hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 0) ? 
+			HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE :
+			HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE;
+
+		const duration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ?
+			HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION + HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION:
+			HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION;
+		
+		const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, SpellType.NORMAL, baseDamage + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
 
 		return {
-			en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
-			br: `Hazel canaliza poder na ponta de seu martelo, causando ${normalDamage} de dano normal e atordoando inimigos por ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
-			ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}.`,
-			zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION)}。`,
+			en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(duration)}.`,
+			br: `Hazel canaliza poder na ponta de seu martelo, causando ${normalDamage} de dano normal e atordoando inimigos por ${toSec(duration)}.`,
+			ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(duration)}.`,
+			zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(duration)}。`,
 		};
 	}
 
 	/** Arel  */
 	case Shared.SpellList.AREL_AUTOATTACK: {
+		const enhDamageVal = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ?
+			ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD + ArelAbilityData.TALENT_T2_LEFT_BONUS_ATTACK_DAMAGE:
+			ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD;
+
 		const baseDamage = getDamage(ArelAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-		const enhDamage = getDamage(ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD * damage);
+		const enhDamage = getDamage(enhDamageVal * damage);
     
 		return {
 			en: `Arel fires a bullet from his gun dealing ${baseDamage} normal damage. <br /> 
@@ -451,33 +463,40 @@ const _getSpellDescription = (id: Shared.SpellList, {damage, abilityPower, healt
 	case Shared.SpellList.ALVAR_ATTACK: {
 		const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
 		const markDamage = getDamage(0, 0, AlvarAbilityData.MARK_DAMAGE);
-    
+
+		const duration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? 
+			AlvarAbilityData.MARK_DURATION + AlvarAbilityData.TALENT_T1_LEFT_STACK_DURATION:
+			AlvarAbilityData.MARK_DURATION;
+
 		return {
 			en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
-                <br />[PASSIVE]: Every alvar's sucessful hit to enemy hero apply an debuff to the target for ${toSec(AlvarAbilityData.MARK_DURATION)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
+                <br />[PASSIVE]: Every alvar's sucessful hit to enemy hero apply an debuff to the target for ${toSec(duration)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
 			br: `Alvar acerta com seu punho todos os alvos à sua frente causando ${baseDamage} de dano normal. <br /> 
-                <br /> <b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${toSec(AlvarAbilityData.MARK_DURATION)}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage} de dano normal.`,
+                <br /> <b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${toSec(duration)}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage} de dano normal.`,
 			ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage} физического урона. <br /> 
-                <br />[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противнике ослабление на ${toSec(AlvarAbilityData.MARK_DURATION)}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage} физического урона.`,
+                <br />[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противнике ослабление на ${toSec(duration)}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage} физического урона.`,
 			cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
-                <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(AlvarAbilityData.MARK_DURATION)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
+                <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(duration)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
 			zh: `阿爾瓦用他的拳頭向前打擊，造成 ${baseDamage}點一般傷害。<br /> 
-                <br />被動：每一次阿爾瓦成功的擊中敵方英雄，給予目標對象 ${toSec(AlvarAbilityData.MARK_DURATION)}負面狀態。第三次的負面狀態疊加將給予標記，造成 ${markDamage}點一般傷害。`,
+                <br />被動：每一次阿爾瓦成功的擊中敵方英雄，給予目標對象 ${toSec(duration)}負面狀態。第三次的負面狀態疊加將給予標記，造成 ${markDamage}點一般傷害。`,
 		};
 	}
 
 	case Shared.SpellList.ALVAR_FURIOUS_KICK: {
 		const baseDamage = getDamage(AlvarAbilityData.FURIOUS_KICK_DAMAGE_MOD * damage);
+		const duration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? 
+			AlvarAbilityData.FURIOUS_KICK_STUN_DURATION + AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION:
+			AlvarAbilityData.FURIOUS_KICK_STUN_DURATION;
 
 		return {
-			en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} normal damage and stunning enemy units for ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}. <br />
+			en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} normal damage and stunning enemy units for ${toSec(duration)}. <br />
                 <br/> Alvar apply an debuff on all targets it hits.`,
-			br: `Alvar chuta todas as unidades inimigas à sua frente e as joga para trás dele, causando ${baseDamage} de dano normal e atordoa unidades inimigas por ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}. <br />
+			br: `Alvar chuta todas as unidades inimigas à sua frente e as joga para trás dele, causando ${baseDamage} de dano normal e atordoa unidades inimigas por ${toSec(duration)}. <br />
                 <br/> (Alvar aplica um debuff em todos os alvos que atinge).`,
-			cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} normalního poškozěni a omráčí nepřitele po dobu ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}. <br />
+			cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} normalního poškozěni a omráčí nepřitele po dobu ${toSec(duration)}. <br />
                 <br /> Alvar aplikuje debuff na všechný nepřatelské jednotky.`,
-			ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}.`,
-			zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(AlvarAbilityData.FURIOUS_KICK_STUN_DURATION)}。
+			ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(duration)}.`,
+			zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(duration)}。
                 <br/>阿爾瓦給予所有被擊中的目標一個負面狀態。`,
 
 		};

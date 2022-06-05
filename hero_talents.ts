@@ -212,22 +212,25 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 		return {
 			tier1_left: {
 				title: {
-					en: 'Kumihu T1 Left',
+					en: `Mark/stack duration +${toSecRaw(AlvarAbilityData.TALENT_T1_LEFT_STACK_DURATION)}s`,
 				}
 			},
 			tier1_right: {
 				title: {
-					en: 'Kumihu T1 RIGHT',
+					en: 'Furious Kick boost',
 				},
+				description: {
+					en: `Everytime you use <b>Furious Kick</b> you gain ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} move speed and ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% attack speed for ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`
+				}
 			},
 			tier2_left: {
 				title: {
-					en: 'Kumihu T2 Left',
+					en: `Furious kick stun +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
 				},
 			},
 			tier2_right: {
 				title: {
-					en: 'Kumihu T2 Right',
+					en: `Heavenly Kick cooldown ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
 				},
 			}
 		};
@@ -236,23 +239,27 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 		return {
 			tier1_left: {
 				title: {
-					en: 'Kumihu T1 Left',
+					en: `Tumble distance +${ArelAbilityData.TALENT_T1_LEFT_TUMBLE_DISTANCE}`,
 				}
 			},
 			tier1_right: {
 				title: {
-					en: 'Kumihu T1 RIGHT',
+					en: `Attack distance +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}`,
 				},
 			},
 			tier2_left: {
 				title: {
-					en: 'Kumihu T2 Left',
+					en: `2nd bullet damage +${ArelAbilityData.TALENT_T2_LEFT_BONUS_ATTACK_DAMAGE * 100}%`,
 				},
 			},
 			tier2_right: {
 				title: {
-					en: 'Kumihu T2 Right',
+					en: 'Tumble - Freezing trap',
 				},
+				description: {
+					en: `Tumble will create freezing trap at Arel position. When enemy unit step on the trap, unit will be freezed for ${toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)}` +
+						`<br/> Trap last long ${toSec(ArelAbilityData.FREEZING_TRAP_DURATION)} and provide small vision`
+				}
 			}
 		};
 
@@ -260,23 +267,26 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 		return {
 			tier1_left: {
 				title: {
-					en: 'Kumihu T1 Left',
+					en: `Triumphant Upheaval radius +${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_RADIUS}`,
 				}
 			},
 			tier1_right: {
 				title: {
-					en: 'Kumihu T1 RIGHT',
+					en: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} damage`,
 				},
 			},
 			tier2_left: {
 				title: {
-					en: 'Kumihu T2 Left',
+					en:  `Justice's Wrath stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
 				},
 			},
 			tier2_right: {
 				title: {
-					en: 'Kumihu T2 Right',
+					en: 'Triumphant Upheaval pure/dispel',
 				},
+				description: {
+					en: 'Triumphant Upheaval deals pure damage and dispel all negative effects on trigger.'
+				}
 			}
 		};
 		
@@ -284,22 +294,25 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 		return {
 			tier1_left: {
 				title: {
-					en: 'Kumihu T1 Left',
+					en: 'Lightning Shock dispersion',
+				},
+				description: {
+					en: 'Lightning Shock apply dispersion on enemey targets, reduce all healing done by 65%'
 				}
 			},
 			tier1_right: {
 				title: {
-					en: 'Kumihu T1 RIGHT',
+					en: `Void phantasm cooldown ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_VOID_PHANTASM_COOLDOWN)}`,
 				},
 			},
 			tier2_left: {
 				title: {
-					en: 'Kumihu T2 Left',
+					en: `Lightning Shock duration +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
 				},
 			},
 			tier2_right: {
 				title: {
-					en: 'Kumihu T2 Right',
+					en: '+1 Lightning Shock target',
 				},
 			}
 		};
