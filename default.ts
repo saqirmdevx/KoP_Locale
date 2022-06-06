@@ -1750,7 +1750,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 	},
 	[LOCALE.ST_UI_SCALE]: {
 		en: 'UI Scale',
-		cz: 'Velkost UI',
+		cz: 'Velkosť UI',
+		zh: 'UI比例縮放',
 	},
 	/** Chat command helpers */
 	[LOCALE.CHAT_COMMAND_GLOBAL]: {
