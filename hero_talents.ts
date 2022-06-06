@@ -237,7 +237,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 			},
 			tier2_right: {
 				title: {
-					en: `Shurriken carrot stun ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}`,
+					en: `Shurriken carrot stun ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
 					ru: `Теневая морковь при повторной активации оглушает врага на ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)} сек.`,
 				},
 			}
