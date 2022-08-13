@@ -3,7 +3,9 @@ import { toSec } from './misc';
 // @ts-ignore
 import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 // @ts-ignore
-import { LANG, getDamage, IAbilityTooltipsDataFinal } from 'lang';
+import { getDamage, IAbilityTooltipsDataFinal } from 'lang';
+// @ts-ignore
+import { LANG } from '../lang';
 
 const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
     switch (id) {

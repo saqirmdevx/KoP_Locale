@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import getLocale, { LOCALE } from '../';
+import {  LOCALE } from '../';
+// @ts-ignore
+import getLocale from '../lang';
 
 export const fixed = (num: number, count = 3): number => {
     const multiplier = 10 ** count;

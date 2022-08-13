@@ -4,7 +4,7 @@
 import { Shared,  fixed, ItemAbilityData, calculateMagicDefense } from 'shared';
 import { toSec } from './misc';
 //@ts-ignore
-import { LANG } from 'lang'; 
+import { LANG } from '../lang'; 
 
 const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: string }, desc?: { [key in string]: string } } => {
     switch (itemId) {
