@@ -379,8 +379,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         
         return {
             en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} magical damage (Based of Hazel's current health), slows down and push all enemy units in distance.`,
-            br: `Hazel começa a carregar canalizando sua energia por ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, depois libera uma explosão de ondas de choque ao seu redor, causando ${damage} de dano mágico (12% Basado en la salud actual de Hazel), diminui a velocidade e empurra todas as unidades inimigas para longe.`,
-            ru: `Хейзел начинает накапливать энергию в течение ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} магического урона (+12% от максимального здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
+            br: `Hazel começa a carregar canalizando sua energia por ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, depois libera uma explosão de ondas de choque ao seu redor, causando ${damage} de dano mágico (Basado en la salud actual de Hazel), diminui a velocidade e empurra todas as unidades inimigas para longe.`,
+            ru: `Хейзел начинает накапливать энергию в течение ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} магического урона (от текущего здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
             zh: `哈歇爾開始蓄力 ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)}匯集能量。隨後在她四周釋放爆發衝擊波，給予 ${damage}點魔法傷害 (基於 Hazel 目前的健康狀況)，將所有距離內的敵方單位減速推開。`,
         };
     }
