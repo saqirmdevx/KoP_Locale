@@ -3,14 +3,14 @@ import { toSec } from './misc';
 // @ts-ignore
 import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 // @ts-ignore
-import { LANG, getDamage, IAbilityTooltipsDataFinal, SpellType } from 'lang';
+import { LANG, getDamage, IAbilityTooltipsDataFinal } from 'lang';
 
-const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: SpellType): { [key in string]: string } => {
+const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
     switch (id) {
     /** Kumihu  */
     case Shared.SpellList.KUMIHU_AUTOATTACK: {
         const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
-        const enh_damage = getDamage(KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower, SpellType.MAGICAL, KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1));
+        const enh_damage = getDamage(KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower, Shared.DamageTypes.MAGICAL, KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1));
 
         const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage);
         return {
@@ -23,7 +23,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.KUMIHU_MAGICAL_ORB: {
-        const base_damage = getDamage(KumihuAbilityData.MAGICAL_ORB_DMG_MODIFIER * abilityPower, SpellType.MAGICAL, KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE + (KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)));
+        const base_damage = getDamage(KumihuAbilityData.MAGICAL_ORB_DMG_MODIFIER * abilityPower, Shared.DamageTypes.MAGICAL, KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE + (KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)));
         return {
             en: `Kumihu throws a blue orb that deals ${base_damage} magical damage and returns to her after reaching its max range dealing ${base_damage} magic damage to enemies in its way.`,
             ru: `Кумиху швыряет синюю сферу, которая наносит ${base_damage} магического урона и затем возвращается к ней, нанося ${base_damage} магического урона всем врагам на своём пути.`,
@@ -225,7 +225,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.VEIL_AUTOATTACK: {
         const base_damage = getDamage(VeilAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
         const modifier = (hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1);
-        const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, SpellType.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
+        const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, Shared.DamageTypes.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
         return {
             en: `Veil slashes with her weapons and deals ${base_damage} normal damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} magical damage (consume enhanced state)`,
@@ -254,7 +254,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const base_damage = getDamage(VeilAbilityData.ASTRAL_STEP_DAMAGE_MOD * damage);
 
         const modifier = (hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1);
-        const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, SpellType.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
+        const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, Shared.DamageTypes.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
         return {
             en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} normal damage to enemy hero.<br /> <br />` +
@@ -288,7 +288,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.FLIN_PRECISE_SHOT: {
-        const base_damage = getDamage(FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + (FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)));
+        const base_damage = getDamage(FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + (FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)));
         return {
             en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all enemy units`,
             br: `Flin dispara um tiro preciso em sua direção, se a flecha atingir um alvo, a flecha causará ${base_damage} de dano mágico e repele a unidade inimiga para longe de você. <br /> Se sua habilidade (Pontaria perfeita) estiver ativa, suas flechas perfuram todas as unidades inimigas.`,
@@ -310,8 +310,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         /** Kira  */
     case Shared.SpellList.KIRA_AUTOATTACK: {
         const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-        const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
-        const enh_damage_heal = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.7, SpellType.HEAL, (KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1))) * 0.7);
+        const enh_damage = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)));
+        const enh_damage_heal = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.7, Shared.DamageTypes.HEAL, (KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1))) * 0.7);
 
         return {
             en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br />
@@ -328,7 +328,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.KIRA_RAIN_OF_SPARKS: {
-        const damage = getDamage(KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.VOID_RAIN_BASE_DAMAGE + (KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)));
+        const damage = getDamage(KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, KiraAbilityData.VOID_RAIN_BASE_DAMAGE + (KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)));
         
         return {
             en: `Kira summons 4 void missiles that rain down from above, each missile dealing ${damage} magical damage that pierces through enemies. 
@@ -345,7 +345,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.KIRA_VOID_PHANTASM: {
-        const damage = getDamage(KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower, SpellType.MAGICAL, KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + (KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)));
+        const damage = getDamage(KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + (KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)));
 
         return {
             en: `Kira deceives her enemies and leaves behind her a distorted afterimage, which she returns to after ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
@@ -375,7 +375,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.HAZEL_SHOCKWAVE: {
-        const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, SpellType.MAGICAL);
+        const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, Shared.DamageTypes.MAGICAL);
         
         return {
             en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} magical damage (Based of Hazel's current health), slows down and push all enemy units in distance.`,
@@ -394,7 +394,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
             HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION + HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION:
             HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION;
 		
-        const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, SpellType.NORMAL, baseDamage + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
+        const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, Shared.DamageTypes.NORMAL, baseDamage + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
 
         return {
             en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(duration)}.`,
@@ -438,8 +438,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.AREL_TICKING_BOMB: {
-        const baseDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage, SpellType.NORMAL, ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)));
-        const enhDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * 1.5, SpellType.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * 1.5);
+        const baseDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage, Shared.DamageTypes.NORMAL, ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)));
+        const enhDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * 1.5, Shared.DamageTypes.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * 1.5);
         
         return {
             en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} normal damage to all surrounding enemies.
@@ -764,7 +764,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
     }
 };
 
-export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsDataFinal, type: SpellType): string => {
+export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): string => {
     const result = _getSpellDescription(id, unitStats, type);
 
     if (result[LANG.value])
