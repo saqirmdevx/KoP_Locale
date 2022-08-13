@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// eslint-disable-next-line import/named
 // @ts-ignore
 import getLocale, { LOCALE } from '../';
 
