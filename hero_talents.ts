@@ -144,7 +144,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 },
                 description: {
                     en: 'Passing through an enemy unit during <b> Astral Step</b> will apply <b> Void Bomb</b>. <br/>'+
-						`Dealing ${damage} magical area damage after ${toSec(VeilAbilityData.VOID_BOMB_DURATION)}`,
+						`Dealing ${damage}% magical area damage after ${toSec(VeilAbilityData.VOID_BOMB_DURATION)}`,
                     ru: 'Попадание по вражеским целям <b> Астральным шагом</b> наложит на них <b> Бомбу пустоты</b>. <br/>'+
 						`Бомба пустоты наносит ${damage} магического урона по области спустя ${toSec(VeilAbilityData.VOID_BOMB_DURATION)}`
                 }
@@ -162,14 +162,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Floral Ambush heal ${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_HEAL * 100}%`,
-                    ru: `Бутоны Цветочной ловушки лечат союзников на ${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_HEAL * 100}% от своего урона`,
+                    en: 'Undispelable Prickly Vine',
+                    ru: 'Попадание Колючей лозой нельзя рассеять',
                 },
             },
             tier2_left: {
                 title: {
-                    en: 'Undispelable Prickly Vine',
-                    ru: 'Попадание Колючей лозой нельзя рассеять',
+                    en: `Floral Ambush heal ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}%`,
+                    ru: `Бутоны Цветочной ловушки лечат союзников на ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}% от своего урона`,
                 },
             },
             tier2_right: {
@@ -285,7 +285,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Attack distance +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}`,
+                    en: `Attack (J) range +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}`,
                     ru: `+${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE} к дальности атаки`,
                 },
             },
@@ -349,8 +349,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Удар молнии накладывает Дисперсию',
                 },
                 description: {
-                    en: 'Lightning Shock apply dispersion on enemey targets, reduce all healing done by 65%',
-                    ru: 'Удар молнии накладывает Дисперсию на вражеские цели, которая снижает получаемое ими исцеление на 65%'
+                    en: 'Lightning Shock apply dispersion on enemey targets, reduce all healing done by 60%',
+                    ru: 'Удар молнии накладывает Дисперсию на вражеские цели, которая снижает получаемое ими исцеление на 60%'
                 }
             },
             tier1_right: {
