@@ -1,7 +1,9 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  fixed, ItemAbilityData, calculateMagicDefense } from 'shared';
+import { Shared,  fixed, ItemAbilityData } from '../../misc/shared';
+//@ts-ignore
+import { calculateMagicDefense } from '../../misc/constant';
 import { toSec } from './misc';
 //@ts-ignore
 import { LANG } from '../lang'; 

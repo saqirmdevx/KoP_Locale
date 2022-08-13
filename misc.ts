@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import {  LOCALE } from '../';
+import {  LOCALE } from '../locales';
 // @ts-ignore
 import getLocale from '../lang';
 
