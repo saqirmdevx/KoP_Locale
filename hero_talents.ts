@@ -2,8 +2,6 @@
 //@ts-ignore
 import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 import { toSecRaw, toSec, fixed } from './misc';
-//@ts-ignore
-import { SpellType } from 'lang';
 
 interface ITalentProps {
     title: {[key in string]: string}
@@ -116,7 +114,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         };
 
     case Shared.HEROES.VEIL: {
-        const damage = getDamage(VeilAbilityData.VOID_BOMB_AP_MOD * 100, SpellType.MAGICAL, VeilAbilityData.VOID_BOMB_BASE_DAMAGE);
+        const damage = getDamage(VeilAbilityData.VOID_BOMB_AP_MOD * 100, Shared.DamageTypes.MAGICAL, VeilAbilityData.VOID_BOMB_BASE_DAMAGE);
 
         return {
             tier1_left: {
@@ -399,12 +397,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 };
 
-export const getDamage = (damage: number, type: SpellType = SpellType.NORMAL, baseDamage = 0): string => {
+export const getDamage = (damage: number, type: Shared.DamageTypes = Shared.DamageTypes.NORMAL, baseDamage = 0): string => {
     damage = Math.floor(damage);
     baseDamage = fixed(baseDamage, 1);
 
     /** dont show % in game */
-    return `<span class=${type === SpellType.NORMAL ? 'normal-d' : type === SpellType.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')} </span>`;
+    return `<span class=${type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')} </span>`;
 };
 
 
