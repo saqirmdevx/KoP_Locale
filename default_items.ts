@@ -381,14 +381,15 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: `特殊：你的一般攻擊給予額外 ${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予 ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}創傷。(創傷降低目標物的所有治癒即回血效果 60%)。`
             }
         };
-
     case Shared.ItemList.Plague_Ring:
         return {
             name: {
                 en: 'Plague Ring',
+                ru: 'Чумное кольцо',
             },
             desc: {
                 en: `UNIQUE: Your abilites plague enemies healing, reduces target's all healing and regeneration effects by 35% for ${toSec(ItemAbilityData.PLAGUE_RING_DURATION)}.`,
+                ru: `УНИКАЛЬНО(Пассивно): Ваши способности накладывают эффект Чумы на вражеских героев на ${toSec(ItemAbilityData.PLAGUE_RING_DURATION)}. (Чума уменьшает всё входящее исцеление и эффекты регенерации на 35%).`,
             }
         };
 
