@@ -16,8 +16,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
 
         const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage);
         return {
-            en: `Kumihu fires 3 bullets each deals ${basic_damage} normal damage <br /> Passive: Using Dash enchants Kumihu's next basic attack to deal ${enh_damage} magical damage + ${enh_damage_with_talent} normal damage and apply charm for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-            ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: Использование Тайного рывка зачаровывает следующую атаку Кумиху, которая нанесёт ${enh_damage} магического урона + ${enh_damage_with_talent} и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
+            en: `Kumihu fires 3 bullets. Each bullet deals ${basic_damage} physical damage <br /> Passive: After using Arcane Dash next Kumihu's basic attack will deal ${enh_damage} magical damage + ${enh_damage_with_talent} physical damage and apply Charm on target for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
+            ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} магического урона + ${enh_damage_with_talent} физического урона и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
             cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození + ${enh_damage_with_talent} a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
             br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico + ${enh_damage_with_talent} e encantando o inimigo por ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}.`,
             zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}魅惑狀態`, // Need update
@@ -27,8 +27,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.KUMIHU_MAGICAL_ORB: {
         const base_damage = getDamage(KumihuAbilityData.MAGICAL_ORB_DMG_MODIFIER * abilityPower, Shared.DamageTypes.MAGICAL, KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE + (KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)));
         return {
-            en: `Kumihu throws a blue orb that deals ${base_damage} magical damage and returns to her after reaching its max range dealing ${base_damage} magic damage to enemies in its way.`,
-            ru: `Кумиху швыряет синюю сферу, которая наносит ${base_damage} магического урона и затем возвращается к ней, нанося ${base_damage} магического урона всем врагам на своём пути.`,
+            en: `Kumihu throws spirit orb that deals ${base_damage} magical damage and returns to her after reaching its max range, dealing ${base_damage} magical damage to enemies on its way.`,
+            ru: `Кумиху выпускает сферу духа, которая наносит ${base_damage} магического урона и затем возвращается к ней, нанося ${base_damage} магического урона всем врагам на своём пути.`,
             cz: `Kumihu vrhne modrou kouli, která způsobí ${base_damage} magického poškození, poté se k ní vrátí po dosažení maximálního dosahu a způsobí ${base_damage} magického poškození nepřátelům, kteří jí stojí v cestě.`,
             br: `Kumihu comprime o ar a sua volta e lança uma rajada causando ${base_damage} de dano mágico, retornando para ela depois de atingir seu alcance máximo causando ${base_damage} de dano mágico a inimigos em seu caminho.`,
             zh: `庫咪戶投擲藍色寶珠，給予 ${base_damage}點魔法傷害，到達最遠處後沿路回歸她手上並給予 ${base_damage}點魔法傷害。`,
@@ -37,7 +37,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
 
     case Shared.SpellList.KUMIHU_DASH:
         return {
-            en: `Kumihu dashes a short distance. This will activate her passive for ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
+            en: `Kumihu dashes for a short distance. This will activate her passive effect for ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
             ru: `Кумиху совершает рывок на короткую дистанцию. Это активирует её пассивную способность на ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
             cz: `Kumihu vykročí dopředu a tím aktivuje svou pasivní schopnost na ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
             br: `Kumihu da um avanço em uma curta distância. Isso irá ativar sua passiva por ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
@@ -50,8 +50,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enh_damage = getDamage(SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER * damage);
 
         return {
-            en: `Sparrow swings and thrusts her sword dealing ${base_damage} normal damage. <br />Passive: Using an ability charges Sparrow's sword. Her next basic attack knocks up enemies stunning for ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} and deals ${enh_damage} normal damage.`,
-            ru: `Спарроу взмахивает и делает выпад своим мечом, нанося ${base_damage} физического урона за попадание. <br />Пассивно: Использование способностей зачаровывает меч Спарроу. Её следующая базовая атака подбрасывает врагов на ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} и наносит ${enh_damage} физического урона.`,
+            en: `Sparrow swings and thrusts her sword dealing ${base_damage} physical damage. <br />Passive: Using an ability charges Sparrow's sword. Her next basic attack knocks up enemies, stunning them for ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} and dealing ${enh_damage} physical damage.`,
+            ru: `Спарроу взмахивает и делает выпад своим мечом, нанося ${base_damage} физического урона за попадание. <br />Пассивно: Использование способностей зачаровывает меч Спарроу. Её следующая базовая атака подбрасывает и оглушает врагов на ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} и наносит ${enh_damage} физического урона.`,
             cz: `Sparrow máchá mečem a způsobuje ${base_damage} za zásah. <br />Pasivní: Použití schopnosti nabije meč. Její další základní útok srazí nepřátele na ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} a způsobí ${enh_damage} poškození.`,
             br: `Sparrow corta seus inimigos causando ${base_damage} por ataque.<br /> <br /> <b>[Passiva]: </b> Usar uma habilidade, faz com que a espada de Sparrow fique carregada. Seu próximo ataque básico stuna os inimigos por ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)} e da um bônus de ${enh_damage} de dano.`,
             zh: `史佩羅猛力揮動她的劍，給予 ${base_damage}點一般傷害。 <br /> 被動技：使用一個能力蓄力史佩羅的劍，她的下一個基本攻擊擊昇敵方暈眩 ${toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)}並給予 ${enh_damage}點一般傷害。`,
@@ -60,7 +60,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
 
     case Shared.SpellList.SPARROW_DASH:
         return {
-            en: `Sparrow quickly dashes while thrusting her sword forward, stunning enemies she hits for ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} and dealing ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normal damage.`,
+            en: `Sparrow quickly dashes while thrusting her sword forward, stunning enemies she hits for ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} and dealing ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} physical damage.`,
             ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} и нанося им ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} физического урона.`,     
             cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} a způsobí ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normalního poškozeni.`,            
             br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${toSec(SparrowAbilityData.DASH_STUN_DURATION)} e dando ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} de dano.`,
@@ -78,7 +78,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
             Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100);
 
         return {
-            en: `Sparrow unleashes the power of her sword to create a crescent-shaped sword beam dealing ${base_damage} damage (plus ${percDamage}% of target's missing health) to enemies that get hit.`,
+            en: `Sparrow unleashes the power of her sword to create a crescent-shaped sword beam dealing ${base_damage} (plus ${percDamage}% of target's missing health) magical damage to enemies that get hit.`,
             ru: `Спарроу высвобождает силу своего меча, создавая волну в форме полумесяца, наносящую ${base_damage} (плюс ${percDamage}% от недостающего здоровья цели) магического урона задетым врагам.`,
             cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
             br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
@@ -90,8 +90,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.ICEAT_AUTOATTACK: {
         const base_damage = getDamage(ICeatAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
         return {
-            en: `I'ceat hurls a ball of snow a short distance dealing ${base_damage} AoE normal damage in a small area.`,
-            ru: `Ай'сит швырает снежок на короткую дистанцию, нанося ${base_damage} физического урона.`,
+            en: `I'ceat hurls a snowball, dealing ${base_damage} AoE physical damage in a small area.`,
+            ru: `Ай'сит швырает снежок, нанося ${base_damage} физического урона по площади.`,
             cz: `I'ceat mrští sněhovou kouli na krátkou vzdálenost a způsobí ${base_damage} poškození. `,
             br: `Iceat arremessa uma bola de neve a curta distância causando ${base_damage} de dano.`,
             zh: `艾希特短距離投擲雪球，給予小範圍 ${base_damage}點全體一般傷害`,
@@ -136,7 +136,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     /** Belle */
     case Shared.SpellList.BELLE_AUTOATTACK:
         return {
-            en: `Belle fires an explosive thorn from her wand dealing ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} AoE normal damage in a small area.`,
+            en: `Belle fires an explosive thorn from her wand dealing ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} AoE physical damage in a small area.`,
             ru: `Белла выпускает взрывной шип из своей палочки, наносящий ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} физического урона по площади.`,
             cz: `Belle vystřelí výbušný trn ze své hůlky a způsobí ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} poškození v malé oblasti.`,
             br: `Belle atira uma flor explosiva de sua varinha causando ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)} de dano em área.`,
@@ -154,7 +154,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         return {
             en: `Belle casts a pierce vine forward dealing ${base_damage} magical damage to enemies that get hit and attaches to an enemy hero. <br />It can be broken if the enemy moves far enough from Belle.` +
                     `<br /> <br /> After a short time, if the vine is still attached, the vine disappears and stuns the enemy hero for ${stunDuration} and does ${attach_damage} magical damage`,
-            ru: `Белла бросает лозу вперёд, которая прикрепляется к первому вражескому герою на пути, нанося ${base_damage} магического урона и дополнительно замедляя цель. <br />Способность может быть прервана, если вражеский герой отойдёт слишком далеко от Беллы.` +
+            ru: `Белла выпускает лозу перед собой, наносящую ${base_damage} магического урона и прикрепляющуюся к перворму вражескому герою на своём пути. <br />Способность может быть прервана, если враг отойдёт слишком далеко от Беллы.` +
                     `<br /> <br /> Спустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${stunDuration}, нанося ${attach_damage} магического урона.`,
             cz: `Belle vrhne vinnou révu která se připojí k nepříteli způsobujícímu ${base_damage} poškození a zpomalí pohyb. <br />Lze je zlomit, pokud se nepřítel vydálí dostatečně daleko od Belle.` +
                     `<br /> <br /> Po krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${stunDuration} a způsobí ${attach_damage} poškození.`,
@@ -169,9 +169,9 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.BELLE_FLORAL_AMBUSH: {
         const base_damage = getDamage(BelleAbilityData.FLORAL_AMBUSH_DAMAGE_MOD * abilityPower, type, BelleAbilityData.FLORAL_AMBUSH_BASE_DAMAGE + BelleAbilityData.FLORAL_AMBUSH_DAMAGE_PER_LEVEL * (level - 1));
         return {
-            en: `Belle jumps in the air and drops three seed bombs in front of her that attaches to an enemy hero. If they get near, dealing ${base_damage} magical damage lasting 2 seconds and exploding after the duration, dealing ${base_damage} AoE magical damage surrounding the enemy hero.` +
+            en: `Belle jumps in the air and drops three seed bombs in front of her that can attach to enemy heroes if they get close, dealing ${base_damage} magical damage for 2 seconds and exploding after the duration, dealing ${base_damage} AoE magical damage surrounding the enemy hero.` +
                     `<br /><br />After staying on the ground for ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, the seeds explode dealing ${base_damage} AoE magical damage to surrounding enemies. Enemy hero that step on bomb while carrying one will immediately trigger explosion`,
-            ru: `Белла подпрыгивает и сбрасывает три цветочные бомбы перед собой, которые приклепляются к вражескому герою, если он наступит на них, нанося цели ${base_damage} магического урона в течение 2 секунд, взрываясь после этого, нанося ${base_damage} урона по площади` +
+            ru: `Белла подпрыгивает и сбрасывает три цветочные бомбы перед собой, которые приклепляются к вражескому герою, если он наступит на них, нанося цели ${base_damage} магического урона в течение 2 секунд, взрываясь после этого, нанося ${base_damage} магического урона по площади` +
                     `<br /><br />После пребывания на земле в течение ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, цветы взрываются, нанося ${base_damage} магического урона по площади ближайшим врагам. Враг, ступивший на бомбу с уже прикреплённой до этого, моментально взорвёт предыдущую.`,
             cz: `Belle vyskočí do vzduchu a shodí pod sebe tři semenné bomby, které se přichytí k nepříteli pokud na ně vstoupí a způsobí ${base_damage} poškození během 2 sekund a po uplynutí této doby exploduje, čímž způsobí ${base_damage} poškození v malé oblasti` +
                     `<br /><br />Pokud se bomby neprichtí do ${toSec(BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION)}, semínka explodují a způsobí ${base_damage} poškození okolním nepřátelům. Nepřítel, který šlápne na bombu a zároveň ji nese, okamžitě spustí explozi.`,
@@ -186,7 +186,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.THOMAS_AUTOATTACK:
         return {
 
-            en: `Thomas slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} normal damage.`,
+            en: `Thomas slashes with his carrot and deals ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} physical damage.`,
             ru: `Томас взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
             cz: `Thomas seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
             br: `Thomas faz um corte com espada e causa ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} de dano.`,
@@ -212,9 +212,9 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
 
         return {
             en: `<b>First cast: </b>Thomas throws an attaching carrot. He can teleport to it with ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} of casting. <br /> <br />` +
-                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy hero, Thomas slows that enemy hero for ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} and deals ${base_damage} normal damage to the target.`,
+                    `<b>Second cast: </b>Teleports to the carrot. If it is attached to an enemy hero, Thomas slows that enemy hero for ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} and deals ${base_damage} physical damage to the target.`,
             ru: `<b>Первое применение: </b>Томас бросает прикрепляющуюся морковь. Он может телепортироваться к ней в течение ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} после первого применения. <br /> <br />` +
-                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Томас замедлился этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} и наносит ему ${base_damage} физического урона.`,
+                    `<b>Второе применение: </b>Телепортируется к моркови. Если она прикрепилась к врагу, Томас замедляет этого врага на ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} и наносит ему ${base_damage} физического урона.`,
             cz: `První použití: Thomas hodí stínovou mrkev. Může se k ní teleportovat do ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} vteřin po použití. `
                     + `Druhé použití: Thomas se teleportuje k mrkvi. Pokud je připojena k nepříteli, Thomas spomali tohoto nepřítele na ${toSec(ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION)} a udělí ${base_damage} poškození.`,
             br: `<b>Primeira Ativação: </b>Thomas joga sua espada demoníaca. Ele pode se teletransportar para lá depois de ${toSec(ThomasAbilityData.SHADOW_CARROT_DURATION)} de duração. <br /> <br />` +
@@ -230,7 +230,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, Shared.DamageTypes.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
         return {
-            en: `Veil slashes with her weapons and deals ${base_damage} normal damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} magical damage (consume enhanced state)`,
+            en: `Veil slashes with her weapons and deals ${base_damage} physical damage. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} magical damage (consume enhanced state)`,
             ru: `Вэйл взмахивает своим оружием и наносит ${base_damage} физического урона. <br /> [Усиленная]: Вэйл использует свой астральный дух, чтобы нанести дополнительно ${enhanced_dmg} магического урона (поглощает эффект усиления)`,
 
             cz: `Veil sekne svými zbraněmi a způsobí ${base_damage} poškození. <br /> Posílení: Veil používá svého astrálního ducha a udělí dalšíh ${enhanced_dmg} poškození (spotřebuje Posílení stav)`,
@@ -244,7 +244,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const base_damage = getDamage(VeilAbilityData.ASTRAL_BLADES_DMG_MODIFIER * abilityPower, type, VeilAbilityData.ASTRAL_BLADES_BASE_DAMAGE + VeilAbilityData.ASTRAL_BLADES_DAMAGE_PER_LEVEL * (level - 1));
 
         return {
-            en: `Veil jumps and throws her astral blades downward at a 45° angle which deal ${base_damage} magical damage. If ability hits an enemy hero, it will enhance veil.`,
+            en: `Veil jumps and throws her astral blades downward at a 45° angle which deal ${base_damage} magical damage. If ability hits an enemy hero, Veil will get an enhancement.`,
             ru: `Вэйл подпрыгивает и бросает свои астральные клинки вниз под углом 45°, которые наносят ${base_damage} магического урона. Если способность попала по вражескому герою, Вэйл получит усиление.`,
             cz: `Veil skočí a vrhne své astrální čepele dolů pod úhlem 45°, což způsobí ${base_damage} poškození. Pokud schopnost zasáhne nepřátelského hrdinu, získá Posílení.`,
             br: `Veil salta e atira suas lâminas astrais para baixo em um ângulo de 45 ° causando ${base_damage} de dano.<br /> Se a habilidade atingir um personagem inimigo, ela ativa a [Maldição dos caídos].`,
@@ -259,10 +259,10 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enh_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, Shared.DamageTypes.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
         return {
-            en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} normal damage to enemy hero.<br /> <br />` +
-                    `Enhanced: Veil steps into an astral realm and deals additional ${enh_dmg} magical damage and slows enemy hero. (consume enhanced state) <b> Sucessful hit reset Astral Step cooldown! </b>`,
-            ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} магического урона.<br /> <br />` +
-                    `[Усиленная]: Вэйл шагает в астральное измерение и наносит ${enh_dmg} магического урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага! </b>`,
+            en: `Veil uses astral step to dash forward with high velocity and deals ${base_damage} physical damage to enemy hero.<br /> <br />` +
+                    `Enhanced: Veil steps into an astral realm and deals additional ${enh_dmg} magical damage and slows enemy hero. (consume enhanced state) <b> Sucessful hit reset Astral Step cooldown. </b>`,
+            ru: `Вэйл совершает рывок вперёд на большой скорости, который наносит ${base_damage} физического урона первому вражескому герою на своём пути.<br /> <br />` +
+                    `[Усиленная]: Вэйл шагает в астральное измерение и наносит ${enh_dmg} магического урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага. </b>`,
 
             cz: `Veil použije astrální krok, aby vykročila vpřed vysokou rychlostí a způsobí ${base_damage} poškození.<br /> <br />` +
                     `Posílení: Veil vstoupí do astrální říše a způsobí další ${enh_dmg} poškození a zpomalí nepřítele. (spotřebuje vylepšený stav) <b> Úspěšný zásah resetuje cooldown! </b>`,
@@ -281,7 +281,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enh_damage = getDamage(FlinAbilityData.MARKSMANSHIP_BONUS_DAMAGE_MOD * damage);
 
         return {
-            en: `Flin fires an arrow and deals ${basic_damage} normal damage. <br /> If marksmanship is active, flin deals ${enh_damage} normal damage and arrows pierce all enemy units.`,
+            en: `Flin fires an arrow and deals ${basic_damage} physical damage. <br /> If marksmanship is active, flin deals ${enh_damage} physical damage and arrows pierce all enemy units.`,
             br: `Flin dispara uma flecha que da ${basic_damage} de dano normal. <br /> Se sua habilidade (Pontaria perfeita) estiver ativa, o flin dá ${enh_damage} de dano normal e suas flechas perfuram todas as unidades inimigas.`,
             ru: `Флин выпускает стрелу, наносящую ${basic_damage} физического урона. <br /> Если активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} физического урона и пронзает все вражеские цели на своём пути.`,
             cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození <br /> Ak je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození` ,
@@ -294,7 +294,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         return {
             en: `Flin fires a precise shot in his direction, if the arrow hits a target, the arrow will deal ${base_damage} magical damage and knockback enemy unit away from you. <br /> If marksmanship is active, precise shot will pierce all enemy units`,
             br: `Flin dispara um tiro preciso em sua direção, se a flecha atingir um alvo, a flecha causará ${base_damage} de dano mágico e repele a unidade inimiga para longe de você. <br /> Se sua habilidade (Pontaria perfeita) estiver ativa, suas flechas perfuram todas as unidades inimigas.`,
-            ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать все вражеские цели на своём пути.`,
+            ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} магического урона и отбрасывает первую вражескую цель на своём пути. <br /> Если активна Меткая стрельба, эта способность будет пронзать всех врагов на своём пути.`,
             cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} magického poškození a odkopne nepřítele dál od tebe. <br /> Ak střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
             zh: `弗林向前方發射精準射擊，如果弓箭擊中目標對象，弓箭將給予 ${base_damage}點魔法傷害並將敵方單位從你的方向打走。<br /> 如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
         };
@@ -316,12 +316,12 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enh_damage_heal = getDamage(KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.7, Shared.DamageTypes.HEAL, (KiraAbilityData.ENHATTACK_BASE_DAMAGE + (KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1))) * 0.7);
 
         return {
-            en: `Kira fires a lightning bolt that does ${basic_damage} normal damage. <br />
-                <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira casts a shock of electricity towards the nearest hero, decrease or increase hero attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for short period and instantly deals ${enh_damage} magical damage or heal if hero is friendly for ${enh_damage_heal}.`,
+            en: `Kira fires a lightning bolt that does ${basic_damage} physical damage. <br />
+                <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira casts a shock of electricity towards the nearest hero, decreasing their attack speed by ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% and movement speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for short period and instantly deals ${enh_damage} magical damage. If the target was friendly hero, their attack and movement speed will be increased for same amount and they will also get healed for ${enh_damage_heal}.`,
             br: `Kira dispara um relâmpago que da ${basic_damage} de dano normal. <br />
                 <br /> <b>[Passiva] (Livro demoníaco):</b> Kira lança um relâmpago no personagem mais próximo, diminui ou aumenta a velocidade de ataque do herói em ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% e velocidade de movimento em ${KiraAbilityData.ENHATTACK_MOVE_SPEED} por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
             ru: `Кира стреляет молнией, которая наносит ${basic_damage} физического урона. <br /> 
-                <br /> <b>[Усиленная]: (Удар молнии)</b> Кира колдует непрерывный поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% и скорость передвижения на ${KiraAbilityData.ENHATTACK_MOVE_SPEED}, а также он единожды получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он единожды исцеляется на ${enh_damage_heal}`,
+                <br /> <b>[Усиленная]: (Удар молнии)</b> Кира призывает поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)}% и скорость передвижения на ${KiraAbilityData.ENHATTACK_MOVE_SPEED}, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
             cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. <br /> 
                 <br /> <b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100)} % a rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED} na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
             zh: `奇菈發射一束閃電飛箭，造成 ${basic_damage}點一般傷害。<br />
@@ -337,7 +337,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
                 <br /> <b>[Enhanced]: (Torrential Abyss)</b> Kira summons total of 8 void missiles.`,
             br: `Kira conjura de seu livro 4 mísseis elétricos do abismo, que caem de cima, cada míssil causando ${damage} de dano mágico que perfura os inimigos. 
                 <br /> <b>[Passiva] (Abismo Demoníaco):</b> Kira conjura um total de 8 mísseis do abismo.`,
-            ru: `Кира призывает 4 снаряда бездны, которые падают с неба, нанося ${damage} магического урона каждый и пронзая вражеские цели. 
+            ru: `Кира призывает 4 снаряда, которые падают с неба, нанося ${damage} магического урона каждый и пронзая вражеские цели. 
                 <br /> <b>[Усиленная]: (Проливная бездна)</b> Количество призываемых снарядов увеличивается до 8.`,
             cz: `Kira vyvolá 4 prázdné střely, které prší shora, přičemž každá střela způsobí ${damage} magické poškození, které prorazí nepřátele.
                 <br /> <b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`,
@@ -350,11 +350,11 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const damage = getDamage(KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + (KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)));
 
         return {
-            en: `Kira deceives her enemies and leaves behind her a distorted afterimage, which she returns to after ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
+            en: `Kira dashes forvard and leaves a distorted afterimage behind her, which she returns to after ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kira's afterimage follows her and phases through enemies, dealing ${damage} magical damage and silencing them for ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
             br: `Kira cria uma imagem distorcida de si mesma enganando seus inimigos, para a qual ela retorna depois de ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}.
                 <br /> <b>[Passiva] (Distorcendo o Abismo):</b> A imagem distorcida de Kira a segue e atravessa os inimigos, causando ${damage} de dano mágico e silenciando-os por ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
-            ru: `Кира обманывает своих противников, совершая рывок вперёд и оставляя позади себя свою искажённую копию, возвращаясь к ней через ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
+            ru: `Кира совершает рывок вперёд, оставляя позади себя свою искажённую копию и возвращаясь к ней через ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Усиленная]: (Беспорядочный клон)</b> Копия Киры следует за ней и проходит через врагов на своём пути, нанося им ${damage} магического урона и накладывая немоту на ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
             cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}
                 <br /> <b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)}.`,
@@ -368,7 +368,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const baseDamage = getDamage(HazelAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
     
         return {
-            en: `Hazel strikes her foes down with her hammer, dealing ${baseDamage} normal damage.`,
+            en: `Hazel strikes her foes down with her hammer, dealing ${baseDamage} physical damage.`,
             br: `Hazel golpeia seus inimigos com seu martelo, causando ${baseDamage} de dano normal.`,
             ru: `Хейзел поражает врагов своим молотом, нанося ${baseDamage} физического урона.`,
             cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`,
@@ -399,7 +399,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const normalDamage = getDamage(HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage, Shared.DamageTypes.NORMAL, baseDamage + (HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)));
 
         return {
-            en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} normal damage and knocking up enemies stunning for ${toSec(duration)}.`,
+            en: `Hazel unleashes the wrath of justice and swings her hammer upwards, dealing base damage ${normalDamage} physical damage and knocking up enemies stunning for ${toSec(duration)}.`,
             br: `Hazel canaliza poder na ponta de seu martelo, causando ${normalDamage} de dano normal e atordoando inimigos por ${toSec(duration)}.`,
             ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} физического урона и подбрасывая врагов на ${toSec(duration)}.`,
             zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(duration)}。`,
@@ -416,8 +416,8 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enhDamage = getDamage(enhDamageVal * damage);
     
         return {
-            en: `Arel fires a bullet from his gun dealing ${baseDamage} normal damage. <br /> 
-                <br />[PASSIVE]: Whenever Arel uses an ability, arel will charge another bullet in his gun firing additional shot and dealing additional ${enhDamage} normal damage`,
+            en: `Arel fires a bullet from his gun dealing ${baseDamage} physical damage. <br /> 
+                <br />[PASSIVE]: Whenever Arel uses an ability, arel will charge another bullet in his gun firing additional shot and dealing additional ${enhDamage} physical damage`,
             br: `Arel dispara uma bala de sua arma causando ${baseDamage} de dano normal. 
                 <br /> <b>[Passiva] (Atirador de Elite):</b> Sempre que Arel usar uma habilidade, carregará outra bala em sua arma, disparando tiros adicionais e causando ${enhDamage} de dano adicional.`,
             ru: `Арел выпускает пулю из своего оружия, нанося ${baseDamage} физического урона. <br /> 
@@ -444,12 +444,12 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const enhDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * 1.5, Shared.DamageTypes.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * 1.5);
         
         return {
-            en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} normal damage to all surrounding enemies.
+            en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} physical damage to all surrounding enemies.
                 <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} normal damage and stun carrier for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
                 <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${enhDamage} de dano normal e atordoará o portador por ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}.`,
             ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, нанося ${baseDamage} физического урона всем ближайшим врагам.
-                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
+                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於 ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}後爆炸，給予周圍所有敵方 ${baseDamage}點一般傷害。
@@ -467,12 +467,12 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
             AlvarAbilityData.MARK_DURATION;
 
         return {
-            en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} normal damage. <br /> 
-                <br />[PASSIVE]: Every alvar's sucessful hit to enemy hero apply an debuff to the target for ${toSec(duration)}. Third stack of debuff will apply mark which deals ${markDamage} normal damage.`,
+            en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} physical damage. <br /> 
+                <br />[PASSIVE]: Every alvar's sucessful hit to enemy hero apply an debuff to the target for ${toSec(duration)}. Third stack of debuff will apply mark which deals ${markDamage} physical damage.`,
             br: `Alvar acerta com seu punho todos os alvos à sua frente causando ${baseDamage} de dano normal. <br /> 
                 <br /> <b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${toSec(duration)}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage} de dano normal.`,
             ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage} физического урона. <br /> 
-                <br />[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противнике ослабление на ${toSec(duration)}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage} физического урона.`,
+                <br />[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противника ослабление на ${toSec(duration)}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage} физического урона.`,
             cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage} normálního poškození. <br />
                 <br /> [PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${toSec(duration)}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
             zh: `阿爾瓦用他的拳頭向前打擊，造成 ${baseDamage}點一般傷害。<br /> 
@@ -487,13 +487,14 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
             AlvarAbilityData.FURIOUS_KICK_STUN_DURATION;
 
         return {
-            en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} normal damage and stunning enemy units for ${toSec(duration)}. <br />
-                <br/> Alvar apply an debuff on all targets it hits.`,
+            en: `Alvar kicks all enemy units in front of him and throws them effortlessly behind him, dealing ${baseDamage} physical damage and stunning enemy units for ${toSec(duration)}. <br />
+                <br/> Alvar apply a debuff on all hero targets it hits.`,
             br: `Alvar chuta todas as unidades inimigas à sua frente e as joga para trás dele, causando ${baseDamage} de dano normal e atordoa unidades inimigas por ${toSec(duration)}. <br />
                 <br/> (Alvar aplica um debuff em todos os alvos que atinge).`,
             cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} normalního poškozěni a omráčí nepřitele po dobu ${toSec(duration)}. <br />
                 <br /> Alvar aplikuje debuff na všechný nepřatelské jednotky.`,
-            ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(duration)}.`,
+            ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage} физического урона, а также оглушая их на ${toSec(duration)}. <br />
+                <br/> Алвар накладывает ослабление от пассивной способности на всех задетых вражеских героев.`,
             zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(duration)}。
                 <br/>阿爾瓦給予所有被擊中的目標一個負面狀態。`,
 
@@ -504,9 +505,9 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
         const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage);
 
         return {
-            en: `Alvar teleports behind the closest marked enemy hero, kicking him and dealing ${baseDamage} normal damage and pushing him in opposite direction. If there is no marked enemy nearby, ability can't be used.`,
+            en: `Alvar teleports behind the closest marked enemy hero, kicking him and dealing ${baseDamage} physical damage and pushing him in opposite direction. If there is no marked enemy nearby, ability can't be used.`,
             br: `Alvar se teletransporta para trás do herói inimigo marcado mais próximo, chutando-o e causando ${baseDamage} de dano normal e empurrando-o na direção oposta.\n (Se não houver nenhum inimigo marcado por perto, a habilidade não pode ser usada.)`,
-            ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его и нанося ${baseDamage} физического урона, и отталкивая его в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
+            ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} физического урона и отталкивая врага в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
             cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
             zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
         };
@@ -516,7 +517,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     case Shared.SpellList.RECALL:
         return {
             en: 'Teleport back to spawn after 5 seconds. During its cast, you cannot move or attack, and the cast is interrupted when you take damage.',
-            ru: 'Телепорт обратно на свою базу спустя 5 секунд. Во время возвращения вы не можете двигаться или атаковать, но любой полученный урон перырвает подготовку.',
+            ru: 'Телепорт обратно на свою базу спустя 5 секунд. Во время возвращения вы не можете двигаться или атаковать, а любой полученный урон перырвает подготовку.',
             cz: 'Po 5 sekundách se teleportujte zpět do základny. Během sesílání se nemůžete pohybovat ani útočit a sesílání je přerušeno, pokud utrpíte poškození.',
             br: 'Teleporte-se de volta para Base após 5 segundos. Durante isso você não pode se mover ou atacar, será interrompido se você receber qualquer tipo de dano.',
             zh: '5秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。',
@@ -729,7 +730,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
     case Shared.SpellList.AREL_TICKING_BOMB:
         return {
             en: 'Ticking Bomb',
-            ru: 'Тикающая бомба',
+            ru: 'Часовая бомба',
             br: 'Bomba Relógio',
             cz: 'Tikající bomba',
             zh: '定時炸彈',
