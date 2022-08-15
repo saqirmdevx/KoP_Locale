@@ -377,7 +377,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 
     case Shared.SpellList.HAZEL_SHOCKWAVE: {
-        const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, Shared.DamageTypes.MAGICAL);
+        const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, Shared.DamageTypes.MAGICAL, 0, 'Health');
         
         return {
             en: `Hazel begins to charge and channel her energy for ${toSec(HazelAbilityData.SHOCKWAVE_DELAY)} before releasing an outburst of shockwaves around her, dealing ${damage} magical damage (Based of Hazel's current health), slows down and push all enemy units in distance.`,
