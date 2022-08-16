@@ -167,7 +167,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.DAMAGE_TYPE_NORMAL]: {
-        en: 'Normal',
+        en: 'Physical',
         ru: 'Физический',
         br: 'Normal',
         cz: 'Normální',
@@ -867,12 +867,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POST_BLUE_TEAM_WIN]: {
         en: 'Blue team won!',
+        ru: 'Синяя команда победила!',
         br: 'Time azul Venceu!',
         cz: 'Vyhrál modrý tím!',
         zh: '籃隊獲勝！',
     },
     [LOCALE.POST_RED_TEAM_WIN]: {
         en: 'Red team won!',
+        ru: 'Красная команда победила!',
         br: 'Time vermelho Venceu!',
         cz: 'Vyhrál rudý tím!',
         zh: '紅隊獲勝！',
@@ -1061,6 +1063,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.AN_ULTRA_KILL]: {
         en: 'ULTRA KILL!!',
+        en: 'КВАДРАКИЛЛ!!',
         br: 'ULTRA KILL!!',
         zh: '爆殺！！',
     },
@@ -1152,7 +1155,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '技能威力',
     },
     [LOCALE.DAMAGE]: {
-        en: 'Attack damage',
+        en: 'Attack Damage',
         ru: 'Сила атаки',
         br: 'Dano de ataque',
         cz: 'Poškození útoku',
@@ -1187,7 +1190,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '吸血值',
     },
     [LOCALE.MAGICAL_DEFENSE]: {
-        en: 'Magical Defense',
+        en: 'Magic Resistance',
         ru: 'Защита от магии',
         br: 'Resistência mágica',
         cz: 'Protimagická obrana',
@@ -1208,7 +1211,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '血量',
     },
     [LOCALE.HEALTH_REGEN]: {
-        en: 'Health Regen',
+        en: 'Health Regeneration',
         ru: 'Регенерация здоровья',
         br: 'Regeneração de vida',
         cz: 'Regenerace Zdravý',
@@ -1230,7 +1233,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.PICKUP]: {
-        en: 'pickup',
+        en: 'picked up',
         ru: 'подобрал',
         cz: 'vzal',
         br: 'pegou',
@@ -1473,7 +1476,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
         en: 'Become captain!',
-        ru: 'Станьте капитаном!',
+        ru: 'Стать капитаном!',
         br: 'Torne-se capitão!',
         cz: 'Stát se kapitánem',
         zh: '成為隊長！',
@@ -1750,20 +1753,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.ST_UI_SCALE]: {
         en: 'UI Scale',
+        ru: 'Масштаб интерфейса',
         cz: 'Velkosť UI',
         zh: 'UI比例縮放',
     },
     /** Chat command helpers */
     [LOCALE.CHAT_COMMAND_GLOBAL]: {
         en: '/global <message> - send message to all players',
-        ru: '/global <сообщение> - отправить сообщение всем игрокам',
+        ru: '/global <сообщение> - отправить сообщение всем игрокам в глобальном чате',
         br: '/global <mensagem> - enviar mensagem para todos os jogadores',
         cz: '/global <zpráva> - poslat zprávu všem hráčům',
         zh: '/global <消息> - 向所有玩家發送消息',
     },
     [LOCALE.CHAT_COMMAND_ALL]: {
         en: '/all <message> - send message in current game',
-        ru: '/all <сообщение> - отправить сообщение в текущем игровом подземелье',
+        ru: '/all <сообщение> - отправить сообщение всем игрокам в текущей игре',
         br: '/all <mensagem> - enviar mensagem para todos os jogadores',
         cz: '/all <zpráva> - poslat zprávu všem hráčům',
         zh: '/all <消息> - 向當前游戲中的所有玩家發送消息',

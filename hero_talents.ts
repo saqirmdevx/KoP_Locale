@@ -301,7 +301,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 description: {
                     en: `Tumble will create freezing trap at Arel position. When enemy unit step on the trap, unit will be freezed for ${toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)}` +
 						`<br/> Trap last long ${toSec(ArelAbilityData.FREEZING_TRAP_DURATION)} and provide small vision`,
-                    ru: `Перекат создаст Замораживающую ловушку на позиции Арела, которая заморозит наступившего в неё врага на ${toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)}` +
+                    ru: `Кувырок  создаст Замораживающую ловушку на позиции Арела, которая заморозит наступившего в неё врага на ${toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)}` +
 						`<br/> Замораживающая ловушка существует ${toSec(ArelAbilityData.FREEZING_TRAP_DURATION)} и даёт небольшой обзор вокруг себя`
                 }
             }
