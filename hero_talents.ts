@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from '../../misc/shared';
+import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 import { toSecRaw, toSec, fixed } from './misc';
 
 interface ITalentProps {

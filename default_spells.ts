@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { toSec } from './misc';
 // @ts-ignore
-import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from '../../misc/shared';
+import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 // @ts-ignore
 import { getDamage, IAbilityTooltipsDataFinal } from '../ability_desc';
 // @ts-ignore

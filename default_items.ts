@@ -1,9 +1,9 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  fixed, ItemAbilityData } from '../../misc/shared';
+import { Shared,  fixed, ItemAbilityData } from 'shared';
 //@ts-ignore
-import { calculateMagicDefense } from '../../misc/constant';
+import { calculateMagicDefense } from 'misc/constants';
 import { toSec } from './misc';
 //@ts-ignore
 import { LANG } from '../lang'; 
@@ -581,14 +581,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '吸血鬼法棒',
             },
             desc: {
-                en: `UNIQUE: Your abilities heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% of damage dealt.`,
+                en: `UNIQUE: Your abilities heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% (65% weaker against minions) of damage dealt.`,
                 br: `[Único]: Quando seu ataque mágico atinge um personagem inimigo, ele curará você em ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de dano causado.`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% от нанесённого урона.`,
+                ru: `УНИКАЛЬНО(Пассивно): Ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% (на 70% слабее против миньонов) от нанесённого урона.`,
                 zh: `特殊：當你的魔法攻擊擊中敵方英雄，從${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}%給予的傷害恢復自己生命值。`,
-                // OLD //
-                //ru: `УНИКАЛЬНО(Пассивно): Попадая по врагу, ваши способности похищают у цели ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% здоровья. (Перезарядка: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} сек.)`,
-                // br: `[Único]: Quando sua habilidade atinge o personagem inimigo, ela rouba ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de vida.\n [Tempo de recarga: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} seg.]`,
-                // fr: `[UNIQUE]: Quand tes compétences K et L touchent l'ennemie, cela vole ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% points de vie. \n [Délai de récupération: ${fixed(ItemAbilityData.VAMPIRIC_ROD_COOLDOWN / 1000, 1)} sec.]`,
             }
         };
     case Shared.ItemList.Kirin_Staff:
@@ -636,10 +632,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰結法棍',
             },
             desc: {
-                en: `UNIQUE: Your abilities slow enemies down by ${ItemAbilityData.FROZEN_STAFF_SLOW} Movement Speed and decrease Attack Speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seconds (Cooldown: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} seconds)`,
-                br: `[Único]: Suas habilidades reduzem a velocidade de movimento do inimigo em ${ItemAbilityData.FROZEN_STAFF_SLOW} e velocidade de ataque por ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} seg.]`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают Скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и Скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                zh: `特殊：你的技能降低 ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)}秒對手的移動速度值 ${ItemAbilityData.FROZEN_STAFF_SLOW}與 ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}%攻擊速度 - ${(ItemAbilityData.FROZEN_STAFF_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
+                en: `UNIQUE: Your abilities slow enemies down by ${ItemAbilityData.FROZEN_STAFF_SLOW} Movement Speed and decrease Attack Speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seconds`,
+                br: `[Único]: Suas habilidades reduzem a velocidade de movimento do inimigo em ${ItemAbilityData.FROZEN_STAFF_SLOW} e velocidade de ataque por ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n`,
+                ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают Скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и Скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек.`,
+                zh: `特殊：你的技能降低 ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)}秒對手的移動速度值 ${ItemAbilityData.FROZEN_STAFF_SLOW}與 ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}%攻擊速度`,
             }
         };
     case Shared.ItemList.Iron_Rod:
