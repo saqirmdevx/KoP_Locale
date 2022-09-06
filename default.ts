@@ -2,8 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { LOCALE } from '../locales';
+import { initial_page } from './initial_page';
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
+    ...initial_page,
     /** Hero section */
     [LOCALE.KUMIHU_NAME]: {
         en: 'Kumihu',
@@ -1375,7 +1377,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'Join',
         ru: 'Присоединиться',
         br: 'Junte-se',
-        cz: 'Přida se',
+        cz: 'Přidat se',
         zh: '加入',
     },
     [LOCALE.LEAVE]: {
@@ -1743,13 +1745,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: 'Adicionar bot difícil',
         ru: 'Добавить сложного бота',
         zh: '加入困難電腦',
-    },
-    [LOCALE.LOBBY_SEND_TO_DISCORD]: {
-        en: 'Share on Discord',
-        cz: 'Zdílet na discordu',
-        br: 'Compartilhar no Discord',
-        ru: 'Поделиться в Discord',
-        zh: '分享到Discord',
     },
     [LOCALE.ST_UI_SCALE]: {
         en: 'UI Scale',
