@@ -40,4 +40,8 @@ export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
         en: 'Informations',
         cz: 'Informace'
     },
+    [LOCALE.LOGIN_AS]: {
+        en: 'Login as',
+        cz: 'Přihlásit se jako'
+    }
 };

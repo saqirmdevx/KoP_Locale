@@ -1791,5 +1791,33 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: '/exit - opustit hru (pouze pro praktiku)',
         zh: '/exit - 離開遊戲 (僅限於練習模式)',
     },
+    [LOCALE.NOT_FOUND_MATCHES]: {
+        en: 'This player has no match history.',
+        cz: 'Tento hráč nemá žádnou historii zápasů.'
+    },
+    [LOCALE.RANK_BRONZE]: {
+        en: 'Bronze',
+        cz: 'Bronzový'
+    },
+    [LOCALE.RANK_SILVER]: {
+        en: 'Silver',
+        cz: 'Stříbrný'
+    },
+    [LOCALE.RANK_GOLD]: {
+        en: 'Gold',
+        cz: 'Zlatý'
+    },
+    [LOCALE.RANK_PLATINUM]: {
+        en: 'Platinum',
+        cz: 'Platinový'
+    },
+    [LOCALE.RANK_DIAMOND]: {
+        en: 'Diamond',
+        cz: 'Diamantový'
+    },
+    [LOCALE.RANK_MYTHICAL]: {
+        en: 'Mythical',
+        cz: 'Mytický'
+    },
 };
 export default locale_data;
