@@ -58,5 +58,9 @@ export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
     [LOCALE.LOADING]: {
         en: 'Loading...',
         cz: 'Načítá se...',
+    },
+    [LOCALE.CONGRATULATION]: {
+        en: 'Congratulation',
+        cz: 'Gratuluji'
     }
 };

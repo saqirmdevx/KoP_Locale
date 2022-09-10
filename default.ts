@@ -1834,5 +1834,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'games left to calibrate rank!',
         cz: 'her zbývá ke kalibraci ranku!'
     },
+    [LOCALE.LEVEL_UP]: {
+        en: 'You have achieved a new level',
+        cz: 'Dosáhli jste nové úrovně'
+    },
+    [LOCALE.RANK_UP]: {
+        en: 'You have achieved a new rank',
+        cz: 'Dosáhli jste nové hodnosti'
+    },
 };
 export default locale_data;
