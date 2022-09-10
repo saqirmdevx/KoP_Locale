@@ -43,5 +43,20 @@ export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
     [LOCALE.LOGIN_AS]: {
         en: 'Login as',
         cz: 'Přihlásit se jako'
+    },
+    [LOCALE.RENAME_ERROR_ALREADY_EXISTS]: {
+        en: 'This name already exists!',
+        cz: 'Toto jméno již existuje!'
+    },
+    [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
+        en: 'This name contains forbidden letters or is too short!',
+        cz: 'Toto jméno obsahuje zakázaná písmena!'
+    },
+    [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
+        en: 'Can\'t connect with server',
+    },
+    [LOCALE.LOADING]: {
+        en: 'Loading...',
+        cz: 'Načítá se...',
     }
 };

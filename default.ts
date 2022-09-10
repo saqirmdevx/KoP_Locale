@@ -748,7 +748,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '練習賽（電腦）',
     },
     [LOCALE.PRACTICE_MATCH]: {
-        en: 'Test hero',
+        en: 'Practice hero',
         ru: 'Тренировка',
         br: 'Treino',
         cz: 'Vyzkoušet hrdinu',
@@ -852,6 +852,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '最後造成傷害',
     },
 
+    [LOCALE.POST_FANCY_POINTS]: {
+        en: 'Fancy points',
+        cz: 'Luxusní body'
+    },
+
     [LOCALE.POST_TOTAL_NETWORTH]: {
         en: 'Total Networth',
         ru: 'Всего золота',
@@ -934,12 +939,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Zavřít',
         zh: '關閉',
     },
-    [LOCALE.POPUP_SELECT_NAME_TITLE]: {
-        en: 'Select your name! Be careful, name change is not free.',
-        ru: 'Выберите ваше имя! Будьте осторожны, изменение имени не бесплатно.',
-        br: 'Escolha seu nome! Você pode mudar depois mas a mudança não será gratuita.',
-        cz: 'Vyberte si svou prezdivku. Pozor, změna jména není zadarmo!',
-        zh: '輸入你的名稱！請注意，更名不是免費的。',
+    [LOCALE.FORCE_RENAME_SELECT_NAME]: {
+        en: 'Select your name!',
+        ru: 'Выберите ваше имя!',
+        br: 'Escolha seu nome!',
+        cz: 'Vyberte si svou prezdivku. ',
+        zh: '輸入你的名稱！',
     },
     [LOCALE.POPUP_SELECT_MESS_GUESTMODE]: {
         en: 'You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style=\'color: red\'>G-Mail account</b> to access all features. and no ADS!',
@@ -1394,11 +1399,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Začít',
         zh: '開始',
     },
-    [LOCALE.LOBBY_ID]: {
-        en: 'Lobby Id: ',
-        ru: 'Код лобби: ',
-        br: 'Id da sala: ',
-        zh: '私房ID ',
+    [LOCALE.LOBBY_NAME]: {
+        en: 'Title',
+        cz: 'Název',
     },
     [LOCALE.LOBBY_INIT_GOLDS]: {
         en: 'Initial Golds',
@@ -1497,11 +1500,15 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '禁掉英雄',
     },
     [LOCALE.RANKED_MATCH]: {
-        en: 'Ranked battles:',
-        ru: 'Ранговые игры:',
-        br: 'Lutas ranqueadas:',
-        cz: 'Hodnocení zápasi:',
-        zh: '爬分賽：',
+        en: 'Ranked',
+        ru: 'Ранговые',
+        br: 'Lutas',
+        cz: 'Hodnocení',
+        zh: '爬分賽',
+    },
+    [LOCALE.NORMAL_MATCH]: {
+        en: 'Unranked',
+        cz: 'Ne hodnocení',
     },
     [LOCALE.AI_MATCH]: {
         en: 'AI Matches (PvAI):',
@@ -1795,6 +1802,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'This player has no match history.',
         cz: 'Tento hráč nemá žádnou historii zápasů.'
     },
+    [LOCALE.RANK_UNRANKED]: {
+        en: 'Unknown',
+        cz: 'Neznámý'
+    },
     [LOCALE.RANK_BRONZE]: {
         en: 'Bronze',
         cz: 'Bronzový'
@@ -1818,6 +1829,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.RANK_MYTHICAL]: {
         en: 'Mythical',
         cz: 'Mytický'
+    },
+    [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
+        en: 'games left to calibrate rank!',
+        cz: 'her zbývá ke kalibraci ranku!'
     },
 };
 export default locale_data;
