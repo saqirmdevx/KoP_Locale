@@ -1800,6 +1800,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.NOT_FOUND_MATCHES]: {
         en: 'This player has no match history.',
+        ru: 'У этого игрока нет истории игр.',
         cz: 'Tento hráč nemá žádnou historii zápasů.'
     },
     [LOCALE.RANK_UNRANKED]: {
@@ -1808,38 +1809,47 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.RANK_BRONZE]: {
         en: 'Bronze',
+        ru: 'Бронза',
         cz: 'Bronzový'
     },
     [LOCALE.RANK_SILVER]: {
         en: 'Silver',
+        ru: 'Серебро',
         cz: 'Stříbrný'
     },
     [LOCALE.RANK_GOLD]: {
         en: 'Gold',
+        ru: 'Золото',
         cz: 'Zlatý'
     },
     [LOCALE.RANK_PLATINUM]: {
         en: 'Platinum',
+        ru: 'Платина',
         cz: 'Platinový'
     },
     [LOCALE.RANK_DIAMOND]: {
         en: 'Diamond',
+        ru: 'Алмаз',
         cz: 'Diamantový'
     },
     [LOCALE.RANK_MYTHICAL]: {
         en: 'Mythical',
+        ru: 'Мифический',
         cz: 'Mytický'
     },
     [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
         en: 'games left to calibrate rank!',
+        ru: 'игр осталось до окончания калибровки ранга!',
         cz: 'her zbývá ke kalibraci ranku!'
     },
     [LOCALE.LEVEL_UP]: {
         en: 'You have achieved a new level',
+        ru: 'Вы получили новый уровень',
         cz: 'Dosáhli jste nové úrovně'
     },
     [LOCALE.RANK_UP]: {
         en: 'You have achieved a new rank',
+        ru: 'Вы достигли нового ранга',
         cz: 'Dosáhli jste nové hodnosti'
     },
 };
