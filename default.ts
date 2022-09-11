@@ -1839,14 +1839,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
         en: 'games left to calibrate rank!',
+        ru: 'игр осталось до окончания калибровки ранга!',
         cz: 'her zbývá ke kalibraci ranku!'
     },
     [LOCALE.LEVEL_UP]: {
         en: 'You have achieved a new level',
+        ru: 'Вы получили новый уровень',
         cz: 'Dosáhli jste nové úrovně'
     },
     [LOCALE.RANK_UP]: {
         en: 'You have achieved a new rank',
+        ru: 'Вы достигли нового ранга',
         cz: 'Dosáhli jste nové hodnosti'
     },
 };

@@ -57,21 +57,26 @@ export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
     },
     [LOCALE.RENAME_ERROR_ALREADY_EXISTS]: {
         en: 'This name already exists!',
+        ru: 'Это имя уже занято!',
         cz: 'Toto jméno již existuje!'
     },
     [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
         en: 'This name contains forbidden letters or is too short!',
+        ru: 'Выбранное имя содержит запрещённые символы или слишком коротко!',
         cz: 'Toto jméno obsahuje zakázaná písmena!'
     },
     [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
         en: 'Can\'t connect with server',
+        ru: 'Нет соединения с сервером'
     },
     [LOCALE.LOADING]: {
         en: 'Loading...',
+        ru: 'Загрузка...',
         cz: 'Načítá se...',
     },
     [LOCALE.CONGRATULATION]: {
         en: 'Congratulations',
+        ru: 'Поздравляем',
         cz: 'Gratuluji'
     }
 };
