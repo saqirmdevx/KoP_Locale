@@ -1070,7 +1070,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.AN_ULTRA_KILL]: {
         en: 'ULTRA KILL!!',
-        en: 'КВАДРАКИЛЛ!!',
+        ru: 'КВАДРАКИЛЛ!!',
         br: 'ULTRA KILL!!',
         zh: '爆殺！！',
     },
@@ -1842,5 +1842,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'You have achieved a new rank',
         cz: 'Dosáhli jste nové hodnosti'
     },
+    [LOCALE.POPUP_YOUR_REWARD]: {
+        en: 'Your reward!',
+        cz: 'Tvoja odměna!'
+    },
+    [LOCALE.HERO_MASTERY]: {
+        en: 'Hero mastery',
+        cz: 'Dovednost hrdiny'
+    }
 };
 export default locale_data;
