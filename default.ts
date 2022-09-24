@@ -1837,6 +1837,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Мифический',
         cz: 'Mytický'
     },
+    [LOCALE.HERO_MASTERY_MASTER]: {
+        en: 'Master',
+    },
+    [LOCALE.HERO_MASTERY_GRAND_MASTER]: {
+        en: 'Grand Master',
+    },
     [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
         en: 'games left to calibrate rank!',
         ru: 'игр осталось до окончания калибровки ранга!',
@@ -1859,6 +1865,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.HERO_MASTERY]: {
         en: 'Hero mastery',
         cz: 'Dovednost hrdiny'
-    }
+    },
+    [LOCALE.REQUIRED_LEVEL]: {
+        en: 'Required level',
+        cz: 'Požadovaná úroveň'
+    },
+    [LOCALE.TOWER]: {
+        en: 'Tower',
+        cz: 'Věž'
+    },
+    [LOCALE.OBSERVER_WARD]: {
+        en: 'Observer ward',
+    },
+    [LOCALE.SENTRY_WARD]: {
+        en: 'Sentry ward',
+    },
+
 };
 export default locale_data;
