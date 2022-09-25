@@ -78,5 +78,17 @@ export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
         en: 'Congratulations',
         ru: 'Поздравляем',
         cz: 'Gratuluji'
+    },
+    [LOCALE.PLAY_PAGE_RANKED_DESCRIPTION]: {
+        en: ' - Reward: experience, coins and ELO\n - <b>+20% experience and coins</b>\n - Rank based matchmaking\n - 2 vs 2 only',
+        cz: ' - Odměna: zkušenosti, mince a ELO\n - <b>+20% více zkušeností a mincí</b>\n - Dohazování na základě hodnocení\n - Pouze 2 vs 2'
+    },
+    [LOCALE.PLAY_PAGE_UNRANKED_DESCRIPTION]: {
+        en: ' - Reward: experience and coins\n - 1 vs 1 and 2 vs 2',
+        cz: ' - Odměna: zkušenosti a mince\n - 1 vs 1 a 2 vs 2'
+    },
+    [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
+        en: ' - Reward: experience and coins\n - 2 Players vs 2 Hard AI\n - 50% less experience and coins',
+        cz: ' - Odměna: zkušenosti a mince\n - 2 hráči vs 2 tvrdá umělá inteligence\n - o 50 % méně zkušeností a mincí'
     }
 };

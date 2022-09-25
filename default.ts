@@ -2,7 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { LOCALE } from '../locales';
-import { initial_page } from './initial_page';
+import { initial_page } from './home_page';
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ...initial_page,
@@ -1508,7 +1508,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.NORMAL_MATCH]: {
         en: 'Unranked',
-        cz: 'Ne hodnocení',
+        cz: 'Nehodnocení',
     },
     [LOCALE.AI_MATCH]: {
         en: 'AI Matches (PvAI):',
