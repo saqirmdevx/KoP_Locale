@@ -813,7 +813,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.TAG_RECOMMENDED]: {
         en: 'RECOMMENDED',
-        ru: 'РЕКОМЕНДУЕМЫЕ',
+        ru: 'РЕКОМЕНДУЕМЫЙ',
         br: 'RECOMENDADO',
         cz: 'ODPORÚČAME',
         zh: '強力推薦',
@@ -854,7 +854,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
 
     [LOCALE.POST_FANCY_POINTS]: {
         en: 'Fancy points',
-        cz: 'Luxusní body'
+        cz: 'Luxusní body',
+        ru: 'Очки влияния'
     },
 
     [LOCALE.POST_TOTAL_NETWORTH]: {
@@ -1119,28 +1120,28 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     /** Runes */
     [LOCALE.HASTE_RUNE]: {
         en: 'Haste Rune',
-        ru: 'Руна спешки',
+        ru: 'Руну спешки',
         br: 'Runa de Aceleração',
         cz: 'Runa Spěchu',
         zh: '迅疾符文',
     },
     [LOCALE.DAMAGE_RUNE]: {
         en: 'Damage Rune',
-        ru: 'Руна урона',
+        ru: 'Руну урона',
         br: 'Runa de dano',
         cz: 'Runa Poškození',
         zh: '傷害符文',
     },
     [LOCALE.ARCANE_RUNE]: {
         en: 'Arcane Rune',
-        ru: 'Руна магии',
+        ru: 'Руну магии',
         br: 'Runa Arcana',
         cz: 'Runa Magie',
         zh: '奧術符文',
     },
     [LOCALE.HEALING_RUNE]: {
         en: 'Healing Rune',
-        ru: 'Руна исцеления',
+        ru: 'Руну исцеления',
         br: 'Runa de cura',
         cz: 'Runa Léčení',
         zh: '治癒符文',
@@ -1805,6 +1806,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.RANK_UNRANKED]: {
         en: 'Unknown',
+        ru: 'Без ранга',
         cz: 'Neznámý'
     },
     [LOCALE.RANK_BRONZE]: {
@@ -1839,9 +1841,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.HERO_MASTERY_MASTER]: {
         en: 'Master',
+        ru: 'Мастер'
     },
     [LOCALE.HERO_MASTERY_GRAND_MASTER]: {
         en: 'Grand Master',
+        ru: 'Грандмастер'
     },
     [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
         en: 'games left to calibrate rank!',
@@ -1860,25 +1864,31 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_YOUR_REWARD]: {
         en: 'Your reward!',
-        cz: 'Tvoja odměna!'
+        cz: 'Tvoja odměna!',
+        ru: 'Ваша награда'
     },
     [LOCALE.HERO_MASTERY]: {
         en: 'Hero mastery',
-        cz: 'Dovednost hrdiny'
+        cz: 'Dovednost hrdiny',
+        ru: 'Мастерство героя'
     },
     [LOCALE.REQUIRED_LEVEL]: {
         en: 'Required level',
-        cz: 'Požadovaná úroveň'
+        cz: 'Požadovaná úroveň',
+        ru: 'Необходимый уровень'
     },
     [LOCALE.TOWER]: {
         en: 'Tower',
-        cz: 'Věž'
+        cz: 'Věž',
+        ru: 'Башня'
     },
     [LOCALE.OBSERVER_WARD]: {
         en: 'Observer ward',
+        ru: 'Тотем-наблюдатель'
     },
     [LOCALE.SENTRY_WARD]: {
         en: 'Sentry ward',
+        ru: 'Сторожевой тотем'
     },
 
 };
