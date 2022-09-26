@@ -2,10 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { LOCALE } from '../locales';
-import { initial_page } from './initial_page';
+import { home_page } from './home_page';
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
-    ...initial_page,
+    ...home_page,
     /** Hero section */
     [LOCALE.KUMIHU_NAME]: {
         en: 'Kumihu',
@@ -1070,7 +1070,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.AN_ULTRA_KILL]: {
         en: 'ULTRA KILL!!',
-        en: 'КВАДРАКИЛЛ!!',
+        ru: 'КВАДРАКИЛЛ!!',
         br: 'ULTRA KILL!!',
         zh: '爆殺！！',
     },
@@ -1508,7 +1508,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.NORMAL_MATCH]: {
         en: 'Unranked',
-        cz: 'Ne hodnocení',
+        cz: 'Nehodnocení',
     },
     [LOCALE.AI_MATCH]: {
         en: 'AI Matches (PvAI):',
@@ -1837,6 +1837,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Мифический',
         cz: 'Mytický'
     },
+    [LOCALE.HERO_MASTERY_MASTER]: {
+        en: 'Master',
+    },
+    [LOCALE.HERO_MASTERY_GRAND_MASTER]: {
+        en: 'Grand Master',
+    },
     [LOCALE.RANK_CALIBRATION_DESCRIPTION]: {
         en: 'games left to calibrate rank!',
         ru: 'игр осталось до окончания калибровки ранга!',
@@ -1852,5 +1858,28 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Вы достигли нового ранга',
         cz: 'Dosáhli jste nové hodnosti'
     },
+    [LOCALE.POPUP_YOUR_REWARD]: {
+        en: 'Your reward!',
+        cz: 'Tvoja odměna!'
+    },
+    [LOCALE.HERO_MASTERY]: {
+        en: 'Hero mastery',
+        cz: 'Dovednost hrdiny'
+    },
+    [LOCALE.REQUIRED_LEVEL]: {
+        en: 'Required level',
+        cz: 'Požadovaná úroveň'
+    },
+    [LOCALE.TOWER]: {
+        en: 'Tower',
+        cz: 'Věž'
+    },
+    [LOCALE.OBSERVER_WARD]: {
+        en: 'Observer ward',
+    },
+    [LOCALE.SENTRY_WARD]: {
+        en: 'Sentry ward',
+    },
+
 };
 export default locale_data;
