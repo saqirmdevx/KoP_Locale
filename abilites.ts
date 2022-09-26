@@ -3,11 +3,11 @@ import { toSec } from './misc';
 // @ts-ignore
 import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
 // @ts-ignore
-import { getDamage, IAbilityTooltipsDataFinal } from '../ability_desc';
+import { getDamage, IAbilityTooltipsDataFinal } from '../abilityLangData';
 // @ts-ignore
-import { LANG } from '../lang';
+import { LANG } from 'lang/lang';
 
-const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
+const _getSpellDescriptionLang = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
     switch (id) {
     /** Kumihu  */
     case Shared.SpellList.KUMIHU_AUTOATTACK: {
@@ -527,7 +527,7 @@ const _getSpellDescription = (id: Shared.SpellList, { damage, abilityPower, heal
     }
 };
 
-const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
+const _getSpellNameLang = (id: Shared.SpellList): { [key in string]: string } => {
     switch (id) {
     /** Kumihu  */
     case Shared.SpellList.KUMIHU_AUTOATTACK:
@@ -768,7 +768,7 @@ const _getSpellName = (id: Shared.SpellList): { [key in string]: string } => {
 };
 
 export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): string => {
-    const result = _getSpellDescription(id, unitStats, type);
+    const result = _getSpellDescriptionLang(id, unitStats, type);
 
     if (result[LANG.value])
         return result[LANG.value];
@@ -777,7 +777,7 @@ export const getSpellDescription = (id: Shared.SpellList, unitStats: IAbilityToo
 };
 
 export const getSpellName = (id: Shared.SpellList): string => {
-    const result = _getSpellName(id);
+    const result = _getSpellNameLang(id);
 
     if (result[LANG.value])
         return result[LANG.value];

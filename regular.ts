@@ -2,10 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { LOCALE } from '../locales';
-import { initial_page } from './home_page';
+import { home_page } from './home_page';
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
-    ...initial_page,
+    ...home_page,
     /** Hero section */
     [LOCALE.KUMIHU_NAME]: {
         en: 'Kumihu',

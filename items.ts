@@ -1092,15 +1092,18 @@ const getIronRodDescription = () => {
     return text[LANG.value] ? text[LANG.value] : text['en'];
 };
 
-export const getLocaleItemDescription = (itemId: number): string => {
+export const getLocaleItemDescription = (itemId: number): {
+    desc: string
+    name: string
+} => {
     const result = _getLocaleItemDescription(itemId);
-    if (!result.desc)
-        return '';
+    let description = '';
+    if (result.desc) {
+        description = result.desc[LANG.value] ? result.desc[LANG.value] : result.desc['en'];
+    }
 
-    return result.desc[LANG.value] ? result.desc[LANG.value] : result.desc['en'];
-};
-
-export const getLocaleItemName = (itemId: number): string => {
-    const result = _getLocaleItemDescription(itemId);
-    return result.name[LANG.value] ? result.name[LANG.value] : result.name['en'];
+    return {
+        desc: description,
+        name: result.name[LANG.value] ? result.name[LANG.value] : result.name['en']
+    };
 };

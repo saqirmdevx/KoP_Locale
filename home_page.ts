@@ -3,7 +3,7 @@
 // @ts-nocheck
 import { LOCALE } from 'lang/locales';
 
-export const initial_page: { [key in LOCALE]?: { [key in string]: string } } = {
+export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     [LOCALE.LOGIN_AS_GUEST]: {
         en: 'Login as guest',
         ru: 'Войти как гость',
