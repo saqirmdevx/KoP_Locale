@@ -1182,8 +1182,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Kritický zásah',
         zh: '爆擊機率',
     },
-    [LOCALE.COOLDOWN_REDUCTION]: {
-        en: 'Cooldown Reduction',
+    [LOCALE.ABILITY_HASTE]: {
+        en: 'Ability haste',
         ru: 'Сокращение перезарядки',
         br: 'Redução de recarga',
         cz: 'Redukce cooldownu',

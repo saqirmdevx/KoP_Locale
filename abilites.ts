@@ -7,7 +7,15 @@ import { getDamage, IAbilityTooltipsDataFinal } from '../abilityLangData';
 // @ts-ignore
 import { LANG } from 'lang/lang';
 
-const _getSpellDescriptionLang = (id: Shared.SpellList, { damage, abilityPower, health, cooldownReduction, level, talents, hasTalent }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
+const _getSpellDescriptionLang = (id: Shared.SpellList, 
+    { 
+        damage, 
+        abilityPower, 
+        health, 
+        level, 
+        talents, 
+        hasTalent 
+    }: IAbilityTooltipsDataFinal, type: Shared.DamageTypes): { [key in string]: string } => {
     switch (id) {
     /** Kumihu  */
     case Shared.SpellList.KUMIHU_AUTOATTACK: {
