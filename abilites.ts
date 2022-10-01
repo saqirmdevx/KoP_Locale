@@ -1,7 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { toSec } from './misc';
 // @ts-ignore
-import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
+import {
+    Shared,
+    BelleAbilityData,
+    ThomasAbilityData,
+    ICeatAbilityData,
+    KumihuAbilityData,
+    SparrowAbilityData,
+    VeilAbilityData,
+    FlinAbilityData,
+    KiraAbilityData,
+    HazelAbilityData,
+    ArelAbilityData,
+    AlvarAbilityData,
+    FoxyAbilityData,
+} from 'shared';
 // @ts-ignore
 import { getDamage, IAbilityTooltipsDataFinal } from '../abilityLangData';
 // @ts-ignore
@@ -518,6 +532,41 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
             ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} физического урона и отталкивая врага в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
             cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
             zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
+        };
+    }
+
+    /** Foxy  */
+    case Shared.SpellList.FOXY_ATTACK: {
+        const baseDamage = getDamage(FoxyAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
+    
+        return {
+            en: `Foxy fires a bullet from his gun dealing ${baseDamage} physical damage.`,
+            cz: `Foxy vystřelí kulku ze své zbraně a způsobí ${baseDamage} fyzické poškození.`
+        };
+    }
+    
+    case Shared.SpellList.FOXY_RAPID_FIRE: {
+        const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage);
+    
+        return {
+            en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Movement stops the channeling </i>`,
+            cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Pohyb zastaví channeling </i>`
+        };
+    }
+
+    case Shared.SpellList.FOXY_GRANADE: {
+        const baseDamage = getDamage(
+            FoxyAbilityData.GRANADE_DAMAGE_MODIFIER * damage,
+            Shared.DamageTypes.NORMAL,
+            FoxyAbilityData.GRANADE_DAMAGE_BASE + FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+            'AttackDamage'
+        );
+    
+        return {
+            en: `Foxy throws a granade that will bounce once on the floor and then explode, dealing ${baseDamage} physical damage. <br/>` +
+                'When the grenade explodes, it will knockback units. The knockback is based on the distance between the unit and grenade.',
+            cz: `Foxy hodí granát, který se jednou odrazí na podlaze a pak exploduje a způsobí ${baseDamage} fyzické poškození. <br/>` +
+                'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
         };
     }
 

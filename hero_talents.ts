@@ -1,6 +1,20 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
+import {
+    Shared,
+    BelleAbilityData,
+    ThomasAbilityData,
+    ICeatAbilityData,
+    KumihuAbilityData,
+    SparrowAbilityData,
+    VeilAbilityData,
+    FlinAbilityData,
+    KiraAbilityData,
+    HazelAbilityData,
+    ArelAbilityData,
+    AlvarAbilityData,
+    FoxyAbilityData,
+} from 'shared';
 import { toSecRaw, toSec, fixed } from './misc';
 
 interface ITalentProps {
@@ -367,6 +381,30 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 title: {
                     en: '+1 Lightning Shock target',
                     ru: 'Удар молнии поражает +1 дополнительную цель',
+                },
+            }
+        };
+
+    case Shared.HEROES.FOXY:
+        return {
+            tier1_left: {
+                title: {
+                    en: `Rapid fire duration +${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)}`,
+                },
+            },
+            tier1_right: {
+                title: {
+                    en: `Grande radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
+                },
+            },
+            tier2_left: {
+                title: {
+                    en: 'Rapid fire cc immunity',
+                },
+            },
+            tier2_right: {
+                title: {
+                    en: `Granade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
                 },
             }
         };
