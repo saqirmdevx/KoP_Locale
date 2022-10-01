@@ -549,6 +549,7 @@ const _getSpellNameLang = (id: Shared.SpellList): { [key in string]: string } =>
     case Shared.SpellList.THOMAS_AUTOATTACK:
     case Shared.SpellList.AREL_AUTOATTACK:
     case Shared.SpellList.ALVAR_ATTACK:
+    case Shared.SpellList.FOXY_ATTACK:
         return {
             en: 'Attack',
             ru: 'Атака',
@@ -762,6 +763,17 @@ const _getSpellNameLang = (id: Shared.SpellList): { [key in string]: string } =>
             zh: '天堂之踢',
         };
 
+    case Shared.SpellList.FOXY_GRANADE:
+        return {
+            en: 'Explosive granade',
+            cz: 'Výbušný granát',
+        };
+    
+    case Shared.SpellList.FOXY_RAPID_FIRE:
+        return {
+            en: 'Rapid fire',
+            cz: 'Příval kulek',
+        };
         /** Default */
     case Shared.SpellList.RECALL:
         return {
