@@ -15,6 +15,7 @@ import {
     ArelAbilityData,
     AlvarAbilityData,
     FoxyAbilityData,
+// @ts-ignore
 } from 'shared';
 // @ts-ignore
 import { getDamage, IAbilityTooltipsDataFinal } from '../abilityLangData';
