@@ -1,6 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  BelleAbilityData, ThomasAbilityData, ICeatAbilityData, KumihuAbilityData, SparrowAbilityData, VeilAbilityData, FlinAbilityData, KiraAbilityData, HazelAbilityData, ArelAbilityData, AlvarAbilityData } from 'shared';
+import {
+    Shared,
+    BelleAbilityData,
+    ThomasAbilityData,
+    ICeatAbilityData,
+    KumihuAbilityData,
+    SparrowAbilityData,
+    VeilAbilityData,
+    FlinAbilityData,
+    KiraAbilityData,
+    HazelAbilityData,
+    ArelAbilityData,
+    AlvarAbilityData,
+    FoxyAbilityData,
+//@ts-ignore
+} from 'shared';
 import { toSecRaw, toSec, fixed } from './misc';
 
 interface ITalentProps {
@@ -27,8 +42,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Dash cooldown ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_DASH_COOLDOWN)}`,
-                    ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_DASH_COOLDOWN)} сек. перезарядки Тайного рывка`,
+                    en: `Charm duration +${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION)}`,
                 },
             },
             tier2_left: {
@@ -125,7 +139,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Astral blades cooldown ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}`,
+                    en: `Astral blades cooldown ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
                     ru: `${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)} сек. перезарядки Астральных клинков`,
                 },
             },
@@ -137,14 +151,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier2_right: {
                 title: {
-                    en: 'Astral steps apply void bomb',
-                    ru: 'Астральный шаг накладывает на задетые цели Бомбу пустоты',
+                    en: 'Fused astral step',
                 },
                 description: {
-                    en: 'Passing through an enemy unit during <b> Astral Step</b> will apply <b> Void Bomb</b>. <br/>'+
-						`Dealing ${damage}% magical area damage after ${toSec(VeilAbilityData.VOID_BOMB_DURATION)}`,
-                    ru: 'Попадание по вражеским целям <b> Астральным шагом</b> наложит на них <b> Бомбу пустоты</b>. <br/>'+
-						`Бомба пустоты наносит ${damage} магического урона по области спустя ${toSec(VeilAbilityData.VOID_BOMB_DURATION)}`
+                    en: `Reduce cooldown of Astral Step by ${toSecRaw(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)}s \n` +
+                        'With enhanced state no longer requires to touch enemy hero to reset cooldown',
                 }
             }
         };
@@ -160,8 +171,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: 'Undispelable Prickly Vine',
-                    ru: 'Попадание Колючей лозой нельзя рассеять',
+                    en: `Floral Ambush slow -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`
                 },
             },
             tier2_left: {
@@ -181,21 +191,21 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         return {
             tier1_left: {
                 title: {
-                    en: `Marksmanship +${FlinAbilityData.TALENT_T1_LEFT_MARKSMANSHIP_ATTACKSPEED * 100}% atkspeed`,
-                    ru: `+${FlinAbilityData.TALENT_T1_LEFT_MARKSMANSHIP_ATTACKSPEED * 100}% к скорости атаки во время действия Меткой стрельбы`,
+                    en: `Attack range +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}`,
                 }
             },
             tier1_right: {
                 title: {
-                    en: `Precise shot knockback +${toSecRaw(FlinAbilityData.TALENT_T1_RIGHT_PRECISESHOT_KNOCKBACK)}s`,
-                    ru: `+${toSecRaw(FlinAbilityData.TALENT_T1_RIGHT_PRECISESHOT_KNOCKBACK)} сек. к отбрасыванию от Точного выстрела`,
+                    en: `Marksmanship +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} stacks`,
                 },
             },
             tier2_left: {
                 title: {
-                    en: 'Precise shot global range',
-                    ru: 'Неограниченная дальность полёта Точного выстрела',
+                    en: 'Precise shot apply attack',
                 },
+                description: {
+                    en: `Precise shot apply additional ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% physical damage`
+                }
             },
             tier2_right: {
                 title: {
@@ -217,7 +227,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `+${ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE} к урону от Теневой моркови`,
                 }
             },
-            tier1_right: {
+            tier2_left: {
                 title: {
                     en: 'Shadow carrot silence',
                     ru: 'Теневая морковь накладывает немоту',
@@ -227,15 +237,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Если морковь прикреплена к вражескому герою, он получит немоту пока морковь не исчезнет.'
                 }
             },
-            tier2_left: {
+            tier1_right: {
                 title: {
-                    en: `Shurriken Toss cooldown ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_SHURRIKEN_TOSS_COOLDOWN)}`,
-                    ru: `${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_SHURRIKEN_TOSS_COOLDOWN)} сек. перезарядки Броска сюрикена`,
+                    en: `Shuriken Toss cooldown ${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)}`,
+                    ru: `${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)} сек. перезарядки Броска сюрикена`,
                 },
             },
             tier2_right: {
                 title: {
-                    en: `Shurriken carrot stun ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
+                    en: `Shuriken carrot stun ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
                     ru: `Теневая морковь при повторной активации оглушает врага на ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)} сек.`,
                 },
             }
@@ -245,8 +255,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         return {
             tier1_left: {
                 title: {
-                    en: `Mark/stack duration +${toSecRaw(AlvarAbilityData.TALENT_T1_LEFT_STACK_DURATION)}s`,
-                    ru: `+${toSecRaw(AlvarAbilityData.TALENT_T1_LEFT_STACK_DURATION)} сек. к длительности зарядов/метки`,
+                    en: `Mark damage +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
                 }
             },
             tier1_right: {
@@ -255,7 +264,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Усиливающий Яростный удар',
                 },
                 description: {
-                    en: `Everytime you use <b>Furious Kick</b> you gain ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} move speed and ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% attack speed for ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`,
+                    en: `<b>Furious Kick</b> boost morale of all nearby units and increase ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} move speed and ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% attack speed for ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`,
                     ru: `Каждый раз при применении <b>Яростного удара</b> вы получаете ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} скорости передвижения и ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% скорости атаки на ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`
                 }
             },
@@ -277,8 +286,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         return {
             tier1_left: {
                 title: {
-                    en: `Tumble distance +${ArelAbilityData.TALENT_T1_LEFT_TUMBLE_DISTANCE}`,
-                    ru: `+${ArelAbilityData.TALENT_T1_LEFT_TUMBLE_DISTANCE} к дальности Кувырка`,
+                    en: `Ticking bomb +${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% trigger damage`,
                 }
             },
             tier1_right: {
@@ -347,14 +355,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Удар молнии накладывает Дисперсию',
                 },
                 description: {
-                    en: 'Lightning Shock apply dispersion on enemey targets, reduce all healing done by 60%',
-                    ru: 'Удар молнии накладывает Дисперсию на вражеские цели, которая снижает получаемое ими исцеление на 60%'
+                    en: 'Lightning Shock apply dispersion on enemey targets, reduce all healing done by 35%',
+                    ru: 'Удар молнии накладывает Дисперсию на вражеские цели, которая снижает получаемое ими исцеление на 35%'
                 }
             },
             tier1_right: {
                 title: {
-                    en: `Void phantasm cooldown ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_VOID_PHANTASM_COOLDOWN)}`,
-                    ru: `${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_VOID_PHANTASM_COOLDOWN)} сек. перезарядки Фантазма пустоты`,
+                    en: `Rain of sparks damage +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
                 },
             },
             tier2_left: {
@@ -367,6 +374,30 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 title: {
                     en: '+1 Lightning Shock target',
                     ru: 'Удар молнии поражает +1 дополнительную цель',
+                },
+            }
+        };
+
+    case Shared.HEROES.FOXY:
+        return {
+            tier1_left: {
+                title: {
+                    en: `Rapid fire duration +${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)}`,
+                },
+            },
+            tier1_right: {
+                title: {
+                    en: `Grenade radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
+                },
+            },
+            tier2_left: {
+                title: {
+                    en: 'Rapid fire cc immunity',
+                },
+            },
+            tier2_right: {
+                title: {
+                    en: `Grenade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
                 },
             }
         };
@@ -402,7 +433,7 @@ export const getDamage = (damage: number, type: Shared.DamageTypes = Shared.Dama
     baseDamage = fixed(baseDamage, 1);
 
     /** dont show % in game */
-    return `<span class=${type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')} </span>`;
+    return `<span class=${type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')}</span>`;
 };
 
 

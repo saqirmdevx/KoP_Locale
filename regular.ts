@@ -82,6 +82,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '阿爾瓦',
         br: 'Alvar',
     },
+    [LOCALE.FOXY_NAME]: {
+        en: 'Foxy',
+    },
+    [LOCALE.UNK_DESCRIPTION]: {
+        en: 'Will be added soon!',
+        ru: 'Скоро будет добавлено!',
+        br: 'Será adicionado em breve!',
+        cz: 'Brzy bude přidáno!',
+        zh: '即將加入，敬請期待！',
+    },
+
     [LOCALE.KUMIHU_DESCRIPTION]: {
         en: 'Kumihu is an evil spirit in the guise of a beautiful woman who is always hungry for new souls. But be careful: in the blink of an eye she can show her true form, destroying any chance to survive, since the Soul Sphere will catch even the most tenacious fools.',
         ru: 'Кумиху - злой дух, принявший облик прекрасной женщины, жаждущий новых душ. Но будьте осторожны: в мгновение ока она может показать свою истинную форму, уничтожив любой шанс на выживание, поскольку Сфера души поймает даже самых упорных дураков.',
@@ -125,47 +136,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Она, — частичка древней расы сказочных существ, живущих в древних лесах, родилась с волшебным даром контроля над растениями, и никто из её вида прежде не имел этой способности. Она была потомственной повелительницей элементов и использовала свои знания о природе, чтобы исцелять нуждающихся. Обе стороны предпринимали попытки завербовать её, но они были тщетны. В то время как стражи опустили руки, отшельники предпринимали неоднократные попытки усилить её, пытаясь сделать частью своей армии. В конце концов культисты решили решить всё раз и навсегда и привели троих лидеров-отшельников: Флина, Кумиху и Кукловода, чтобы либо осквернить ее до конца, либо убить. Белла успешно победила Флина, и прежде чем поддаться очаровывающим заклинаниям Кумиху, она смогла бросить взрывной бутон прямо в лицо ведьме. Нити Кукловода, появившиеся из его пальцев, оплетали Беллу, и в конце концов она потеряла контроль над своим телом. Ей был отдан приказ возвращаться в лагерь отшельников. Светящиеся нити не давали ей и шанса хоть как-то дать отпор и победить главного демона, и она вынуждена была подчиниться. Отшельники многочисленными истязаниями превратили прежде жизнерадостную и отзывчивую личность Беллы в нечто бесчувственное и ненавистное. Может быть, когда-то какой-нибудь целитель-волшебник и сможет пробудить её от зловещего контроля, но пока Белла остаётся узницей своих глубоких уголков разума, где её \'я\' уже, возможно, никогда не станет прежним.',
         zh: '　　作為住在神木中古老種族的妖精生物，蓓蕾生來就擁有任何植物無法比擬的奧術操控能力。她曾是有血統的元素師，並使用她大自然的知識治癒傷患，然而兩派勢力試圖徵召她加入都失敗了。而當守衛者一方打消主意之時，隱士們還是反覆試圖將她納入成為他們的一己之力。最終，邪教徒們決定抹除這份威脅，而他們帶來了三位領袖：弗林、庫咪戶與傀儡師來玷汙或抹殺她。在屈服於庫咪戶的魅惑咒術前，蓓蕾擊敗了弗林，並竭盡她那最後支離破碎的意識將一顆豆莢扔向庫咪戶，在她臉上炸裂。當蓓蕾要重新起身時，她被傀儡師手上操控的細線給束縛住，身體不得動彈。她被迫走回隱士的營地，她奮力掙扎抵抗發光的絲線，但在強大惡魔的面前，她完全無法抗衡。成了隱士們的囊中之物後，蓓蕾不斷受到凌辱與侵犯，直到她原本的快樂與喜悅都被困在最深處的角落。此時，她誕生了另一個充滿仇恨的人格，她已經不再是原本的她了。或許某位奧術治癒師會跟隨而來，重新將原本的她喚醒，又或許她會永遠受困，成為了一名瘋狂的隱士。',
     },
-    [LOCALE.VEIL_DESCRIPTION]: {
-        en: 'Will be added soon!',
-        ru: 'Скоро будет добавлено!',
-        br: 'Será adicionado em breve!',
-        cz: 'Brzy bude přidáno!',
-        zh: '即將加入，敬請期待！',
-    },
 
-    [LOCALE.FLIN_DESCRIPTION]: {
-        en: 'Will be added soon!',
-        ru: 'Скоро будет добавлено!',
-        br: 'Será adicionado em breve!',
-        cz: 'Brzy bude přidáno!',
-        zh: '即將加入，敬請期待！',
-    },
     [LOCALE.KIRA_DESCRIPTION]: {
         en: 'As a young girl, Kira used to sit at the window of her home and watch the lightning. As she grew up, she began a hobby of chasing storm clouds, hoping to see flashes of electricity in the sky. The rain did not bother her, the wind could not deter her, only when she felt the true power of the storm did she stop. As Kira reached the highest peak of a mountain, she was struck by the thunder she chased. As she fell, she was found by a hermit and brought back to a hidden encampment watched over by a demonic vassal. She was forged into whatever they wanted her to be against any free will. They made her into an electromancer, to aid the dark forces. They did not expect her to fight back as she called forth fury from above. Most of the hermits were caught unprepared and annihilated while the demonic leader named Draklavain strode through the barrage and would have killed her if not for hunting party of guardians attracted by the chaos. As she left with them, she found a tome and with it became an important asset to the crusade against the demons, although some say the tome found her.',
         br: 'Ex-general do exército do rei. Agora professora da Escola Mágica de demonologia do reino de Eilys, Kira é uma renomada instrutora, possuindo o demônio relâmpago selado em seu livro, ela procura ensinar a seus alunos a melhor maneira de usar o poder dos selados.',
         ru: 'В юности Кира любила сидеть у окна своего дома и наблюдать за молниями, а повзрослев, увлеклась погоней за грозовыми тучами в надежде увидеть в небе вспышки молний. Дождь её совершенно не беспокоил, а ветер не мог удержать её порыв. Лишь только почувствовав истинную силу бури она смогла остановиться. Она и не заметила, как достигла самой высокой вершины горы. Гром, за которым она гналась, поразил её, из-за чего она сорвалась и упала, потеряв сознание, но чудом выжив. Её обнаружил отшельник и отнёс в скрытый лагерь под покровительством демонического вассала. Против её воли они провели тёмный ритуал,  превратив в электроманта, в надежде, что она поможет тёмным силам. Неожиданным стал для всех оказанный ею отпор: вызванная ярость с небес застала врасплох многих отшельников, стерев их с лица земли в одно мгновение. В это время, лидер демонов Драклавейн пробирался через заградительный огонь из вспышек молний в надежде уничтожить отступницу. К счастью, стражи, охотящиеся на силы хаоса нашли её и помогли сбежать, сокрыв от опасности. Во время побега Кира обнаружила старинную книгу на своём пути, которую она сумела использовать в дальнейшем походе против армии демонов. Поговаривают, что не она нашла книгу, а книга нашла её.',
         zh: '　　曾是年輕少女時，奇菈習慣坐在她家中的窗邊觀望閃電。長大後，追尋雷雲，期望能夠在空中看見閃電成為她的愛好，就連風雨也無法撼動她那蓬勃的心，直到她感受到暴風的真實之力後才會就此打住。當她爬向山頂的巔峰，她被她不斷追逐的閃電擊中，她沉寂後被一名隱士發現，並帶回了一個祕密營地交由惡魔附庸看守。違背了她的自由意志，他們想將她鍛造成任何他們想要的樣子，使她成為協助闇黑勢力的雷電巫師。但他們沒料想到她會召喚雷霆之怒展開逆襲，大部分的隱士因而毫無防備的被擒獲與殲滅，若不是此時此刻，惡魔首領「德拉克拉文」正為了被混沌勢力吸引而來的守衛狩獵隊而穿越槍林彈雨，他大概早已斷送她的性命。當她與守衛者們同行離開後，她發現了一本魔道書，而有了這本書，它將會成為與惡魔黨決一聖戰的重要資產。雖然有人是這麼說的：「是這本書找到了她。」',
-    },
-    [LOCALE.HAZEL_DESCRIPTION]: {
-        en: 'Will be added soon!',
-        ru: 'Скоро будет добавлено!',
-        br: 'Será adicionado em breve!',
-        cz: 'Brzy bude přidáno!',
-        zh: '即將加入，敬請期待！',
-    },
-    [LOCALE.AREL_DESCRIPTION]: {
-        en: 'Will be added soon!',
-        ru: 'Скоро будет добавлено!',
-        br: 'Será adicionado em breve!',
-        cz: 'Brzy bude přidáno!',
-        zh: '即將加入，敬請期待！',
-    },
-    [LOCALE.ALVAR_DESCRIPTION]: {
-        en: 'Will be added soon!',
-        ru: 'Скоро будет добавлено!',
-        br: 'Será adicionado em breve!',
-        cz: 'Brzy bude přidáno!',
-        zh: '即將加入，敬請期待！',
     },
 
     [LOCALE.DAMAGE_TYPE_NORMAL]: {
@@ -270,286 +246,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         br: 'Cuidado! Você é alvo de uma torre.',
         cz: 'Pozor! Byli jste zacílen věží! Ustupte!',
         zh: '小心！你已被城池鎖定目標！快逃！',
-    },
-
-    [LOCALE.TRAINING_WELCOME]: {
-        en: 'Welcome to Kingdom of Pixels!',
-        ru: 'Добро пожаловать в Kingdom of Pixels!',
-        br: 'Bem-vindo a Kingdom of Pixels!',
-        cz: 'Vítejte v království pixelů!',
-        zh: '歡迎來到像素王國！',
-    },
-
-    [LOCALE.TRAINING_GOAL_TARGET]: {
-        en:
-            'Your goal is to destroy the enemy\'s crystal! \n' +
-            'Only your minions can damage it! You cannot destroy it with your attacks!\n' +
-            'You need to push 4 minions in to win the game!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Ваша цель - уничтожить вражеский кристалл! \n' +
-            'Только Ваши миньоны могут нанести ему урон! Своими атаками его уничтожить не удастся!\n' +
-            'Вам надо привести к нему 4 союзных миньона, чтобы победить!' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Seu objetivo é destruir o Cristal na Base do inimigo! \n' +
-            'Apenas seus Minions podem danificá-la! Você não pode destruí-la com seus ataques!\n' +
-            'Você precisa levar 4 minions para ganhar o jogo!' +
-            '\n\n[Pressione espaço para continuar!]',
-        // minion = poskok in LoL, but i am going to call them pěšáci
-        cz:
-            'Vaším cílem je zničit nepřátelský krystal! \n' +
-            'Pouze vaši pěšáci ho mohou poškodit! Nelze jej zničit vašimi útoky!\n' +
-            'Abyste vyhráli hru, musíte udeřit čtyřmi pěšáky!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '你的目標是摧毀敵方水晶！\n' +
-            '只有你的小兵們可以造成傷害！你不能透過你的攻擊摧毀它！\n' +
-            '你需要推進四個小兵來獲得遊戲勝利！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_TOWER]: {
-        en:
-            'But FIRST, you must destroy the enemy tower!\n' +
-            'DO NOT ATTACK THE TOWER WITHOUT MINIONS! You need minions to tank the tower\'s damage! \n' +
-            'Be careful! Attacking an enemy hero while inside the tower\'s range makes it target you!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Но СНАЧАЛА Вы должны уничтожить вражескую башню!\n' +
-            'НЕ АТАКУЙТЕ БАШНЮ БЕЗ СОЮЗНЫХ МИНЬОНОВ! Вам они необходимы, чтобы заблокировать урон башни! \n' +
-            'Будьте осторожны! Вражеская башня выберет Вас целью, если Вы начнёте атаковать вражеского героя в её радиусе!' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Mas primeiro, você deve destruir a torre inimiga!\n' +
-            'NÃO ATAQUE A TORRE SEM MINIONS! Você precisa deles para controlar o dano da torre! \n' +
-            'Tome cuidado! Atacar um herói inimigo dentro do alcance da torre, faz com que ela atinja você!' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'Ale nejprve musíte zničit nepřátelskou věž!\n' +
-            'NEÚTOČTE NA VĚŽ BEZ PĚŠÁKŮ! K tankování poškození věže potřebujete pěšáky!\n' +
-            'Buďte opatrní! Když zaútočíte na nepřátelského hrdinu v dosahu věže, stanete se terčem vy!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '但首先，你必須摧毀敵方城池！\n' +
-            '不要在沒有小兵的情況下攻擊城池！你必須仰賴小兵來抵禦城池的傷害！\n' +
-            '小心！攻擊在城池內的敵方英雄會導致城池攻擊鎖定你！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_MINIONS]: {
-        en:
-            'Those are your minions, they spawn every 20 seconds from your crystal!\n' +
-            'Killing an enemy minion gives you additional gold!\n' +
-            'Use these minions to tank tower damage and destroy the enemy crystal\n' +
-            'Enemy minions can hurt you, so be careful of them also!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Это - ваши миньоны. Они появляются каждые 20 секунд!\n' +
-            'Вы получаете дополнительное золото, убивая вражеских миньонов!\n' +
-            'Используйте союзных миньонов, чтобы башня атаковала их, а также чтобы уничтожить вражеский кристалл\n' +
-            'Вражеские миньоны могут нанести вам урон, поэтому будьте бдительны!' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Esses são seus Minions, eles surgem a cada 20 segundos do seu cristal!\n' +
-            'Matar um Minion inimigo dá a você ouro adicional!\n' +
-            'Use esses Minions para segurar o dano da torre inimiga para você conseguir destrui-la.\n' +
-            'Minions inimigos podem te dar muito dano, então não tente matá-los sem ajuda.' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'To jsou tvoji pěšáci, líhnou se každých 20 vteřin krystalů!\n' +
-            'Zabitím nepřátelského pěšáka získáte další zlato!\n' +
-            'Použijte tyto pěšáky k poškození věže a zničení nepřátelského krystalu\n' +
-            'Nepřátelští pěšáci ti mohou ublížit, tak si na ně také dej pozor!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '這些是你的小兵們，每隔 20秒他們會從你的水晶生成！\n' +
-            '消滅一個敵方小兵給予你額外黃金！。\n' +
-            '運用那些小兵來抵禦城池傷害以及摧毀敵方水晶\n' +
-            '敵方小兵能對你造成傷害，所以也要小心他們！！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_GOLD_RUNE]: {
-        en:
-            'At the top, you can find the Gold Rune! \n' +
-            'Gold runes give you 50+ Gold as the game progresses!\n' +
-            'First gold rune spawns at 00:00 in-game time!\n' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Здесь Вы можете найти руну золота! \n' +
-            'Руна золота даёт вам 50+ золота по ходу игры!\n' +
-            'Первая руна золота появляется в 0:00 по времени матча!\n' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'No topo do mapa, você pode encontrar uma Runa amarela de Ouro! \n' +
-            'Ela da 50+ ouro a você conforme o jogo avança!\n' +
-            'A primeira runa de ouro surge às 00:00, hora do jogo!\n' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'Nahoře najdete Zlatou runu! \n' +
-            'Zlaté runy vám v průběhu hry dávají 50+ zlatých!\n' +
-            'První zlatá runa se objeví 00:00 herniho casu!\n' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '在頂端，你可以找到黃金符文！\n' +
-            '黃金符文給予你 50枚黃金，隨著遊戲進展而增加！\n' +
-            '第一個黃金符文於遊戲時間 0:00後生成！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_POWER_RUNE]: {
-        en:
-            'At the bottom, you can find the Power Runes! \n' +
-            'Here, you can find 4 different types of runes.\n' +
-            'First power rune spawns at 01:00, and consecutive ones at each minute-mark!\n' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Здесь Вы можете найти руну силы! \n' +
-            'Она может иметь одну из 4 вариаций, каждая из которых обладает собственным эффектом\n' +
-            'Первая руна силы появляется в 01:00, а каждая последующая - ровно в начале следующей минуты!\n' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Na parte inferior do mapa, há um altar com runas que contêm diferentes poderes. \n' +
-            'Você pode encontrar 4 tipos diferentes de runas, elas reapacerem depois de um minuto depois de pegas.\n' +
-            'Obtê-las pode ajudá-lo, mas sua duração é curta. A primeira runa de poder vai aparecer às 01:00.!\n' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'Ve spodní části můžete najít Runy Moci! \n' +
-            'Tady můžete najít 4 různé typy run.\n' +
-            'První runa moci se objevi v 01:00, a další po každé minutě!\n' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '在底部，你可以找到能量符文！\n' +
-            '在這裡，你可以找到四種不同類型的符文\n' +
-            '第一個能量符文於遊戲時間 1:00後生成，並持續性的在每分鐘提供！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_BUSHES]: {
-        en:
-            'You can hide from your enemies inside the bush! \n' +
-            'They wont see you here as you\'re hidden, so you can ambush your enemies from bushes!\n' +
-            'Hidden won\'t mean your invincible. Enemies can still hit you inside bushes, so take precaution!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Вы можете прятаться от противников в кустах! \n' +
-            'Они не увидят Вас там, поэтому Вы с лёгкостью можете устраивать засады!\n' +
-            'Но вы не получаете неуязвимость, прячась в кустах. Враги всё ещё могут попасть по вам, даже если вы находитесь там, поэтому будьте осторожны!\n' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Você pode se esconder de seus inimigos dentro de arbustos! \n' +
-            'Você não pode ser visto por inimigos dentro de arbustos, então você pode fazer armadilhas!\n' +
-            'Mas não significa que você fica invencível. Os inimigos ainda podem te atingir dentro de deles.' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'Můžeš se schovat před svými nepřáteli v keři! \n' +
-            'Tady tě neuvidí, protože jsi schovaný, takže můžeš přepadnout své nepřátele ze zálohy!\n' +
-            'Skrytý neznamená, že jste nepřemožitelní. Nepřátelé vás mohou stále zasáhnout uvnitř křoví, takže buďte opatrní!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '你可以躲在灌木叢中從敵方視線隱藏起來！\n' +
-            '當你躲藏時對方看不見你，所以你可以從灌木叢中伏擊！\n' +
-            '躲藏不代表你無敵，敵方攻擊依然可以打進灌木叢，所以請做好預防！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_ITEMS]: {
-        en:
-            'Control your mouse to buy items\n' +
-            'Choose your items wisely! If you don\'t want the item, you can right-click and sell the item.\n' +
-            'Selling an item 5 seconds after buying it will only refund 50% of its value!\n' +
-            'Several items (Activable) can be used with the [1, 2, 3, 4, 5] keybinds !\n' +
-            'REMEMBER! You can only buy inside your base!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Используйте Вашу мышь для покупки предметов! Наведите на пустой слот, а затем ПКМ по желаемому предмету для покупки!\n' +
-            'Покупайте предметы с умом! Вы можете нажать правой кнопкой мыши для продажи предмета.\n' +
-            'Продажа предмета по истечению 5 секунд после покупки возвратит всего лишь 50% от изначальной стоимости!\n' +
-            'Активные предметы можно использовать, нажав клавиши [1, 2, 3, 4, 5], в соответствии с номером слота!\n' +
-            'ЗАПОМНИТЕ! Вы можете покупать предметы только находясь на своей базе!' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Use seu mouse para comprar itens, escolha seus itens com sabedoria!\n' +
-            'Dependendo do item que escolher, poderá mudar sua forma de jogar.\n' +
-            'Vender um item 5 segundos depois de comprá-lo, reembolsará apenas 50% do seu valor!\n' +
-            'Vários itens (ativáveis) podem ser usados ​​com os números [1, 2, 3, 4, 5] em seu teclado!\n' +
-            'LEMBRE-SE! Você só pode comprar itens dentro da sua base!' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'K nákupu předmětu použijte myš\n' +
-            'Vybírejte své předměty moudře! Pokud jej nechcete, můžete kliknout pravým tlačítkem u myši a prodat.\n' +
-            'Prodáte-li předmět 5 sekund po jeho zakoupení, vrátí se vam pouze 50 % jeho hodnoty!\n' +
-            'S klávesovými zkratkami [1, 2, 3, 4, 5] lze použít některé (Aktivovatelné) předměty!\n' +
-            'PAMATUJTE! Nakupovat můžete pouze ve své základne!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '操控你的滑鼠購買物品\n' +
-            '謹慎選擇物品！如果你不想要這物品，你可以按右鍵售出。\n' +
-            '若在五秒後售出物品，只能退還50%的金額\n' +
-            '有許多物品（可發動）可以按[1、2、3、4、5]鍵發動效果！！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_ABILITES]: {
-        en:
-            'At the bottom you can see your hero\'s abilites!\n' +
-            '[J] [K] [L] are the keybinds for your attacks / abilities\n' +
-            '[B] is Recall to teleport back to your base! It will take 5 seconds to finish the recall before you teleport.\n' +
-            'You can hover your cursor over the abilities to see tooltips for more info!' +
-            '\n\n[Press space to continue!]',
-        ru:
-            'Внизу Вы можете увидеть способности своего героя\n' +
-            '[J] [K] [L] - горячие клавиши для использования\n' +
-            '[B] - возвращение на базу! Возвращение занимает 5 секунд, прежде чем вы телепортируетесь.\n' +
-            'Вы можете навести на любую из способностей, чтобы раскрыть её описание!' +
-            '\n\n[Нажмите пробел для продолжения!]',
-        br:
-            'Na parte inferior, você pode ver as habilidades do seu personagem!\n' +
-            '[J] [K] [L] são os atalhos de teclado para seus ataques / habilidades,\n' +
-            '[B] é o Retorno, Você se teletransportar de volta para sua base! levará 5 segundos antes de você se teletransportar.\n' +
-            'Você pode passar o cursor sobre as habilidades para ver dicas e obter mais informações!' +
-            '\n\n[Pressione espaço para continuar!]',
-        cz:
-            'Ve spodní části okna vidíš schopnosti tvého hrdiny!\n' +
-            '[J] [K] [L] jsou klávesy pro útoky / schopnosti\n' +
-            '[B] je Odvolání pro teleportování zpět do vaši základny! Při použití bude trvat 5 vteřin, než se teleportujete.\n' +
-            'Můžete najet kurzorem na schopnosti a zobrazit popisky pro více informací!' +
-            '\n\n[Pokračujte stisknutím mezerníku!]',
-        zh:
-            '在底部你可以看見你的英雄技能！\n' +
-            '[J]、[K]、[L] 鍵是你的技能發動鍵\n' +
-            '[B] 鍵用來將你召回基地！在回到基地前需要花費五秒時間完成傳送作業\n' +
-            '你可以移動游標來觀看技能詳細資訊！\n' +
-            '\n\n按空白鍵以繼續！',
-    },
-
-    [LOCALE.TRAINING_PLAY]: {
-        en:
-            'Your objective now is to defeat the enemy bot! \n' +
-            'Use the A and D keys to move left or right\n' +
-            'Use W to JUMP and S to DROP DOWN from a platform\n' +
-            'Good luck and have fun !',
-        ru:
-            'Теперь Вы должны одолеть вражеского бота! \n' +
-            'Используйте клавиши A и D для движения влево/вправо\n' +
-            'Используйте W для прыжка и S для спуска вниз\n' +
-            'Удачи, герой! Повеселитесь как следует!',
-        br:
-            'Seu objetivo agora é derrotar o bot inimigo! (Kumihu) \n' +
-            'Use as teclas A e D para mover para a ESQUERDA ou DIREITA;\n' +
-            'Use W para PULAR e S para DESCER de uma plataforma;\n' +
-            'Boa sorte e divirta-se!',
-        cz:
-            'Vaším cílem je nyní porazit nepřátelského bota! \n' +
-            'K pohybu doleva nebo doprava použijte klávesy A a D\n' +
-            'Pomocí klaves W skočíš a S sestoupíš z platformy\n' +
-            'Hodně štěstí a bav se !',
-        zh:
-            '你現在的目標是擊敗敵方電腦！\n' +
-            '使用A、D鍵來左右移動\n' +
-            '使用 W 鍵跳躍、S鍵從平台降落\n' +
-            '祝你好運，遊玩愉快！',
     },
 
     [LOCALE.LOGOUT]: {
@@ -1183,8 +879,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Kritický zásah',
         zh: '爆擊機率',
     },
-    [LOCALE.COOLDOWN_REDUCTION]: {
-        en: 'Cooldown Reduction',
+    [LOCALE.ABILITY_HASTE]: {
+        en: 'Ability haste',
         ru: 'Сокращение перезарядки',
         br: 'Redução de recarga',
         cz: 'Redukce cooldownu',
