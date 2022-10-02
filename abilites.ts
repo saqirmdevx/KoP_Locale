@@ -561,6 +561,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
     
         return {
             en: `Foxy fires a bullet from his gun dealing ${baseDamage} physical damage.`,
+            ru: `Фокси выпускает пулю из своего оружия, нанося ${baseDamage} физического урона.`,
             cz: `Foxy vystřelí kulku ze své zbraně a způsobí ${baseDamage} fyzické poškození.`
         };
     }
@@ -570,6 +571,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
     
         return {
             en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Movement stops the channeling </i>`,
+            ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Передвижение отменяет подготовку </i>`,
             cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Pohyb zastaví channeling </i>`
         };
     }
@@ -585,6 +587,8 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
         return {
             en: `Foxy throws a grenade  that will bounce once on the floor and then explode, dealing ${baseDamage} physical damage. <br/>` +
                 'When the grenade explodes, it will knockback units. The knockback is based on the distance between the unit and grenade.',
+            ru: `Фокси бросает гранату, которая единожды отскакивает от земли и затем взрывается, нанося ${baseDamage} физического урона всем врагам вокруг. <br/>` +
+                'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.',    
             cz: `Foxy hodí granát, který se jednou odrazí na podlaze a pak exploduje a způsobí ${baseDamage} fyzické poškození. <br/>` +
                 'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
         };
@@ -835,12 +839,14 @@ const _getSpellNameLang = (id: Shared.SpellList): { [key in string]: string } =>
     case Shared.SpellList.FOXY_GRANADE:
         return {
             en: 'Explosive grenade',
+            ru: 'Взрывная граната',
             cz: 'Výbušný granát',
         };
     
     case Shared.SpellList.FOXY_RAPID_FIRE:
         return {
             en: 'Rapid fire',
+            ru: 'Беглый огонь',
             cz: 'Příval kulek',
         };
         /** Default */

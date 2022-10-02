@@ -84,6 +84,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.FOXY_NAME]: {
         en: 'Foxy',
+        ru: 'Фокси',
     },
     [LOCALE.UNK_DESCRIPTION]: {
         en: 'Will be added soon!',
@@ -1420,7 +1421,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'Filter of bad words',
         cz: 'Filtr špatných slov',
         br: 'Filtro de palavrões',
-        ru: 'Фильтр плохих слов',
+        ru: 'Фильтр брани',
         zh: '過濾不雅詞語',
     },
     [LOCALE.ST_AUDIO_BGMUSIC_VOLUME]: {

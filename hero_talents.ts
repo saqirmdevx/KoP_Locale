@@ -43,6 +43,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_right: {
                 title: {
                     en: `Charm duration +${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION)}`,
+                    ru: `+${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION)} сек. к длительности очарования`,
                 },
             },
             tier2_left: {
@@ -152,10 +153,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier2_right: {
                 title: {
                     en: 'Fused astral step',
+                    ru: 'Астральное мастерство',
                 },
                 description: {
                     en: `Reduce cooldown of Astral Step by ${toSecRaw(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)}s \n` +
                         'With enhanced state no longer requires to touch enemy hero to reset cooldown',
+                    ru: `Перезарядка Астрального шага снижается на ${toSecRaw(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)} сек. \n` +
+                        'Больше нет необходимости попадать по врагу усиленным Астральным шагом, чтобы сбросить его перезарядку',
                 }
             }
         };
@@ -171,7 +175,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Floral Ambush slow -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`
+                    en: `Floral Ambush slow -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`,
+                    ru: `Цветочная ловшка снижает скорость передвижения врагов на -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`
                 },
             },
             tier2_left: {
@@ -192,19 +197,23 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `Attack range +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}`,
+                    ru: `+${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE} дальности атаки`,
                 }
             },
             tier1_right: {
                 title: {
                     en: `Marksmanship +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} stacks`,
+                    ru: `+${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} зарядов Меткой стрельбы`,
                 },
             },
             tier2_left: {
                 title: {
                     en: 'Precise shot apply attack',
+                    ru: 'Бонус атаки для Точного выстрела',
                 },
                 description: {
-                    en: `Precise shot apply additional ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% physical damage`
+                    en: `Precise shot apply additional ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% physical damage`,
+                    ru: `Точный выстрел наносит дополнительно ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% физического урона`
                 }
             },
             tier2_right: {
@@ -256,6 +265,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `Mark damage +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
+                    ru: `+${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE} к урону метки`,
                 }
             },
             tier1_right: {
@@ -265,7 +275,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 },
                 description: {
                     en: `<b>Furious Kick</b> boost morale of all nearby units and increase ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} move speed and ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% attack speed for ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`,
-                    ru: `Каждый раз при применении <b>Яростного удара</b> вы получаете ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} скорости передвижения и ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% скорости атаки на ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`
+                    ru: `Каждый раз при применении <b>Яростного удара</b> вы и все союзники вокруг получаете ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS} скорости передвижения и ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS*100}% скорости атаки на ${toSec(AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION)}`
                 }
             },
             tier2_left: {
@@ -287,6 +297,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `Ticking bomb +${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% trigger damage`,
+                    ru: `+${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% к урону активированной Часовой бомбы`,
                 }
             },
             tier1_right: {
@@ -362,6 +373,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_right: {
                 title: {
                     en: `Rain of sparks damage +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
+                    ru: `+${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}% к урону Дождя искр`,
                 },
             },
             tier2_left: {
@@ -383,21 +395,25 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `Rapid fire duration +${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)}`,
+                    ru: `+${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)} к длительности Беглого огня`,
                 },
             },
             tier1_right: {
                 title: {
                     en: `Grenade radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
+                    ru: `+${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS} к радиусу Взрывной гранаты`,
                 },
             },
             tier2_left: {
                 title: {
                     en: 'Rapid fire cc immunity',
+                    ru: 'Беглый огонь даёт иммунитет к эффектам контроля',
                 },
             },
             tier2_right: {
                 title: {
                     en: `Grenade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
+                    ru: `Взрывная граната оглушает цели на ${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)} сек.`,
                 },
             }
         };
