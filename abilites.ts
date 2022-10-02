@@ -36,14 +36,17 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
     case Shared.SpellList.KUMIHU_AUTOATTACK: {
         const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage);
         const enh_damage = getDamage(KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower, Shared.DamageTypes.MAGICAL, KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1));
-
         const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage);
+        const duration = hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 0) ?
+            KumihuAbilityData.ENH_CHARM_DURATION + KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION :
+            KumihuAbilityData.ENH_CHARM_DURATION;
+        
         return {
-            en: `Kumihu fires 3 bullets. Each bullet deals ${basic_damage} physical damage <br /> Passive: After using Arcane Dash next Kumihu's basic attack will deal ${enh_damage} magic damage + ${enh_damage_with_talent} physical damage and apply Charm on target for ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-            ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} магического урона + ${enh_damage_with_talent} физического урона и наложит очарование на цель на ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}`,
-            cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození + ${enh_damage_with_talent} a očaruje protivnika na ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}` ,
-            br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico + ${enh_damage_with_talent} e encantando o inimigo por ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}.`,
-            zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(KumihuAbilityData.ENH_CHARM_DURATION)}魅惑狀態`, // Need update
+            en: `Kumihu fires 3 bullets. Each bullet deals ${basic_damage} physical damage <br /> Passive: After using Arcane Dash next Kumihu's basic attack will deal ${enh_damage} magic damage + ${enh_damage_with_talent} physical damage and apply Charm on target for ${toSec(duration)}`,
+            ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} физического урона <br /> Пассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} магического урона + ${enh_damage_with_talent} физического урона и наложит очарование на цель на ${toSec(duration)}`,
+            cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození <br /> Pasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození + ${enh_damage_with_talent} a očaruje protivnika na ${toSec(duration)}` ,
+            br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.<br /> <br /> <b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico + ${enh_damage_with_talent} e encantando o inimigo por ${toSec(duration)}.`,
+            zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 <br /> 被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(duration)}魅惑狀態`, // Need update
         };
     }
 
@@ -167,8 +170,12 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
         };
 
     case Shared.SpellList.BELLE_PRICKLY_VINE: {
-        const base_damage = getDamage(BelleAbilityData.PRICKLY_VINE_DAMAGE_MOD * abilityPower, type, BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE + (BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1)));
-        const attach_damage = getDamage(BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE_ATTACHED, type);
+        const base_damage = getDamage(
+            BelleAbilityData.PRICKLY_VINE_DAMAGE_MOD * abilityPower, 
+            type, 
+            BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE + (BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1))
+        );
+        const attach_damage = getDamage(0, type, BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE_ATTACHED);
 
         const stunDuration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? 
             toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION + BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS) :
@@ -353,7 +360,15 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
     }
 
     case Shared.SpellList.KIRA_RAIN_OF_SPARKS: {
-        const damage = getDamage(KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower, Shared.DamageTypes.MAGICAL, KiraAbilityData.VOID_RAIN_BASE_DAMAGE + (KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)));
+        let damageMod = 1;
+        if (hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 0)) {
+            damageMod = 1 + KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS;
+        }
+        const damage = getDamage(
+            KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower * damageMod, 
+            Shared.DamageTypes.MAGICAL, 
+            KiraAbilityData.VOID_RAIN_BASE_DAMAGE + (KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)) * damageMod
+        );
         
         return {
             en: `Kira summons 4 void missiles that rain down from above, each missile dealing ${damage} magic damage that pierces through enemies. 
@@ -464,30 +479,34 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
 
     case Shared.SpellList.AREL_TICKING_BOMB: {
         const baseDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage, Shared.DamageTypes.NORMAL, ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)));
-        const enhDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * 1.5, Shared.DamageTypes.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * 1.5);
+        const triggerMultiplier = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS : 1;
+        
+        const triggerDamage = getDamage(ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * triggerMultiplier, Shared.DamageTypes.NORMAL, (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + (ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1))) * triggerMultiplier);
         
         return {
             en: `Arel throws a bomb, if the bomb makes contact with an enemy, the bomb attachs to them and will explode in ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} dealing ${baseDamage} physical damage to all surrounding enemies.
-                <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${enhDamage} physical damage and stun carrier for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
+                <br />If the bomb is attached to an enemy and you shoot the enemy three times, the bomb will explode dealing ${triggerDamage} physical damage and stun carrier for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
-                <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${enhDamage} de dano normal e atordoará o portador por ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}.`,
+                <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${triggerDamage} de dano normal e atordoará o portador por ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}.`,
             ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, нанося ${baseDamage} физического урона всем ближайшим врагам.
-                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${enhDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
+                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${triggerDamage} физического урона, а также оглушит цель на ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
-                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${enhDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
+                <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${triggerDamage} normální poškození a omráči nepřítele na ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}`,
             zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於 ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}後爆炸，給予周圍所有敵方 ${baseDamage}點一般傷害。
-                <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予 ${enhDamage}點一般傷害並暈眩炸彈負載者 ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}。`,
+                <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予 ${triggerDamage}點一般傷害並暈眩炸彈負載者 ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}。`,
         };
     }
 
     /** Alvar  */
     case Shared.SpellList.ALVAR_ATTACK: {
         const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
-        const markDamage = getDamage(0, 0, AlvarAbilityData.MARK_DAMAGE);
+        const markDamage = getDamage(0, 0, 
+            hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ?
+                AlvarAbilityData.MARK_DAMAGE + AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE :
+                AlvarAbilityData.MARK_DAMAGE
+        );
 
-        const duration = hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 0) ? 
-            AlvarAbilityData.MARK_DURATION + AlvarAbilityData.TALENT_T1_LEFT_STACK_DURATION:
-            AlvarAbilityData.MARK_DURATION;
+        const duration = AlvarAbilityData.MARK_DURATION;
 
         return {
             en: `Alvar hits with his fist all targets in front of him and deals ${baseDamage} physical damage. <br /> 
