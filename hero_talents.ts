@@ -14,6 +14,7 @@ import {
     ArelAbilityData,
     AlvarAbilityData,
     FoxyAbilityData,
+//@ts-ignore
 } from 'shared';
 import { toSecRaw, toSec, fixed } from './misc';
 
