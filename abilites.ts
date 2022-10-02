@@ -583,7 +583,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
         );
     
         return {
-            en: `Foxy throws a granade that will bounce once on the floor and then explode, dealing ${baseDamage} physical damage. <br/>` +
+            en: `Foxy throws a grenade  that will bounce once on the floor and then explode, dealing ${baseDamage} physical damage. <br/>` +
                 'When the grenade explodes, it will knockback units. The knockback is based on the distance between the unit and grenade.',
             cz: `Foxy hodí granát, který se jednou odrazí na podlaze a pak exploduje a způsobí ${baseDamage} fyzické poškození. <br/>` +
                 'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
@@ -834,7 +834,7 @@ const _getSpellNameLang = (id: Shared.SpellList): { [key in string]: string } =>
 
     case Shared.SpellList.FOXY_GRANADE:
         return {
-            en: 'Explosive granade',
+            en: 'Explosive grenade',
             cz: 'Výbušný granát',
         };
     

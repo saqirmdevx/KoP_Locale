@@ -360,7 +360,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Rain of sparks damage +${getDamage(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100, Shared.DamageTypes.MAGICAL)}%`,
+                    en: `Rain of sparks damage +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
                 },
             },
             tier2_left: {
@@ -386,7 +386,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier1_right: {
                 title: {
-                    en: `Grande radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
+                    en: `Grenade radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
                 },
             },
             tier2_left: {
@@ -396,7 +396,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier2_right: {
                 title: {
-                    en: `Granade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
+                    en: `Grenade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
                 },
             }
         };
