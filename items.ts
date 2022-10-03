@@ -253,6 +253,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en: `UNIQUE: Amplify all healing and regeneration effects by ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%`,
+                ru: `УНИКАЛЬНО(Пассивно): Увеличивает эффективность входящего исцеления и эффектов регенерации на ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%`,
             }
         };
     case Shared.ItemList.Wizard_Shoes:
@@ -425,7 +426,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 br: `[Único]: Seus ataques normais diminuem a armadura inimiga em ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% por 4 segundos.
                         <br />
                         [Único]: Toda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos), você ganha ${ItemAbilityData.DEMON_SABRE_STACK_DMG} de dano (máximo ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS}).\n Todas os acúmulos são perdidas após a morte.`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую Броню на ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% на 4 сек. 
+                ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают вражескую Броню на ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% на 4 сек (складывается до 3 раз). 
                         <br />
                         УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает Силу атаки на ${ItemAbilityData.DEMON_SABRE_STACK_DMG} (Максимальная прибавка: ${ItemAbilityData.DEMON_SABRE_STACK_DMG * ItemAbilityData.DEMON_SABRE_MAX_STACKS} Силы атаки за 20 зарядов). Все заряды теряются после смерти.`,
                 cz: `JEDINEČNÉ: Tvé útoky snižují zbroj o ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% na 4 vteřiny
@@ -468,8 +469,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
     case Shared.ItemList.Magical_Bow:
         return {
             name: {
-                en: 'Bow of Lost Souls',
-                ru: 'Лук потерянных душ',
+                en: 'Magical Bow',
+                ru: 'Магический лук',
                 br: 'Arco das Almas perdidas',
                 fr: 'Arc magique',
                 zh: '魔法之弓',
@@ -889,6 +890,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en: `UNIQUE: Your gain bonus ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% attack speed for each 10% HP you are missing.`,
+                ru: `УНИКАЛЬНО(Пассивно): Вы получаете дополнительные ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% Скорости атаки за каждые потерянные 10% Здоровья.`,
             }
         };
 
