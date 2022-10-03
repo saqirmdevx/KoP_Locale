@@ -1587,6 +1587,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'Sentry ward',
         ru: 'Сторожевой тотем'
     },
-
+    [LOCALE.COOLDOWN_REDUCTION]: {
+        en: 'Cooldown reduction',
+        cz: 'Redukce cooldownu'
+    },
+    [LOCALE.PHYSICAL_RESISTANCE]: {
+        en: 'Normal damage resistance',
+        cz: 'Redukce normalního zraneni'
+    }
 };
 export default locale_data;

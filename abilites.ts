@@ -570,9 +570,9 @@ const _getSpellDescriptionLang = (id: Shared.SpellList,
         const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage);
     
         return {
-            en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Movement stops the channeling </i>`,
+            en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Affected by Attack speed. Movement stops the channeling </i>`,
             ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Передвижение отменяет подготовку </i>`,
-            cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Pohyb zastaví channeling </i>`
+            cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`
         };
     }
 
