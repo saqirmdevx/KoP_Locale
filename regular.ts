@@ -1604,6 +1604,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.PLAY_PAGE_PVP]: {
         en: 'PvP',
+    },
+    [LOCALE.UNKNOWN]: {
+        en: 'Unknown'
     }
 };
 export default locale_data;
