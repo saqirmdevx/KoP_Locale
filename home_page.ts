@@ -90,8 +90,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
         cz: ' - Odměna: zkušenosti a mince\n - 1 vs 1 a 2 vs 2'
     },
     [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
-        en: ' - Reward: experience and coins\n - 2 Players vs 2 Hard AI\n - 50% less experience and coins',
-        ru: ' - Награды: опыт и монеты\n - 2 игрока против 2 Сложных ботов\n - На 50% меньше получаемого опыта и монет',
-        cz: ' - Odměna: zkušenosti a mince\n - 2 hráči vs 2 tvrdá umělá inteligence\n - o 50 % méně zkušeností a mincí'
+        en: ' - Reward: experience and coins\n - 2 Players vs 2 Hard AI\n - 75% less experience and coins',
+        ru: ' - Награды: опыт и монеты\n - 2 игрока против 2 Сложных ботов\n - На 75% меньше получаемого опыта и монет',
+        cz: ' - Odměna: zkušenosti a mince\n - 2 hráči vs 2 tvrdá umělá inteligence\n - o 75 % méně zkušeností a mincí'
     }
 };

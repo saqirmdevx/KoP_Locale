@@ -1598,6 +1598,19 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'Physical damage resistance',
         ru: 'Сопротивление физическому урону',
         cz: 'Redukce normalního zraneni'
+    },
+    [LOCALE.PLAY_PAGE_LOBBIES]: {
+        en: 'Lobbies',
+        cz: 'Vlastní hra',
+    },
+    [LOCALE.PLAY_PAGE_COOP_VS_AI]: {
+        en: 'Co-op vs AI',
+    },
+    [LOCALE.PLAY_PAGE_PVP]: {
+        en: 'PvP',
+    },
+    [LOCALE.UNKNOWN]: {
+        en: 'Unknown'
     }
 };
 export default locale_data;
