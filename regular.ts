@@ -356,6 +356,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.BAN_HERO]: {
         en: 'Ban Hero',
+        ru: 'Заблокировать героя',
         br: 'Banir personagem',
         cz: 'Ban Hrdinu',
         zh: '禁掉英雄',
@@ -896,7 +897,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.MAGICAL_DEFENSE]: {
         en: 'Magic Resistance',
-        ru: 'Защита от магии',
+        ru: 'Сопротивление магии',
         br: 'Resistência mágica',
         cz: 'Protimagická obrana',
         zh: '魔法抗性',
@@ -1199,13 +1200,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.RANKED_MATCH]: {
         en: 'Ranked',
-        ru: 'Ранговые',
+        ru: 'Ранговая очередь',
         br: 'Lutas',
         cz: 'Hodnocení',
         zh: '爬分賽',
     },
     [LOCALE.NORMAL_MATCH]: {
         en: 'Unranked',
+        ru: 'Обычная очередь',
         cz: 'Nehodnocení',
     },
     [LOCALE.AI_MATCH]: {
@@ -1589,10 +1591,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
         en: 'Cooldown reduction',
+        ru: 'Сокращение перезарядки',
         cz: 'Redukce cooldownu'
     },
     [LOCALE.PHYSICAL_RESISTANCE]: {
-        en: 'Normal damage resistance',
+        en: 'Physical damage resistance',
+        ru: 'Сопротивление физическому урону',
         cz: 'Redukce normalního zraneni'
     },
     [LOCALE.PLAY_PAGE_LOBBIES]: {

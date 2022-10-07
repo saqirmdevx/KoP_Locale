@@ -228,7 +228,6 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
         const base_damage = getDamage(ThomasAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * abilityPower, type, ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1));
 
         return {
-
             en: `Thomas throws three carrot-like shurikens which deals ${base_damage} to all enemies on the way. They return to him after a short time dealing ${base_damage} to all enemies in the way.`,
             ru: `Томас бросает три морковоподобных сюрикена перед собой, которые наносят ${base_damage} всем врагам на своём пути. Они возвращаются к нему спустя небольшой промежуток времени, повторно нанося ${base_damage} всем врагам на своём пути.`,
             cz: `Thomas hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
@@ -578,7 +577,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
     
         return {
             en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage}. <br/> <i> Affected by Attack speed. Movement stops the channeling </i>`,
-            ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage}. <br/> <i> Передвижение отменяет подготовку </i>`,
+            ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage}. <br/> <i> Чем выше Скорость атаки, тем больше пуль будет выпущено. Передвижение отменяет подготовку. </i>`,
             cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage}. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`
         };
     }
