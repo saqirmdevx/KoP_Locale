@@ -550,10 +550,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '最後造成傷害',
     },
 
-    [LOCALE.POST_FANCY_POINTS]: {
-        en: 'Fancy points',
-        cz: 'Luxusní body',
-        ru: 'Очки влияния'
+    [LOCALE.POST_GRADE]: {
+        en: 'Grade',
+        cz: 'Hodnocení',
+        ru: 'Оценка',
     },
 
     [LOCALE.POST_TOTAL_NETWORTH]: {
