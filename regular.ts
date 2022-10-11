@@ -1387,6 +1387,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Таблица счёта',
         zh: '記分板',
     },
+    [LOCALE.AUOTBUY]: {
+        en: 'Auto-buy',
+        cz: 'Automatické nákupy',
+        br: 'Compra automática',
+        ru: 'Автопокупка',
+        zh: '自動購買',
+    },
     [LOCALE.VIDEO]: {
         en: 'Video',
         ru: 'Графика',
