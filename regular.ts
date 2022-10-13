@@ -1387,6 +1387,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Таблица счёта',
         zh: '記分板',
     },
+    [LOCALE.AUOTBUY]: {
+        en: 'Auto-buy',
+        cz: 'Automatické nákupy',
+        br: 'Compra automática',
+        ru: 'Автопокупка',
+        zh: '自動購買',
+    },
     [LOCALE.VIDEO]: {
         en: 'Video',
         ru: 'Графика',
@@ -1611,6 +1618,107 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.UNKNOWN]: {
         en: 'Unknown'
-    }
+    },
+    [LOCALE.CHAT_SYSTEM_WELCOME]: {
+        en: 'Player {} has joined the game!',
+        cz: 'Hráč {} se připojil do hry!',
+        ru: 'Игрок {} присоединился к игре!'
+    },
+    [LOCALE.CHAT_SYSTEM_SPECTATE]: {
+        en: 'Specators: {}',
+        cz: 'Diváci: {}',
+        ru: 'Зрители: {}'
+    },
+    [LOCALE.CHAT_SYSTEM_PLAYER_LEFT]: {
+        en: ' has left the game!',
+        cz: ' opustil hru!',
+        ru: ' покинул игру!'
+    },
+    [LOCALE.CHAT_ADMIN_GET_PLAYER]: {
+        en: 'RESULT: {}',
+        cz: 'VÝSLEDEK: {}',
+        ru: 'РЕЗУЛЬТАТ: {}'
+    },
+    [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
+        en: 'ERROR: {}',
+        cz: 'CHYBA: {}',
+        ru: 'ОШИБКА: {}'
+    },
+    [LOCALE.CHAT_ADMIN_BAN_IP]: {
+        en: 'IP {} has been banned!',
+        cz: 'IP {} byla zabanována!',
+        ru: 'IP {} был забанен!'
+    },
+    [LOCALE.CHAT_ADMIN_UNBAN_IP]: {
+        en: 'IP {} has been unbanned!',
+        cz: 'IP {} byla odbanována!',
+        ru: 'IP {} был разбанен!'
+    },
+    [LOCALE.CHAT_ADMIN_BAN_PLAYER]: {
+        en: 'Player {} has been banned!',
+        cz: 'Hráč {} byl zabanován!',
+        ru: 'Игрок {} был забанен!'
+    },
+    [LOCALE.CHAT_ADMIN_UNBAN_PLAYER]: {
+        en: 'Player {} has been unbanned!',
+        cz: 'Hráč {} byl odbanován!',
+        ru: 'Игрок {} был разбанен!'
+    },
+    [LOCALE.CHAT_ADMIN_MUTE]: {
+        en: 'Player {} has been muted!',
+        cz: 'Hráč {} byl ztlumen!',
+        ru: 'Игрок {} был замучен!'
+    },
+    [LOCALE.CHAT_ADMIN_UNMUTE]: {
+        en: 'Player {} has been unmuted!',
+        cz: 'Hráč {} byl odtlumen!',
+        ru: 'Игрок {} был размучен!'
+    },
+    [LOCALE.CHAT_ADMIN_KICK]: {
+        en: 'Player {} has been kicked!',
+        cz: 'Hráč {} byl vyhozen!',
+        ru: 'Игрок {} был кикнут!'
+    },
+    [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
+        en: 'Could not get player "{}"!',
+        cz: 'Nepodařilo se najít hráče "{}"!',
+        ru: 'Не удалось найти игрока "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_BAN_IP_ERR]: {
+        en: 'Could not ban ip "{}"!',
+        cz: 'Nepodařilo se zabanovat ip "{}"!',
+        ru: 'Не удалось забанить ip "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_UNBAN_IP_ERR]: {
+        en: 'Could not unban ip "{}"!',
+        cz: 'Nepodařilo se odbanovat ip "{}"!',
+        ru: 'Не удалось разбанить ip "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_BAN_PLAYER_ERR]: {
+        en: 'Could not ban player "{}"!',
+        cz: 'Nepodařilo se zabanovat hráče "{}"!',
+        ru: 'Не удалось забанить игрока "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_UNBAN_PLAYER_ERR]: {
+        en: 'Could not unban player "{}"!',
+        cz: 'Nepodařilo se odbanovat hráče "{}"!',
+        ru: 'Не удалось разбанить игрока "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_MUTE_ERR]: {
+        en: 'Could not mute player "{}"!',
+        cz: 'Nepodařilo se ztlumit hráče "{}"!',
+        ru: 'Не удалось замутить игрока "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_UNMUTE_ERR]: {
+        en: 'Could not unmute player "{}"!',
+        cz: 'Nepodařilo se odtlumit hráče "{}"!',
+        ru: 'Не удалось размутить игрока "{}"!'
+    },
+    [LOCALE.CHAT_ADMIN_KICK_ERR]: {
+        en: 'Could not kick player "{}"!',
+        cz: 'Nepodařilo se vyhodit hráče "{}"!',
+        ru: 'Не удалось кикнуть игрока "{}"!'
+    },
+    
 };
 export default locale_data;
