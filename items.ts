@@ -135,7 +135,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '魯莽長弓',
             },
         };
-    case Shared.ItemList.Sentinel_longbow:
+    case Shared.ItemList.Sentinel_longbow: 
         return {
             name: {
                 en: 'Resilient longbow',
@@ -145,12 +145,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '強靭長弓',
             },
             desc: {
-                en: `UNIQUE - Your normal attack instantly kills the enemy when the enemy's health is below ${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%`,
-                ru: `УНИКАЛЬНО - ваш обычный удар мгновенно убивает врага, когда здоровье врага ниже ${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%`,
-                br: `ÚNICO - Seu ataque normal instantaneamente mata o inimigo quando a saúde do inimigo está abaixo de ${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%`,
-                fr: `UNIQUE - Votre attaque normale tue instantanément l'ennemi lorsque la santé de l'ennemi est inférieure à ${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%`,
-                zh: `独特-当敌人的生命值低于${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%时，你的普通攻击会瞬间杀死敌人`,
-                cz: `JEDINEČNÝ - Tvůj normální útok okamžitě zabije nepřítele, když je zdraví nepřítele pod ${(ItemAbilityData.RESILIENT_BOW_THRESHOLD * 100).toFixed(1)}%`
+                en: `[PASSIVE]: Increase range of bullets by ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} and speed by ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+                ru: `[Пассивно]: Увеличивает дальность полёта пуль на ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} и скорость на ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+                br: `[PASSIVO]: Aumenta o alcance das balas em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} e a velocidade em ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+                fr: `[Passif] : Augmente la portée des balles de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} et la vitesse de ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+                zh: `[被动]：增加${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}的子弹射程和${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%的子弹速度。`,
+                cz: `[Pasivní]: Zvýší dolet střelby o ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} a rychlost o ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`
             }
         };
     case Shared.ItemList.Enduring_Shield:
@@ -384,10 +384,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '尖刺錘',
             },
             desc: {
-                en: `[PASSIVE]: Enemies hit by your Basic Attacks takes ${ItemAbilityData.SPIKED_MACE_DAMAGE} bonus damage and will be infected by Griveous Wounds for ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} seconds. (Griveous Wounds reduce all healing and regeneration effects applied on target by 60%).`,
-                br: `[Único]: Seus ataques normais causam dano adicional ${ItemAbilityData.SPIKED_MACE_DAMAGE} dano normal e aplica um ferimento grave por ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}.\n (Ferimento grave reduz todos os efeitos de cura e regeneração do alvo em 60%).`,
-                ru: `УНИКАЛЬНО (Пассивно): Ваши атаки наносят дополнительно ${ItemAbilityData.SPIKED_MACE_DAMAGE} физического урона и накладывают на цель эффект Страшных ран на ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)} сек. (Страшные раны уменьшают всё входящее исцеление и эффекты регенерации на 60%).`,
-                zh: `特殊：你的一般攻擊給予額外 ${ItemAbilityData.SPIKED_MACE_DAMAGE}點一般傷害並給予 ${toSec(ItemAbilityData.SPIKED_MACE_DURATION)}創傷。(創傷降低目標物的所有治癒即回血效果 60%)。`
+                en: `UNIQUE - Your normal attack instantly kills the enemy when the enemy's health is below ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
+                ru: `УНИКАЛЬНО - ваш обычный удар мгновенно убивает врага, когда здоровье врага ниже ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
+                br: `ÚNICO - Seu ataque normal instantaneamente mata o inimigo quando a saúde do inimigo está abaixo de ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
+                fr: `UNIQUE - Votre attaque normale tue instantanément l'ennemi lorsque la santé de l'ennemi est inférieure à ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
+                zh: `独特-当敌人的生命值低于${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%时，你的普通攻击会瞬间杀死敌人`,
+                cz: `JEDINEČNÝ - Tvůj normální útok okamžitě zabije nepřítele, když je zdraví nepřítele pod ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`
             }
         };
     case Shared.ItemList.Plague_Ring:
