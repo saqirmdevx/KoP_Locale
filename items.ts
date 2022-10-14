@@ -412,12 +412,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '寒冰之劍',
             },
             desc: {
-                en: `[PASSIVE]: Enemies hit by your Basic Attacks have their Movement Speed reduced by ${ItemAbilityData.COLD_SWORD_SLOW} Movement Speed`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши атаки уменьшают Скорость передвижения цели на ${ItemAbilityData.COLD_SWORD_SLOW} на 1 сек.`,
-                br: `[Único]: Seus ataques reduzem o movimento do inimigo em ${ItemAbilityData.COLD_SWORD_SLOW} por 1 segundo.`,
-                cz: `JEDINEČNÉ: Normalní útoky zpomalují rýchlost pohybu u nepřátele o ${ItemAbilityData.COLD_SWORD_SLOW} `,
-                fr: `[UNIQUE]: Tes attaques J réduisent la vitesse de déplacement de ton ennemie de ${ItemAbilityData.COLD_SWORD_SLOW} points de vitesse pendant 1 seconde`,
-                zh: `特殊：你的一般攻擊降低敵方 1秒移動速度值 ${ItemAbilityData.COLD_SWORD_SLOW}`,
+                en: `[Passive]: Your basic attacks apply stacks on the enemy. Upon reaching ${ItemAbilityData.COLD_SWORD_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                ru: `[Пассивно]: Ваши основные атаки наносят отметки на врага. При достижении ${ItemAbilityData.COLD_SWORD_STACKS} отметок враг подвергается Морозному проклятию, замедляя их на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшая лечение/реген на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                br: `[Passiva]: Seus ataques básicos aplicam pilhas no inimigo. Após atingir ${ItemAbilityData.COLD_SWORD_STACKS} pilhas, o inimigo é infectado com a Maldição Gelada, diminuindo a velocidade em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzindo o cura/regeneração em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                fr: `[Passif] : Vos attaques de base appliquent des stacks à l'ennemi. Lorsqu'ils atteignent ${ItemAbilityData.COLD_SWORD_STACKS} stacks, l'ennemi est frappé de Malédiction glacée, ce qui le ralentit de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduit les soins/régénération de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                zh: `[被动]：你的基本攻击会给敌人造成一层层的伤害。当敌人达到${ItemAbilityData.COLD_SWORD_STACKS}层伤害后，敌人会被冰封诅咒减速${ItemAbilityData.FRIGIT_CURSE_SLOW}，并且减少${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%的治疗和回复能力。`,
+                cz: `[Pasivní]: Vaše základní útoky na protivníka přidávají štíty. Po dosažení ${ItemAbilityData.COLD_SWORD_STACKS} štítů protivník trpí Zimní prokletím, které zpomaluje ${ItemAbilityData.FRIGIT_CURSE_SLOW} a snižuje léčení/regeneraci o ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`
             }
         };
     case Shared.ItemList.Corrupted_Light_Slayer:
@@ -611,10 +611,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰結法棍',
             },
             desc: {
-                en: `[PASSIVE]: Your abilities slow enemies down by ${ItemAbilityData.FROZEN_STAFF_SLOW} Movement Speed and decrease Attack Speed by ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% for ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seconds`,
-                br: `[Único]: Suas habilidades reduzem a velocidade de movimento do inimigo em ${ItemAbilityData.FROZEN_STAFF_SLOW} e velocidade de ataque por ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% por ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} seg.\n`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши способности уменьшают Скорость передвижения цели на ${ItemAbilityData.FROZEN_STAFF_SLOW} и Скорость атаки на ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}% на ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)} сек.`,
-                zh: `特殊：你的技能降低 ${(ItemAbilityData.FROZEN_STAFF_DURATION / 1000).toFixed(1)}秒對手的移動速度值 ${ItemAbilityData.FROZEN_STAFF_SLOW}與 ${fixed((ItemAbilityData.FROZEN_STAFF_SLOW_ATTACK * 100), 1)}%攻擊速度`,
+                en: `[Passive]: Your abilities apply stacks on the enemy. Upon reaching ${ItemAbilityData.FROZEN_STAFF_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                ru: `[Пассивно]: Ваши способности накладывают стаки на врага. При достижении ${ItemAbilityData.FROZEN_STAFF_STACKS} стаков враг подвергается Проклятию мороза, замедляя их на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшая лечение/регенерацию на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                br: `[Passivo]: As suas habilidades aplicam pilhas no inimigo. Ao alcançar ${ItemAbilityData.FROZEN_STAFF_STACKS} pilhas, o inimigo é afetado pelo Mal de Gelo, lentificando-o em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzindo a cura/regeneração em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                fr: `[Passif] : Vos capacités appliquent des stacks ennemis. Une fois que ${ItemAbilityData.FROZEN_STAFF_STACKS} s'empilent, l'ennemi est affecté par la Malédiction de Givre, le ralentissant de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduisant les soins/la régénération de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
+                zh: `[被动]：你的技能会给敌人造成层数。当敌人达到 ${ItemAbilityData.FROZEN_STAFF_STACKS} 层时，将会被冰封诅咒，减速 ${ItemAbilityData.FRIGIT_CURSE_SLOW} 并且减少治疗/回复 ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%。`,
+                cz: `[Pasivní]: Vaše schopnosti působí na nepřátele vrstvami. Po dosažení ${ItemAbilityData.FROZEN_STAFF_STACKS} vrstev je nepřítel postižen Malédiction de Givre, zpomalujíc je o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a snižujíc léčení/regeneraci o ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
             }
         };
     case Shared.ItemList.Iron_Rod:
@@ -850,7 +852,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             }
         };
 
-    case Shared.ItemList.Frost_Ring:
+    case Shared.ItemList.Frost_Ring: {
         return {
             name: {
                 en: 'Ring of the Frozen Empress',
@@ -859,12 +861,15 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰霜手環',
             },
             desc: {
-                en: `[ACTIVE]: Fires out a frozen bolt that freezes the enemy hit for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} seconds and does ${ItemAbilityData.FROST_RING_DAMAGE} magic damage. (Cooldown: ${(ItemAbilityData.FROST_RING_COOLDOWN / 1000).toFixed(1)} seconds)`,
-                ru: `УНИКАЛЬНО(Активно): Выпускает ледяной снаряд, который замораживает цель при попадании на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} сек. и наносит ей ${ItemAbilityData.FROST_RING_DAMAGE} магического урона. (Перезарядка: ${(ItemAbilityData.FROST_RING_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                br: `[Ativo]: O anel cria um estilhaço de gelo que congela o alvo no impacto por ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} seg e dá ${ItemAbilityData.FROST_RING_DAMAGE} de dano.\n [Tempo de recarga: ${(ItemAbilityData.FROST_RING_COOLDOWN / 1000).toFixed(1)} seg.]`,
-                zh: `主動技：創造一個冰箭凍結目標物 ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}秒並給予 ${ItemAbilityData.FROST_RING_DAMAGE}點魔法傷害 - ${(ItemAbilityData.FROST_RING_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
+                en: `[Active]: Fire an icicle bolt that deals ${ItemAbilityData.FROST_RING_DAMAGE} magic damage. If the icicle bolt hits an enemy with Frigid Curse, root the target for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, otherwise it will apply Frigid Curse and reduce target's movement speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduce healing effect by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
+                ru: `[Активно]: Выпускает ледяной снаряд, наносящий ${ItemAbilityData.FROST_RING_DAMAGE} магического урона. Если снаряд попадает по врагу с Проклятием мороза, он опутывает цель на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, в противном случае на цель накладывается Проклятие мороза, снижающее скорость передвижения на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшающее эффект лечения на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
+                br: `[Ativo]: Atire um bolt de gelo que causará ${ItemAbilityData.FROST_RING_DAMAGE} de dano mágico. Se o bolt de gelo atingir um inimigo com a Maldição do Frio, ele raizará o alvo por ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, caso contrário, ele aplicará a Maldição do Frio e reduzirá a velocidade de movimento do alvo em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzirá o efeito de cura em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
+                fr: `[Actif] : Lance une flèche de glace qui inflige ${ItemAbilityData.FROST_RING_DAMAGE} dégâts magiques. Si la flèche de glace touche un ennemi avec la Malédiction de la glace, elle l'enracine pour ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, sinon elle lui appliquera la Malédiction de la glace et réduira sa vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduira son effet de soin de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
+                zh: `[有效]: 射出一枚冰锥，造成${ItemAbilityData.FROST_RING_DAMAGE}点魔法伤害。如果冰锥击中了受到冰封诅咒的敌人，则使目标根据${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}，否则它将施加冰封诅咒并减少目标的移动速度${ItemAbilityData.FRIGIT_CURSE_SLOW}并减少治疗效果${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`,
+                cz: `[Aktivní]: Vystřelí kouli ledu, která způsobí ${ItemAbilityData.FROST_RING_DAMAGE} magického poškození. Pokud kouli ledu trefí nepřítel s Prokletím mrazu, uvězní cíl na ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, jinak mu aplikuje Prokletí mrazu a sníží rychlost pohybu cíle o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a sníží efekt léčení o ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`
             }
         };
+    }
 
     case Shared.ItemList.Chronos_Ring:
         return {
@@ -929,10 +934,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰霜鎧甲',
             },
             desc: {
-                en: `[PASSIVE]: When you take damage, the attacker gets cursed, reducing ${ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION} Movement Speed and ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% Attack Speed.`,
-                ru: `УНИКАЛЬНО(Пассивно): При получении урона Скрость передвижения нападающего будет снижкна на ${ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION}, а Скорость атаки - на ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%`,
-                br: `[Único]: Quando você recebe dano, o inimigo que está te atacando será amaldiçoado e sua velocidade de movimento diminuirá em ${ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION} e velocidade de ataque por ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%.`,
-                zh: `特殊：當你受到一般傷害，攻擊者將受詛，降低移動速度值 ${ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION}與攻擊速度 ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%`,
+                en: `[PASSIVE]: Reduces the attack speed of all nearby enemies by ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% and all heals, regeneration and lifesteal by ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
+                ru: `[Пассивно]: Уменьшает скорость атаки всех ближайших врагов на ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% и все лечения, регенерацию и восстановление здоровья на ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
+                br: `[PASSIVO]: Reduz a velocidade de ataque de todos os inimigos próximos em ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% e todas as curas, regeneração e roubo de vida em ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
+                fr: `[PASSIF] : Réduit la vitesse d'attaque de tous les ennemis à proximité de ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% et toutes les soins, la régénération et le vol de vie de ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
+                zh: `[被动]：减少附近所有敌人的攻击速度${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%，所有治疗，再生和生命偷取${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%。`,
+                cz: `[PASIVNÍ]: Snižuje rychlost útoku všech blízkých nepřátel o ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% a všechny zotavení, regeneraci a životní sílu o ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`
             }
         };
 
