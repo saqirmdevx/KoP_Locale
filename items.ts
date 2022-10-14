@@ -1,12 +1,12 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { Shared,  fixed, ItemAbilityData } from 'shared';
+import { Shared, fixed, ItemAbilityData } from 'shared';
 //@ts-ignore
 import { calculateMagicDefense } from 'misc/constants';
 import { toSec } from './misc';
 //@ts-ignore
-import { LANG } from '../lang'; 
+import { LANG } from '../lang';
 
 const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: string }, desc?: { [key in string]: string } } => {
     switch (itemId) {
@@ -135,7 +135,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '魯莽長弓',
             },
         };
-    case Shared.ItemList.Sentinel_longbow: 
+    case Shared.ItemList.Sentinel_longbow:
         return {
             name: {
                 en: 'Resilient longbow',
@@ -399,8 +399,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Чумное кольцо',
             },
             desc: {
-                en: `[PASSIVE]: Your abilites apply Plague on enemies for ${toSec(ItemAbilityData.PLAGUE_RING_DURATION)}. (Plague reduces all healing and regeneration effects applied on target by 35%).`,
-                ru: `УНИКАЛЬНО(Пассивно): Ваши способности накладывают эффект Чумы на вражеских героев на ${toSec(ItemAbilityData.PLAGUE_RING_DURATION)}. (Чума уменьшает всё входящее исцеление и эффекты регенерации на 35%).`,
+                en: `[PASSIVE]: Increase duration by ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% of all negative effects applied by your abilities.`,
+                ru: `[ПАССИВНО]: Увеличьте длительность на ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% всех отрицательных эффектов, наносимых вашими способностями.`,
+                br: `[PASSIVO]: Aumente a duração em ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% de todos os efeitos negativos aplicados pelas suas habilidades.`,
+                fr: `[PASSIF]: Augmente la durée de ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% de tous les effets négatifs appliqués par vos capacités.`,
+                zh: `[被动]: 增加 ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% 所有负面效果应用于你的技能持续时间.`,
+                cz: `[PASIVNÍ]: Zvyšte dobu trvání o ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% všech negativních efektů, které vaše schopnosti aplikují.`,
             }
         };
 
@@ -508,7 +512,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 br: `[Ativo]: Faz com que você aumente sua velocidade de ataque em ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% e velocidade de movimento por ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} por ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} seg.<br />` +
                         `[Maldição]: O efeito colateral de usar esse item é reduzir sua armadura em ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR} e ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}% da sua resistência mágica.\n [Tempo de recarga: ${(ItemAbilityData.CORRUPTED_LONGBOW_COOLDOWN / 1000).toFixed(1)} seg.]`
                         + '<br /> <br /><b class=\'ability-d\'>' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
-                fr: `[ACTIVATION]: Gain de puissance. Ta vitesse d'attaque est augmentée de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% et ta vitesse de déplacement est améliorée de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} pour ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} sec.<br />` +  
+                fr: `[ACTIVATION]: Gain de puissance. Ta vitesse d'attaque est augmentée de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% et ta vitesse de déplacement est améliorée de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} pour ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} sec.<br />` +
                         `[MALÉDICTION]: Diminution de ton armure de ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR} et de ta résistance magique de ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}%. \n [Délai de récupération : ${(ItemAbilityData.CORRUPTED_LONGBOW_COOLDOWN / 1000).toFixed(1)} sec.]`
                         + '<br /> <br /><b class=\'ability-d\'>' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 zh: `主動技：賦予你增加 ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)}秒你的攻擊速度 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}%與移動速度值 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}。<br />` +
@@ -883,17 +887,17 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en: `[PASSIVE]: For every minion kill (+1 stack), hero kill (+5 stacks) or hero assist (+2 stacks) you gain ${ItemAbilityData.CHRONOS_RING_STACK_AP} Ability Power (Max: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} Ability Power at 20 stacks). All stacks are lost upon death.` +
-               `<br /> <br /> [PASSIVE]: Grants ${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)} Ability haste to nearby alies.`,
-                ru: `[Пассивно]: За каждого убитого прислужника (+1 стэк), убийство героя (+5 стэков) или помощь герою (+2 стэка) вы получаете ${ItemAbilityData.CHRONOS_RING_STACK_AP} Силу заклинания (макс. ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} Силы заклинания на 20 стэках). Все стэки теряются при смерти.` +
-               `<br /> <br /> [Пассивно]: Предоставляет ${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)} скорости применения заклинания для близлежащих союзников.`,
-                br: `[PASSIVO]: A cada morte de lacaios (+1 pilha), morte de herói (+5 pilhas) ou assistência a um herói (+2 pilhas), você ganha ${ItemAbilityData.CHRONOS_RING_STACK_AP} de Poder de Habilidade (máximo de ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} de Poder de Habilidade em 20 pilhas). Todas as pilhas são perdidas com a morte.` +
-               `<br /> <br /> [PASSIVO]: Concede ${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)} de Aceleração de Habilidade para aliados próximos.`,
-                fr: `[PASSIF] : Pour chaque unité tuée (+1 au niveau), héros tué (+5 au niveau) ou aide apportée à un héros (+2 au niveau), vous gagnez ${ItemAbilityData.CHRONOS_RING_STACK_AP} de Puissance de Sort (Max : ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} de Puissance de Sort au niveau 20). Tous les niveaux sont perdus à la mort.` +
-               `<br /> <br /> [PASSIF] : Donne ${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)} de Vitesse de Sort aux alliés proches.`,
-                zh: `[被動]: 每擊殺一隻小兵(+1階段),擊殺一名英雄(+5階段)或協助一名英雄(+2階段)，就會獲得${ItemAbilityData.CHRONOS_RING_STACK_AP}法術能力值(最大: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS}法術能力值，在20階段時)。死亡時將失去所有階段。` +
-               `<br /> <br /> [被動]: 賦予附近友方英雄${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)}法術加速。`,
-                cz: `[PASIVNĚ]: Za každou zabitou jednotkou (+1 bod), zabitím hrdiny (+5 bodů) nebo pomocí hrdinovi (+2 body) získáte ${ItemAbilityData.CHRONOS_RING_STACK_AP} sílu zaklínadla (Max: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} sílu zaklínadla ve 20 bodech). Všechny body jsou ztraceny při smrti.` +
-               `<br /> <br /> [PASIVNĚ]: Poskytuje ${calculateMagicDefense(ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE)} rychlost zaklínadla blízkým spojencům.`
+                        `<br /> <br /> [PASSIVE]: Grants ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} Ability haste and ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} health regen to nearby alies.`,
+                ru: `[Пассивно]: За каждого убитого прислужника (+1 стак), убийство героя (+5 стаков) или помощь в убийстве героя (+2 стака) вы получаете ${ItemAbilityData.CHRONOS_RING_STACK_AP} единиц силы заклинаний (макс. ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} единиц силы заклинаний на 20 стаках). Все стаки теряются при смерти.` +
+                        `<br /> <br /> [Пассивно]: Предоставляет ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} скорость заклинаний и ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} восстановление здоровья для ближайших союзников.`,
+                br: `[PASSIVO]: A cada morte de um servo (+1 empilhar), herói matar (+5 empilha) ou assistência de herói (+2 empilha) você ganha ${ItemAbilityData.CHRONOS_RING_STACK_AP} poder de habilidade (máximo: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} poder de habilidade em 20 empilha). Todos os empilha são perdidos na morte.` +
+                        `<br /> <br /> [PASSIVO]: Concede ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} habilidade pressa e ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} regeneração de vida para os aliados próximos.`,
+                fr: `[PASSIF] : Pour chaque tué de serviteur (+1 pile), héros tué (+5 piles) ou aide d'un héros (+2 piles), vous gagnez ${ItemAbilityData.CHRONOS_RING_STACK_AP} points de puissance d'attaque (Max : ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} points de puissance d'attaque à 20 piles). Toutes les piles sont perdues à la mort.` +
+                        `<br /> <br /> [PASSIF] : Octroie ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} de vitesse d'attaque et ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} de soin par seconde aux alliés proches.`,
+                zh: `[被动]：每击杀一个小兵（+1 层），英雄击杀（+5 层）或者英雄助攻（+2 层），你将获得 ${ItemAbilityData.CHRONOS_RING_STACK_AP} 法术强度（最大 ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} 法术强度，在 20 层时）。死亡时将失去所有层数。` +
+                        `<br /> <br /> [被动]：为附近的友军提供 ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} 技能急速和 ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} 生命恢复/5秒。`,
+                cz: `[PASIVNĚ]: Za každého zabitého pomocníka (+1 stack), hrdinu (+5 stacků) nebo za asistenci při zabití hrdiny (+2 stacky) získáte ${ItemAbilityData.CHRONOS_RING_STACK_AP} sílu zaklínadla (Max: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} síla zaklínadla ve 20 stacích). Všechny stacky se ztratí při smrti.` +
+                        `<br /> <br /> [PASIVNĚ]: Poskytuje ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} rychlost zaklínadla a ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} regeneraci zdraví blízkým spojencům.`,
             }
         };
     case Shared.ItemList.Corrupted_Ring:
@@ -985,10 +989,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '惡毒胸甲',
             },
             desc: {
-                en: `[PASSIVE]: When you take magic damage, the attacker will be cursed and their Ability Power will be reduced by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
-                br: `[Único]: Sempre que você sofrer dano mágico, o atacante será amaldiçoado e seu poder de habilidade será reduzido em ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
-                ru: `УНИКАЛЬНО(Пассивно): Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а его Сила умений уменьшится на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
-                zh: `特殊：每當你受到魔法傷害，攻擊者將會受到詛咒，其技能威力被降低 ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%。`,
+                en: `[PASSIVE]: When you take magic damage, curse on the caster will be applied, reducing movement speed by ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} and ability power by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Stacks up to ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} times)`,
+                ru: `[Пассивно]: При получении магического урона на заклинателе будет наложен проклятие, снижающее скорость передвижения на ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} и силу заклинаний на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Максимум ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} стаков)`,
+                br: `[PASSAIVO]: Quando você sofrer dano mágico, um feitiço será aplicado no lançador, reduzindo a velocidade de movimento em ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} e o poder de habilidade em ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (O feitiço pode ser acumulado até ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} vezes)`,
+                fr: `[PASSE]: Lorsque vous subissez des dégâts magiques, un sort est lancé sur le lanceur, réduisant sa vitesse de déplacement de ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} et sa puissance d'attaque de ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Le sort peut s'accumuler jusqu'à ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} fois)`,
+                zh: `[被动]: 当你受到魔法伤害时，施法者将被诅咒，减少移动速度${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS}和能力值${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}% 。(最多可堆叠${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}层)`,
+                cz: `[PASIVNÍ]: Když dostaneš magickou újmu, na kouzelníkovi se aplikuje prokletí, které snižuje rychlost pohybu o ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} a sílu zaklínání o ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Prokletí se může nakumulovat až do ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} vrstev)`,
             }
         };
 
@@ -1077,19 +1083,19 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
 };
 
 const getPoisonBowDescription = (duration: number) => {
-    const text: {[key: string]: string} = {
+    const text: { [key: string]: string } = {
         en: `[PASSIVE]: Enemies hit by your Basic Attacks will be infected by deadly poison, reducing their movement speed by ${ItemAbilityData.POISON_BOW_SLOW} and dealing ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} magic damage per second for ${(duration / 1000).toFixed(1)} seconds. (This effect stacks up 5 times.)`,
         ru: `УНИКАЛЬНО(Пассивно): Ваши атаки накладывают смертельный яд на вражеских героев, замедляя их на ${ItemAbilityData.POISON_BOW_SLOW} и нанося ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} урона в секунду в течение ${(duration / 1000).toFixed(1)} сек. (Этот эффект может складываться до 5 раз, и каждая последующая атака обновляет их длительность.)`,
         br: `[Único]: Seus ataques aplicam veneno no personagem inimigo e retarda o alvo por ${ItemAbilityData.POISON_BOW_SLOW} e adiciona ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} de dano por seg, por ${(duration / 1000).toFixed(1)} seg.\n (Este efeito pode acumular 5 vezes, cada duração de atualização de ataque.)`,
         fr: `[UNIQUE]: Tes attaques J empoisonne ton ennemie pour ${(duration / 1000).toFixed(1)} sec. Pendant cette période, il est ralenti de ${ItemAbilityData.POISON_BOW_SLOW} et reçoit ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} dégâts supplémentaires. \n (Cet effet peut se cumuler jusqu'à 5 fois, le délai d'empoisennement est remis à zéro à chaque attaque)`,
         zh: `特殊：你的一般攻擊給予敵方英雄致命毒害，降低應目標物移動速度值 ${ItemAbilityData.POISON_BOW_SLOW}點並給予 ${(duration / 1000).toFixed(1)}秒 ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME}點傷害。(此效果能疊加五次，每次攻擊刷新時長)`,
     };
-    
+
     return text[LANG.value] ? text[LANG.value] : text['en'];
 };
 
 const getIronRodDescription = () => {
-    const text: {[key: string]: string} = {
+    const text: { [key: string]: string } = {
         en: `[PASSIVE]: When your abilities hit an enemy hero, your next basic attack deals bonus ${ItemAbilityData.IRON_ROD_BASE_DAMAGE} (+ ${fixed(ItemAbilityData.IRON_ROD_AP_MOD * 100, 1)}% Ability Power) magic damage to enemy hero.`,
         ru: `УНИКАЛЬНО(Пассивно): Когда ваши способности попадают по вражескому герою, ваша следующая атака нанесёт дополнительно ${ItemAbilityData.IRON_ROD_BASE_DAMAGE} (+ ${fixed(ItemAbilityData.IRON_ROD_AP_MOD * 100, 1)}% Силы умений) магического урона.`,
         br: `[Único]: Quando suas habilidades atingem um personagem inimigo, seu próximo ataque normal ganha um bônus de ${ItemAbilityData.IRON_ROD_BASE_DAMAGE} + ${fixed(ItemAbilityData.IRON_ROD_AP_MOD * 100, 1)}% de dano.`,
