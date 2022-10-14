@@ -1629,15 +1629,20 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Diváci: {}',
         ru: 'Зрители: {}'
     },
+    [LOCALE.CHAT_SYSTEM_MUTED]: {
+        en: 'You are muted for {} seconds',
+        cz: 'Jsi ztlumený na {} sekund',
+        ru: 'Вы замучены на {} секунд'
+    },
     [LOCALE.CHAT_SYSTEM_PLAYER_LEFT]: {
         en: ' has left the game!',
         cz: ' opustil hru!',
         ru: ' покинул игру!'
     },
     [LOCALE.CHAT_ADMIN_GET_PLAYER]: {
-        en: 'RESULT: {}',
-        cz: 'VÝSLEDEK: {}',
-        ru: 'РЕЗУЛЬТАТ: {}'
+        en: 'Online: {} || Name: {} || Email: {} || ID: {} || IP: {}',
+        cz: 'Online: {} || Jméno: {} || Email: {} || ID: {} || IP: {}',
+        ru: 'Online: {} || Имя: {} || Email: {} || ID: {} || IP: {}'
     },
     [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
         en: 'ERROR: {}',
