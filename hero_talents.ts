@@ -129,8 +129,6 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         };
 
     case Shared.HEROES.VEIL: {
-        const damage = getDamage(VeilAbilityData.VOID_BOMB_AP_MOD * 100, Shared.DamageTypes.MAGICAL, VeilAbilityData.VOID_BOMB_BASE_DAMAGE);
-
         return {
             tier1_left: {
                 title: {
