@@ -129,8 +129,6 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         };
 
     case Shared.HEROES.VEIL: {
-        const damage = getDamage(VeilAbilityData.VOID_BOMB_AP_MOD * 100, Shared.DamageTypes.MAGICAL, VeilAbilityData.VOID_BOMB_BASE_DAMAGE);
-
         return {
             tier1_left: {
                 title: {
@@ -208,13 +206,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier2_left: {
                 title: {
-                    en: 'Precise shot apply attack',
-                    ru: 'Бонус атаки для Точного выстрела',
+                    en: 'Precise shot +25% damage',
+                    ru: '+25% урона для Точного выстрела',
                 },
-                description: {
-                    en: `Precise shot apply additional ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% physical damage`,
-                    ru: `Точный выстрел наносит дополнительно ${getDamage(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% физического урона`
-                }
             },
             tier2_right: {
                 title: {
