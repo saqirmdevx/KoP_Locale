@@ -573,7 +573,11 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
     }
     
     case Shared.SpellList.FOXY_RAPID_FIRE: {
-        const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage);
+        let mod = 1;
+        if (hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 1)) {
+            mod += FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE;
+        }
+        const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod);
     
         return {
             en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Affected by Attack speed. Movement stops the channeling </i>`,
