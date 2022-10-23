@@ -729,7 +729,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             }
         };
 
-    case Shared.ItemList.Spike_Shield:
+    case Shared.ItemList.Spike_Shield: {
+        const damage = ItemAbilityData.SPIKE_SHIELD_BASE_DAMAGE;
+        const bonus = fixed(ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_ARMOR * 100, 1);
         return {
             name: {
                 en: 'Spike Shield',
@@ -739,13 +741,15 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '尖刺護盾',
             },
             desc: {
-                en: `[ACTIVE]: Creates a barrier that returns 100% of the received damage you take (after reduction) to the attacker for ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)} seconds. (Cooldown: ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)} seconds)`,
-                ru: `УНИКАЛЬНО(Активно): Создаёт барьер, который возвращает 100% полученного урона (с учётом брони) обратно атакующему врагу в течение ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)} сек. (Перезарядка: ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)} сек.)`,
-                br: `[Ativo]: Quando ativado, retorna 100% do dano recebido de volta ao atacante (após a redução) por ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)} seg.\n [Tempo de recarga: ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)} seg.]`,
-                fr: `[ACTIVATION]: Retourne 100% des dégâts reçus à l'attaquant (après réduction) pour ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)} sec. \n [Délai de récupération: ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)} sec.]`,
-                zh: `主動技：發動 ${(ItemAbilityData.SPIKE_SHIELD_DURATION / 1000).toFixed(1)}秒期間，回彈 100%接收到的傷害給攻擊者 (扣除防禦後) - ${(ItemAbilityData.SPIKE_SHIELD_COOLDOWN / 1000).toFixed(1)}秒冷卻時間`,
+                en:   `[PASSIVE]: deals ${damage} (+ ${bonus}% of armor) normal damage every second to all enemy units in short distance`,
+                ru:   `[Пассивно]: наносит ${damage} (+ ${bonus}% брони) обычного урона каждую секунду всем вражеским юнитам в коротком расстоянии`,
+                br:   `[PASSIVO]: causa ${damage} (+ ${bonus}% de armadura) dano normal a cada segundo para todas as unidades inimigas em curta distância`,
+                fr:   `[PASSIF]: inflige ${damage} (+ ${bonus}% d'armure) de dommages normaux toutes les secondes à toutes les unités ennemies à courte distance`,
+                zh:   `[被动]: 每秒对短距离内的所有敌方单位造成 ${damage} (+ ${bonus}% 护甲) 的普通伤害`,
+                cz:   `[PASIVNĚ]: způsobuje ${damage} (+ ${bonus}% zbroje) obvyklé poškození každou sekundu všem nepřátelským jednotkám na krátkou vzdálenost`
             }
         };
+    }
 
     case Shared.ItemList.GarunsDefender:
         return {
