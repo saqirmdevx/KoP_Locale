@@ -720,12 +720,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖護盾',
             },
             desc: {
-                en: `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} Magic Resistance to nearby alies.`,
-                ru: `УНИКАЛЬНО(Пассивно): Увеличивает Броню у всех ближайших союзных юнитов на ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} и Сопротивление магии на ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)}.`,
-                br: `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} de Resistência Mágica para aliados próximos.`,
-                fr: `[Passif] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d'Armure et ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} de Résistance Magique aux alliés proches.`,
-                zh: `[被动]：为附近的盟友提供${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR}护甲和${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)}魔法抗性。`,
-                cz: `[PASIVNÍ]: Poskytuje ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} brnění a ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} magickou odolnost blízkým spojencům.`
+                en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby alies.`,
+                ru:  `[Пассивно]: Предоставляет ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} брони и ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} восстановления здоровья союзникам поблизости.`,
+                br:  `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de regeneração de Vida para os aliados próximos.`,
+                fr:  `[PASSIF] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d’Armure et ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de Régénération de vie aux alliés à proximité.`,
+                zh:  `[被动]: 赋予附近盟友${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR}护甲和${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}生命回复。`,
+                cz:  `[PASIVNÍ] : Přidává ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} k Armoru a ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} k Regenu zdraví těm nejbližším spojencům.`,
             }
         };
 
