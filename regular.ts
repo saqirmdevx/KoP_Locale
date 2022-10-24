@@ -1608,16 +1608,20 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.PLAY_PAGE_LOBBIES]: {
         en: 'Lobbies',
+        ru: 'Лобби',
         cz: 'Vlastní hra',
     },
     [LOCALE.PLAY_PAGE_COOP_VS_AI]: {
         en: 'Co-op vs AI',
+        ru: 'Игроки против ИИ',
     },
     [LOCALE.PLAY_PAGE_PVP]: {
         en: 'PvP',
+        ru: 'Игроки против игроков',
     },
     [LOCALE.UNKNOWN]: {
-        en: 'Unknown'
+        en: 'Unknown',
+        ru: 'Неизвестно',
     },
     [LOCALE.CHAT_SYSTEM_WELCOME]: {
         en: 'Player {} has joined the game!',
@@ -1642,7 +1646,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.CHAT_ADMIN_GET_PLAYER]: {
         en: 'Online: {} || Name: {} || Email: {} || ID: {} || IP: {}',
         cz: 'Online: {} || Jméno: {} || Email: {} || ID: {} || IP: {}',
-        ru: 'Online: {} || Имя: {} || Email: {} || ID: {} || IP: {}'
+        ru: 'Онлайн: {} || Имя: {} || Электронная почта: {} || ID: {} || IP: {}'
     },
     [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
         en: 'ERROR: {}',
@@ -1726,7 +1730,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
         en:  'Do you want turn off autobuy? (Not recommended for newbies)',
-        ru:  'Вы хотите отключить автоматическую покупку? (Не рекомендуется для новичков)',
+        ru:  'Отключить автоматическую покупку предметов? (Не рекомендуется для новичков)',
         br:  'Você quer desativar a compra automática? (Não recomendado para iniciantes)',
         fr:  'Voulez-vous désactiver l\'achat automatique? (Non recommandé pour les débutants)',
         zh:  '您要关闭自动购买吗？ (不推荐新手)',

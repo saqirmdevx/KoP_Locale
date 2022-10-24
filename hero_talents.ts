@@ -325,9 +325,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+                    ru: `+${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)} секунд к отбрасыванию Триумфального переворота`,
                 },
                 description: {
-                    en: 'Increase duration of Triumphant Upheaval pushback'
+                    en: 'Increase duration of Triumphant Upheaval pushback',
+                    ru: `Увеличивает длительность отбрасывания у Триумфального переворота`,
                 }
             },
             tier1_right: {
@@ -395,7 +397,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 },
                 description: {
                     en: `Ignites affected enemies and deals additional ${fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)}% of target's max health per sec.`,
-                    ru: `Поджигает пораженных врагов и наносит дополнительный ${fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)}% от максимального здоровья цели в секунду.`,
+                    ru: `Взрывная граната поджигает задетых врагов, нанося дополнительно ${fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)}% от макс. Здоровья цели в секунду.`,
                 }
             },
             tier1_right: {
@@ -405,7 +407,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 },
                 description: {
                     en: `Freezes affected enemies for max ${toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)}`,
-                    ru: `Замораживает поражённых врагов на максимум ${toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)}`,
+                    ru: `Взрывная граната замораживает задетых врагов на ${toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)} сек.`,
                 }
             },
             tier2_left: {
@@ -417,7 +419,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier2_right: {
                 title: {
                     en: `Rapid fire damage +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
-                    ru: `Урон от быстрого огня +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+                    ru: `+${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}% к урону Беглого огня`,
                 },
             }
         };

@@ -400,17 +400,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Чумное кольцо',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[PASSIVE]: Increase duration by ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% of all negative effects applied by your abilities.`,
-                ru: `УНИКАЛЬНО(Пассивно): Увеличивает длительность всех накладываемых вами негативных эффектов на ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}%.`,
-                br: `[PASSIVO]: Aumente a duração em ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% de todos os efeitos negativos aplicados pelas suas habilidades.`,
-                fr: `[PASSIF]: Augmente la durée de ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% de tous les effets négatifs appliqués par vos capacités.`,
-=======
                 en: `[PASSIVE]: Increase duration by ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% of all negative effects applied by your abilities.`,
                 ru: `УНИКАЛЬНО(Пассивно): Увеличивает длительность всех накладываемых вами негативных эффектов на ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}%.`,
                 br: `[PASSIVO]: Aumente a duração em ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% de todos os efeitos negativos aplicados pelas suas habilidades.`,
                 fr: `[PASSIF]: Augmente la durée de ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% de tous les effets négatifs appliqués par vos capacités.`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
                 zh: `[被动]: 增加 ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% 所有负面效果应用于你的技能持续时间.`,
                 cz: `[PASIVNÍ]: Zvyšte dobu trvání o ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% všech negativních efektů, které vaše schopnosti aplikují.`,
             }
@@ -426,11 +419,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '寒冰之劍',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[Passive]: Your basic attacks apply stacks on the enemy. Upon reaching ${ItemAbilityData.COLD_SWORD_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
-=======
                 en: `[PASSIVE]: Your basic attacks apply stacks on the enemy. Upon reaching ${ItemAbilityData.COLD_SWORD_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
                 ru: `УНИКАЛЬНО(Пассивно): Попадая обычной атакой по врагу, вы накладываете на него 1 заряд. При накоплении ${ItemAbilityData.COLD_SWORD_STACKS} зарядов, этот враг получает Морозное проклятие, которое замедляет его на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшает всё входящее исцеление и эффекты регенерации на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
                 br: `[Passiva]: Seus ataques básicos aplicam pilhas no inimigo. Após atingir ${ItemAbilityData.COLD_SWORD_STACKS} pilhas, o inimigo é infectado com a Maldição Gelada, diminuindo a velocidade em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzindo o cura/regeneração em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
                 fr: `[Passif] : Vos attaques de base appliquent des stacks à l'ennemi. Lorsqu'ils atteignent ${ItemAbilityData.COLD_SWORD_STACKS} stacks, l'ennemi est frappé de Malédiction glacée, ce qui le ralentit de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduit les soins/régénération de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
@@ -629,11 +618,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰結法棍',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[Passive]: Your abilities apply stacks on the enemy. Upon reaching ${ItemAbilityData.FROZEN_STAFF_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
-=======
                 en: `[PASSIVE]: Your abilities apply stacks on the enemy. Upon reaching ${ItemAbilityData.FROZEN_STAFF_STACKS} stacks, the enemy is inflicted with Frigid Curse, slowing them by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reducing healing/regen by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
                 ru: `УНИКАЛЬНО(Пассивно): Попадая способностями по врагу, вы накладываете на него 1 заряд. При накоплении ${ItemAbilityData.FROZEN_STAFF_STACKS} зарядов, этот враг получает Морозное проклятие, которое замедляет его на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшает всё входящее исцеление и эффекты регенерации на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
                 br: `[Passivo]: As suas habilidades aplicam pilhas no inimigo. Ao alcançar ${ItemAbilityData.FROZEN_STAFF_STACKS} pilhas, o inimigo é afetado pelo Mal de Gelo, lentificando-o em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzindo a cura/regeneração em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
                 fr: `[Passif] : Vos capacités appliquent des stacks ennemis. Une fois que ${ItemAbilityData.FROZEN_STAFF_STACKS} s'empilent, l'ennemi est affecté par la Malédiction de Givre, le ralentissant de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduisant les soins/la régénération de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}%.`,
@@ -735,21 +720,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖護盾',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} Magic Resistance to nearby alies.`,
-                ru: `УНИКАЛЬНО(Пассивно): Увеличивает Броню у всех ближайших союзных юнитов на ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} и Сопротивление магии на ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)}.`,
-                br: `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} de Resistência Mágica para aliados próximos.`,
-                fr: `[Passif] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d'Armure et ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} de Résistance Magique aux alliés proches.`,
-                zh: `[被动]：为附近的盟友提供${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR}护甲和${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)}魔法抗性。`,
-                cz: `[PASIVNÍ]: Poskytuje ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} brnění a ${calculateMagicDefense(ItemAbilityData.DIVINE_SHIELD_BONUS_MR)} magickou odolnost blízkým spojencům.`
-=======
                 en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby alies.`,
-                ru:  `[Пассивно]: Предоставляет ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} брони и ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} восстановления здоровья союзникам поблизости.`,
+                ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Броню у всех ближайших союзных юнитов на ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} и Регенерацию здоровья на ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}.`,
                 br:  `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de regeneração de Vida para os aliados próximos.`,
                 fr:  `[PASSIF] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d’Armure et ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de Régénération de vie aux alliés à proximité.`,
                 zh:  `[被动]: 赋予附近盟友${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR}护甲和${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}生命回复。`,
                 cz:  `[PASIVNÍ] : Přidává ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} k Armoru a ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} k Regenu zdraví těm nejbližším spojencům.`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
             }
         };
 
@@ -766,7 +742,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en:   `[PASSIVE]: deals ${damage} (+ ${bonus}% of armor) normal damage every second to all enemy units in short distance`,
-                ru:   `[Пассивно]: наносит ${damage} (+ ${bonus}% брони) обычного урона каждую секунду всем вражеским юнитам в коротком расстоянии`,
+                ru:   `УНИКАЛЬНО(Пассивно): Наносит ${damage} (+ ${bonus}% вашей Брони) физического урона каждую секунду всем вражеским юнитам вокруг`,
                 br:   `[PASSIVO]: causa ${damage} (+ ${bonus}% de armadura) dano normal a cada segundo para todas as unidades inimigas em curta distância`,
                 fr:   `[PASSIF]: inflige ${damage} (+ ${bonus}% d'armure) de dommages normaux toutes les secondes à toutes les unités ennemies à courte distance`,
                 zh:   `[被动]: 每秒对短距离内的所有敌方单位造成 ${damage} (+ ${bonus}% 护甲) 的普通伤害`,
@@ -786,7 +762,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en:  `[PASSIVE]: If you take damage below ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% health you unleash a shockwave with 0.5sec delay that stuns all nearby enemies for ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} and deals ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} normal damage. This effect cannot trigger more than once every ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
-                ru: `[Пассивно]: Если вы получаете урон ниже ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% здоровья, вы вызываете шоковую волну с задержкой 0,5 сек, которая оглушает всех ближайших врагов на ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} и наносит ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} обычных урона. Этот эффект не может быть активирован более одного раза в ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
+                ru: `УНИКАЛЬНО(Пассивно): Если вы получаете урон при уровне здоровья ниже ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}%, вы создаёте ударную волну с задержкой 0,5 сек., которая оглушает всех ближайших врагов на ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} сек. и наносит ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} физического урона. (Перезарядка: ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)} сек.)`,
                 br: `[PASSIVO]: Se você tomar dano abaixo de ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% da saúde, você desencadeia uma onda de choque com um atraso de 0,5 segundos que atordoa todos os inimigos próximos por ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} e causar ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} de dano normal. Este efeito não pode ser ativado mais de uma vez a cada ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
                 fr: `[PASSIF] : Si vous subissez des dégâts en dessous de ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% de vie, vous libérez une onde de choc avec un délai de 0,5 seconde qui assomme tous les ennemis à proximité pendant ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} et inflige ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} de dégâts normaux. Cet effet ne peut se déclencher qu'une seule fois tous les ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
                 zh: `[被动]：如果您的生命值低于${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}%时受到伤害，您将在0.5秒后释放一道冲击波，使附近所有敌人昏迷${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}，并造成${ItemAbilityData.GARUNS_DEFENDER_DAMAGE}的常规伤害。此效果每${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}不能触发一次。`,
@@ -822,17 +798,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '麒麟的守護者',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[PASSIVE]: Absorbs any Crowd Control effect every ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seconds. Sucessful block provides you ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% Magic Resistance for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seconds.`,
-                br: `[Único]: Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg, se o bloqueio for bem sucedido, fornecer ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% de resistência mágica por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.`,
-                ru: `УНИКАЛЬНО (Пассивно): Блокирует любой эффект контроля каждые ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек. Успешный блок повышает ваше Сопротивление магии на  ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}% на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек.`,
-                zh: `特殊：麒麟的守護者每次發動 ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()}秒內格擋下一個有冷卻時間效果的招式，成功格擋時提供 ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()}秒 ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}%的魔法抗性。`,
-=======
                 en: `[PASSIVE]: Absorbs any Crowd Control effect every ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seconds. Sucessful block provides you ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} Magic Resistance for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seconds.`,
                 br: `[Único]: Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg, se o bloqueio for bem sucedido, fornecer ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} de resistência mágica por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.`,
                 ru: `УНИКАЛЬНО (Пассивно): Блокирует любой эффект контроля каждые ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек. Успешный блок повышает ваше Сопротивление магии на  ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек.`,
                 zh: `特殊：麒麟的守護者每次發動 ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()}秒內格擋下一個有冷卻時間效果的招式，成功格擋時提供 ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()}秒 ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}的魔法抗性。`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
                 // UPDATE
                 //br: `[Único]: Quando você recebe dano mágico, o Kirin cria uma barreira ao seu redor, reduzindo a duração de todos os efeitos negativos em 75% e diminuindo ainda mais ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% do dano mágico por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.\n [Tempo de recarga: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg.]`,
                 //fr: `[UNIQUE]: Lorsque tu reçois des dégâts magiques, le Bouclier de Kirin créer une barrière autour de toi qui réduit la durée de tous les effets négatifs de 75% et diminue les dégâts magiques de ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MAGIC_RESISTANCE)}% pour ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} sec. \n [Délai de récupération: ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} sec.]`,
@@ -904,21 +873,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰霜手環',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[Active]: Fire an icicle bolt that deals ${ItemAbilityData.FROST_RING_DAMAGE} magic damage. If the icicle bolt hits an enemy with Frigid Curse, root the target for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, otherwise it will apply Frigid Curse and reduce target's movement speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduce healing effect by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
-                ru: `УНИКАЛЬНО(Активно): Выпускает ледяной снаряд, наносящий ${ItemAbilityData.FROST_RING_DAMAGE} магического урона. Если снаряд попадает по врагу с Морозным проклятием, он обездвиживает цель на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, в противном случае на цель накладывается Морозное проклятие, снижающее Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшающее входящее исцеление и эффекты регенерации на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
-                br: `[Ativo]: Atire um bolt de gelo que causará ${ItemAbilityData.FROST_RING_DAMAGE} de dano mágico. Se o bolt de gelo atingir um inimigo com a Maldição do Frio, ele raizará o alvo por ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, caso contrário, ele aplicará a Maldição do Frio e reduzirá a velocidade de movimento do alvo em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzirá o efeito de cura em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
-                fr: `[Actif] : Lance une flèche de glace qui inflige ${ItemAbilityData.FROST_RING_DAMAGE} dégâts magiques. Si la flèche de glace touche un ennemi avec la Malédiction de la glace, elle l'enracine pour ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, sinon elle lui appliquera la Malédiction de la glace et réduira sa vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduira son effet de soin de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
-                zh: `[有效]: 射出一枚冰锥，造成${ItemAbilityData.FROST_RING_DAMAGE}点魔法伤害。如果冰锥击中了受到冰封诅咒的敌人，则使目标根据${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}，否则它将施加冰封诅咒并减少目标的移动速度${ItemAbilityData.FRIGIT_CURSE_SLOW}并减少治疗效果${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`,
-                cz: `[Aktivní]: Vystřelí kouli ledu, která způsobí ${ItemAbilityData.FROST_RING_DAMAGE} magického poškození. Pokud kouli ledu trefí nepřítel s Prokletím mrazu, uvězní cíl na ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, jinak mu aplikuje Prokletí mrazu a sníží rychlost pohybu cíle o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a sníží efekt léčení o ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`
-=======
                 en: `[Active]: Fire an icicle bolt that deals ${ItemAbilityData.FROST_RING_DAMAGE} (freeze doubles damage) magic damage. If the icicle bolt hits an enemy with Frigid Curse, root the target for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, otherwise it will apply Frigid Curse and reduce target's movement speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduce healing effect by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
-                ru: `УНИКАЛЬНО(Активно): Выпускает ледяной снаряд, наносящий ${ItemAbilityData.FROST_RING_DAMAGE} (заморозка удваивает урон) магического урона. Если снаряд попадает по врагу с Морозным проклятием, он обездвиживает цель на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, в противном случае на цель накладывается Морозное проклятие, снижающее Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшающее входящее исцеление и эффекты регенерации на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
+                ru: `УНИКАЛЬНО(Активно): Выпускает ледяной снаряд, наносящий ${ItemAbilityData.FROST_RING_DAMAGE} магического урона. Если снаряд попадает по врагу с Морозным проклятием, он обездвиживает цель на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, а урон удваивается. В противном случае на цель накладывается Морозное проклятие, снижающее Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и уменьшающее входящее исцеление и эффекты регенерации на ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
                 br: `[Ativo]: Atire um bolt de gelo que causará ${ItemAbilityData.FROST_RING_DAMAGE} (o congelamento dobra o dano) de dano mágico. Se o bolt de gelo atingir um inimigo com a Maldição do Frio, ele raizará o alvo por ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, caso contrário, ele aplicará a Maldição do Frio e reduzirá a velocidade de movimento do alvo em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e reduzirá o efeito de cura em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
                 fr: `[Actif] : Lance une flèche de glace qui inflige ${ItemAbilityData.FROST_RING_DAMAGE} (le gel double les dégâts) dégâts magiques. Si la flèche de glace touche un ennemi avec la Malédiction de la glace, elle l'enracine pour ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, sinon elle lui appliquera la Malédiction de la glace et réduira sa vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et réduira son effet de soin de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}.`,
                 zh: `[有效]: 射出一枚冰锥，造成${ItemAbilityData.FROST_RING_DAMAGE}(冻结伤害加倍)点魔法伤害。如果冰锥击中了受到冰封诅咒的敌人，则使目标根据${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}，否则它将施加冰封诅咒并减少目标的移动速度${ItemAbilityData.FRIGIT_CURSE_SLOW}并减少治疗效果${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`,
                 cz: `[Aktivní]: Vystřelí kouli ledu, která způsobí ${ItemAbilityData.FROST_RING_DAMAGE} (zmražení dvojnásobně zvyšuje poškození) magického poškození. Pokud kouli ledu trefí nepřítel s Prokletím mrazu, uvězní cíl na ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, jinak mu aplikuje Prokletí mrazu a sníží rychlost pohybu cíle o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a sníží efekt léčení o ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}。`
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
             }
         };
     }
@@ -932,24 +892,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '時辰手環',
             },
             desc: {
-<<<<<<< HEAD
-                en: `[PASSIVE]: For every minion kill (+1 stack), hero kill (+5 stacks) or hero assist (+2 stacks) you gain ${ItemAbilityData.CHRONOS_RING_STACK_AP} Ability Power (Max: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} Ability Power at 20 stacks). All stacks are lost upon death.` +
-                        `<br /> <br /> [PASSIVE]: Grants ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} Ability haste and ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} health regen to nearby alies.`,
-                ru: `УНИКАЛЬНО(Пассивно): Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает Силу умений на ${ItemAbilityData.CHRONOS_RING_STACK_AP} (Максимумальная прибавка: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} Силы умений за 20 зарядов). Все заряды теряются после смерти.`+
-                        `<br /> <br /> УНИКАЛЬНО(Пассивно): Даёт ближайшим союзникам ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} Ускорения умений и ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} Регенерации здоровья.`,
-                br: `[PASSIVO]: A cada morte de um servo (+1 empilhar), herói matar (+5 empilha) ou assistência de herói (+2 empilha) você ganha ${ItemAbilityData.CHRONOS_RING_STACK_AP} poder de habilidade (máximo: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} poder de habilidade em 20 empilha). Todos os empilha são perdidos na morte.` +
-                        `<br /> <br /> [PASSIVO]: Concede ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} habilidade pressa e ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} regeneração de vida para os aliados próximos.`,
-                fr: `[PASSIF] : Pour chaque tué de serviteur (+1 pile), héros tué (+5 piles) ou aide d'un héros (+2 piles), vous gagnez ${ItemAbilityData.CHRONOS_RING_STACK_AP} points de puissance d'attaque (Max : ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} points de puissance d'attaque à 20 piles). Toutes les piles sont perdues à la mort.` +
-                        `<br /> <br /> [PASSIF] : Octroie ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} de vitesse d'attaque et ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} de soin par seconde aux alliés proches.`,
-                zh: `[被动]：每击杀一个小兵（+1 层），英雄击杀（+5 层）或者英雄助攻（+2 层），你将获得 ${ItemAbilityData.CHRONOS_RING_STACK_AP} 法术强度（最大 ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} 法术强度，在 20 层时）。死亡时将失去所有层数。` +
-                        `<br /> <br /> [被动]：为附近的友军提供 ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} 技能急速和 ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} 生命恢复/5秒。`,
-                cz: `[PASIVNĚ]: Za každého zabitého pomocníka (+1 stack), hrdinu (+5 stacků) nebo za asistenci při zabití hrdiny (+2 stacky) získáte ${ItemAbilityData.CHRONOS_RING_STACK_AP} sílu zaklínadla (Max: ${ItemAbilityData.CHRONOS_RING_STACK_AP * ItemAbilityData.CHRONOS_RING_MAX_STACKS} síla zaklínadla ve 20 stacích). Všechny stacky se ztratí při smrti.` +
-                        `<br /> <br /> [PASIVNĚ]: Poskytuje ${ItemAbilityData.CHRONOS_RING_BONUS_ABILITY_HASTE} rychlost zaklínadla a ${ItemAbilityData.CHRONOS_RING_BONUS_HP_REGEN} regeneraci zdraví blízkým spojencům.`,
-=======
                 en:  '[PASSIVE]: If you receive a kill or assist on an enemy hero, your ability cooldowns will reset. (Reset does not work on items) <br /> <br /> '+
                 `[PASSIVE]: Increase all healing done by ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                ru:  '[ПАССИВНОЕ]: Если вы получаете убийство или помощь по герою противника, ваши задержки способностей сбрасываются. (Сброс не работает на предметах) <br /> <br /> '+
-                `[ПАССИВНОЕ]: Увеличивает все лечение, наносимое на ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
+                ru:  'УНИКАЛЬНО(Пассивно): При убийстве врага или получении содействия, перезарядка ваших способностей сбрасывается. (Перезарядка предметов не сбрасывается) <br /> <br /> '+
+                `УНИКАЛЬНО(Пассивно): Накладываемое вами лечение усиливается на ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
                 br:  '[PASSIVO]: Se você receber um abate ou assistência em um herói inimigo, os tempos de reutilização de suas habilidades serão redefinidos. (O reset não funciona em itens) <br /> <br /> '+
                 `[PASSIVO]: Aumenta todo o cura feito por ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
                 fr:  '[PASSIF] : Si vous tuez ou aidez à tuer un héros ennemi, vos temps de recharge de capacités seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets) <br /> <br /> '+
@@ -958,7 +904,6 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 `[被动]: 增加所有治疗效果 ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
                 cz:  '[PASIVNÍ]: Pokud zabijete nebo pomůžete zabít nepřátelského hrdinu, Vaše doby obnovování schopností se resetují. (Resetování se neprojeví na předmětech) <br /> <br /> '+
                 `[PASIVNÍ]: Zvyšuje všechny způsobené léčení o ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
->>>>>>> 860a28a1f58f71e6d9e5aa460d5bac102e693f77
             }
         };
     case Shared.ItemList.Corrupted_Ring:
