@@ -324,8 +324,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         return {
             tier1_left: {
                 title: {
-                    en: `Triumphant Upheaval radius +${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_RADIUS}`,
-                    ru: `+${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_RADIUS} к радиусу Триумфального переворота`,
+                    en: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+                },
+                description: {
+                    en: 'Increase duration of Triumphant Upheaval pushback'
                 }
             },
             tier1_right: {
@@ -388,15 +390,23 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         return {
             tier1_left: {
                 title: {
-                    en: `Rapid fire duration +${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)}`,
-                    ru: `+${toSecRaw(FoxyAbilityData.TALENT_T1_LEFT_RAPID_FIRE_DURATION)} к длительности Беглого огня`,
+                    en: 'Incendiary grenade',
+                    ru: 'Зажигательная граната',
                 },
+                description: {
+                    en: `Ignites affected enemies and deals additional ${fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)}% of target's max health per sec.`,
+                    ru: `Поджигает пораженных врагов и наносит дополнительный ${fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)}% от максимального здоровья цели в секунду.`,
+                }
             },
             tier1_right: {
                 title: {
-                    en: `Grenade radius +${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS}`,
-                    ru: `+${FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_RADIUS} к радиусу Взрывной гранаты`,
+                    en: 'Freezing grenade',
+                    ru: 'Замораживающая граната',
                 },
+                description: {
+                    en: `Freezes affected enemies for max ${toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)}`,
+                    ru: `Замораживает поражённых врагов на максимум ${toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)}`,
+                }
             },
             tier2_left: {
                 title: {
@@ -406,8 +416,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             },
             tier2_right: {
                 title: {
-                    en: `Grenade stun max +${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)}`,
-                    ru: `Взрывная граната оглушает цели на ${toSecRaw(FoxyAbilityData.TALENT_T2_RIGHT_GRANADE_STUN)} сек.`,
+                    en: `Rapid fire damage +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+                    ru: `Урон от быстрого огня +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
                 },
             }
         };

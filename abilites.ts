@@ -257,7 +257,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
     case Shared.SpellList.VEIL_AUTOATTACK: {
         const base_damage = getDamage(VeilAbilityData.AUTOATTACK_DAMAGE_MOD * damage);
         const modifier = (hasTalent(talents, Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1);
-        const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, abilityData.damageType, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
+        const enhanced_dmg = getDamage(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, Shared.DamageTypes.MAGICAL, (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier);
 
         return {
             en: `Veil slashes with her weapons and deals ${base_damage}. <br /> Enhanced: Veil uses her astral spirit to deal an additional ${enhanced_dmg} (consume enhanced state)`,
@@ -573,7 +573,11 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
     }
     
     case Shared.SpellList.FOXY_RAPID_FIRE: {
-        const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage);
+        let mod = 1;
+        if (hasTalent(talents, Shared.TALENT.RIGHT_UPGRADE, 1)) {
+            mod += FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE;
+        }
+        const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod);
     
         return {
             en: `Foxy channels his weapon and rapidly fires a barrage of bullets, dealing ${baseDamage} physical damage. <br/> <i> Affected by Attack speed. Movement stops the channeling </i>`,

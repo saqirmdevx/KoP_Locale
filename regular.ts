@@ -1724,6 +1724,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Nepodařilo se vyhodit hráče "{}"!',
         ru: 'Не удалось кикнуть игрока "{}"!'
     },
-    
+    [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
+        en:  'Do you want turn off autobuy? (Not recommended for newbies)',
+        ru:  'Вы хотите отключить автоматическую покупку? (Не рекомендуется для новичков)',
+        br:  'Você quer desativar a compra automática? (Não recomendado para iniciantes)',
+        fr:  'Voulez-vous désactiver l\'achat automatique? (Non recommandé pour les débutants)',
+        zh:  '您要关闭自动购买吗？ (不推荐新手)',
+        cz:  'Chcete vypnout automatické nakupování? (Není doporučeno pro začátečníky)'
+    }
 };
 export default locale_data;
