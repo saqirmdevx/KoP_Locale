@@ -1391,7 +1391,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         en: 'Auto-buy',
         cz: 'Automatické nákupy',
         br: 'Compra automática',
-        ru: 'Автопокупка',
+        ru: 'Автоматическая покупка предметов',
         zh: '自動購買',
     },
     [LOCALE.VIDEO]: {

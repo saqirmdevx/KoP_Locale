@@ -720,11 +720,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖護盾',
             },
             desc: {
-<<<<<<< HEAD
-                en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby alies.`,
-=======
                 en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby allies.`,
->>>>>>> 5082d226b0eb68847a96589091ae03500368c192
                 ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Броню у всех ближайших союзных юнитов на ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} и Регенерацию здоровья на ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}.`,
                 br:  `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de regeneração de Vida para os aliados próximos.`,
                 fr:  `[PASSIF] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d’Armure et ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de Régénération de vie aux alliés à proximité.`,
@@ -737,7 +733,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
         return {
             name: {
                 en: 'Shield of Defiance',
-                ru: 'Щит отваги',
+                ru: 'Щит неповиновения',
                 br: 'Escudo da Defesa',
                 fr: 'Bouclier de Défiance',
                 zh: '蔑视之盾',
@@ -745,7 +741,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en:  `[PASSIVE]: Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Armor and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby allies.`,
-                ru:  `[ПАССИВНО]: Предоставляет союзникам поблизости броню на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} восстановления здоровья в секунду.`,
+                ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Сопротивление магии у всех ближайших союзных юнитов на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и Регенерацию здоровья на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}.`,
                 br:  `[PASSIVO]: Concede ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de Armadura e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de Vida para aliados ao redor.`,
                 fr:  `[PASSIF] : Octroie ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} d'Armure et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneration de vie aux alliés à proximité.`,
                 zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}护甲和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
