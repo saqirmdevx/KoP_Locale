@@ -329,7 +329,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 },
                 description: {
                     en: 'Increase duration of Triumphant Upheaval pushback',
-                    ru: `Увеличивает длительность отбрасывания у Триумфального переворота`,
+                    ru: 'Увеличивает длительность отбрасывания у Триумфального переворота',
                 }
             },
             tier1_right: {
