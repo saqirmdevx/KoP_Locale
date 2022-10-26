@@ -729,6 +729,27 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             }
         };
 
+    case Shared.ItemList.Shield_Of_Defiance:
+        return {
+            name: {
+                en: 'Shield of Defiance',
+                ru: 'Щит отваги',
+                br: 'Escudo da Defesa',
+                fr: 'Bouclier de Défiance',
+                zh: '蔑视之盾',
+                cz: 'Štít odporu',
+            },
+            desc: {
+                en:  `[PASSIVE]: Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Armor and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby alies.`,
+                ru:  `[ПАССИВНО]: Предоставляет союзникам поблизости броню на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} восстановления здоровья в секунду.`,
+                br:  `[PASSIVO]: Concede ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de Armadura e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de Vida para aliados ao redor.`,
+                fr:  `[PASSIF] : Octroie ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} d'Armure et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneration de vie aux alliés à proximité.`,
+                zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}护甲和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
+                cz:  `[PASIVNÍ]: Dodává ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} brnění a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci života poblíže stojícím spojencům.`,
+            }
+        };
+    
+
     case Shared.ItemList.Spike_Shield: {
         const damage = ItemAbilityData.SPIKE_SHIELD_BASE_DAMAGE;
         const bonus = fixed(ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_ARMOR * 100, 1);
