@@ -437,7 +437,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的輕量殺手',
             },
             desc: {
-                en: `[PASSIVE]: Grants ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal and ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} health regen to nearby alies.`,
+                en: `[PASSIVE]: Grants ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal and ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} health regen to nearby allies.`,
                 ru: `УНИКАЛЬНО(Пассивно): Увеличивает Кражу здоровья у всех ближайших союзных юнитов на ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Кражи здоровья и  Регенерацию здоровья на ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN}.`,
                 br: `[PASSIVO]: Concede ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% de roubo de vida e ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} regeneração de vida para aliados próximos.`,
                 fr: `[PASSIF]: Octroie ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% de récupération de vie et ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} de régénération de vie aux alliés proches.`,
@@ -720,7 +720,11 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖護盾',
             },
             desc: {
+<<<<<<< HEAD
                 en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby alies.`,
+=======
+                en:  `[PASSIVE]: Grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} Armor and ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen to nearby allies.`,
+>>>>>>> 5082d226b0eb68847a96589091ae03500368c192
                 ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Броню у всех ближайших союзных юнитов на ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} и Регенерацию здоровья на ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}.`,
                 br:  `[PASSIVO]: Concede ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} de Armadura e ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de regeneração de Vida para os aliados próximos.`,
                 fr:  `[PASSIF] : Octroie ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} d’Armure et ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de Régénération de vie aux alliés à proximité.`,
@@ -728,6 +732,27 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 cz:  `[PASIVNÍ] : Přidává ${ItemAbilityData.DIVINE_SHIELD_BONUS_ARMOR} k Armoru a ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} k Regenu zdraví těm nejbližším spojencům.`,
             }
         };
+
+    case Shared.ItemList.Shield_Of_Defiance:
+        return {
+            name: {
+                en: 'Shield of Defiance',
+                ru: 'Щит отваги',
+                br: 'Escudo da Defesa',
+                fr: 'Bouclier de Défiance',
+                zh: '蔑视之盾',
+                cz: 'Štít odporu',
+            },
+            desc: {
+                en:  `[PASSIVE]: Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Armor and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby allies.`,
+                ru:  `[ПАССИВНО]: Предоставляет союзникам поблизости броню на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} восстановления здоровья в секунду.`,
+                br:  `[PASSIVO]: Concede ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de Armadura e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de Vida para aliados ao redor.`,
+                fr:  `[PASSIF] : Octroie ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} d'Armure et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneration de vie aux alliés à proximité.`,
+                zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}护甲和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
+                cz:  `[PASIVNÍ]: Dodává ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} brnění a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci života poblíže stojícím spojencům.`,
+            }
+        };
+    
 
     case Shared.ItemList.Spike_Shield: {
         const damage = ItemAbilityData.SPIKE_SHIELD_BASE_DAMAGE;
