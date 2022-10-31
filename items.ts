@@ -740,21 +740,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 cz: 'Štít odporu',
             },
             desc: {
-<<<<<<< HEAD
-                en:  `[PASSIVE]: Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Armor and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby allies.`,
-                ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Сопротивление магии у всех ближайших союзных юнитов на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и Регенерацию здоровья на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}.`,
-                br:  `[PASSIVO]: Concede ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de Armadura e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de Vida para aliados ao redor.`,
-                fr:  `[PASSIF] : Octroie ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} d'Armure et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneration de vie aux alliés à proximité.`,
-                zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}护甲和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
-                cz:  `[PASIVNÍ]: Dodává ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} brnění a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci života poblíže stojícím spojencům.`,
-=======
                 en:  `[PASSIVE]: Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Magic resistance and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby allies.`,
                 br:  `[PASSIVO]: Concede aos aliados mais próximos ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de resistência mágica e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de vida.`,
                 fr:  `[PASSIF] : Accorde à vos alliés voisins ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de résistance magique et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de régénération de vie.`,
                 zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}魔法抗性和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
                 cz:  `[PASIVNĚ]: Poskytuje sousedním spojencům ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} odolnost proti kouzlu a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci zdraví.`,
-                ru:  `[ПАССИВНО]: Предоставляет союзникам поблизости броню на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} восстановления здоровья в секунду.`,
->>>>>>> ec8ecb86ead949ec29b9e504b6c2323350fe60d5
+                ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Сопротивление магии у всех ближайших союзных юнитов на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и Регенерацию здоровья на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}.`,
             }
         };
     
