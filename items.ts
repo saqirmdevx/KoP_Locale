@@ -733,7 +733,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
         return {
             name: {
                 en: 'Shield of Defiance',
-                ru: 'Щит отваги',
+                ru: 'Щит неповиновения',
                 br: 'Escudo da Defesa',
                 fr: 'Bouclier de Défiance',
                 zh: '蔑视之盾',
@@ -745,7 +745,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 fr:  `[PASSIF] : Accorde à vos alliés voisins ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de résistance magique et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de régénération de vie.`,
                 zh:  `[被动]：为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}魔法抗性和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
                 cz:  `[PASIVNĚ]: Poskytuje sousedním spojencům ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} odolnost proti kouzlu a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci zdraví.`,
-                ru:  `[ПАССИВНО]: Предоставляет союзникам поблизости броню на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} восстановления здоровья в секунду.`,
+                ru:  `УНИКАЛЬНО(Пассивно): Увеличивает Сопротивление магии у всех ближайших союзных юнитов на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и Регенерацию здоровья на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}.`,
+
             }
         };
     
