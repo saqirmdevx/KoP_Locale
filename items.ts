@@ -952,9 +952,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Кольцо берсерка',
                 zh: '狂戰士手環',
             },
-            desc: {
-                en: `[PASSIVE]: Your gain bonus ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% attack speed for each 10% HP you are missing.`,
-                ru: `УНИКАЛЬНО(Пассивно): Вы получаете дополнительные ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% Скорости атаки за каждые потерянные 10% Здоровья.`,
+            desc:  {
+                en:   `[PASSIVE]: for each 3.33% HP you are missing. you gain ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% attack speed and ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} health regen`,
+                ru:   `[ПАССИВНО]: за каждые 3,33% отсутствующего Вам HP вы получаете ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% скорость атаки и ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} восстановление здоровья`,
+                br:   `[PASSIVO]: para cada 3,33% de HP que você está faltando, você ganha ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% de velocidade de ataque e ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} de regeneração de saúde`,
+                cz:   `[PASIVNÍ]: za každých 3,33% chybějícího HP získáte ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% rychlost útoku a ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} obnovení zdraví`,
+                zh:   `[被动]：每缺少3.33％的HP，您将获得${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}％的攻击速度和${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG}的生命恢复`
             }
         };
 
