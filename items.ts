@@ -353,10 +353,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '聖劍',
             },
             desc: {
-                en: `[ACTIVE]: Makes you immune to all incoming damage for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and decreases your Attack Damage by 50%. (Cooldown: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} seconds) `,
-                br: `[Ativo]: Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 50%. \n [Tempo de recarga: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} seg.]`,
-                ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша Сила атаки уменьшается на 50%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
-                zh: `主動技：神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 50%。${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)}冷卻時間`,
+                en: `[ACTIVE]: Makes you immune to all incoming damage for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and decreases your Attack Damage by 90%. (Cooldown: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} seconds) `,
+                br: `[Ativo]: Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 90%. \n [Tempo de recarga: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} seg.]`,
+                ru: `УНИКАЛЬНО(Активно): Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша Сила атаки уменьшается на 90%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы. (Перезарядка: ${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)} сек.)`,
+                zh: `主動技：神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 90%。${toSec(ItemAbilityData.DIVINE_SWORD_COOLDOWN)}冷卻時間`,
             },
         };
     case Shared.ItemList.Divine_Katana:
