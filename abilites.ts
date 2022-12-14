@@ -225,7 +225,7 @@ const _getSpellDescriptionLang = (id: Shared.SpellList, {
         };
 
     case Shared.SpellList.THOMAS_SHURIKEN_TOSS: {
-        const base_damage = getDamage(ThomasAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * abilityPower, type, ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1));
+        const base_damage = getDamage(ThomasAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * damage, type, ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1));
 
         return {
             en: `Thomas throws three carrot-like shurikens which deals ${base_damage} physical damage to all enemies on the way. They return to him after a short time dealing ${base_damage} physical damage to all enemies in the way.`,

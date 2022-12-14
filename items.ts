@@ -753,7 +753,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
 
     case Shared.ItemList.Spike_Shield: {
         const damage = ItemAbilityData.SPIKE_SHIELD_BASE_DAMAGE;
-        const bonus = fixed(ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_ARMOR * 100, 1);
+        const bonus = fixed(ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL * 100, 1);
         return {
             name: {
                 en: 'Spike Shield',
@@ -763,12 +763,11 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '尖刺護盾',
             },
             desc: {
-                en:   `[PASSIVE]: deals ${damage} (+ ${bonus}% of armor) normal damage every second to all enemy units in short distance`,
-                ru:   `УНИКАЛЬНО(Пассивно): Наносит ${damage} (+ ${bonus}% вашей Брони) физического урона каждую секунду всем вражеским юнитам вокруг`,
-                br:   `[PASSIVO]: causa ${damage} (+ ${bonus}% de armadura) dano normal a cada segundo para todas as unidades inimigas em curta distância`,
-                fr:   `[PASSIF]: inflige ${damage} (+ ${bonus}% d'armure) de dommages normaux toutes les secondes à toutes les unités ennemies à courte distance`,
-                zh:   `[被动]: 每秒对短距离内的所有敌方单位造成 ${damage} (+ ${bonus}% 护甲) 的普通伤害`,
-                cz:   `[PASIVNĚ]: způsobuje ${damage} (+ ${bonus}% zbroje) obvyklé poškození každou sekundu všem nepřátelským jednotkám na krátkou vzdálenost`
+                en:   `[PASSIVE]: deals ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * level) normal damage every second to all enemy units in the  short distance`,
+                ru:   `[ПАССИВНО]: каждую секунду наносит ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * уровень) нормального урона всем вражеским единицам на коротком расстоянии`,
+                br:   `[PASSIVO]: causa ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * nível) dano normal a todas as unidades inimigas em curta distância a cada segundo`,
+                cz:   `[PASIVNÍ]: každou sekundu způsobuje ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * úroveň) normálního poškození všem nepřátelským jednotkám v krátké vzdálenosti`,
+                zh:   `[被动]: 每秒对短距离内的所有敌方单位造成 ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * 等级) 的正常伤害`
             }
         };
     }
@@ -869,23 +868,25 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                     特殊：每當你殺死小兵 (疊加 1)、敵方英雄 (疊加 5) 或是助攻 (疊加 2)，你獲得 ${ItemAbilityData.DEMON_RING_STACK_DMG}點攻擊傷害 (最大值 ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS})。所有疊加在死亡後歸零。`
             }
         };
-    case Shared.ItemList.Gold_Ring:
+    case Shared.ItemList.Divine_Ring: {
+        const bonusHealing = fixed(ItemAbilityData.DIVINE_RING_BONUS_HEALING_EFFECT * 100, 1);
         return {
             name: {
-                en: 'Gold Ring',
-                ru: 'Золотое кольцо',
-                br: 'Anel da Fortuna',
-                fr: 'Anneau d\'or',
-                zh: '黃金手環',
+                en: 'Divine Ring',
+                ru: 'Божественное кольцо',
+                br: 'Anel Divino',
+                cz: 'Božský prsten',
+                zh: '神圣戒指'
             },
             desc: {
-                en: '[PASSIVE]: Killing an enemy unit or assisting for hero kill gives additional 25 golds',
-                ru: 'УНИКАЛЬНО(Пассивно): Убивая вражеских миньонов или получая содействия в убийстве вражеских героев, вы получаете дополнительно 25 золота',
-                br: '[Único]: Matar uma unidade inimiga ou personagem, faz com que você ganhe 25 ouros adicionais.',
-                zh: '特殊：殺死一個敵方單位或助攻殺死敵方英雄獲得額外25枚黃金',
+                en: `[PASSIVE]: Healing done temporarily increase ability power by ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (stacks up to ${ItemAbilityData.DIVINE_RING_MAX_STACKS} times). <br /> <br /> Increase all healing done by ${bonusHealing}%.`,
+                ru: `[Пассивный]: Временное исцеление увеличивает силу способностей на ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (максимум ${ItemAbilityData.DIVINE_RING_MAX_STACKS} раз). <br /> <br /> Увеличивает все исцеление на ${bonusHealing}%.`,
+                br: `[PASSIVO]: O curar feito temporariamente aumenta o poder de habilidade em ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (acumulando até ${ItemAbilityData.DIVINE_RING_MAX_STACKS} vezes). <br /> <br /> Aumenta todo o curar feito em ${bonusHealing}%.`,
+                cz: `[PASIVNÍ]: Léčení dočasně zvýší schopnost síly o ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (může být až ${ItemAbilityData.DIVINE_RING_MAX_STACKS}krát). <br /> <br /> Zvyšuje všechno léčení o ${bonusHealing}%.`,
+                zh: `[被动]: 暂时性的治疗会使能力增加 ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER}（最多叠加 ${ItemAbilityData.DIVINE_RING_MAX_STACKS} 次）。 <br /> <br /> 增加所有治疗量 ${bonusHealing}%。`
             }
         };
-
+    }
     case Shared.ItemList.Frost_Ring: {
         return {
             name: {
@@ -914,18 +915,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '時辰手環',
             },
             desc: {
-                en:  '[PASSIVE]: If you receive a kill or assist on an enemy hero, your ability cooldowns will reset. (Reset does not work on items) <br /> <br /> '+
-                `[PASSIVE]: Increase all healing done by ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                ru:  'УНИКАЛЬНО(Пассивно): При убийстве врага или получении содействия, перезарядка ваших способностей сбрасывается. (Перезарядка предметов не сбрасывается) <br /> <br /> '+
-                `УНИКАЛЬНО(Пассивно): Накладываемое вами лечение усиливается на ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                br:  '[PASSIVO]: Se você receber um abate ou assistência em um herói inimigo, os tempos de reutilização de suas habilidades serão redefinidos. (O reset não funciona em itens) <br /> <br /> '+
-                `[PASSIVO]: Aumenta todo o cura feito por ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                fr:  '[PASSIF] : Si vous tuez ou aidez à tuer un héros ennemi, vos temps de recharge de capacités seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets) <br /> <br /> '+
-                `[PASSIF] : augmente tous les soins prodigués de ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                zh:  '[被动]: 如果你对敌方英雄造成击杀或助攻，你的技能冷却时间将重置。 (重置不会对物品生效) <br /> <br /> '+
-                `[被动]: 增加所有治疗效果 ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
-                cz:  '[PASIVNÍ]: Pokud zabijete nebo pomůžete zabít nepřátelského hrdinu, Vaše doby obnovování schopností se resetují. (Resetování se neprojeví na předmětech) <br /> <br /> '+
-                `[PASIVNÍ]: Zvyšuje všechny způsobené léčení o ${fixed(ItemAbilityData.CHRONOS_BONUS_HEALING_EFFECT * 100, 1)}%`,
+                en:  '[PASSIVE]: If you receive a kill or assist on an enemy hero, your ability cooldowns will reset. (Reset does not work on items)',
+                ru:  'УНИКАЛЬНО(Пассивно): При убийстве врага или получении содействия, перезарядка ваших способностей сбрасывается. (Перезарядка предметов не сбрасывается) ',
+                br:  '[PASSIVO]: Se você receber um abate ou assistência em um herói inimigo, os tempos de reutilização de suas habilidades serão redefinidos. (O reset não funciona em itens)',
+                fr:  '[PASSIF] : Si vous tuez ou aidez à tuer un héros ennemi, vos temps de recharge de capacités seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets)',
+                zh:  '[被动]: 如果你对敌方英雄造成击杀或助攻，你的技能冷却时间将重置。 (重置不会对物品生效)',
+                cz:  '[PASIVNÍ]: Pokud zabijete nebo pomůžete zabít nepřátelského hrdinu, Vaše doby obnovování schopností se resetují. (Resetování se neprojeví na předmětech)',
             }
         };
     case Shared.ItemList.Corrupted_Ring:
