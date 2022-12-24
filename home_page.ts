@@ -1,7 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { LOCALE } from 'lang/locales';
+import { LOCALE } from 'lang/locales'
 
 export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     [LOCALE.LOGIN_AS_GUEST]: {
@@ -94,4 +94,4 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
         ru: ' - Награды: опыт и монеты\n - 2 игрока против 2 Сложных ботов\n - На 75% меньше получаемого опыта и монет',
         cz: ' - Odměna: zkušenosti a mince\n - 2 hráči vs 2 tvrdá umělá inteligence\n - o 75 % méně zkušeností a mincí'
     }
-};
+}

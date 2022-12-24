@@ -15,8 +15,8 @@ import {
     AlvarAbilityData,
     FoxyAbilityData,
 //@ts-ignore
-} from 'shared';
-import { toSecRaw, toSec, fixed } from './misc';
+} from 'shared'
+import { toSecRaw, toSec, fixed } from './misc'
 
 interface ITalentProps {
     title: {[key in string]: string}
@@ -62,7 +62,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `Усиленная атака наносит дополнительно ${KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * 100}% физического урона и накладывает все эффекты при попадании`
                 }
             }
-        };
+        }
 
     case Shared.HEROES.SPARROW:
         return {
@@ -94,7 +94,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)} сек. перезарядки Рывка`,
                 },
             }
-        };
+        }
 
     case Shared.HEROES.ICEAT:
         return {
@@ -126,7 +126,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `+${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)} сек. к длительности Объятий холода`
                 },
             }
-        };
+        }
 
     case Shared.HEROES.VEIL: {
         return {
@@ -160,7 +160,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                         'Больше нет необходимости попадать по врагу усиленным Астральным шагом, чтобы сбросить его перезарядку',
                 }
             }
-        };
+        }
     }
 	
     case Shared.HEROES.BELLE:
@@ -189,7 +189,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: '+1 бутон у Цветочной ловушки',
                 },
             }
-        };
+        }
     case Shared.HEROES.FLIN:
         return {
             tier1_left: {
@@ -220,7 +220,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `Залп: Флин выпускает дополнительно 2 стрелы под углом 30 градусов при каждой атаке, каждая из которых наносит ${getDamage(FlinAbilityData.ATTACK_SPLIT_DAMAGE * 100)}% физического урона.`
                 }
             }
-        };
+        }
 
     case Shared.HEROES.THOMAS:
         return {
@@ -252,7 +252,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `Теневая морковь при повторной активации оглушает врага на ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)} сек.`,
                 },
             }
-        };
+        }
 
     case Shared.HEROES.ALVAR:
         return {
@@ -284,7 +284,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)} сек. перезарядки Небесного удара`,
                 },
             }
-        };
+        }
 
     case Shared.HEROES.AREL:
         return {
@@ -318,7 +318,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 						`<br/> Замораживающая ловушка существует ${toSec(ArelAbilityData.FREEZING_TRAP_DURATION)} и даёт небольшой обзор вокруг себя`
                 }
             }
-        };
+        }
 
     case Shared.HEROES.HAZEL:
         return {
@@ -354,7 +354,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Триумфальный переворот наносит чистый урон и рассеивает все негативные эффекты при активации.'
                 }
             }
-        };
+        }
 		
     case Shared.HEROES.KIRA:
         return {
@@ -386,7 +386,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: 'Удар молнии поражает +1 дополнительную цель',
                 },
             }
-        };
+        }
 
     case Shared.HEROES.FOXY:
         return {
@@ -422,7 +422,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     ru: `+${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}% к урону Беглого огня`,
                 },
             }
-        };
+        }
 
     default: 
         return {
@@ -446,17 +446,17 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     en: 'Unknown',
                 },
             }
-        };
+        }
     }
-};
+}
 
 export const getDamage = (damage: number, type: Shared.DamageTypes = Shared.DamageTypes.NORMAL, baseDamage = 0): string => {
-    damage = Math.floor(damage);
-    baseDamage = fixed(baseDamage, 1);
+    damage = Math.floor(damage)
+    baseDamage = fixed(baseDamage, 1)
 
     /** dont show % in game */
-    return `<span class=${type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')}</span>`;
-};
+    return `<span class=${type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'}>${baseDamage > 0 ? (baseDamage + (damage > 0 ? '(+' + damage + ')' : '')) : (damage > 0 ? damage : '')}</span>`
+}
 
 
-export default getHeroTalents;
+export default getHeroTalents

@@ -72,7 +72,7 @@ default_spell.ts
 
 ```ts
 /** Bunninja */
-case Shared.SpellList.BUNNINJA_AUTOATTACK:
+case SpellList.BUNNINJA_AUTOATTACK:
    return {
       en: `Bunninja slashes with his carrot and deals  ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
       ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
@@ -86,7 +86,7 @@ Example:
 
 ```ts
 /** Bunninja */
-case Shared.SpellList.BUNNINJA_AUTOATTACK:
+case SpellList.BUNNINJA_AUTOATTACK:
    return {
       en: `Bunninja slashes with his carrot and deals  ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} damage.`,
       ru: `Банниндзя взмахивает своей морковью, нанося ${getDamage(BunninjaAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} физического урона.`,
