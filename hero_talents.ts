@@ -14,6 +14,7 @@ import {
     ArelAbilityData,
     AlvarAbilityData,
     FoxyAbilityData,
+    MagdaleneAbilityData,
 //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -421,6 +422,39 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                     en: `Rapid fire damage +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
                     ru: `+${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}% к урону Беглого огня`,
                 },
+            }
+        }
+
+    case Shared.HEROES.MAGDALENE:
+        return {
+            tier1_left: {
+                title: {
+                    en: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} AP - Kill/Assist`,
+                },
+                description: {
+                    en: `Enhance your passive and provide additional permanent ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} ability power for kill or assist`
+                }
+            },
+            tier1_right: {
+                title: {
+                    en: `Scream of Pain Pushback +${toSecRaw(MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION)}s`,
+                },
+            },
+            tier2_left: {
+                title: {
+                    en: 'Empower Swarm of Ghosts',
+                },
+                description: {
+                    en: `Swarm of Ghosts deals +${fixed(MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100, 1)}% more damage per stack`
+                }
+            },
+            tier2_right: {
+                title: {
+                    en: 'Scream of Pain apply stacks',
+                },
+                description: {
+                    en: `Scream of Pain apply ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} stacks of Swarm of Ghosts`
+                }
             }
         }
 

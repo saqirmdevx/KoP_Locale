@@ -261,7 +261,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 br: 'Pingente encantador',
                 fr: 'Pendentif charmant',
                 zh: '迷人的吊坠',
-                cz: 'Okouzlující přívěsek'
+                cz: 'Okouzlující přívěsek',
+                ru: 'Очаровательная подвеска'
             }
         }
     case ItemList.Plate_Armor:
