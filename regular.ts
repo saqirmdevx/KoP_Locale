@@ -87,7 +87,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Фокси',
     },
     [LOCALE.MAGDALENA_NAME]: {
-        en: 'Magdalena',
+        en: 'Magdalene',
     },
     [LOCALE.UNK_DESCRIPTION]: {
         en: 'Will be added soon!',
