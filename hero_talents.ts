@@ -430,30 +430,37 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             tier1_left: {
                 title: {
                     en: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} AP - Kill/Assist`,
+                    ru: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} к Силе умений за убийство/содействие`,
                 },
                 description: {
-                    en: `Enhance your passive and provide additional permanent ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} ability power for kill or assist`
+                    en: `Enhance your passive and provide additional permanent ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} ability power for kill or assist`,
+                    ru: `Каждый убитый враг после изучения этого таланта будет давать дополнительно ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} Силы умений`,
                 }
             },
             tier1_right: {
                 title: {
                     en: `Scream of Pain Pushback +${toSecRaw(MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION)}s`,
+                    ru: `+${toSecRaw(MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION)} сек. к отбрасыванию Загробного вопля`,
                 },
             },
             tier2_left: {
                 title: {
                     en: 'Empower Swarm of Ghosts',
+                    ru: 'Усиленная Волна призраков',
                 },
                 description: {
-                    en: `Swarm of Ghosts deals +${fixed(MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100, 1)}% more damage per stack`
+                    en: `Swarm of Ghosts deals +${fixed(MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100, 1)}% more damage per stack`,
+                    ru: `+${fixed(MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100, 1)}% к наносимому урону от Волны призраков за каждый заряд Призрачного пакта на враге.`,
                 }
             },
             tier2_right: {
                 title: {
                     en: 'Scream of Pain apply stacks',
+                    ru: 'Загробный вопль накладывает заряды Призрачного пакта',
                 },
                 description: {
-                    en: `Scream of Pain apply ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} stacks of Swarm of Ghosts`
+                    en: `Scream of Pain apply ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} stacks of Swarm of Ghosts`,
+                    ru: `Загробный вопль накладывает ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} заряда Призрачного пакта`,
                 }
             }
         }

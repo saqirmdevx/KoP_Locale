@@ -88,6 +88,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.MAGDALENA_NAME]: {
         en: 'Magdalene',
+        ru: 'Магдалина',
     },
     [LOCALE.UNK_DESCRIPTION]: {
         en: 'Will be added soon!',
@@ -485,7 +486,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.TAG_BRUISER]: {
         en: 'BRUISER',
-        ru: 'УБИЙЦА',
+        ru: 'ГРОМИЛА',
         br: 'LUTADOR',
         cz: 'ASSASSÍN',
         zh: '創擊者',

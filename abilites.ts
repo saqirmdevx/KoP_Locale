@@ -603,7 +603,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
         return {
             en: `Foxy throws a grenade that explodes when it touches the ground at a certain speed. If the fall speed is too high, it will bounce. Upon explosion it deals ${baseDamage}. <br/>` +
                 'When the grenade explodes, it will knockback units. The knockback is based on the distance between the unit and grenade.',
-            ru: `Фокси бросает гранату, которая взрывается при соприкосновении с землёй на определённой скорости. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage}. <br/>` +
+            ru: `Фокси бросает гранату, которая взрывается при соприкосновении с землёй на определённой скорости. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage} физического урона. <br/>` +
                 'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.',    
             cz: `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage}. <br/>` +
                 'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
@@ -618,6 +618,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
     
         return {
             en: `Magdalene swirls with her dark scythe firing a burst of energy that deals ${baseDamage} damage\n\n Passive: Magdalene permanently gain ${bonusAPTalent} ability power for killing or assisting in hero kill.`,
+            ru: `Магдалина взмахивает серпом, выпуская волну энергии, наносящую ${baseDamage} физического урона\n\n Пассивно: За получение убийства или содействия, Магдалина навсегда получает ${bonusAPTalent} Силы умений.`,
             br: `Magdalene rodopiando com sua foice negra disparando um burst de energia que causa ${baseDamage} dano\n\n Passivo: Magdalene ganha permanentemente ${bonusAPTalent} de poder de habilidade por matar ou ajudar a matar o herói.`,
             fr: `Magdalene tournoie avec sa faux sombre tirant une salve d'énergie qui inflige ${baseDamage} dégâts\n\nPassif: Magdalene gagne permanent ${bonusAPTalent} points de puissance d'aptitude pour tuer ou aider à tuer le héros.`,
             zh: `玛格达丽娜旋转着黑色镰刀发射一股能量，造成${baseDamage}伤害\n\n被动：玛格达丽娜击杀或协助击杀英雄永久获得${bonusAPTalent}能力值。`,
@@ -629,6 +630,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
         const damage = getDamage(MagdaleneAbilityData.SCREAM_OF_PAIN_AP_MODIFIER * abilityPower, Shared.DamageTypes.MAGICAL, MagdaleneAbilityData.SCREAM_OF_PAIN_BASE_DAMAGE + (MagdaleneAbilityData.SCREAM_OF_PAIN_DAMAGE_PER_LEVEL * (level - 1)))
         return {
             en: `Magdalene loudly screams affect all enemies in front of her, push them away, deals ${damage} and silence them for ${toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)}`,
+            ru: `Магдалина издаёт истошный вопль, наносящий ${damage} магического урона всем врагам на своём пути и накладывающий на них немоту на ${toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)}`,
             br: `Magdalena grita alto afetando todos os inimigos na frente dela, empurrando-os para longe, causando ${damage} e silenciando-os por ${toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)}`,
             fr: `Magdalene crie bruyamment affecte tous les ennemis devant elle, les repousse, leur inflige ${damage} et les rend muets pendant ${toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)}`,
             zh: `玛格丹妮大声尖叫，影响她面前的所有敌人，将他们推开，造成${damage}伤害，并将他们沉默${toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)}`,
@@ -645,6 +647,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
         
         return {
             en: `Sends a swarm of lost ghosts to savage enemy units in front of Magdalene. Affected enemy units take ${damage} and apply 1 stack of ghost pact on enemies.\n\n - Each stack of ghost pact increases the damage of Swarm of Ghosts by ${percDamage}%`,
+            ru: `Магдалина выпускает призраков, которые наносят ${damage} магического урона и накладывают 1 заряд Призрачного пакта на вражеских героев.\n\n Призрачный пакт: Каждый заряд Призрачного пакта на противнике повышает получаемый урон от Волны призраков на ${percDamage}%`,
             br: `Envia uma enxame de fantasmas perdidos para atacar unidades inimigas na frente de Magdalene. Unidades inimigas afetadas recebem ${damage} e aplica 1 pilha de pacto de fantasmas nos inimigos.\n\n - Cada pilha de pacto de fantasmas aumenta o dano de Enxame de Fantasmas em ${percDamage}%`,
             fr: `Envoie une nuée de fantômes perdus pour attaquer les unités ennemies devant Magdalene. Les unités ennemies touchées subissent ${damage} et appliquent 1 pile de pacte de fantôme aux ennemis.\n\n - Chaque pile de pacte de fantôme augmente les dégâts de Nuée de Fantômes de ${percDamage}%`,
             zh: `向马格达莱恩（Magdalene）前方的敌军单位发送一群迷失的幽灵。受影响的敌军单位受到 ${damage} 伤害，并在敌人身上施加 1 层幽灵契约。\n\n - 每层幽灵契约会使蜂群幽灵的伤害提升 ${percDamage}%`,
@@ -911,6 +914,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
     case SpellList.MAGDALENE_SCREAM_OF_PAIN:
         return {
             en: 'Scream of Pain',
+            ru: 'Загробный вопль',
             br: 'Grito de Dor',
             fr: 'Cri de Douleur',
             zh: '痛苦的尖叫',
@@ -918,7 +922,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         }
     case SpellList.MAGDALENE_SWARM_OF_GHOSTS:
         return {
-            en:  'Swarm of Ghosts',
+            en: 'Swarm of Ghosts',
+            ru: 'Волна призраков',
             br: 'Enxame de Fantasmas',
             fr: 'Essaim de Fantômes',
             zh: '一群鬼魂',
