@@ -1,8 +1,8 @@
 /* eslint-disable no-irregular-whitespace */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { LOCALE } from '../locales';
-import { home_page } from './home_page';
+import { LOCALE } from '../locales'
+import { home_page } from './home_page'
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ...home_page,
@@ -85,6 +85,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     [LOCALE.FOXY_NAME]: {
         en: 'Foxy',
         ru: 'Фокси',
+    },
+    [LOCALE.MAGDALENA_NAME]: {
+        en: 'Magdalene',
+        ru: 'Магдалина',
     },
     [LOCALE.UNK_DESCRIPTION]: {
         en: 'Will be added soon!',
@@ -482,7 +486,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     [LOCALE.TAG_BRUISER]: {
         en: 'BRUISER',
-        ru: 'УБИЙЦА',
+        ru: 'ГРОМИЛА',
         br: 'LUTADOR',
         cz: 'ASSASSÍN',
         zh: '創擊者',
@@ -1729,12 +1733,28 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Не удалось кикнуть игрока "{}"!'
     },
     [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
-        en:  'Do you want turn off autobuy? (Not recommended for newbies)',
-        ru:  'Отключить автоматическую покупку предметов? (Не рекомендуется для новичков)',
-        br:  'Você quer desativar a compra automática? (Não recomendado para iniciantes)',
-        fr:  'Voulez-vous désactiver l\'achat automatique? (Non recommandé pour les débutants)',
-        zh:  '您要关闭自动购买吗？ (不推荐新手)',
-        cz:  'Chcete vypnout automatické nakupování? (Není doporučeno pro začátečníky)'
+        en: 'Autobuy is on, you can\'t buy items. You can turn off autobuy feature in settings',
+        ru: 'Вы не можете покупать предметы, пока активна автоматическая покупка предметов. Вы можете отключить её в настройках.',
+        br: 'Você não pode comprar itens com o recurso de compra automática ativado. Você pode desativá-lo nas configurações',
+        cz: 'Nemáte povoleno nakupovat zboží s funkcí autokoupě. Můžete ji vypnout v nastavení',
+        zh: '您不允许使用自动购买功能购买物品。您可以在设置中关闭它'
+    },
+    [LOCALE.ACTIVE]: {
+        en: 'Active',
+        ru: 'Активно',
+        br: 'Ativo',
+        cz: 'Aktivní',
+        zh: '活动',
+        fr: 'Actif',
+
+    },
+    [LOCALE.PASSIVE]: {
+        en: 'Passive',
+        ru: 'Пассивно',
+        br: 'Passivo',
+        cz: 'Pasivní',
+        zh: '被动',
+        fr: 'PASSIF',
     }
-};
-export default locale_data;
+}
+export default locale_data
