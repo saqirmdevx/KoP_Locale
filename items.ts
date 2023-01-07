@@ -365,10 +365,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '聖劍',
             },
             desc: {
-                en: `Makes you immune to all incoming damage for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and decreases your Attack Damage by 90%.`,
-                br: `Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 90%.`,
-                ru: `Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша Сила атаки уменьшается на 90%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы.`,
-                zh: `神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 90%。`,
+                en: `Makes you immune to all incoming damage for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and decreases your Attack Damage by 75%.`,
+                br: `Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 75%.`,
+                ru: `Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша Сила атаки уменьшается на 75%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы.`,
+                zh: `神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 75%。`,
             },
         }
     case ItemList.Divine_Katana:
