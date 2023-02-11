@@ -346,12 +346,13 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '闇影殺手',
             },
             desc: {
-                en: `Your basic attacks do additional magic damage equal to ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy's max Health`,
-                ru: `Ваши атаки наносят дополнительный магический урон по героям, который равен ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% от макс. здоровья цели`,
-                br: `Seus ataques causam dano mágico adicional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de vida máxima do inimigo.`,
-                cz: `Tvůj útok způsobí bonusové poškození o velikosti ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)} % protivníkova maximálního zdravý. `,
-                fr: `Ton attaque J fait des dommages magiques additionnels de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% des points de vie de l'enemie`,
-                zh: `你的一般攻擊對敵方造成血量最大值 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% 的額外魔法傷害`,
+                en: `When ready, your attack deals additional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy's max health, reduce his current health regen to 0 and deals ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} times more damage over ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+                br: `Quando pronto, seu ataque causa dano adicional de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% da vida máxima do inimigo, reduzindo sua regeneração de vida atual para 0 e causando dano ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} vezes maior durante ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+                cz: `Když je připraven, váš útok způsobí dodatečné poškození ve výši ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% z maximálního zdraví nepřítele, sníží jeho současnou regeneraci zdraví na 0 a způsobí ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER}x více poškození po dobu ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+                fr: `Quand prêt, votre attaque inflige des dégâts supplémentaires de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de la vie maximale de l'ennemi, réduit sa régénération de vie actuelle à 0 et inflige ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} fois plus de dégâts pendant ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+                zh: `當準備好時，你的攻擊對敵人造成額外的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% 最大生命值的傷害，並將其當前生命回復降低為0，並在${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}內造成${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER}倍的傷害。`,
+                ru: `Когда предмет не находится на перезарядке, ваши атаки наносят дополнительный урон в размере ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% от макс. Здоровья цели, уменьшают Регенерацию здоровья до 0, а также наносят больше урона, который равен Регенерации здоровья цели в момент активации умноженной на ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} в течение ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`
+
             }
         }
 
@@ -1096,7 +1097,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             }
         }
     case ItemList.Kirins_Bow: {
-        const asAndMsReduction = fixed(ItemAbilityData.KIRINS_BOW_AS_AND_MR_REDUCTION *100, 1)
+        const asAndMsReduction = fixed(ItemAbilityData.KIRINS_BOW_AS_REDUCTION *100, 1)
         return {
             name: {
                 en: 'Kirin\'s Bow',
@@ -1107,12 +1108,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Лук Кирина'
             },
             desc: {
-                en: `Your basic attacks apply magical poison that explode at ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stack. Upon explosion deals ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magical damage, reduces ${asAndMsReduction}% magic resistance and ${asAndMsReduction}% attack speed for ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
+                en: `Your basic attacks apply magical poison that explode at ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stack. Upon explosion deals ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magical damage, reduces ${asAndMsReduction}% attack speed for ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
                 zh: `你的基本攻击会施加魔法毒，抵达${ItemAbilityData.KIRINS_BOW_MAX_STACKS}层后爆炸，造成${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME}魔法伤害，减少${asAndMsReduction}%魔法抗性和${asAndMsReduction}%攻击速度，持续${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
-                cz: `Vaše základní útoky aplikují magickou jed, která exploduje při ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} vrstvách. Při výbuchu způsobuje ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magické škody, snižuje ${asAndMsReduction}% odolnost vůči magii a ${asAndMsReduction}% rychlost útoku po dobu ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
-                fr: `Vos attaques de base appliquent un poison magique qui explose à ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pile. Lors de l'explosion, il inflige ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} dégâts magiques, réduit la résistance magique de ${asAndMsReduction}% et la vitesse d'attaque de ${asAndMsReduction}% pendant ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
-                br: `Seus ataques básicos aplicam veneno mágico que explodem em ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pilhas. Ao explodir, causa ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} dano mágico, reduz ${asAndMsReduction}% de resistência mágica e ${asAndMsReduction}% de velocidade de ataque por ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
-                ru: `Ваши базовые атаки накладывают волшебный яд, который взрывается при достижении  ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} зарядов. Взрыв наносит ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} магического урона, уменьшает Сопротивление магии цели на ${asAndMsReduction}%, а также Скорость атаки на  ${asAndMsReduction}% на ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`
+                cz: `Vaše základní útoky aplikují magickou jed, která exploduje při ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} vrstvách. Při výbuchu způsobuje ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magické škody, snižuje ${asAndMsReduction}% rychlost útoku po dobu ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
+                fr: `Vos attaques de base appliquent un poison magique qui explose à ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pile. Lors de l'explosion, il inflige ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} dégâts magiques, réduit la vitesse d'attaque de ${asAndMsReduction}% pendant ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
+                br: `Seus ataques básicos aplicam veneno mágico que explodem em ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pilhas. Ao explodir, causa ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} dano mágico, reduz ${asAndMsReduction}% de velocidade de ataque por ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
+                ru: `Ваши базовые атаки накладывают волшебный яд, который взрывается при достижении  ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} зарядов. Взрыв наносит ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} магического урона, уменьшает Скорость атаки на  ${asAndMsReduction}% на ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`
             }
         }
     }
@@ -1147,12 +1148,12 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Талисман волшебника'
             },
             desc: {
-                en: `Grants ${ItemAbilityData.WIZARD_CHARM_AOE_AP} ability power and ${ItemAbilityData.WIZARD_CHARM_AOE_HASTE} ability haste to nearby alies`,
-                br: `Concede ${ItemAbilityData.WIZARD_CHARM_AOE_AP} poder de habilidade e ${ItemAbilityData.WIZARD_CHARM_AOE_HASTE} pressa de habilidade a aliados próximos`,
-                fr: `Accorde ${ItemAbilityData.WIZARD_CHARM_AOE_AP} puissance d'aptitude et ${ItemAbilityData.WIZARD_CHARM_AOE_HASTE} vitesse d'aptitude aux alliés à proximité`,
-                zh: `給予附近的盟友${ItemAbilityData.WIZARD_CHARM_AOE_AP}的能力力量和${ItemAbilityData.WIZARD_CHARM_AOE_HASTE}的能力加速度`,
-                cz: `Uděluje ${ItemAbilityData.WIZARD_CHARM_AOE_AP} sílu schopnosti a ${ItemAbilityData.WIZARD_CHARM_AOE_HASTE} rychlost schopnosti blízkým spojencům`,
-                ru: `Даёт ${ItemAbilityData.WIZARD_CHARM_AOE_AP} Силы умений и ${ItemAbilityData.WIZARD_CHARM_AOE_HASTE} Сокращения перезарядки ближайшим союзникам.`
+                en: `Reduces the magic resistance and positive auras duration to all nearby enemies by ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
+                br: `Reduz a resistência mágica e a duração das auras positivas de todos os inimigos próximos em ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
+                fr: `Réduit la résistance magique et la durée des auras positives de tous les ennemis à proximité de ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
+                zh: `降低附近所有敵人的魔法抗性和正面光環持續時間${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%。`,
+                cz: `Sníží magickou odolnost a délku pozitivních efektů všech nepřátel v okolí o ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
+                ru: `Уменьшает Сопротивление магии и длительность положительных эффектов у ближайших врагов на ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`
             }
         }
     }
