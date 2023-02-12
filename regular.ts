@@ -567,6 +567,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Majetek',
         zh: '獲得總價值',
     },
+    // Add locale for POST_TOTAL_HEALING for all languages
+    [LOCALE.POST_TOTAL_HEALING]: {
+        en: 'Total Healing',
+        ru: 'Всего исцеления',
+        br: 'Total de cura',
+        zh: '總治療量',
+        cz: 'Celkové léčení',
+    },
 
     [LOCALE.POST_LEAVE_GAME]: {
         en: 'Leave Game',
