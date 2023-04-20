@@ -109,7 +109,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的武士刀',
             },
             desc: {
-                en: `Increase critical damage to ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
+                en: `Increases your Critical damage to ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%.`,
                 ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
                 cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
                 zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
@@ -147,7 +147,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '強靭長弓',
             },
             desc: {
-                en: `Increase range of bullets by ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} and speed by ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+                en: `Increases projectile range by ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px and projectile speed by ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
                 ru: `Увеличивает дальность полёта снарядов на ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} пикселей и скорость их полёта на ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
                 br: `Aumenta o alcance das balas em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} e a velocidade em ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
                 fr: `Augmente la portée des balles de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} et la vitesse de ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
@@ -276,7 +276,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '金屬裝甲',
             },
             desc: {
-                en: `Amplify all healing and regeneration effects by ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%`,
+                en: `Amplifies all healing and regeneration effects by ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%.`,
                 ru: `Увеличивает эффективность входящего исцеления и эффектов регенерации на ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%`,
             }
         }
@@ -346,7 +346,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '闇影殺手',
             },
             desc: {
-                en: `When ready, your attack deals additional ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of enemy's max health, reduce his current health regen to 0 and deals ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} times more damage over ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+                en: `Your Basic Attack deals ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% of the enemy's max health as bonus Magic Damage. Prevents the enemy's Health Regeneration and deals (${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100}% enemy Health Regeneration) Magic Damage per second for ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
                 br: `Quando pronto, seu ataque causa dano adicional de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% da vida máxima do inimigo, reduzindo sua regeneração de vida atual para 0 e causando dano ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} vezes maior durante ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
                 cz: `Když je připraven, váš útok způsobí dodatečné poškození ve výši ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% z maximálního zdraví nepřítele, sníží jeho současnou regeneraci zdraví na 0 a způsobí ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER}x více poškození po dobu ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
                 fr: `Quand prêt, votre attaque inflige des dégâts supplémentaires de ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(1)}% de la vie maximale de l'ennemi, réduit sa régénération de vie actuelle à 0 et inflige ${ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER} fois plus de dégâts pendant ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
@@ -366,7 +366,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '聖劍',
             },
             desc: {
-                en: `Makes you immune to all incoming damage for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} and decreases your Attack Damage by 75%.`,
+                en: `Cleanses all negative effects. Decreases your Attack Damage by 75% and makes you immune to all incoming damage and negative effects for ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}.`,
                 br: `Escudo Divino - Torna você imune a todos os efeitos por${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)} e reduza seu dano de ataque em 75%.`,
                 ru: `Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}, а также ваша Сила атаки уменьшается на 75%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы.`,
                 zh: `神聖護盾 - 使你 ${toSec(ItemAbilityData.DIVINE_SWORD_DURATION)}無視所有效果並將你受到的攻擊傷害降至為 75%。`,
@@ -383,8 +383,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 // Require update
+                en: 'Throws a fragment of the katana, which reduces the Movement Speed of enemies and silences enemies inside its radius. Provides unobstructed vision and reveals all invisible units in its radius.',
                 ru: 'Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев, а также раскрывает все невидимые цели вокруг себя и даёт беспрепятственный обзор, пока находится на земле.',
-                en: 'Throws a fragment of the katana. Upon impact with the ground, the katana slows enemies by and silences them while inside its radius, also providing unobstructed vision and revealing all invisible units.',
                 br: 'Joga a katana divina perto de você, no momento do impacto fornece visão desobstruída, silencia e desacelera todos os heróis inimigos na área. Além disso, revelará todas as unidades invisíveis na área.',
                 zh: '在你前方投擲片段武士刀，提供寬廣視野，沉默且減速在範圍內的敵方英雄。此外能揭發隱蔽單位',
             }
@@ -398,7 +398,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '尖刺錘',
             },
             desc: {
-                en: `Your normal attack instantly kills the enemy when the enemy's health is below ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
+                en: `Your Basic Attack instantly kills enemies with less than ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}% remaining Health.`,
                 ru: `Ваша атака мгновенно добивает врага, если у него меньше ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}% Здоровья.`,
                 br: `Seu ataque normal instantaneamente mata o inimigo quando a saúde do inimigo está abaixo de ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
                 fr: `Votre attaque normale tue instantanément l'ennemi lorsque la santé de l'ennemi est inférieure à ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)}%`,
@@ -413,7 +413,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Чумное кольцо',
             },
             desc: {
-                en: `Increase duration by ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% of all negative effects applied by your abilities.`,
+                en: `Increases the duration of all negative effects applied by your Abilities by ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}%.`,
                 ru: `Увеличивает длительность всех накладываемых вами негативных эффектов на ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}%.`,
                 br: `Aumente a duração em ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% de todos os efeitos negativos aplicados pelas suas habilidades.`,
                 fr: `Augmente la durée de ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER * 100)}% de tous les effets négatifs appliqués par vos capacités.`,
@@ -432,7 +432,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '寒冰之劍',
             },
             desc: {
-                en: `Your basic attacks apply stacks on the enemy. Upon reaching ${ItemAbilityData.COLD_SWORD_STACKS} stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}`,
+                en: `Your Basic Attacks apply a stack of physical frost on the enemy. At ${ItemAbilityData.COLD_SWORD_STACKS} stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
                 ru: `Попадая обычной атакой по врагу, вы накладываете на него 1 заряд. При накоплении ${ItemAbilityData.COLD_SWORD_STACKS} зарядов, этот враг получает Морозное проклятие - ${getFrigidCurseDescription()}.`,
                 br: `Seus ataques básicos aplicam pilhas no inimigo. Após atingir ${ItemAbilityData.COLD_SWORD_STACKS} pilhas, o inimigo é infectado com a Maldição Gelada - ${getFrigidCurseDescription()}`,
                 fr: `Vos attaques de base appliquent des stacks à l'ennemi. Lorsqu'ils atteignent ${ItemAbilityData.COLD_SWORD_STACKS} stacks, l'ennemi est frappé de Malédiction glacée - ${getFrigidCurseDescription()}`,
@@ -450,7 +450,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的輕量殺手',
             },
             desc: {
-                en: `Grants ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal and ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} health regen to nearby allies.`,
+                en: `Grants ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal and ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} Health Regen to nearby allies.`,
                 ru: `Увеличивает Кражу здоровья у всех ближайших союзников на ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Кражи здоровья и  Регенерацию здоровья на ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN}.`,
                 br: `Concede ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% de roubo de vida e ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} regeneração de vida para aliados próximos.`,
                 fr: `Octroie ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% de récupération de vie et ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN} de régénération de vie aux alliés proches.`,
@@ -469,7 +469,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '狂戰士之弓',
             },
             desc: {
-                en: `Every time your basic attacks hit enemy heroes, you gain ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% bonus Attack Speed for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} seconds.`,
+                en: `Whenever your Basic Attack hits an enemy, gain a stack of berserk, up to a maximum of 8 stacks. Each stack increases your Attack Speed by ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} Seconds.`,
                 ru: `Попадая атаками по врагу, вы увеличиваете свою Скорость атаки на ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% на ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} сек.`,
                 br: `Cada vez que você atinge o personagem inimigo, aumenta sua velocidade de ataque em ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% por ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} seg.`,
                 cz: `Pokaždé když zasáhneš protivnika tak si zvýšís rychlost útoků o ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% na ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} vteřin.`,
@@ -487,7 +487,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '魔法之弓',
             },
             desc: {
-                en: 'When you damage the enemy hero with an ability, you gain 10 bonus Movement Speed for 1.5 seconds. \n \n' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+                en: 'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. \n \n' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 ru: 'Успешное нанесение урона способностями увеличивает вашу Скорость передвижения на 10 на 1.5 сек. \n \n' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 br: 'Um golpe bem-sucedido com suas habilidades, aumenta sua velocidade de movimento em 10 por 1.5 seg. \n \n' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 cz: 'Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin \n \n' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
@@ -517,8 +517,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的長弓',
             },
             desc: {
-                en: `Corrupts your blood and makes you powerful, giving you bonus ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% Attack Speed and ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} Movement Speed for ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} seconds.\n` +
-                        `This effect also reduces your Armor by ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR} and Magic Resistance by ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}%`
+                en: `Corrupts your blood and makes you swifter, increasing your Attack Speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% and increasing your Movement Speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} for ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} Seconds.\n` +
+                        `This effect also reduces your Armor by ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR} and Magic Resistance by ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}.`
                         + '\n \n<b class=\'ability-d\'>' + getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
                 ru: `Увеличивает вашу Скорость атаки на ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100}% и Скорость передвижения на ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} на ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} сек.\n` +
                         `Во время этого эффекта ваша Броня уменьшается на ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR} и Сопротивление магии на ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}%.`
@@ -544,7 +544,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '獵人長弓',
             },
             desc: {
-                en: `Increases the attack speed of all nearby friendly units by ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}%.`,
+                en: `Grants ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}% Attack Speed to nearby allies.`,
                 ru: `Увеличивает Скорость атаки у всех ближайших союзников на ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}%`,
                 br: `Aumenta ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}% da velocidade de ataque de todas as unidades amigáveis ​​nas proximidades.`,
                 fr: `Augmente la vitesse d'attaque de ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}% de toutes les unités amies à proximité.`,
@@ -563,7 +563,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '燃燒法棒',
             },
             desc: {
-                en: `Your abilites ignite the enemy hero and deal Magical Damage equal to ${fixed((ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100), 1)}% of their Max Health for ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec`,
+                en: `Your abilites ignite enemy heroes, dealing ${fixed((ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100), 1)}% of their Max Health as Magic Damage over ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} Seconds.`,
                 ru: `Ваши способности поджигают врага и он получает дополнительный Магический урон в размере ${fixed((ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100), 1)}% от своего макс. Здоровья в сек. в течение ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} сек.`,
                 br: `Suas habilidades incineram os inimigo causando dano adicional de ${fixed((ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100), 1)}% vida máxima por seg, por ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} seg.`,
                 fr: `Tes compétences K et L brûlent tes ennemies et font des dégâts additionnels pour ${fixed((ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100), 1)}% de leurs points de vie maximum pour ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec.`,
@@ -580,7 +580,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '吸血鬼法棒',
             },
             desc: {
-                en: `Your abilities heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% (65% weaker against minions) of damage dealt.`,
+                en: `Your Abilities heal you for ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% (65% weaker against minions) of damage dealt.`,
                 br: `Quando seu ataque mágico atinge um personagem inimigo, ele curará você em ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% de dano causado.`,
                 ru: `Ваши способности исцеляют вас на ${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}% (на 70% слабее против миньонов) от нанесённого урона.`,
                 zh: `當你的魔法攻擊擊中敵方英雄，從${fixed((ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100), 1)}%給予的傷害恢復自己生命值。`,
@@ -596,7 +596,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '麒麟法棍',
             },
             desc: {
-                en: `Your abilities lower the enemy's Magic Resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 seconds. This effect does not stack with other sources.`,
+                en: `Your Abilities reduce Magic Resistance by ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% for 4 Seconds.`,
                 br: `Suas habilidades penetram a resistência mágica do alvo em ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%, este efeito não se acumula com outras fontes.`,
                 ru: `Ваши способности уменьшают Сопротивление магии цели на ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}% на 4 секунды. Этот эффект не складывается с другими источниками`,
                 zh: `你的技能拆穿目標物的魔法抗性 ${fixed((ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100), 1)}%，此效果將不會疊加於其他資源`
@@ -627,7 +627,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰結法棍',
             },
             desc: {
-                en: `Your abilities apply stacks on the enemy. Upon reaching ${ItemAbilityData.FROZEN_STAFF_STACKS} stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}`,
+                en: `Your Abilities apply a stack of magical frost on the enemy. At ${ItemAbilityData.FROZEN_STAFF_STACKS} stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}`,
                 ru: `Попадая способностями по врагу, вы накладываете на него 1 заряд. При накоплении ${ItemAbilityData.FROZEN_STAFF_STACKS} зарядов, этот враг получает Морозное проклятие - ${getFrigidCurseDescription()}`,
                 br: `As suas habilidades aplicam pilhas no inimigo. Ao alcançar ${ItemAbilityData.FROZEN_STAFF_STACKS} pilhas, o inimigo é afetado pelo Mal de Gelo- ${getFrigidCurseDescription()}`,
                 fr: `Vos capacités appliquent des stacks ennemis. Une fois que ${ItemAbilityData.FROZEN_STAFF_STACKS} s'empilent, l'ennemi est affecté par la Malédiction de Givre- ${getFrigidCurseDescription()}`,
@@ -668,7 +668,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '惡毒蘭花',
             },
             desc: {
-                en: `Shoots a dark arrow that pierces through enemies, silencing them for ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} seconds. At the end of its duration, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% of the damage received by the enemy is inflicted as bonus Magic Damage.` + '\n' + getIronRodOrHarpoonDescription(),
+                en: `Shoots a piercing dark arrow, silencing all enemies hit for ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} Seconds. At the end of its duration, inflicts ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% of the damage received while silenced as bonus Magic Damage.` + '\n' + getIronRodOrHarpoonDescription(),
                 ru: `Выпускает тёмную стрелу в вашем направлении, которая пронзает несколько целей, накладывая на них немоту на ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} сек. По окончании эффекта цели получают ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% от полученного урона за время действия немоты в виде магического урона.` + '\n' + getIronRodOrHarpoonDescription(),
                 br: `Acumula maldade lançando na direção que seu personagem está olhando, perfurando os inimigos e os silenciando por ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} seg, e no final do silênciar, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% de dano enquanto silenciado infligindo como dano mágico adicional.` + '\n' + getIronRodOrHarpoonDescription(),
                 fr: `Envoie une sombre flèche dans ta direction, qui traverse tes ennemies et les réduits au silence pour ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(1)} sec. À la fin de ce délai, ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100).toFixed(1)}% des dégâts reçus par l'ennemi sont infligés sous forme de dégâts magiques supplémentaires.` + '\n' + getIronRodOrHarpoonDescription(),
@@ -685,8 +685,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖法棍',
             },
             desc: {
-                en: `Heals all ally units in ${ItemAbilityData.ACTIVE_EFFECT_RADIUS}px radius for ${ItemAbilityData.DIVINE_STAFF_HEAL_T2} Health, grants bonus ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} Movement Speed for ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)}.
-                        \n This effect has an inner cooldown of 12 seconds during which any additional or other activations will be ignored. (Can not be reduced by cooldown reduction)`,
+                en: `Restores ${ItemAbilityData.DIVINE_STAFF_HEAL_T2} Health for nearby allies and grants ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} Movement Speed for ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} Seconds to all allies in a ${ItemAbilityData.ACTIVE_EFFECT_RADIUS}px radius.
+                        \n This effect has an inner cooldown which prevents any other activations for 12 Seconds. This inner cooldown cannot be reduced by Ability Haste.`,
                 ru: `Исцеляет ближайшим союзным целям в радиусе ${ItemAbilityData.ACTIVE_EFFECT_RADIUS} пикселей ${ItemAbilityData.DIVINE_STAFF_HEAL_T2} Здоровья, накладывая ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} бонусной Скорости передвижения на ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} сек.
                         \n Этот эффект имеет внутреннюю перезарядку длительностью 12 сек. В течение этого времени активный эффект этого предмета не работает на ранее задетых целях (Не может быть уменьшено Сокращением перезарядки)`,
                 br: `Cura todas as unidades próximas de ${ItemAbilityData.ACTIVE_EFFECT_RADIUS}px raio por ${ItemAbilityData.DIVINE_STAFF_HEAL_T2}, aplica ${ItemAbilityData.DIVINE_STAFF_BONUS_SPEED} velocidade de movimento bônus por ${(ItemAbilityData.DIVINE_STAFF_DURATION / 1000).toFixed(1)} seg.
@@ -708,7 +708,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '吸血鬼護盾',
             },
             desc: {
-                en: `When you take damage and your health falls below ${fixed(ItemAbilityData.VAMPIRIC_SHIELD_THRESHOLD * 100, 1)}% Health, you remove all negative effects from yourself and receive ${ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN} Health Regeneration for ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)} seconds. (Only triggers on player-based damage)`,
+                en: `Upon taking player-based damage and falling below ${fixed(ItemAbilityData.VAMPIRIC_SHIELD_THRESHOLD * 100, 1)}% Health, cleanses all negative effects and increases Health Regeneration by ${ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN} for ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
                 ru: `При получении урона, при котором ваше здоровье опускается ниже ${fixed(ItemAbilityData.VAMPIRIC_SHIELD_THRESHOLD * 100, 1)}%, вы снимаете с себя все негативные эффекты и получаете ${ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN} Регенерации здоровья на ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)} (Срабатывает только при получении урона от вражеских героев)`,
             }
         }
@@ -723,7 +723,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神聖護盾',
             },
             desc: {
-                en:  `Apply cleanse to all nearby allies which remove all negative effects and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health regen for short duration.`,
+                en:  `Cleanses all negative effects from nearby allies and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health Regen to nearby allies for 4 Seconds.`,
                 ru:  `Снимает все негативные эффекты с ближайших союзников и дополнительно даёт им ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Регенерации здоровья на ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}.`,
                 br:  `Aplique a purificação a todos os aliados próximos, removendo todos os efeitos negativos e concedendo ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} regen de saúde por curto período de tempo.`,
                 zh:  `将净化应用于所有附近的盟友，可消除所有负面效果并赋予${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}短时间的恢复健康。`,
@@ -743,7 +743,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 cz: 'Štít odporu',
             },
             desc: {
-                en:  `Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Magic resistance and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health regen to nearby allies.`,
+                en:  `Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Magic Resistance and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health Regen to nearby allies.`,
                 br:  `Concede aos aliados mais próximos ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de resistência mágica e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de vida.`,
                 fr:  `Accorde à vos alliés voisins ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de résistance magique et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de régénération de vie.`,
                 zh:  `为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}魔法抗性和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
@@ -764,7 +764,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '尖刺護盾',
             },
             desc: {
-                en: `Deals ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * level) normal damage every second to all enemy units in the  short distance`,
+                en: `Deals ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * level) Normal Damage per second to nearby enemies.`,
                 ru: `Каждую секунду наносит ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * уровень) физического урона всем врагам вокруг вас.`,
                 br: `Causa ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * nível) dano normal a todas as unidades inimigas em curta distância a cada segundo`,
                 cz: `Každou sekundu způsobuje ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * úroveň) normálního poškození všem nepřátelským jednotkám v krátké vzdálenosti`,
@@ -783,7 +783,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '加侖的守護者',
             },
             desc: {
-                en:  `If you take damage below ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% health you unleash a shockwave with 0.5sec delay that stuns all nearby enemies for ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} and deals ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} normal damage. This effect cannot trigger more than once every ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
+                en:  `Upon receiving player-based damage and falling below ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% Health, unleash a shockwave after 0.5 Seconds, dealing ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} Normal Damage and stunning nearby enemies for ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
                 ru: `При получении урона, при котором ваше здоровье опускается ниже ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}%, вы создаёте ударную волну с задержкой в 0,5 сек., которая оглушает всех ближайших врагов на ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} и наносит ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} физического урона. (Перезарядка: ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)})`,
                 br: `Se você tomar dano abaixo de ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% da saúde, você desencadeia uma onda de choque com um atraso de 0,5 segundos que atordoa todos os inimigos próximos por ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} e causar ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} de dano normal. Este efeito não pode ser ativado mais de uma vez a cada ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
                 fr: `Si vous subissez des dégâts en dessous de ${fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100,1)}% de vie, vous libérez une onde de choc avec un délai de 0,5 seconde qui assomme tous les ennemis à proximité pendant ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)} et inflige ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} de dégâts normaux. Cet effet ne peut se déclencher qu'une seule fois tous les ${toSec(ItemAbilityData.GARUNS_DEFENDER_COOLDOWN)}.`,
@@ -801,7 +801,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '金屬護盾',
             },
             desc: {
-                en: `Releases shockwave which travels through the air, dealing bonus ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} physical damage to enemies and reducing enemies' Movement Speed by ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seconds.`,
+                en: `Releases a shockwave which travels through the air, dealing ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Normal Damage to all enemies hit and reducing their Movement Speed by ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} Seconds.`,
                 br: `Ondas de choque viajam pelo ar causando ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} dano normal e reduzindo a velocidade de movimento do inimigo em ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} por ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seg.`,
                 ru: `Создаёт ударную волну, которая наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} урона и уменьшает скорость передвижения на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} у всех врагов на своём пути на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек.`,
                 zh: `釋放衝擊波，給予 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}點一般傷害並降低 ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)}秒敵方的移動速度值 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}`,
@@ -817,7 +817,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '麒麟的守護者',
             },
             desc: {
-                en: `Absorbs any Crowd Control effect every ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seconds. Sucessful block provides you ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} Magic Resistance for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seconds.`,
+                en: `Upon getting hit by any Crowd Control effect, block that effect. Sucessfully blocking increases Magic Resistance by ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} Seconds.`,
                 br: `Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} seg, se o bloqueio for bem sucedido, fornecer ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} de resistência mágica por ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} seg.`,
                 ru: `Блокирует любой эффект контроля каждые ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()} сек. Успешный блок повышает ваше Сопротивление магии на  ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)} на ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} сек.`,
                 zh: `麒麟的守護者每次發動 ${(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN / 1000).toFixed()}秒內格擋下一個有冷卻時間效果的招式，成功格擋時提供 ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()}秒 ${calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)}的魔法抗性。`,
@@ -834,7 +834,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '惡魔軍刀',
             },
             desc: {
-                en: `Enemies hit by your Basic Attacks have their armor reduced by ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% per stack (max ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS}) for 4 seconds.`,
+                en: `Your Basic Attacks apply a stack demonic weakening, up to a maximum of ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} stacks. Each stack decreases Armor by ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% for 4 Seconds`,
                 br: `Seus ataques normais diminuem a armadura inimiga em ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% por 4 segundos.`,
                 ru: `Ваши атаки уменьшают вражескую Броню на ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% на 4 сек (складывается до ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} раз).`,
                 cz: `Tvé útoky snižují zbroj o ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}% na 4 vteřiny.`,
@@ -851,8 +851,8 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '惡魔手環',
             },
             desc: {
-                en: `Your basic attacks lower the enemy's armor by ${fixed(ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100, 1)}% for 4 seconds. \n
-                     For every minion kill (+1 stack), hero kill (+5 stacks) or assist (+2 stacks) you gain ${ItemAbilityData.DEMON_RING_STACK_DMG} Attack Damage (Max: ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS} Attack Damage at 20 stacks). All stacks are lost upon death.`,
+                en: `Your Basic Attacks decrease Armor by ${fixed(ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100, 1)}% for 4 Seconds. \n
+                     Gain up to ${ItemAbilityData.DEMON_RING_MAX_STACKS} stacks of demonic power for every minion kill (+1 stack), hero kill (+5 stacks), or assist (+2 stacks). Each stack increases your Attack Damage by ${ItemAbilityData.DEMON_RING_STACK_DMG} (Max: ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS} Attack Damage at ${ItemAbilityData.DEMON_RING_MAX_STACKS} stacks). All stacks are removed upon death.`,
                 ru: `Ваши атаки уменьшают вражескую Броню на ${fixed(ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100, 1)}% на 4 сек. \n
                      Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает Силу атаки на ${ItemAbilityData.DEMON_RING_STACK_DMG} (Максимальная прибавка: ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS} Силы атаки за 20 зарядов). Все заряды теряются после смерти.`,
                 br: `Seus ataques reduzem a armadura inimiga por ${fixed(ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100, 1)}% por 4 segundos. \n
@@ -874,7 +874,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '神圣戒指'
             },
             desc: {
-                en: `Healing done temporarily increase ability power by ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (stacks up to ${ItemAbilityData.DIVINE_RING_MAX_STACKS} times). \n \n Increase all healing done by ${bonusHealing}%.`,
+                en: `Whenever you heal yourself or an ally, gain a stack of divine power, up to a maximum of ${ItemAbilityData.DIVINE_RING_MAX_STACKS} stacks. Each stack increases your Ability Power by ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER}. \n \n Increases all healing done by ${bonusHealing}%.`,
                 ru: `Исцеление себя или союзников повышает Силу умений на ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (складывается до ${ItemAbilityData.DIVINE_RING_MAX_STACKS} раз). \n \n Увеличивает всё накладываемое исцеление на ${bonusHealing}%.`,
                 br: `O curar feito temporariamente aumenta o poder de habilidade em ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (acumulando até ${ItemAbilityData.DIVINE_RING_MAX_STACKS} vezes). \n \n Aumenta todo o curar feito em ${bonusHealing}%.`,
                 cz: `Léčení dočasně zvýší schopnost síly o ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (může být až ${ItemAbilityData.DIVINE_RING_MAX_STACKS}krát). \n \n Zvyšuje všechno léčení o ${bonusHealing}%.`,
@@ -891,7 +891,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰霜手環',
             },
             desc: {
-                en: `Emits a freezing wave that deals ${ItemAbilityData.FROST_RING_DAMAGE} magic damage to enemies and apply Frigid Curse - (${getFrigidCurseDescription()}). If target is affected by Frigid curse, it will freeze the enemy for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} prevent from all movement.`,
+                en: `Emits a freezing wave, dealing ${ItemAbilityData.FROST_RING_DAMAGE} Magic Damage to all enemies hit. If the enemy is not affected by Frigid Curse, the wave applies Frigid Curse - (${getFrigidCurseDescription()}). If the enemy is affected by Frigid Curse, the wave freezes that enemy for ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} Seconds, preventing all forms of movement.`,
                 ru: `Излучает ледяную волну, наносящую ${ItemAbilityData.FROST_RING_DAMAGE} магического урона врагам и накладывая на них Морозное проклятие - (${getFrigidCurseDescription()}). Если на цель уже было наложено Морозное проклятие, волна заморозит врага на ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)}, обездвиживая его.`,
                 br: `Emite uma onda congelante que causa ${ItemAbilityData.FROST_RING_DAMAGE} de dano mágico aos inimigos e aplica a Maldição do Frio - (${getFrigidCurseDescription()}). Se o alvo estiver afetado pela Maldição do Frio, ela o congelará por ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} impossibilitando-o de se mover.`,
                 fr: `[Actif] : Emet une onde de gel qui inflige ${ItemAbilityData.FROST_RING_DAMAGE} de dégâts magiques aux ennemis et applique la Malédiction du froid - (${getFrigidCurseDescription()}). Si la cible est affectée par la Malédiction du froid, elle sera gelée pour ${(ItemAbilityData.FROST_RING_ROOT_DURATION / 1000).toFixed(1)} empêchant tout mouvement.`,
@@ -910,7 +910,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '時辰手環',
             },
             desc: {
-                en: `Whenever you cast an ability, reduce all your cooldowns by ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nIf you receive a kill or assist on an enemy hero, your ability cooldowns will reset. (Reset does not work on items)`,
+                en: `Whenever you cast an ability, all of your cooldowns decrease by ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\Upon receiving a kill or assist, reset your Ability cooldowns (The Ability cooldown reset does not affect Item cooldowns).`,
                 br: `Sempre que você lançar uma habilidade, reduza todos os seus tempos de recarga por ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nSe você receber uma morte ou assistência em um herói inimigo, os tempos de recarga de suas habilidades serão redefinidos. (Redefinir não funciona em itens)`,
                 fr: `Chaque fois que vous lancez une capacité, réduisez tous vos temps de recharge de ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nSi vous obtenez une mort ou une assistance sur un héros ennemi, vos temps de recharge de capacité seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets)`,
                 zh: `每次施放技能时，所有冷却时间都会减少${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}。\n如果你在敌方英雄上获得击杀或助攻，你的技能冷却时间将会重置。（重置不适用于物品）`,
@@ -927,7 +927,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的手環',
             },
             desc: {
-                en: 'Dashes you forward in your direction.',
+                en: 'Dashes you forward for a short distance.',
                 ru: 'Вы совершаете рывок в направлении своего движения.',
                 br: 'Lança seu personagem para frente na direção que ele está olhando.',
                 zh: '朝你的前方向前衝刺',
@@ -943,7 +943,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '狂戰士手環',
             },
             desc:  {
-                en: `For each 3.33% HP you are missing. you gain ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% attack speed and ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} health regen`,
+                en: `Increases your Attack Speed by ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% and Health Regen by ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} for each 3.33% HP you are missing`,
                 ru: `За каждые 3,33% отсутствующего Здоровья вы получаете ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% Скорости атаки и ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} Регенерации здоровья.`,
                 br: `Para cada 3,33% de HP que você está faltando, você ganha ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% de velocidade de ataque e ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} de regeneração de saúde`,
                 cz: `Za každých 3,33% chybějícího HP získáte ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% rychlost útoku a ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} obnovení zdraví`,
@@ -961,7 +961,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '冰霜鎧甲',
             },
             desc: {
-                en: `Reduces the attack speed of all nearby enemies by ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% and all heals, regeneration and lifesteal by ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
+                en: `Reduces the Attack Speed of nearby enemies by ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% and all heals, regeneration, and lifesteal of nearby enemies by ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
                 ru: `Скорость атаки ближайших к вам врагов уменьшается на ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}%, а все эффекты входящего исцеления и регенерации на ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
                 br: `Reduz a velocidade de ataque de todos os inimigos próximos em ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% e todas as curas, regeneração e roubo de vida em ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
                 fr: `Réduit la vitesse d'attaque de tous les ennemis à proximité de ${(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100).toFixed()}% et toutes les soins, la régénération et le vol de vie de ${(ItemAbilityData.FROST_ARMOR_HPREDUC * 100).toFixed()}%.`,
@@ -979,7 +979,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '虛空鎧甲',
             },
             desc: {
-                en: `Gives you invisibility for ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} seconds granting you additional ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Movement Speed and ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Attack Damage. \n (removes on attack or spell cast)`,
+                en: `Grants you invisibility for ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} Seconds and increases Movement Speed by ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Upon casting an Ability or using a Basic Attack while invisible, remove your invisibility and bonus Movement Speed, and increase Attack Damage by ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} for a short duration.`,
                 ru: `Вы получаете невидимость на ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} сек., а также ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Скорости передвижения и ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Силы атаки.\n (эффект пропадает при атаке или использовании способностей)`,
                 br: `Torna você invisível por ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)} seg, além disso, aumente sua velocidade de movimento em ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} e dano por ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} seg.\n (Acaba quando você usa algum ataque.)`,
                 zh: `使你 ${(ItemAbilityData.VOID_ARMOR_DURATION / 1000).toFixed(1)}秒隱蔽，額外增加你的移動速度值 ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}與一般傷害值 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} (效果在攻擊或發動技能後移除)`,
@@ -995,7 +995,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '泰坦的鎧甲',
             },
             desc: {
-                en: `Makes you immune to all incoming damage for ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} seconds, giving you ${ItemAbilityData.TITAN_ARMOR_REGENERATION} Health Regeneration and removing all negative effects. However, you cannot move, attack, use abilities or items during its effect.`,
+                en: `Makes you immune to all incoming damage for ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} Seconds, increases Health Regeneration by ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, and cleanses all negative effects. During the effect, you cannot move or use Abilities, Basic Attacks, and Items.`,
                 ru: `Вы становитесь неуязвимы, избавляетесь от негативных эффектов, а также получаете прибавку к Регенерации здоровья в размере ${ItemAbilityData.TITAN_ARMOR_REGENERATION} на ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} сек. Вы не можете выполнять никакие действия, пока активен данный эффект.`,
                 br: `Aumente sua regeneração de vida em ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove todos os efeitos negativos e o torna imune a todos os danos recebidos por ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)} seg.\n (Você não pode fazer nenhuma ação durante este efeito.)`,
                 zh: `增加你的回血速度 ${ItemAbilityData.TITAN_ARMOR_REGENERATION}點，移除所有負面效果並使你 ${(ItemAbilityData.TITAN_ARMOR_DURATION / 1000).toFixed(1)}秒內無視所有襲來的攻擊。效果期間你無法採取任何動作`,
@@ -1010,7 +1010,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '惡毒胸甲',
             },
             desc: {
-                en: `When you take magic damage, curse on the caster will be applied, reducing movement speed by ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} and ability power by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Stacks up to ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} times)`,
+                en: `Upon receiving Magic Damage, apply a stack of malevolent curse on the caster, up to a maximum of ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} stacks. Each stack reduces Movement Speed by ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} and Ability Power by ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%.`,
                 ru: `Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а его Скорость передвижения будет уменьшена на ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} и Сила умений на ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Складывается до ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} раз)`,
                 br: `Quando você sofrer dano mágico, um feitiço será aplicado no lançador, reduzindo a velocidade de movimento em ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} e o poder de habilidade em ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (O feitiço pode ser acumulado até ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} vezes)`,
                 fr: `Lorsque vous subissez des dégâts magiques, un sort est lancé sur le lanceur, réduisant sa vitesse de déplacement de ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} et sa puissance d'attaque de ${fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)}%. (Le sort peut s'accumuler jusqu'à ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} fois)`,
@@ -1029,7 +1029,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '治癒藥水',
             },
             desc: {
-                en: `Grants ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} health regeneration for ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)} sec \n If you are attacked, the effect is lost!`,
+                en: `Increases Health Regeneration by ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} for ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)} Seconds. \n If you receive damage, the effect is lost!`,
                 ru: `Даёт ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} Регенерации здоровья на ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)} сек. \n Эффект пропадает преждевременно, если вы были атакованы во время его действия!`,
                 br: `Beba a poção das fadas para receber regeneração de ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} de vida por ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)} seg.\n (Se você for atacado, o efeito será perdido!)`,
                 zh: `賜予 ${(ItemAbilityData.HEALING_POTION_DURATION / 1000).toFixed(1)}秒 ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC}點回血速度 \n 如果你遭受攻擊，將會失去效用！`,
@@ -1045,7 +1045,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '偵查守衛',
             },
             desc: {
-                en: `Plants an Observer Ward, an invisible watcher that gives obstructed vision in a ${ItemAbilityData.WARD_VISION} px radius to your team. Lasts ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} seconds. If ward is visible to enemy team, they can destroy it!`,
+                en: `Plants an Observer Ward, an invisible watcher that gives your team obstructed vision in a ${ItemAbilityData.WARD_VISION}px radius for up to ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} Seconds. If the ward is visible to the enemy team, they can destroy it!`,
                 br: `Planta uma pedra Observadora invisível que dá visão obstruída em ${ItemAbilityData.WARD_VISION} px raio para sua equipe.\n Dura ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
                 ru: `Вы устанавливаете невидимый тотем, который раскрывает область и все невидимые вражеские цели вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для врагов, они могут уничтожить его!`,
                 zh: `植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊半徑 ${ItemAbilityData.WARD_VISION}像素範圍內的受限視線。持續 ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(1)}。如果守衛能被敵隊看見，他們能摧毀它！`,
@@ -1060,7 +1060,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '哨兵守衛',
             },
             desc: {
-                en: `Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} seconds. If ward is visible to enemy team, they can destroy it!`,
+                en: `Plants a Sentry Ward, an invisible watcher that grants True Sight, the ability to see invisible enemy units and wards, to any existing allied vision within a radius. lasts for ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} Seconds. If ward is visible to enemy team, they can destroy it!`,
                 br: `Planta uma pedra Observadora corrompida invisível que concede Visão Verdadeira, a habilidade de ver unidades e sentinelas inimigas invisíveis, para qualquer visão aliada existente dentro de um raio. dura por ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
                 ru: `Вы устанавливаете невидимый сторожевой тотем, раскрывающий невидимых врагов и тотемы вокруг себя в радиусе ${ItemAbilityData.SENTRY_WARD_VISION} пикселей в течение ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)} сек. Если тотем видим для врагов, они могут уничтожить его!`,
                 zh: `植入一個哨兵守衛，一個隱蔽的觀察者賜予絕對視線，有能夠讓友軍在範圍內看見隱蔽敵方單位與守衛的能力。持續 ${(ItemAbilityData.SENTRY_WARD_DURATION / 1000).toFixed(1)}秒。如果守衛能被敵隊看見，他們能摧毀它！`,
@@ -1075,7 +1075,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '魔法藥水',
             },
             desc: {
-                en: `Provide ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} ability power permanently, stacks up to 5 times!`,
+                en: `Grants a permanent stack of magical strength, up to a maximum of 5 stacks. Each stack increases Ability Power by ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
                 br: `Da a quem beber ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} de Poder de habilidade permanentemente, acumula até 5 vezes!\n Sabor uva da floresta.`,
                 ru: `Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} Силы умений навсегда. Эффект складывается до 5 раз!`,
                 zh: `永久提供 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
@@ -1090,7 +1090,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的藥水',
             },
             desc: {
-                en: `Provide ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} attack damage permanently, stacks up to 5 times!`,
+                en: `Grants a permanent stack of physical strength, up to a maximum of 5 stacks. Each stack increases Attack Damage by ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}!`,
                 br: `Da a quem beber ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} de dano de ataque permanentemente, acumula até 5 vezes!\n Sabor cereja do campo.`,
                 ru: `Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} Силы атаки навсегда. Эффект складывается до 5 раз!`,
                 zh: `永久提供 ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害，疊加最多五次！`,
@@ -1108,7 +1108,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Лук Кирина'
             },
             desc: {
-                en: `Your basic attacks apply magical poison that explode at ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stack. Upon explosion deals ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magical damage, reduces ${asAndMsReduction}% attack speed for ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
+                en: `Your Basic Attacks apply a stack of magical poison. At ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stacks, the magical poison explodes, dealing ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} Magic Damage and reducing Attack Speed by ${asAndMsReduction}% for ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}.`,
                 zh: `你的基本攻击会施加魔法毒，抵达${ItemAbilityData.KIRINS_BOW_MAX_STACKS}层后爆炸，造成${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME}魔法伤害，减少${asAndMsReduction}%魔法抗性和${asAndMsReduction}%攻击速度，持续${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
                 cz: `Vaše základní útoky aplikují magickou jed, která exploduje při ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} vrstvách. Při výbuchu způsobuje ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} magické škody, snižuje ${asAndMsReduction}% rychlost útoku po dobu ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
                 fr: `Vos attaques de base appliquent un poison magique qui explose à ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pile. Lors de l'explosion, il inflige ${ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME} dégâts magiques, réduit la vitesse d'attaque de ${asAndMsReduction}% pendant ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)}`,
@@ -1128,7 +1128,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Оберег Гаруна'
             },
             desc: {
-                en: `Every ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} gains additional ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} armor (up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks). (Normal damage breaks 1 layer)\nGrants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} armor to nearby allies`,
+                en: `Every ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}, gain a stack of Garun's protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\nGrants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies`,
                 br: `A cada ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} ganha +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} de armadura (até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks). (Dano normal quebra 1 Stack)\nConcede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de armadura para aliados próximos`,
                 fr: `Tous les ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} gagnez ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} armures supplémentaires (jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks). (Les dommages normaux brisent 1 stack)\nOctroie ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} armures aux alliés à proximité`,
                 zh: `每隔${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}获得额外${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}护甲（最多${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}层）。（正常伤害会打破1层）\n给附近的盟友提供${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}护甲`,
@@ -1148,7 +1148,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Талисман волшебника'
             },
             desc: {
-                en: `Reduces the magic resistance and positive auras duration to all nearby enemies by ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
+                en: `Reduces Magic Resistance and positive aura durations by ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}% for all nearby enemies.`,
                 br: `Reduz a resistência mágica e a duração das auras positivas de todos os inimigos próximos em ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
                 fr: `Réduit la résistance magique et la durée des auras positives de tous les ennemis à proximité de ${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%.`,
                 zh: `降低附近所有敵人的魔法抗性和正面光環持續時間${fixed(ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100, 1)}%。`,
@@ -1168,7 +1168,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 ru: 'Искажённый медальон'
             },
             desc: {
-                en: `Your critical hits against heroes provide additional ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} damage and ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} move speed for ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. (Stacks up to ${ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS} times)`,
+                en: `Each Critical hit against enemy heroes gives you a stack of corrupted rage, up to a maximum of ${ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS} stacks. Each stack increases your Attack Damage by ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} and Movement Speed by ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} for ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
                 br: `Seus ataques críticos contra heróis proporcionam dano adicional de ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} e velocidade de movimento de ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} por ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. (Empilha até ${ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS} vezes)`,
                 fr: `Vos coups critiques contre les héros procurent ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} points de dégâts supplémentaires et ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} de vitesse de déplacement pendant ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. (empILABLE jusqu'à ${ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS} fois)`,
                 zh: `您對英雄的暴擊將獲得額外的${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE}傷害和${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS}移動速度，持續時間為${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}。 (最多可堆疊${ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS}次)`,
@@ -1186,7 +1186,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
 
 const getPoisonBowDescription = (duration: number) => {
     const text: { [key: string]: string } = {
-        en: `Enemies hit by your Basic Attacks will be infected by deadly poison, reducing their movement speed by ${ItemAbilityData.POISON_BOW_SLOW} and dealing ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} magic damage per second for ${(duration / 1000).toFixed(1)} seconds. (This effect stacks up 5 times.)`,
+        en: `Your Basic Attacks apply a stack of deadly poison, up to a maximum of 5 stacks. Each stack reduces Movement Speed by ${ItemAbilityData.POISON_BOW_SLOW} and deals ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} Magic Damage per second for ${(duration / 1000).toFixed(1)} Seconds. `,
         ru: `Ваши атаки накладывают смертельный яд на вражеских героев, замедляя их на ${ItemAbilityData.POISON_BOW_SLOW} и нанося ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} урона в секунду в течение ${(duration / 1000).toFixed(1)} сек. (Этот эффект может складываться до 5 раз, и каждая последующая атака обновляет их длительность.)`,
         br: `Seus ataques aplicam veneno no personagem inimigo e retarda o alvo por ${ItemAbilityData.POISON_BOW_SLOW} e adiciona ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} de dano por seg, por ${(duration / 1000).toFixed(1)} seg.\n (Este efeito pode acumular 5 vezes, cada duração de atualização de ataque.)`,
         fr: `Tes attaques J empoisonne ton ennemie pour ${(duration / 1000).toFixed(1)} sec. Pendant cette période, il est ralenti de ${ItemAbilityData.POISON_BOW_SLOW} et reçoit ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} dégâts supplémentaires. \n (Cet effet peut se cumuler jusqu'à 5 fois, le délai d'empoisennement est remis à zéro à chaque attaque)`,
@@ -1198,11 +1198,11 @@ const getPoisonBowDescription = (duration: number) => {
 
 const getIronRodOrHarpoonDescription = (tier2 = false) => {
     const baseDamage = tier2 ? ItemAbilityData.MAGIC_HARPOON_BASE_DAMAGE : ItemAbilityData.IRON_ROD_BASE_DAMAGE
-    const bonusDamage = tier2 ? 
+    const bonusDamage = tier2 ?
         fixed(ItemAbilityData.MAGIC_HARPOON_AP_MOD * 100, 1) : fixed(ItemAbilityData.IRON_ROD_AP_MOD * 100, 1)
 
     const text: { [key: string]: string } = {
-        en: `When your abilities hit an enemy hero, your next basic attack deals bonus ${baseDamage} (+ ${bonusDamage}% Ability Power) magic damage to enemy hero.`,
+        en: `When your Abilities hit an enemy hero, your next Basic Attack deals ${baseDamage} (+ ${bonusDamage}% Ability Power) bonus Magic Damage to enemy heroes.`,
         ru: `Когда ваши способности попадают по вражескому герою, ваша следующая атака нанесёт дополнительно ${baseDamage} (+ ${bonusDamage}% Силы умений) магического урона.`,
         br: `Quando suas habilidades atingem um personagem inimigo, seu próximo ataque normal ganha um bônus de ${baseDamage} + ${bonusDamage}% de dano.`,
         fr: `Quand tes compétences K et L touchent un héros ennemi, ta prochaine attaque J fait ${baseDamage} + ${bonusDamage}% dégâts supplémentaires.`,
@@ -1214,7 +1214,7 @@ const getIronRodOrHarpoonDescription = (tier2 = false) => {
 
 export const getFrigidCurseDescription = () => {
     const text: { [key: string]: string } = {
-        en:  `Reduce movement speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and all healing and regeneration effects by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}% for ${toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)}`,
+        en:  `Reduces Movement Speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduces all healing and regeneration effects by ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}% for ${toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)}.`,
         ru:  `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}% в течение ${toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)}`,
         br:  `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}% por ${toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)}`,
         fr:  `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et tous les effets de soins et de régénération de ${(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100).toFixed(1)}% pour ${toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)}`,
