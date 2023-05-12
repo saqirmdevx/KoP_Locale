@@ -124,9 +124,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         <br />Artuklas, being akin to discovery and knowledge, was intrigued by the curious Sparrow and her bravery to venture out, seeking the unknown and discovering information. He slowly forged his path to cater to Sparrow's needs, dismissing the other Hermits who wanted to follow and worship him. Sparrow noticed the changes, but Artuklas assured her that destiny chose this path for her to take. During the following years of training and preparing, the bond between the hermit and demon grew closer, and Artuklas divulged information about his kin to Sparrow.
         <br />Unfortunately, even with the training and rituals all complimenting Sparrow's strengths, the child could not fully grasp the power Artuklas extends to share. Artuklas, growing impatient and infuriated at the child's incompetency, decided to force a fraction of his power to flow through her body. This power would prove too much for Sparrow, and she would have to expel a lot of this to stay conscious.
         <br />A small scouting team of Guardians would take notice of the immense demonic energy concentrated in one spot. Upon arrival, they would see the shape of a greater demon trying to take control of a collapsed woman. They seized the opportunity to strike, but Sparrow retaliated, allowing Artuklas to escape in the chaos. After a long-drawn-out fight, the Guardians would subdue and overpower her because she could not effectively use her newfound abilities.`,
-        ru: `Спарроу - смелая и свирепая девушка, в прошлом отшельник, большую часть своей жизни посвятившая следованию демону Артукласу. Она и ее семья жили в деревне глубоко в густом тропическом лесу Сасугроен. Её сильное стремление к приключениям отличало её от робких и сдержанных детей её возраста. Вместе с её семьей они пошли по пути, который Артуклас указал отшельникам. 
+        ru: `Спарроу - смелая и свирепая девушка, в прошлом отшельник, большую часть своей жизни посвятившая следованию демону Артукласу. Она и ее семья жили в деревне глубоко в густом тропическом лесу Сасугроен. Её сильное стремление к приключениям отличало её от робких и сдержанных детей её возраста. Вместе с её семьей они пошли по пути, который Артуклас указал отшельникам.
         <br />Артукласу были по душе открытия и новые знания, и он был очень заинтригован любопытной Спарроу и ее храбростью, когда она отправлялась на поиски неизвестного. Он медленно прокладывал свой путь, чтобы удовлетворить потребности Спарроу, увольняя других отшельников, которые хотели следовать за ним и поклоняться ему. Спарроу замечала изменения, но Артуклас заверял, что сама судьба избрала для неё этот путь. В последующие годы обучения и подготовки связь между отшельницей и демоном стала теснее, и Артуклас выдал Спарроу информацию о своём с ней родстве.
-        <br />К сожалению, даже с обучением и ритуалами, дополняющими сильные стороны Спарроу, ребёнок не мог полностью осознать силу, которой Артуклас делится. Артуклас, теряя терпение и гневаясь из-за некомпетентности ребёнка, решил заставить часть своей силы течь через её тело. Эта сила оказалась бы слишком большой для Спарроу, и ей пришлось бы исключить многое из этого, чтобы оставаться в сознании. 
+        <br />К сожалению, даже с обучением и ритуалами, дополняющими сильные стороны Спарроу, ребёнок не мог полностью осознать силу, которой Артуклас делится. Артуклас, теряя терпение и гневаясь из-за некомпетентности ребёнка, решил заставить часть своей силы течь через её тело. Эта сила оказалась бы слишком большой для Спарроу, и ей пришлось бы исключить многое из этого, чтобы оставаться в сознании.
         <br />Небольшая разведывательная группа стражей вскоре заметит огромную демоническую энергию, сосредоточенную в одном месте. По прибытии они увидят очертания огромного демона, пытающегося взять под контроль лежащую в обмороке девушку. Они воспользовались возможностью нанести удар, но Спарроу контратаковала, позволив Артукласу сбежать в хаосе. После затяжной битвы стражи подавили и усмирили её пыл, поскольку она не могла эффективно использовать свои новообретённые способности.`,
         br: `Elizabeth Dolores Sperrow II, uma mulher corajosa e feroz do reino de Etygia, teve um casamento político com o Rei de Eilys Edgar III, com o tempo ela se apaixonou por ele mas tudo mudou depois que seu marido foi assassinado por um demônio da floresta.
         <br A Rainha de Eilys ficou sedenta por vingança, sem saber o motivo pelo qual seu marido foi assassinado, ela declarou guerra aos seres mágicos, agora ela luta na linha de frente para se vingar e descobrir a verdade.`,
@@ -150,7 +150,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.DAMAGE_TYPE_NORMAL]: {
-        en: 'Physical',
+        en: 'Normal',
         ru: 'Физический',
         br: 'Normal',
         cz: 'Normální',
@@ -246,7 +246,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.WARNING_TOWER_ATTK]: {
-        en: 'Careful! You\'ve been targeted by tower ! Fall back!',
+        en: 'Careful! You\'ve been targeted by a tower ! Fall back!',
         ru: 'Осторожно! Вы были атакованы башней! Отступайте!',
         br: 'Cuidado! Você é alvo de uma torre.',
         cz: 'Pozor! Byli jste zacílen věží! Ustupte!',
@@ -268,7 +268,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '流動號碼',
     },
     [LOCALE.FULL_SCREEN]: {
-        en: 'Toggle full screen',
+        en: 'Toggle Full Screen',
         ru: 'Полноэкранный режим',
         br: 'Tela cheia',
         cz: 'Zapnout režim plné obrazovky',
@@ -324,14 +324,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '英雄',
     },
     [LOCALE.WAITING_FOR_OPPONENTS]: {
-        en: 'Waiting for opponents',
+        en: 'Waiting for Opponents',
         ru: 'Ожидание оппонентов',
         br: 'Esperando oponentes',
         cz: 'Čekání na soupeře',
         zh: '等待對手中',
     },
     [LOCALE.TIME_TO_BATTLE]: {
-        en: 'Time to battle',
+        en: 'Time To Battle',
         ru: 'Времени до начала',
         br: 'Tempo de escolha',
         cz: 'Čas bojovat',
@@ -387,14 +387,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '匹配等級',
     },
     [LOCALE.TOTAL_GAMES]: {
-        en: 'Total games',
+        en: 'Total Games',
         ru: 'Всего игр',
         br: 'Total de jogos',
         cz: 'Celkově her',
         zh: '總遊玩次數',
     },
     [LOCALE.TOTAL_WINS]: {
-        en: 'Total wins',
+        en: 'Total Wins',
         ru: 'Всего побед',
         br: 'Total de vitórias',
         cz: 'Celkově výtězství',
@@ -450,14 +450,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '練習賽（電腦）',
     },
     [LOCALE.PRACTICE_MATCH]: {
-        en: 'Practice hero',
+        en: 'Practice Hero',
         ru: 'Тренировка',
         br: 'Treino',
         cz: 'Vyzkoušet hrdinu',
         zh: '測試英雄',
     },
     [LOCALE.PLAY_NOW]: {
-        en: 'Play now!',
+        en: 'Play Now!',
         ru: 'Сыграть сейчас!',
         br: 'Jogar agora!',
         cz: 'Hrát teď!',
@@ -584,14 +584,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '離開遊戲',
     },
     [LOCALE.POST_BLUE_TEAM_WIN]: {
-        en: 'Blue team won!',
+        en: 'Blue Team won!',
         ru: 'Синяя команда победила!',
         br: 'Time azul Venceu!',
         cz: 'Vyhrál modrý tím!',
         zh: '籃隊獲勝！',
     },
     [LOCALE.POST_RED_TEAM_WIN]: {
-        en: 'Red team won!',
+        en: 'Red Team won!',
         ru: 'Красная команда победила!',
         br: 'Time vermelho Venceu!',
         cz: 'Vyhrál rudý tím!',
@@ -658,7 +658,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '輸入你的名稱！',
     },
     [LOCALE.POPUP_SELECT_MESS_GUESTMODE]: {
-        en: 'You have limited access to game! Your stats lost when you exit browser...<br /> Connect your <b style=\'color: red\'>G-Mail account</b> to access all features. and no ADS!',
+        en: 'As a guest, you have limited access to game! <br /> Sign in with <b style=\'color: red\'>G-Mail</b> to access ranked, save your stats, and get less ADS!',
         ru: 'У вас ограниченный доступ к игре! Ваша статистика будет утеряна, если вы закроете браузер...<br /> Подключите ваш <b style=\'color: red\'>аккаунт G-Mail</b> для получения доступа ко всем функциям и чтобы убрать рекламу!',
         br: 'Você tem acesso limitado ao jogo! Suas estatísticas são perdidas quando você sai do navegador...<br /> Conecte-se a sua <b style=\'color: red\'>Conta do G-Mail</b> para acessar todos os recursos, e sem anúncios!',
         cz: 'Máte omezený přístup ke hře! Vaš pokrok bude ztracen až ukončíte prohlížeč...<br /> Připojte svůj <b style=\'color: red\'>účet G-Mail</b> a získejte přístup ke všem funkcím. A žádné reklamy !',
@@ -679,28 +679,28 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '連結G-Mail帳號',
     },
     [LOCALE.POPUP_BATTLE_END]: {
-        en: 'Battle ended',
+        en: 'Battle Ended',
         ru: 'Битва окончена',
         br: 'Jogo encerrado',
         cz: 'Bitva je ukonce',
         zh: '戰鬥結束',
     },
     [LOCALE.POPUP_BATTLE_FOUND]: {
-        en: 'Battle found !',
+        en: 'Battle Found!',
         ru: 'Найдена битва!',
         br: 'Jogo encontrado',
         cz: 'Nalezena bitva!',
         zh: '發現戰鬥！',
     },
     [LOCALE.POPUP_BATTLE_FOUND_MESS]: {
-        en: 'Time remaining',
+        en: 'Time Remaining',
         ru: 'Времени осталось',
         br: 'Tempo restante',
         cz: 'Zbýva času',
         zh: '剩餘時間',
     },
     [LOCALE.POPUP_BATTLE_WAITING]: {
-        en: 'Waiting for players...',
+        en: 'Waiting for Players...',
         ru: 'Ожидание игроков...',
         br: 'Esperando por jogadores ...',
         cz: 'Čekání na hráče...',
@@ -714,7 +714,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '有人離開了…',
     },
     [LOCALE.POPUP_SELECT_FIRST_TIME_TRAINING]: {
-        en: 'For the first time you must pass throu training otherwise you can not play against players!',
+        en: 'You must complete training before playing against players!',
         ru: 'Зайдя впервые, вам нужно пройти обучение, иначе вы не сможете играть против других игроков!',
         br: 'Como é sua primeira vez, você deve passar pelo treinamento, caso contrário você não poderá jogar contra outros jogadores!',
         cz: 'Nejprve musíš projít tréninkem než budeš moct hrát proti hráčům!',
@@ -735,7 +735,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '入隊失敗，請重試！',
     },
     [LOCALE.POPUP_SELECT_BANNED_QUEUE]: {
-        en: 'You are banned from queue for rejecting matches! try in ',
+        en: 'You are banned from queue for rejecting a match! Try again in ',
         ru: 'Ваша возможность стать в очередь заблокирована, так как вы отклоняли слишком много матчей! Попробуйте снова через ',
         br: 'Você foi banido da fila por rejeitar varias partidas! tente novamente em ',
         cz: 'Máte zákaz vstupu do fronty za odmítnutí zápasů! Zkuste to za',
@@ -758,7 +758,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.AN_FIRST_BLOOD]: {
-        en: 'First blood',
+        en: 'First Blood',
         ru: 'Первую кровь',
         br: 'Primeira morte',
         cz: 'První zabití',
@@ -766,7 +766,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
 
     [LOCALE.AN_DOUBLE_KILL]: {
-        en: 'Double kill',
+        en: 'Double Kill',
         ru: 'Даблкилл',
         br: 'DOUBLE KILL',
         cz: 'Dvojité zabití',
@@ -786,14 +786,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '爆殺！！',
     },
     [LOCALE.AN_KILLING_SPREE]: {
-        en: 'Killing spree',
+        en: 'Killing Spree',
         ru: 'получает серию убийств',
         br: 'MATANÇA!',
         cz: 'Zabíjející řádění',
         zh: '殺戮狂魔',
     },
     [LOCALE.AN_MEGA_KILL]: {
-        en: 'Mega kill',
+        en: 'Mega Kill',
         ru: 'совершает мега-убийство',
         br: 'MEGA KILL!',
         cz: 'Mega zabití',
@@ -894,7 +894,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '爆擊機率',
     },
     [LOCALE.ABILITY_HASTE]: {
-        en: 'Ability haste',
+        en: 'Ability Haste',
         ru: 'Сокращение перезарядки',
         br: 'Redução de recarga',
         cz: 'Redukce cooldownu',
@@ -965,7 +965,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '你已從伺服器失連，請刷新頁面！',
     },
     [LOCALE.POPUP_REFRESH]: {
-        en: 'refresh',
+        en: 'Refresh',
         ru: 'обновить',
         br: 'recarregar',
         cz: 'obnovení',
@@ -1055,35 +1055,35 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '自由視角',
     },
     [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
-        en: 'Spectators in game: ',
+        en: 'Spectators in Game: ',
         ru: 'Наблюдают за игрой: ',
         br: 'Espectadores no jogo: ',
         cz: 'Diváků v hře: ',
         zh: '觀眾數量',
     },
     [LOCALE.PRIVATE_LOBBY]: {
-        en: 'Private lobby',
+        en: 'Private Lobby',
         ru: 'Приватное лобби',
         br: 'Sala privada',
         cz: 'Privátní lobby',
         zh: '私人開房',
     },
     [LOCALE.FIND_LOBBY]: {
-        en: 'Find a lobby',
+        en: 'Find a Lobby',
         ru: 'Найти лобби',
         br: 'Encontrar uma sala',
         cz: 'Najít lobby',
         zh: '尋找房間',
     },
     [LOCALE.CREATE_LOBBY]: {
-        en: 'Create a lobby',
+        en: 'Create a Lobby',
         ru: 'Создать лобби',
         br: 'Criar uma sala',
         cz: 'Vytvořte lobby',
         zh: '創建私房',
     },
     [LOCALE.TEAM_NAME]: {
-        en: 'Team name: ',
+        en: 'Team Name: ',
         ru: 'Название команды: ',
         br: 'Nome do time: ',
         cz: 'Název týmu: ',
@@ -1115,7 +1115,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'Název',
     },
     [LOCALE.LOBBY_INIT_GOLDS]: {
-        en: 'Initial Golds',
+        en: 'Initial Gold',
         ru: 'Начальное золото',
         br: 'Ouro inicial',
         cz: 'Počáteční zlaťaky',
@@ -1149,7 +1149,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '全部隨機選角',
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_CAPTAIN]: {
-        en: 'Select captain!',
+        en: 'Select Captain!',
         ru: 'Выберите капитана!',
         br: 'Selecione o capitão!',
         cz: 'Vyber kapitána',
@@ -1184,27 +1184,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '輪到你選角',
     },
     [LOCALE.CAPTAIN_DRAFT_SELECT_HERO]: {
-        en: 'Select a hero!',
+        en: 'Select a Hero!',
         ru: 'Выберите героя!',
         br: 'Selecione seu personagem!',
         cz: 'Vybrat hrdinu',
         zh: '選擇一個英雄！',
     },
     [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
-        en: 'Become captain!',
+        en: 'Become Captain!',
         ru: 'Стать капитаном!',
         br: 'Torne-se capitão!',
         cz: 'Stát se kapitánem',
         zh: '成為隊長！',
     },
     [LOCALE.TOURNAMENT_GAME]: {
-        en: 'Tournament game!',
+        en: 'Tournament Game!',
         ru: 'Турнирная игра!',
         br: 'Jogo de torneio!',
         zh: '巡迴賽！',
     },
     [LOCALE.BANNED_HEROES]: {
-        en: 'Banned heroes',
+        en: 'Banned Heroes',
         ru: 'Заблокированные герои',
         br: 'Heróis banidos',
         cz: 'Zakazaní hrdinové',
@@ -1230,7 +1230,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '電腦對決 (人對電腦)：',
     },
     [LOCALE.PLAYER_STATS]: {
-        en: 'Player stats',
+        en: 'Player Stats',
         ru: 'Статистика игрока',
         br: 'Estatísticas do jogador',
         zh: '玩家狀態',
@@ -1248,14 +1248,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '紀錄',
     },
     [LOCALE.MATCH_WON]: {
-        en: 'Won match',
+        en: 'Won Match',
         ru: 'Победа',
         br: 'Ganhou a partida',
         cz: 'Výhra',
         zh: '勝利',
     },
     [LOCALE.MATCH_LOSE]: {
-        en: 'Lost match',
+        en: 'Lost Match',
         ru: 'Поражение',
         br: 'Perdeu a partida',
         cz: 'Prohra',
@@ -1304,13 +1304,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '按鍵',
     },
     [LOCALE.ST_MISC]: {
-        en: 'Misc',
+        en: 'Misc.',
         ru: 'Прочее',
         br: 'Diversos',
         zh: '雜項',
     },
     [LOCALE.ST_AUDIO_MASTER_VOLUME]: {
-        en: 'Master volume',
+        en: 'Master Volume',
         ru: 'Общая громкость',
         br: 'Volume principal',
         zh: '主音量',
@@ -1344,21 +1344,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '跳躍',
     },
     [LOCALE.ST_KEYBIND_MOVEDOWN]: {
-        en: 'Move down',
+        en: 'Move Down',
         cz: 'pohyb dolů',
         br: 'Mover para baixo',
         ru: 'Движение вниз',
         zh: '落下',
     },
     [LOCALE.ST_KEYBIND_MOVELEFT]: {
-        en: 'Move left',
+        en: 'Move Left',
         cz: 'pohyb doleva',
         br: 'Mover para a esquerda',
         ru: 'Движение влево',
         zh: '往左',
     },
     [LOCALE.ST_KEYBIND_MOVERIGHT]: {
-        en: 'Move right',
+        en: 'Move Right',
         cz: 'pohyb vpravo',
         br: 'Mover para a direita',
         ru: 'Движение вправо',
@@ -1400,7 +1400,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '記分板',
     },
     [LOCALE.AUOTBUY]: {
-        en: 'Auto-buy',
+        en: 'Auto-Buy',
         cz: 'Automatické nákupy',
         br: 'Compra automática',
         ru: 'Автоматическая покупка предметов',
@@ -1426,7 +1426,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '解析度',
     },
     [LOCALE.ST_MOUSE_SUPPORT_TOOLTIPS]: {
-        en: 'This feature will enable mouse buttons to be used for abilites and facing. Be careful, your hero will face to mouse direction. ',
+        en: 'This feature allows usage of a mouse for all attacks. Keep in mind that your hero will attack towards your mouse with Mouse Support enabled.',
         ru: 'Эта функция позволит использовать кнопки мыши для способностей. Будьте осторожны, если функция включена, ваш герой будет смотреть в сторону мыши. ',
         br: 'Esse recurso permitirá que os botões do mouse sejam usados ​​para habilidades e ataques. Tenha cuidado, seu personagem ficará de frente para a direção do mouse. ',
         zh: '此功能能夠使用滑鼠按鍵迎面發動技能。注意，你的英雄將會朝著滑鼠的方向動作。',
@@ -1439,7 +1439,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '語言',
     },
     [LOCALE.ST_FILTER_BAD_WORDS]: {
-        en: 'Filter of bad words',
+        en: 'Profanity Filter',
         cz: 'Filtr špatných slov',
         br: 'Filtro de palavrões',
         ru: 'Фильтр брани',
@@ -1453,20 +1453,20 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         zh: '背景音樂',
     },
     [LOCALE.LOBBY_SHARE_GAME]: {
-        en: 'Copy sharable link',
+        en: 'Copy Sharable Link',
         ru: 'Скопировать ссылку на лобби',
         br: 'Copiar link compartilhável',
         zh: '複製分享連結',
     },
     [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
-        en: 'Atmospheric details',
+        en: 'Atmospheric Details',
         ru: 'Атмосферные детали',
         br: 'Detalhes atmosféricos',
         cz: 'Atmosfericke detaily',
         zh: '氛圍渲染',
     },
     [LOCALE.ADD_HARD_BOT]: {
-        en: 'Add hard bot',
+        en: 'Add Hard Bot',
         cz: 'Prídat těžkého bota',
         br: 'Adicionar bot difícil',
         ru: 'Добавить сложного бота',
@@ -1480,20 +1480,20 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     },
     /** Chat command helpers */
     [LOCALE.CHAT_COMMAND_GLOBAL]: {
-        en: '/global <message> - send message to all players',
-        ru: '/global <сообщение> - отправить сообщение всем игрокам в глобальном чате',
-        br: '/global <mensagem> - enviar mensagem para todos os jogadores',
-        cz: '/global <zpráva> - poslat zprávu všem hráčům',
-        zh: '/global <消息> - 向所有玩家發送消息',
+        en: '/g <message> - send message in global chat, visible to all players',
+        ru: '/g <сообщение> - отправить сообщение всем игрокам в глобальном чате',
+        br: '/g <mensagem> - enviar mensagem para todos os jogadores',
+        cz: '/g <zpráva> - poslat zprávu všem hráčům',
+        zh: '/g <消息> - 向所有玩家發送消息',
     },
     [LOCALE.CHAT_COMMAND_ALL]: {
-        en: '/all <message> - send message in current game',
+        en: '/all <message> - send message to all players in your current game',
         ru: '/all <сообщение> - отправить сообщение всем игрокам в текущей игре',
         br: '/all <mensagem> - enviar mensagem para todos os jogadores',
         cz: '/all <zpráva> - poslat zprávu všem hráčům',
         zh: '/all <消息> - 向當前游戲中的所有玩家發送消息',
     },
-	
+
     [LOCALE.CHAT_COMMAND_WHISPER]: {
         en: '/whisper <player> <message> - send a private message to a player',
         ru: '/whisper <игрок> <сообщение> - отправить личное сообщение игроку',
@@ -1501,7 +1501,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: '/whisper <hráč> <zpráva> - poslat soukromou zprávu hráči',
         zh: '/whisper <玩家> <消息> - 向玩家發送私人消息',
     },
-	
+
     [LOCALE.CHAT_COMMAND_WHISPER2]: {
         en: '/w <player> <message> - send a private message to a player',
         ru: '/w <игрок> <сообщение> - отправить личное сообщение игроку',
@@ -1509,7 +1509,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: '/w <hráč> <zpráva> - poslat soukromou zprávu hráči',
         zh: '/w <玩家> <消息> - 向玩家發送私人消息',
     },
-	
+
     [LOCALE.CHAT_COMMAND_EXIT]: {
         en: '/exit - exit the game (practice only)',
         ru: '/exit - выйти из игры (только для практики)',
@@ -1571,27 +1571,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         cz: 'her zbývá ke kalibraci ranku!'
     },
     [LOCALE.LEVEL_UP]: {
-        en: 'You have achieved a new level',
+        en: 'Level Up',
         ru: 'Вы получили новый уровень',
         cz: 'Dosáhli jste nové úrovně'
     },
     [LOCALE.RANK_UP]: {
-        en: 'You have achieved a new rank',
+        en: 'You have been promoted to a new rank',
         ru: 'Вы достигли нового ранга',
         cz: 'Dosáhli jste nové hodnosti'
     },
     [LOCALE.POPUP_YOUR_REWARD]: {
-        en: 'Your reward!',
+        en: 'Your Reward!',
         cz: 'Tvoja odměna!',
         ru: 'Ваша награда'
     },
     [LOCALE.HERO_MASTERY]: {
-        en: 'Hero mastery',
+        en: 'Hero Mastery',
         cz: 'Dovednost hrdiny',
         ru: 'Мастерство героя'
     },
     [LOCALE.REQUIRED_LEVEL]: {
-        en: 'Required level',
+        en: 'Required Level',
         cz: 'Požadovaná úroveň',
         ru: 'Необходимый уровень'
     },
@@ -1601,20 +1601,20 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Башня'
     },
     [LOCALE.OBSERVER_WARD]: {
-        en: 'Observer ward',
+        en: 'Observer Ward',
         ru: 'Тотем-наблюдатель'
     },
     [LOCALE.SENTRY_WARD]: {
-        en: 'Sentry ward',
+        en: 'Sentry Ward',
         ru: 'Сторожевой тотем'
     },
     [LOCALE.COOLDOWN_REDUCTION]: {
-        en: 'Cooldown reduction',
+        en: 'Cooldown Reduction',
         ru: 'Сокращение перезарядки',
         cz: 'Redukce cooldownu'
     },
     [LOCALE.PHYSICAL_RESISTANCE]: {
-        en: 'Physical damage resistance',
+        en: 'Normal Damage Resistance',
         ru: 'Сопротивление физическому урону',
         cz: 'Redukce normalního zraneni'
     },
@@ -1646,7 +1646,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Зрители: {}'
     },
     [LOCALE.CHAT_SYSTEM_MUTED]: {
-        en: 'You are muted for {} seconds',
+        en: 'You are muted for {} seconds.',
         cz: 'Jsi ztlumený na {} sekund',
         ru: 'Вы замучены на {} секунд'
     },
@@ -1741,7 +1741,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Не удалось кикнуть игрока "{}"!'
     },
     [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
-        en: 'Autobuy is on, you can\'t buy items. You can turn off autobuy feature in settings',
+        en: 'You cannot buy items while Auto-Buy is enabled! You can turn off Auto-Buy by disabling it in Settings.',
         ru: 'Вы не можете покупать предметы, пока активна автоматическая покупка предметов. Вы можете отключить её в настройках.',
         br: 'Você não pode comprar itens com o recurso de compra automática ativado. Você pode desativá-lo nas configurações',
         cz: 'Nemáte povoleno nakupovat zboží s funkcí autokoupě. Můžete ji vypnout v nastavení',
