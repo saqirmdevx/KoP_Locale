@@ -110,9 +110,9 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
             },
             desc: {
                 en: `Increases your Critical Damage by ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}% for each item that increases Critical Chance in your inventory.`,
-                ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
-                cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
-                zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
+                ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
+                cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
+                zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
             }
         }
     case ItemList.Iron_Sword:
