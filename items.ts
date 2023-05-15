@@ -910,7 +910,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '時辰手環',
             },
             desc: {
-                en: `Whenever you cast an ability, all of your cooldowns decrease by ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\Upon receiving a kill or assist, reset your Ability cooldowns (The Ability cooldown reset does not affect Item cooldowns).`,
+                en: `Whenever you cast an ability, all of your cooldowns decrease by ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nUpon receiving a kill or assist, reset your Ability cooldowns (The Ability cooldown reset does not affect Item cooldowns).`,
                 br: `Sempre que você lançar uma habilidade, reduza todos os seus tempos de recarga por ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nSe você receber uma morte ou assistência em um herói inimigo, os tempos de recarga de suas habilidades serão redefinidos. (Redefinir não funciona em itens)`,
                 fr: `Chaque fois que vous lancez une capacité, réduisez tous vos temps de recharge de ${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}.\nSi vous obtenez une mort ou une assistance sur un héros ennemi, vos temps de recharge de capacité seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets)`,
                 zh: `每次施放技能时，所有冷却时间都会减少${toSec(ItemAbilityData.CHRONOS_RING_CD_REDUCTION)}。\n如果你在敌方英雄上获得击杀或助攻，你的技能冷却时间将会重置。（重置不适用于物品）`,
