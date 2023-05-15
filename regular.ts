@@ -1646,7 +1646,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
         ru: 'Зрители: {}'
     },
     [LOCALE.CHAT_SYSTEM_MUTED]: {
-        en: 'You are muted for {} seconds.',
+        en: 'You are muted for {} minutes.',
         cz: 'Jsi ztlumený na {} sekund',
         ru: 'Вы замучены на {} секунд'
     },

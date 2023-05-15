@@ -497,7 +497,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
 
         return {
             en: `Arel throws a ticking bomb, attaching itself to enemies that get close. After ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, the bomb detonates, dealing ${baseDamage} in an area.
-                <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage} and stunning for ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}.`,
+                <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage} and reducing their Movement Speed for ${toSec(ArelAbilityData.TICKING_BOMB_SLOW_DURATION)}.`,
             br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
                 <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${triggerDamage} de dano normal e atordoará o portador por ${toSec(ArelAbilityData.TICKING_BOMB_STUN_DURATION)}.`,
             ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(ArelAbilityData.TICKING_BOMB_DURATION)}, нанося ${baseDamage} всем ближайшим врагам.
@@ -541,7 +541,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
             AlvarAbilityData.FURIOUS_KICK_STUN_DURATION
 
         return {
-            en: `Alvar effortlessly launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${toSec(duration)}. <br />
+            en: `Alvar launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${toSec(duration)}. <br />
                 Applies a stack of divine impact on all enemy heroes hit by Furious Kick.`,
             br: `Alvar chuta todas as unidades inimigas à sua frente e as joga para trás dele, causando ${baseDamage} de dano normal e atordoa unidades inimigas por ${toSec(duration)}. <br />
                 <br/> (Alvar aplica um debuff em todos os alvos que atinge).`,
@@ -559,7 +559,7 @@ const _getSpellDescriptionLang = (id: SpellList, {
         const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage)
 
         return {
-            en: `Alvar teleports towards the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and knocking back the enemy. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
+            en: `Alvar teleports towards the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and reducing the Movement Speed of the enemy hero for ${toSec(AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION)}. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
             br: `Alvar se teletransporta para trás do herói inimigo marcado mais próximo, chutando-o e causando ${baseDamage} de dano normal e empurrando-o na direção oposta.\n (Se não houver nenhum inimigo marcado por perto, a habilidade não pode ser usada.)`,
             ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} и отталкивая врага в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
             cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,

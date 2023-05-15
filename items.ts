@@ -1,7 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-ignore
-import { ItemList, fixed, ItemAbilityData, CRITICAL_DAMAGE_MOD_175 } from 'shared'
+import { ItemList, fixed, ItemAbilityData, CRITICAL_DAMAGE_MOD_5 } from 'shared'
 //@ts-ignore
 import { calculateMagicDefense } from 'misc/constants'
 import { toSec } from './misc'
@@ -109,10 +109,10 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '腐化的武士刀',
             },
             desc: {
-                en: `Increases your Critical damage to ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%.`,
-                ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
-                cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
-                zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_175 * 100, 1)}%`,
+                en: `Increases your Critical Damage by ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}% for each item that increases Critical Chance in your inventory.`,
+                ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
+                cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
+                zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
             }
         }
     case ItemList.Iron_Sword:
@@ -943,7 +943,7 @@ const _getLocaleItemDescription = (itemId: number): { name: { [key in string]: s
                 zh: '狂戰士手環',
             },
             desc:  {
-                en: `Increases your Attack Speed by ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% and Health Regen by ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} for each 3.33% HP you are missing`,
+                en: `Whenever you receive Normal Damage, gain a stack of berserk, up to a maximum of 8 stacks. Each stack increases your Attack Speed by ${Math.floor(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% for ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} Seconds.`,
                 ru: `За каждые 3,33% отсутствующего Здоровья вы получаете ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% Скорости атаки и ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} Регенерации здоровья.`,
                 br: `Para cada 3,33% de HP que você está faltando, você ganha ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% de velocidade de ataque e ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} de regeneração de saúde`,
                 cz: `Za každých 3,33% chybějícího HP získáte ${Math.floor(ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100)}% rychlost útoku a ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} obnovení zdraví`,
