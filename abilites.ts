@@ -22,6 +22,7 @@ import {
 } from 'shared'
 // @ts-ignore
 import type { IAbilityTooltipsDataFinal } from '../abilityLangData'
+// @ts-ignore
 import { getDamage } from '../abilityLangData'
 // @ts-ignore
 import { LANG } from 'lang/lang'

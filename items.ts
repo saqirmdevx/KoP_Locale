@@ -1,11 +1,12 @@
 /* eslint-disable no-irregular-whitespace */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-//@ts-ignore
+// @ts-ignore
 import { ItemList, fixed, ItemAbilityData, CRITICAL_DAMAGE_MOD_5 } from 'shared'
-//@ts-ignore
+// @ts-ignore
 import { calculateMagicDefense } from 'misc/constants'
+// @ts-ignore
 import { toSec } from './misc'
-//@ts-ignore
+// @ts-ignore
 import { LANG } from '../lang'
 
 const _getLocaleItemDescription = (
@@ -1396,20 +1397,18 @@ const _getLocaleItemDescription = (
           en: `Whenever you receive Normal Damage, gain a stack of berserk, up to a maximum of 8 stacks. Each stack increases your Attack Speed by ${Math.floor(
             ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
           )}% for ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} Seconds.`,
-          ru: `За каждые 3,33% отсутствующего Здоровья вы получаете ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100
-          )}% Скорости атаки и ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} Регенерации здоровья.`,
-          br: `Para cada 3,33% de HP que você está faltando, você ganha ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100
-          )}% de velocidade de ataque e ${
-            ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG
-          } de regeneração de saúde`,
-          cz: `Za každých 3,33% chybějícího HP získáte ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100
-          )}% rychlost útoku a ${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG} obnovení zdraví`,
-          zh: `每缺少3.33％的HP，您将获得${Math.floor(
-            ItemAbilityData.BERSERKER_RING_ATTACK_SPEED_PER_FRAG * 100
-          )}％的攻击速度和${ItemAbilityData.BERSERKER_RING_HEALTH_REGEN_PER_FRAG}的生命恢复`,
+          br: `Sempre que você receber dano normal, ganhe uma pilha de berserk, até um máximo de 8 pilhas. Cada pilha aumenta sua velocidade de ataque em ${Math.floor(
+            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
+          )}% por ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} segundos.`,
+          ru: `Каждый раз, когда вы получаете урон, вы получаете стак берсерка, до максимума в 8 стаков. Каждый стак увеличивает вашу скорость атаки на ${Math.floor(
+            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
+          )}% на ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} секунд.`,
+          zh: `每當你受到普通傷害時，獲得一層狂戰士，最多8層。每層增加${Math.floor(
+            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
+          )}%攻擊速度，持續${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)}秒。`,
+          cz: `Pokaždé, když obdržíte normální poškození, získáte stack berserk, až do maxima 8 stacků. Každý stack zvýší vaši rychlost útoku o ${Math.floor(
+            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
+          )}% po dobu ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sekund.`,
         },
       }
 
@@ -1674,7 +1673,7 @@ const _getLocaleItemDescription = (
         },
       }
     case ItemList.Kirins_Bow: {
-      const asAndMsReduction = fixed(ItemAbilityData.KIRINS_BOW_AS_REDUCTION * 100, 1)
+      const asAndMsReduction = fixed(ItemAbilityData.KIRINS_BOW_MR_REDUCTION * 100, 1)
       return {
         name: {
           en: "Kirin's Bow",
