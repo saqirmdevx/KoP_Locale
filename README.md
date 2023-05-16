@@ -9,31 +9,31 @@ Localization for Kingdom of Pixels ! https://leagueofpixels.eu
 3. FORK My repository (On the top right corner is FORK button)
 4. Now you need to clone forked repository. After fork click on the GREEN CODE button and copy the link that it shows.
 
-    > - For example: https://github.com/(your githubname)/KoP_Locale.git
-    > - Now go to folder on your computer where you will clone the repository for example C:\github\
-    > - Right click the folder and open GIT BASH HERE. It will open GIT TERMINAL
+   > - For example: https://github.com/(your githubname)/KoP_Locale.git
+   > - Now go to folder on your computer where you will clone the repository for example C:\github\
+   > - Right click the folder and open GIT BASH HERE. It will open GIT TERMINAL
 
 5. now inside console press following command
 
-    > - `git clone https://github.com/(your githubname)/KoP_Locale.git`
+   > - `git clone https://github.com/(your githubname)/KoP_Locale.git`
 
 6. Now you need also let github know who are you inside a GIT TERMINAL Press following commands
-    > - `git config --global user.name "Your Name"`
-    > - `git config --global user.email "Your GITHUB Email"`
+   > - `git config --global user.name "Your Name"`
+   > - `git config --global user.email "Your GITHUB Email"`
 
--   ! Now Close the terminal
+- ! Now Close the terminal
 
 7. It will download repository and code inside, close the terminal open the folder/repository in C:\github\KoP_Locale\
 
-    > - You will add new translation to these files based on the example.
-    > - When you finish translation and you will be ready to send it for review lets go to next step
+   > - You will add new translation to these files based on the example.
+   > - When you finish translation and you will be ready to send it for review lets go to next step
 
 8. Open GIT terminal again but now with RIGHT CLICK on KoP_Locale folder (Right click and then click on GIT BASH HERE)
 
 9. Inside a TERMINAL you will type following commands
-    > - `git pull`
-    > - `git commit -a -m "Your message for us, what you have changed?"`
-    > - `git push`
+   > - `git pull`
+   > - `git commit -a -m "Your message for us, what you have changed?"`
+   > - `git push`
 
 You will get similar message:
 
@@ -53,17 +53,17 @@ To https://github.com/saqirmdevx/KoP_Locale.git
 
 # What if i made futher changes?
 
-> -   If you wanna push next changes (Futher changes) you will just change the cloned repository, after you finish your changes you will again use these commands:
-> -   `git commit -a -m "....Message"`
-> -   `git push`
+> - If you wanna push next changes (Futher changes) you will just change the cloned repository, after you finish your changes you will again use these commands:
+> - `git commit -a -m "....Message"`
+> - `git push`
 
 and then repeat 10th step.
 
 Explaining following commands
 
-> -   `git pull` - (Update your code on your computer with repository / if someone else made any change you must be up dated)
-> -   `git commit -a -m "message"` - Prepare a commit with message
-> -   `git push` - Push changes to the repository
+> - `git pull` - (Update your code on your computer with repository / if someone else made any change you must be up dated)
+> - `git commit -a -m "message"` - Prepare a commit with message
+> - `git push` - Push changes to the repository
 
 # How to add translation?
 
