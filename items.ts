@@ -116,9 +116,23 @@ const _getLocaleItemDescription = (
             CRITICAL_DAMAGE_MOD_5 * 100,
             1
           )}% for each item that increases Critical Chance in your inventory.`,
-          ru: `Увеличивает Критический урон до ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
-          cz: `Zvyši kritické poškození na ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
-          zh: `提高暴击伤害至 ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%`,
+          ru: `Увеличивает ваш критический урон на ${fixed(
+            CRITICAL_DAMAGE_MOD_5 * 100,
+            1
+          )}% за каждый предмет, который увеличивает шанс критического удара в вашем инвентаре.`,
+          br: `Aumenta seu Dano Crítico em ${fixed(
+            CRITICAL_DAMAGE_MOD_5 * 100,
+            1
+          )}% para cada item que aumenta a Chance Crítica em seu inventário.`,
+          cz: `Zvyšuje vaše kritické poškození o ${fixed(
+            CRITICAL_DAMAGE_MOD_5 * 100,
+            1
+          )}% za každý předmět, který zvyšuje šanci na kritický zásah ve vašem inventáři.`,
+          fr: `Augmente vos dégâts critiques de ${fixed(
+            CRITICAL_DAMAGE_MOD_5 * 100,
+            1
+          )}% pour chaque objet qui augmente les chances de coup critique dans votre inventaire.`,
+          zh: `每件在你的背包中增加暴擊率的裝備，都會使你的暴擊傷害增加 ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%。`,
         },
       }
     case ItemList.Iron_Sword:
