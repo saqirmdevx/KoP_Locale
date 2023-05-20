@@ -1650,6 +1650,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Jsi ztlumený na {} sekund',
     ru: 'Вы замучены на {} секунд',
   },
+  [LOCALE.CHAT_SYSTEM_RENAME]: {
+    en: 'You have been given a rename. Reload your page to change your name.',
+  },
   [LOCALE.CHAT_SYSTEM_PLAYER_LEFT]: {
     en: ' has left the game!',
     cz: ' opustil hru!',
@@ -1700,6 +1703,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Hráč {} byl vyhozen!',
     ru: 'Игрок {} был кикнут!',
   },
+  [LOCALE.CHAT_ADMIN_RENAME]: {
+    en: 'Player {} has been given a rename!',
+  },
+  [LOCALE.CHAT_ADMIN_FORCE_RENAME]: {
+    en: 'Player {} has been force renamed to {}!',
+  },
   [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
     en: 'Could not get player "{}"!',
     cz: 'Nepodařilo se najít hráče "{}"!',
@@ -1739,6 +1748,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'Could not kick player "{}"!',
     cz: 'Nepodařilo se vyhodit hráče "{}"!',
     ru: 'Не удалось кикнуть игрока "{}"!',
+  },
+  [LOCALE.CHAT_ADMIN_RENAME_ERR]: {
+    en: 'Could not give player {} a rename!',
+  },
+  [LOCALE.CHAT_ADMIN_FORCE_RENAME_ERR]: {
+    en: 'Could not force rename player {} to {}!',
   },
   [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
     en: 'You cannot buy items while Auto-Buy is enabled! You can turn off Auto-Buy by disabling it in Settings.',
