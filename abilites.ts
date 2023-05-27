@@ -43,7 +43,7 @@ const _getSpellDescriptionLang = (
       const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage)
       const enh_damage = getDamage(
         KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower,
-        abilityData.damageType,
+        Shared.DamageTypes.MAGICAL,
         KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
       const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage)
@@ -54,7 +54,7 @@ const _getSpellDescriptionLang = (
       return {
         en: `Kumihu fires 3 projectiles. Each projectile deals ${basic_damage} \n<br/>Passive: After using Arcane Dash, Kumihu's next Basic Attack deals a bonus ${enh_damage} and applies Charm on target for ${toSec(
           duration
-        )}`,
+        )}.`,
         ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} \nПассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} + ${enh_damage_with_talent} и наложит очарование на цель на ${toSec(
           duration
         )}`,
@@ -908,9 +908,16 @@ const _getSpellDescriptionLang = (
         'AttackDamage'
       )
 
+      const apDamage = getDamage(
+        FoxyAbilityData.GRANADE_AP_MODIFIER * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+        'AbilityPower'
+      )
+
       return {
         en:
-          `<b>First cast: </b>Foxy throws a grenade which detonates upon impact with the ground, dealing ${baseDamage} in an area and knocking back units. If the grenade's falling speed is fast enough, it will bounce once before detonation. ` +
+          `<b>First cast: </b>Foxy throws a grenade which detonates upon impact with the ground, dealing ${baseDamage} + ${apDamage} in an area and knocking back units. If the grenade's falling speed is fast enough, it will bounce once before detonation. ` +
           'Knockback is based on the distance between the enemy unit and the grenade.<br/>' +
           '<b>Second cast: </b>Detonate the grenade early.',
         ru:
