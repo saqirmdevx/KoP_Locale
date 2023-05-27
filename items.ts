@@ -554,8 +554,8 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en: `Grants ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal and ${
-            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN
-          } Health Regen to nearby allies.`,
+            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
+          } Attack Damage to nearby allies.`,
           ru: `Увеличивает Кражу здоровья у всех ближайших союзников на ${(
             ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100
           ).toFixed(1)}% Кражи здоровья и  Регенерацию здоровья на ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN}.`,
@@ -1436,9 +1436,7 @@ const _getLocaleItemDescription = (
           zh: '冰霜鎧甲',
         },
         desc: {
-          en: `Reduces the Attack Speed of nearby enemies by ${(
-            ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100
-          ).toFixed()}% and all heals, regeneration, and lifesteal of nearby enemies by ${(
+          en: `Reduces the effect of all heals, regeneration, and lifesteal for nearby enemies by ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
           ru: `Скорость атаки ближайших к вам врагов уменьшается на ${(
@@ -1702,7 +1700,7 @@ const _getLocaleItemDescription = (
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
           } stacks, the magical poison explodes, dealing ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } Magic Damage and reducing Attack Speed by ${asAndMsReduction}% for ${toSec(
+          } Magic Damage and reducing Magic Resistance by ${asAndMsReduction}% for ${toSec(
             ItemAbilityData.KIRINS_BOW_DURATION
           )}.`,
           zh: `你的基本攻击会施加魔法毒，抵达${ItemAbilityData.KIRINS_BOW_MAX_STACKS}层后爆炸，造成${
