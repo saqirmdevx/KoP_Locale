@@ -750,7 +750,7 @@ const _getSpellDescriptionLang = (
         : 1
 
       const triggerDamage = getDamage(
-        ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * triggerMultiplier,
+        ArelAbilityData.TICKING_BOMB_TRIGGER_DAMAGE_MODIFIER * damage * triggerMultiplier,
         abilityData.damageType,
         (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)) *
           triggerMultiplier
