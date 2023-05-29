@@ -43,7 +43,7 @@ const _getSpellDescriptionLang = (
       const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage)
       const enh_damage = getDamage(
         KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower,
-        abilityData.damageType,
+        Shared.DamageTypes.MAGICAL,
         KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
       const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage)
@@ -54,7 +54,7 @@ const _getSpellDescriptionLang = (
       return {
         en: `Kumihu fires 3 projectiles. Each projectile deals ${basic_damage} \n<br/>Passive: After using Arcane Dash, Kumihu's next Basic Attack deals a bonus ${enh_damage} and applies Charm on target for ${toSec(
           duration
-        )}`,
+        )}.`,
         ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} \nПассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} + ${enh_damage_with_talent} и наложит очарование на цель на ${toSec(
           duration
         )}`,
@@ -219,8 +219,9 @@ const _getSpellDescriptionLang = (
 
       return {
         en:
-          `I'ceat slides on the ground, increasing his Movement Speed by ${bonusSpeed} for ${duration} and leaving behind an icy trail.` +
-          `Enemies standing on top of the icy trail receive ${base_damage} per second and have their Movement Speed reduced for a short duration.`,
+          `<b>First cast: </b>I'ceat slides on the ground, increasing his Movement Speed by ${bonusSpeed} for ${duration} and leaving behind an icy trail.` +
+          `Enemies standing on top of the icy trail receive ${base_damage} per second and have their Movement Speed reduced for a short duration.<br/>` +
+          `<b>Second cast: </b>I'ceat stops sliding, returning his Movement Speed to normal, and stops leaving behind an icy trail.`,
         ru:
           `Ай'сит скользит по земле, получая ${bonusSpeed} скорости передвижения на ${duration} и оставляя ледяной след позади, ` +
           `наносящий  ${base_damage} в секунду, а также замедляющий всех наступивших врагов.`,
@@ -709,9 +710,7 @@ const _getSpellDescriptionLang = (
 
     /** Arel  */
     case SpellList.AREL_AUTOATTACK: {
-      const enhDamageVal = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-        ? ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD + ArelAbilityData.TALENT_T2_LEFT_BONUS_ATTACK_DAMAGE
-        : ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD
+      const enhDamageVal = ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD
 
       const baseDamage = getDamage(ArelAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
       const enhDamage = getDamage(enhDamageVal * damage)
@@ -751,19 +750,23 @@ const _getSpellDescriptionLang = (
         : 1
 
       const triggerDamage = getDamage(
-        ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage * triggerMultiplier,
+        ArelAbilityData.TICKING_BOMB_TRIGGER_DAMAGE_MODIFIER * damage * triggerMultiplier,
         abilityData.damageType,
         (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)) *
           triggerMultiplier
       )
 
+      const triggerStun = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
+        ? ArelAbilityData.TICKING_BOMB_STUN_DURATION + ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN
+        : ArelAbilityData.TICKING_BOMB_STUN_DURATION
+
       return {
         en: `Arel throws a ticking bomb, attaching itself to enemies that get close. After ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, the bomb detonates, dealing ${baseDamage} in an area.
-                <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage} and reducing their Movement Speed for ${toSec(
+                <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage}, reducing their Movement Speed for ${toSec(
           ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}.`,
+        )}, and stunning for ${toSec(triggerStun)}.`,
         br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
@@ -905,10 +908,18 @@ const _getSpellDescriptionLang = (
         'AttackDamage'
       )
 
+      const apDamage = getDamage(
+        FoxyAbilityData.GRANADE_AP_MODIFIER * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+        'AbilityPower'
+      )
+
       return {
         en:
-          `Foxy throws a grenade which detonates upon impact with the ground, dealing ${baseDamage} in an area and knocking back units. If the grenade's falling speed is fast enough, it will bounce once before detonation.<br/>` +
-          'Knockback is based on the distance between the enemy unit and the grenade.',
+          `<b>First cast: </b>Foxy throws a grenade which detonates upon impact with the ground, dealing ${baseDamage} + ${apDamage} in an area and knocking back units. If the grenade's falling speed is fast enough, it will bounce once before detonation. ` +
+          'Knockback is based on the distance between the enemy unit and the grenade.<br/>' +
+          '<b>Second cast: </b>Detonate the grenade early.',
         ru:
           `Фокси бросает гранату, которая взрывается при соприкосновении с землёй на определённой скорости. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage} физического урона. <br/>` +
           'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.',
