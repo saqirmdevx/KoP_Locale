@@ -1842,7 +1842,7 @@ const _getLocaleItemDescription = (
           ru: 'Искажённый медальон',
         },
         desc: {
-          en: `Each Critical hit against enemy heroes gives you a stack of corrupted rage, up to a maximum of ${
+          en: `Each Critical hit against an enemy gives you a stack of corrupted rage, up to a maximum of ${
             ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
           } stacks. Each stack increases your Attack Damage by ${
             ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
