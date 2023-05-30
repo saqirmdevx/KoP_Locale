@@ -911,7 +911,7 @@ const _getSpellDescriptionLang = (
       const apDamage = getDamage(
         FoxyAbilityData.GRANADE_AP_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+        0,
         'AbilityPower'
       )
 
