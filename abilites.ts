@@ -223,8 +223,9 @@ const _getSpellDescriptionLang = (
           `Enemies standing on top of the icy trail receive ${base_damage} per second and have their Movement Speed reduced for a short duration.<br/>` +
           `<b>Second cast: </b>I'ceat stops sliding, returning his Movement Speed to normal, and stops leaving behind an icy trail.`,
         ru:
-          `Ай'сит скользит по земле, получая ${bonusSpeed} скорости передвижения на ${duration} и оставляя ледяной след позади, ` +
-          `наносящий  ${base_damage} в секунду, а также замедляющий всех наступивших врагов.`,
+          `<b>Первое применение: </b>Ай'сит скользит по земле, получая ${bonusSpeed} скорости передвижения на ${duration} и оставляя ледяной след позади, ` +
+          `наносящий  ${base_damage} в секунду, а также замедляющий всех наступивших врагов.<br/>` +
+          `<b>Повторное применение: </b>Ай'сит преждевременно перестаёт скользить.`,
         cz:
           `I'ceat se začne klouzat, tím si zvyšuje rychlost o ${bonusSpeed} na ${duration} a zanechává za sebout ledovou vrstvu ` +
           `, která uděluje ${base_damage} poškození za vteřinu nepřátelům na vrcholu ledu a zpomalí je.`,
@@ -776,9 +777,9 @@ const _getSpellDescriptionLang = (
         ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, нанося ${baseDamage} всем ближайшим врагам.
-                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${triggerDamage}, а также оглушит цель на ${toSec(
+                <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${triggerDamage} урона, уменьшая Скорость передвижения цели на ${toSec(
           ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}`,
+        )}, а также оглушая на ${toSec(triggerStun)}.`,
         cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
@@ -869,7 +870,8 @@ const _getSpellDescriptionLang = (
           AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION
         )}. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
         br: `Alvar se teletransporta para trás do herói inimigo marcado mais próximo, chutando-o e causando ${baseDamage} de dano normal e empurrando-o na direção oposta.\n (Se não houver nenhum inimigo marcado por perto, a habilidade não pode ser usada.)`,
-        ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} и отталкивая врага в противоположном направлении. Способность использовать нельзя, если рядом нет помеченных врагов.`,
+        ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} и снижая Скорость передвижения цели на ${toSec(
+          AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION)}. Способность использовать нельзя, если рядом нет помеченных врагов.`,
         cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
         zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
       }
@@ -921,10 +923,11 @@ const _getSpellDescriptionLang = (
           'Knockback is based on the distance between the enemy unit and the grenade.<br/>' +
           '<b>Second cast: </b>Detonate the grenade early.',
         ru:
-          `Фокси бросает гранату, которая взрывается при соприкосновении с землёй на определённой скорости. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage} физического урона. <br/>` +
-          'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.',
+          `<b>Первое применение: </b>Фокси бросает гранату, которая взрывается при соприкосновении с землёй. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage} + ${apDamage} физического урона. ` +
+          'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.<br/>' +
+          '<b>Повторное применение: </b>Граната взрывается преждевременно.',
         cz:
-          `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage}. <br/>` +
+          `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage} + ${apDamage}. <br/>` +
           'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
       }
     }

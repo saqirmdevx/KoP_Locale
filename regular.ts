@@ -1652,6 +1652,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
   [LOCALE.CHAT_SYSTEM_RENAME]: {
     en: 'You have been given a rename. Reload your page to change your name.',
+    ru: 'Ваше имя было изменено. Обновите страницу, чтобы увидеть изменения.',
   },
   [LOCALE.CHAT_SYSTEM_PLAYER_LEFT]: {
     en: ' has left the game!',
@@ -1705,9 +1706,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
   [LOCALE.CHAT_ADMIN_RENAME]: {
     en: 'Player {} has been given a rename!',
+    ru: 'Имя игрока {} было изменено!',
   },
   [LOCALE.CHAT_ADMIN_FORCE_RENAME]: {
     en: 'Player {} has been force renamed to {}!',
+    ru: 'Имя игрока {} было принудительно изменено на {}!',
   },
   [LOCALE.CHAT_ADMIN_GET_PLAYER_ERR]: {
     en: 'Could not get player "{}"!',
@@ -1751,9 +1754,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
   [LOCALE.CHAT_ADMIN_RENAME_ERR]: {
     en: 'Could not give player {} a rename!',
+    ru: 'Не удалось изменить имя игрока {}!',
   },
   [LOCALE.CHAT_ADMIN_FORCE_RENAME_ERR]: {
     en: 'Could not force rename player {} to {}!',
+    ru: 'Не удалось принудительно изменить имя игрока {} на {}!',
   },
   [LOCALE.POPUP_AUTOBUY_TURNOFF]: {
     en: 'You cannot buy items while Auto-Buy is enabled! You can turn off Auto-Buy by disabling it in Settings.',
