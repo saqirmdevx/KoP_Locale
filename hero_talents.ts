@@ -352,7 +352,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Ticking Bomb Stun +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            ru: `+${ArelAbilityData.TALENT_T2_LEFT_BONUS_ATTACK_DAMAGE * 100}% к урону второй пули`,
+            ru: `+${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN} сек. к оглушению Часовой бомбы`,
           },
         },
         tier2_right: {
