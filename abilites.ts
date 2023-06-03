@@ -871,7 +871,8 @@ const _getSpellDescriptionLang = (
         )}. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
         br: `Alvar se teletransporta para trás do herói inimigo marcado mais próximo, chutando-o e causando ${baseDamage} de dano normal e empurrando-o na direção oposta.\n (Se não houver nenhum inimigo marcado por perto, a habilidade não pode ser usada.)`,
         ru: `Алвар телепортируется к ближайшему помеченному врагу, ударяя его, нанося ${baseDamage} и снижая Скорость передвижения цели на ${toSec(
-          AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION)}. Способность использовать нельзя, если рядом нет помеченных врагов.`,
+          AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION
+        )}. Способность использовать нельзя, если рядом нет помеченных врагов.`,
         cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
         zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
       }

@@ -558,13 +558,21 @@ const _getLocaleItemDescription = (
           } Attack Damage to nearby allies.`,
           ru: `Увеличивает Кражу здоровья у всех ближайших союзников на ${(
             ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100
-          ).toFixed(1)}% и Силу атаки на ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN}.`,
-          br: `Concede ${ (ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Roubo de Vida e ${ ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE } Dano de Ataque aos aliados próximos.`,
-          fr: `Accorde ${ (ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Vampirisme et ${ ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE } Dégâts d'Attaque aux alliés proches.`,
-          zh: `为附近的盟友提供${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}%的吸血和${
-            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_HPREGEN
-          }生命回复。`,
-          cz: `Poskytuje ${ (ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% životodárného kradení a ${ ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE } bodů poškození útoku blízkým spojencům.`,
+          ).toFixed(1)}% и Силу атаки на ${ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE}.`,
+          br: `Concede ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Roubo de Vida e ${
+            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
+          } Dano de Ataque aos aliados próximos.`,
+          fr: `Accorde ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Vampirisme et ${
+            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
+          } Dégâts d'Attaque aux alliés proches.`,
+          zh: `提供 ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% 生命偷取和 ${
+            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
+          } 攻击伤害给附近的盟友.`,
+          cz: `Poskytuje ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(
+            1
+          )}% životodárného kradení a ${
+            ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
+          } bodů poškození útoku blízkým spojencům.`,
         },
       }
     /** Wooden Bow */
@@ -1434,10 +1442,18 @@ const _getLocaleItemDescription = (
           ru: `Все эффекты входящего исцеления, регенерации и вампиризма у ближайших врагов уменьшаются на ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
-          br: `Reduz o efeito de todos os efeitos de cura, regeneração e roubo de vida para os inimigos próximos em ${( ItemAbilityData.FROST_ARMOR_HPREDUC * 100 ).toFixed()}%.`,
-          fr: `Réduit l'effet de tous les soins, régénérations et vampirismes des ennemis proches de ${( ItemAbilityData.FROST_ARMOR_HPREDUC * 100 ).toFixed()}%.`,
-          zh: `减少附近敌人的所有治疗效果、再生效果和生命窃取效果${( ItemAbilityData.FROST_ARMOR_HPREDUC * 100 ).toFixed()}%。`,
-          cz: `Sníží efekt všech léčení, regenerace a životodárného kradení pro blízké nepřátele o ${( ItemAbilityData.FROST_ARMOR_HPREDUC * 100 ).toFixed()}%.`,
+          br: `Reduz o efeito de todos os efeitos de cura, regeneração e roubo de vida para os inimigos próximos em ${(
+            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+          ).toFixed()}%.`,
+          fr: `Réduit l'effet de tous les soins, régénérations et vampirismes des ennemis proches de ${(
+            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+          ).toFixed()}%.`,
+          zh: `减少附近敌人的所有治疗效果、再生效果和生命窃取效果${(
+            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+          ).toFixed()}%。`,
+          cz: `Sníží efekt všech léčení, regenerace a životodárného kradení pro blízké nepřátele o ${(
+            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+          ).toFixed()}%.`,
         },
       }
 
@@ -1679,10 +1695,32 @@ const _getLocaleItemDescription = (
           } Magic Damage and reducing Magic Resistance by ${asAndMsReduction}% for ${toSec(
             ItemAbilityData.KIRINS_BOW_DURATION
           )}.`,
-          zh: `你的普通攻击会施加一层魔法毒药。当叠加到 ${ ItemAbilityData.KIRINS_BOW_MAX_STACKS } 层时，魔法毒药会爆炸，造成 ${ ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME } 点魔法伤害，并使魔法抗性降低 ${asAndMsReduction}%，持续 ${toSec( ItemAbilityData.KIRINS_BOW_DURATION )} 秒。`,
-          cz: `Vaše základní útoky aplikují stack kouzelného jedu. Při ${ ItemAbilityData.KIRINS_BOW_MAX_STACKS } stacků se kouzelný jed výbuchem uvolní, způsobí ${ ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME } kouzelné poškození a sníží odolnost proti kouzelnému poškození o ${asAndMsReduction}% po dobu ${toSec( ItemAbilityData.KIRINS_BOW_DURATION )}.`,
-          fr: `Vos attaques de base appliquent une pile de poison magique. À ${ ItemAbilityData.KIRINS_BOW_MAX_STACKS } piles, le poison magique explose, infligeant ${ ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME } de dégâts magiques et réduisant la résistance magique de ${asAndMsReduction}% pendant ${toSec( ItemAbilityData.KIRINS_BOW_DURATION )}.`,
-          br: `Seus Ataques Básicos aplicam uma pilha de veneno mágico. Com ${ ItemAbilityData.KIRINS_BOW_MAX_STACKS } pilhas, o veneno mágico explode, causando ${ ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME } de Dano Mágico e reduzindo a Resistência Mágica em ${asAndMsReduction}% por ${toSec( ItemAbilityData.KIRINS_BOW_DURATION )}.`,
+          zh: `你的普通攻击会施加一层魔法毒药。当叠加到 ${
+            ItemAbilityData.KIRINS_BOW_MAX_STACKS
+          } 层时，魔法毒药会爆炸，造成 ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
+          } 点魔法伤害，并使魔法抗性降低 ${asAndMsReduction}%，持续 ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)} 秒。`,
+          cz: `Vaše základní útoky aplikují stack kouzelného jedu. Při ${
+            ItemAbilityData.KIRINS_BOW_MAX_STACKS
+          } stacků se kouzelný jed výbuchem uvolní, způsobí ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
+          } kouzelné poškození a sníží odolnost proti kouzelnému poškození o ${asAndMsReduction}% po dobu ${toSec(
+            ItemAbilityData.KIRINS_BOW_DURATION
+          )}.`,
+          fr: `Vos attaques de base appliquent une pile de poison magique. À ${
+            ItemAbilityData.KIRINS_BOW_MAX_STACKS
+          } piles, le poison magique explose, infligeant ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
+          } de dégâts magiques et réduisant la résistance magique de ${asAndMsReduction}% pendant ${toSec(
+            ItemAbilityData.KIRINS_BOW_DURATION
+          )}.`,
+          br: `Seus Ataques Básicos aplicam uma pilha de veneno mágico. Com ${
+            ItemAbilityData.KIRINS_BOW_MAX_STACKS
+          } pilhas, o veneno mágico explode, causando ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
+          } de Dano Mágico e reduzindo a Resistência Mágica em ${asAndMsReduction}% por ${toSec(
+            ItemAbilityData.KIRINS_BOW_DURATION
+          )}.`,
           ru: `Ваши базовые атаки накладывают волшебный яд, который взрывается при достижении  ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
           } зарядов. Взрыв наносит ${
@@ -1803,10 +1841,32 @@ const _getLocaleItemDescription = (
           } and Movement Speed by ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} for ${toSec(
             ItemAbilityData.CORRUPTED_LOCKET_DURATION
           )}.`,
-          br: `Cada acerto crítico contra um inimigo concede uma pilha de raiva corrompida, até um máximo de ${ ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS } pilhas. Cada pilha aumenta seu Dano de Ataque em ${ ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE } e Velocidade de Movimento em ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} por ${toSec( ItemAbilityData.CORRUPTED_LOCKET_DURATION )}.`,
-          fr: `Chaque coup critique contre un ennemi vous donne une pile de rage corrompue, jusqu'à un maximum de ${ ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS } piles. Chaque pile augmente vos dégâts d'attaque de ${ ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE } et votre vitesse de déplacement de ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} pendant ${toSec( ItemAbilityData.CORRUPTED_LOCKET_DURATION )}.`,
-          zh: `对敌人的每次暴击都会给你一层腐化之怒叠加，最多不超过 ${ ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS } 层。每层增加你的攻击伤害 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} 和移动速度 ${ ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS }，持续 ${toSec( ItemAbilityData.CORRUPTED_LOCKET_DURATION )} 秒。`,
-          cz: `Každý kritický zásah proti nepříteli vám dává stack zkaženého vzteku, až do maximálního počtu ${ ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS } stacků. Každý stack zvyšuje váš útočný poškození o ${ ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE } a rychlost pohybu o ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} po dobu ${toSec( ItemAbilityData.CORRUPTED_LOCKET_DURATION )}.`,
+          br: `Cada acerto crítico contra um inimigo concede uma pilha de raiva corrompida, até um máximo de ${
+            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+          } pilhas. Cada pilha aumenta seu Dano de Ataque em ${
+            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+          } e Velocidade de Movimento em ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} por ${toSec(
+            ItemAbilityData.CORRUPTED_LOCKET_DURATION
+          )}.`,
+          fr: `Chaque coup critique contre un ennemi vous donne une pile de rage corrompue, jusqu'à un maximum de ${
+            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+          } piles. Chaque pile augmente vos dégâts d'attaque de ${
+            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+          } et votre vitesse de déplacement de ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} pendant ${toSec(
+            ItemAbilityData.CORRUPTED_LOCKET_DURATION
+          )}.`,
+          zh: `对敌人的每次暴击都会给你一层腐化之怒叠加，最多不超过 ${
+            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+          } 层。每层增加你的攻击伤害 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} 和移动速度 ${
+            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+          }，持续 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)} 秒。`,
+          cz: `Každý kritický zásah proti nepříteli vám dává stack zkaženého vzteku, až do maximálního počtu ${
+            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+          } stacků. Každý stack zvyšuje váš útočný poškození o ${
+            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+          } a rychlost pohybu o ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS} po dobu ${toSec(
+            ItemAbilityData.CORRUPTED_LOCKET_DURATION
+          )}.`,
           ru: `Нанося критический урон, вы получаете 1 заряд (Максимум: ${
             ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
           } зарядов). Каждый заряд повышает вашу Силу атаки на ${
