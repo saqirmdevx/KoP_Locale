@@ -184,22 +184,29 @@ const _getSpellDescriptionLang = (
         ICeatAbilityData.ICICLE_BOLT_BASE_DAMAGE + ICeatAbilityData.ICICLE_BOLT_DAMAGE_PER_LEVEL * (level - 1)
       )
 
+      const bonusDamage = fixed(
+        (hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
+          ? ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DAMAGE + ICeatAbilityData.ICICLE_BOLT_FREEZE_MULTIPLIER
+          : ICeatAbilityData.ICICLE_BOLT_FREEZE_MULTIPLIER) * 100,
+        1
+      )
+
       return {
-        en: `I'ceat launches three frozen shards, each dealing ${base_damage} and reducing Movement Speed by ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Hitting all three of them freezes an enemy for ${toSec(
+        en: `I'ceat launches a frozen shard, deals ${base_damage} and reducing Movement Speed by ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />If target is affected by any root, iceat's icicle slow or iceat's cold embrace slow it will root the enemy for ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
-        )}, preventing all forms of movement.`,
-        ru: `Ай'сит выпускает три осколка льда, каждый из которых замедляет врагов на ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}(замедление складывается) и наносит ${base_damage}. <br />Попадание всеми тремя сосульками обездвижит врага на ${toSec(
+        )}, preventing all forms of movement and deals ${bonusDamage}% damage.`,
+        ru: `Ай'сит запускает замороженный осколок, нанося ${base_damage} и замедляя скорость передвижения на ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Если цель подвержена любому корню, замедлению от осколка или замедлению от области, то она будет обездвижена на ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
-        )}`,
-        cz: `I'ceat vystřelí tři střepy ledu, z nichž každý zpomalí nepřátele o ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}, což způsobí ${base_damage} při každém zásahu. <br />Zasáhnete-li všemi třemi, znehybní nepřítele na ${toSec(
+        )}, предотвращая любые формы передвижения и нанося ${bonusDamage}% урона.`,
+        cz: `I'ceat vystřelí zmrzlý šrapnel, který způsobí ${base_damage} a zpomalí pohyb o ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Pokud je cíl postižený jakýmkoliv kořenem, zpomalením od I'ceatova šrapnelu nebo zpomalením od I'ceatova objetí, tak bude po dobu ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
-        )}`,
-        br: `Iceat dispara três estilhaços de gelo, cada estilhaço acertado reduz a velocidade do inimigo em ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}, adicionando ${base_damage} de dano para cada ataque. <br />Atingir todos os três estilhaços em um inimigo enraiza ele por ${toSec(
+        )} znehybněn, zabráněním všem formám pohybu a způsobí ${bonusDamage}% poškození.`,
+        br: `I'ceat lança um fragmento congelado, causando ${base_damage} e reduzindo a Velocidade de Movimento em ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Se o alvo estiver afetado por qualquer raiz, lentidão do fragmento de gelo ou lentidão do abraço frio de I'ceat, ele enraizará o inimigo por ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
-        )}.`,
-        zh: `艾希特發射三枚寒冰碎片，每發降低 ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點敵方移動速度並給予 ${base_damage}點魔法傷害。<br />對同一目標擊中所有碎冰時，牽制敵方 ${toSec(
+        )}, impedindo todas as formas de movimento e causando ${bonusDamage}% de dano.`,
+        zh: `艾希特發射冰凍碎片，給予 ${base_damage}點魔法傷害並減少 ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點移動速度。<br />如果目標受到任何根源、冰凍碎片或冰凍擁抱的減速效果，將使敵人定身 ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
-        )}。`,
+        )}秒，防止所有形式的移動並造成 ${bonusDamage}%額外傷害。`,
       }
     }
 
@@ -209,10 +216,7 @@ const _getSpellDescriptionLang = (
         type,
         ICeatAbilityData.COLD_EMBRACE_BASE_DAMAGE + ICeatAbilityData.COLD_EMBRACE_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const duration = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
-        ? toSec(ICeatAbilityData.COLD_EMBRACE_DURATION + ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)
-        : toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)
-
+      const duration = ICeatAbilityData.COLD_EMBRACE_DURATION
       const bonusSpeed = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
         ? ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED + ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS
         : ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED
@@ -259,12 +263,11 @@ const _getSpellDescriptionLang = (
       }
 
     case SpellList.BELLE_PRICKLY_VINE: {
-      const base_damage = getDamage(
+      const damage = getDamage(
         BelleAbilityData.PRICKLY_VINE_DAMAGE_MOD * abilityPower,
         type,
         BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE + BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const attach_damage = getDamage(0, type, BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE_ATTACHED)
 
       const stunDuration = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION + BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
@@ -272,21 +275,21 @@ const _getSpellDescriptionLang = (
 
       return {
         en:
-          `Belle casts a piercing vine, dealing ${base_damage} to enemies that get hit. If the vine comes into contact with an enemy hero, it attaches to that hero. Attached vines can be broken if the enemy hero moves far enough from Belle.` +
-          `\nAfter a short time, if the vine is still attached, the vine entangles the enemy, dealing ${attach_damage} and stunning for ${stunDuration}`,
+          `Belle casts a piercing vine, dealing ${damage} to enemies that get hit. If the vine comes into contact with an enemy hero, it attaches to that hero. Attached vines can be broken if the enemy hero moves far enough from Belle.` +
+          `\nAfter a short time, if the vine is still attached, the vine entangles the enemy, dealing ${damage} and stunning for ${stunDuration}`,
         ru:
-          `Белла выпускает лозу перед собой, наносящую ${base_damage} и прикрепляющуюся к перворму вражескому герою на своём пути. <br />Способность может быть прервана, если враг отойдёт слишком далеко от Беллы.` +
-          `\nСпустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${stunDuration}, нанося ${attach_damage}.`,
+          `Белла выпускает лозу перед собой, наносящую ${damage} и прикрепляющуюся к перворму вражескому герою на своём пути. <br />Способность может быть прервана, если враг отойдёт слишком далеко от Беллы.` +
+          `\nСпустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${stunDuration}, нанося ${damage}.`,
         cz:
-          `Belle vrhne vinnou révu která se připojí k nepříteli způsobujícímu ${base_damage} poškození a zpomalí pohyb. <br />Lze je zlomit, pokud se nepřítel vydálí dostatečně daleko od Belle.` +
-          `\nPo krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${stunDuration} a způsobí ${attach_damage} poškození.`,
+          `Belle vrhne vinnou révu která se připojí k nepříteli způsobujícímu ${damage} poškození a zpomalí pohyb. <br />Lze je zlomit, pokud se nepřítel vydálí dostatečně daleko od Belle.` +
+          `\nPo krátké době, pokud je liána stále propojena, opadne a omráčí nepřítele na ${stunDuration} a způsobí ${damage} poškození.`,
 
         br:
-          `Belle lança uma videira para frente que se liga a um inimigo causando ${base_damage} de dano e diminuindo a sua velocidade de movimento.` +
-          `\nDepois de 2 segundos, se a videira ainda estiver presa no inimigo, ela vai prender ele o atordoando por ${stunDuration} e causando ${attach_damage} de dano. \n<br />(Ela pode ser quebrada se o inimigo se mover para longe o suficiente de Belle.)`,
+          `Belle lança uma videira para frente que se liga a um inimigo causando ${damage} de dano e diminuindo a sua velocidade de movimento.` +
+          `\nDepois de 2 segundos, se a videira ainda estiver presa no inimigo, ela vai prender ele o atordoando por ${stunDuration} e causando ${damage} de dano. \n<br />(Ela pode ser quebrada se o inimigo se mover para longe o suficiente de Belle.)`,
         zh:
-          `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方 ${base_damage}點魔法傷害並附著於一個敵方英雄。 \n當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
-          `\n經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${stunDuration}敵方英雄並給予 ${attach_damage}點魔法傷害。`,
+          `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方 ${damage}點魔法傷害並附著於一個敵方英雄。 \n當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
+          `\n經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${stunDuration}敵方英雄並給予 ${damage}點魔法傷害。`,
       }
     }
 

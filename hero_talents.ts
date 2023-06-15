@@ -125,22 +125,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Cold Embrace Movement Speed +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
+            en: `Cold Embrace Move Speed +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
             ru: `+${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS} к скорости передвижения во время действия Объятий холода`,
           },
         },
         tier2_left: {
           title: {
-            en: `+${ICeatAbilityData.TALENT_T2_LEFT_ADDITIONAL_ICICLE} Icicle Bolt`,
-            ru: `+${ICeatAbilityData.TALENT_T2_LEFT_ADDITIONAL_ICICLE} сосулька у Сосулек`,
+            en: `+${fixed(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DAMAGE * 100, 1)}% Icicle freeze damage`,
+            ru: `+${fixed(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DAMAGE * 100, 1)}% к урону от Ледяных игл`,
           },
         },
         tier2_right: {
           title: {
-            en: `Cold Embrace Duration +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
+            en: `Cold Embrace trail +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_TRAIL_DURATION)}s`,
             ru: `+${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )} сек. к длительности Объятий холода`,
+              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_TRAIL_DURATION
+            )} сек. к длительности следа Объятий холода`,
           },
         },
       }
