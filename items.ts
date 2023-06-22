@@ -1436,22 +1436,19 @@ const _getLocaleItemDescription = (
           zh: '冰霜鎧甲',
         },
         desc: {
-          en: `Reduces the effect of all heals, regeneration, and lifesteal for nearby enemies by ${(
+          en: `Reduces attack speed and effect of all heals, regeneration, and lifesteal for nearby enemies by ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
-          ru: `Все эффекты входящего исцеления, регенерации и вампиризма у ближайших врагов уменьшаются на ${(
+          ru: `Снижает скорость атаки и эффект всех исцелений, регенерации и перехвата жизни для ближайших врагов на ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
-          br: `Reduz o efeito de todos os efeitos de cura, regeneração e roubo de vida para os inimigos próximos em ${(
+          br: `Reduz a velocidade de ataque e o efeito de todos os curativos, regeneração e roubo de vida para inimigos próximos em ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
-          fr: `Réduit l'effet de tous les soins, régénérations et vampirismes des ennemis proches de ${(
+          zh: `降低附近敵人${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
-          ).toFixed()}%.`,
-          zh: `减少附近敌人的所有治疗效果、再生效果和生命窃取效果${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
-          ).toFixed()}%。`,
-          cz: `Sníží efekt všech léčení, regenerace a životodárného kradení pro blízké nepřátele o ${(
+          ).toFixed()}%的攻擊速度和所有治療、再生和吸血的效果。`,
+          cz: `Sníží rychlost útoku a efekt všech léčení, regenerace a lifestealu pro blízké nepřátele o ${(
             ItemAbilityData.FROST_ARMOR_HPREDUC * 100
           ).toFixed()}%.`,
         },
