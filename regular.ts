@@ -1336,6 +1336,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Предметы',
     zh: '物品',
   },
+  [LOCALE.FRIENDS]: {
+    en: 'Friends',
+  },
   [LOCALE.ST_KEYBIND_MOVEUP]: {
     en: 'Jump',
     cz: 'Skok',
@@ -1405,6 +1408,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Compra automática',
     ru: 'Автоматическая покупка предметов',
     zh: '自動購買',
+  },
+  [LOCALE.SHOW_CHAT]: {
+    en: 'Show Chat',
   },
   [LOCALE.VIDEO]: {
     en: 'Video',
@@ -1631,6 +1637,43 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'PvP',
     ru: 'Игроки против игроков',
   },
+  [LOCALE.FRIENDS_PAGE_LIST]: {
+    en: 'List',
+  },
+  [LOCALE.FRIENDS_PAGE_REQUESTS]: {
+    en: 'Requests',
+  },
+  [LOCALE.FRIENDS_IN_GAME]: {
+    en: 'In Game ({})',
+  },
+  [LOCALE.FRIENDS_IN_QUEUE]: {
+    en: 'In Queue ({})',
+  },
+  [LOCALE.FRIENDS_IN_LOBBY]: {
+    en: 'In Private Lobby',
+  },
+  [LOCALE.FRIENDS_SPECTATING]: {
+    en: 'Spectating Game ({})',
+  },
+  [LOCALE.FRIENDS_ONLINE]: {
+    en: 'Online',
+  },
+  [LOCALE.FRIENDS_OFFLINE]: {
+    en: 'Offline',
+  },
+  [LOCALE.FRIENDS_NONE_ADDED]: {
+    en: 'You have no friends added. Send a request to add one now!',
+  },
+  [LOCALE.FRIENDS_REQUESTS_INCOMING]: {
+    en: 'Friend Requests Received',
+  },
+  [LOCALE.FRIENDS_REQUESTS_SENT]: {
+    en: 'Friend Requests Sent',
+  },
+  [LOCALE.FRIENDS_SEND_REQUEST]: {
+    en: 'Send Friend Request',
+  },
+  
   [LOCALE.UNKNOWN]: {
     en: 'Unknown',
     ru: 'Неизвестно',
@@ -1658,6 +1701,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: ' has left the game!',
     cz: ' opustil hru!',
     ru: ' покинул игру!',
+  },
+  [LOCALE.CHAT_SYSTEM_REPORT]: {
+    en: 'Your report has been sent to the GameMasters.',
+  },
+  [LOCALE.CHAT_SYSTEM_REPORT_ERR]: {
+    en: 'Could not send your report to the GameMasters.',
   },
   [LOCALE.CHAT_ADMIN_GET_PLAYER]: {
     en: 'Online: {} || Name: {} || Email: {} || ID: {} || IP: {}',
