@@ -1516,6 +1516,10 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '/w <玩家> <消息> - 向玩家發送私人消息',
   },
 
+  [LOCALE.CHAT_COMMAND_REPORT]: {
+    en: '/report <message> - report an issue to the GameMasters',
+  },
+
   [LOCALE.CHAT_COMMAND_EXIT]: {
     en: '/exit - exit the game (practice only)',
     ru: '/exit - выйти из игры (только для практики)',
