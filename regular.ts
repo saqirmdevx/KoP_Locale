@@ -246,7 +246,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
 
   [LOCALE.WARNING_TOWER_ATTK]: {
-    en: "Careful! You've been targeted by a tower ! Fall back!",
+    en: "Careful! You've been targeted by a tower! Fall back!",
     ru: 'Осторожно! Вы были атакованы башней! Отступайте!',
     br: 'Cuidado! Você é alvo de uma torre.',
     cz: 'Pozor! Byli jste zacílen věží! Ustupte!',
@@ -582,6 +582,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Voltar ao inicio',
     cz: 'Opustit Hru',
     zh: '離開遊戲',
+  },
+  [LOCALE.RESET_CDS]: {
+    en: "Reset Cooldowns", 
   },
   [LOCALE.POST_BLUE_TEAM_WIN]: {
     en: 'Blue Team won!',
@@ -1120,6 +1123,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Ouro inicial',
     cz: 'Počáteční zlaťaky',
     zh: '初始黃金',
+  },
+  [LOCALE.LOBBY_BASE_ABILITY_HASTE]: {
+    en: "Base Ability Haste",
   },
   [LOCALE.LOBBY_DRAFT_PHASE]: {
     en: 'Draft Mode',
