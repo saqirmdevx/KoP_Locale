@@ -5,12 +5,24 @@ import { LOCALE } from 'lang/locales'
 
 export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   [LOCALE.LOGIN_AS_GUEST]: {
-    en: 'Login as guest',
+    en: 'Login as Guest',
     ru: 'Войти как гость',
     cz: 'Přihlaste se jako host',
   },
+  [LOCALE.LOGIN_LINK_CODE]: {
+    en: 'Login with Link Code'
+  },
+  [LOCALE.LOGIN_OTHER_METHODS]: {
+    en: 'Login with Other Methods'
+  },
+  [LOCALE.USERNAME]: {
+    en: 'Username',
+  },
+  [LOCALE.LINK_CODE]: {
+    en: 'Link Code'
+  },
   [LOCALE.SELECT_REGION]: {
-    en: 'Select region',
+    en: 'Select Region',
     ru: 'Выбрать регион',
     cz: 'Vybrat region ',
   },
@@ -27,12 +39,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     ru: 'Discord',
   },
   [LOCALE.TERMS_OF_SERVICES]: {
-    en: 'Terms of service',
+    en: 'Terms of Service',
     ru: 'Условия использования',
     cz: 'Podmínky služby',
   },
   [LOCALE.PRIVACY_POLICY]: {
-    en: 'Privacy policy',
+    en: 'Privacy Policy',
     ru: 'Политика конфиденциальности',
     cz: 'Zásady ochrany',
   },
@@ -46,7 +58,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     ru: 'Социальные сети',
   },
   [LOCALE.INFORMATIONS]: {
-    en: 'Informations',
+    en: 'Information',
     ru: 'Информация',
     cz: 'Informace',
   },

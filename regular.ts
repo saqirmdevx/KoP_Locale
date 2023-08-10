@@ -260,6 +260,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Odhlásit se',
     zh: '登出',
   },
+  [LOCALE.GENERATE_LINK_CODE]: {
+    en: 'Generate Link Code'
+  },
+  [LOCALE.LINK_CODE_DESCRIPTION]: {
+    en: 'This link code expires in {} minutes. To sign in with a link code, use the "Login with Link Code" option. Be sure to close this tab first!'
+  },
+  [LOCALE.LINK_CODE_ERR]: {
+    en: "Could not generate link code."
+  },
+  
   [LOCALE.FLOATING_NUMBERS]: {
     en: 'Floating Numbers',
     ru: 'Всплывающие числа',
@@ -1308,6 +1318,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Горячие клавиши',
     br: 'Teclas de atalho',
     zh: '按鍵',
+  },
+  [LOCALE.ST_ACCOUNT]: {
+    en: 'Account'
   },
   [LOCALE.ST_MISC]: {
     en: 'Misc.',
