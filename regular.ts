@@ -246,7 +246,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
 
   [LOCALE.WARNING_TOWER_ATTK]: {
-    en: "Careful! You've been targeted by a tower ! Fall back!",
+    en: "Careful! You've been targeted by a tower! Fall back!",
     ru: 'Осторожно! Вы были атакованы башней! Отступайте!',
     br: 'Cuidado! Você é alvo de uma torre.',
     cz: 'Pozor! Byli jste zacílen věží! Ustupte!',
@@ -260,6 +260,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Odhlásit se',
     zh: '登出',
   },
+  [LOCALE.GENERATE_LINK_CODE]: {
+    en: 'Generate Link Code'
+  },
+  [LOCALE.LINK_CODE_DESCRIPTION]: {
+    en: 'This link code expires in {} minutes. To sign in with a link code, use the "Login with Link Code" option. Be sure to close this tab first!'
+  },
+  [LOCALE.LINK_CODE_ERR]: {
+    en: "Could not generate link code."
+  },
+  
   [LOCALE.FLOATING_NUMBERS]: {
     en: 'Floating Numbers',
     ru: 'Всплывающие числа',
@@ -582,6 +592,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Voltar ao inicio',
     cz: 'Opustit Hru',
     zh: '離開遊戲',
+  },
+  [LOCALE.RESET_CDS]: {
+    en: "Reset Cooldowns", 
   },
   [LOCALE.POST_BLUE_TEAM_WIN]: {
     en: 'Blue Team won!',
@@ -1121,6 +1134,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Počáteční zlaťaky',
     zh: '初始黃金',
   },
+  [LOCALE.LOBBY_BASE_ABILITY_HASTE]: {
+    en: "Base Ability Haste",
+  },
   [LOCALE.LOBBY_DRAFT_PHASE]: {
     en: 'Draft Mode',
     ru: 'Режим выбора',
@@ -1302,6 +1318,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Горячие клавиши',
     br: 'Teclas de atalho',
     zh: '按鍵',
+  },
+  [LOCALE.ST_ACCOUNT]: {
+    en: 'Account'
   },
   [LOCALE.ST_MISC]: {
     en: 'Misc.',
