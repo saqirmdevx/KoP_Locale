@@ -264,7 +264,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'Generate Link Code'
   },
   [LOCALE.LINK_CODE_DESCRIPTION]: {
-    en: 'This link code expires in {} minutes. To sign in with a link code, use the "Login with Link Code" option. Be sure to close this tab first!'
+    en: 'This link code expires in {} minutes. To sign in with a link code, select the EU SERVER and use the "Login with Link Code" option. Be sure to close this tab first!'
   },
   [LOCALE.LINK_CODE_ERR]: {
     en: "Could not generate link code."
