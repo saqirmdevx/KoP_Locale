@@ -1685,7 +1685,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'Offline',
   },
   [LOCALE.FRIENDS_REMOVE]: {
-    en: 'Remove Friend',
+    en: 'Remove Friend?',
   },
   [LOCALE.FRIENDS_NONE_ADDED]: {
     en: 'You have no friends added. Send a request to add one now!',
