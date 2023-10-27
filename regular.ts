@@ -1690,6 +1690,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   [LOCALE.FRIENDS_NONE_ADDED]: {
     en: 'You have no friends added. Send a request to add one now!',
   },
+  [LOCALE.FRIENDS_ONLINE_COUNT]: {
+    en: 'Friends Online: {}'
+  },
   [LOCALE.FRIENDS_REQUESTS_INCOMING]: {
     en: 'Friend Requests Received',
   },
