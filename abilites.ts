@@ -852,24 +852,37 @@ const _getSpellDescriptionLang = (
       return {
         en: `Alvar launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${toSec(
           duration
-        )}. <br />
-                Applies a stack of divine impact on all enemy heroes hit by Furious Kick.`,
-        br: `Alvar chuta todas as unidades inimigas à sua frente e as joga para trás dele, causando ${baseDamage} de dano normal e atordoa unidades inimigas por ${toSec(
+        )}. <br /><br />
+            Applies a stack of divine impact on all enemy heroes hit by Furious Kick.<br />
+            In addition alvar grants himself and all his nearby alies ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } bonus movement speed for ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+        br: `Alvar lança seus inimigos para trás com um poderoso chute, causando ${baseDamage} de dano normal e atordoando por ${toSec(
           duration
-        )}. <br />
-                <br/> (Alvar aplica um debuff em todos os alvos que atinge).`,
-        cz: `Alvar kopne všechny nepřátelské jednotky před sebou a bez námahy je hodí za sebe, čímž udělí ${baseDamage} normalního poškozěni a omráčí nepřitele po dobu ${toSec(
+        )}. <br /><br />
+            Aplica um debuff em todos os personagens inimigos atingidos pelo chute furioso.<br />
+            Além disso, Alvar concede a si mesmo e a todos os seus aliados próximos ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } de velocidade de movimento por ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+        ru: `Алвар отталкивает врагов сильным ударом ноги, нанося ${baseDamage} и оглушая на ${toSec(
           duration
-        )}. <br />
-                \nAlvar aplikuje debuff na všechný nepřatelské jednotky.`,
-        ru: `Алвар бьёт всех врагов перед собой, перебрасывая их через себя и нанося ${baseDamage}, а также оглушая их на ${toSec(
+        )}. <br /><br />
+            Накладывает ослабление на всех вражеских героев, попавших под удар.<br />
+            Кроме того, Алвар дарует себе и всем своим союзникам ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } скорости передвижения на ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+        cz: `Alvar odhodí nepřátele silným kopem, způsobí ${baseDamage} normální poškození a omráčí na ${toSec(
           duration
-        )}. <br />
-                <br/> Алвар накладывает ослабление от пассивной способности на всех задетых вражеских героев.`,
-        zh: `阿爾瓦踢擊前方所有敵方單位，不費吹飛之力將他們甩到他後方，造成 ${baseDamage}點一般傷害並暈眩敵方單位 ${toSec(
-          duration
-        )}。
-                <br/>阿爾瓦給予所有被擊中的目標一個負面狀態。`,
+        )}. <br /><br />
+            Aplikuje debuff na všechny nepřátelské hrdiny zasažené Furious Kick.<br />
+            Kromě toho Alvar poskytuje sám sobě a všem svým blízkým spojencům ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } bonusové rychlosti pohybu na ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+        zh: `阿爾瓦用一記強力的踢擊將敵人向後踢飛，給予 ${baseDamage}點一般傷害並暈眩 ${toSec(duration)}。<br /><br />
+            被狂怒踢擊擊中的敵方英雄將會受到一個負面狀態。<br />
+            此外阿爾瓦會給予自己和所有附近的盟友 ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            }點移動速度加成，持續 ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}。`,
       }
     }
 

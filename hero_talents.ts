@@ -307,20 +307,18 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: 'Furious Kick Boost',
-            ru: 'Усиливающий Яростный удар',
+            en: `Furious Kick +${fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)}% lifesteal`,
+            ru: `Усиление от Яростного ...`,
           },
           description: {
-            en: `Furious Kick boosts the morale of nearby allies, increasing Movement Speed by ${
-              AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS
-            } and Attack Speed by ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS * 100}% for ${toSec(
-              AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION
-            )}`,
-            ru: `Каждый раз при применении <b>Яростного удара</b> вы и все союзники вокруг получаете ${
-              AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_MS
-            } скорости передвижения и ${AlvarAbilityData.TALENT_FURIOUS_KICK_BONUS_AS * 100}% скорости атаки на ${toSec(
-              AlvarAbilityData.TALENT_FURIOUS_KICK_DURATION
-            )}`,
+            en: `Furious Kick bonus in addition also increase lifesteal by ${fixed(
+              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
+              1
+            )}%`,
+            ru: `Усиление от Яростного удара также даёт +${fixed(
+              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
+              1
+            )}% Кражи здоровья`,
           },
         },
         tier2_left: {
