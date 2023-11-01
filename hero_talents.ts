@@ -517,8 +517,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Swarm of Ghosts slow ${toSec(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}`,
-            ru: `Волна призраков замедляет ${toSec(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}`,
+            en: `Swarm of Ghosts slow ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            ru: `Волна призраков замедляет ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
           },
         },
         tier2_right: {
