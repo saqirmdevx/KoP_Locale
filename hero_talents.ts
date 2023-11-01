@@ -216,8 +216,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: '+1 Floral Ambush Bomb',
-            ru: '+1 бутон у Цветочной ловушки',
+            en: `Prickly Vine attach delay -${toSecRaw(
+              BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
+            )}s`,
+            ru: `Колючая лоза прикрепляется быстрее на ${toSecRaw(
+              BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
+            )} секунд`,
           },
         },
       }
