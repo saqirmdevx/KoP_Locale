@@ -481,8 +481,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: 'Rapid Fire Crowd Control Immunity',
-            ru: 'Беглый огонь даёт иммунитет к эффектам контроля',
+            en: `Grenade radius +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            ru: `+${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}% к радиусу гранат`,
           },
         },
         tier2_right: {
