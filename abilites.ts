@@ -985,13 +985,7 @@ const _getSpellDescriptionLang = (
         MagdaleneAbilityData.SWARM_OF_GHOSTS_BASE_DAMAGE +
           MagdaleneAbilityData.SWARM_OF_GHOSTS_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const percDamage = fixed(
-        (hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-          ? MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER +
-            MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE
-          : MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER) * 100,
-        1
-      )
+      const percDamage = fixed(MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER * 100 * 100, 1)
 
       return {
         en: `Magdalene sends a swarm of lost ghosts in front of her to ravage enemies, dealing ${damage} and applying 1 stack of ghost pact on enemies hit.<br />Each stack of ghost pact increases the damage of Swarm of Ghosts by ${percDamage}%.`,

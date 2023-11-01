@@ -517,18 +517,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: 'Empower Swarm of Ghosts',
-            ru: 'Усиленная Волна призраков',
-          },
-          description: {
-            en: `Swarm of Ghosts deals +${fixed(
-              MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100,
-              1
-            )}% more damage per stack.`,
-            ru: `+${fixed(
-              MagdaleneAbilityData.TALENT_T2_LEFT_SWARM_OF_GHOST_STACK_DAMAGE * 100,
-              1
-            )}% к наносимому урону от Волны призраков за каждый заряд Призрачного пакта на враге.`,
+            en: `Swarm of Ghosts slow ${toSec(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}`,
+            ru: `Волна призраков замедляет ${toSec(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}`,
           },
         },
         tier2_right: {
