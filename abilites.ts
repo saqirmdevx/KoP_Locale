@@ -46,22 +46,19 @@ const _getSpellDescriptionLang = (
         Shared.DamageTypes.MAGICAL,
         KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const enh_damage_with_talent = getDamage(KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * damage)
-      const duration = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
-        ? KumihuAbilityData.ENH_CHARM_DURATION + KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION
-        : KumihuAbilityData.ENH_CHARM_DURATION
+      const duration = KumihuAbilityData.ENH_CHARM_DURATION
 
       return {
         en: `Kumihu fires 3 projectiles. Each projectile deals ${basic_damage} \n<br/>Passive: After using Arcane Dash, Kumihu's next Basic Attack deals a bonus ${enh_damage} and applies Charm on target for ${toSec(
           duration
         )}.`,
-        ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} \nПассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} + ${enh_damage_with_talent} и наложит очарование на цель на ${toSec(
+        ru: `Кумиху выпускает 3 снаряда, каждый из которых наносит ${basic_damage} \nПассивно: После использования Тайного рывка следующая атака Кумиху нанесёт ${enh_damage} и наложит очарование на цель на ${toSec(
           duration
         )}`,
-        cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození \nPasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození + ${enh_damage_with_talent} a očaruje protivnika na ${toSec(
+        cz: `Kumihu vystřelí 3 kulky, každá způsobí ${basic_damage} normálního poškození \nPasivní: Použití Skoku očaruje další základní útok, aby způsobil ${enh_damage} magické poškození a očaruje protivnika na ${toSec(
           duration
         )}`,
-        br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.\n<b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico + ${enh_damage_with_talent} e encantando o inimigo por ${toSec(
+        br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.\n<b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico e encantando o inimigo por ${toSec(
           duration
         )}.`,
         zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 \n被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(
@@ -77,11 +74,26 @@ const _getSpellDescriptionLang = (
         KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE + KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)
       )
       return {
-        en: `Kumihu throws a spirit orb, dealing ${base_damage}. The orb returns to her after reaching its max range, dealing another ${base_damage}.`,
-        ru: `Кумиху выпускает сферу духа, которая наносит ${base_damage} и затем возвращается к ней, нанося ${base_damage} всем врагам на своём пути.`,
-        cz: `Kumihu vrhne modrou kouli, která způsobí ${base_damage}, poté se k ní vrátí po dosažení maximálního dosahu a způsobí ${base_damage} nepřátelům, kteří jí stojí v cestě.`,
-        br: `Kumihu comprime o ar a sua volta e lança uma rajada causando ${base_damage} de dano mágico, retornando para ela depois de atingir seu alcance máximo causando ${base_damage} de dano mágico a inimigos em seu caminho.`,
-        zh: `庫咪戶投擲藍色寶珠，給予 ${base_damage}點魔法傷害，到達最遠處後沿路回歸她手上並給予 ${base_damage}點魔法傷害。`,
+        en: `Kumihu throws a spirit orb, dealing ${base_damage}. The orb returns to her after reaching its max range, dealing another ${base_damage}. If Magical Orb hit the target twice it will deal ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% bonus damage`,
+        ru: `Кумиху выпускает сферу, наносящую ${base_damage} магического урона. Сфера возвращается к ней после достижения максимальной дистанции, нанося ещё ${base_damage} магического урона. При задевании одной и той же цели дважды, она нанесёт ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% дополнительного магического урона`,
+        cz: `Kumihu vystřelí duchovní kouli, která způsobí ${base_damage}. Když koule dosáhne své maximální vzdálenosti, vrátí se zpět k ní a způsobí další ${base_damage}. Pokud Koule zasáhne cíl dvakrát, způsobí ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% bonusového poškození`,
+        br: `Kumihu lança uma esfera espiritual causando ${base_damage}. A esfera retorna para ela depois de atingir sua distância máxima, causando mais ${base_damage}. Se a esfera atingir o alvo duas vezes ela causará ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% de dano bônus.`,
+        zh: `庫咪戶投擲靈球，給予 ${base_damage}點魔法傷害。靈球在達到最大距離後返回，給予 ${base_damage}點魔法傷害。如果靈球擊中目標兩次，將給予 ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}%額外傷害。`,
       }
     }
 

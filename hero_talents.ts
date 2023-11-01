@@ -37,34 +37,34 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `Magical Orb Cooldown ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}`,
+            en: `Magical Orb Cooldown  ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
             ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)} сек. перезарядки Волшебной сферы`,
           },
         },
         tier1_right: {
           title: {
-            en: `Charm Duration +${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION)}`,
-            ru: `+${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_DURATION)} сек. к длительности очарования`,
+            en: `Charm cooldown  ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
+            ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)} сек. перезарядки очарования`,
           },
         },
         tier2_left: {
           title: {
-            en: `Magical Orb Range +${KumihuAbilityData.TALENT_T2_LEFT_CAST_RANGE}px`,
-            ru: `+${KumihuAbilityData.TALENT_T2_LEFT_CAST_RANGE} к дальности Волшебной сферы`,
+            en: `Enhanced attack pierces units`,
+            ru: 'Усиленная атака проходит сквозь цели',
           },
         },
         tier2_right: {
           title: {
-            en: `Enhanced Attack +${KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * 100}%`,
-            ru: `+${KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * 100}% к урону от усиленной атаки`,
+            en: `Magical orb blind`,
+            ru: 'Волшебная сфера ослепляет',
           },
           description: {
-            en: `Enhanced attack deals ${
-              KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * 100
-            }% bonus Magic Damage and applies all Basic Attack hit effects.`,
-            ru: `Усиленная атака наносит дополнительно ${
-              KumihuAbilityData.TALENT_T2_RIGHT_ENH_ATTACK_DMG_MOD * 100
-            }% физического урона и накладывает все эффекты при попадании`,
+            en: `If magical orb hit same hero twice it will reduce his vision by 50% for ${toSecRaw(
+              KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
+            )}s`,
+            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 50% на ${toSecRaw(
+              KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
+            )} секунд`,
           },
         },
       }
