@@ -1358,6 +1358,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   [LOCALE.FRIENDS]: {
     en: 'Friends',
   },
+  [LOCALE.SHOP]: {
+    en: 'Shop'
+  },
   [LOCALE.ST_KEYBIND_MOVEUP]: {
     en: 'Jump',
     cz: 'Skok',
@@ -1624,6 +1627,9 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Požadovaná úroveň',
     ru: 'Необходимый уровень',
   },
+  [LOCALE.REQUIRED_HEROES]: {
+    en:'Required Heroes',
+  },
   [LOCALE.TOWER]: {
     en: 'Tower',
     cz: 'Věž',
@@ -1659,6 +1665,15 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   [LOCALE.PLAY_PAGE_PVP]: {
     en: 'PvP',
     ru: 'Игроки против игроков',
+  },
+  [LOCALE.SHOP_EMOTES]: {
+    en: 'Emotes',
+  },
+  [LOCALE.SHOP_SKINS]: {
+    en: 'Skins',
+  },
+  [LOCALE.PURCHASE_HERO_TITLE]: {
+    en: 'Buy {} for {} Gold?'
   },
   [LOCALE.FRIENDS_PAGE_LIST]: {
     en: 'List',
