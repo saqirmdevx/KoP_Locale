@@ -1254,10 +1254,10 @@ const _getLocaleItemDescription = (
                      Gain up to ${
                        ItemAbilityData.DEMON_RING_MAX_STACKS
                      } stacks of demonic power for every minion kill (+1 stack), hero kill (+5 stacks), or assist (+2 stacks). Each stack increases your Attack Damage by ${
-            ItemAbilityData.DEMON_RING_STACK_DMG
-          } (Max: ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS} Attack Damage at ${
-            ItemAbilityData.DEMON_RING_MAX_STACKS
-          } stacks). All stacks are removed upon death.`,
+                       ItemAbilityData.DEMON_RING_STACK_DMG
+                     } (Max: ${ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS} Attack Damage at ${
+                       ItemAbilityData.DEMON_RING_MAX_STACKS
+                     } stacks). All stacks are removed upon death.`,
           ru: `Ваши атаки уменьшают вражескую Броню на ${fixed(
             ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100,
             1
@@ -1265,8 +1265,8 @@ const _getLocaleItemDescription = (
                      Вы получаете +1 заряд за убийство миньона, +5 зарядов за убийство героя и +2 заряда за содействие в убийстве. Каждый заряд увеличивает Силу атаки на ${
                        ItemAbilityData.DEMON_RING_STACK_DMG
                      } (Максимальная прибавка: ${
-            ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
-          } Силы атаки за 20 зарядов). Все заряды теряются после смерти.`,
+                       ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
+                     } Силы атаки за 20 зарядов). Все заряды теряются после смерти.`,
           br: `Seus ataques reduzem a armadura inimiga por ${fixed(
             ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100,
             1
@@ -1274,22 +1274,22 @@ const _getLocaleItemDescription = (
                      Toda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos), você ganha ${
                        ItemAbilityData.DEMON_RING_STACK_DMG
                      } de dano (máximo ${
-            ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
-          }).\n Todas os acúmulos são perdidas após a morte.`,
+                       ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
+                     }).\n Todas os acúmulos são perdidas após a morte.`,
           cz: `Tvé útoky snižují zbroj o ${Math.floor(
             ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100
           )}% na 4 vteřiny.\n
                      Pokud zabiješ nepřátelského miniona, hrdinu (+5) nebo assistujes (+2) dostaneš ${
                        ItemAbilityData.DEMON_RING_STACK_DMG
                      } zraneni permanentne, (max ${
-            ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
-          }). Efekt sa zresetuje po smrti.`,
+                       ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
+                     }). Efekt sa zresetuje po smrti.`,
           zh: `你的一般攻擊降低 4秒敵方裝甲值 ${fixed(ItemAbilityData.DEMON_RING_ARMOR_REDUCTION * 100, 1)}%\n
                      每當你殺死小兵 (疊加 1)、敵方英雄 (疊加 5) 或是助攻 (疊加 2)，你獲得 ${
                        ItemAbilityData.DEMON_RING_STACK_DMG
                      }點攻擊傷害 (最大值 ${
-            ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
-          })。所有疊加在死亡後歸零。`,
+                       ItemAbilityData.DEMON_RING_STACK_DMG * ItemAbilityData.DEMON_RING_MAX_STACKS
+                     })。所有疊加在死亡後歸零。`,
         },
       }
     case ItemList.Divine_Ring: {

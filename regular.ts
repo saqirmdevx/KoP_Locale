@@ -261,15 +261,15 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '登出',
   },
   [LOCALE.GENERATE_LINK_CODE]: {
-    en: 'Generate Link Code'
+    en: 'Generate Link Code',
   },
   [LOCALE.LINK_CODE_DESCRIPTION]: {
-    en: 'This link code expires in {} minutes. To sign in with a link code, select the EU SERVER and use the "Login with Link Code" option. Be sure to close this tab first!'
+    en: 'This link code expires in {} minutes. To sign in with a link code, select the EU SERVER and use the "Login with Link Code" option. Be sure to close this tab first!',
   },
   [LOCALE.LINK_CODE_ERR]: {
-    en: "Could not generate link code."
+    en: 'Could not generate link code.',
   },
-  
+
   [LOCALE.FLOATING_NUMBERS]: {
     en: 'Floating Numbers',
     ru: 'Всплывающие числа',
@@ -594,7 +594,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '離開遊戲',
   },
   [LOCALE.RESET_CDS]: {
-    en: "Reset Cooldowns", 
+    en: 'Reset Cooldowns',
   },
   [LOCALE.POST_BLUE_TEAM_WIN]: {
     en: 'Blue Team won!',
@@ -1135,7 +1135,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '初始黃金',
   },
   [LOCALE.LOBBY_BASE_ABILITY_HASTE]: {
-    en: "Base Ability Haste",
+    en: 'Base Ability Haste',
   },
   [LOCALE.LOBBY_DRAFT_PHASE]: {
     en: 'Draft Mode',
@@ -1320,7 +1320,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '按鍵',
   },
   [LOCALE.ST_ACCOUNT]: {
-    en: 'Account'
+    en: 'Account',
   },
   [LOCALE.ST_MISC]: {
     en: 'Misc.',
@@ -1359,7 +1359,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'Friends',
   },
   [LOCALE.SHOP]: {
-    en: 'Shop'
+    en: 'Shop',
   },
   [LOCALE.ST_KEYBIND_MOVEUP]: {
     en: 'Jump',
@@ -1628,7 +1628,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Необходимый уровень',
   },
   [LOCALE.REQUIRED_HEROES]: {
-    en:'Required Heroes',
+    en: 'Required Heroes',
   },
   [LOCALE.TOWER]: {
     en: 'Tower',
@@ -1673,7 +1673,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'Skins',
   },
   [LOCALE.PURCHASE_HERO_TITLE]: {
-    en: 'Buy {} for {} Gold?'
+    en: 'Buy {} for {} Gold?',
   },
   [LOCALE.FRIENDS_PAGE_LIST]: {
     en: 'List',
@@ -1706,7 +1706,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'You have no friends added. Send a request to add one now!',
   },
   [LOCALE.FRIENDS_ONLINE_COUNT]: {
-    en: 'Friends Online: {}'
+    en: 'Friends Online: {}',
   },
   [LOCALE.FRIENDS_REQUESTS_INCOMING]: {
     en: 'Friend Requests Received',
@@ -1717,7 +1717,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   [LOCALE.FRIENDS_SEND_REQUEST]: {
     en: 'Send Friend Request',
   },
-  
+
   [LOCALE.UNKNOWN]: {
     en: 'Unknown',
     ru: 'Неизвестно',

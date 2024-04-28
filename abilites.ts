@@ -562,36 +562,36 @@ const _getSpellDescriptionLang = (
       return {
         en: `Kira fires a spark, dealing ${basic_damage}. <br />
                 \n<b>Enhanced: (Lightning Shock)</b> In addition, Kira casts a lightning bolt at the nearest hero. If Lightning Shock hits an enemy, it deals ${enh_damage}, decreases their Attack Speed by ${
-          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-        }%, and decreases Movement Speed by ${
-          KiraAbilityData.ENHATTACK_MOVE_SPEED
-        } for a short duration. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
-          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-        }%, and increases Movement Speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for a short duration.`,
+                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+                }%, and decreases Movement Speed by ${
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                } for a short duration. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
+                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+                }%, and increases Movement Speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for a short duration.`,
         br: `Kira dispara um relâmpago que da ${basic_damage} de dano normal. <br />
                 \n<b>[Passiva] (Livro demoníaco):</b> Kira lança um relâmpago no personagem mais próximo, diminui ou aumenta a velocidade de ataque do herói em ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }% e velocidade de movimento em ${
-          KiraAbilityData.ENHATTACK_MOVE_SPEED
-        } por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                } por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
         ru: `Кира стреляет молнией, которая наносит ${basic_damage}. \n
                 \n<b>[Усиленная]: (Удар молнии)</b> Кира призывает поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }% и скорость передвижения на ${
-          KiraAbilityData.ENHATTACK_MOVE_SPEED
-        }, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                }, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
         cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. \n
                 \n<b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 } % a rychlost pohybu o ${
-          KiraAbilityData.ENHATTACK_MOVE_SPEED
-        } na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                } na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
         zh: `奇菈發射一束閃電飛箭，造成 ${basic_damage}點一般傷害。<br />
                 \n<b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄施展一束衝擊電流，短時間內降低敵方或增加友方英雄 ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }%攻擊速度與移動速度值 ${
-          KiraAbilityData.ENHATTACK_MOVE_SPEED
-        }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
       }
     }
 
@@ -632,30 +632,30 @@ const _getSpellDescriptionLang = (
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}, she returns to the position of her afterimage.
                 \n<br/><b>[Enhanced]: (Dynamic Afterimage)</b> Instead of returing to the afterimage's position, it returns to Kira's position. The afterimage phases through enemies, dealing ${damage} and silencing for ${toSec(
-          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-        )}.`,
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}.`,
         br: `Kira cria uma imagem distorcida de si mesma enganando seus inimigos, para a qual ela retorna depois de ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}.
                 \n<b>[Passiva] (Distorcendo o Abismo):</b> A imagem distorcida de Kira a segue e atravessa os inimigos, causando ${damage} de dano mágico e silenciando-os por ${toSec(
-          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-        )}.`,
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}.`,
         ru: `Кира совершает рывок вперёд, оставляя позади себя свою искажённую копию и возвращаясь к ней через ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}
                 \n<b>[Усиленная]: (Беспорядочный клон)</b> Копия Киры следует за ней и проходит через врагов на своём пути, нанося им ${damage} и накладывая немоту на ${toSec(
-          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-        )}.`,
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}.`,
         cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}
                 \n<b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${toSec(
-          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-        )}.`,
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}.`,
         zh: `奇菈用滯留的扭曲殘影欺騙敵方，${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}後她會回歸殘影處。<br />
                 \n<b>[強化後]：(混沌殘影) 奇菈的殘影跟隨她並沿路穿透敵方，給予 ${damage}點魔法傷害並沉默敵方 ${toSec(
-          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-        )}。`,
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}。`,
       }
     }
 
@@ -777,32 +777,32 @@ const _getSpellDescriptionLang = (
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, the bomb detonates, dealing ${baseDamage} in an area.
                 <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage}, reducing their Movement Speed for ${toSec(
-          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}, and stunning for ${toSec(triggerStun)}.`,
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}, and stunning for ${toSec(triggerStun)}.`,
         br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
                 <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${triggerDamage} de dano normal e atordoará o portador por ${toSec(
-          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}.`,
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}.`,
         ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, нанося ${baseDamage} всем ближайшим врагам.
                 <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${triggerDamage} урона, уменьшая Скорость передвижения цели на ${toSec(
-          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}, а также оглушая на ${toSec(triggerStun)}.`,
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}, а также оглушая на ${toSec(triggerStun)}.`,
         cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${triggerDamage} normální poškození a omráči nepřítele na ${toSec(
-          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}`,
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}`,
         zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於 ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}後爆炸，給予周圍所有敵方 ${baseDamage}點一般傷害。
                 <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予 ${triggerDamage}點一般傷害並暈眩炸彈負載者 ${toSec(
-          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-        )}。`,
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}。`,
       }
     }
 

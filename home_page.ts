@@ -10,16 +10,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Přihlaste se jako host',
   },
   [LOCALE.LOGIN_LINK_CODE]: {
-    en: 'Login with Link Code'
+    en: 'Login with Link Code',
   },
   [LOCALE.LOGIN_OTHER_METHODS]: {
-    en: 'Login with Other Methods'
+    en: 'Login with Other Methods',
   },
   [LOCALE.USERNAME]: {
     en: 'Username',
   },
   [LOCALE.LINK_CODE]: {
-    en: 'Link Code'
+    en: 'Link Code',
   },
   [LOCALE.SELECT_REGION]: {
     en: 'Select Region',
