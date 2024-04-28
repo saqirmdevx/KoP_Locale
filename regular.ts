@@ -1876,5 +1876,25 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '被动',
     fr: 'PASSIF',
   },
+  [LOCALE.WATCH_AD_BUTTON]: {
+    en: 'Watch Ad and get reward',
+    ru: 'Посмотреть рекламу и получить награду',
+    cz: 'Sledujte reklamu a získejte odměnu',
+  },
+  [LOCALE.WATCH_AD_DIALOG_ACTION_BUTTON]: {
+    en: 'Yes! Watch AD',
+    ru: 'Да! Посмотреть рекламу',
+    cz: 'Ano! Sledujte reklamu',
+  },
+  [LOCALE.WATCH_AD_DIALOG_TITLE]: {
+    en: 'Do you want to watch an ad?',
+    ru: 'Хотите посмотреть рекламу?',
+    cz: 'Chcete sledovat reklamu?',
+  },
+  [LOCALE.WATCH_AD_DIALOG_CONTEXT]: {
+    en: 'You can watch AD only once per 10 minutes and you will get',
+    ru: 'Вы можете смотреть рекламу только один раз в 10 минут и вы получите',
+    cz: 'Reklamu můžete sledovat pouze jednou za 10 minut a dostanete',
+  },
 }
 export default locale_data
