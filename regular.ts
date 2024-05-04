@@ -1911,27 +1911,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Присоединиться к Discord',
     cz: 'Připojit se k Discord',
   },
-  [LOCALE.VERY_LOW]: {
+  [LOCALE.SETTINGS_VERY_LOW]: {
     en: 'Very Low',
     ru: 'Очень низкий',
     cz: 'Velmi nízký',
   },
-  [LOCALE.LOW]: {
+  [LOCALE.SETTINGS_LOW]: {
     en: 'Low',
     ru: 'Низкий',
     cz: 'Nízký',
   },
-  [LOCALE.MEDIUM]: {
+  [LOCALE.SETTINGS_MEDIUM]: {
     en: 'Medium',
     ru: 'Средний',
     cz: 'Střední',
   },
-  [LOCALE.HIGH]: {
+  [LOCALE.SETTINGS_HIGH]: {
     en: 'High',
     ru: 'Высокий',
     cz: 'Vysoký',
   },
-  [LOCALE.ULTRA]: {
+  [LOCALE.SETTINGS_ULTRA]: {
     en: 'Ultra',
     ru: 'Ультра',
     cz: 'Ultra',
