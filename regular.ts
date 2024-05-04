@@ -1896,5 +1896,45 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Вы можете смотреть рекламу только один раз в 10 минут и вы получите',
     cz: 'Reklamu můžete sledovat pouze jednou za 10 minut a dostanete',
   },
+  [LOCALE.JOIN_DISCORD_MODAL_TITLE]: {
+    en: 'Join our Discord server!',
+    ru: 'Присоединяйтесь к нашему серверу Discord!',
+    cz: 'Připojte se k našemu serveru Discord!',
+  },
+  [LOCALE.JOIN_DISCORD_MODAL_CONTEXT]: {
+    en: 'To get the latest news, updates, and communicate with other players!',
+    ru: 'Чтобы получить последние новости, обновления и общаться с другими игроками!',
+    cz: 'Abyste získali nejnovější zprávy, aktualizace a komunikovali s ostatními hráči!',
+  },
+  [LOCALE.JOIN_DISCORD_MODAL_ACTION_BUTTON]: {
+    en: 'Join Discord',
+    ru: 'Присоединиться к Discord',
+    cz: 'Připojit se k Discord',
+  },
+  [LOCALE.VERY_LOW]: {
+    en: 'Very Low',
+    ru: 'Очень низкий',
+    cz: 'Velmi nízký',
+  },
+  [LOCALE.LOW]: {
+    en: 'Low',
+    ru: 'Низкий',
+    cz: 'Nízký',
+  },
+  [LOCALE.MEDIUM]: {
+    en: 'Medium',
+    ru: 'Средний',
+    cz: 'Střední',
+  },
+  [LOCALE.HIGH]: {
+    en: 'High',
+    ru: 'Высокий',
+    cz: 'Vysoký',
+  },
+  [LOCALE.ULTRA]: {
+    en: 'Ultra',
+    ru: 'Ультра',
+    cz: 'Ultra',
+  },
 }
 export default locale_data
