@@ -1,0 +1,457 @@
+
+.typographyH1 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 57px;
+  line-height: 64px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyH2 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 50px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyH3 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyH4 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyH5 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyLargeLead 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyMediumLead 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyButtonLabel 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographySmallParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyTinyParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographySale 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyHeadingL 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyParagraphM 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyParagraphMBold 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyParagraphS 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyParagraphSBold 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyHeadingM 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+.typographyHeadingS 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyH1 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 57px;
+  line-height: 64px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyH2 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 50px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyH3 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyH4 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyH5 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyLargeLead 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyMediumLead 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyButtonLabel 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographySmallParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyTinyParagraph 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographySale 
+{ 
+  
+  font-family: "Blatant";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyHeadingL 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyParagraphM 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyParagraphMBold 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyParagraphS 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyParagraphSBold 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyHeadingM 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
+@mixin typographyHeadingS 
+{ 
+  
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0em; 
+  text-indent: 0px; 
+}    
+
