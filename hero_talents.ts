@@ -131,8 +131,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `+${ICeatAbilityData.TALENT_T2_LEFT_ADDITIONAL_ICICLE} Icicle Bolt`,
-            ru: `+${ICeatAbilityData.TALENT_T2_LEFT_ADDITIONAL_ICICLE} сосулька у Сосулек`,
+            en: `Icicle Bolt freeze +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            ru: `+${toSecRaw(
+              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
+            )} сек. замораживания от Ледяного болта`,
           },
         },
         tier2_right: {

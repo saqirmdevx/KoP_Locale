@@ -554,9 +554,9 @@ const _getSpellDescriptionLang = (
         KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
       )
       const enh_damage_heal = getDamage(
-        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.7,
+        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.6,
         Shared.DamageTypes.HEAL,
-        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) * 0.7
+        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) * 0.6
       )
 
       return {

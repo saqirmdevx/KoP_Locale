@@ -382,38 +382,54 @@ const _getLocaleItemDescription = (
           zh: '闇影殺手',
         },
         desc: {
-          en: `Your Basic Attack deals ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+          en: `Each Basic Attack deals ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% of the enemy's max health as bonus Magic Damage. Prevents the enemy's Health Regeneration and deals (${
+          )}% of the enemy's max health as bonus pure damage. \n \n
+          Shadow Curse: Basic attack prevents the enemy's Health Regeneration and deals (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% enemy Health Regeneration) Magic Damage per second for ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
-          br: `Quando pronto, seu ataque causa dano adicional de ${(
-            ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100
-          ).toFixed(1)}% da vida máxima do inimigo, reduzindo sua regeneração de vida atual para 0 e causando dano ${
-            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER
-          } vezes maior durante ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
-          cz: `Když je připraven, váš útok způsobí dodatečné poškození ve výši ${(
-            ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100
-          ).toFixed(1)}% z maximálního zdraví nepřítele, sníží jeho současnou regeneraci zdraví na 0 a způsobí ${
-            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER
-          }x více poškození po dobu ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
-          fr: `Quand prêt, votre attaque inflige des dégâts supplémentaires de ${(
-            ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100
-          ).toFixed(1)}% de la vie maximale de l'ennemi, réduit sa régénération de vie actuelle à 0 et inflige ${
-            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER
-          } fois plus de dégâts pendant ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
-          zh: `當準備好時，你的攻擊對敵人造成額外的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+          }% enemy Health Regeneration) Pure Damage per second for ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}. Can occur only once every ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_COOLDOWN
+          )}`,
+          ru: `Каждая базовая атака наносит ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% 最大生命值的傷害，並將其當前生命回復降低為0，並在${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}內造成${
-            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER
-          }倍的傷害。`,
-          ru: `Когда предмет не находится на перезарядке, ваши атаки наносят дополнительный урон в размере ${(
-            ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100
-          ).toFixed(
+          )}% максимального здоровья врага в виде чистого урона. \n \n
+          Проклятие теней: базовая атака лишает врага восстановления здоровья и наносит (${
+            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
+          }% восстановления здоровья врага) чистого урона в секунду в течение ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}. Может произойти только один раз каждые ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
+          br: `Cada ataque básico causa ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% от макс. Здоровья цели, уменьшают Регенерацию здоровья до 0, а также наносят больше урона, который равен Регенерации здоровья цели в момент активации умноженной на ${
-            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER
-          } в течение ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)}.`,
+          )}% do máximo de vida do inimigo como dano puro adicional. \n \n
+          Maldição das Sombras: Ataque básico impede a Regeneração de Vida do inimigo e causa (${
+            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
+          }% Regeneração de Vida do inimigo) Dano Puro por segundo por ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}. Pode ocorrer apenas uma vez a cada ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
+          cz: `Každý základní útok způsobí ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+            1
+          )}% maximálního zdraví nepřítele jako bonusové čisté poškození. \n \n
+          Stínové prokletí: Základní útok zabrání regeneraci zdraví nepřítele a způsobí (${
+            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
+          }% regenerace zdraví nepřítele) čisté poškození za sekundu po dobu ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}. Může nastat pouze jednou každých ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
+          fr: `Chaque attaque de base inflige ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+            1
+          )}% des points de vie max de l'ennemi en dégâts purs supplémentaires. \n \n
+          Malédiction des ombres: l'attaque de base empêche la régénération de santé de l'ennemi et inflige (${
+            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
+          }% de la régénération de santé de l'ennemi) Dégâts purs par seconde pendant ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}. Ne peut se produire qu'une fois toutes les ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
+          zh: `每次普通攻击造成敌人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+            1
+          )}% 作为额外的真实伤害。 \n \n
+          暗影诅咒：普通攻击阻止敌人的生命值恢复，并造成每秒 ${
+            ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
+          }% 敌人生命值恢复的真实伤害，持续 ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )} 秒。每 ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)} 秒只能发生一次`,
         },
       }
 
@@ -523,24 +539,24 @@ const _getLocaleItemDescription = (
           zh: '寒冰之劍',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack of physical frost on the enemy. At ${
+          en: `Your Basic Attacks apply a stack of physical frost on the enemy slowing them by ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} per stack. At ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
-          ru: `Попадая обычной атакой по врагу, вы накладываете на него 1 заряд. При накоплении ${
+          ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} за каждый стак. При ${
             ItemAbilityData.COLD_SWORD_STACKS
-          } зарядов, этот враг получает Морозное проклятие - ${getFrigidCurseDescription()}.`,
-          br: `Seus ataques básicos aplicam pilhas no inimigo. Após atingir ${
+          } стаках, врага поражает Ледяное Проклятие - ${getFrigidCurseDescription()}.`,
+          br: `Seus ataques básicos aplicam uma pilha de gelo físico no inimigo, diminuindo a velocidade deles em ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} por pilha. Em ${
             ItemAbilityData.COLD_SWORD_STACKS
-          } pilhas, o inimigo é infectado com a Maldição Gelada - ${getFrigidCurseDescription()}`,
-          fr: `Vos attaques de base appliquent des stacks à l'ennemi. Lorsqu'ils atteignent ${
+          } pilhas, o inimigo é atingido pela Maldição Gélida - ${getFrigidCurseDescription()}.`,
+          fr: `Vos attaques de base appliquent une pile de gel physique sur l'ennemi qui les ralentit de ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} par pile. À ${
             ItemAbilityData.COLD_SWORD_STACKS
-          } stacks, l'ennemi est frappé de Malédiction glacée - ${getFrigidCurseDescription()}`,
-          zh: `你的基本攻击会给敌人造成一层层的伤害。当敌人达到${
+          } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
+          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK}。在 ${
             ItemAbilityData.COLD_SWORD_STACKS
-          }层伤害后，${getFrigidCurseDescription()}`,
-          cz: `Vaše základní útoky na protivníka přidávají štíty. Po dosažení ${
+          } 层时，敌人会受到寒冷诅咒 - ${getFrigidCurseDescription()}`,
+          cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} za každý stack. Při ${
             ItemAbilityData.COLD_SWORD_STACKS
-          } štítů protivník trpí Zimní prokletím - ${getFrigidCurseDescription()}`,
+          } stackách je nepřítel postižen Ledovým prokletím - ${getFrigidCurseDescription()}.`,
         },
       }
     case ItemList.Corrupted_Light_Slayer:
@@ -1066,7 +1082,6 @@ const _getLocaleItemDescription = (
       }
 
     case ItemList.Spike_Shield: {
-      const damage = ItemAbilityData.SPIKE_SHIELD_BASE_DAMAGE
       return {
         name: {
           en: 'Spike Shield',
@@ -1076,11 +1091,11 @@ const _getLocaleItemDescription = (
           zh: '尖刺護盾',
         },
         desc: {
-          en: `Deals ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * level) Normal Damage per second to nearby enemies.`,
-          ru: `Каждую секунду наносит ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * уровень) физического урона всем врагам вокруг вас.`,
-          br: `Causa ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * nível) dano normal a todas as unidades inimigas em curta distância a cada segundo`,
-          cz: `Každou sekundu způsobuje ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * úroveň) normálního poškození všem nepřátelským jednotkám v krátké vzdálenosti`,
-          zh: `每秒对短距离内的所有敌方单位造成 ${damage} (+ ${ItemAbilityData.SPIKE_SHIELD_DAMAGE_PER_LEVEL}% * 等级) 的正常伤害`,
+          en: `For ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)}, carrier reflects ${(ItemAbilityData.SPIKE_SHIELD_REFLECT * 100).toFixed(1)}% damage taken back to the attacker. Reflect damage is same damage type as received.`,
+          ru: `На ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} сек. наносит врагу ${(ItemAbilityData.SPIKE_SHIELD_REFLECT * 100).toFixed(1)}% урона, который был получен вами. Тип урона такой же, как и полученный.`,
+          br: `Por ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} seg, reflete ${(ItemAbilityData.SPIKE_SHIELD_REFLECT * 100).toFixed(1)}% do dano recebido de volta ao atacante. O dano refletido é do mesmo tipo que o recebido.`,
+          fr: `Pendant ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} sec, le porteur réfléchit ${(ItemAbilityData.SPIKE_SHIELD_REFLECT * 100).toFixed(1)}% des dégâts reçus à l'attaquant. Les dégâts réfléchis sont du même type que ceux reçus.`,
+          zh: `在 ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} 秒内，反射 ${(ItemAbilityData.SPIKE_SHIELD_REFLECT * 100).toFixed(1)}% 所受到的傷害給予攻擊者。反射傷害與所受到的傷害相同。`,
         },
       }
     }
@@ -1220,21 +1235,11 @@ const _getLocaleItemDescription = (
           zh: '惡魔軍刀',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack demonic weakening, up to a maximum of ${
-            ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS
-          } stacks. Each stack decreases Armor by ${Math.floor(
-            ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100
-          )}% for 4 Seconds`,
-          br: `Seus ataques normais diminuem a armadura inimiga em ${Math.floor(
-            ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100
-          )}% por 4 segundos.`,
-          ru: `Ваши атаки уменьшают вражескую Броню на ${Math.floor(
-            ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100
-          )}% на 4 сек (складывается до ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} раз).`,
-          cz: `Tvé útoky snižují zbroj o ${Math.floor(
-            ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100
-          )}% na 4 vteřiny.`,
-          zh: `你的一般攻擊降低 4秒敵方裝甲值 ${Math.floor(ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION * 100)}%`,
+          en: `Your Basic Attacks apply a stack demonic weakening, up to a maximum of ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} stacks. Each stack decreases Armor by ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} for 4 Seconds`,
+          br: `Seus ataques normais diminuem a armadura inimiga em ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} por 4 segundos.`,
+          ru: `Ваши атаки уменьшают вражескую Броню на ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} на 4 сек (складывается до ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} раз).`,
+          cz: `Tvé útoky snižují zbroj o ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} na 4 vteřiny.`,
+          zh: `你的一般攻擊降低 4秒敵方裝甲值 ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION}`,
         },
       }
     case ItemList.Demonic_Ring:
@@ -1303,11 +1308,11 @@ const _getLocaleItemDescription = (
           zh: '神圣戒指',
         },
         desc: {
-          en: `Whenever you heal yourself or an ally, gain a stack of divine power, up to a maximum of ${ItemAbilityData.DIVINE_RING_MAX_STACKS} stacks. Each stack increases your Ability Power by ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER}. \n \n Increases all healing done by ${bonusHealing}%.`,
-          ru: `Исцеление себя или союзников повышает Силу умений на ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (складывается до ${ItemAbilityData.DIVINE_RING_MAX_STACKS} раз). \n \n Увеличивает всё накладываемое исцеление на ${bonusHealing}%.`,
-          br: `O curar feito temporariamente aumenta o poder de habilidade em ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (acumulando até ${ItemAbilityData.DIVINE_RING_MAX_STACKS} vezes). \n \n Aumenta todo o curar feito em ${bonusHealing}%.`,
-          cz: `Léčení dočasně zvýší schopnost síly o ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER} (může být až ${ItemAbilityData.DIVINE_RING_MAX_STACKS}krát). \n \n Zvyšuje všechno léčení o ${bonusHealing}%.`,
-          zh: `暂时性的治疗会使能力增加 ${ItemAbilityData.DIVINE_RING_BONUS_ABILITY_POWER}（最多叠加 ${ItemAbilityData.DIVINE_RING_MAX_STACKS} 次）。 \n \n 增加所有治疗量 ${bonusHealing}%。`,
+          en: `Dashes you forward for a short distance.'. \n \n [PASSIVE]: Increases all healing done by ${bonusHealing}%.`,
+          ru: `Дает вам короткое перемещение вперед. \n \n [ПАССИВ]: Увеличивает все исцеление на ${bonusHealing}%.`,
+          br: `Te impulsiona para frente por uma curta distância. \n \n [PASSIVO]: Aumenta todo o dano de cura em ${bonusHealing}%.`,
+          cz: `Vás posune vpřed na krátkou vzdálenost. \n \n [PASIVNÍ]: Zvyšuje veškeré léčení o ${bonusHealing}%.`,
+          zh: `向前方短距離衝刺。 \n \n [被動]: 增加所有治療效果 ${bonusHealing}%.`,
         },
       }
     }
@@ -1392,10 +1397,24 @@ const _getLocaleItemDescription = (
           zh: '腐化的手環',
         },
         desc: {
-          en: 'Dashes you forward for a short distance.',
-          ru: 'Вы совершаете рывок в направлении своего движения.',
-          br: 'Lança seu personagem para frente na direção que ele está olhando.',
-          zh: '朝你的前方向前衝刺',
+          en: `Increases projectile range by ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px and projectile speed by ${(
+            ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100
+          ).toFixed(1)}%.`,
+          ru: `Увеличивает дальность полёта снарядов на ${
+            ItemAbilityData.RESILIENT_BOW_BULLET_RANGE
+          } пикселей и скорость их полёта на ${(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100).toFixed(1)}%.`,
+          br: `Aumenta o alcance das balas em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} e a velocidade em ${(
+            ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100
+          ).toFixed(1)}%.`,
+          fr: `Augmente la portée des balles de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} et la vitesse de ${(
+            ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100
+          ).toFixed(1)}%.`,
+          zh: `增加${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}的子弹射程和${(
+            ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100
+          ).toFixed(1)}%的子弹速度。`,
+          cz: `Zvýší dolet střelby o ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} a rychlost o ${(
+            ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100
+          ).toFixed(1)}%.`,
         },
       }
 
@@ -1437,19 +1456,19 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en: `Reduces attack speed and effect of all heals, regeneration, and lifesteal for nearby enemies by ${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+            ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION_AND_ATTACK_SPEED * 100
           ).toFixed()}%.`,
           ru: `Снижает скорость атаки и эффект всех исцелений, регенерации и перехвата жизни для ближайших врагов на ${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+            ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION_AND_ATTACK_SPEED * 100
           ).toFixed()}%.`,
           br: `Reduz a velocidade de ataque e o efeito de todos os curativos, regeneração e roubo de vida para inimigos próximos em ${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+            ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION_AND_ATTACK_SPEED * 100
           ).toFixed()}%.`,
           zh: `降低附近敵人${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+            ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION_AND_ATTACK_SPEED * 100
           ).toFixed()}%的攻擊速度和所有治療、再生和吸血的效果。`,
           cz: `Sníží rychlost útoku a efekt všech léčení, regenerace a lifestealu pro blízké nepřátele o ${(
-            ItemAbilityData.FROST_ARMOR_HPREDUC * 100
+            ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION_AND_ATTACK_SPEED * 100
           ).toFixed()}%.`,
         },
       }
@@ -1674,7 +1693,6 @@ const _getLocaleItemDescription = (
         },
       }
     case ItemList.Kirins_Bow: {
-      const asAndMsReduction = fixed(ItemAbilityData.KIRINS_BOW_MR_REDUCTION * 100, 1)
       return {
         name: {
           en: "Kirin's Bow",
@@ -1688,43 +1706,33 @@ const _getLocaleItemDescription = (
           en: `Your Basic Attacks apply a stack of magical poison. At ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
           } stacks, the magical poison explodes, dealing ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } Magic Damage and reducing Magic Resistance by ${asAndMsReduction}% for ${toSec(
-            ItemAbilityData.KIRINS_BOW_DURATION
-          )}.`,
-          zh: `你的普通攻击会施加一层魔法毒药。当叠加到 ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } Magic Damage to all nearby enemies and apply maximum stacks of poison. \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
+          zh: `你的基本攻擊會施加一層魔法毒素。當達到 ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } 层时，魔法毒药会爆炸，造成 ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } 点魔法伤害，并使魔法抗性降低 ${asAndMsReduction}%，持续 ${toSec(ItemAbilityData.KIRINS_BOW_DURATION)} 秒。`,
-          cz: `Vaše základní útoky aplikují stack kouzelného jedu. Při ${
+          } 層時，魔法毒素會爆炸，對所有附近敵人造成 ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } 魔法傷害並施加最大層數的毒素。 \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
+          cz: `Vaše základní útoky aplikují vrstvu magického jedu. Při ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } stacků se kouzelný jed výbuchem uvolní, způsobí ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } kouzelné poškození a sníží odolnost proti kouzelnému poškození o ${asAndMsReduction}% po dobu ${toSec(
-            ItemAbilityData.KIRINS_BOW_DURATION
-          )}.`,
+          } vrstvách magický jed exploduje, způsobí ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } magického poškození všem nepřátelům v okolí a aplikuje maximální vrstvy jedu. \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
           fr: `Vos attaques de base appliquent une pile de poison magique. À ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
           } piles, le poison magique explose, infligeant ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } de dégâts magiques et réduisant la résistance magique de ${asAndMsReduction}% pendant ${toSec(
-            ItemAbilityData.KIRINS_BOW_DURATION
-          )}.`,
-          br: `Seus Ataques Básicos aplicam uma pilha de veneno mágico. Com ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } dégâts magiques à tous les ennemis proches et applique le maximum de piles de poison. \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
+          br: `Seus ataques básicas aplicam uma pilha de veneno mágico. Em ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
           } pilhas, o veneno mágico explode, causando ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } de Dano Mágico e reduzindo a Resistência Mágica em ${asAndMsReduction}% por ${toSec(
-            ItemAbilityData.KIRINS_BOW_DURATION
-          )}.`,
-          ru: `Ваши базовые атаки накладывают волшебный яд, который взрывается при достижении  ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } de dano mágico a todos os inimigos próximos e aplicando o máximo de pilhas de veneno. \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
+          ru: `Ваши базовые атаки накладывают слой магического яда. При ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } зарядов. Взрыв наносит ${
-            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE_OVER_TIME
-          } магического урона и уменьшает Сопротивление магии на  ${asAndMsReduction}% на ${toSec(
-            ItemAbilityData.KIRINS_BOW_DURATION
-          )}`,
+          } слоях магический яд взрывается, нанося ${
+            ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
+          } магического урона всем ближайшим врагам и накладывая максимальное количество слоёв яда. \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
         },
       }
     }
