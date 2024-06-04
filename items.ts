@@ -539,7 +539,7 @@ const _getLocaleItemDescription = (
           zh: '寒冰之劍',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack of physical frost on the enemy slowing them by ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} per stack. At ${
+          en: `Your Basic Attacks apply a stack of physical frost on the enemy, slowing them by ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} per stack. At ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
           ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK} за каждый стак. При ${
