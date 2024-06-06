@@ -1732,7 +1732,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '記分板',
     fr: 'Tableau des scores',
   },
-  [LOCALE.AUTOBUY]: {
+  [LOCALE.AUOTBUY]: {
     en: 'Auto-Buy',
     cz: 'Automatické nákupy',
     br: 'Compra automática',
