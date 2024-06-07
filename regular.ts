@@ -1531,6 +1531,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Záznam',
     fr: 'Enregistrement',
   },
+  [LOCALE.RECORD_ALLTIME]: {
+    en: 'Overall Record',
+  },
+  [LOCALE.PEAK]: {
+    en: 'Peaked {}',
+  },
   [LOCALE.MATCH_WON]: {
     en: 'Won Match',
     ru: 'Победа',
