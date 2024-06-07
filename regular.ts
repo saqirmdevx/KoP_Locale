@@ -2105,12 +2105,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Skins',
   },
   [LOCALE.PURCHASE_HERO_TITLE]: {
-    en: 'Buy {} for {} Gold?',
-    cz: 'Koupit {} za {} zlatých?',
-    zh: '购买 {} 以 {} 金币？',
-    ru: 'Купить {} за {} золота?',
-    fr: "Acheter {} pour {} pièces d'or?",
-    br: 'Comprar {} por {} Ouro?',
+    en: 'Buy {} for {} Gold and {} Gems?',
+    cz: 'Koupit {} za {} Zlato a {} Diamanty?',
+    zh: '花费 {} 金币和 {} 宝石购买 {}？',
+    ru: 'Купить {} за {} Золото и {} Самоцветы?',
+    fr: 'Acheter {} pour {} Or et {} Gemmes ?',
+    br: 'Comprar {} por {} Ouro e {} Gemas?',
   },
   [LOCALE.FRIENDS_PAGE_LIST]: {
     en: 'List',
@@ -2722,6 +2722,24 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '我有{gold}金币。',
     fr: "J'ai {gold} pièces d'or.",
     br: 'Eu tenho {gold} ouro.',
+  },
+  [LOCALE.PURCHASE_ITEM]: {
+    en: 'Purchase item',
+    ru: 'Купить предмет',
+    cz: 'Koupit předmět',
+    zh: '購買物品',
+  },
+  [LOCALE.PURCHASED]: {
+    en: 'Purchased',
+    ru: 'Куплено',
+    cz: 'Zakoupeno',
+    zh: '已購買',
+  },
+  [LOCALE.REQUIRED_RANK]: {
+    en: 'Required Rank',
+    ru: 'Требуемый ранг',
+    cz: 'Požadovaný rank',
+    zh: '所需等級',
   },
 }
 export default locale_data
