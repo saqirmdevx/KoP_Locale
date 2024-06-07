@@ -27,7 +27,9 @@ import { getDamage } from '../abilityLangData'
 // @ts-ignore
 import { LANG } from 'lang/lang'
 
-type HasTalentFunction = { hasTalent: (flag: Shared.TALENT, tier: number) => boolean }
+type HasTalentFunction = {
+  hasTalent: (flag: Shared.TALENT, tier: number) => boolean
+}
 type GetSpellDescriptionInput = IAbilityTooltipsDataFinal & HasTalentFunction
 
 const _getSpellDescriptionLang = (
@@ -64,6 +66,9 @@ const _getSpellDescriptionLang = (
         zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 \n被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(
           duration
         )}魅惑狀態`, // Need update
+        fr: `Kumihu tire 3 projectiles. Chaque projectile inflige ${basic_damage} \nPassif: Après avoir utilisé la Ruée Arcanique, l'attaque de base suivante de Kumihu inflige un bonus de ${enh_damage} et applique Charme à la cible pendant ${toSec(
+          duration
+        )}.`,
       }
     }
 
@@ -94,6 +99,10 @@ const _getSpellDescriptionLang = (
           KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
           1
         )}%額外傷害。`,
+        fr: `Kumihu lance une orbe spirituelle, infligeant ${base_damage}. L'orbe revient à elle après avoir atteint sa portée maximale, infligeant un autre ${base_damage}. Si l'Orbe spirituelle touche la cible deux fois, elle infligera ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% de dégâts bonus.`,
       }
     }
 
@@ -110,6 +119,9 @@ const _getSpellDescriptionLang = (
           KumihuAbilityData.DASH_AURA_DURATION
         )}.`,
         zh: `庫咪戶短距離衝刺，這會在 ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}內激發她的被動技。`,
+        fr: `Kumihu se précipite en avant. Cela activera sa compétence passive pendant ${toSec(
+          KumihuAbilityData.DASH_AURA_DURATION
+        )}.`,
       }
 
     /** Sparrow */
@@ -133,6 +145,9 @@ const _getSpellDescriptionLang = (
         zh: `史佩羅猛力揮動她的劍，給予 ${base_damage}點一般傷害。 \n被動技：使用一個能力蓄力史佩羅的劍，她的下一個基本攻擊擊昇敵方暈眩 ${toSec(
           SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION
         )}並給予 ${enh_damage}點一般傷害。`,
+        fr: `Sparrow brandit son épée, infligeant ${base_damage}. <br />Passif: L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une attaque d'onde de choc, projetant les ennemis en l'air pendant ${toSec(
+          SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION
+        )} et infligeant ${enh_damage}.`,
       }
     }
 
@@ -153,6 +168,9 @@ const _getSpellDescriptionLang = (
         zh: `史佩羅迅速衝刺猛力向前揮劍，暈眩 ${toSec(
           SparrowAbilityData.DASH_STUN_DURATION
         )}擊中的敵方並給予 ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}點一般傷害。`,
+        fr: `Sparrow se précipite rapidement en avant, utilisant le vent pour infliger ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )} et étourdir les ennemis touchés pendant ${toSec(SparrowAbilityData.DASH_STUN_DURATION)}.`,
       }
 
     case SpellList.SPARROW_GROUND_SLAM: {
@@ -175,6 +193,7 @@ const _getSpellDescriptionLang = (
         cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
         br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
         zh: `史佩羅釋放劍的能量產生新月形刃波，給予被擊中的敵方 ${base_damage}點魔法傷害 (加上 ${percDamage}%敵方損失血量)。`,
+        fr: `Sparrow libère le pouvoir de son épée, lançant une vague corrompue, infligeant ${base_damage} (plus un bonus de ${percDamage}% des points de vie manquants de la cible).`,
       }
     }
 
@@ -187,6 +206,7 @@ const _getSpellDescriptionLang = (
         cz: `I'ceat mrští sněhovou kouli na krátkou vzdálenost a způsobí ${base_damage} poškození. `,
         br: `Iceat arremessa uma bola de neve a curta distância causando ${base_damage} de dano.`,
         zh: `艾希特短距離投擲雪球，給予小範圍 ${base_damage}點全體一般傷害`,
+        fr: `I'ceat lance une boule de neige en arc, infligeant ${base_damage} dans une petite zone.`,
       }
     }
     case SpellList.ICEAT_ICICLE_BOLT: {
@@ -212,6 +232,9 @@ const _getSpellDescriptionLang = (
         zh: `艾希特發射三枚寒冰碎片，每發降低 ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點敵方移動速度並給予 ${base_damage}點魔法傷害。<br />對同一目標擊中所有碎冰時，牽制敵方 ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
         )}。`,
+        fr: `I'ceat lance trois éclats de glace, chacun infligeant ${base_damage} et réduisant la vitesse de déplacement de ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Toucher les trois gèle un ennemi pendant ${toSec(
+          ICeatAbilityData.ICICLE_ROOT_DURATION
+        )}, empêchant tout mouvement.`,
       }
     }
 
@@ -247,6 +270,10 @@ const _getSpellDescriptionLang = (
         zh:
           `艾希特在地上滑行，增加 ${duration}他的移動速度 ${bonusSpeed}點並留下冰步道，` +
           `給予所有位於冰步道上方的敵方每秒 ${base_damage}點魔法傷害並降低敵方移動速度。`,
+        fr:
+          `<b>Première utilisation: </b>I'ceat glisse sur le sol, augmentant sa vitesse de déplacement de ${bonusSpeed} pendant ${duration} et laissant derrière lui une traînée de glace. ` +
+          `Les ennemis se tenant sur la traînée de glace reçoivent ${base_damage} par seconde et voient leur vitesse de déplacement réduite pour une courte durée.<br/>` +
+          `<b>Deuxième utilisation: </b>I'ceat arrête de glisser, retrouvant sa vitesse de déplacement normale et arrêtant de laisser derrière lui une traînée de glace.`,
       }
     }
 
@@ -268,6 +295,9 @@ const _getSpellDescriptionLang = (
         zh: `蓓蕾從她的法棍發射一顆爆炸荊棘，給予小範圍 ${getDamage(
           BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage
         )}點全體一般傷害。`,
+        fr: `Belle tire une épine explosive de sa baguette, infligeant ${getDamage(
+          BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage
+        )} dans une petite zone.`,
       }
 
     case SpellList.BELLE_PRICKLY_VINE: {
@@ -298,6 +328,9 @@ const _getSpellDescriptionLang = (
         zh:
           `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方 ${damage}點魔法傷害並附著於一個敵方英雄。 \n當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
           `\n經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${stunDuration}敵方英雄並給予 ${damage}點魔法傷害。`,
+        fr:
+          `Belle lance une vigne perçante, infligeant ${damage} aux ennemis touchés. Si la vigne entre en contact avec un héros ennemi, elle se fixe à ce héros. Les vignes attachées peuvent être brisées si le héros ennemi s'éloigne suffisamment de Belle.` +
+          `\nAprès un court laps de temps, si la vigne est toujours attachée, elle s'entortille autour de l'ennemi, infligeant ${damage} et étourdissant pendant ${stunDuration}.`,
       }
     }
 
@@ -335,6 +368,11 @@ const _getSpellDescriptionLang = (
           `\n停留地面 ${toSec(
             BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION
           )}後，種子爆炸並給予四周敵方 ${base_damage}點全體魔法傷害。當敵方英雄帶著種子又踩到地面種子時會立即觸發爆炸。`,
+        fr:
+          `Belle saute en l'air et laisse tomber trois bombes de graines devant elle. Les bombes se fixent aux héros ennemis s'ils s'en approchent, infligeant ${base_damage} sur une durée de 2 secondes et explosent après cette durée, infligeant ${base_damage} dans une zone` +
+          `<br /><br />Après avoir été au sol pendant ${toSec(
+            BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION
+          )}, les graines explosent, infligeant ${base_damage} aux ennemis proches. Les ennemis qui marchent sur les bombes tout en en portant une déclenchent immédiatement l'explosion.`,
       }
     }
 
@@ -348,6 +386,7 @@ const _getSpellDescriptionLang = (
           ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
         )} de dano.`,
         zh: `湯瑪士拿他的蘿蔔劈砍，給予 ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)}點一般傷害。`,
+        fr: `Thomas frappe avec son katana, infligeant ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)}.`,
       }
 
     case SpellList.THOMAS_SHURIKEN_TOSS: {
@@ -363,6 +402,7 @@ const _getSpellDescriptionLang = (
         cz: `Thomas hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
         br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
         zh: `湯瑪士丟出三個蘿蔔樣的手裏劍，對所有途徑上敵方造成 ${base_damage}點魔法傷害。手裏劍短時間後收回他手上，對所有軌跡上敵方造成 ${base_damage}點魔法傷害。`,
+        fr: `Thomas lance trois shurikens, chacun infligeant ${base_damage}. Ils reviennent à lui après un court laps de temps, infligeant à nouveau ${base_damage}.`,
       }
     }
 
@@ -408,6 +448,13 @@ const _getSpellDescriptionLang = (
           `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度 ${toSec(
             ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION
           )}並對目標對象造成 ${base_damage}點一般傷害。`,
+        fr:
+          `<b>Première utilisation: </b>Thomas lance une carotte qui s'attache aux ennemis. Il peut se téléporter vers la carotte après ${toSec(
+            ThomasAbilityData.SHADOW_CARROT_DURATION
+          )}. \n<br />` +
+          `<b>Deuxième utilisation: </b>Se téléporte à la carotte. Si elle est attachée à un héros ennemi, réduit la vitesse de déplacement de ce héros pendant ${toSec(
+            ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION
+          )} et inflige ${base_damage}.`,
       }
     }
     /** Veil */
@@ -428,6 +475,7 @@ const _getSpellDescriptionLang = (
 
         br: `Veil corta com suas espadas demoníacas causando ${base_damage} de dano.\n<b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enhanced_dmg} de dano.\n(Consume o estado Maldição dos caídos.)`,
         zh: `維爾劈砍她的武器，給予 ${base_damage}點一般傷害。<br />強化後：維爾利用她的星光魂魄造成額外的 ${enhanced_dmg}點魔法傷害 (消耗強化狀態)。`,
+        fr: `Veil frappe avec ses armes, infligeant ${base_damage}. \n<br/>Amélioré: Veil utilise son esprit astral pour infliger un bonus de ${enhanced_dmg}, supprimant son état amélioré.`,
       }
     }
 
@@ -444,6 +492,7 @@ const _getSpellDescriptionLang = (
         cz: `Veil skočí a vrhne své astrální čepele dolů pod úhlem 45°, což způsobí ${base_damage} poškození. Pokud schopnost zasáhne nepřátelského hrdinu, získá Posílení.`,
         br: `Veil salta e atira suas lâminas astrais para baixo em um ângulo de 45 ° causando ${base_damage} de dano.\nSe a habilidade atingir um personagem inimigo, ela ativa a [Maldição dos caídos].`,
         zh: `維爾跳躍並向斜下前方45°角丟出星光刀刃，造成 ${base_damage}點魔法傷害。如果技能擊中敵方英雄，將會強化維爾。`,
+        fr: `Veil saute et lance ses lames astrales vers le bas à un angle de 45°, infligeant ${base_damage}. Si les lames touchent un héros ennemi, Veil entre dans son état amélioré.`,
       }
     }
 
@@ -475,6 +524,9 @@ const _getSpellDescriptionLang = (
         zh:
           `維爾使用星光飛躍向前方高速衝刺，對敵方英雄造成 ${base_damage}點一般傷害。\n<br />` +
           `強化後：維爾飛向星界，造成敵方英雄額外 ${enh_dmg}點魔法傷害並降低移動速度 (消耗強化狀態)。<b>成功擊中將重置星光飛躍冷卻時間！</b>`,
+        fr:
+          `Veil fonce vers l'avant à grande vitesse, infligeant ${base_damage} aux héros ennemis.\n<br />` +
+          `Amélioré: Veil entre dans le royaume astral, infligeant un bonus de ${enh_dmg} et ralentissant le héros ennemi, supprimant son état amélioré. <b>Toucher un ennemi réinitialise le temps de recharge de cette capacité. </b>`,
       }
     }
 
@@ -489,6 +541,7 @@ const _getSpellDescriptionLang = (
         ru: `Флин выпускает стрелу, наносящую ${basic_damage}. \nЕсли активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} и пронзает все вражеские цели на своём пути.`,
         cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození \nAk je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození`,
         zh: `弗林發射一支弓箭並給予 ${basic_damage}點一般傷害。\n如果精通箭術發動中，弗林給予 ${enh_damage}點一般傷害並貫穿所有敵方單位。`,
+        fr: `Flin tire une flèche, infligeant ${basic_damage}. \nSi la Maîtrise du tir est active, la flèche de Flin inflige ${enh_damage} et traverse les ennemis.`,
       }
     }
 
@@ -509,6 +562,7 @@ const _getSpellDescriptionLang = (
         ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} и отбрасывает первую вражескую цель на своём пути. \nЕсли активна Меткая стрельба, эта способность будет пронзать всех врагов на своём пути.`,
         cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} a odkopne nepřítele dál od tebe. \nAk střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
         zh: `弗林向前方發射精準射擊，如果弓箭擊中目標對象，弓箭將給予 ${base_damage}點魔法傷害並將敵方單位從你的方向打走。\n如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
+        fr: `Flin tire une flèche puissante de son arc, infligeant ${base_damage} et repoussant les ennemis touchés. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
       }
     }
 
@@ -543,6 +597,13 @@ const _getSpellDescriptionLang = (
         }發基礎射擊造成額外傷害並貫穿敵方單位。每次貫穿擊中單位後將降低弓箭傷害${Math.floor(
           FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
         )}%。`,
+        fr: `Flin augmente sa concentration pendant ${toSec(
+          FlinAbilityData.MARKSMANSHIP_DURATION
+        )}. Pendant cette période, ses prochaines ${
+          FlinAbilityData.MARKSMANSHIP_STACKS
+        } flèches infligeront des dégâts supplémentaires et traverseront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${Math.floor(
+          FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
+        )}%.`,
       }
 
     /** Kira  */
@@ -592,6 +653,16 @@ const _getSpellDescriptionLang = (
                 }%攻擊速度與移動速度值 ${
                   KiraAbilityData.ENHATTACK_MOVE_SPEED
                 }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
+        fr: `Kira tire une étincelle, infligeant ${basic_damage}. <br />
+                \n<b>Amélioré: (Choc électrique)</b> De plus, Kira lance un éclair sur le héros le plus proche. Si le Choc électrique touche un ennemi, il inflige ${enh_damage}, diminue leur Vitesse d'attaque de ${
+                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+                }%, et diminue la Vitesse de déplacement de ${
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                } pendant une courte durée. Si le Choc électrique touche un allié, il restaure ${enh_damage_heal} de santé, augmente leur Vitesse d'attaque de ${
+                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+                }%, et augmente la Vitesse de déplacement de ${
+                  KiraAbilityData.ENHATTACK_MOVE_SPEED
+                } pendant une courte durée.`,
       }
     }
 
@@ -617,6 +688,8 @@ const _getSpellDescriptionLang = (
                 \n<b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`,
         zh: `奇菈召喚四束虛空飛彈從上方如雨淋下，每束飛彈給予 ${damage}點魔法傷害並貫穿敵方。<br />
                 \n<b>[強化後]：(滔天深淵) 奇菈召喚總共八束虛空飛彈。`,
+        fr: `Kira invoque 4 missiles électriques qui tombent du ciel, chacun infligeant ${damage} et traversant les ennemis.
+                \n<br/><b>Amélioré: (Éclair torrentiel)</b> Kira invoque un total de 8 missiles électriques.`,
       }
     }
 
@@ -656,6 +729,12 @@ const _getSpellDescriptionLang = (
                 \n<b>[強化後]：(混沌殘影) 奇菈的殘影跟隨她並沿路穿透敵方，給予 ${damage}點魔法傷害並沉默敵方 ${toSec(
                   KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
                 )}。`,
+        fr: `Kira fonce en avant, laissant derrière elle une image déformée d'elle-même. Après ${toSec(
+          KiraAbilityData.VOID_PHANTASM_DURATION
+        )}, elle retourne à la position de son image.
+                \n<br/><b>Amélioré: (Image dynamique)</b> Au lieu de retourner à la position de l'image, elle retourne à la position de Kira. L'image traverse les ennemis, infligeant ${damage} et les réduisant au silence pendant ${toSec(
+                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+                )}.`,
       }
     }
 
@@ -669,6 +748,7 @@ const _getSpellDescriptionLang = (
         ru: `Хейзел поражает врагов своим молотом, нанося ${baseDamage}.`,
         cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`,
         zh: `哈歇爾用她的鐵鎚打擊敵人，給予 ${baseDamage}點一般傷害。`,
+        fr: `Hazel frappe avec son marteau, infligeant ${baseDamage}.`,
       }
     }
 
@@ -688,6 +768,12 @@ const _getSpellDescriptionLang = (
         zh: `哈歇爾開始蓄力 ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
         )}匯集能量。隨後在她四周釋放爆發衝擊波，給予 ${damage}點魔法傷害 (基於 Hazel 目前的健康狀況)，將所有距離內的敵方單位減速推開。`,
+        cz: `Hazel začne kanalizovat svou energii. Po ${toSec(
+          HazelAbilityData.SHOCKWAVE_DELAY
+        )} uvolní rázovou vlnu, která putuje vzduchem a způsobí ${damage} (Založeno na současném zdraví Hazel) a odhodí nepřátele.`,
+        fr: `Hazel commence à canaliser son énergie. Après ${toSec(
+          HazelAbilityData.SHOCKWAVE_DELAY
+        )}, elle libère une onde de choc qui se propage dans l'air, infligeant ${damage} (Basé sur la santé actuelle de Hazel) et repoussant les ennemis.`,
       }
     }
 
@@ -717,6 +803,12 @@ const _getSpellDescriptionLang = (
           duration
         )}.`,
         zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(duration)}。`,
+        cz: `Hazel zamává svým kladivem nahoru, uvolňuje hněv spravedlnosti, způsobuje ${normalDamage} a odhazuje nepřátele nahoru a omráčí na ${toSec(
+          duration
+        )}.`,
+        fr: `Hazel balance son marteau vers le haut, libérant la colère de la justice, infligeant ${normalDamage}, projetant les ennemis vers le haut et les étourdissant pendant ${toSec(
+          duration
+        )}.`,
       }
     }
 
@@ -738,6 +830,8 @@ const _getSpellDescriptionLang = (
                 <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`,
         zh: `艾瑞爾從他的槍發射一發子彈，給予 ${baseDamage}點一般傷害。 <br />
                 <br />被動技：每當艾瑞爾發動技能後，艾瑞爾會從他的槍裝填另一發子彈，多補一發射擊給予額外 ${enhDamage}點一般傷害。`,
+        fr: `Arel tire une balle de son pistolet, infligeant ${baseDamage}. \n
+                <br />Passif: Chaque fois qu'Arel utilise une compétence, il charge une autre balle dans son pistolet. Sa prochaine attaque de base tire cette balle supplémentaire, infligeant un bonus de ${enhDamage}.`,
       }
     }
 
@@ -748,6 +842,7 @@ const _getSpellDescriptionLang = (
         ru: 'Арел катится вперёд.',
         cz: 'Arel se převalí dopředu',
         zh: '艾瑞爾向前翻滾。',
+        fr: "Arel roule vers l'avant.",
       }
     }
 
@@ -803,6 +898,12 @@ const _getSpellDescriptionLang = (
                 <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予 ${triggerDamage}點一般傷害並暈眩炸彈負載者 ${toSec(
                   ArelAbilityData.TICKING_BOMB_SLOW_DURATION
                 )}。`,
+        fr: `Arel lance une bombe à retardement, qui se fixe aux ennemis qui s'en approchent. Après ${toSec(
+          ArelAbilityData.TICKING_BOMB_DURATION
+        )}, la bombe explose, infligeant ${baseDamage} dans une zone.
+                <br />Tirer sur une bombe attachée avec 3 balles déclenche la bombe prématurément, infligeant ${triggerDamage}, réduisant leur Vitesse de déplacement pendant ${toSec(
+                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+                )}, et les étourdissant pendant ${toSec(triggerStun)}.`,
       }
     }
 
@@ -840,6 +941,10 @@ const _getSpellDescriptionLang = (
                 <br />被動：每一次阿爾瓦成功的擊中敵方英雄，給予目標對象 ${toSec(
                   duration
                 )}負面狀態。第三次的負面狀態疊加將給予標記，造成 ${markDamage}點一般傷害。`,
+        fr: `Alvar attaque avec un coup de poing, infligeant ${baseDamage}. \n
+                <br />Passif: Les attaques de base d'Alvar appliquent une pile d'impact divin sur les héros ennemis, qui dure ${toSec(
+                  duration
+                )}. À trois piles, l'ennemi reçoit une Marque divine, infligeant ${markDamage}.`,
       }
     }
 
@@ -883,6 +988,13 @@ const _getSpellDescriptionLang = (
             此外阿爾瓦會給予自己和所有附近的盟友 ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
             }點移動速度加成，持續 ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}。`,
+        fr: `Alvar lance les ennemis en arrière avec un puissant coup de pied, infligeant ${baseDamage} et étourdissant pendant ${toSec(
+          duration
+        )}. <br /><br />
+            Applique une pile d'impact divin sur tous les héros ennemis touchés par Furious Kick.<br />
+            De plus, Alvar accorde à lui-même et à tous ses alliés proches ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } de vitesse de mouvement bonus pendant ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
       }
     }
 
@@ -899,6 +1011,7 @@ const _getSpellDescriptionLang = (
         )}. Способность использовать нельзя, если рядом нет помеченных врагов.`,
         cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
         zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
+        fr: `Alvar se téléporte derrière le héros ennemi marqué le plus proche, le frappant et infligeant ${baseDamage} de dégâts normaux et le poussant dans la direction opposée.\n (Si aucun ennemi marqué n'est à proximité, la compétence ne peut pas être utilisée.)`,
       }
     }
 
@@ -910,6 +1023,9 @@ const _getSpellDescriptionLang = (
         en: `Foxy fires a bullet from his gun, dealing ${baseDamage}.`,
         ru: `Фокси выпускает пулю из своего оружия, нанося ${baseDamage}.`,
         cz: `Foxy vystřelí kulku ze své zbraně a způsobí ${baseDamage}.`,
+        br: `Foxy dispara uma bala de sua arma, causando ${baseDamage} de dano normal.`,
+        zh: `Foxy 從他的槍中射出一發子彈，給予 ${baseDamage}點一般傷害。`,
+        fr: `Foxy tire une balle de son arme, infligeant ${baseDamage}.`,
       }
     }
 
@@ -924,6 +1040,9 @@ const _getSpellDescriptionLang = (
         en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a bararge of bullets. Each bullet deals ${baseDamage}. <br/> <b>Rapid Fire attack rate scales with Attack Speed.</b>`,
         ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Чем выше Скорость атаки, тем больше пуль будет выпущено. Передвижение отменяет подготовку. </i>`,
         cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`,
+        br: `Foxy canaliza sua arma, diminuindo sua velocidade de movimento e disparando rapidamente uma rajada de balas. Cada bala causa ${baseDamage}. <br/> <i> A taxa de ataque de Fogo Rápido escala com a Velocidade de Ataque. </i>`,
+        zh: `Foxy 通道他的武器，降低他的移動速度並快速地發射一連串的子彈。每一發子彈造成 ${baseDamage}點一般傷害。 <br/> <i> 快速射擊攻擊速率與攻擊速度相關。 </i>`,
+        fr: `Foxy canalise son arme, réduisant sa vitesse de déplacement et tirant rapidement une rafale de balles. Chaque balle inflige ${baseDamage}. <br/> <i> Le taux de tir de Feu Rapide évolue avec la Vitesse d'Attaque. </i>`,
       }
     }
 
@@ -954,6 +1073,18 @@ const _getSpellDescriptionLang = (
         cz:
           `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage} + ${apDamage}. <br/>` +
           'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
+        br:
+          `<b>Primeira conjuração: </b>Foxy lança uma granada que detona ao impactar o chão, causando ${baseDamage} + ${apDamage} em uma área e empurrando unidades. Se a velocidade de queda da granada for rápida o suficiente, ela quicará uma vez antes de detonar. ` +
+          'O empurrão é baseado na distância entre a unidade inimiga e a granada.<br/>' +
+          '<b>Segunda conjuração: </b>Detone a granada cedo.',
+        zh:
+          `<b>第一次施法: </b>Foxy 丟出一枚手榴彈，當手榴彈碰到地面時爆炸，造成 ${baseDamage} + ${apDamage}點範圍內的傷害並擊退單位。如果手榴彈的下落速度足夠快，它將在爆炸前彈跳一次。 ` +
+          '擊退基於敵方單位和手榴彈之間的距離。<br/>' +
+          '<b>第二次施法: </b>提前引爆手榴彈。',
+        fr:
+          `<b>Première utilisation: </b>Foxy lance une grenade qui explose au contact du sol, infligeant ${baseDamage} + ${apDamage} dans une zone et repoussant les unités. Si la vitesse de chute de la grenade est suffisamment rapide, elle rebondira une fois avant de détoner. ` +
+          "Le repoussement est basé sur la distance entre l'unité ennemie et la grenade.<br/>" +
+          '<b>Deuxième utilisation: </b>Détoner la grenade tôt.',
       }
     }
 
@@ -1030,6 +1161,7 @@ const _getSpellDescriptionLang = (
         cz: 'Po 5 sekundách se teleportujte zpět do základny. Během sesílání se nemůžete pohybovat ani útočit a sesílání je přerušeno, pokud utrpíte poškození.',
         br: 'Teleporte-se de volta para Base após 5 segundos. Durante isso você não pode se mover ou atacar, será interrompido se você receber qualquer tipo de dano.',
         zh: '5秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。',
+        fr: 'Téléportez-vous à la base après 5 secondes. Pendant le téléport, vous ne pouvez pas bouger ou attaquer, et tout dommage reçu interrompt le téléport.',
       }
 
     default:
@@ -1059,6 +1191,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Útok',
         br: 'Ataque básico',
         zh: '攻擊',
+        fr: 'Attaque de base',
       }
 
     case SpellList.KUMIHU_MAGICAL_ORB:
@@ -1068,6 +1201,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Magická Koule',
         br: 'Rajada de vento',
         zh: '魔幻寶珠',
+        fr: 'Orbe magique',
       }
     case SpellList.KUMIHU_DASH:
       return {
@@ -1076,6 +1210,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Tajemný Krok',
         br: 'Possessão Demoníaca',
         zh: '奧術衝刺',
+        fr: 'Charge arcanique',
       }
 
     /** Sparrow */
@@ -1086,6 +1221,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Zteč',
         br: 'Cai dentro',
         zh: '突進',
+        fr: 'Charge',
       }
 
     case SpellList.SPARROW_GROUND_SLAM:
@@ -1095,6 +1231,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Úder Země',
         br: 'poder demoníaco',
         zh: '地面猛擊',
+        fr: 'Frappe au sol',
       }
 
     /** I'Ceat */
@@ -1106,6 +1243,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Sprška Rampouchů',
         br: 'Estilhaço de gelo',
         zh: '寒冰飛箭',
+        fr: 'Carreau de glace',
       }
 
     case SpellList.ICEAT_COLD_EMBRACE:
@@ -1115,6 +1253,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Chladné objetí',
         br: 'Abraço do inverno',
         zh: '冰冷懷抱',
+        fr: 'Étreinte froide',
       }
 
     /** Belle */
@@ -1126,6 +1265,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Bodavá Réva',
         br: 'Videira espinhosa',
         zh: '荊棘藤蔓',
+        fr: 'Vigne épineuse',
       }
 
     case SpellList.BELLE_FLORAL_AMBUSH:
@@ -1135,6 +1275,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Bouchací Kytky',
         br: 'Emboscada floral',
         zh: '鮮花伏擊',
+        fr: 'Embuscade florale',
       }
 
     /** Thomas */
@@ -1146,6 +1287,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Vrh Shurikenu',
         br: 'Shuriken Demoníaca',
         zh: '手裏劍投擲',
+        fr: 'Lancer de shuriken',
       }
 
     case SpellList.THOMAS_SHADOW_CARROT:
@@ -1155,6 +1297,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Stínová Mrkev',
         br: 'Contrato',
         zh: '闇影蘿蔔',
+        fr: "Carotte d'ombre",
       }
 
     /** Veil */
@@ -1165,6 +1308,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Astrální Čepele',
         br: 'Lâminas astrais',
         zh: '星光刀刃',
+        fr: 'Lames astrales',
       }
 
     case SpellList.VEIL_ASTRAL_STEP:
@@ -1174,6 +1318,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Astrální Krok',
         br: 'Regente do mal',
         zh: '星光飛躍',
+        fr: 'Pas astral',
       }
 
     case SpellList.FLIN_PRECISE_SHOT:
@@ -1183,6 +1328,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Přesná střela',
         br: 'Tiro preciso',
         zh: '精準射擊',
+        fr: 'Tir précis',
       }
 
     case SpellList.FLIN_MARKSMANSHIP:
@@ -1192,6 +1338,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Strelecké umenie',
         br: 'Pontaria perfeita',
         zh: '精通箭術',
+        fr: 'Tir de précision',
       }
 
     case SpellList.KIRA_RAIN_OF_SPARKS:
@@ -1201,6 +1348,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Dážď iskier',
         br: 'Relâmpago do Abismo',
         zh: '花火之雨',
+        fr: "Pluie d'étincelles",
       }
 
     case SpellList.KIRA_VOID_PHANTASM:
@@ -1210,6 +1358,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Prázdné fantazie',
         br: 'Fantasma do Abismo',
         zh: '虛空幻象',
+        fr: 'Fantôme statique',
       }
 
     case SpellList.HAZEL_HEROIC_SLASH:
@@ -1219,6 +1368,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         ru: 'Гнев правосудия',
         cz: 'Hněv spravedlnosti',
         zh: '正義之怒',
+        fr: 'Courroux de la justice',
       }
 
     case SpellList.HAZEL_SHOCKWAVE:
@@ -1228,6 +1378,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Revolta Triunfante',
         cz: 'Triumfálne prevraty',
         zh: '勝利的動盪',
+        fr: 'Séisme triomphant',
       }
 
     case SpellList.AREL_TUMBLE:
@@ -1237,6 +1388,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Hora de correr',
         cz: 'Kotrmelec',
         zh: '翻跟斗',
+        fr: 'Roulade',
       }
 
     case SpellList.AREL_TICKING_BOMB:
@@ -1246,6 +1398,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Bomba Relógio',
         cz: 'Tikající bomba',
         zh: '定時炸彈',
+        fr: 'Bombe à retardement',
       }
 
     case SpellList.ALVAR_FURIOUS_KICK:
@@ -1255,6 +1408,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Chute furioso',
         cz: 'Zúrivý kopanec',
         zh: '憤怒之踢',
+        fr: 'Coup furieux',
       }
 
     case SpellList.ALVAR_HEAVENLY_KICK:
@@ -1264,6 +1418,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Chute Celestial',
         cz: 'Nebeský kop',
         zh: '天堂之踢',
+        fr: 'Coup céleste',
       }
 
     case SpellList.FOXY_GRANADE:
@@ -1271,6 +1426,9 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         en: 'Explosive Grenade',
         ru: 'Взрывная граната',
         cz: 'Výbušný granát',
+        br: 'Granada explosiva',
+        zh: '爆炸手榴彈',
+        fr: 'Grenade explosive',
       }
 
     case SpellList.FOXY_RAPID_FIRE:
@@ -1278,6 +1436,9 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         en: 'Rapid Fire',
         ru: 'Беглый огонь',
         cz: 'Příval kulek',
+        br: 'Fogo Rápido',
+        zh: '快速射擊',
+        fr: 'Tir rapide',
       }
     case SpellList.MAGDALENE_SCREAM_OF_PAIN:
       return {
@@ -1305,6 +1466,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Odvolání',
         br: 'Retorno',
         zh: '召回',
+        fr: 'Rappel',
       }
     default:
       return { en: '' }
