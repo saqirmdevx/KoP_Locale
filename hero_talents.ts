@@ -16,19 +16,19 @@ import {
   FoxyAbilityData,
   MagdaleneAbilityData,
   //@ts-ignore
-} from 'shared';
-import { toSecRaw, toSec, fixed } from './misc';
+} from 'shared'
+import { toSecRaw, toSec, fixed } from './misc'
 
 interface ITalentProps {
-  title: { [key in string]: string };
-  description?: { [key in string]: string };
+  title: { [key in string]: string }
+  description?: { [key in string]: string }
 }
 
 interface ILocaleHeroTalent {
-  tier1_left: ITalentProps;
-  tier1_right: ITalentProps;
-  tier2_left: ITalentProps;
-  tier2_right: ITalentProps;
+  tier1_left: ITalentProps
+  tier1_right: ITalentProps
+  tier2_left: ITalentProps
+  tier2_right: ITalentProps
 }
 
 const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
@@ -37,46 +37,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `Magical Orb Cooldown  ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )}s`,
-            ru: `${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )} сек. перезарядки Волшебной сферы`,
-            cz: `Magická koule obnovení ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )}s`,
-            zh: `魔法球冷却 ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )}s`,
-            fr: `Orbe magique recharge ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )}s`,
-            br: `Orbe mágico recarga ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD
-            )}s`,
+            en: `Magical Orb Cooldown  ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
+            ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)} сек. перезарядки Волшебной сферы`,
+            cz: `Magická koule obnovení ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
+            zh: `魔法球冷却 ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
+            fr: `Orbe magique recharge ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
+            br: `Orbe mágico recarga ${toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)}s`,
           },
         },
         tier1_right: {
           title: {
-            en: `Charm cooldown  ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )}s`,
-            ru: `${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )} сек. перезарядки очарования`,
-            cz: `Očarování obnovení ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )}s`,
-            zh: `魅力冷却 ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )}s`,
-            fr: `Charme recharge ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )}s`,
-            br: `Encanto recarga ${toSecRaw(
-              KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD
-            )}s`,
+            en: `Charm cooldown  ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
+            ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)} сек. перезарядки очарования`,
+            cz: `Očarování obnovení ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
+            zh: `魅力冷却 ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
+            fr: `Charme recharge ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
+            br: `Encanto recarga ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
           },
         },
         tier2_left: {
@@ -119,7 +95,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             )}s`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.SPARROW:
       return {
@@ -145,24 +121,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Demonic Wrath Pure / +${
-              SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }%`,
+            en: `Demonic Wrath Pure / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
             ru: `+${
               SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
             }% от недостающего здоровья Удара по земле/урон становится чистым`,
-            cz: `Démonický hněv čistý / +${
-              SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }%`,
-            zh: `恶魔之怒纯净 / +${
-              SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }%`,
-            fr: `Colère démoniaque pure / +${
-              SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }%`,
-            br: `Ira Demoníaca Pura / +${
-              SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }%`,
+            cz: `Démonický hněv čistý / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
+            zh: `恶魔之怒纯净 / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
+            fr: `Colère démoniaque pure / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
+            br: `Ira Demoníaca Pura / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
           },
           description: {
             en: `Demonic Wrath deals pure damage, bypassing both Armor and Magic Resistance, and deals ${
@@ -187,27 +153,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: `Corrupted Wind Cooldown ${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )}`,
-            ru: `${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )} сек. перезарядки Рывка`,
-            cz: `Zkažený vítr obnovení ${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )}`,
-            zh: `腐化之风冷却 ${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )}`,
-            fr: `Recharge du vent corrompu ${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )}`,
-            br: `Recarga do Vento Corrompido ${toSecRaw(
-              SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN
-            )}`,
+            en: `Corrupted Wind Cooldown ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            ru: `${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)} сек. перезарядки Рывка`,
+            cz: `Zkažený vítr obnovení ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            zh: `腐化之风冷却 ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            fr: `Recharge du vent corrompu ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            br: `Recarga do Vento Corrompido ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.ICEAT:
       return {
@@ -223,24 +177,16 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           description: {
             en: `Your Basic Attacks reduce enemy Movement Speed by <b>${
               ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
-            }</b> and reduce enemy Attack Speed by <b>${
-              ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100
-            }%</b>`,
+            }</b> and reduce enemy Attack Speed by <b>${ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100}%</b>`,
             ru: `Ваши атаки будут уменьшать скорость передвижения целей на <b>${
               ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
-            }</b> и их скорость атаки на <b>${
-              ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100
-            }%</b>`,
+            }</b> и их скорость атаки на <b>${ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100}%</b>`,
             cz: `Vaše základní útoky sníží rychlost pohybu nepřátel o <b>${
               ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
-            }</b> a sníží rychlost útoku nepřátel o <b>${
-              ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100
-            }%</b>`,
+            }</b> a sníží rychlost útoku nepřátel o <b>${ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100}%</b>`,
             zh: `你的基础攻击会减少敌人的移动速度 <b>${
               ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
-            }</b> 并减少敌人的攻击速度 <b>${
-              ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100
-            }%</b>`,
+            }</b> 并减少敌人的攻击速度 <b>${ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100}%</b>`,
             fr: `Vos attaques de base réduisent la vitesse de déplacement des ennemis de <b>${
               ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
             }</b> et réduisent la vitesse d'attaque des ennemis de <b>${
@@ -265,66 +211,40 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Icicle Bolt freeze +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
+            en: `Icicle Bolt freeze +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
             ru: `+${toSecRaw(
               VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
             )} сек. замораживания от Ледяного болта`,
-            cz: `Icicle Bolt zmrazení +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
-            zh: `冰柱冻结 +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
-            fr: `Gel de glace +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
-            br: `Gelo do Pico +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
+            cz: `Icicle Bolt zmrazení +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            zh: `冰柱冻结 +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            fr: `Gel de glace +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            br: `Gelo do Pico +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
           },
         },
         tier2_right: {
           title: {
-            en: `Cold Embrace Duration +${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )}s`,
+            en: `Cold Embrace Duration +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
             ru: `+${toSecRaw(
               ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
             )} сек. к длительности Объятий холода`,
-            cz: `Zimní objetí trvání +${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )}s`,
-            zh: `冰冷拥抱持续时间 +${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )}s`,
-            fr: `Durée de l'étreinte froide +${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )}s`,
-            br: `Duração do Abraço Frio +${toSecRaw(
-              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
-            )}s`,
+            cz: `Zimní objetí trvání +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
+            zh: `冰冷拥抱持续时间 +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
+            fr: `Durée de l'étreinte froide +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
+            br: `Duração do Abraço Frio +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.VEIL: {
       return {
         tier1_left: {
           title: {
-            en: `Astral Step Slow Duration +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
+            en: `Astral Step Slow Duration +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
             ru: `+${toSecRaw(
               VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
             )} сек. к замедлению от Астрального шага`,
-            cz: `Astral Step zpomalení trvání +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
-            zh: `星体步减速持续时间 +${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )}s`,
+            cz: `Astral Step zpomalení trvání +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            zh: `星体步减速持续时间 +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
             fr: `Durée du ralentissement de l'Astral Step +${toSecRaw(
               VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
             )}s`,
@@ -335,52 +255,27 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Astral Blades Cooldown ${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )}s`,
+            en: `Astral Blades Cooldown ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
             ru: `${toSecRaw(
               VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
             )} сек. перезарядки Астральных клинков`,
-            cz: `Astral Blades obnovení ${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )}s`,
-            zh: `星体刀片冷却 ${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )}s`,
-            fr: `Recharge des lames astrales ${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )}s`,
-            br: `Recarga das Lâminas Astrais ${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )}s`,
+            cz: `Astral Blades obnovení ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
+            zh: `星体刀片冷却 ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
+            fr: `Recharge des lames astrales ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
+            br: `Recarga das Lâminas Astrais ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
           },
         },
         tier2_left: {
           title: {
-            en: `Enhanced Damage +${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
-              1
-            )}%`,
+            en: `Enhanced Damage +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
             ru: `+${fixed(
               (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
               1
             )}% к урону от усиленных атак или Астрального шага`,
-            cz: `Zlepšené poškození +${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
-              1
-            )}%`,
-            zh: `增强伤害 +${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
-              1
-            )}%`,
-            fr: `Dégâts améliorés +${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
-              1
-            )}%`,
-            br: `Dano Aprimorado +${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
-              1
-            )}%`,
+            cz: `Zlepšené poškození +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            zh: `增强伤害 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            fr: `Dégâts améliorés +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            br: `Dano Aprimorado +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
           },
         },
         tier2_right: {
@@ -396,8 +291,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             en:
               `Reduces the cooldown of Astral Step by ${toSecRaw(
                 VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
-              )}s \n` +
-              'Enhanced Astral Step resets its cooldown even if no enemy is hit.',
+              )}s \n` + 'Enhanced Astral Step resets its cooldown even if no enemy is hit.',
             ru:
               `Перезарядка Астрального шага снижается на ${toSecRaw(
                 VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
@@ -406,49 +300,33 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             cz:
               `Sníží obnovení Astrálního kroku o ${toSecRaw(
                 VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
-              )}s \n` +
-              'Zlepšený Astrální krok resetuje své obnovení i když nezasáhne žádného nepřítele.',
+              )}s \n` + 'Zlepšený Astrální krok resetuje své obnovení i když nezasáhne žádného nepřítele.',
             zh:
-              `减少星体步的冷却时间 ${toSecRaw(
-                VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
-              )}s \n` + '即使没有击中敌人，增强型星体步也会重置其冷却时间。',
+              `减少星体步的冷却时间 ${toSecRaw(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)}s \n` +
+              '即使没有击中敌人，增强型星体步也会重置其冷却时间。',
             fr:
               `Réduit le temps de recharge du Pas astral de ${toSecRaw(
                 VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
-              )}s \n` +
-              "Le Pas astral amélioré réinitialise son temps de recharge même si aucun ennemi n'est touché.",
+              )}s \n` + "Le Pas astral amélioré réinitialise son temps de recharge même si aucun ennemi n'est touché.",
             br:
               `Reduz o tempo de recarga do Passo Astral em ${toSecRaw(
                 VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN
-              )}s \n` +
-              'O Passo Astral aprimorado reseta seu tempo de recarga mesmo que nenhum inimigo seja atingido.',
+              )}s \n` + 'O Passo Astral aprimorado reseta seu tempo de recarga mesmo que nenhum inimigo seja atingido.',
           },
         },
-      };
+      }
     }
 
     case Shared.HEROES.BELLE:
       return {
         tier1_left: {
           title: {
-            en: `Prickly Vine Duration +${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )}s`,
-            ru: `+${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )} сек. оглушения от Колючей лозы`,
-            cz: `Trnitý vinný trn trvání +${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )}s`,
-            zh: `刺藤持续时间 +${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )}s`,
-            fr: `Durée de la vigne épineuse +${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )}s`,
-            br: `Duração da Videira Espinhosa +${toSecRaw(
-              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
-            )}s`,
+            en: `Prickly Vine Duration +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
+            ru: `+${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)} сек. оглушения от Колючей лозы`,
+            cz: `Trnitý vinný trn trvání +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
+            zh: `刺藤持续时间 +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
+            fr: `Durée de la vigne épineuse +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
+            br: `Duração da Videira Espinhosa +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
           },
         },
         tier1_right: {
@@ -463,18 +341,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Floral Ambush Heal ${
-              BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }%`,
+            en: `Floral Ambush Heal ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}%`,
             ru: `Бутоны Цветочной ловушки лечат союзников на ${
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
             }% от своего урона`,
             cz: `Květinový útok léčí spojence na ${
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
             }% způsobeného poškození`,
-            zh: `花瓣伏击治疗 ${
-              BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }%`,
+            zh: `花瓣伏击治疗 ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}%`,
             fr: `Embûche florale soigne les alliés de ${
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
             }% des dégâts infligés`,
@@ -494,9 +368,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             cz: `Trnitý vinný trn se připevní o ${toSecRaw(
               BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
             )}s rychleji`,
-            zh: `刺藤附着延迟 -${toSecRaw(
-              BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
-            )}s`,
+            zh: `刺藤附着延迟 -${toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)}s`,
             fr: `Délai de fixation de la vigne épineuse -${toSecRaw(
               BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
             )}s`,
@@ -505,7 +377,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             )}s`,
           },
         },
-      };
+      }
     case Shared.HEROES.FLIN:
       return {
         tier1_left: {
@@ -568,7 +440,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             )}% de Dano Normal por flecha extra.`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.THOMAS:
       return {
@@ -602,21 +474,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Shuriken Toss Cooldown ${toSecRaw(
-              ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
-            )}`,
+            en: `Shuriken Toss Cooldown ${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)}`,
             ru: `${toSecRaw(
               ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
             )} сек. перезарядки Броска сюрикена`,
-            cz: `Shuriken Toss obnovení ${toSecRaw(
-              ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
-            )}`,
-            zh: `手里剑投掷冷却 ${toSecRaw(
-              ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
-            )}`,
-            fr: `Recharge du lancer de shuriken ${toSecRaw(
-              ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
-            )}`,
+            cz: `Shuriken Toss obnovení ${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)}`,
+            zh: `手里剑投掷冷却 ${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)}`,
+            fr: `Recharge du lancer de shuriken ${toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)}`,
             br: `Recarga do Arremesso de Shuriken ${toSecRaw(
               ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN
             )}`,
@@ -624,27 +488,17 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: `Shadow Carrot Stun ${toSecRaw(
-              ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
-            )}s`,
+            en: `Shadow Carrot Stun ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
             ru: `Теневая морковь при повторной активации оглушает врага на ${toSecRaw(
               ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
             )} сек.`,
-            cz: `Stínová mrkev omráčí nepřítele na ${toSecRaw(
-              ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
-            )}s`,
-            zh: `暗影胡萝卜 眩晕 ${toSecRaw(
-              ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
-            )}s`,
-            fr: `Carotte d'ombre Étourdissement ${toSecRaw(
-              ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
-            )}s`,
-            br: `Cenoura Sombria Atordoamento ${toSecRaw(
-              ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN
-            )}s`,
+            cz: `Stínová mrkev omráčí nepřítele na ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
+            zh: `暗影胡萝卜 眩晕 ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
+            fr: `Carotte d'ombre Étourdissement ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
+            br: `Cenoura Sombria Atordoamento ${toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)}s`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.ALVAR:
       return {
@@ -660,26 +514,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Furious Kick +${fixed(
-              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
-              1
-            )}% lifesteal`,
+            en: `Furious Kick +${fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)}% lifesteal`,
             ru: `Яростный удар даёт +${fixed(
               AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
               1
             )}% Кражи здоровья`,
-            cz: `Furious Kick +${fixed(
-              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
-              1
-            )}% životů`,
-            zh: `Furious Kick +${fixed(
-              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
-              1
-            )}% 生命偷取`,
-            fr: `Furious Kick +${fixed(
-              AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
-              1
-            )}% vol de vie`,
+            cz: `Furious Kick +${fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)}% životů`,
+            zh: `Furious Kick +${fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)}% 生命偷取`,
+            fr: `Furious Kick +${fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)}% vol de vie`,
             br: `Furious Kick +${fixed(
               AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100,
               1
@@ -714,72 +556,42 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Furious Kick Stun +${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )}s`,
-            ru: `+${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )} сек. оглушения от Яростного удара`,
-            cz: `Furious Kick omráčení +${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )}s`,
-            zh: `Furious Kick 眩晕 +${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )}s`,
-            fr: `Étourdissement de Furious Kick +${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )}s`,
-            br: `Furious Kick Atordoamento +${toSecRaw(
-              AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-            )}s`,
+            en: `Furious Kick Stun +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
+            ru: `+${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)} сек. оглушения от Яростного удара`,
+            cz: `Furious Kick omráčení +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
+            zh: `Furious Kick 眩晕 +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
+            fr: `Étourdissement de Furious Kick +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
+            br: `Furious Kick Atordoamento +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
           },
         },
         tier2_right: {
           title: {
-            en: `Heavenly Kick Cooldown ${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )}s`,
-            ru: `${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )} сек. перезарядки Небесного удара`,
-            cz: `Heavenly Kick obnovení ${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )}s`,
-            zh: `天堂踢冷却 ${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )}s`,
-            fr: `Recharge de Heavenly Kick ${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )}s`,
-            br: `Recarga do Chute Celestial ${toSecRaw(
-              AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN
-            )}s`,
+            en: `Heavenly Kick Cooldown ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
+            ru: `${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)} сек. перезарядки Небесного удара`,
+            cz: `Heavenly Kick obnovení ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
+            zh: `天堂踢冷却 ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
+            fr: `Recharge de Heavenly Kick ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
+            br: `Recarga do Chute Celestial ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.AREL:
       return {
         tier1_left: {
           title: {
-            en: `Ticking Bomb +${Math.floor(
-              ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
-            )}% Trigger Damage`,
+            en: `Ticking Bomb +${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% Trigger Damage`,
             ru: `+${Math.floor(
               ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
             )}% к урону активированной Часовой бомбы`,
             cz: `Ticking Bomb +${Math.floor(
               ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
             )}% spouštěcí poškození`,
-            zh: `Ticking Bomb +${Math.floor(
-              ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
-            )}% 触发伤害`,
+            zh: `Ticking Bomb +${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% 触发伤害`,
             fr: `Ticking Bomb +${Math.floor(
               ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
             )}% Dégâts de déclenchement`,
-            br: `Ticking Bomb +${Math.floor(
-              ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100
-            )}% Dano de Gatilho`,
+            br: `Ticking Bomb +${Math.floor(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)}% Dano de Gatilho`,
           },
         },
         tier1_right: {
@@ -837,9 +649,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
               `Tumble 在 Arel 的位置创建一个冰冻陷阱。当敌方单位踩到陷阱时，他们将被冻结 ${toSec(
                 ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION
               )}，阻止所有形式的移动。` +
-              `<br/> 陷阱持续 ${toSec(
-                ArelAbilityData.FREEZING_TRAP_DURATION
-              )} 并在小范围内提供视野。`,
+              `<br/> 陷阱持续 ${toSec(ArelAbilityData.FREEZING_TRAP_DURATION)} 并在小范围内提供视野。`,
             fr:
               `Tumble crée un piège de glace à la position d'Arel. Lorsqu'une unité ennemie marche sur le piège, elle est gelée pendant ${toSec(
                 ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION
@@ -856,30 +666,20 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
               )} e fornece visão em um pequeno raio.`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.HAZEL:
       return {
         tier1_left: {
           title: {
-            en: `Triumphant Upheaval +${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )}s`,
+            en: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
             ru: `+${toSecRaw(
               HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
             )} секунд к отбрасыванию Триумфального переворота`,
-            cz: `Triumphant Upheaval +${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )}s`,
-            zh: `Triumphant Upheaval +${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )}s`,
-            fr: `Triumphant Upheaval +${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )}s`,
-            br: `Triumphant Upheaval +${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )}s`,
+            cz: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+            zh: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+            fr: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+            br: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
           },
           description: {
             en: `Increases the duration of Triumphant Upheaval's pushback.`,
@@ -902,24 +702,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Justice's Wrath Stun +${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )}s`,
-            ru: `+${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )} сек. оглушения от Гнева правосудия`,
-            cz: `Justice's Wrath omráčení +${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )}s`,
-            zh: `Justice's Wrath 眩晕 +${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )}s`,
-            fr: `Justice's Wrath Étourdissement +${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )}s`,
-            br: `Justice's Wrath Atordoamento +${toSecRaw(
-              HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-            )}s`,
+            en: `Justice's Wrath Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            ru: `+${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)} сек. оглушения от Гнева правосудия`,
+            cz: `Justice's Wrath omráčení +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            zh: `Justice's Wrath 眩晕 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            fr: `Justice's Wrath Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            br: `Justice's Wrath Atordoamento +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
           },
         },
         tier2_right: {
@@ -940,7 +728,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Triumphant Upheaval causa dano puro, ignorando tanto a Armadura quanto a Resistência Mágica, e dispersa todos os efeitos negativos no gatilho.',
           },
         },
-      };
+      }
 
     case Shared.HEROES.KIRA:
       return {
@@ -964,46 +752,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Rain of Sparks Damage +${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}%`,
-            ru: `+${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}% к урону Дождя искр`,
-            cz: `Rain of Sparks poškození +${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}%`,
-            zh: `Rain of Sparks 伤害 +${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}%`,
-            fr: `Rain of Sparks Dégâts +${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}%`,
-            br: `Rain of Sparks Dano +${Math.floor(
-              KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100
-            )}%`,
+            en: `Rain of Sparks Damage +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
+            ru: `+${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}% к урону Дождя искр`,
+            cz: `Rain of Sparks poškození +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
+            zh: `Rain of Sparks 伤害 +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
+            fr: `Rain of Sparks Dégâts +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
+            br: `Rain of Sparks Dano +${Math.floor(KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS * 100)}%`,
           },
         },
         tier2_left: {
           title: {
-            en: `Lightning Shock Duration +${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )}s`,
-            ru: `+${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )} сек. длительности Удара молнии`,
-            cz: `Lightning Shock Trvání +${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )}s`,
-            zh: `Lightning Shock 持续时间 +${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )}s`,
-            fr: `Lightning Shock Durée +${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )}s`,
-            br: `Lightning Shock Duração +${toSecRaw(
-              KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION
-            )}s`,
+            en: `Lightning Shock Duration +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
+            ru: `+${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)} сек. длительности Удара молнии`,
+            cz: `Lightning Shock Trvání +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
+            zh: `Lightning Shock 持续时间 +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
+            fr: `Lightning Shock Durée +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
+            br: `Lightning Shock Duração +${toSecRaw(KiraAbilityData.TALENT_T2_LEFT_ENH_ATTACK_DURATION)}s`,
           },
         },
         tier2_right: {
@@ -1015,7 +779,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: '+1 Lightning Shock Alvo',
           },
         },
-      };
+      }
 
     case Shared.HEROES.FOXY:
       return {
@@ -1081,49 +845,25 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Grenade radius +${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}%`,
-            ru: `+${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}% к радиусу гранат`,
-            cz: `Poloměr granátu +${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}%`,
-            zh: `手榴弹半径 +${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}%`,
-            fr: `Rayon de la grenade +${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}%`,
-            br: `Raio da granada +${fixed(
-              FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100
-            )}%`,
+            en: `Grenade radius +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            ru: `+${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}% к радиусу гранат`,
+            cz: `Poloměr granátu +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            zh: `手榴弹半径 +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            fr: `Rayon de la grenade +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            br: `Raio da granada +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
           },
         },
         tier2_right: {
           title: {
-            en: `Rapid Fire Damage +${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}%`,
-            ru: `+${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}% к урону Беглого огня`,
-            cz: `Rapid Fire Poškození +${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}%`,
-            zh: `Rapid Fire 伤害 +${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}%`,
-            fr: `Dégâts de Rapid Fire +${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}%`,
-            br: `Dano do Rapid Fire +${fixed(
-              FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100
-            )}%`,
+            en: `Rapid Fire Damage +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+            ru: `+${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}% к урону Беглого огня`,
+            cz: `Rapid Fire Poškození +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+            zh: `Rapid Fire 伤害 +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+            fr: `Dégâts de Rapid Fire +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+            br: `Dano do Rapid Fire +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
           },
         },
-      };
+      }
 
     case Shared.HEROES.MAGDALENE:
       return {
@@ -1169,24 +909,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Swarm of Ghosts slow ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
-            ru: `Волна призраков замедляет ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
-            cz: `Swarm of Ghosts zpomaluje ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
-            zh: `Swarm of Ghosts 减速 ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
-            fr: `Swarm of Ghosts ralentit ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
-            br: `Swarm of Ghosts desacelera ${toSecRaw(
-              MagdaleneAbilityData.TALENT_T2_SLOW_DURATION
-            )}s`,
+            en: `Swarm of Ghosts slow ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            ru: `Волна призраков замедляет ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            cz: `Swarm of Ghosts zpomaluje ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            zh: `Swarm of Ghosts 减速 ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            fr: `Swarm of Ghosts ralentit ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            br: `Swarm of Ghosts desacelera ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
           },
         },
         tier2_right: {
@@ -1207,7 +935,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Scream of Pain aplica ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} pilhas de pacto fantasma`,
           },
         },
-      };
+      }
 
     default:
       return {
@@ -1231,32 +959,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             en: 'Unknown',
           },
         },
-      };
+      }
   }
-};
+}
 
 export const getDamage = (
   damage: number,
   type: Shared.DamageTypes = Shared.DamageTypes.NORMAL,
   baseDamage = 0
 ): string => {
-  damage = Math.floor(damage);
-  baseDamage = fixed(baseDamage, 1);
+  damage = Math.floor(damage)
+  baseDamage = fixed(baseDamage, 1)
 
   /** dont show % in game */
   return `<span class=${
-    type === Shared.DamageTypes.NORMAL
-      ? 'normal-d'
-      : type === Shared.DamageTypes.PURE
-      ? 'pure-d'
-      : 'ability-d'
-  }>${
-    baseDamage > 0
-      ? baseDamage + (damage > 0 ? '(+' + damage + ')' : '')
-      : damage > 0
-      ? damage
-      : ''
-  }</span>`;
-};
+    type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'
+  }>${baseDamage > 0 ? baseDamage + (damage > 0 ? '(+' + damage + ')' : '') : damage > 0 ? damage : ''}</span>`
+}
 
-export default getHeroTalents;
+export default getHeroTalents

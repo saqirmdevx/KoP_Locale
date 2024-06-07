@@ -1,0 +1,12 @@
+**/node_modules
+**/build
+/client/public/javascript/*
+gameServer/log/*
+!gameServer/log/dashboard
+gameServer/log/dashboard/*
+debug.log
+.DS_Store
+.env
+.eslintcache
+ssl/*
+yarn-error.log

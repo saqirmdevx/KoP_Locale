@@ -1,7 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { LOCALE } from 'lang/locales';
+import { LOCALE } from 'lang/locales'
 
 export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   [LOCALE.LOGIN_AS_GUEST]: {
@@ -183,4 +183,4 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: " - Récompense : expérience et pièces\n - 2 joueurs contre 2 IA difficiles\n - 75% d'expérience et de pièces en moins",
     br: ' - Recompensa: experiência e moedas\n - 2 Jogadores vs 2 IA Difícil\n - 75% menos experiência e moedas',
   },
-};
+}

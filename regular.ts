@@ -1,8 +1,8 @@
 /* eslint-disable no-irregular-whitespace */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { LOCALE } from '../locales';
-import { home_page } from './home_page';
+import { LOCALE } from '../locales'
+import { home_page } from './home_page'
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   ...home_page,
@@ -2723,5 +2723,5 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "J'ai {gold} pièces d'or.",
     br: 'Eu tenho {gold} ouro.',
   },
-};
-export default locale_data;
+}
+export default locale_data
