@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { fixed, toSec } from './misc'
+import { fixed, toSec } from './misc';
 // @ts-ignore
 import {
   Shared,
@@ -19,34 +19,46 @@ import {
   getAbilityData,
   SpellList,
   // @ts-ignore
-} from 'shared'
+} from 'shared';
 // @ts-ignore
-import type { IAbilityTooltipsDataFinal } from '../abilityLangData'
+import type { IAbilityTooltipsDataFinal } from '../abilityLangData';
 // @ts-ignore
-import { getDamage } from '../abilityLangData'
+import { getDamage } from '../abilityLangData';
 // @ts-ignore
-import { LANG } from 'lang/lang'
+import { LANG } from 'lang/lang';
 
-type HasTalentFunction = { hasTalent: (flag: Shared.TALENT, tier: number) => boolean }
-type GetSpellDescriptionInput = IAbilityTooltipsDataFinal & HasTalentFunction
+type HasTalentFunction = {
+  hasTalent: (flag: Shared.TALENT, tier: number) => boolean;
+};
+type GetSpellDescriptionInput = IAbilityTooltipsDataFinal & HasTalentFunction;
 
 const _getSpellDescriptionLang = (
   id: SpellList,
-  { damage, abilityPower, health, level, talents, hasTalent }: GetSpellDescriptionInput,
+  {
+    damage,
+    abilityPower,
+    health,
+    level,
+    talents,
+    hasTalent,
+  }: GetSpellDescriptionInput,
   type: Shared.DamageTypes
 ): { [key in string]: string } => {
-  const abilityData = getAbilityData(id, talents)
+  const abilityData = getAbilityData(id, talents);
 
   switch (id) {
     /** Kumihu  */
     case SpellList.KUMIHU_AUTOATTACK: {
-      const basic_damage = getDamage(KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage)
+      const basic_damage = getDamage(
+        KumihuAbilityData.AUTOATTACK_MOD_DAMAGE * damage
+      );
       const enh_damage = getDamage(
         KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
-      )
-      const duration = KumihuAbilityData.ENH_CHARM_DURATION
+        KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE +
+          KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
+      );
+      const duration = KumihuAbilityData.ENH_CHARM_DURATION;
 
       return {
         en: `Kumihu fires 3 projectiles. Each projectile deals ${basic_damage} \n<br/>Passive: After using Arcane Dash, Kumihu's next Basic Attack deals a bonus ${enh_damage} and applies Charm on target for ${toSec(
@@ -64,15 +76,19 @@ const _getSpellDescriptionLang = (
         zh: `庫咪戶發射三發子彈，每發給予 ${basic_damage}點一般傷害 \n被動技：使用衝刺強化庫咪戶的下一個基礎攻擊，給予 ${enh_damage}點魔法傷害並給予 ${toSec(
           duration
         )}魅惑狀態`, // Need update
-      }
+        fr: `Kumihu tire 3 projectiles. Chaque projectile inflige ${basic_damage} \nPassif: Après avoir utilisé la Ruée Arcanique, l'attaque de base suivante de Kumihu inflige un bonus de ${enh_damage} et applique Charme à la cible pendant ${toSec(
+          duration
+        )}.`,
+      };
     }
 
     case SpellList.KUMIHU_MAGICAL_ORB: {
       const base_damage = getDamage(
         KumihuAbilityData.MAGICAL_ORB_DMG_MODIFIER * abilityPower,
         abilityData.damageType,
-        KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE + KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        KumihuAbilityData.MAGICAL_ORB_BASE_DAMAGE +
+          KumihuAbilityData.MAGICAL_ORB_DAMAGE_PER_LEVEL * (level - 1)
+      );
       return {
         en: `Kumihu throws a spirit orb, dealing ${base_damage}. The orb returns to her after reaching its max range, dealing another ${base_damage}. If Magical Orb hit the target twice it will deal ${fixed(
           KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
@@ -94,12 +110,18 @@ const _getSpellDescriptionLang = (
           KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
           1
         )}%額外傷害。`,
-      }
+        fr: `Kumihu lance une orbe spirituelle, infligeant ${base_damage}. L'orbe revient à elle après avoir atteint sa portée maximale, infligeant un autre ${base_damage}. Si l'Orbe spirituelle touche la cible deux fois, elle infligera ${fixed(
+          KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_PERC * 100,
+          1
+        )}% de dégâts bonus.`,
+      };
     }
 
     case SpellList.KUMIHU_DASH:
       return {
-        en: `Kumihu dashes forward. This will activate her Passive for ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
+        en: `Kumihu dashes forward. This will activate her Passive for ${toSec(
+          KumihuAbilityData.DASH_AURA_DURATION
+        )}.`,
         ru: `Кумиху совершает рывок на короткую дистанцию. Это активирует её пассивную способность на ${toSec(
           KumihuAbilityData.DASH_AURA_DURATION
         )}.`,
@@ -109,13 +131,22 @@ const _getSpellDescriptionLang = (
         br: `Kumihu da um avanço em uma curta distância. Isso irá ativar sua passiva por ${toSec(
           KumihuAbilityData.DASH_AURA_DURATION
         )}.`,
-        zh: `庫咪戶短距離衝刺，這會在 ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}內激發她的被動技。`,
-      }
+        zh: `庫咪戶短距離衝刺，這會在 ${toSec(
+          KumihuAbilityData.DASH_AURA_DURATION
+        )}內激發她的被動技。`,
+        fr: `Kumihu se précipite en avant. Cela activera sa compétence passive pendant ${toSec(
+          KumihuAbilityData.DASH_AURA_DURATION
+        )}.`,
+      };
 
     /** Sparrow */
     case SpellList.SPARROW_AUTOATTACK: {
-      const base_damage = getDamage(SparrowAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const enh_damage = getDamage(SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER * damage)
+      const base_damage = getDamage(
+        SparrowAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
+      const enh_damage = getDamage(
+        SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER * damage
+      );
 
       return {
         en: `Sparrow swings her sword, dealing ${base_damage}. <br />Passive: Using an ability charges Sparrow's sword. Her next basic is replaced with a shockwave attack, knocking up enemies for ${toSec(
@@ -133,41 +164,60 @@ const _getSpellDescriptionLang = (
         zh: `史佩羅猛力揮動她的劍，給予 ${base_damage}點一般傷害。 \n被動技：使用一個能力蓄力史佩羅的劍，她的下一個基本攻擊擊昇敵方暈眩 ${toSec(
           SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION
         )}並給予 ${enh_damage}點一般傷害。`,
-      }
+        fr: `Sparrow brandit son épée, infligeant ${base_damage}. <br />Passif: L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une attaque d'onde de choc, projetant les ennemis en l'air pendant ${toSec(
+          SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION
+        )} et infligeant ${enh_damage}.`,
+      };
     }
 
     case SpellList.SPARROW_DASH:
       return {
         en: `Sparrow quickly dashes forward, harnessing the wind, dealing ${getDamage(
           SparrowAbilityData.DASH_DAMAGE_MOD * damage
-        )} and stunning enemies she hits for ${toSec(SparrowAbilityData.DASH_STUN_DURATION)}.`,
+        )} and stunning enemies she hits for ${toSec(
+          SparrowAbilityData.DASH_STUN_DURATION
+        )}.`,
         ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${toSec(
           SparrowAbilityData.DASH_STUN_DURATION
-        )} и нанося им ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}.`,
+        )} и нанося им ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )}.`,
         cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${toSec(
           SparrowAbilityData.DASH_STUN_DURATION
-        )} a způsobí ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} normalního poškozeni.`,
+        )} a způsobí ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )} normalního poškozeni.`,
         br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${toSec(
           SparrowAbilityData.DASH_STUN_DURATION
-        )} e dando ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)} de dano.`,
+        )} e dando ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )} de dano.`,
         zh: `史佩羅迅速衝刺猛力向前揮劍，暈眩 ${toSec(
           SparrowAbilityData.DASH_STUN_DURATION
-        )}擊中的敵方並給予 ${getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)}點一般傷害。`,
-      }
+        )}擊中的敵方並給予 ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )}點一般傷害。`,
+        fr: `Sparrow se précipite rapidement en avant, utilisant le vent pour infliger ${getDamage(
+          SparrowAbilityData.DASH_DAMAGE_MOD * damage
+        )} et étourdir les ennemis touchés pendant ${toSec(
+          SparrowAbilityData.DASH_STUN_DURATION
+        )}.`,
+      };
 
     case SpellList.SPARROW_GROUND_SLAM: {
       const damage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-        ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
-        : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
+        ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE +
+          SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
+        : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE;
 
-      const base_damage = getDamage(0, type, damage)
+      const base_damage = getDamage(0, type, damage);
       const percDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? Math.floor(
             (SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG +
               SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE) *
               100
           )
-        : Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100)
+        : Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100);
 
       return {
         en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health).`,
@@ -175,26 +225,31 @@ const _getSpellDescriptionLang = (
         cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
         br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
         zh: `史佩羅釋放劍的能量產生新月形刃波，給予被擊中的敵方 ${base_damage}點魔法傷害 (加上 ${percDamage}%敵方損失血量)。`,
-      }
+        fr: `Sparrow libère le pouvoir de son épée, lançant une vague corrompue, infligeant ${base_damage} (plus un bonus de ${percDamage}% des points de vie manquants de la cible).`,
+      };
     }
 
     /** I'Ceat */
     case SpellList.ICEAT_AUTOATTACK: {
-      const base_damage = getDamage(ICeatAbilityData.AUTOATTACK_MOD_DAMAGE * damage)
+      const base_damage = getDamage(
+        ICeatAbilityData.AUTOATTACK_MOD_DAMAGE * damage
+      );
       return {
         en: `I'ceat hurls an arcing snowball, dealing ${base_damage} in a small area.`,
         ru: `Ай'сит швырает снежок, нанося ${base_damage} по площади.`,
         cz: `I'ceat mrští sněhovou kouli na krátkou vzdálenost a způsobí ${base_damage} poškození. `,
         br: `Iceat arremessa uma bola de neve a curta distância causando ${base_damage} de dano.`,
         zh: `艾希特短距離投擲雪球，給予小範圍 ${base_damage}點全體一般傷害`,
-      }
+        fr: `I'ceat lance une boule de neige en arc, infligeant ${base_damage} dans une petite zone.`,
+      };
     }
     case SpellList.ICEAT_ICICLE_BOLT: {
       const base_damage = getDamage(
         ICeatAbilityData.ICICLE_BOLT_DAMAGE_MOD * abilityPower,
         type,
-        ICeatAbilityData.ICICLE_BOLT_BASE_DAMAGE + ICeatAbilityData.ICICLE_BOLT_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        ICeatAbilityData.ICICLE_BOLT_BASE_DAMAGE +
+          ICeatAbilityData.ICICLE_BOLT_DAMAGE_PER_LEVEL * (level - 1)
+      );
 
       return {
         en: `I'ceat launches three frozen shards, each dealing ${base_damage} and reducing Movement Speed by ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Hitting all three of them freezes an enemy for ${toSec(
@@ -212,22 +267,30 @@ const _getSpellDescriptionLang = (
         zh: `艾希特發射三枚寒冰碎片，每發降低 ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}點敵方移動速度並給予 ${base_damage}點魔法傷害。<br />對同一目標擊中所有碎冰時，牽制敵方 ${toSec(
           ICeatAbilityData.ICICLE_ROOT_DURATION
         )}。`,
-      }
+        fr: `I'ceat lance trois éclats de glace, chacun infligeant ${base_damage} et réduisant la vitesse de déplacement de ${-ICeatAbilityData.ICICLE_SLOW_PER_STACK}. <br />Toucher les trois gèle un ennemi pendant ${toSec(
+          ICeatAbilityData.ICICLE_ROOT_DURATION
+        )}, empêchant tout mouvement.`,
+      };
     }
 
     case SpellList.ICEAT_COLD_EMBRACE: {
       const base_damage = getDamage(
         ICeatAbilityData.COLD_EMBRACE_DAMAGE_MOD * abilityPower,
         type,
-        ICeatAbilityData.COLD_EMBRACE_BASE_DAMAGE + ICeatAbilityData.COLD_EMBRACE_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        ICeatAbilityData.COLD_EMBRACE_BASE_DAMAGE +
+          ICeatAbilityData.COLD_EMBRACE_DAMAGE_PER_LEVEL * (level - 1)
+      );
       const duration = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
-        ? toSec(ICeatAbilityData.COLD_EMBRACE_DURATION + ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)
-        : toSec(ICeatAbilityData.COLD_EMBRACE_DURATION)
+        ? toSec(
+            ICeatAbilityData.COLD_EMBRACE_DURATION +
+              ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION
+          )
+        : toSec(ICeatAbilityData.COLD_EMBRACE_DURATION);
 
       const bonusSpeed = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
-        ? ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED + ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS
-        : ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED
+        ? ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED +
+          ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS
+        : ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED;
 
       return {
         en:
@@ -247,7 +310,11 @@ const _getSpellDescriptionLang = (
         zh:
           `艾希特在地上滑行，增加 ${duration}他的移動速度 ${bonusSpeed}點並留下冰步道，` +
           `給予所有位於冰步道上方的敵方每秒 ${base_damage}點魔法傷害並降低敵方移動速度。`,
-      }
+        fr:
+          `<b>Première utilisation: </b>I'ceat glisse sur le sol, augmentant sa vitesse de déplacement de ${bonusSpeed} pendant ${duration} et laissant derrière lui une traînée de glace. ` +
+          `Les ennemis se tenant sur la traînée de glace reçoivent ${base_damage} par seconde et voient leur vitesse de déplacement réduite pour une courte durée.<br/>` +
+          `<b>Deuxième utilisation: </b>I'ceat arrête de glisser, retrouvant sa vitesse de déplacement normale et arrêtant de laisser derrière lui une traînée de glace.`,
+      };
     }
 
     /** Belle */
@@ -268,18 +335,25 @@ const _getSpellDescriptionLang = (
         zh: `蓓蕾從她的法棍發射一顆爆炸荊棘，給予小範圍 ${getDamage(
           BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage
         )}點全體一般傷害。`,
-      }
+        fr: `Belle tire une épine explosive de sa baguette, infligeant ${getDamage(
+          BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage
+        )} dans une petite zone.`,
+      };
 
     case SpellList.BELLE_PRICKLY_VINE: {
       const damage = getDamage(
         BelleAbilityData.PRICKLY_VINE_DAMAGE_MOD * abilityPower,
         type,
-        BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE + BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        BelleAbilityData.PRICKLY_VINE_BASE_DAMAGE +
+          BelleAbilityData.PRICKLY_VINE_DAMAGE_PER_LEVEL * (level - 1)
+      );
 
       const stunDuration = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-        ? toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION + BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
-        : toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION)
+        ? toSec(
+            BelleAbilityData.PRICKLY_VINE_STUN_DURATION +
+              BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS
+          )
+        : toSec(BelleAbilityData.PRICKLY_VINE_STUN_DURATION);
 
       return {
         en:
@@ -298,15 +372,19 @@ const _getSpellDescriptionLang = (
         zh:
           `蓓蕾向前投擲貫穿藤蔓，給予被擊中敵方 ${damage}點魔法傷害並附著於一個敵方英雄。 \n當敵方離蓓蕾夠遠時藤蔓可以被破壞。` +
           `\n經過短時間後，藤蔓依然附著時，藤蔓消失同時暈眩 ${stunDuration}敵方英雄並給予 ${damage}點魔法傷害。`,
-      }
+        fr:
+          `Belle lance une vigne perçante, infligeant ${damage} aux ennemis touchés. Si la vigne entre en contact avec un héros ennemi, elle se fixe à ce héros. Les vignes attachées peuvent être brisées si le héros ennemi s'éloigne suffisamment de Belle.` +
+          `\nAprès un court laps de temps, si la vigne est toujours attachée, elle s'entortille autour de l'ennemi, infligeant ${damage} et étourdissant pendant ${stunDuration}.`,
+      };
     }
 
     case SpellList.BELLE_FLORAL_AMBUSH: {
       const base_damage = getDamage(
         BelleAbilityData.FLORAL_AMBUSH_DAMAGE_MOD * abilityPower,
         type,
-        BelleAbilityData.FLORAL_AMBUSH_BASE_DAMAGE + BelleAbilityData.FLORAL_AMBUSH_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        BelleAbilityData.FLORAL_AMBUSH_BASE_DAMAGE +
+          BelleAbilityData.FLORAL_AMBUSH_DAMAGE_PER_LEVEL * (level - 1)
+      );
       return {
         en:
           `Belle jumps in the air and drops three seed bombs in front of her. The bombs attach to enemy heroes if they get close, dealing ${base_damage} over ${toSec(
@@ -335,27 +413,44 @@ const _getSpellDescriptionLang = (
           `\n停留地面 ${toSec(
             BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION
           )}後，種子爆炸並給予四周敵方 ${base_damage}點全體魔法傷害。當敵方英雄帶著種子又踩到地面種子時會立即觸發爆炸。`,
-      }
+        fr:
+          `Belle saute en l'air et laisse tomber trois bombes de graines devant elle. Les bombes se fixent aux héros ennemis s'ils s'en approchent, infligeant ${base_damage} sur une durée de 2 secondes et explosent après cette durée, infligeant ${base_damage} dans une zone` +
+          `<br /><br />Après avoir été au sol pendant ${toSec(
+            BelleAbilityData.FLORAL_AMBUSH_DOT_DURATION
+          )}, les graines explosent, infligeant ${base_damage} aux ennemis proches. Les ennemis qui marchent sur les bombes tout en en portant une déclenchent immédiatement l'explosion.`,
+      };
     }
 
     /** Thomas */
     case SpellList.THOMAS_AUTOATTACK:
       return {
-        en: `Thomas slashes with his katana, dealing ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)}.`,
-        ru: `Томас взмахивает своей морковью, нанося ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)}.`,
-        cz: `Thomas seká svou mrkví a udělí ${getDamage(ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage)} poškození.`,
+        en: `Thomas slashes with his katana, dealing ${getDamage(
+          ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+        )}.`,
+        ru: `Томас взмахивает своей морковью, нанося ${getDamage(
+          ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+        )}.`,
+        cz: `Thomas seká svou mrkví a udělí ${getDamage(
+          ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+        )} poškození.`,
         br: `Thomas faz um corte com espada e causa ${getDamage(
           ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
         )} de dano.`,
-        zh: `湯瑪士拿他的蘿蔔劈砍，給予 ${getDamage(BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage)}點一般傷害。`,
-      }
+        zh: `湯瑪士拿他的蘿蔔劈砍，給予 ${getDamage(
+          BelleAbilityData.AUTOATTACK_MOD_DAMAGE * damage
+        )}點一般傷害。`,
+        fr: `Thomas frappe avec son katana, infligeant ${getDamage(
+          ThomasAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+        )}.`,
+      };
 
     case SpellList.THOMAS_SHURIKEN_TOSS: {
       const base_damage = getDamage(
         ThomasAbilityData.SHURIKEN_TOSS_DMG_MODIFIER * damage,
         type,
-        ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE + ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        ThomasAbilityData.SHURIKEN_TOSS_BASE_DAMAGE +
+          ThomasAbilityData.SHURIKEN_TOSS_DAMAGE_PER_LEVEL * (level - 1)
+      );
 
       return {
         en: `Thomas throws three shurikens, each shuriken dealing ${base_damage}. They return to him after a short time, dealing another ${base_damage}.`,
@@ -363,14 +458,18 @@ const _getSpellDescriptionLang = (
         cz: `Thomas hodí tři mrkvovité shurikeny, které způsobí ${base_damage} poškození všem nepřátelům na cestě. Vrátí se k němu po krátké době a udělí ${base_damage} poškození všem nepřátelům, kteří mu stojí v cestě.`,
         br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
         zh: `湯瑪士丟出三個蘿蔔樣的手裏劍，對所有途徑上敵方造成 ${base_damage}點魔法傷害。手裏劍短時間後收回他手上，對所有軌跡上敵方造成 ${base_damage}點魔法傷害。`,
-      }
+        fr: `Thomas lance trois shurikens, chacun infligeant ${base_damage}. Ils reviennent à lui après un court laps de temps, infligeant à nouveau ${base_damage}.`,
+      };
     }
 
     case SpellList.THOMAS_SHADOW_CARROT: {
       const bonusDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE
-        : 0
-      const base_damage = getDamage(bonusDamage + damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD, type)
+        : 0;
+      const base_damage = getDamage(
+        bonusDamage + damage * ThomasAbilityData.SHADOW_CARROT_DAMAGE_MOD,
+        type
+      );
 
       return {
         en:
@@ -408,17 +507,30 @@ const _getSpellDescriptionLang = (
           `<b>第二次施展：</b>瞬移到蘿蔔所在地。如果蘿蔔附著於敵方英雄，湯瑪士減緩該敵方英雄移動速度 ${toSec(
             ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION
           )}並對目標對象造成 ${base_damage}點一般傷害。`,
-      }
+        fr:
+          `<b>Première utilisation: </b>Thomas lance une carotte qui s'attache aux ennemis. Il peut se téléporter vers la carotte après ${toSec(
+            ThomasAbilityData.SHADOW_CARROT_DURATION
+          )}. \n<br />` +
+          `<b>Deuxième utilisation: </b>Se téléporte à la carotte. Si elle est attachée à un héros ennemi, réduit la vitesse de déplacement de ce héros pendant ${toSec(
+            ThomasAbilityData.SHADOW_CARROT_SLOW_DURATION
+          )} et inflige ${base_damage}.`,
+      };
     }
     /** Veil */
     case SpellList.VEIL_AUTOATTACK: {
-      const base_damage = getDamage(VeilAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1
+      const base_damage = getDamage(
+        VeilAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
+      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
+        ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE
+        : 1;
       const enhanced_dmg = getDamage(
         VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier,
         Shared.DamageTypes.MAGICAL,
-        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier
-      )
+        (VeilAbilityData.ENHANCED_DAMAGE_BASE +
+          VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) *
+          modifier
+      );
 
       return {
         en: `Veil slashes with her weapons, dealing ${base_damage}. \n<br/>Enhanced: Veil uses her astral spirit to deal a bonus ${enhanced_dmg}, removing her enhanced state.`,
@@ -428,15 +540,17 @@ const _getSpellDescriptionLang = (
 
         br: `Veil corta com suas espadas demoníacas causando ${base_damage} de dano.\n<b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enhanced_dmg} de dano.\n(Consume o estado Maldição dos caídos.)`,
         zh: `維爾劈砍她的武器，給予 ${base_damage}點一般傷害。<br />強化後：維爾利用她的星光魂魄造成額外的 ${enhanced_dmg}點魔法傷害 (消耗強化狀態)。`,
-      }
+        fr: `Veil frappe avec ses armes, infligeant ${base_damage}. \n<br/>Amélioré: Veil utilise son esprit astral pour infliger un bonus de ${enhanced_dmg}, supprimant son état amélioré.`,
+      };
     }
 
     case SpellList.VEIL_ASTRAL_BLADES: {
       const base_damage = getDamage(
         VeilAbilityData.ASTRAL_BLADES_DMG_MODIFIER * abilityPower,
         type,
-        VeilAbilityData.ASTRAL_BLADES_BASE_DAMAGE + VeilAbilityData.ASTRAL_BLADES_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        VeilAbilityData.ASTRAL_BLADES_BASE_DAMAGE +
+          VeilAbilityData.ASTRAL_BLADES_DAMAGE_PER_LEVEL * (level - 1)
+      );
 
       return {
         en: `Veil jumps and throws her astral blades downward at a 45° angle, dealing ${base_damage}. If the blades hit an enemy hero, Veil enters her enhanced state.`,
@@ -444,18 +558,25 @@ const _getSpellDescriptionLang = (
         cz: `Veil skočí a vrhne své astrální čepele dolů pod úhlem 45°, což způsobí ${base_damage} poškození. Pokud schopnost zasáhne nepřátelského hrdinu, získá Posílení.`,
         br: `Veil salta e atira suas lâminas astrais para baixo em um ângulo de 45 ° causando ${base_damage} de dano.\nSe a habilidade atingir um personagem inimigo, ela ativa a [Maldição dos caídos].`,
         zh: `維爾跳躍並向斜下前方45°角丟出星光刀刃，造成 ${base_damage}點魔法傷害。如果技能擊中敵方英雄，將會強化維爾。`,
-      }
+        fr: `Veil saute et lance ses lames astrales vers le bas à un angle de 45°, infligeant ${base_damage}. Si les lames touchent un héros ennemi, Veil entre dans son état amélioré.`,
+      };
     }
 
     case SpellList.VEIL_ASTRAL_STEP: {
-      const base_damage = getDamage(VeilAbilityData.ASTRAL_STEP_DAMAGE_MOD * damage)
+      const base_damage = getDamage(
+        VeilAbilityData.ASTRAL_STEP_DAMAGE_MOD * damage
+      );
 
-      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1
+      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
+        ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE
+        : 1;
       const enh_dmg = getDamage(
         VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier,
         abilityData.damageType,
-        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier
-      )
+        (VeilAbilityData.ENHANCED_DAMAGE_BASE +
+          VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) *
+          modifier
+      );
 
       return {
         en:
@@ -475,13 +596,20 @@ const _getSpellDescriptionLang = (
         zh:
           `維爾使用星光飛躍向前方高速衝刺，對敵方英雄造成 ${base_damage}點一般傷害。\n<br />` +
           `強化後：維爾飛向星界，造成敵方英雄額外 ${enh_dmg}點魔法傷害並降低移動速度 (消耗強化狀態)。<b>成功擊中將重置星光飛躍冷卻時間！</b>`,
-      }
+        fr:
+          `Veil fonce vers l'avant à grande vitesse, infligeant ${base_damage} aux héros ennemis.\n<br />` +
+          `Amélioré: Veil entre dans le royaume astral, infligeant un bonus de ${enh_dmg} et ralentissant le héros ennemi, supprimant son état amélioré. <b>Toucher un ennemi réinitialise le temps de recharge de cette capacité. </b>`,
+      };
     }
 
     /** Flin  */
     case SpellList.FLIN_AUTOATTACK: {
-      const basic_damage = getDamage(FlinAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const enh_damage = getDamage(FlinAbilityData.MARKSMANSHIP_BONUS_DAMAGE_MOD * damage)
+      const basic_damage = getDamage(
+        FlinAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
+      const enh_damage = getDamage(
+        FlinAbilityData.MARKSMANSHIP_BONUS_DAMAGE_MOD * damage
+      );
 
       return {
         en: `Flin fires an arrow, dealing ${basic_damage}. \nIf Marksmanship is active, Flin's arrow deals ${enh_damage} and pierces through enemies.`,
@@ -489,19 +617,22 @@ const _getSpellDescriptionLang = (
         ru: `Флин выпускает стрелу, наносящую ${basic_damage}. \nЕсли активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} и пронзает все вражеские цели на своём пути.`,
         cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození \nAk je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození`,
         zh: `弗林發射一支弓箭並給予 ${basic_damage}點一般傷害。\n如果精通箭術發動中，弗林給予 ${enh_damage}點一般傷害並貫穿所有敵方單位。`,
-      }
+        fr: `Flin tire une flèche, infligeant ${basic_damage}. \nSi la Maîtrise du tir est active, la flèche de Flin inflige ${enh_damage} et traverse les ennemis.`,
+      };
     }
 
     case SpellList.FLIN_PRECISE_SHOT: {
-      let mod = 1
+      let mod = 1;
       if (hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)) {
-        mod += FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE
+        mod += FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE;
       }
       const base_damage = getDamage(
         FlinAbilityData.PRECISE_SHOT_DAMAGE_MOD * damage * mod,
         abilityData.damageType,
-        (FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)) * mod
-      )
+        (FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE +
+          FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)) *
+          mod
+      );
 
       return {
         en: `Flin fires a powerful arrow from his bow, dealing ${base_damage} and knocking back enemies hit. \nIf Marksmanship is active, Precise Shot pierces through enemies.`,
@@ -509,17 +640,22 @@ const _getSpellDescriptionLang = (
         ru: `Флин делает точный выстрел в направлении своего движения, который наносит ${base_damage} и отбрасывает первую вражескую цель на своём пути. \nЕсли активна Меткая стрельба, эта способность будет пронзать всех врагов на своём пути.`,
         cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} a odkopne nepřítele dál od tebe. \nAk střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
         zh: `弗林向前方發射精準射擊，如果弓箭擊中目標對象，弓箭將給予 ${base_damage}點魔法傷害並將敵方單位從你的方向打走。\n如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
-      }
+        fr: `Flin tire une flèche puissante de son arc, infligeant ${base_damage} et repoussant les ennemis touchés. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
+      };
     }
 
     case SpellList.FLIN_MARKSMANSHIP:
       return {
-        en: `Flin increases his focus for ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)}. While focused, his next ${
+        en: `Flin increases his focus for ${toSec(
+          FlinAbilityData.MARKSMANSHIP_DURATION
+        )}. While focused, his next ${
           FlinAbilityData.MARKSMANSHIP_STACKS
         } arrows will deal additional damage and pierce enemy units. Every unit hit by Flin's piercing arrows reduces the arrow's damage by ${Math.floor(
           FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
         )}%.`,
-        br: `Flin aumenta seu foco por ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)} e seus próximos ${
+        br: `Flin aumenta seu foco por ${toSec(
+          FlinAbilityData.MARKSMANSHIP_DURATION
+        )} e seus próximos ${
           FlinAbilityData.MARKSMANSHIP_STACKS
         } ataques normais causarão dano adicional e perfurarão unidades inimigas.\n Cada unidade perfurada atingida reduzirá o dano da flecha em ${Math.floor(
           FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
@@ -538,73 +674,100 @@ const _getSpellDescriptionLang = (
         } zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky. Pokažde ak šip prejde přes nepřátelsku jednotku, poškození se sniží o ${Math.floor(
           FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
         )}%`,
-        zh: `弗林增加 ${toSec(FlinAbilityData.MARKSMANSHIP_DURATION)}他的集中力，並在接下來 ${
+        zh: `弗林增加 ${toSec(
+          FlinAbilityData.MARKSMANSHIP_DURATION
+        )}他的集中力，並在接下來 ${
           FlinAbilityData.MARKSMANSHIP_STACKS
         }發基礎射擊造成額外傷害並貫穿敵方單位。每次貫穿擊中單位後將降低弓箭傷害${Math.floor(
           FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
         )}%。`,
-      }
+        fr: `Flin augmente sa concentration pendant ${toSec(
+          FlinAbilityData.MARKSMANSHIP_DURATION
+        )}. Pendant cette période, ses prochaines ${
+          FlinAbilityData.MARKSMANSHIP_STACKS
+        } flèches infligeront des dégâts supplémentaires et traverseront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${Math.floor(
+          FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100
+        )}%.`,
+      };
 
     /** Kira  */
     case SpellList.KIRA_AUTOATTACK: {
-      const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const basic_damage = getDamage(
+        KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
       const enh_damage = getDamage(
         KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        KiraAbilityData.ENHATTACK_BASE_DAMAGE +
+          KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
+      );
       const enh_damage_heal = getDamage(
         KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.6,
         Shared.DamageTypes.HEAL,
-        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) * 0.6
-      )
+        (KiraAbilityData.ENHATTACK_BASE_DAMAGE +
+          KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) *
+          0.6
+      );
 
       return {
         en: `Kira fires a spark, dealing ${basic_damage}. <br />
                 \n<b>Enhanced: (Lightning Shock)</b> In addition, Kira casts a lightning bolt at the nearest hero. If Lightning Shock hits an enemy, it deals ${enh_damage}, decreases their Attack Speed by ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, and decreases Movement Speed by ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } for a short duration. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, and increases Movement Speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for a short duration.`,
+          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+        }%, and decreases Movement Speed by ${
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } for a short duration. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
+          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+        }%, and increases Movement Speed by ${
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } for a short duration.`,
         br: `Kira dispara um relâmpago que da ${basic_damage} de dano normal. <br />
                 \n<b>[Passiva] (Livro demoníaco):</b> Kira lança um relâmpago no personagem mais próximo, diminui ou aumenta a velocidade de ataque do herói em ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }% e velocidade de movimento em ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
         ru: `Кира стреляет молнией, которая наносит ${basic_damage}. \n
                 \n<b>[Усиленная]: (Удар молнии)</b> Кира призывает поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }% и скорость передвижения на ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                }, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        }, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
         cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. \n
                 \n<b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 } % a rychlost pohybu o ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
         zh: `奇菈發射一束閃電飛箭，造成 ${basic_damage}點一般傷害。<br />
                 \n<b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄施展一束衝擊電流，短時間內降低敵方或增加友方英雄 ${
                   KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
                 }%攻擊速度與移動速度值 ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
-      }
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
+        fr: `Kira tire une étincelle, infligeant ${basic_damage}. <br />
+                \n<b>Amélioré: (Choc électrique)</b> De plus, Kira lance un éclair sur le héros le plus proche. Si le Choc électrique touche un ennemi, il inflige ${enh_damage}, diminue leur Vitesse d'attaque de ${
+          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+        }%, et diminue la Vitesse de déplacement de ${
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } pendant une courte durée. Si le Choc électrique touche un allié, il restaure ${enh_damage_heal} de santé, augmente leur Vitesse d'attaque de ${
+          KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+        }%, et augmente la Vitesse de déplacement de ${
+          KiraAbilityData.ENHATTACK_MOVE_SPEED
+        } pendant une courte durée.`,
+      };
     }
 
     case SpellList.KIRA_RAIN_OF_SPARKS: {
-      let damageMod = 1
+      let damageMod = 1;
       if (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)) {
-        damageMod = 1 + KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS
+        damageMod = 1 + KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS;
       }
       const damage = getDamage(
         KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower * damageMod,
         Shared.DamageTypes.MAGICAL,
-        KiraAbilityData.VOID_RAIN_BASE_DAMAGE + KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1) * damageMod
-      )
+        KiraAbilityData.VOID_RAIN_BASE_DAMAGE +
+          KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1) * damageMod
+      );
 
       return {
         en: `Kira summons 4 electric missiles downwards at a 45° angle. Each electric missile pierces enemies and deals ${damage}.
@@ -617,51 +780,64 @@ const _getSpellDescriptionLang = (
                 \n<b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`,
         zh: `奇菈召喚四束虛空飛彈從上方如雨淋下，每束飛彈給予 ${damage}點魔法傷害並貫穿敵方。<br />
                 \n<b>[強化後]：(滔天深淵) 奇菈召喚總共八束虛空飛彈。`,
-      }
+        fr: `Kira invoque 4 missiles électriques qui tombent du ciel, chacun infligeant ${damage} et traversant les ennemis.
+                \n<br/><b>Amélioré: (Éclair torrentiel)</b> Kira invoque un total de 8 missiles électriques.`,
+      };
     }
 
     case SpellList.KIRA_VOID_PHANTASM: {
       const damage = getDamage(
         KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower,
         abilityData.damageType,
-        KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE +
+          KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)
+      );
 
       return {
         en: `Kira dashes forward, leaving behind a distorted afterimage of herself. After ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}, she returns to the position of her afterimage.
                 \n<br/><b>[Enhanced]: (Dynamic Afterimage)</b> Instead of returing to the afterimage's position, it returns to Kira's position. The afterimage phases through enemies, dealing ${damage} and silencing for ${toSec(
-                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-                )}.`,
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}.`,
         br: `Kira cria uma imagem distorcida de si mesma enganando seus inimigos, para a qual ela retorna depois de ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}.
                 \n<b>[Passiva] (Distorcendo o Abismo):</b> A imagem distorcida de Kira a segue e atravessa os inimigos, causando ${damage} de dano mágico e silenciando-os por ${toSec(
-                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-                )}.`,
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}.`,
         ru: `Кира совершает рывок вперёд, оставляя позади себя свою искажённую копию и возвращаясь к ней через ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}
                 \n<b>[Усиленная]: (Беспорядочный клон)</b> Копия Киры следует за ней и проходит через врагов на своём пути, нанося им ${damage} и накладывая немоту на ${toSec(
-                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-                )}.`,
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}.`,
         cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${toSec(
           KiraAbilityData.VOID_PHANTASM_DURATION
         )}
                 \n<b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${toSec(
-                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-                )}.`,
-        zh: `奇菈用滯留的扭曲殘影欺騙敵方，${toSec(KiraAbilityData.VOID_PHANTASM_DURATION)}後她會回歸殘影處。<br />
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}.`,
+        zh: `奇菈用滯留的扭曲殘影欺騙敵方，${toSec(
+          KiraAbilityData.VOID_PHANTASM_DURATION
+        )}後她會回歸殘影處。<br />
                 \n<b>[強化後]：(混沌殘影) 奇菈的殘影跟隨她並沿路穿透敵方，給予 ${damage}點魔法傷害並沉默敵方 ${toSec(
-                  KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
-                )}。`,
-      }
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}。`,
+        fr: `Kira fonce en avant, laissant derrière elle une image déformée d'elle-même. Après ${toSec(
+          KiraAbilityData.VOID_PHANTASM_DURATION
+        )}, elle retourne à la position de son image.
+                \n<br/><b>Amélioré: (Image dynamique)</b> Au lieu de retourner à la position de l'image, elle retourne à la position de Kira. L'image traverse les ennemis, infligeant ${damage} et les réduisant au silence pendant ${toSec(
+          KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE
+        )}.`,
+      };
     }
 
     /** Hazel  */
     case SpellList.HAZEL_AUTOATTACK: {
-      const baseDamage = getDamage(HazelAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        HazelAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
 
       return {
         en: `Hazel strikes with her hammer, dealing ${baseDamage}.`,
@@ -669,11 +845,17 @@ const _getSpellDescriptionLang = (
         ru: `Хейзел поражает врагов своим молотом, нанося ${baseDamage}.`,
         cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`,
         zh: `哈歇爾用她的鐵鎚打擊敵人，給予 ${baseDamage}點一般傷害。`,
-      }
+        fr: `Hazel frappe avec son marteau, infligeant ${baseDamage}.`,
+      };
     }
 
     case SpellList.HAZEL_SHOCKWAVE: {
-      const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, abilityData.damageType, 0, 'Health')
+      const damage = getDamage(
+        HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health,
+        abilityData.damageType,
+        0,
+        'Health'
+      );
 
       return {
         en: `Hazel begins to channel her energy. After ${toSec(
@@ -688,23 +870,31 @@ const _getSpellDescriptionLang = (
         zh: `哈歇爾開始蓄力 ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
         )}匯集能量。隨後在她四周釋放爆發衝擊波，給予 ${damage}點魔法傷害 (基於 Hazel 目前的健康狀況)，將所有距離內的敵方單位減速推開。`,
-      }
+        cz: `Hazel začne kanalizovat svou energii. Po ${toSec(
+          HazelAbilityData.SHOCKWAVE_DELAY
+        )} uvolní rázovou vlnu, která putuje vzduchem a způsobí ${damage} (Založeno na současném zdraví Hazel) a odhodí nepřátele.`,
+        fr: `Hazel commence à canaliser son énergie. Après ${toSec(
+          HazelAbilityData.SHOCKWAVE_DELAY
+        )}, elle libère une onde de choc qui se propage dans l'air, infligeant ${damage} (Basé sur la santé actuelle de Hazel) et repoussant les ennemis.`,
+      };
     }
 
     case SpellList.HAZEL_HEROIC_SLASH: {
       const baseDamage = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
-        ? HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE
-        : HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE
+        ? HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE +
+          HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE
+        : HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE;
 
       const duration = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-        ? HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION + HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-        : HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION
+        ? HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION +
+          HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
+        : HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION;
 
       const normalDamage = getDamage(
         HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage,
         abilityData.damageType,
         baseDamage + HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)
-      )
+      );
 
       return {
         en: `Hazel swings her hammer upwards, unleashing the wrath of justice, dealing ${normalDamage}, knocking enemies upwards, and stunning for ${toSec(
@@ -716,16 +906,26 @@ const _getSpellDescriptionLang = (
         ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} и подбрасывая врагов на ${toSec(
           duration
         )}.`,
-        zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(duration)}。`,
-      }
+        zh: `哈歇爾釋放正義之怒向上揮起鐵鎚，給予 ${normalDamage}點一般傷害並擊昇敵方暈眩 ${toSec(
+          duration
+        )}。`,
+        cz: `Hazel zamává svým kladivem nahoru, uvolňuje hněv spravedlnosti, způsobuje ${normalDamage} a odhazuje nepřátele nahoru a omráčí na ${toSec(
+          duration
+        )}.`,
+        fr: `Hazel balance son marteau vers le haut, libérant la colère de la justice, infligeant ${normalDamage}, projetant les ennemis vers le haut et les étourdissant pendant ${toSec(
+          duration
+        )}.`,
+      };
     }
 
     /** Arel  */
     case SpellList.AREL_AUTOATTACK: {
-      const enhDamageVal = ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD
+      const enhDamageVal = ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD;
 
-      const baseDamage = getDamage(ArelAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const enhDamage = getDamage(enhDamageVal * damage)
+      const baseDamage = getDamage(
+        ArelAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
+      const enhDamage = getDamage(enhDamageVal * damage);
 
       return {
         en: `Arel fires a bullet from his gun, dealing ${baseDamage}. \n
@@ -738,7 +938,9 @@ const _getSpellDescriptionLang = (
                 <br />[PASIVNÍ]: Kdykoli Arel použije schopnost, nabije arel další kulku ze zbraně a vystřelí další výstřel a způsobí další ${enhDamage} normální poškození`,
         zh: `艾瑞爾從他的槍發射一發子彈，給予 ${baseDamage}點一般傷害。 <br />
                 <br />被動技：每當艾瑞爾發動技能後，艾瑞爾會從他的槍裝填另一發子彈，多補一發射擊給予額外 ${enhDamage}點一般傷害。`,
-      }
+        fr: `Arel tire une balle de son pistolet, infligeant ${baseDamage}. \n
+                <br />Passif: Chaque fois qu'Arel utilise une compétence, il charge une autre balle dans son pistolet. Sa prochaine attaque de base tire cette balle supplémentaire, infligeant un bonus de ${enhDamage}.`,
+      };
     }
 
     case SpellList.AREL_TUMBLE: {
@@ -748,76 +950,91 @@ const _getSpellDescriptionLang = (
         ru: 'Арел катится вперёд.',
         cz: 'Arel se převalí dopředu',
         zh: '艾瑞爾向前翻滾。',
-      }
+        fr: "Arel roule vers l'avant.",
+      };
     }
 
     case SpellList.AREL_TICKING_BOMB: {
       const baseDamage = getDamage(
         ArelAbilityData.TICKING_BOMB_DAMAGE_MODIFIER * damage,
         abilityData.damageType,
-        ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)
-      )
+        ArelAbilityData.TICKING_BOMB_BASE_DAMAGE +
+          ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)
+      );
       const triggerMultiplier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS
-        : 1
+        : 1;
 
       const triggerDamage = getDamage(
-        ArelAbilityData.TICKING_BOMB_TRIGGER_DAMAGE_MODIFIER * damage * triggerMultiplier,
+        ArelAbilityData.TICKING_BOMB_TRIGGER_DAMAGE_MODIFIER *
+          damage *
+          triggerMultiplier,
         abilityData.damageType,
-        (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE + ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)) *
+        (ArelAbilityData.TICKING_BOMB_BASE_DAMAGE +
+          ArelAbilityData.TICKING_BOMB_DAMAGE_PER_LEVEL * (level - 1)) *
           triggerMultiplier
-      )
+      );
 
       const triggerStun = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-        ? ArelAbilityData.TICKING_BOMB_STUN_DURATION + ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN
-        : ArelAbilityData.TICKING_BOMB_STUN_DURATION
+        ? ArelAbilityData.TICKING_BOMB_STUN_DURATION +
+          ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN
+        : ArelAbilityData.TICKING_BOMB_STUN_DURATION;
 
       return {
         en: `Arel throws a ticking bomb, attaching itself to enemies that get close. After ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, the bomb detonates, dealing ${baseDamage} in an area.
                 <br />Shooting an attached bomb with 3 bullets detonates the bomb early, dealing ${triggerDamage}, reducing their Movement Speed for ${toSec(
-                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-                )}, and stunning for ${toSec(triggerStun)}.`,
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}, and stunning for ${toSec(triggerStun)}.`,
         br: `Arel joga uma bomba para frente, se a bomba entrar em contato com um inimigo, a bomba se liga a ele e explodirá em ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, causando ${baseDamage} de dano normal para todos os inimigos ao redor.
                 <br />Se a bomba estiver presa a um inimigo e você atirar nele três vezes, a bomba explodirá causando ${triggerDamage} de dano normal e atordoará o portador por ${toSec(
-                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-                )}.`,
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}.`,
         ru: `Арел бросает бомбу, и если она соприкасается с врагом, бомба прикрепляется к нему и взрывается через ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}, нанося ${baseDamage} всем ближайшим врагам.
                 <br />Если бомба прикреплена к врагу, и вы выстрелите в него три раза, бомба взорвется преждевременно, нанеся  ${triggerDamage} урона, уменьшая Скорость передвижения цели на ${toSec(
-                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-                )}, а также оглушая на ${toSec(triggerStun)}.`,
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}, а также оглушая на ${toSec(triggerStun)}.`,
         cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 <br />Pokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${triggerDamage} normální poškození a omráči nepřítele na ${toSec(
-                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-                )}`,
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}`,
         zh: `艾瑞爾投擲一枚炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於 ${toSec(
           ArelAbilityData.TICKING_BOMB_DURATION
         )}後爆炸，給予周圍所有敵方 ${baseDamage}點一般傷害。
                 <br />如果炸彈已附著於敵方，你給予該敵方三發射擊，炸彈會立即爆炸，給予 ${triggerDamage}點一般傷害並暈眩炸彈負載者 ${toSec(
-                  ArelAbilityData.TICKING_BOMB_SLOW_DURATION
-                )}。`,
-      }
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}。`,
+        fr: `Arel lance une bombe à retardement, qui se fixe aux ennemis qui s'en approchent. Après ${toSec(
+          ArelAbilityData.TICKING_BOMB_DURATION
+        )}, la bombe explose, infligeant ${baseDamage} dans une zone.
+                <br />Tirer sur une bombe attachée avec 3 balles déclenche la bombe prématurément, infligeant ${triggerDamage}, réduisant leur Vitesse de déplacement pendant ${toSec(
+          ArelAbilityData.TICKING_BOMB_SLOW_DURATION
+        )}, et les étourdissant pendant ${toSec(triggerStun)}.`,
+      };
     }
 
     /** Alvar  */
     case SpellList.ALVAR_ATTACK: {
-      const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
       const markDamage = getDamage(
         0,
         0,
         hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-          ? AlvarAbilityData.MARK_DAMAGE + AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE
+          ? AlvarAbilityData.MARK_DAMAGE +
+              AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE
           : AlvarAbilityData.MARK_DAMAGE
-      )
+      );
 
-      const duration = AlvarAbilityData.MARK_DURATION
+      const duration = AlvarAbilityData.MARK_DURATION;
 
       return {
         en: `Alvar attacks with a punch, dealing ${baseDamage}. \n
@@ -840,14 +1057,21 @@ const _getSpellDescriptionLang = (
                 <br />被動：每一次阿爾瓦成功的擊中敵方英雄，給予目標對象 ${toSec(
                   duration
                 )}負面狀態。第三次的負面狀態疊加將給予標記，造成 ${markDamage}點一般傷害。`,
-      }
+        fr: `Alvar attaque avec un coup de poing, infligeant ${baseDamage}. \n
+                <br />Passif: Les attaques de base d'Alvar appliquent une pile d'impact divin sur les héros ennemis, qui dure ${toSec(
+                  duration
+                )}. À trois piles, l'ennemi reçoit une Marque divine, infligeant ${markDamage}.`,
+      };
     }
 
     case SpellList.ALVAR_FURIOUS_KICK: {
-      const baseDamage = getDamage(AlvarAbilityData.FURIOUS_KICK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        AlvarAbilityData.FURIOUS_KICK_DAMAGE_MOD * damage
+      );
       const duration = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-        ? AlvarAbilityData.FURIOUS_KICK_STUN_DURATION + AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
-        : AlvarAbilityData.FURIOUS_KICK_STUN_DURATION
+        ? AlvarAbilityData.FURIOUS_KICK_STUN_DURATION +
+          AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION
+        : AlvarAbilityData.FURIOUS_KICK_STUN_DURATION;
 
       return {
         en: `Alvar launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${toSec(
@@ -856,38 +1080,61 @@ const _getSpellDescriptionLang = (
             Applies a stack of divine impact on all enemy heroes hit by Furious Kick.<br />
             In addition alvar grants himself and all his nearby alies ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
-            } bonus movement speed for ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+            } bonus movement speed for ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}`,
         br: `Alvar lança seus inimigos para trás com um poderoso chute, causando ${baseDamage} de dano normal e atordoando por ${toSec(
           duration
         )}. <br /><br />
             Aplica um debuff em todos os personagens inimigos atingidos pelo chute furioso.<br />
             Além disso, Alvar concede a si mesmo e a todos os seus aliados próximos ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
-            } de velocidade de movimento por ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+            } de velocidade de movimento por ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}`,
         ru: `Алвар отталкивает врагов сильным ударом ноги, нанося ${baseDamage} и оглушая на ${toSec(
           duration
         )}. <br /><br />
             Накладывает ослабление на всех вражеских героев, попавших под удар.<br />
             Кроме того, Алвар дарует себе и всем своим союзникам ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
-            } скорости передвижения на ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
+            } скорости передвижения на ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}`,
         cz: `Alvar odhodí nepřátele silným kopem, způsobí ${baseDamage} normální poškození a omráčí na ${toSec(
           duration
         )}. <br /><br />
             Aplikuje debuff na všechny nepřátelské hrdiny zasažené Furious Kick.<br />
             Kromě toho Alvar poskytuje sám sobě a všem svým blízkým spojencům ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
-            } bonusové rychlosti pohybu na ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}`,
-        zh: `阿爾瓦用一記強力的踢擊將敵人向後踢飛，給予 ${baseDamage}點一般傷害並暈眩 ${toSec(duration)}。<br /><br />
+            } bonusové rychlosti pohybu na ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}`,
+        zh: `阿爾瓦用一記強力的踢擊將敵人向後踢飛，給予 ${baseDamage}點一般傷害並暈眩 ${toSec(
+          duration
+        )}。<br /><br />
             被狂怒踢擊擊中的敵方英雄將會受到一個負面狀態。<br />
             此外阿爾瓦會給予自己和所有附近的盟友 ${
               AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
-            }點移動速度加成，持續 ${toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)}。`,
-      }
+            }點移動速度加成，持續 ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}。`,
+        fr: `Alvar lance les ennemis en arrière avec un puissant coup de pied, infligeant ${baseDamage} et étourdissant pendant ${toSec(
+          duration
+        )}. <br /><br />
+            Applique une pile d'impact divin sur tous les héros ennemis touchés par Furious Kick.<br />
+            De plus, Alvar accorde à lui-même et à tous ses alliés proches ${
+              AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED
+            } de vitesse de mouvement bonus pendant ${toSec(
+          AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION
+        )}`,
+      };
     }
 
     case SpellList.ALVAR_HEAVENLY_KICK: {
-      const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage
+      );
 
       return {
         en: `Alvar teleports towards the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and reducing the Movement Speed of the enemy hero for ${toSec(
@@ -899,48 +1146,60 @@ const _getSpellDescriptionLang = (
         )}. Способность использовать нельзя, если рядом нет помеченных врагов.`,
         cz: `Alvar se teleportuje za nejbližšího označeného nepřítele, kopne do něj a způsobí normální poškození ${baseDamage} a tlačí ho opačným směrem. Pokud v blízkosti není žádný označení nepřítel, schopnost neudělá nic.`,
         zh: `阿爾瓦瞬移到最接近的被標記敵方英雄，踢擊目標對象造成 ${baseDamage}點一般傷害並將目標對象推到反方向。如果附近沒有被標記敵方，技能無法發動。`,
-      }
+        fr: `Alvar se téléporte derrière le héros ennemi marqué le plus proche, le frappant et infligeant ${baseDamage} de dégâts normaux et le poussant dans la direction opposée.\n (Si aucun ennemi marqué n'est à proximité, la compétence ne peut pas être utilisée.)`,
+      };
     }
 
     /** Foxy  */
     case SpellList.FOXY_ATTACK: {
-      const baseDamage = getDamage(FoxyAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        FoxyAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
 
       return {
         en: `Foxy fires a bullet from his gun, dealing ${baseDamage}.`,
         ru: `Фокси выпускает пулю из своего оружия, нанося ${baseDamage}.`,
         cz: `Foxy vystřelí kulku ze své zbraně a způsobí ${baseDamage}.`,
-      }
+        br: `Foxy dispara uma bala de sua arma, causando ${baseDamage} de dano normal.`,
+        zh: `Foxy 從他的槍中射出一發子彈，給予 ${baseDamage}點一般傷害。`,
+        fr: `Foxy tire une balle de son arme, infligeant ${baseDamage}.`,
+      };
     }
 
     case SpellList.FOXY_RAPID_FIRE: {
-      let mod = 1
+      let mod = 1;
       if (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)) {
-        mod += FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE
+        mod += FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE;
       }
-      const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod)
+      const baseDamage = getDamage(
+        FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod
+      );
 
       return {
         en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a bararge of bullets. Each bullet deals ${baseDamage}. <br/> <b>Rapid Fire attack rate scales with Attack Speed.</b>`,
         ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Чем выше Скорость атаки, тем больше пуль будет выпущено. Передвижение отменяет подготовку. </i>`,
         cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`,
-      }
+        br: `Foxy canaliza sua arma, diminuindo sua velocidade de movimento e disparando rapidamente uma rajada de balas. Cada bala causa ${baseDamage}. <br/> <i> A taxa de ataque de Fogo Rápido escala com a Velocidade de Ataque. </i>`,
+        zh: `Foxy 通道他的武器，降低他的移動速度並快速地發射一連串的子彈。每一發子彈造成 ${baseDamage}點一般傷害。 <br/> <i> 快速射擊攻擊速率與攻擊速度相關。 </i>`,
+        fr: `Foxy canalise son arme, réduisant sa vitesse de déplacement et tirant rapidement une rafale de balles. Chaque balle inflige ${baseDamage}. <br/> <i> Le taux de tir de Feu Rapide évolue avec la Vitesse d'Attaque. </i>`,
+      };
     }
 
     case SpellList.FOXY_GRANADE: {
       const baseDamage = getDamage(
         FoxyAbilityData.GRANADE_DAMAGE_MODIFIER * damage,
         Shared.DamageTypes.NORMAL,
-        FoxyAbilityData.GRANADE_DAMAGE_BASE + FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+        FoxyAbilityData.GRANADE_DAMAGE_BASE +
+          FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
         'AttackDamage'
-      )
+      );
 
       const apDamage = getDamage(
         FoxyAbilityData.GRANADE_AP_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
         0,
         'AbilityPower'
-      )
+      );
 
       return {
         en:
@@ -954,15 +1213,29 @@ const _getSpellDescriptionLang = (
         cz:
           `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage} + ${apDamage}. <br/>` +
           'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
-      }
+        br:
+          `<b>Primeira conjuração: </b>Foxy lança uma granada que detona ao impactar o chão, causando ${baseDamage} + ${apDamage} em uma área e empurrando unidades. Se a velocidade de queda da granada for rápida o suficiente, ela quicará uma vez antes de detonar. ` +
+          'O empurrão é baseado na distância entre a unidade inimiga e a granada.<br/>' +
+          '<b>Segunda conjuração: </b>Detone a granada cedo.',
+        zh:
+          `<b>第一次施法: </b>Foxy 丟出一枚手榴彈，當手榴彈碰到地面時爆炸，造成 ${baseDamage} + ${apDamage}點範圍內的傷害並擊退單位。如果手榴彈的下落速度足夠快，它將在爆炸前彈跳一次。 ` +
+          '擊退基於敵方單位和手榴彈之間的距離。<br/>' +
+          '<b>第二次施法: </b>提前引爆手榴彈。',
+        fr:
+          `<b>Première utilisation: </b>Foxy lance une grenade qui explose au contact du sol, infligeant ${baseDamage} + ${apDamage} dans une zone et repoussant les unités. Si la vitesse de chute de la grenade est suffisamment rapide, elle rebondira une fois avant de détoner. ` +
+          "Le repoussement est basé sur la distance entre l'unité ennemie et la grenade.<br/>" +
+          '<b>Deuxième utilisation: </b>Détoner la grenade tôt.',
+      };
     }
 
     case SpellList.MAGDALENE_ATTACK: {
-      const baseDamage = getDamage(MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage
+      );
       const bonusAPTalent = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST +
           MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP
-        : MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST
+        : MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST;
 
       return {
         en: `Magdalene sends a burst of energy from her dark scythe, dealing ${baseDamage}.<br /> Passive: Magdalene permanently gains ${bonusAPTalent} stacks of Soul Harvest upon recieving a kill or assist. Each stack increases Ability Power by 1.`,
@@ -971,7 +1244,7 @@ const _getSpellDescriptionLang = (
         fr: `Magdalene tournoie avec sa faux sombre tirant une salve d'énergie qui inflige ${baseDamage} dégâts\n\nPassif: Magdalene gagne permanent ${bonusAPTalent} points de puissance d'aptitude pour tuer ou aider à tuer le héros.`,
         zh: `玛格达丽娜旋转着黑色镰刀发射一股能量，造成${baseDamage}伤害\n\n被动：玛格达丽娜击杀或协助击杀英雄永久获得${bonusAPTalent}能力值。`,
         cz: `Magdalena zatočí se svím temným srpem a vystřeli výboj energie, která způsobí ${baseDamage} poškození\n\nPasivní: Magdalena trvale získává ${bonusAPTalent} schopnost síly za zabití nebo pomoc při zabití hrdiny.`,
-      }
+      };
     }
 
     case SpellList.MAGDALENE_SCREAM_OF_PAIN: {
@@ -980,7 +1253,7 @@ const _getSpellDescriptionLang = (
         Shared.DamageTypes.MAGICAL,
         MagdaleneAbilityData.SCREAM_OF_PAIN_BASE_DAMAGE +
           MagdaleneAbilityData.SCREAM_OF_PAIN_DAMAGE_PER_LEVEL * (level - 1)
-      )
+      );
       return {
         en: `Magdalene sends out an ear-splitting scream, dealing ${damage} to enemies in front of her, knocking them back, and silencing them for ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
@@ -1000,7 +1273,7 @@ const _getSpellDescriptionLang = (
         cz: `Magdalena hlasitě zakřičí na všechny nepřátele před ní, odhání je, poškozuje ${damage} a  umlčí je na ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
         )}`,
-      }
+      };
     }
 
     case SpellList.MAGDALENE_SWARM_OF_GHOSTS: {
@@ -1009,8 +1282,11 @@ const _getSpellDescriptionLang = (
         Shared.DamageTypes.MAGICAL,
         MagdaleneAbilityData.SWARM_OF_GHOSTS_BASE_DAMAGE +
           MagdaleneAbilityData.SWARM_OF_GHOSTS_DAMAGE_PER_LEVEL * (level - 1)
-      )
-      const percDamage = fixed(MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER * 100 * 100, 1)
+      );
+      const percDamage = fixed(
+        MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER * 100 * 100,
+        1
+      );
 
       return {
         en: `Magdalene sends a swarm of lost ghosts in front of her to ravage enemies, dealing ${damage} and applying 1 stack of ghost pact on enemies hit.<br />Each stack of ghost pact increases the damage of Swarm of Ghosts by ${percDamage}%.`,
@@ -1019,7 +1295,7 @@ const _getSpellDescriptionLang = (
         fr: `Envoie une nuée de fantômes perdus pour attaquer les unités ennemies devant Magdalene. Les unités ennemies touchées subissent ${damage} et appliquent 1 pile de pacte de fantôme aux ennemis.\n\n - Chaque pile de pacte de fantôme augmente les dégâts de Nuée de Fantômes de ${percDamage}%`,
         zh: `向马格达莱恩（Magdalene）前方的敌军单位发送一群迷失的幽灵。受影响的敌军单位受到 ${damage} 伤害，并在敌人身上施加 1 层幽灵契约。\n\n - 每层幽灵契约会使蜂群幽灵的伤害提升 ${percDamage}%`,
         cz: `Posílá hordu ztracených duchů, aby zuřivě napadli nepřátelské jednotky před Magdalenou. Postižené nepřátelské jednotky obdrží ${damage} a přidají 1balíček duchovní smlouvy proti nepřátelům.\n\n - Každý balíček duchovní smlouvy zvyšuje škodu ze Hordy duchů o ${percDamage}%.`,
-      }
+      };
     }
 
     /** Default */
@@ -1030,12 +1306,13 @@ const _getSpellDescriptionLang = (
         cz: 'Po 5 sekundách se teleportujte zpět do základny. Během sesílání se nemůžete pohybovat ani útočit a sesílání je přerušeno, pokud utrpíte poškození.',
         br: 'Teleporte-se de volta para Base após 5 segundos. Durante isso você não pode se mover ou atacar, será interrompido se você receber qualquer tipo de dano.',
         zh: '5秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。',
-      }
+        fr: 'Téléportez-vous à la base après 5 secondes. Pendant le téléport, vous ne pouvez pas bouger ou attaquer, et tout dommage reçu interrompt le téléport.',
+      };
 
     default:
-      return { en: '', cz: '' }
+      return { en: '', cz: '' };
   }
-}
+};
 
 const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
   switch (id) {
@@ -1059,7 +1336,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Útok',
         br: 'Ataque básico',
         zh: '攻擊',
-      }
+        fr: 'Attaque de base',
+      };
 
     case SpellList.KUMIHU_MAGICAL_ORB:
       return {
@@ -1068,7 +1346,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Magická Koule',
         br: 'Rajada de vento',
         zh: '魔幻寶珠',
-      }
+        fr: 'Orbe magique',
+      };
     case SpellList.KUMIHU_DASH:
       return {
         en: 'Arcane Dash',
@@ -1076,7 +1355,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Tajemný Krok',
         br: 'Possessão Demoníaca',
         zh: '奧術衝刺',
-      }
+        fr: 'Charge arcanique',
+      };
 
     /** Sparrow */
     case SpellList.SPARROW_DASH:
@@ -1086,7 +1366,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Zteč',
         br: 'Cai dentro',
         zh: '突進',
-      }
+        fr: 'Charge',
+      };
 
     case SpellList.SPARROW_GROUND_SLAM:
       return {
@@ -1095,7 +1376,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Úder Země',
         br: 'poder demoníaco',
         zh: '地面猛擊',
-      }
+        fr: 'Frappe au sol',
+      };
 
     /** I'Ceat */
 
@@ -1106,7 +1388,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Sprška Rampouchů',
         br: 'Estilhaço de gelo',
         zh: '寒冰飛箭',
-      }
+        fr: 'Carreau de glace',
+      };
 
     case SpellList.ICEAT_COLD_EMBRACE:
       return {
@@ -1115,7 +1398,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Chladné objetí',
         br: 'Abraço do inverno',
         zh: '冰冷懷抱',
-      }
+        fr: 'Étreinte froide',
+      };
 
     /** Belle */
 
@@ -1126,7 +1410,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Bodavá Réva',
         br: 'Videira espinhosa',
         zh: '荊棘藤蔓',
-      }
+        fr: 'Vigne épineuse',
+      };
 
     case SpellList.BELLE_FLORAL_AMBUSH:
       return {
@@ -1135,7 +1420,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Bouchací Kytky',
         br: 'Emboscada floral',
         zh: '鮮花伏擊',
-      }
+        fr: 'Embuscade florale',
+      };
 
     /** Thomas */
 
@@ -1146,7 +1432,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Vrh Shurikenu',
         br: 'Shuriken Demoníaca',
         zh: '手裏劍投擲',
-      }
+        fr: 'Lancer de shuriken',
+      };
 
     case SpellList.THOMAS_SHADOW_CARROT:
       return {
@@ -1155,7 +1442,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Stínová Mrkev',
         br: 'Contrato',
         zh: '闇影蘿蔔',
-      }
+        fr: "Carotte d'ombre",
+      };
 
     /** Veil */
     case SpellList.VEIL_ASTRAL_BLADES:
@@ -1165,7 +1453,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Astrální Čepele',
         br: 'Lâminas astrais',
         zh: '星光刀刃',
-      }
+        fr: 'Lames astrales',
+      };
 
     case SpellList.VEIL_ASTRAL_STEP:
       return {
@@ -1174,7 +1463,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Astrální Krok',
         br: 'Regente do mal',
         zh: '星光飛躍',
-      }
+        fr: 'Pas astral',
+      };
 
     case SpellList.FLIN_PRECISE_SHOT:
       return {
@@ -1183,7 +1473,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Přesná střela',
         br: 'Tiro preciso',
         zh: '精準射擊',
-      }
+        fr: 'Tir précis',
+      };
 
     case SpellList.FLIN_MARKSMANSHIP:
       return {
@@ -1192,7 +1483,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Strelecké umenie',
         br: 'Pontaria perfeita',
         zh: '精通箭術',
-      }
+        fr: 'Tir de précision',
+      };
 
     case SpellList.KIRA_RAIN_OF_SPARKS:
       return {
@@ -1201,7 +1493,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Dážď iskier',
         br: 'Relâmpago do Abismo',
         zh: '花火之雨',
-      }
+        fr: "Pluie d'étincelles",
+      };
 
     case SpellList.KIRA_VOID_PHANTASM:
       return {
@@ -1210,7 +1503,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Prázdné fantazie',
         br: 'Fantasma do Abismo',
         zh: '虛空幻象',
-      }
+        fr: 'Fantôme statique',
+      };
 
     case SpellList.HAZEL_HEROIC_SLASH:
       return {
@@ -1219,7 +1513,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         ru: 'Гнев правосудия',
         cz: 'Hněv spravedlnosti',
         zh: '正義之怒',
-      }
+        fr: 'Courroux de la justice',
+      };
 
     case SpellList.HAZEL_SHOCKWAVE:
       return {
@@ -1228,7 +1523,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Revolta Triunfante',
         cz: 'Triumfálne prevraty',
         zh: '勝利的動盪',
-      }
+        fr: 'Séisme triomphant',
+      };
 
     case SpellList.AREL_TUMBLE:
       return {
@@ -1237,7 +1533,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Hora de correr',
         cz: 'Kotrmelec',
         zh: '翻跟斗',
-      }
+        fr: 'Roulade',
+      };
 
     case SpellList.AREL_TICKING_BOMB:
       return {
@@ -1246,7 +1543,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Bomba Relógio',
         cz: 'Tikající bomba',
         zh: '定時炸彈',
-      }
+        fr: 'Bombe à retardement',
+      };
 
     case SpellList.ALVAR_FURIOUS_KICK:
       return {
@@ -1255,7 +1553,8 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Chute furioso',
         cz: 'Zúrivý kopanec',
         zh: '憤怒之踢',
-      }
+        fr: 'Coup furieux',
+      };
 
     case SpellList.ALVAR_HEAVENLY_KICK:
       return {
@@ -1264,21 +1563,28 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Chute Celestial',
         cz: 'Nebeský kop',
         zh: '天堂之踢',
-      }
+        fr: 'Coup céleste',
+      };
 
     case SpellList.FOXY_GRANADE:
       return {
         en: 'Explosive Grenade',
         ru: 'Взрывная граната',
         cz: 'Výbušný granát',
-      }
+        br: 'Granada explosiva',
+        zh: '爆炸手榴彈',
+        fr: 'Grenade explosive',
+      };
 
     case SpellList.FOXY_RAPID_FIRE:
       return {
         en: 'Rapid Fire',
         ru: 'Беглый огонь',
         cz: 'Příval kulek',
-      }
+        br: 'Fogo Rápido',
+        zh: '快速射擊',
+        fr: 'Tir rapide',
+      };
     case SpellList.MAGDALENE_SCREAM_OF_PAIN:
       return {
         en: 'Scream of Pain',
@@ -1287,7 +1593,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Cri de Douleur',
         zh: '痛苦的尖叫',
         cz: 'Křik bolesti',
-      }
+      };
     case SpellList.MAGDALENE_SWARM_OF_GHOSTS:
       return {
         en: 'Swarm of Ghosts',
@@ -1296,7 +1602,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Essaim de Fantômes',
         zh: '一群鬼魂',
         cz: 'Roj duchů',
-      }
+      };
     /** Default */
     case SpellList.RECALL:
       return {
@@ -1305,26 +1611,27 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Odvolání',
         br: 'Retorno',
         zh: '召回',
-      }
+        fr: 'Rappel',
+      };
     default:
-      return { en: '' }
+      return { en: '' };
   }
-}
+};
 
 export const getSpellDescription = (
   id: SpellList,
   unitStats: GetSpellDescriptionInput,
   type: Shared.DamageTypes
 ): string => {
-  const result = _getSpellDescriptionLang(id, unitStats, type)
+  const result = _getSpellDescriptionLang(id, unitStats, type);
 
-  if (result[LANG.value]) return result[LANG.value]
-  else return result['en']
-}
+  if (result[LANG.value]) return result[LANG.value];
+  else return result['en'];
+};
 
 export const getSpellName = (id: SpellList): string => {
-  const result = _getSpellNameLang(id)
+  const result = _getSpellNameLang(id);
 
-  if (result[LANG.value]) return result[LANG.value]
-  else return result['en']
-}
+  if (result[LANG.value]) return result[LANG.value];
+  else return result['en'];
+};
