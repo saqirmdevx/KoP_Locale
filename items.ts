@@ -572,30 +572,30 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en: `Your Basic Attacks apply a stack of physical frost on the enemy, slowing them by ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
           } per stack. At ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
           ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
           } за каждый стак. При ${
             ItemAbilityData.COLD_SWORD_STACKS
           } стаках, врага поражает Ледяное Проклятие - ${getFrigidCurseDescription()}.`,
           br: `Seus ataques básicos aplicam uma pilha de gelo físico no inimigo, diminuindo a velocidade deles em ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
           } por pilha. Em ${
             ItemAbilityData.COLD_SWORD_STACKS
           } pilhas, o inimigo é atingido pela Maldição Gélida - ${getFrigidCurseDescription()}.`,
           fr: `Vos attaques de base appliquent une pile de gel physique sur l'ennemi qui les ralentit de ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
           } par pile. À ${
             ItemAbilityData.COLD_SWORD_STACKS
           } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
-          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
+          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK}。在 ${
             ItemAbilityData.COLD_SWORD_STACKS
           } 层时，敌人会受到寒冷诅咒 - ${getFrigidCurseDescription()}`,
           cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
           } za každý stack. Při ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stackách je nepřítel postižen Ledovým prokletím - ${getFrigidCurseDescription()}.`,
