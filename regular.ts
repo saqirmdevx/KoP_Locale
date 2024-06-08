@@ -2836,5 +2836,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Mon L est prêt.',
     br: 'Meu L está pronto.',
   },
+  [LOCALE.MMR_CHANGE]: {
+    en: 'MMR Change: {change}',
+    ru: 'Изменение MMR: {change}',
+    cz: 'Změna MMR: {change}',
+    zh: 'MMR变化：{change}',
+    fr: 'Changement de MMR : {change}',
+    br: 'Alteração de MMR: {change}',
+  },
 }
 export default locale_data
