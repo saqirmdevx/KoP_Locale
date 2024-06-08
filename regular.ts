@@ -2809,7 +2809,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Хорошая игра!',
     cz: 'Dobrá hra!',
     zh: '好游戏！',
-    fr: 'Bon jeu !',
+    fr: 'Bon jeu!',
     br: 'Bom jogo!',
   },
   [LOCALE.QUICKCHAT_WELL_PLAYED]: {
