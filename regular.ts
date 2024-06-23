@@ -2874,5 +2874,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Changement de MMR',
     br: 'Mudança de MMR',
   },
+  [LOCALE.DUMMY_ATTACK]: {
+    en: 'Dummy Attack',
+    ru: 'Атака манекена',
+    cz: 'Útok na figurínu',
+    zh: '傀儡攻击',
+    fr: 'Attaque du mannequin',
+    br: 'Ataque de boneco',
+  },
+  [LOCALE.NO]: {
+    en: 'No',
+    ru: 'Нет',
+    cz: 'Ne',
+    zh: '不',
+    fr: 'Non',
+    br: 'Não',
+  },
 }
 export default locale_data

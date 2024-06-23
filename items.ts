@@ -678,22 +678,22 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. \n \n' +
+            'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. Your abilites also applies a stack of poison \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           ru:
-            'Успешное нанесение урона способностями увеличивает вашу Скорость передвижения на 10 на 1.5 сек. \n \n' +
+            'Когда ваши способности попадают по врагу, ваша Скорость передвижения увеличивается на 10 на 1.5 сек. Ваши способности также накладывают стак яда \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           br:
-            'Um golpe bem-sucedido com suas habilidades, aumenta sua velocidade de movimento em 10 por 1.5 seg. \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
-          cz:
-            'Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin \n \n' +
+            'Sempre que suas habilidades atingem um inimigo, sua velocidade de movimento aumenta em 10 por 1,5 segundos. Suas habilidades também aplicam uma pilha de veneno \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           fr:
-            'Chaque compétence K ou L réussie augmente ta vitesse de déplacement de 10 points de déplacement pour 1.5 sec. \n \n' +
+            'Chaque fois que vos capacités touchent un ennemi, votre vitesse de déplacement augmente de 10 pendant 1,5 seconde. Vos capacités appliquent également une pile de poison \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           zh:
-            '你的魔法攻擊成功擊中敵方英雄時，增加 1.5秒你的移動速度值 10 \n \n' +
+            '每當你的技能擊中敵人時，你的移動速度將在1.5秒內增加10。 你的技能也會施加一層毒 \n \n' +
+            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+          cz:
+            'Když vaše schopnosti zasáhnou nepřítele, vaše rychlost pohybu se po dobu 1,5 sekundy zvýší o 10. Vaše schopnosti také aplikují stack jedu \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
         },
       }
