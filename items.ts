@@ -402,7 +402,7 @@ const _getLocaleItemDescription = (
         desc: {
           en: `Each Basic Attack deals ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% of the enemy's max health as bonus pure damage. \n \n
+          )}% of the enemy's max health as bonus magical damage. \n \n
           Shadow Curse: Basic attack prevents the enemy's Health Regeneration and deals (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% enemy Health Regeneration) Pure Damage per second for ${toSec(
@@ -410,15 +410,15 @@ const _getLocaleItemDescription = (
           )}. Can occur only once every ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           ru: `Каждая базовая атака наносит ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% максимального здоровья врага в виде чистого урона. \n \n
-          Проклятие теней: базовая атака лишает врага восстановления здоровья и наносит (${
+          )}% максимального здоровья врага в виде магического урона. \n \n
+          Проклятие теней: базовая атака лишает врага Восстановление здоровья и наносит (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% восстановления здоровья врага) чистого урона в секунду в течение ${toSec(
+          }% Восстановления здоровья врага) Чистого урона в секунду на ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Может произойти только один раз каждые ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           br: `Cada ataque básico causa ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% do máximo de vida do inimigo como dano puro adicional. \n \n
+          )}% do máximo de vida do inimigo como dano mágico bônus. \n \n
           Maldição das Sombras: Ataque básico impede a Regeneração de Vida do inimigo e causa (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% Regeneração de Vida do inimigo) Dano Puro por segundo por ${toSec(
@@ -426,28 +426,28 @@ const _getLocaleItemDescription = (
           )}. Pode ocorrer apenas uma vez a cada ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           cz: `Každý základní útok způsobí ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% maximálního zdraví nepřítele jako bonusové čisté poškození. \n \n
-          Stínové prokletí: Základní útok zabrání regeneraci zdraví nepřítele a způsobí (${
+          )}% maximálního zdraví nepřítele jako bonusové magické poškození. \n \n
+          Stínová kletba: Základní útok brání regeneraci zdraví nepřítele a způsobuje (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% regenerace zdraví nepřítele) čisté poškození za sekundu po dobu ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Může nastat pouze jednou každých ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           fr: `Chaque attaque de base inflige ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% des points de vie max de l'ennemi en dégâts purs supplémentaires. \n \n
+          )}% des points de vie max de l'ennemi en dégâts magiques bonus. \n \n
           Malédiction des ombres: l'attaque de base empêche la régénération de santé de l'ennemi et inflige (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% de la régénération de santé de l'ennemi) Dégâts purs par seconde pendant ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Ne peut se produire qu'une fois toutes les ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
-          zh: `每次普通攻击造成敌人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+          zh: `每次基本攻擊造成敵人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% 作为额外的真实伤害。 \n \n
-          暗影诅咒：普通攻击阻止敌人的生命值恢复，并造成每秒 ${
+          )}% 作為額外魔法傷害。 \n \n
+          暗影詛咒：基本攻擊阻止敵人的生命恢復，並造成（${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% 敌人生命值恢复的真实伤害，持续 ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)} 秒。每 ${toSec(
-            ItemAbilityData.SHADOW_SLAYER_COOLDOWN
-          )} 秒只能发生一次`,
+          }% 敵人生命恢復）每秒純粹傷害，持續 ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}。每 ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)} 可發生一次`,
         },
       }
 
