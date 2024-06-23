@@ -1531,6 +1531,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Záznam',
     fr: 'Enregistrement',
   },
+  [LOCALE.RECORD_ALLTIME]: {
+    en: 'Overall Record',
+  },
+  [LOCALE.PEAK]: {
+    en: 'Peaked {}',
+  },
   [LOCALE.MATCH_WON]: {
     en: 'Won Match',
     ru: 'Победа',
@@ -2859,6 +2865,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '我的L技能已准备好。',
     fr: 'Mon L est prêt.',
     br: 'Meu L está pronto.',
+  },
+  [LOCALE.MMR_CHANGE]: {
+    en: 'MMR Change',
+    ru: 'Изменение MMR',
+    cz: 'Změna MMR',
+    zh: 'MMR变化',
+    fr: 'Changement de MMR',
+    br: 'Mudança de MMR',
   },
 }
 export default locale_data
