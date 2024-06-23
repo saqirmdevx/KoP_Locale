@@ -402,12 +402,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: 'Precise Shot +25% Damage',
-            ru: '+25% урона для Точного выстрела',
-            cz: '+25% poškození pro Přesný výstřel',
-            zh: '精准射击 +25% 伤害',
-            fr: 'Tir précis +25% de dégâts',
-            br: 'Tiro Preciso +25% de Dano',
+            en: `Precise Shot +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% Damage & Range`,
+            ru: `Меткий выстрел: +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% урона и дальности`,
+            cz: `Přesný výstřel +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% poškození a dosahu`,
+            zh: `精准射击 +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% 伤害和范围`,
+            fr: `Tir précis +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% de dégâts et de portée`,
+            br: `Tiro Preciso +${fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100)}% de Dano e Alcance`,
           },
         },
         tier2_right: {
