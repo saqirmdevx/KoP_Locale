@@ -1332,34 +1332,36 @@ const _getLocaleItemDescription = (
           cz: 'Štít z plátů',
         },
         desc: {
-          en: `Releases a shockwave which travels through the air, dealing ${
+          en: `Releases a shockwave which travels through the air, revealing all enemies and dealing ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } Normal Damage to all enemies hit and reducing their Movement Speed by ${
+          } Normal Damage to all enemies hit and reducing their Movement Speed and Attack Speed by ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
           } for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} Seconds.`,
-          br: `Ondas de choque viajam pelo ar causando ${
+          ru: `Выпускает ударную волну, которая пролетает в воздухе, обнаруживает всех врагов и наносит ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } dano normal e reduzindo a velocidade de movimento do inimigo em ${
+          } физического урона всем врагам, которых она задела, снижая их Скорость передвижения и Скорость атаки на ${
+            ItemAbilityData.PLATE_SHIELD_SLOW_AOE
+          } на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек.`,
+          br: `Libera uma onda de choque que viaja pelo ar, revelando todos os inimigos e causando ${
+            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
+          } de dano normal a todos os inimigos atingidos, reduzindo a velocidade de movimento e a velocidade de ataque em ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
           } por ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seg.`,
-          ru: `Создаёт ударную волну, которая наносит ${
+          fr: `Libère une onde de choc qui traverse l'air, révélant tous les ennemis et infligeant ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } урона и уменьшает скорость передвижения на ${
+          } de dégâts normaux à tous les ennemis touchés et réduisant leur vitesse de déplacement et leur vitesse d'attaque de ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } у всех врагов на своём пути на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек.`,
-          zh: `釋放衝擊波，給予 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}點一般傷害並降低 ${(
+          } pendant ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec.`,
+          zh: `释放一道穿过空气的冲击波，揭示所有敌人并对所有被击中的敌人造成 ${
+            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
+          } 常规伤害，降低他们的移动速度和攻击速度 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}，持续 ${(
             ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000
-          ).toFixed(1)}秒敵方的移動速度值 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}`,
-          cz: `Uvolní šokovou vlnu, která prochází vzduchem, způsobí ${
+          ).toFixed(1)} 秒。`,
+          cz: `Uvolní šokovou vlnu, která letí vzduchem, odhaluje všechny nepřátele a způsobuje ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } normálního poškození všem nepřátelům a sníží jejich rychlost pohybu o ${
+          } normální poškození všem zasaženým nepřátelům a snižuje jejich Rychlost pohybu a Rychlost útoku o ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } na ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sekund.`,
-          fr: `Libère une onde de choc qui se déplace dans l'air, infligeant ${
-            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } dégâts normaux à tous les ennemis touchés et réduisant leur vitesse de déplacement de ${
-            ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } pour ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec.`,
+          } po dobu ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sekund.`,
         },
       }
     case ItemList.Kirins_Defender:
