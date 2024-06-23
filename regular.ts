@@ -2890,5 +2890,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Non',
     br: 'Não',
   },
+  [LOCALE.REMOVE_FRIEND]: {
+    en: 'Remove Friend',
+    ru: 'Удалить друга',
+    cz: 'Odebrat přítele',
+    zh: '删除好友',
+    fr: "Supprimer l'ami",
+    br: 'Remover amigo',
+  },
 }
 export default locale_data
