@@ -402,7 +402,7 @@ const _getLocaleItemDescription = (
         desc: {
           en: `Each Basic Attack deals ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% of the enemy's max health as bonus pure damage. \n \n
+          )}% of the enemy's max health as bonus magical damage. \n \n
           Shadow Curse: Basic attack prevents the enemy's Health Regeneration and deals (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% enemy Health Regeneration) Pure Damage per second for ${toSec(
@@ -410,15 +410,15 @@ const _getLocaleItemDescription = (
           )}. Can occur only once every ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           ru: `Каждая базовая атака наносит ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% максимального здоровья врага в виде чистого урона. \n \n
-          Проклятие теней: базовая атака лишает врага восстановления здоровья и наносит (${
+          )}% максимального здоровья врага в виде магического урона. \n \n
+          Проклятие теней: базовая атака лишает врага Восстановление здоровья и наносит (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% восстановления здоровья врага) чистого урона в секунду в течение ${toSec(
+          }% Восстановления здоровья врага) Чистого урона в секунду на ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Может произойти только один раз каждые ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           br: `Cada ataque básico causa ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% do máximo de vida do inimigo como dano puro adicional. \n \n
+          )}% do máximo de vida do inimigo como dano mágico bônus. \n \n
           Maldição das Sombras: Ataque básico impede a Regeneração de Vida do inimigo e causa (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% Regeneração de Vida do inimigo) Dano Puro por segundo por ${toSec(
@@ -426,28 +426,28 @@ const _getLocaleItemDescription = (
           )}. Pode ocorrer apenas uma vez a cada ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           cz: `Každý základní útok způsobí ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% maximálního zdraví nepřítele jako bonusové čisté poškození. \n \n
-          Stínové prokletí: Základní útok zabrání regeneraci zdraví nepřítele a způsobí (${
+          )}% maximálního zdraví nepřítele jako bonusové magické poškození. \n \n
+          Stínová kletba: Základní útok brání regeneraci zdraví nepřítele a způsobuje (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% regenerace zdraví nepřítele) čisté poškození za sekundu po dobu ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Může nastat pouze jednou každých ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
           fr: `Chaque attaque de base inflige ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% des points de vie max de l'ennemi en dégâts purs supplémentaires. \n \n
+          )}% des points de vie max de l'ennemi en dégâts magiques bonus. \n \n
           Malédiction des ombres: l'attaque de base empêche la régénération de santé de l'ennemi et inflige (${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
           }% de la régénération de santé de l'ennemi) Dégâts purs par seconde pendant ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
           )}. Ne peut se produire qu'une fois toutes les ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}`,
-          zh: `每次普通攻击造成敌人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
+          zh: `每次基本攻擊造成敵人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
-          )}% 作为额外的真实伤害。 \n \n
-          暗影诅咒：普通攻击阻止敌人的生命值恢复，并造成每秒 ${
+          )}% 作為額外魔法傷害。 \n \n
+          暗影詛咒：基本攻擊阻止敵人的生命恢復，並造成（${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% 敌人生命值恢复的真实伤害，持续 ${toSec(ItemAbilityData.SHADOW_SLAYER_DURATION)} 秒。每 ${toSec(
-            ItemAbilityData.SHADOW_SLAYER_COOLDOWN
-          )} 秒只能发生一次`,
+          }% 敵人生命恢復）每秒純粹傷害，持續 ${toSec(
+            ItemAbilityData.SHADOW_SLAYER_DURATION
+          )}。每 ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)} 可發生一次`,
         },
       }
 
@@ -572,30 +572,30 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en: `Your Basic Attacks apply a stack of physical frost on the enemy, slowing them by ${
-            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } per stack. At ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
           ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${
-            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } за каждый стак. При ${
             ItemAbilityData.COLD_SWORD_STACKS
           } стаках, врага поражает Ледяное Проклятие - ${getFrigidCurseDescription()}.`,
           br: `Seus ataques básicos aplicam uma pilha de gelo físico no inimigo, diminuindo a velocidade deles em ${
-            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } por pilha. Em ${
             ItemAbilityData.COLD_SWORD_STACKS
           } pilhas, o inimigo é atingido pela Maldição Gélida - ${getFrigidCurseDescription()}.`,
           fr: `Vos attaques de base appliquent une pile de gel physique sur l'ennemi qui les ralentit de ${
-            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } par pile. À ${
             ItemAbilityData.COLD_SWORD_STACKS
           } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
-          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK}。在 ${
+          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
             ItemAbilityData.COLD_SWORD_STACKS
           } 层时，敌人会受到寒冷诅咒 - ${getFrigidCurseDescription()}`,
           cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${
-            ItemAbilityData.COLD_SOWRD_SLOW_PER_STACK
+            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } za každý stack. Při ${
             ItemAbilityData.COLD_SWORD_STACKS
           } stackách je nepřítel postižen Ledovým prokletím - ${getFrigidCurseDescription()}.`,
@@ -678,22 +678,22 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. \n \n' +
+            'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. Your abilites also applies a stack of poison \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           ru:
-            'Успешное нанесение урона способностями увеличивает вашу Скорость передвижения на 10 на 1.5 сек. \n \n' +
+            'Когда ваши способности попадают по врагу, ваша Скорость передвижения увеличивается на 10 на 1.5 сек. Ваши способности также накладывают стак яда \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           br:
-            'Um golpe bem-sucedido com suas habilidades, aumenta sua velocidade de movimento em 10 por 1.5 seg. \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
-          cz:
-            'Úspěšný zásah tvé schopnosti zvýší tvou rychlost o 10 na 1.5 vteřin \n \n' +
+            'Sempre que suas habilidades atingem um inimigo, sua velocidade de movimento aumenta em 10 por 1,5 segundos. Suas habilidades também aplicam uma pilha de veneno \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           fr:
-            'Chaque compétence K ou L réussie augmente ta vitesse de déplacement de 10 points de déplacement pour 1.5 sec. \n \n' +
+            'Chaque fois que vos capacités touchent un ennemi, votre vitesse de déplacement augmente de 10 pendant 1,5 seconde. Vos capacités appliquent également une pile de poison \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           zh:
-            '你的魔法攻擊成功擊中敵方英雄時，增加 1.5秒你的移動速度值 10 \n \n' +
+            '每當你的技能擊中敵人時，你的移動速度將在1.5秒內增加10。 你的技能也會施加一層毒 \n \n' +
+            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+          cz:
+            'Když vaše schopnosti zasáhnou nepřítele, vaše rychlost pohybu se po dobu 1,5 sekundy zvýší o 10. Vaše schopnosti také aplikují stack jedu \n \n' +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
         },
       }
@@ -1332,34 +1332,36 @@ const _getLocaleItemDescription = (
           cz: 'Štít z plátů',
         },
         desc: {
-          en: `Releases a shockwave which travels through the air, dealing ${
+          en: `Releases a shockwave which travels through the air, revealing all enemies and dealing ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } Normal Damage to all enemies hit and reducing their Movement Speed by ${
+          } Normal Damage to all enemies hit and reducing their Movement Speed and Attack Speed by ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
           } for ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} Seconds.`,
-          br: `Ondas de choque viajam pelo ar causando ${
+          ru: `Выпускает ударную волну, которая пролетает в воздухе, обнаруживает всех врагов и наносит ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } dano normal e reduzindo a velocidade de movimento do inimigo em ${
+          } физического урона всем врагам, которых она задела, снижая их Скорость передвижения и Скорость атаки на ${
+            ItemAbilityData.PLATE_SHIELD_SLOW_AOE
+          } на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек.`,
+          br: `Libera uma onda de choque que viaja pelo ar, revelando todos os inimigos e causando ${
+            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
+          } de dano normal a todos os inimigos atingidos, reduzindo a velocidade de movimento e a velocidade de ataque em ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
           } por ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} seg.`,
-          ru: `Создаёт ударную волну, которая наносит ${
+          fr: `Libère une onde de choc qui traverse l'air, révélant tous les ennemis et infligeant ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } урона и уменьшает скорость передвижения на ${
+          } de dégâts normaux à tous les ennemis touchés et réduisant leur vitesse de déplacement et leur vitesse d'attaque de ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } у всех врагов на своём пути на ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} сек.`,
-          zh: `釋放衝擊波，給予 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}點一般傷害並降低 ${(
+          } pendant ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec.`,
+          zh: `释放一道穿过空气的冲击波，揭示所有敌人并对所有被击中的敌人造成 ${
+            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
+          } 常规伤害，降低他们的移动速度和攻击速度 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}，持续 ${(
             ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000
-          ).toFixed(1)}秒敵方的移動速度值 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}`,
-          cz: `Uvolní šokovou vlnu, která prochází vzduchem, způsobí ${
+          ).toFixed(1)} 秒。`,
+          cz: `Uvolní šokovou vlnu, která letí vzduchem, odhaluje všechny nepřátele a způsobuje ${
             ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } normálního poškození všem nepřátelům a sníží jejich rychlost pohybu o ${
+          } normální poškození všem zasaženým nepřátelům a snižuje jejich Rychlost pohybu a Rychlost útoku o ${
             ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } na ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sekund.`,
-          fr: `Libère une onde de choc qui se déplace dans l'air, infligeant ${
-            ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE
-          } dégâts normaux à tous les ennemis touchés et réduisant leur vitesse de déplacement de ${
-            ItemAbilityData.PLATE_SHIELD_SLOW_AOE
-          } pour ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sec.`,
+          } po dobu ${(ItemAbilityData.PLATE_SHIELD_SLOW_DURATION / 1000).toFixed(1)} sekund.`,
         },
       }
     case ItemList.Kirins_Defender:

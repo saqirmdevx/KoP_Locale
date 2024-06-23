@@ -614,10 +614,16 @@ const _getSpellDescriptionLang = (
         Shared.DamageTypes.MAGICAL,
         KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
       )
+
+      const healingMod = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
+        ? KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD + KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING
+        : KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD
+
       const enh_damage_heal = getDamage(
-        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * 0.6,
+        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * healingMod,
         Shared.DamageTypes.HEAL,
-        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) * 0.6
+        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) *
+          healingMod
       )
 
       return {
@@ -667,29 +673,29 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.KIRA_RAIN_OF_SPARKS: {
-      let damageMod = 1
-      if (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)) {
-        damageMod = 1 + KiraAbilityData.TALENT_T1_RAIN_OF_SPARKS_BONUS
-      }
       const damage = getDamage(
-        KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower * damageMod,
+        KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KiraAbilityData.VOID_RAIN_BASE_DAMAGE + KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1) * damageMod
+        KiraAbilityData.VOID_RAIN_BASE_DAMAGE + KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)
       )
 
+      const count = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
+        ? KiraAbilityData.VOID_RAIN_COUNT + KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT
+        : KiraAbilityData.VOID_RAIN_COUNT
+
       return {
-        en: `Kira summons 4 electric missiles downwards at a 45° angle. Each electric missile pierces enemies and deals ${damage}.
-                \n<br/><b>[Enhanced]: (Torrential Lightning)</b> Kira summons total of 8 electric missiles.`,
-        br: `Kira conjura de seu livro 4 mísseis elétricos do abismo, que caem de cima, cada míssil causando ${damage} de dano mágico que perfura os inimigos.
-                \n<b>[Passiva] (Abismo Demoníaco):</b> Kira conjura um total de 8 mísseis do abismo.`,
-        ru: `Кира призывает 4 снаряда, которые падают с неба, нанося ${damage} каждый и пронзая вражеские цели.
+        en: `Kira summons ${count} electric missiles downwards at a 45° angle. Each electric missile pierces enemies and deals ${damage}.
+                \n<br/><b>[Enhanced]: (Torrential Lightning)</b> Kira summons total of ${count * 2} electric missiles.`,
+        br: `Kira conjura de seu livro ${count} mísseis elétricos do abismo, que caem de cima, cada míssil causando ${damage} de dano mágico que perfura os inimigos.
+                \n<b>[Passiva] (Abismo Demoníaco):</b> Kira conjura um total de ${count * 2} mísseis do abismo.`,
+        ru: `Кира призывает ${count} снаряда, которые падают с неба, нанося ${damage} каждый и пронзая вражеские цели.
                 \n<b>[Усиленная]: (Проливная бездна)</b> Количество призываемых снарядов увеличивается до 8.`,
-        cz: `Kira vyvolá 4 prázdné střely, které prší shora, přičemž každá střela způsobí ${damage} magické poškození, které prorazí nepřátele.
-                \n<b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem 8 prázdných střel.`,
+        cz: `Kira vyvolá ${count} prázdné střely, které prší shora, přičemž každá střela způsobí ${damage} magické poškození, které prorazí nepřátele.
+                \n<b>[Vylepšené]: (Torrential Abyss)</b> Kira vyvolá celkem ${count * 2} prázdných střel.`,
         zh: `奇菈召喚四束虛空飛彈從上方如雨淋下，每束飛彈給予 ${damage}點魔法傷害並貫穿敵方。<br />
                 \n<b>[強化後]：(滔天深淵) 奇菈召喚總共八束虛空飛彈。`,
-        fr: `Kira invoque 4 missiles électriques qui tombent du ciel, chacun infligeant ${damage} et traversant les ennemis.
-                \n<br/><b>Amélioré: (Éclair torrentiel)</b> Kira invoque un total de 8 missiles électriques.`,
+        fr: `Kira invoque ${count} missiles électriques qui tombent du ciel, chacun infligeant ${damage} et traversant les ennemis.
+                \n<br/><b>Amélioré: (Éclair torrentiel)</b> Kira invoque un total de ${count * 2} missiles électriques.`,
       }
     }
 
@@ -1345,10 +1351,10 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
       return {
         en: 'Rain of Sparks',
         ru: 'Дождь искр',
-        cz: 'Dážď iskier',
         br: 'Relâmpago do Abismo',
         zh: '花火之雨',
         fr: "Pluie d'étincelles",
+        cz: 'Déšť jisker',
       }
 
     case SpellList.KIRA_VOID_PHANTASM:
