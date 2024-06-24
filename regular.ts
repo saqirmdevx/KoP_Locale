@@ -2111,12 +2111,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Skins',
   },
   [LOCALE.PURCHASE_HERO_TITLE]: {
-    en: 'Buy {} for {} Gold and {} Gems?',
-    cz: 'Koupit {} za {} Zlato a {} Diamanty?',
-    zh: '花费 {} 金币和 {} 宝石购买 {}？',
-    ru: 'Купить {} за {} Золото и {} Самоцветы?',
-    fr: 'Acheter {} pour {} Or et {} Gemmes ?',
-    br: 'Comprar {} por {} Ouro e {} Gemas?',
+    en: 'Buy a hero {}?',
+    ru: 'Купить героя {}?',
+    cz: 'Koupit hrdinu {}?',
+    zh: '购买英雄 {}?',
+    fr: 'Acheter un héros {}?',
+    br: 'Comprar um herói {}?',
   },
   [LOCALE.FRIENDS_PAGE_LIST]: {
     en: 'List',
@@ -2897,6 +2897,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '删除好友',
     fr: "Supprimer l'ami",
     br: 'Remover amigo',
+  },
+  [LOCALE.PURCHASE_ITEM_TITLE]: {
+    en: 'Buy an item {}?',
+    ru: 'Купить предмет {}?',
+    cz: 'Koupit předmět {}?',
+    zh: '购买物品{}？',
+    fr: 'Acheter un article {} ?',
+    br: 'Comprar um item {}?',
   },
 }
 export default locale_data
