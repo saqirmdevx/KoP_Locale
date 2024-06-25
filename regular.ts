@@ -828,7 +828,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Zbýva času',
     zh: '剩餘時間',
     fr: 'Temps restant',
-    cz: 'Оставшееся время',
     ru: 'Оставшееся время',
     br: 'Temps restant',
   },
