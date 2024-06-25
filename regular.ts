@@ -2906,5 +2906,21 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Acheter un article {} ?',
     br: 'Comprar um item {}?',
   },
+  [LOCALE.RECEIVE_ITEM]: {
+    en: 'You received a new item! Congratulations!',
+    ru: 'Вы получили новый предмет! Поздравляем!',
+    cz: 'Obdrželi jste nový předmět! Gratulujeme!',
+    zh: '您收到了新物品！恭喜！',
+    fr: 'Vous avez reçu un nouvel article ! Félicitations !',
+    br: 'Você recebeu um novo item! Parabéns!',
+  },
+  [LOCALE.OK]: {
+    en: 'Okay',
+    ru: 'Окей',
+    cz: 'Dobře',
+    zh: '好的',
+    fr: "D'accord",
+    br: 'OK',
+  },
 }
 export default locale_data
