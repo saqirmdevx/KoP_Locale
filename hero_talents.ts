@@ -75,22 +75,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Orbe mágico cega`,
           },
           description: {
-            en: `If magical orb hit same hero twice it will reduce his vision by 50% for ${toSecRaw(
+            en: `If magical orb hit same hero twice it will reduce his vision by 66% for ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
-            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 50% на ${toSecRaw(
+            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 66% на ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )} секунд`,
-            cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 50% po dobu ${toSecRaw(
+            cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 66% po dobu ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
             zh: `如果魔法球两次击中同一个英雄，则其视野将在${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
-            )}秒内减少50%`,
-            fr: `Si l'orbe magique touche le même héros deux fois, sa vision sera réduite de 50% pendant ${toSecRaw(
+            )}秒内减少66%`,
+            fr: `Si l'orbe magique touche le même héros deux fois, sa vision sera réduite de 66% pendant ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
-            br: `Se o orbe mágico atingir o mesmo herói duas vezes, sua visão será reduzida em 50% por ${toSecRaw(
+            br: `Se o orbe mágico atingir o mesmo herói duas vezes, sua visão será reduzida em 66% por ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
           },
