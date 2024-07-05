@@ -609,15 +609,7 @@ const _getSpellDescriptionLang = (
     /** Kira  */
     case SpellList.KIRA_AUTOATTACK: {
       const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const enh_damage = getDamage(
-        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower,
-        Shared.DamageTypes.MAGICAL,
-        KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
-      )
-
-      const healingMod = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
-        ? KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD + KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING
-        : KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD
+      const healingMod = KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD
 
       const enh_damage_heal = getDamage(
         KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * healingMod,
@@ -627,48 +619,28 @@ const _getSpellDescriptionLang = (
       )
 
       return {
-        en: `Kira fires a spark, dealing ${basic_damage}. <br />
-                \n<b>Enhanced: (Lightning Shock)</b> In addition, Kira casts a lightning bolt at the nearest hero. If Lightning Shock hits an enemy, it deals ${enh_damage}, decreases their Attack Speed by ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, and decreases Movement Speed by ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } for a short duration. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, and increases Movement Speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for a short duration.`,
-        br: `Kira dispara um relâmpago que da ${basic_damage} de dano normal. <br />
-                \n<b>[Passiva] (Livro demoníaco):</b> Kira lança um relâmpago no personagem mais próximo, diminui ou aumenta a velocidade de ataque do herói em ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }% e velocidade de movimento em ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } por um curto período e da ${enh_damage} de dano mágico ou cura se o personagem for do seu time em ${enh_damage_heal}.`,
-        ru: `Кира стреляет молнией, которая наносит ${basic_damage}. \n
-                \n<b>[Усиленная]: (Удар молнии)</b> Кира призывает поток электричества в направлении ближайшего героя. Если целью стал противник, его скорость атаки уменьшается на ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }% и скорость передвижения на ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                }, а также он получает ${enh_damage} урона. Если целью стал союзный герой, его скорость атаки и передвижения повышается, а также он исцеляется на ${enh_damage_heal}`,
-        cz: `Kira vystřelí blesk, který způsobí ${basic_damage} normální poškození. \n
-                \n<b>[Enhanced]: (Lightning Shock)</b> Kira vyšle elektrický výboj směrem k nejbližší jednotce, sniži anebo zvýši rychlost útoku o ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                } % a rychlost pohybu o ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } na kratký čás, a způsobi okamžite zraněni o ${enh_damage} anebo vyléči jednotku o ${enh_damage_heal}`,
-        zh: `奇菈發射一束閃電飛箭，造成 ${basic_damage}點一般傷害。<br />
-                \n<b>[強化後]：(衝擊閃電) 奇菈對離最近的英雄施展一束衝擊電流，短時間內降低敵方或增加友方英雄 ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%攻擊速度與移動速度值 ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                }，並立即給予敵方英雄 ${enh_damage}點魔法傷害或是治癒友方英雄 ${enh_damage_heal}點生命。`,
-        fr: `Kira tire une étincelle, infligeant ${basic_damage}. <br />
-                \n<b>Amélioré: (Choc électrique)</b> De plus, Kira lance un éclair sur le héros le plus proche. Si le Choc électrique touche un ennemi, il inflige ${enh_damage}, diminue leur Vitesse d'attaque de ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, et diminue la Vitesse de déplacement de ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } pendant une courte durée. Si le Choc électrique touche un allié, il restaure ${enh_damage_heal} de santé, augmente leur Vitesse d'attaque de ${
-                  KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
-                }%, et augmente la Vitesse de déplacement de ${
-                  KiraAbilityData.ENHATTACK_MOVE_SPEED
-                } pendant une courte durée.`,
+        en: `Kira fires a spark, dealing ${basic_damage}. \n
+          \n<b>Enhanced: (Lightning Shock)</b> In addition, Kira casts a lightning bolt at the nearest hero. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health, increases their Attack Speed by ${
+            KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+          }%, and increases Movement Speed by ${KiraAbilityData.ENHATTACK_MOVE_SPEED} for a short duration.`,
+        br: `Kira dispara uma faísca, causando ${basic_damage}. \n
+          \n<b>[Passiva] (Choque Elétrico):</b> Além disso, Kira lança um raio em direção ao herói mais próximo. Se o Choque Elétrico atingir um aliado, ele restaura ${enh_damage_heal} de vida, aumenta a Velocidade de Ataque em ${
+            KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+          }%, e aumenta a Velocidade de Movimento em ${KiraAbilityData.ENHATTACK_MOVE_SPEED} por um curto período.`,
+        ru: `Кира стреляет искру, нанося ${basic_damage}. \n
+          \n<b>[Усиленная]: (Молния)</b> Кира также кастует молнию в сторону ближайшего героя. Если Молния попадает по союзнику, она восстанавливает ${enh_damage_heal} здоровья, увеличивает их скорость атаки на ${
+            KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+          }%, и увеличивает скорость передвижения на ${KiraAbilityData.ENHATTACK_MOVE_SPEED} на короткое время.`,
+        cz: `Kira vystřelí jiskru, způsobí ${basic_damage} poškození. \n
+          \n<b>[Vylepšené]: (Blesk)</b> Kira navíc sesílá blesk směrem k nejbližšímu hrdinovi. Pokud blesk zasáhne spojence, obnoví jim ${enh_damage_heal} života, zvýší jejich rychlost útoku o ${
+            KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+          }%, a zvýší rychlost pohybu o ${KiraAbilityData.ENHATTACK_MOVE_SPEED} po omezenou dobu.`,
+        zh: `奇菈射出火花，給予 ${basic_damage}點一般傷害。\n
+          \n<b>[強化後]：(閃電震擊)</b> 奇菈向最近的英雄施放閃電。如果閃電擊中盟友，將會恢復 ${enh_damage_heal}點生命，增加他們的攻擊速度 ${KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100}%，並增加移動速度 ${KiraAbilityData.ENHATTACK_MOVE_SPEED} 在短時間內。`,
+        fr: `Kira tire une étincelle, infligeant ${basic_damage}. \n
+          \n<b>Amélioré: (Choc électrique)</b> De plus, Kira lance un éclair sur le héros le plus proche. Si le Choc électrique touche un allié, il restaure ${enh_damage_heal} points de vie, augmente leur vitesse d'attaque de ${
+            KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100
+          }%, et augmente la vitesse de déplacement de ${KiraAbilityData.ENHATTACK_MOVE_SPEED} pendant une courte durée.`,
       }
     }
 
@@ -760,26 +732,32 @@ const _getSpellDescriptionLang = (
 
     case SpellList.HAZEL_SHOCKWAVE: {
       const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, abilityData.damageType, 0, 'Health')
+      const apDamage = getDamage(
+        HazelAbilityData.SHOCKWAVE_AP_SCALING * abilityPower,
+        abilityData.damageType,
+        0,
+        'AbilityPower'
+      )
 
       return {
         en: `Hazel begins to channel her energy. After ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
-        )}, she releases a shockwave which travels through the air, dealing ${damage} (Based of Hazel's current health) and knocking back enemies.`,
-        br: `Hazel começa a carregar canalizando sua energia por ${toSec(
+        )}, she releases a shockwave which travels through the air, dealing ${damage} (Based of Hazel's max health) + ${apDamage} magical damage and knocking back enemies.`,
+        br: `Hazel começa a canalizar sua energia. Após ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
-        )}, depois libera uma explosão de ondas de choque ao seu redor, causando ${damage} de dano mágico (Basado en la salud actual de Hazel), diminui a velocidade e empurra todas as unidades inimigas para longe.`,
-        ru: `Хейзел начинает накапливать энергию в течение ${toSec(
+        )}, ela libera uma onda de choque que viaja pelo ar, causando ${damage} (Baseado na vida máxima de Hazel) + ${apDamage} de dano mágico e repelindo inimigos.`,
+        ru: `Хейзел начинает канализировать свою энергию. После ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
-        )}, а затем выпускает взрыв из ударных волн вокруг себя, нанося ${damage} (от текущего здоровья Хейзел), замедляя и отталкивая все цели на своём пути.`,
-        zh: `哈歇爾開始蓄力 ${toSec(
-          HazelAbilityData.SHOCKWAVE_DELAY
-        )}匯集能量。隨後在她四周釋放爆發衝擊波，給予 ${damage}點魔法傷害 (基於 Hazel 目前的健康狀況)，將所有距離內的敵方單位減速推開。`,
+        )}, она выпускает ударную волну, которая пролетает по воздуху, нанося ${damage} (Основано на максимальном здоровье Хейзел) + ${apDamage} магического урона и отбрасывая врагов.`,
         cz: `Hazel začne kanalizovat svou energii. Po ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
-        )} uvolní rázovou vlnu, která putuje vzduchem a způsobí ${damage} (Založeno na současném zdraví Hazel) a odhodí nepřátele.`,
+        )} uvolní šokovou vlnu, která letí vzduchem, způsobuje ${damage} (Založeno na maximálním zdraví Hazel) + ${apDamage} magického poškození a odhazuje nepřátele.`,
+        zh: `哈歇爾開始聚集她的能量。${toSec(
+          HazelAbilityData.SHOCKWAVE_DELAY
+        )}後，她釋放一道穿過空氣的衝擊波，造成 ${damage} (基於哈歇爾的最大生命值) + ${apDamage}點魔法傷害並擊退敵人。`,
         fr: `Hazel commence à canaliser son énergie. Après ${toSec(
           HazelAbilityData.SHOCKWAVE_DELAY
-        )}, elle libère une onde de choc qui se propage dans l'air, infligeant ${damage} (Basé sur la santé actuelle de Hazel) et repoussant les ennemis.`,
+        )}, elle libère une onde de choc qui se déplace dans l'air, infligeant ${damage} (Basé sur la vie maximale de Hazel) + ${apDamage} dégâts magiques et repoussant les ennemis.`,
       }
     }
 
@@ -1096,10 +1074,7 @@ const _getSpellDescriptionLang = (
 
     case SpellList.MAGDALENE_ATTACK: {
       const baseDamage = getDamage(MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const bonusAPTalent = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-        ? MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST +
-          MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP
-        : MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST
+      const bonusAPTalent = MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST
 
       return {
         en: `Magdalene sends a burst of energy from her dark scythe, dealing ${baseDamage}.<br /> Passive: Magdalene permanently gains ${bonusAPTalent} stacks of Soul Harvest upon recieving a kill or assist. Each stack increases Ability Power by 1.`,
@@ -1121,41 +1096,53 @@ const _getSpellDescriptionLang = (
       return {
         en: `Magdalene sends out an ear-splitting scream, dealing ${damage} to enemies in front of her, knocking them back, and silencing them for ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
+        )}. \nConsumes Haunted Ghosts if target is affected, deals additional damage and fear the target for ${toSec(
+          MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION
         )}.`,
-        ru: `Магдалина издаёт истошный вопль, наносящий ${damage} магического урона всем врагам на своём пути и накладывающий на них немоту на ${toSec(
+        ru: `Магдалина издаёт пронзительный крик, нанося ${damage} магического урона врагам перед собой, отбрасывая их назад и молчащая на ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
-        )}`,
-        br: `Magdalena grita alto afetando todos os inimigos na frente dela, empurrando-os para longe, causando ${damage} e silenciando-os por ${toSec(
+        )}. \nПоглощает Призрачных призраков, если цель поражена, наносит дополнительный урон и пугает цель на ${toSec(
+          MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION
+        )}.`,
+        br: `Magdalene solta um grito estridente, causando ${damage} de dano mágico nos inimigos à sua frente, empurrando-os para trás e silenciando-os por ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
-        )}`,
-        fr: `Magdalene crie bruyamment affecte tous les ennemis devant elle, les repousse, leur inflige ${damage} et les rend muets pendant ${toSec(
+        )}. \nConsumir Fantasmas Assombrados se o alvo for afetado, causa dano adicional e medo no alvo por ${toSec(
+          MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION
+        )}.`,
+        fr: `Magdalene lance un cri déchirant, infligeant ${damage} de dégâts magiques aux ennemis devant elle, les repoussant et les réduisant au silence pendant ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
-        )}`,
-        zh: `玛格丹妮大声尖叫，影响她面前的所有敌人，将他们推开，造成${damage}伤害，并将他们沉默${toSec(
+        )}. \nConsomme les Fantômes hantés si la cible est affectée, inflige des dégâts supplémentaires et effraie la cible pendant ${toSec(
+          MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION
+        )}.`,
+        zh: `玛格达丽娜發出刺耳的尖叫，對面前的敵人造成 ${damage}點魔法傷害，將他們擊退，並使其沉默 ${toSec(
           MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
-        )}`,
-        cz: `Magdalena hlasitě zakřičí na všechny nepřátele před ní, odhání je, poškozuje ${damage} a  umlčí je na ${toSec(
-          MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION
-        )}`,
+        )}。 \n如果目標受到影魂影響，則消耗該影魂，造成額外傷害並使目標恐懼 ${toSec(
+          MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION
+        )}。`,
       }
     }
 
-    case SpellList.MAGDALENE_SWARM_OF_GHOSTS: {
+    case SpellList.MAGDALENE_HAUNTED_GHOST: {
       const damage = getDamage(
-        MagdaleneAbilityData.SWARM_OF_GHOSTS_AP_MODIFIER * abilityPower,
+        MagdaleneAbilityData.HAUNTED_GHOST_AP_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        MagdaleneAbilityData.SWARM_OF_GHOSTS_BASE_DAMAGE +
-          MagdaleneAbilityData.SWARM_OF_GHOSTS_DAMAGE_PER_LEVEL * (level - 1)
+        MagdaleneAbilityData.HAUNTED_GHOST_DAMAGE_PER_SEC_BASE +
+          MagdaleneAbilityData.HAUNTED_GHOST_DAMAGE_PER_SEC_PER_LEVEL * (level - 1)
       )
-      const percDamage = fixed(MagdaleneAbilityData.SWARM_OF_GHOSTS_STACK_MULTIPLIER * 100 * 100, 1)
 
       return {
-        en: `Magdalene sends a swarm of lost ghosts in front of her to ravage enemies, dealing ${damage} and applying 1 stack of ghost pact on enemies hit.<br />Each stack of ghost pact increases the damage of Swarm of Ghosts by ${percDamage}%.`,
-        ru: `Магдалина выпускает призраков, которые наносят ${damage} магического урона и накладывают 1 заряд Призрачного пакта на вражеских героев.\n\n Призрачный пакт: Каждый заряд Призрачного пакта на противнике повышает получаемый урон от Волны призраков на ${percDamage}%`,
-        br: `Envia uma enxame de fantasmas perdidos para atacar unidades inimigas na frente de Magdalene. Unidades inimigas afetadas recebem ${damage} e aplica 1 pilha de pacto de fantasmas nos inimigos.\n\n - Cada pilha de pacto de fantasmas aumenta o dano de Enxame de Fantasmas em ${percDamage}%`,
-        fr: `Envoie une nuée de fantômes perdus pour attaquer les unités ennemies devant Magdalene. Les unités ennemies touchées subissent ${damage} et appliquent 1 pile de pacte de fantôme aux ennemis.\n\n - Chaque pile de pacte de fantôme augmente les dégâts de Nuée de Fantômes de ${percDamage}%`,
-        zh: `向马格达莱恩（Magdalene）前方的敌军单位发送一群迷失的幽灵。受影响的敌军单位受到 ${damage} 伤害，并在敌人身上施加 1 层幽灵契约。\n\n - 每层幽灵契约会使蜂群幽灵的伤害提升 ${percDamage}%`,
-        cz: `Posílá hordu ztracených duchů, aby zuřivě napadli nepřátelské jednotky před Magdalenou. Postižené nepřátelské jednotky obdrží ${damage} a přidají 1balíček duchovní smlouvy proti nepřátelům.\n\n - Každý balíček duchovní smlouvy zvyšuje škodu ze Hordy duchů o ${percDamage}%.`,
+        en: `Magdalene sends a haunted ghost in a direction, dealing ${damage} magical damage per second to enemies it passes through. The ghost lasts for ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}. 
+        \n When the haunted ghost debuff expires or is consumed by Scream of Pain, it returns back to Magdalene and reset the cooldown of Haunted Ghost.`,
+        ru: `Магдалина посылает преследующего призрака в направлении, нанося ${damage} магического урона в секунду врагам, через которых он проходит. Призрак длится ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
+        \n Когда дебафф призрака истекает или его поглощает Крик Боли, он возвращается к Магдалене и сбрасывает перезарядку Призрачного призрака.`,
+        br: `Magdalene envia um fantasma assombrado em uma direção, causando ${damage} de dano mágico por segundo aos inimigos que ele atravessa. O fantasma dura por ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
+        \n Quando o debuff do fantasma assombrado expira ou é consumido por Grito de Dor, ele retorna a Magdalene e reseta o tempo de recarga do Fantasma Assombrado.`,
+        fr: `Magdalene envoie un fantôme hanté dans une direction, infligeant ${damage} de dégâts magiques par seconde aux ennemis qu'il traverse. Le fantôme dure ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
+        \n Lorsque le débuff du fantôme hanté expire ou est consommé par le Cri de la Douleur, il retourne à Magdalene et réinitialise le temps de recharge du Fantôme hanté.`,
+        zh: `玛格达丽娜向某個方向發送一個受詛咒的幽靈，對它通過的敵人造成 ${damage}點魔法傷害。幽靈持續時間 ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}。
+        \n 當受詛咒的幽靈debuff到期或被尖叫消耗時，它將返回玛格达丽娜並重置受詛咒的幽靈的冷卻時間。`,
+        cz: `Magdalena pošle pronásledujícího ducha ve směru, který způsobuje ${damage} magického poškození za sekundu nepřátelům, kterými projde. Duch trvá ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
+        \n Když debuff ducha vyprší nebo je pohlcen Křikem bolesti, vrátí se k Magdaléně a resetuje dobu do nového použití.`,
       }
     }
 
@@ -1455,14 +1442,14 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         zh: '痛苦的尖叫',
         cz: 'Křik bolesti',
       }
-    case SpellList.MAGDALENE_SWARM_OF_GHOSTS:
+    case SpellList.MAGDALENE_HAUNTED_GHOST:
       return {
-        en: 'Swarm of Ghosts',
-        ru: 'Волна призраков',
-        br: 'Enxame de Fantasmas',
-        fr: 'Essaim de Fantômes',
-        zh: '一群鬼魂',
-        cz: 'Roj duchů',
+        en: 'Haunted Ghost',
+        ru: 'Призрачный призрак',
+        br: 'Fantasma Assombrado',
+        fr: 'Fantôme hanté',
+        zh: '幽靈',
+        cz: 'Strašidelný duch',
       }
     /** Default */
     case SpellList.RECALL:
