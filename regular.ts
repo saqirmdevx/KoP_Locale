@@ -691,12 +691,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Quitter le jeu',
   },
   [LOCALE.RESET_CDS]: {
-    en: 'Reset Cooldowns',
-    cz: 'Resetovat doby odpočinku',
-    zh: '重置冷却时间',
-    ru: 'Сбросить перезарядки',
-    fr: 'Réinitialiser les temps de recharge',
-    br: 'Redefinir Tempos de Recarga',
+    en: 'Reset CDs',
+    ru: 'Сбросить перезарядку',
+    br: 'Resetar CDs',
+    cz: 'Resetovat CD',
+    zh: '重置冷卻',
+    fr: 'Réinitialiser les CD',
   },
   [LOCALE.POST_BLUE_TEAM_WIN]: {
     en: 'Blue Team won!',
@@ -1983,11 +1983,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
   [LOCALE.LEVEL_UP]: {
     en: 'Level Up',
-    ru: 'Вы получили новый уровень',
-    cz: 'Dosáhli jste nové úrovně',
+    cz: 'Level Up',
     zh: '升级',
-    fr: 'Niveau supérieur',
-    br: 'Subir de nível',
+    ru: 'Level Up',
+    fr: 'Level Up',
+    br: 'Level Up',
   },
   [LOCALE.RANK_UP]: {
     en: 'You have been promoted to a new rank',
@@ -2876,7 +2876,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   [LOCALE.DUMMY_ATTACK]: {
     en: 'Dummy Attack',
     ru: 'Атака манекена',
-    cz: 'Útok na figurínu',
+    cz: 'Utok na figurínu',
     zh: '傀儡攻击',
     fr: 'Attaque du mannequin',
     br: 'Ataque de boneco',

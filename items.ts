@@ -646,7 +646,7 @@ const _getLocaleItemDescription = (
           cz: 'Luk Berserka',
         },
         desc: {
-          en: `Whenever your Basic Attack hits an enemy, gain a stack of berserk, up to a maximum of 8 stacks. Each stack increases your Attack Speed by ${Math.floor(
+          en: `Whenever your Basic Attack hits an enemy, gain a stack of berserk, up to a maximum of ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} stacks. Each stack increases your Attack Speed by ${Math.floor(
             ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100
           )}% for ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} Seconds.`,
           ru: `Попадая атаками по врагу, вы увеличиваете свою Скорость атаки на ${Math.floor(
@@ -734,63 +734,47 @@ const _getLocaleItemDescription = (
             }% and increasing your Movement Speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} for ${(
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             ).toFixed(1)} Seconds.\n` +
-            `This effect also reduces your Armor by ${
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR
-            } and Magic Resistance by ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}.` +
-            "\n \n<b class='ability-d'>" +
+            `This effect prevents you from casting abilites.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           ru:
-            `Увеличивает вашу Скорость атаки на ${
+            `Искажает вашу кровь и делает вас быстрее, увеличивая Скорость атаки на ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            }% и Скорость передвижения на ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} на ${(
+            }% и увеличивая Скорость передвижения на ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} на ${
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
-            ).toFixed(1)} сек.\n` +
-            `Во время этого эффекта ваша Броня уменьшается на ${
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR
-            } и Сопротивление магии на ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}%.` +
-            "\n \n<b class='ability-d'>" +
+            } сек.\n` +
+            `Этот эффект мешает вам использовать способности.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           br:
-            `Faz com que você aumente sua velocidade de ataque em ${
+            `Corrompe seu sangue e o torna mais rápido, aumentando sua Velocidade de Ataque em ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            }% e velocidade de movimento por ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} por ${(
+            }% e aumentando sua Velocidade de Movimento em ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} por ${
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
-            ).toFixed(1)} seg.\n` +
-            `[Maldição]: O efeito colateral de usar esse item é reduzir sua armadura em ${
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR
-            } e ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}% da sua resistência mágica.` +
-            "\n \n<b class='ability-d'>" +
+            } segundos.\n` +
+            `Este efeito impede que você use habilidades.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           fr:
-            `Gain de puissance. Ta vitesse d'attaque est augmentée de ${
+            `Corrompt votre sang et vous rend plus rapide, augmentant votre vitesse d'attaque de ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            }% et ta vitesse de déplacement est améliorée de ${
-              ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED
-            } pour ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)} sec.\n` +
-            `[MALÉDICTION]: Diminution de ton armure de ${
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR
-            } et de ta résistance magique de ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}%.` +
-            "\n \n<b class='ability-d'>" +
+            }% et augmentant votre vitesse de déplacement de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} pour ${
+              ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
+            } secondes.\n` +
+            `Cet effet vous empêche d'utiliser des capacités.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           zh:
-            `賦予你增加 ${(ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000).toFixed(1)}秒你的攻擊速度 ${
+            `腐化你的血液使你更快，增加你的攻擊速度 ${(
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            }%與移動速度值 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}。\n` +
-            `副作用：賦予你降低裝甲值 ${ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR}與 ${calculateMagicDefense(
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR
-            )}%魔法抗性` +
-            "\n \n<b class='ability-d'>" +
+            ).toFixed(1)}% 並增加你的移動速度 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} 在 ${
+              ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
+            } 秒。\n` +
+            `這個效果會阻止你施放技能。\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           cz:
-            `Zvyšuje tvou rychlost útoků o ${
+            `Zkresluje vaši krev a zrychluje vás, zvyšuje vaši rychlost útoku o ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            }% a rychlost pohybu o ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} na ${(
+            }% a zvyšuje vaši rychlost pohybu o ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} po dobu ${
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
-            ).toFixed(1)} sekund.\n` +
-            `Tento efekt také snižuje tvou Obranu o ${
-              ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_ARMOR
-            } a Magickou odolnost o ${calculateMagicDefense(ItemAbilityData.CORRUPTED_LONGBOW_REDUCE_MR)}.` +
-            "\n \n<b class='ability-d'>" +
+            } sekund.\n` +
+            `Tento efekt vám brání v používání schopností.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
         },
       }
@@ -805,20 +789,22 @@ const _getLocaleItemDescription = (
           cz: 'Dlouhý luk lovce',
         },
         desc: {
-          en: `Grants ${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}% Attack Speed to nearby allies.`,
-          ru: `Увеличивает Скорость атаки у всех ближайших союзников на ${(
-            ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100
-          ).toFixed()}%`,
-          br: `Aumenta ${(
-            ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100
-          ).toFixed()}% da velocidade de ataque de todas as unidades amigáveis ​​nas proximidades.`,
-          fr: `Augmente la vitesse d'attaque de ${(
-            ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100
-          ).toFixed()}% de toutes les unités amies à proximité.`,
-          zh: `增加附近所有友方单位的攻击速度${(ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100).toFixed()}%。`,
-          cz: `Zvýšení ${(
-            ItemAbilityData.HUNTER_BOW_RADIUS_ATKSPED * 100
-          ).toFixed()}% rychlosti útoku pro všechny přátelské jednotky v okolí.`,
+          en: `Attacking an enemy hero grants you a Hunter's Focus and increase movement speed by ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} for a duration of ${toSec(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION)}`,
+          ru: `Атака вражеского героя дарует вам Охотничий фокус и увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} на ${toSec(
+            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
+          )} секунд`,
+          br: `Atacar um herói inimigo concede a você um Foco de Caçador e aumenta a velocidade de movimento em ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} por uma duração de ${toSec(
+            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
+          )}`,
+          fr: `Attaquer un héros ennemi vous accorde un Focus de chasseur et augmente la vitesse de déplacement de ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} pour une durée de ${toSec(
+            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
+          )}`,
+          zh: `攻擊敵方英雄將獲得獵人的專注並增加移動速度 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 持續時間 ${toSec(
+            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
+          )}`,
+          cz: `Útok na nepřátelského hrdinu vám poskytne Lovecký záměr a zvýší rychlost pohybu o ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} po dobu ${toSec(
+            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
+          )} sekund`,
         },
       }
     /** Nowice staff */
@@ -1634,24 +1620,18 @@ const _getLocaleItemDescription = (
           fr: 'Anneau de berserker',
         },
         desc: {
-          en: `Whenever you receive Normal Damage, gain a stack of berserk, up to a maximum of 8 stacks. Each stack increases your Attack Speed by ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}% for ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} Seconds.`,
-          br: `Sempre que você receber dano normal, ganhe uma pilha de berserk, até um máximo de 8 pilhas. Cada pilha aumenta sua velocidade de ataque em ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}% por ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} segundos.`,
-          ru: `При получении урона вы получаете 1 заряд (Максимум: 8 зарядов). Каждый заряд повышает вашу Скорость атаки на ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}% на ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} секунд.`,
-          zh: `每當你受到普通傷害時，獲得一層狂戰士，最多8層。每層增加${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}%攻擊速度，持續${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)}秒。`,
-          cz: `Pokaždé, když obdržíte normální poškození, získáte stack berserk, až do maxima 8 stacků. Každý stack zvýší vaši rychlost útoku o ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}% po dobu ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sekund.`,
-          fr: `Chaque fois que vous recevez des dégâts normaux, gagnez une pile de berserk, jusqu'à un maximum de 8 piles. Chaque pile augmente votre vitesse d'attaque de ${Math.floor(
-            ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100
-          )}% pendant ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} secondes.`,
+          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen for ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} Seconds.
+          \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times. This effect can occur only once per 100ms.`,
+          ru: `При получении урона вы получаете стак берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья на ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} сек.
+          \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}. Этот эффект может происходить только один раз в 100 мс.`,
+          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida por ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} seg.
+          \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes. Este efeito só pode ocorrer uma vez a cada 100ms.`,
+          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance de berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé pendant ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sec.
+          \n Empile jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois. Cet effet ne peut se produire qu'une fois toutes les 100ms.`,
+          zh: `當你受到傷害時，你將獲得一層狂戰士的耐力。每層你將在 ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} 秒內獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 的生命回復。
+          \n 最多堆疊 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 次。此效果每 100ms 只能發生一次。`,
+          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví po dobu ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sekund.
+          \n Stacks až ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} krát. Tento efekt může nastat pouze jednou za 100 ms.`,
         },
       }
 
@@ -1870,36 +1850,7 @@ const _getLocaleItemDescription = (
           fr: "Ward de l'observateur",
         },
         desc: {
-          en: `Plants an Observer Ward, an invisible watcher that gives your team obstructed vision in a ${
-            ItemAbilityData.WARD_VISION
-          }px radius for up to ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )} Seconds. If the ward is visible to the enemy team, they can destroy it!`,
-          br: `Planta uma pedra Observadora invisível que dá visão obstruída em ${
-            ItemAbilityData.WARD_VISION
-          } px raio para sua equipe.\n Dura ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
-          ru: `Вы устанавливаете невидимый тотем, который раскрывает область и все невидимые вражеские цели вокруг себя в радиусе ${
-            ItemAbilityData.WARD_VISION
-          } пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )} сек. Если тотем видим для врагов, они могут уничтожить его!`,
-          zh: `植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊半徑 ${
-            ItemAbilityData.WARD_VISION
-          }像素範圍內的受限視線。持續 ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )}。如果守衛能被敵隊看見，他們能摧毀它！`,
-          cz: `Nainstaluješ Pozorovací totem, který ti poskytne týmu zablokovanou viditelnost v poloměru ${
-            ItemAbilityData.WARD_VISION
-          }px po dobu až ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )} sekund. Pokud je totem viditelný pro nepřátelský tým, mohou ho zničit!`,
-          fr: `Plante un Ward de l'observateur, un observateur invisible qui donne à votre équipe une vision obstruée dans un rayon de ${
-            ItemAbilityData.WARD_VISION
-          }px pendant ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
-            1
-          )} secondes. Si le ward est visible pour l'équipe ennemie, ils peuvent le détruire!`,
+          en: getObserverWardDescription(),
         },
       }
     case ItemList.Sentry_Ward:
@@ -2038,46 +1989,53 @@ const _getLocaleItemDescription = (
           ru: 'Оберег Гаруна',
         },
         desc: {
-          en: `Every ${toSec(
-            ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN
-          )}, gain a stack of Garun's protection, up to ${
-            ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-          } stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          }.\nGrants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies`,
-          br: `A cada ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} ganha +${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          } de armadura (até ${
-            ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-          } stacks). (Dano normal quebra 1 Stack)\nConcede ${
-            ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-          } de armadura para aliados próximos`,
-          fr: `Tous les ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} gagnez ${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          } armures supplémentaires (jusqu'à ${
-            ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-          } stacks). (Les dommages normaux brisent 1 stack)\nOctroie ${
-            ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-          } armures aux alliés à proximité`,
-          zh: `每隔${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}获得额外${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          }护甲（最多${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}层）。（正常伤害会打破1层）\n给附近的盟友提供${
-            ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-          }护甲`,
-          cz: `Každých ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} získáte dodatečnou ${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          } brnění (až ${
-            ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-          } stohy). (Normální poškození zlomí 1 vrstvu)\nPoskytuje blízkým spojencům ${
-            ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-          } brnění`,
-          ru: `Каждые ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} вы получаете ${
-            ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-          } Брони (складывается до ${
-            ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-          } раз). (Получение физического урона забирает 1 заряд).\nДаёт ${
-            ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-          } Брони ближайшим союзникам.`,
+          en:
+            `Every ${toSec(
+              ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN
+            )}, gain a stack of Garun's protection, up to ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            }.\nGrants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n` +
+            getObserverWardDescription(),
+          br:
+            `A cada ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} ganha +${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            } de armadura (até ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } stacks). (Dano normal quebra 1 Stack)\nConcede ${
+              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
+            } de armadura para aliados próximos \n\n` + getObserverWardDescription(),
+          fr:
+            `Tous les ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} gagnez ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            } armures supplémentaires (jusqu'à ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } stacks). (Les dommages normaux brisent 1 stack)\nOctroie ${
+              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
+            } armures aux alliés à proximité \n\n` + getObserverWardDescription(),
+          zh:
+            `每隔${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}获得额外${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            }护甲（最多${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}层）。（正常伤害会打破1层）\n给附近的盟友提供${
+              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
+            }护甲 \n\n` + getObserverWardDescription(),
+          cz:
+            `Každých ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} získáte dodatečnou ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            } brnění (až ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } stohy). (Normální poškození zlomí 1 vrstvu)\nPoskytuje blízkým spojencům ${
+              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
+            } brnění \n\n` + getObserverWardDescription(),
+          ru:
+            `Каждые ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} вы получаете ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            } Брони (складывается до ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } раз). (Получение физического урона забирает 1 заряд).\nДаёт ${
+              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
+            } Брони ближайшим союзникам. \n\n` + getObserverWardDescription(),
         },
       }
     }
@@ -2092,30 +2050,35 @@ const _getLocaleItemDescription = (
           ru: 'Талисман волшебника',
         },
         desc: {
-          en: `Reduces Magic Resistance and positive aura durations by ${fixed(
-            ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
-            1
-          )}% for all nearby enemies.`,
-          br: `Reduz a resistência mágica e a duração das auras positivas de todos os inimigos próximos em ${fixed(
-            ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
-            1
-          )}%.`,
-          fr: `Réduit la résistance magique et la durée des auras positives de tous les ennemis à proximité de ${fixed(
-            ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
-            1
-          )}%.`,
+          en:
+            `Reduces Magic Resistance and positive aura durations by ${fixed(
+              ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
+              1
+            )}% for all nearby enemies \n\n` + getObserverWardDescription(),
+          br:
+            `Reduz a resistência mágica e a duração das auras positivas de todos os inimigos próximos em ${fixed(
+              ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
+              1
+            )}% \n\n` + getObserverWardDescription(),
+          fr:
+            `Réduit la résistance magique et la durée des auras positives de tous les ennemis à proximité de ${fixed(
+              ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
+              1
+            )}% \n\n` + getObserverWardDescription(),
           zh: `降低附近所有敵人的魔法抗性和正面光環持續時間${fixed(
             ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
             1
           )}%。`,
-          cz: `Sníží magickou odolnost a délku pozitivních efektů všech nepřátel v okolí o ${fixed(
-            ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
-            1
-          )}%.`,
-          ru: `Уменьшает Сопротивление магии и длительность положительных эффектов у ближайших врагов на ${fixed(
-            ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
-            1
-          )}%.`,
+          cz:
+            `Sníží magickou odolnost a délku pozitivních efektů všech nepřátel v okolí o ${fixed(
+              ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
+              1
+            )}% \n\n` + getObserverWardDescription(),
+          ru:
+            `Уменьшает Сопротивление магии и длительность положительных эффектов у ближайших врагов на ${fixed(
+              ItemAbilityData.WIZARD_CHARM_AOE_MR_AND_BUFF_REDUCTION * 100,
+              1
+            )}% \n\n` + getObserverWardDescription(),
         },
       }
     }
@@ -2130,46 +2093,52 @@ const _getLocaleItemDescription = (
           ru: 'Искажённый медальон',
         },
         desc: {
-          en: `Each Critical hit against an enemy gives you a stack of corrupted rage, up to a maximum of ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } stacks. Each stack increases your Attack Damage by ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-          } and Movement Speed by ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          } for ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
-          br: `Cada acerto crítico contra um inimigo concede uma pilha de raiva corrompida, até um máximo de ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } pilhas. Cada pilha aumenta seu Dano de Ataque em ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-          } e Velocidade de Movimento em ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          } por ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
-          fr: `Chaque coup critique contre un ennemi vous donne une pile de rage corrompue, jusqu'à un maximum de ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } piles. Chaque pile augmente vos dégâts d'attaque de ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-          } et votre vitesse de déplacement de ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          } pendant ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
-          zh: `对敌人的每次暴击都会给你一层腐化之怒叠加，最多不超过 ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } 层。每层增加你的攻击伤害 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} 和移动速度 ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          }，持续 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)} 秒。`,
-          cz: `Každý kritický zásah proti nepříteli vám dává stack zkaženého vzteku, až do maximálního počtu ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } stacků. Každý stack zvyšuje váš útočný poškození o ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-          } a rychlost pohybu o ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          } po dobu ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
-          ru: `Нанося критический урон, вы получаете 1 заряд (Максимум: ${
-            ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-          } зарядов). Каждый заряд повышает вашу Силу атаки на ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-          } и Скорость передвижения на ${
-            ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-          } на ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}.`,
+          en:
+            `Each Critical hit against an enemy gives you a stack of corrupted rage, up to a maximum of ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } stacks. Each stack increases your Attack Damage by ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+            } and Movement Speed by ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            } for ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+          br:
+            `Cada acerto crítico contra um inimigo concede uma pilha de raiva corrompida, até um máximo de ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } pilhas. Cada pilha aumenta seu Dano de Ataque em ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+            } e Velocidade de Movimento em ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            } por ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+          fr:
+            `Chaque coup critique contre un ennemi vous donne une pile de rage corrompue, jusqu'à un maximum de ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } piles. Chaque pile augmente vos dégâts d'attaque de ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+            } et votre vitesse de déplacement de ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            } pendant ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+          zh:
+            `对敌人的每次暴击都会给你一层腐化之怒叠加，最多不超过 ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } 层。每层增加你的攻击伤害 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} 和移动速度 ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            }，持续 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)} 秒。 \n\n` + getObserverWardDescription(),
+          cz:
+            `Každý kritický zásah proti nepříteli vám dává stack zkaženého vzteku, až do maximálního počtu ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } stacků. Každý stack zvyšuje váš útočný poškození o ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+            } a rychlost pohybu o ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            } po dobu ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+          ru:
+            `Нанося критический урон, вы получаете 1 заряд (Максимум: ${
+              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
+            } зарядов). Каждый заряд повышает вашу Силу атаки на ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
+            } и Скорость передвижения на ${
+              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
+            } на ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
         },
       }
     }
@@ -2285,4 +2254,39 @@ export const getLocaleItemDescription = (
     desc: description,
     name: result.name[LANG.value] ? result.name[LANG.value] : result.name['en'],
   }
+}
+
+export const getObserverWardDescription = () => {
+  const text: { [key: string]: string } = {
+    en: `Plants an Observer Ward, an invisible watcher that gives your team obstructed vision in a ${
+      ItemAbilityData.WARD_VISION
+    }px radius for up to ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
+      1
+    )} Seconds. If the ward is visible to the enemy team, they can destroy it!`,
+    br: `Planta uma pedra Observadora invisível que dá visão obstruída em ${
+      ItemAbilityData.WARD_VISION
+    } px raio para sua equipe.\n Dura ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
+      1
+    )} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
+    ru: `Вы устанавливаете невидимый тотем, который раскрывает область и все невидимые вражеские цели вокруг себя в радиусе ${
+      ItemAbilityData.WARD_VISION
+    } пикселей в течение ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
+      1
+    )} сек. Если тотем видим для врагов, они могут уничтожить его!`,
+    zh: `植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊半徑 ${ItemAbilityData.WARD_VISION}像素範圍內的受限視線。持續 ${(
+      ItemAbilityData.WARD_DURATION / 1000
+    ).toFixed(1)}。如果守衛能被敵隊看見，他們能摧毀它！`,
+    cz: `Nainstaluješ Pozorovací totem, který ti poskytne týmu zablokovanou viditelnost v poloměru ${
+      ItemAbilityData.WARD_VISION
+    }px po dobu až ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
+      1
+    )} sekund. Pokud je totem viditelný pro nepřátelský tým, mohou ho zničit!`,
+    fr: `Plante un Ward de l'observateur, un observateur invisible qui donne à votre équipe une vision obstruée dans un rayon de ${
+      ItemAbilityData.WARD_VISION
+    }px pendant ${(ItemAbilityData.WARD_DURATION / 1000).toFixed(
+      1
+    )} secondes. Si le ward est visible pour l'équipe ennemie, ils peuvent le détruire!`,
+  }
+
+  return text[LANG.value] ? text[LANG.value] : text['en']
 }

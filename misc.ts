@@ -4,7 +4,7 @@ import { LOCALE } from '../locales'
 // @ts-ignore
 import getLocale from '../lang'
 
-export const fixed = (num: number, count = 3): number => {
+export const fixed = (num: number, count = 2): number => {
   const multiplier = 10 ** count
   return Math.round(num * multiplier) / multiplier
 }
