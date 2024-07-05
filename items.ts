@@ -734,7 +734,7 @@ const _getLocaleItemDescription = (
             }% and increasing your Movement Speed by ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} for ${(
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             ).toFixed(1)} Seconds.\n` +
-            `This effect prevents you from casting abilites.\n \n` +
+            `This effect prevents you from casting abilities.\n \n` +
             getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
           ru:
             `Искажает вашу кровь и делает вас быстрее, увеличивая Скорость атаки на ${
@@ -789,7 +789,7 @@ const _getLocaleItemDescription = (
           cz: 'Dlouhý luk lovce',
         },
         desc: {
-          en: `Attacking an enemy hero grants you a Hunter's Focus and increase movement speed by ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} for a duration of ${toSec(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION)}`,
+          en: `Attacking an enemy hero grants you a Hunter's Focus and increases movement speed by ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} for a duration of ${toSec(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION)}`,
           ru: `Атака вражеского героя дарует вам Охотничий фокус и увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} на ${toSec(
             ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
           )} секунд`,
@@ -1361,7 +1361,7 @@ const _getLocaleItemDescription = (
           cz: 'Kirinův obránce',
         },
         desc: {
-          en: `Upon getting hit by any Crowd Control effect, block that effect. Sucessfully blocking increases Magic Resistance by ${calculateMagicDefense(
+          en: `Upon getting hit by any Crowd Control effect, block that effect. Successfully blocking increases Magic Resistance by ${calculateMagicDefense(
             ItemAbilityData.KIRINS_DEFENDER_BONUS_MR
           )} for ${(ItemAbilityData.KIRINS_DEFENDER_DURATION / 1000).toFixed()} Seconds.`,
           br: `Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${(
