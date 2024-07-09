@@ -75,22 +75,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Orbe mágico cega`,
           },
           description: {
-            en: `If magical orb hit same hero twice it will reduce his vision by 50% for ${toSecRaw(
+            en: `If magical orb hit same hero twice it will reduce his vision by 66% for ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
-            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 50% на ${toSecRaw(
+            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 66% на ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )} секунд`,
-            cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 50% po dobu ${toSecRaw(
+            cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 66% po dobu ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
             zh: `如果魔法球两次击中同一个英雄，则其视野将在${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
-            )}秒内减少50%`,
-            fr: `Si l'orbe magique touche le même héros deux fois, sa vision sera réduite de 50% pendant ${toSecRaw(
+            )}秒内减少66%`,
+            fr: `Si l'orbe magique touche le même héros deux fois, sa vision sera réduite de 66% pendant ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
-            br: `Se o orbe mágico atingir o mesmo herói duas vezes, sua visão será reduzida em 50% por ${toSecRaw(
+            br: `Se o orbe mágico atingir o mesmo herói duas vezes, sua visão será reduzida em 66% por ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
           },
@@ -456,20 +456,27 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: 'Shadow Carrot Silence',
-            ru: 'Теневая морковь накладывает немоту',
-            cz: 'Stínová mrkev němčí',
-            zh: '暗影胡萝卜 沉默',
-            fr: "Carotte d'ombre Silence",
-            br: 'Cenoura Sombria Silêncio',
+            en: 'Bleed Attack',
+            ru: 'Кровоточащая атака',
+            cz: 'Krvácející útok',
+            zh: '流血攻击',
+            fr: 'Attaque sanguinolente',
+            br: 'Ataque Sangrento',
           },
           description: {
-            en: 'If an enemy is attached to the Shadow Carrot, that enemy will be silenced until the carrot is removed.',
-            ru: 'Если морковь прикреплена к вражескому герою, он получит немоту пока морковь не исчезнет.',
-            cz: 'Pokud je nepřítel připojen k Stínové mrkvi, bude němý, dokud mrkev není odstraněna.',
-            zh: '如果敌人被附着在暗影胡萝卜上，那个敌人将被沉默，直到胡萝卜被移除。',
-            fr: "Si un ennemi est attaché à la Carotte d'ombre, cet ennemi sera réduit au silence jusqu'à ce que la carotte soit retirée.",
-            br: 'Se um inimigo estiver preso à Cenoura Sombria, esse inimigo será silenciado até que a cenoura seja removida.',
+            en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% of his Attack Damage over ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
+            \nThis effect can occur once every ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}s.`,
+            ru: `Атаки Томаса наносят эффект Кровотечения, наносящий ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% от его урона за атаку в течение ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)} секунд и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            \nЭтот эффект может происходить один раз в ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)} секунд.`,
+            cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% jeho útoku po
+            dobu ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s a sníží obranu o ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            \nTento efekt může nastat jednou za ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}s.`,
+            zh: `Thomas的基础攻击会造成流血效果，持续${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}秒，造成${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}%的攻击伤害，减少${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}护甲。
+            \n此效果每${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}秒发生一次。`,
+            fr: `Les attaques de base de Thomas appliquent un effet de saignement, infligeant ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% de ses dégâts d'attaque sur ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s et réduisant l'armure de ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            \nCet effet peut se produire une fois toutes les ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}s.`,
+            br: `Os Ataques Básicos de Thomas aplicam um efeito de Sangramento, causando ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% de seu Dano de Ataque ao longo de ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s e reduzindo a armadura em ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            \nEste efeito pode ocorrer uma vez a cada ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}s.`,
           },
         },
         tier1_right: {
@@ -672,60 +679,57 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
-            ru: `+${toSecRaw(
-              HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION
-            )} секунд к отбрасыванию Триумфального переворота`,
-            cz: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
-            zh: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
-            fr: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
-            br: `Triumphant Upheaval +${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_DURATION)}s`,
+            en: `Triumphant Regeneration`,
+            cz: `Triumfální regenerace`,
+            br: `Regeneração Triunfante`,
+            zh: `凯旋再生`,
+            fr: `Régénération triomphante`,
           },
           description: {
-            en: `Increases the duration of Triumphant Upheaval's pushback.`,
-            ru: 'Увеличивает длительность отбрасывания у Триумфального переворота',
-            cz: `Zvyšuje dobu odhazování Triumphant Upheaval.`,
-            zh: `增加Triumphant Upheaval的推开时间。`,
-            fr: `Augmente la durée du renversement triomphant.`,
-            br: `Aumenta a duração do empurrão do Triumphant Upheaval.`,
+            en: `Triumphant Upheaval heals Hazel for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% of the damage dealt.`,
+            ru: `Триумфальное восстание лечит Хейзел на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% от нанесённого урона.`,
+            cz: `Triumfální Povstání léčí Hazel o ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% způsobeného poškození.`,
+            zh: `凯旋巨浪治疗凯旋 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% 伤害。`,
+            fr: `Le Soulèvement triomphant soigne Hazel pour ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% des dégâts infligés.`,
+            br: `O Levante Triunfante cura Hazel em ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% do dano causado.`,
           },
         },
         tier1_right: {
           title: {
             en: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Damage`,
             ru: `+${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} к урону от Гнева правосудия`,
-            cz: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Poškození`,
-            zh: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} 伤害`,
-            fr: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Dégâts`,
-            br: `Justice's Wrath +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Dano`,
+            cz: `Hnev spravodlivosti +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} poškození`,
+            br: `Ira da Justiça +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} de Dano`,
+            fr: `Colère de la Justice +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} dégâts`,
+            zh: `正义之怒 +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} 伤害`,
           },
         },
         tier2_left: {
           title: {
             en: `Justice's Wrath Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
             ru: `+${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)} сек. оглушения от Гнева правосудия`,
-            cz: `Justice's Wrath omráčení +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            zh: `Justice's Wrath 眩晕 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            fr: `Justice's Wrath Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            br: `Justice's Wrath Atordoamento +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            cz: `Hnev spravodlivosti omráčení +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            br: `Ira da Justiça Atordoamento +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            zh: `正义之怒 眩晕 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            fr: `Colère de la Justice Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
           },
         },
         tier2_right: {
           title: {
-            en: 'Triumphant Upheaval Pure + Dispel',
-            ru: 'Триумфальный переворот наносит чистый урон/рассеивает',
-            cz: 'Triumphant Upheaval čistý + rozptýlení',
-            zh: 'Triumphant Upheaval 纯净 + 驱散',
-            fr: 'Triumphant Upheaval Pur + Dissipation',
-            br: 'Triumphant Upheaval Puro + Dispersão',
+            en: 'Triumphant Upheaval Immunity',
+            cz: 'Triumfálne prevraty imunita',
+            br: 'Imunidade do Levante Triunfante',
+            zh: '凯旋巨浪免疫',
+            fr: 'Immunité au Soulèvement triomphant',
+            ru: 'Иммунитет к Триумфальному восстанию',
           },
           description: {
-            en: 'Triumphant Upheaval deals pure damage, bypassing both Armor and Magic Resistance, and dispels all negative effects on trigger.',
-            ru: 'Триумфальный переворот наносит чистый урон и рассеивает все негативные эффекты при активации.',
-            cz: 'Triumphant Upheaval způsobuje čisté poškození, obejde jak obranu, tak magický odpor, a rozptýlí všechny negativní efekty na spouštění.',
-            zh: 'Triumphant Upheaval 造成纯净伤害，绕过护甲和魔法抗性，并在触发时驱散所有负面效果。',
-            fr: "Triumphant Upheaval inflige des dégâts purs, contournant à la fois l'armure et la résistance magique, et dissipe tous les effets négatifs à la déclenchement.",
-            br: 'Triumphant Upheaval causa dano puro, ignorando tanto a Armadura quanto a Resistência Mágica, e dispersa todos os efeitos negativos no gatilho.',
+            en: 'Hazel is immune to all damage and crowd control effects while charing Triumphant Upheaval.',
+            ru: 'Хейзел иммунен к любому урону и эффектам контроля над толпой во время заряда Триумфального восстания.',
+            cz: 'Hazel je imunní vůči veškerému poškození a efektům kontroly davu během nabíjení Triumfálního povstání.',
+            br: 'Hazel é imune a todo dano e efeitos de controle de multidão enquanto carrega o Levante Triunfante.',
+            zh: 'Hazel 在充能凯旋巨浪时免疫所有伤害和控制效果。',
+            fr: 'Hazel est immunisé contre tous les dégâts et les effets de contrôle de foule pendant la charge du Soulèvement triomphant.',
           },
         },
       }
@@ -744,12 +748,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Lightning Shock +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}% Healing`,
-            ru: `Удар молнии лечит +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}%`,
-            cz: `Úder blesku +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}% léčení`,
-            zh: `闪电冲击 +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}% 治疗`,
-            fr: `Impact de foudre +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}% de soins`,
-            br: `Choque de Raios +${Math.floor(KiraAbilityData.TALENT_T1_RIGHT_ENH_ATTACK_BONUS_HEALING * 100)}% de Cura`,
+            en: `Rain of Spark ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms slow`,
+            ru: `Дождь искр замедляет на ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}мс`,
+            cz: `Déšť jisker zpomaluje o ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
+            zh: `火花雨减速 ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
+            fr: `Pluie d'étincelles ralentit de ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
+            br: `Relâmpago do Abismo reduz em ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
           },
         },
         tier2_left: {
@@ -765,12 +769,21 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: '+1 Lightning Shock Target',
-            ru: 'Удар молнии поражает +1 дополнительную цель',
-            cz: '+1 cíl Úderu blesku',
-            zh: '+1 闪电冲击目标',
-            fr: '+1 cible Impact de foudre',
-            br: '+1 Alvo de Choque de Raios',
+            en: `Chain lightning`,
+            ru: `Цепная молния`,
+            cz: `Řetězová blesk`,
+            zh: `连锁闪电`,
+            fr: `Chaîne d'éclair`,
+            br: `Raio em Cadeia`,
+          },
+          description: {
+            en: `Lightning shock now chain to closest unit, can be enemy or friendly and apply the Lightning Shock effect with 25% less effect per chain.`,
+            ru: `Удар молнии теперь перепрыгивает на ближайшую цель, может быть врагом или союзником, и накладывает эффект Удара молнии с уменьшением эффекта на 25% за каждое перепрыгивание.`,
+            cz: `Úder blesku se nyní řetí k nejbližší jednotce, může to být nepřítel nebo spojenec a aplikuje efekt Úder
+            blesku s 25% menším efektem za řetěz.`,
+            zh: `闪电冲击现在可以连锁到最近的单位，可以是敌人或友军，并且每次连锁减少 25% 的效果。`,
+            fr: `L'impact de foudre se chaîne désormais à l'unité la plus proche, qu'il s'agisse d'un ennemi ou d'un allié, et applique l'effet de choc de foudre avec 25% d'effet en moins par chaîne.`,
+            br: `O Choque de Raios agora encadeia para a unidade mais próxima, podendo ser inimiga ou aliada, e aplica o efeito de Choque de Raios com 25% menos efeito por encadeamento.`,
           },
         },
       }
@@ -863,70 +876,66 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} Soul Harvest stacks - Kill/Assist`,
-            ru: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} к Силе умений за убийство/содействие`,
-            cz: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} Soul Harvest zásob - Zabití/Pomoc`,
-            zh: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} 灵魂收割层数 - 击杀/协助`,
-            fr: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} piles de Moisson d'âmes - Tuer/Aider`,
-            br: `+${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} pilhas de Colheita de Almas - Matar/Ajudar`,
+            en: `Haunted Ghosts Heal`,
+            ru: `Лечение Проклятых призраков`,
+            cz: `Léčba Strašidelných duchů`,
+            zh: `治疗幽灵`,
+            fr: `Soins des Fantômes hantés`,
+            br: `Cura dos Fantasmas Assombrados`,
           },
           description: {
-            en: `Enhances your passive, providing an additional ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} stacks of Soul Harvest for each kill or assist`,
-            ru: `Каждый убитый враг после изучения этого таланта будет давать дополнительно ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} Силы умений`,
-            cz: `Zlepšuje vaši pasivní schopnost, poskytující další ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} zásob Soul Harvest za každé zabití nebo pomoc`,
-            zh: `增强你的被动技能，为每次击杀或协助提供额外的 ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} 层灵魂收割`,
-            fr: `Améliore votre passif, fournissant ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} piles supplémentaires de Moisson d'âmes pour chaque élimination ou assistance`,
-            br: `Aprimora sua passiva, fornecendo ${MagdaleneAbilityData.TALENT_T1_LEFT_ADDITIONAL_AP} pilhas adicionais de Colheita de Almas para cada abate ou assistência`,
+            en: `Haunted Ghosts returns to the owner and heals for ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% of the damage dealt.`,
+            ru: `Проклятые призраки возвращаются к владельцу и лечат на ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% от нанесенного урона.`,
+            cz: `Strašidelné duchy se vrátí majiteli a vyléčí za ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% způsobeného poškození.`,
+            zh: `幽灵返回给主人并治疗 ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% 造成的伤害。`,
+            fr: `Les Fantômes hantés retournent au propriétaire et soignent pour ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% des dégâts infligés.`,
+            br: `Os Fantasmas Assombrados retornam ao dono e curam ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% do dano causado.`,
           },
         },
         tier1_right: {
           title: {
-            en: `Scream of Pain Pushback +${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )}s`,
-            ru: `+${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )} сек. к отбрасыванию Загробного вопля`,
-            cz: `Scream of Pain Odrážení +${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )}s`,
-            zh: `Scream of Pain 推开 +${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )}s`,
-            fr: `Scream of Pain Repousse +${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )}s`,
-            br: `Scream of Pain Empurrão +${toSecRaw(
-              MagdaleneAbilityData.TALENT_T1_RIGHT_SCREAM_OF_PAIN_PUSHBACK_DURATION
-            )}s`,
+            en: `Haunted Ghost Impact damage`,
+            ru: `Урон от Проклятых призраков`,
+            cz: `Poškození od Strašidelných duchů`,
+            zh: `幽灵冲击伤害`,
+            fr: `Dégâts d'impact des Fantômes hantés`,
+            br: `Dano de Impacto dos Fantasmas Assombrados`,
           },
         },
         tier2_left: {
           title: {
-            en: `Swarm of Ghosts slow ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
-            ru: `Волна призраков замедляет ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
-            cz: `Swarm of Ghosts zpomaluje ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
-            zh: `Swarm of Ghosts 减速 ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
-            fr: `Swarm of Ghosts ralentit ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
-            br: `Swarm of Ghosts desacelera ${toSecRaw(MagdaleneAbilityData.TALENT_T2_SLOW_DURATION)}s`,
+            en: `Crippling Ghost`,
+            ru: `Урон Проклятого призрака`,
+            cz: `Oslnivý duch`,
+            zh: `致残幽灵`,
+            fr: `Fantôme paralysant`,
+            br: `Fantasma Paralisante`,
+          },
+          description: {
+            en: `Haunted Ghost applies movement slow ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            ru: `Проклятый призрак накладывает замедление на ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            cz: `Strašidelný duch aplikuje zpomalení pohybu ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            zh: `幽灵应用移动减速 ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            fr: `Le Fantôme hanté applique un ralentissement des mouvements ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            br: `O Fantasma Assombrado aplica lentidão de movimento ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
           },
         },
         tier2_right: {
           title: {
-            en: `Scream of Pain Applies ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} Stacks`,
-            ru: 'Загробный вопль накладывает заряды Призрачного пакта',
-            cz: `Scream of Pain aplikuje ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} zásob`,
-            zh: `Scream of Pain 应用 ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} 层`,
-            fr: `Scream of Pain Applique ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} piles`,
-            br: `Scream of Pain Aplica ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} pilhas`,
+            en: `Purging Scream`,
+            cz: `Očišťující výkřik`,
+            zh: `净化尖叫`,
+            fr: `Cri de purification`,
+            br: `Grito Purificador`,
+            ru: `Очищающий вопль`,
           },
           description: {
-            en: `Scream of Pain applies ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} stacks of ghost pact.`,
-            ru: `Загробный вопль накладывает ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} заряда Призрачного пакта`,
-            cz: `Scream of Pain aplikuje ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} zásob duchovní smlouvy`,
-            zh: `Scream of Pain 应用 ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} 层幽灵契约`,
-            fr: `Scream of Pain applique ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} piles de pacte fantôme`,
-            br: `Scream of Pain aplica ${MagdaleneAbilityData.TALENT_T2_RIGHT_SCREAM_OF_PAIN_APPLY_STACK} pilhas de pacto fantasma`,
+            en: `Scream of Pain now dispels all dispellable positive effects from target.`,
+            cz: `Zagrobný výkřik nyní rozptýlí všechny rozptýlitelné pozitivní efekty z cíle.`,
+            zh: `痛苦尖叫现在会驱散目标身上所有可驱散的正面效果。`,
+            fr: `Le cri de douleur dissipe désormais tous les effets positifs dissipables de la cible.`,
+            br: `O Grito do Sofrimento agora dissipa todos os efeitos positivos dissipáveis do alvo.`,
+            ru: `Загробный вопль теперь рассеивает все рассеиваемые положительные эффекты с цели.`,
           },
         },
       }
