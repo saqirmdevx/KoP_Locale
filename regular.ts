@@ -111,6 +111,22 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Magdalène',
     br: 'Magdalena',
   },
+  [LOCALE.PRIM_NAME]: {
+    en: 'Prim',
+    ru: 'Прим',
+    cz: 'Prim',
+    zh: '普里姆',
+    fr: 'Prim',
+    br: 'Prim',
+  },
+  [LOCALE.PUPPETEER_NAME]: {
+    en: 'Puppeteer',
+    ru: 'Кукловод',
+    cz: 'Loutkář',
+    zh: '木偶师',
+    fr: 'Marionnettiste',
+    br: 'Puppeteer',
+  },
   [LOCALE.UNK_DESCRIPTION]: {
     en: 'Will be added soon!',
     ru: 'Скоро будет добавлено!',
