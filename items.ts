@@ -2071,23 +2071,23 @@ const _getLocaleItemDescription = (
           en:
             `For the next attack, it provides ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} bonus damage and 100% critical strike chance. \n This effect can occur only once per ${toSec(
               ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )} sec.\n\n` + getObserverWardDescription(),
+            )}.\n\n` + getObserverWardDescription(),
           br:
             `Para o próximo ataque, fornece ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} de dano bônus e 100% de chance de acerto crítico. \n Este efeito só pode ocorrer uma vez a cada ${toSec(
               ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )} seg.\n\n` + getObserverWardDescription(),
+            )}.\n\n` + getObserverWardDescription(),
           fr:
             `Pour la prochaine attaque, il fournit ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} de dégâts bonus et 100% de chance de coup critique. \n Cet effet ne peut se produire qu'une fois toutes les ${toSec(
               ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )} sec.\n\n` + getObserverWardDescription(),
-          zh:
-            `為下一次攻擊提供 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE}點額外傷害和100%的致命一擊機會。 \n 此效果每 ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )}秒只能發生一次。\n\n` + getObserverWardDescription(),
+            )}.\n\n` + getObserverWardDescription(),
           cz:
             `Pro další útok poskytuje ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} bonusové poškození a 100% šanci na kritický zásah. \n Tento efekt může nastat pouze jednou za ${toSec(
               ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )} sekund.\n\n` + getObserverWardDescription(),
+            )}.\n\n` + getObserverWardDescription(),
+          zh:
+            `對下一次攻擊，提供 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE}點額外傷害和100%暴擊率。 \n 這個效果每 ${toSec(
+              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
+            )} 只能發生一次。\n\n` + getObserverWardDescription(),
         },
       }
     }
