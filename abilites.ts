@@ -1074,15 +1074,34 @@ const _getSpellDescriptionLang = (
 
     case SpellList.MAGDALENE_ATTACK: {
       const baseDamage = getDamage(MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const bonusAPTalent = MagdaleneAbilityData.BONUS_ABILITY_POWER_FOR_KILL_OR_ASSIST
+      const maxSouls =
+        MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS +
+        MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level
+      const soulDamage = getDamage(
+        0,
+        Shared.DamageTypes.MAGICAL,
+        MagdaleneAbilityData.MAGDALENE_PASSIVE_DAMAGE_PER_STACK_ON_DEATH
+      )
 
       return {
-        en: `Magdalene sends a burst of energy from her dark scythe, dealing ${baseDamage}.<br /> Passive: Magdalene permanently gains ${bonusAPTalent} stacks of Soul Harvest upon recieving a kill or assist. Each stack increases Ability Power by 1.`,
-        ru: `Магдалина взмахивает серпом, выпуская волну энергии, наносящую ${baseDamage} физического урона\n\n Пассивно: За получение убийства или содействия, Магдалина навсегда получает ${bonusAPTalent} Силы умений.`,
-        br: `Magdalene rodopiando com sua foice negra disparando um burst de energia que causa ${baseDamage} dano\n\n Passivo: Magdalene ganha permanentemente ${bonusAPTalent} de poder de habilidade por matar ou ajudar a matar o herói.`,
-        fr: `Magdalene tournoie avec sa faux sombre tirant une salve d'énergie qui inflige ${baseDamage} dégâts\n\nPassif: Magdalene gagne permanent ${bonusAPTalent} points de puissance d'aptitude pour tuer ou aider à tuer le héros.`,
-        zh: `玛格达丽娜旋转着黑色镰刀发射一股能量，造成${baseDamage}伤害\n\n被动：玛格达丽娜击杀或协助击杀英雄永久获得${bonusAPTalent}能力值。`,
-        cz: `Magdalena zatočí se svím temným srpem a vystřeli výboj energie, která způsobí ${baseDamage} poškození\n\nPasivní: Magdalena trvale získává ${bonusAPTalent} schopnost síly za zabití nebo pomoc při zabití hrdiny.`,
+        en: `Magdalene sends a burst of energy from her dark scythe, dealing ${baseDamage}.
+        \n\nPassive: Magdalene steals an enemy's soul after killing an enemy hero or minion. Magdalene can store up to ${maxSouls} souls. Each soul increases her Ability Power by 1.
+        \nWhen Magdalene dies, she will release all souls in a short area and deals ${soulDamage} per soul to all enemies and fear them for a short duration.`,
+        ru: `Магдалина испускает всплеск энергии из своей тёмной косы, нанося ${baseDamage}.
+        \n\nПассивно: Магдалина украдет душу врага после убийства вражеского героя или миньона. Магдалина может хранить до ${maxSouls} душ. Каждая душа увеличивает её Силу умений на 1.
+        \nКогда Магдалина умирает, она освобождает все души в небольшой области и наносит ${soulDamage} урона за каждую душу всем врагам и пугает их на короткое время.`,
+        cz: `Magdalena vysílá výbuch energie ze své temné kose, způsobující ${baseDamage}.
+        \n\nPasivně: Magdalena ukradne duši nepřítele po zabití nepřátelského hrdiny nebo minionu. Magdalena může uchovávat až ${maxSouls} duší. Každá duše zvyšuje její Sílu kouzel o 1.
+        \nKdyž Magdalena zemře, uvolní všechny duše v krátké oblasti a způsobí ${soulDamage} za duši všem nepřátelům a na krátkou dobu je vyděsí.`,
+        br: `Magdalene envia uma explosão de energia de sua foice sombria, causando ${baseDamage}.
+        \n\nPassivo: Magdalene rouba uma alma inimiga após matar um herói ou um súdito inimigo. Magdalene pode armazenar até ${maxSouls} almas. Cada alma aumenta seu Poder de Habilidade em 1.
+        \nQuando Magdalene morre, ela libera todas as almas em uma pequena área e causa ${soulDamage} por alma a todos os inimigos e os assusta por um curto período.`,
+        zh: `Magdalene 從她的黑暗鐮刀發射出一陣能量爆發，造成 ${baseDamage}點傷害。
+        \n\n被動：Magdalene 在殺死敵方英雄或小兵後偷取敵人的靈魂。Magdalene 最多可以儲存 ${maxSouls}個靈魂。每個靈魂都會增加她的技能傷害 1點。
+        \n當 Magdalene 死亡時，她會在短時間內釋放所有靈魂，並對所有敵人造成 ${soulDamage}點傷害並使他們恐懼一小段時間。`,
+        fr: `Magdalene envoie une explosion d'énergie de sa faux sombre, infligeant ${baseDamage}.
+        \n\nPassif: Magdalene vole une âme ennemie après avoir tué un héros ennemi ou un sbire. Magdalene peut stocker jusqu'à ${maxSouls} âmes. Chaque âme augmente sa Puissance des compétences de 1.
+        \nLorsque Magdalene meurt, elle libère toutes les âmes dans une petite zone et inflige ${soulDamage} par âme à tous les ennemis et les effraie pendant une courte durée.`,
       }
     }
 
@@ -1131,18 +1150,28 @@ const _getSpellDescriptionLang = (
       )
 
       return {
-        en: `Magdalene sends a haunted ghost in a direction, dealing ${damage} magical damage per second to enemies it passes through. The ghost lasts for ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}. 
+        en: `Magdalene sends a haunted ghost in a direction when it hits the enemy, it will inflict a haunted ghost, dealing ${damage} magical damage per second to an inflicted enemy. The ghost lasts for ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}. 
         \n When the haunted ghost debuff expires or is consumed by Scream of Pain, it returns back to Magdalene and reset the cooldown of Haunted Ghost.`,
-        ru: `Магдалина посылает преследующего призрака в направлении, нанося ${damage} магического урона в секунду врагам, через которых он проходит. Призрак длится ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
-        \n Когда дебафф призрака истекает или его поглощает Крик Боли, он возвращается к Магдалене и сбрасывает перезарядку Призрачного призрака.`,
-        br: `Magdalene envia um fantasma assombrado em uma direção, causando ${damage} de dano mágico por segundo aos inimigos que ele atravessa. O fantasma dura por ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
+        ru: `Магдалина отправляет привидение в направлении, когда оно попадает во врага, оно накладывает на него проклятое привидение, наносящее ${damage} магического урона в секунду. Привидение длится ${toSec(
+          MagdaleneAbilityData.HAUNTED_GHOST_DURATION
+        )}.
+        \n Когда дебафф проклятого привидения истекает или используется Крик Боли, оно возвращается к Магдалине и сбрасывает перезарядку Проклятого привидения.`,
+        br: `Magdalene envia um fantasma assombrado em uma direção, quando atinge o inimigo, ele inflige um fantasma assombrado, causando ${damage} de dano mágico por segundo a um inimigo afetado. O fantasma dura por ${toSec(
+          MagdaleneAbilityData.HAUNTED_GHOST_DURATION
+        )}.
         \n Quando o debuff do fantasma assombrado expira ou é consumido por Grito de Dor, ele retorna a Magdalene e reseta o tempo de recarga do Fantasma Assombrado.`,
-        fr: `Magdalene envoie un fantôme hanté dans une direction, infligeant ${damage} de dégâts magiques par seconde aux ennemis qu'il traverse. Le fantôme dure ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
-        \n Lorsque le débuff du fantôme hanté expire ou est consommé par le Cri de la Douleur, il retourne à Magdalene et réinitialise le temps de recharge du Fantôme hanté.`,
-        zh: `玛格达丽娜向某個方向發送一個受詛咒的幽靈，對它通過的敵人造成 ${damage}點魔法傷害。幽靈持續時間 ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}。
-        \n 當受詛咒的幽靈debuff到期或被尖叫消耗時，它將返回玛格达丽娜並重置受詛咒的幽靈的冷卻時間。`,
-        cz: `Magdalena pošle pronásledujícího ducha ve směru, který způsobuje ${damage} magického poškození za sekundu nepřátelům, kterými projde. Duch trvá ${toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)}.
-        \n Když debuff ducha vyprší nebo je pohlcen Křikem bolesti, vrátí se k Magdaléně a resetuje dobu do nového použití.`,
+        fr: `Magdalene envoie un fantôme hanté dans une direction, lorsqu'il touche l'ennemi, il inflige un fantôme hanté, infligeant ${damage} de dégâts magiques par seconde à un ennemi affecté. Le fantôme dure ${toSec(
+          MagdaleneAbilityData.HAUNTED_GHOST_DURATION
+        )}.
+        \n Lorsque le débuff du fantôme hanté expire ou est consommé par le Cri de Douleur, il retourne à Magdalene et réinitialise le temps de recharge du Fantôme hanté.`,
+        zh: `玛格达丽娜朝一个方向发送一个鬼魂，当它击中敌人时，它会造成一个鬼魂，对受影响的敌人造成 ${damage}点每秒的魔法伤害。鬼魂持续时间为 ${toSec(
+          MagdaleneAbilityData.HAUNTED_GHOST_DURATION
+        )}。
+        \n 当鬼魂消失或被痛苦尖叫消耗时，它会返回到玛格达丽娜并重置鬼魂的冷却时间。`,
+        cz: `Magdalena pošle v dána směru strašidlo, které když zasáhne nepřítele, způsobí mu strašidelného ducha, který způsobuje ${damage} magického poškození za sekundu. Duch trvá ${toSec(
+          MagdaleneAbilityData.HAUNTED_GHOST_DURATION
+        )}.
+        \n Když debuff strašidelného ducha vyprší nebo je spotřebován Křikem bolesti, vrátí se zpět k Magdalene a resetuje dobu do nového použití.`,
       }
     }
 
