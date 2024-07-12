@@ -2069,25 +2069,23 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `For the next attack, it provides ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} bonus damage and 100% critical strike chance. \n This effect can occur only once per ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )}.\n\n` + getObserverWardDescription(),
+            `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n` +
+            getObserverWardDescription(),
           br:
-            `Para o próximo ataque, fornece ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} de dano bônus e 100% de chance de acerto crítico. \n Este efeito só pode ocorrer uma vez a cada ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )}.\n\n` + getObserverWardDescription(),
+            `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n` +
+            getObserverWardDescription(),
           fr:
-            `Pour la prochaine attaque, il fournit ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} de dégâts bonus et 100% de chance de coup critique. \n Cet effet ne peut se produire qu'une fois toutes les ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )}.\n\n` + getObserverWardDescription(),
-          cz:
-            `Pro další útok poskytuje ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} bonusové poškození a 100% šanci na kritický zásah. \n Tento efekt může nastat pouze jednou za ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )}.\n\n` + getObserverWardDescription(),
+            `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n` +
+            getObserverWardDescription(),
           zh:
-            `對下一次攻擊，提供 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE}點額外傷害和100%暴擊率。 \n 這個效果每 ${toSec(
-              ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN
-            )} 只能發生一次。\n\n` + getObserverWardDescription(),
+            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} 提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加 2 次。\n\n` +
+            getObserverWardDescription(),
+          cz:
+            `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n` +
+            getObserverWardDescription(),
+          ru:
+            `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n` +
+            getObserverWardDescription(),
         },
       }
     }
