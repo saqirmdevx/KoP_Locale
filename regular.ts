@@ -1909,6 +1909,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '/exit - 離開遊戲 (僅限於練習模式)',
     fr: '/exit - quitter le jeu (pratique seulement)',
   },
+  [LOCALE.CHAT_COMMAND_LFG]: {
+    en: '/lfg <message> - Send "looking for group" message to discord',
+    ru: '/lfg <сообщение> - Отправить сообщение "ищу группу" в дискорд',
+    br: '/lfg <mensagem> - Enviar mensagem "procurando por grupo" para o discord',
+    cz: '/lfg <zpráva> - Odeslat zprávu "vyhledávám skupinu" do discordu',
+    zh: '/lfg <消息> - 向discord发送“正在寻找群组”消息',
+    fr: '/lfg <message> - Envoyer un message "recherche de groupe" sur discord',
+  },
   [LOCALE.NOT_FOUND_MATCHES]: {
     en: 'This player has no match history.',
     ru: 'У этого игрока нет истории игр.',
@@ -2308,6 +2316,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Не удалось отправить ваш отчет GameMasters.',
     fr: "Impossible d'envoyer votre rapport aux GameMasters.",
     br: 'Não foi possível enviar seu relatório para os GameMasters.',
+  },
+  [LOCALE.CHAT_SYSTEM_LFG]: {
+    en: 'LFG has already been used. Try again in {} minutes',
+    cz: 'LFG byl již použit. Zkuste to znovu za {} minut',
+    zh: 'LFG已经被使用了。请在{}分钟再试一次',
+    ru: 'LFG уже использован. Попробуйте еще раз через {} минут',
+    fr: 'LFG a déjà été utilisé. Réessayez dans {} minutes',
+    br: 'LFG já foi usado. Tente novamente em {} minutos',
   },
   [LOCALE.CHAT_ADMIN_GET_PLAYER]: {
     en: 'Online: {} || Name: {} || Email: {} || ID: {} || IP: {}',

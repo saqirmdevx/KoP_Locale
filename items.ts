@@ -4,7 +4,6 @@ import {
   ItemList,
   fixed,
   ItemAbilityData,
-  CRITICAL_DAMAGE_MOD_5,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
@@ -120,27 +119,12 @@ const _getLocaleItemDescription = (
           zh: '腐化的武士刀',
         },
         desc: {
-          en: `Increases your Critical Damage by ${fixed(
-            CRITICAL_DAMAGE_MOD_5 * 100,
-            1
-          )}% for each item that increases Critical Chance in your inventory.`,
-          ru: `Увеличивает ваш Критический урон на ${fixed(
-            CRITICAL_DAMAGE_MOD_5 * 100,
-            1
-          )}% за каждый купленный предмет, увеличивающий Шанс крита.`,
-          br: `Aumenta seu Dano Crítico em ${fixed(
-            CRITICAL_DAMAGE_MOD_5 * 100,
-            1
-          )}% para cada item que aumenta a Chance Crítica em seu inventário.`,
-          cz: `Zvyšuje vaše kritické poškození o ${fixed(
-            CRITICAL_DAMAGE_MOD_5 * 100,
-            1
-          )}% za každý předmět, který zvyšuje šanci na kritický zásah ve vašem inventáři.`,
-          fr: `Augmente vos dégâts critiques de ${fixed(
-            CRITICAL_DAMAGE_MOD_5 * 100,
-            1
-          )}% pour chaque objet qui augmente les chances de coup critique dans votre inventaire.`,
-          zh: `每件在你的背包中增加暴擊率的裝備，都會使你的暴擊傷害增加 ${fixed(CRITICAL_DAMAGE_MOD_5 * 100, 1)}%。`,
+          en: `Increases your Critical Damage by ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%.`,
+          ru: `Увеличивает ваш урон от критических атак на ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%.`,
+          br: `Aumenta seu Dano Crítico em ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%.`,
+          cz: `Zvýší vaše kritické poškození o ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%.`,
+          fr: `Augmente vos dégâts critiques de ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%.`,
+          zh: `增加你的暴擊傷害 ${fixed(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE * 100, 1)}%。`,
         },
       }
     case ItemList.Iron_Sword:
@@ -1996,46 +1980,37 @@ const _getLocaleItemDescription = (
               ItemAbilityData.GARUNS_CHARM_MAX_STACKS
             } stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${
               ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            }.\nGrants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n` +
+            }.\n\n[AURA]: Grants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n` +
             getObserverWardDescription(),
           br:
-            `A cada ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} ganha +${
-              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            } de armadura (até ${
+            `A cada ${toSec(
+              ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN
+            )}, ganhe uma pilha de Proteção de Garun, acumula até ${
               ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-            } stacks). (Dano normal quebra 1 Stack)\nConcede ${
-              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-            } de armadura para aliados próximos \n\n` + getObserverWardDescription(),
+            } pilhas. Receber Dano normal remove uma pilha. Cada pilha aumenta sua Armadura em ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            }.\n\n[AURA]: Concede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura para aliados próximos \n\n` +
+            getObserverWardDescription(),
           fr:
-            `Tous les ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} gagnez ${
-              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            } armures supplémentaires (jusqu'à ${
+            `Toutes les ${toSec(
+              ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN
+            )}, gagnez une pile de protection de Garun, jusqu'à ${
               ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-            } stacks). (Les dommages normaux brisent 1 stack)\nOctroie ${
-              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-            } armures aux alliés à proximité \n\n` + getObserverWardDescription(),
+            } piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${
+              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
+            }.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n` +
+            getObserverWardDescription(),
           zh:
-            `每隔${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}获得额外${
-              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            }护甲（最多${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}层）。（正常伤害会打破1层）\n给附近的盟友提供${
-              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-            }护甲 \n\n` + getObserverWardDescription(),
+            `每 ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)}，獲得一層加伦的保護，最多不超過 ${
+              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
+            } 層。受到普通傷害會移除一層。每層增加你的護甲 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} 護甲 \n\n` +
+            getObserverWardDescription(),
           cz:
-            `Každých ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} získáte dodatečnou ${
-              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            } brnění (až ${
-              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-            } stohy). (Normální poškození zlomí 1 vrstvu)\nPoskytuje blízkým spojencům ${
-              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-            } brnění \n\n` + getObserverWardDescription(),
-          ru:
-            `Каждые ${toSec(ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN)} вы получаете ${
-              ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK
-            } Брони (складывается до ${
-              ItemAbilityData.GARUNS_CHARM_MAX_STACKS
-            } раз). (Получение физического урона забирает 1 заряд).\nДаёт ${
-              ItemAbilityData.GARUNS_CHARM_AOE_ARMOR
-            } Брони ближайшим союзникам. \n\n` + getObserverWardDescription(),
+            `Každých ${toSec(
+              ItemAbilityData.GARUNS_CHARM_REPLENISH_COOLDOWN
+            )} získáš stack Garunovy ochrany, až do maxima ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacků. Přijetí Normálního poškození odebere stack. Každý stack zvyšuje tvou Obranu o ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
+            \n\n[AURA]: Přidá ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Obrany všem spojencům v okolí \n\n` +
+            getObserverWardDescription(),
         },
       }
     }
@@ -2094,51 +2069,23 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `Each Critical hit against an enemy gives you a stack of corrupted rage, up to a maximum of ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } stacks. Each stack increases your Attack Damage by ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-            } and Movement Speed by ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            } for ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+            `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n` +
+            getObserverWardDescription(),
           br:
-            `Cada acerto crítico contra um inimigo concede uma pilha de raiva corrompida, até um máximo de ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } pilhas. Cada pilha aumenta seu Dano de Ataque em ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-            } e Velocidade de Movimento em ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            } por ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+            `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n` +
+            getObserverWardDescription(),
           fr:
-            `Chaque coup critique contre un ennemi vous donne une pile de rage corrompue, jusqu'à un maximum de ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } piles. Chaque pile augmente vos dégâts d'attaque de ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-            } et votre vitesse de déplacement de ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            } pendant ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+            `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n` +
+            getObserverWardDescription(),
           zh:
-            `对敌人的每次暴击都会给你一层腐化之怒叠加，最多不超过 ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } 层。每层增加你的攻击伤害 ${ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE} 和移动速度 ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            }，持续 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)} 秒。 \n\n` + getObserverWardDescription(),
+            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} 提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加 2 次。\n\n` +
+            getObserverWardDescription(),
           cz:
-            `Každý kritický zásah proti nepříteli vám dává stack zkaženého vzteku, až do maximálního počtu ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } stacků. Každý stack zvyšuje váš útočný poškození o ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-            } a rychlost pohybu o ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            } po dobu ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+            `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n` +
+            getObserverWardDescription(),
           ru:
-            `Нанося критический урон, вы получаете 1 заряд (Максимум: ${
-              ItemAbilityData.CORRUPTED_LOCKET_MAX_STACKS
-            } зарядов). Каждый заряд повышает вашу Силу атаки на ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_DAMAGE
-            } и Скорость передвижения на ${
-              ItemAbilityData.CORRUPTED_LOCKET_BONUS_MS
-            } на ${toSec(ItemAbilityData.CORRUPTED_LOCKET_DURATION)}. \n\n` + getObserverWardDescription(),
+            `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n` +
+            getObserverWardDescription(),
         },
       }
     }

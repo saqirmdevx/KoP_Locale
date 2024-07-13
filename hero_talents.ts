@@ -894,12 +894,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Haunted Ghost Impact damage`,
-            ru: `Урон от Проклятых призраков`,
-            cz: `Poškození od Strašidelných duchů`,
-            zh: `幽灵冲击伤害`,
-            fr: `Dégâts d'impact des Fantômes hantés`,
-            br: `Dano de Impacto dos Fantasmas Assombrados`,
+            en: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} max stolen souls`,
+            ru: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} макс. украденных душ`,
+            cz: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} max ukradených duší`,
+            zh: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} 最大窃取的灵魂`,
+            fr: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} âmes volées max`,
+            br: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} almas roubadas máx`,
           },
         },
         tier2_left: {
