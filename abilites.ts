@@ -18,6 +18,7 @@ import {
   MagdaleneAbilityData,
   getAbilityData,
   SpellList,
+  PrimAbilityData,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
@@ -1175,6 +1176,88 @@ const _getSpellDescriptionLang = (
       }
     }
 
+    case SpellList.PRIM_ATTACK: {
+      const baseDamage = getDamage(MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+      const hasUpgradedPassive = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
+      const bonusMoveSpeed = hasUpgradedPassive
+        ? PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_MOVEMENT_SPEED +
+          PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR
+        : PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_MOVEMENT_SPEED
+
+      const bonusArmor = hasUpgradedPassive
+        ? PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR +
+          PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR
+        : PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR
+
+      return {
+        en: `Prim throws 3 sharp pieces of iron that deals ${baseDamage} normal damage when hit enemy unit. 
+        \n\nPassive: When Prim's Ball is attached to prim, she gains bonus ${bonusMoveSpeed} movement speed and ${bonusArmor} armor.`,
+        ru: `Прим бросает 3 острых куска железа, которые наносят ${baseDamage} нормального урона при попадании во врага.
+        \n\nПассивно: Когда мяч Прим прикреплен к Прим, она получает бонус ${bonusMoveSpeed} скорости передвижения и ${bonusArmor} брони.`,
+        cz: `Prim hodí 3 ostré kusy železa, které způsobí ${baseDamage} normálního poškození při zásahu nepřátelské jednotky.
+        \n\nPasivně: Když je Primův míč připojen k Prim, získá bonus ${bonusMoveSpeed} rychlosti pohybu a ${bonusArmor} obrany.`,
+        br: `Prim lança 3 pedaços afiados de ferro que causam ${baseDamage} de dano normal quando atingem uma unidade inimiga.
+        \n\nPassivo: Quando a Bola de Prim está anexada a Prim, ela ganha ${bonusMoveSpeed} de velocidade de movimento e ${bonusArmor} de armadura.`,
+        zh: `Prim 丟出 3 塊銳利的鐵片，當命中敵方單位時造成 ${baseDamage}點一般傷害。
+        \n\n被動：當 Prim 的球附著在 Prim 身上時，她獲得 ${bonusMoveSpeed} 的移動速度和 ${bonusArmor} 的護甲。`,
+        fr: `Prim lance 3 morceaux de fer tranchants qui infligent ${baseDamage} de dégâts normaux lorsqu'ils touchent une unité ennemie.
+        \n\nPassif: Lorsque la balle de Prim est attachée à Prim, elle gagne ${bonusMoveSpeed} de vitesse de déplacement et ${bonusArmor} d'armure.`,
+      }
+    }
+
+    case SpellList.PRIM_COMMAND_ATTACK: {
+      const damage = getDamage(
+        PrimAbilityData.COMMAND_ATTACK_AP_MODIFIER * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        PrimAbilityData.COMMAND_ATTACK_BASE_DAMAGE + PrimAbilityData.COMMAND_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
+      )
+
+      return {
+        en: `Prim commands the Ball to move forward in Prim's direction. When stopped, deals ${damage} to all nearby enemies and slows their movement and attack speed for a short duration.
+          \n\nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at its detaching location.
+          \nCan be re-casted to stop the Ball earlier.`,
+        ru: `Прим приказывает мячу двигаться вперед в направлении Прим. При остановке наносит ${damage} всем близлежащим врагам и замедляет их скорость передвижения и скорость атаки на короткое время.
+          \n\nЕсли мяч Прим отсоединен, она прикажет мячу вернуться. Мяч наносит урон в месте отсоединения.
+          \nМожет быть повторно использовано, чтобы остановить мяч раньше.`,
+        cz: `Prim přikáže míči, aby se pohyboval vpřed ve směru Prim. Když se zastaví, způsobí ${damage} všem nepřátelským jednotkám v okolí a zpomalí jejich rychlost pohybu a rychlost útoku na krátkou dobu.
+          \n\nPokud je míč Prim odpojen, přikáže míči, aby se vrátil. Míč způsobí poškození na místě odpojení.
+          \nMůže být znovu použito k zastavení míče dříve.`,
+        br: `Prim comanda a Bola para se mover para frente na direção de Prim. Quando parado, causa ${damage} a todos os inimigos próximos e diminui a velocidade de movimento e a velocidade de ataque deles por um curto período.
+          \n\nSe a Bola de Prim estiver desanexada, ela comandará a Bola a retornar. A bola causa dano na sua localização de desanexação.
+          \nPode ser recastado para parar a Bola mais cedo.`,
+        zh: `Prim 命令球向前移動，方向是 Prim。當停止時，對所有附近的敵人造成 ${damage}點傷害，並使他們的移動速度和攻擊速度降低一小段時間。
+          \n\n如果 Prim 的球被分離，她將命令球返回。球在分離位置造成傷害。
+          \n可以重新施放以更早地停止球。`,
+        fr: `Prim commande à la Balle de se déplacer vers l'avant dans la direction de Prim. Lorsqu'il s'arrête, inflige ${damage} à tous les ennemis à proximité et ralentit leur vitesse de déplacement et leur vitesse d'attaque pendant une courte période.
+          \n\nSi la Balle de Prim est détachée, elle commandera à la Balle de revenir. La balle inflige des dégâts à son emplacement de détachement.
+          \nPeut être re-casté pour arrêter la Balle plus tôt.`,
+      }
+    }
+
+    case SpellList.PRIM_GRAVITATIONAL_PULL: {
+      const modifier = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
+        ? 1 + PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION
+        : 1
+      const damage = getDamage(
+        PrimAbilityData.GRAVITATIONAL_PULL_AP_MODIFIER * abilityPower * modifier,
+        Shared.DamageTypes.MAGICAL,
+        (PrimAbilityData.GRAVITATIONAL_PULL_BASE_DAMAGE +
+          PrimAbilityData.GRAVITATIONAL_PULL_DAMAGE_PER_LEVEL * (level - 1)) *
+          modifier
+      )
+
+      const stunDuration = PrimAbilityData.GRAVITATIONAL_PULL_STUN_DURATION * modifier
+
+      return {
+        en: `Prim commands the Ball to pull all nearby enemies towards it, dealing ${damage} magical damage and stunning them for a ${toSec(stunDuration)} duration.`,
+        ru: `Прим приказывает мячу притянуть всех близлежащих врагов к себе, нанося ${damage} магического урона и оглушая их на ${toSec(stunDuration)} секунд.`,
+        cz: `Prim přikáže míči přitáhnout všechny nepřátelské jednotky v okolí k sobě, způsobující ${damage} magického poškození a omráčení na ${toSec(stunDuration)} sekund.`,
+        br: `Prim comanda a Bola para puxar todos os inimigos próximos para perto dela, causando ${damage} de dano mágico e atordoando-os por ${toSec(stunDuration)} segundos.`,
+        zh: `Prim 命令球將所有附近的敵人拉向它，造成 ${damage}點魔法傷害並使他們在 ${toSec(stunDuration)} 秒內暈眩。`,
+        fr: `Prim commande à la Balle de tirer tous les ennemis à proximité vers elle, infligeant ${damage} de dégâts magiques et les étourdissant pendant ${toSec(stunDuration)} secondes.`,
+      }
+    }
+
     /** Default */
     case SpellList.RECALL:
       return {
@@ -1207,6 +1290,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
     case SpellList.ALVAR_ATTACK:
     case SpellList.FOXY_ATTACK:
     case SpellList.MAGDALENE_ATTACK:
+    case SpellList.PRIM_ATTACK:
       return {
         en: 'Basic Attack',
         ru: 'Атака',
@@ -1480,6 +1564,25 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         zh: '幽靈',
         cz: 'Strašidelný duch',
       }
+    case SpellList.PRIM_COMMAND_ATTACK:
+      return {
+        en: 'Command: Attack',
+        ru: 'Приказ: Атаковать',
+        br: 'Comando: Ataque',
+        fr: 'Commande: Attaque',
+        zh: '命令：攻擊',
+        cz: 'Příkaz: Útok',
+      }
+    case SpellList.PRIM_GRAVITATIONAL_PULL:
+      return {
+        en: 'Gravitational Pull',
+        ru: 'Гравитационное притяжение',
+        br: 'Atração Gravitacional',
+        fr: 'Attraction gravitationnelle',
+        zh: '引力',
+        cz: 'Gravitační tah',
+      }
+
     /** Default */
     case SpellList.RECALL:
       return {
