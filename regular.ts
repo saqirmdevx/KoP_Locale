@@ -2953,5 +2953,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "D'accord",
     br: 'OK',
   },
+  [LOCALE.SAFE_TO_LEAVE]: {
+    en: 'Game is safe to leave. Game will be not counted.',
+    ru: 'Игру можно покинуть. Игра не будет засчитана.',
+    cz: 'Hra je bezpečná k opuštění. Hra nebude započítána.',
+    zh: '游戏可以安全离开。游戏不会被计算。',
+    fr: 'Le jeu est sûr de quitter. Le jeu ne sera pas compté.',
+    br: 'O jogo é seguro para sair. O jogo não será contado.',
+  },
 }
 export default locale_data
