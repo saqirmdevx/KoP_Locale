@@ -15,6 +15,7 @@ import {
   AlvarAbilityData,
   FoxyAbilityData,
   MagdaleneAbilityData,
+  PrimAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -341,20 +342,32 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Floral Ambush Heal ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}%`,
-            ru: `Бутоны Цветочной ловушки лечат союзников на ${
+            en: 'Floral Rejuvation',
+            ru: 'Цветочное оздоровление',
+            cz: 'Květinová obnova',
+            zh: '花瓣恢复',
+            fr: 'Rajeunissement floral',
+            br: 'Rejuvenescimento Floral',
+          },
+          description: {
+            en: `Explosion of Floral Ambush heals all nearby allies for ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }% от своего урона`,
-            cz: `Květinový útok léčí spojence na ${
+            )}% of the damage.`,
+            ru: `Взрыв Цветочной ловушки излечивает всех ближайших союзников на ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }% způsobeného poškození`,
-            zh: `花瓣伏击治疗 ${BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100}%`,
-            fr: `Embûche florale soigne les alliés de ${
+            )}% от урона`,
+            cz: `Exploze Květinového útoku léčí všechny nedaleké spojence za ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }% des dégâts infligés`,
-            br: `Emboscada Floral cura aliados em ${
+            )}% poškození`,
+            zh: `花瓣伏击的爆炸为所有附近的盟友治疗 ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            }% do dano causado`,
+            )}% 伤害`,
+            fr: `L'explosion de l'embuscade florale soigne tous les alliés proches pour ${fixed(
+              BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
+            )}% des dégâts`,
+            br: `A explosão da Emboscada Floral cura todos os aliados próximos em ${fixed(
+              BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
+            )}% do dano`,
           },
         },
         tier2_right: {
@@ -940,6 +953,65 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
       }
 
+    case Shared.HEROES.PRIM:
+      return {
+        tier1_left: {
+          title: {
+            en: 'Enhanced Ball protection',
+            ru: 'Улучшенная защита мяча',
+            cz: 'Vylepšená ochrana míče',
+            zh: '增强球保护',
+            fr: 'Protection améliorée de la balle',
+            br: 'Proteção aprimorada da bola',
+          },
+          description: {
+            en: `Enhanced Ball protection provide additional ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} movement speed and armor, when the ball is attached to a hero.`,
+            ru: `Улучшенная защита мяча предоставляет дополнительные ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} скорости передвижения и брони, когда мяч прикреплен к герою.`,
+            cz: `Vylepšená ochrana míče poskytuje dodatečnou ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} rychlost pohybu a brnění, když je míč připojen k hrdinovi.`,
+            zh: `增强球保护在球附着在英雄身上时提供额外的 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} 移动速度和护甲。`,
+            fr: `La protection améliorée de la balle fournit ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} vitesse de déplacement et armure supplémentaires, lorsque la balle est attachée à un héros.`,
+            br: `A proteção aprimorada da bola fornece ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} velocidade de movimento e armadura adicionais, quando a bola está anexada a um herói.`,
+          },
+        },
+        tier1_right: {
+          title: {
+            en: `Ball max-range +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            ru: `Макс. дальность мяча +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            cz: `Maximální dosah míče +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            zh: `球最大范围 +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            fr: `Portée maximale de la balle +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            br: `Alcance máximo da bola +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+          },
+        },
+        tier2_right: {
+          title: {
+            en: 'Enhanced Gravitational Pull',
+            ru: 'Улучшенное Гравитационное тяготение',
+            cz: 'Vylepšené Gravitační tahání',
+            zh: '增强引力拉',
+            fr: 'Gravitational Pull amélioré',
+            br: 'Puxão Gravitacional aprimorado',
+          },
+          description: {
+            en: `Increase Gravitational Pull damage and stun duration by ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            ru: `Увеличивает урон и длительность оглушения Гравитационного тяготения на ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            cz: `Zvyšuje poškození a dobu omráčení Gravitačního tahání o ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            zh: `增加引力拉的伤害和眩晕持续时间 ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            fr: `Augmente les dégâts et la durée d'étourdissement de la traction gravitationnelle de ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            br: `Aumenta o dano e a duração do atordoamento do Puxão Gravitacional em ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+          },
+        },
+        tier2_left: {
+          title: {
+            en: `Gravitational Pull Radius + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            ru: `Радиус Гравитационного тяготения + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            cz: `Poloměr Gravitačního tahání + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            zh: `引力拉半径 + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            fr: `Rayon de la traction gravitationnelle + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            br: `Raio do Puxão Gravitacional + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+          },
+        },
+      }
     default:
       return {
         tier1_left: {
