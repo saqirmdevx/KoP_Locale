@@ -49,7 +49,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_right: {
           title: {
             en: `Charm cooldown  ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
-            ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)} сек. перезарядки очарования`,
+            ru: `${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)} сек. перезарядки Мистического рывка`,
             cz: `Očarování obnovení ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
             zh: `魅力冷却 ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
             fr: `Charme recharge ${toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)}s`,
@@ -81,7 +81,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             )}s`,
             ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 66% на ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
-            )} секунд`,
+            )} сек.`,
             cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 66% po dobu ${toSecRaw(
               KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION
             )}s`,
@@ -103,7 +103,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             en: `Demonic Wrath Damage +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
-            ru: `+${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE} к урону от Удара по земле`,
+            ru: `+${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE} к урону от Демонического гнева`,
             cz: `Démonický hněv poškození +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
             zh: `恶魔之怒伤害 +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
             fr: `Dégâts de la colère démoniaque +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
@@ -113,7 +113,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_right: {
           title: {
             en: `Corrupted Wind Range +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
-            ru: `+${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE} к дальности Рывка`,
+            ru: `+${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE} к дальности Проклятого ветра`,
             cz: `Zkažený vítr dosah +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
             zh: `腐化之风范围 +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
             fr: `Portée du vent corrompu +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
@@ -125,7 +125,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             en: `Demonic Wrath Pure / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
             ru: `+${
               SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
-            }% от недостающего здоровья Удара по земле/урон становится чистым`,
+            }% от недостающего здоровья Демонического гнева/урон становится чистым`,
             cz: `Démonický hněv čistý / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
             zh: `恶魔之怒纯净 / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
             fr: `Colère démoniaque pure / +${SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100}%`,
@@ -135,7 +135,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             en: `Demonic Wrath deals pure damage, bypassing both Armor and Magic Resistance, and deals ${
               SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
             }% bonus damage.`,
-            ru: `Удар по земле будет наносить чистый урон, а процентный урон от недостающего здоровья цели увеличится на ${
+            ru: `Демонический гнев будет наносить чистый урон, а процентный урон от недостающего здоровья цели увеличится на ${
               SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100
             }%`,
             cz: `Démonický hněv nyní způsobuje čisté poškození, které obchází jak obranu, tak magický odpor, a způsobuje ${
@@ -155,7 +155,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_right: {
           title: {
             en: `Corrupted Wind Cooldown ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            ru: `${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)} сек. перезарядки Рывка`,
+            ru: `${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)} сек. перезарядки Проклятого ветра`,
             cz: `Zkažený vítr obnovení ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
             zh: `腐化之风冷却 ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
             fr: `Recharge du vent corrompu ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
@@ -213,9 +213,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Icicle Bolt freeze +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            ru: `+${toSecRaw(
-              VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION
-            )} сек. замораживания от Ледяного болта`,
+            ru: `+${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)} сек. к обездвиживанию Сосулек`,
             cz: `Icicle Bolt zmrazení +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
             zh: `冰柱冻结 +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
             fr: `Gel de glace +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
@@ -333,7 +331,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_right: {
           title: {
             en: `Floral Ambush -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Movement Speed`,
-            ru: `Цветочная ловшка снижает скорость передвижения врагов на -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`,
+            ru: `Цветочная ловушка снижает скорость передвижения врагов на -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`,
             cz: `Květinový útok -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} rychlost pohybu`,
             zh: `花瓣伏击 -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} 移动速度`,
             fr: `Embûche florale -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Vitesse de déplacement`,
@@ -353,9 +351,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             en: `Explosion of Floral Ambush heals all nearby allies for ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
             )}% of the damage.`,
-            ru: `Взрыв Цветочной ловушки излечивает всех ближайших союзников на ${fixed(
+            ru: `Взрыв Цветочной ловушки лечит всех ближайших союзников на ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
-            )}% от урона`,
+            )}% от нанесённого урона`,
             cz: `Exploze Květinového útoku léčí všechny nedaleké spojence za ${fixed(
               BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100
             )}% poškození`,
@@ -377,7 +375,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             )}s`,
             ru: `Колючая лоза прикрепляется быстрее на ${toSecRaw(
               BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
-            )} секунд`,
+            )} сек.`,
             cz: `Trnitý vinný trn se připevní o ${toSecRaw(
               BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION
             )}s rychleji`,
@@ -470,7 +468,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: 'Bleed Attack',
-            ru: 'Кровоточащая атака',
+            ru: 'Режущая атака',
             cz: 'Krvácející útok',
             zh: '流血攻击',
             fr: 'Attaque sanguinolente',
@@ -479,7 +477,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           description: {
             en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% of his Attack Damage over ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
             \nThis effect can occur once every ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)}s.`,
-            ru: `Атаки Томаса наносят эффект Кровотечения, наносящий ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% от его урона за атаку в течение ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)} секунд и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            ru: `Атаки Томаса накладывают эффект Кровотечения на врага, наносящий ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% от его силы атаки в течение ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)} сек. и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nЭтот эффект может происходить один раз в ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)} секунд.`,
             cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí ${getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)}% jeho útoku po
             dobu ${toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)}s a sníží obranu o ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
@@ -652,7 +650,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
                 ArelAbilityData.FREEZING_TRAP_DURATION
               )} and provides vision in a small radius.`,
             ru:
-              `Кувырок  создаст Замораживающую ловушку на позиции Арела, которая заморозит наступившего в неё врага на ${toSec(
+              `Кувырок  создаст Замораживающую ловушку на позиции Арела, которая обездвижит наступившего в неё врага на ${toSec(
                 ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION
               )}` +
               `<br/> Замораживающая ловушка существует ${toSec(
@@ -693,6 +691,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             en: `Triumphant Regeneration`,
+            ru: `Триумфальная регенерация`,
             cz: `Triumfální regenerace`,
             br: `Regeneração Triunfante`,
             zh: `凯旋再生`,
@@ -700,7 +699,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Triumphant Upheaval heals Hazel for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% of the damage dealt.`,
-            ru: `Триумфальное восстание лечит Хейзел на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% от нанесённого урона.`,
+            ru: `Триумфальный переворот лечит Хейзел на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% от нанесённого урона.`,
             cz: `Triumfální Povstání léčí Hazel o ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% způsobeného poškození.`,
             zh: `凯旋巨浪治疗凯旋 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% 伤害。`,
             fr: `Le Soulèvement triomphant soigne Hazel pour ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% des dégâts infligés.`,
@@ -734,11 +733,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Imunidade do Levante Triunfante',
             zh: '凯旋巨浪免疫',
             fr: 'Immunité au Soulèvement triomphant',
-            ru: 'Иммунитет к Триумфальному восстанию',
+            ru: 'Иммунитет при Триумфальном перевороте',
           },
           description: {
             en: 'Hazel is immune to all damage and crowd control effects while charing Triumphant Upheaval.',
-            ru: 'Хейзел иммунен к любому урону и эффектам контроля над толпой во время заряда Триумфального восстания.',
+            ru: 'Хейзел получает иммунитет к любому урону и эффектам контроля во время подготовки Триумфального переворота.',
             cz: 'Hazel je imunní vůči veškerému poškození a efektům kontroly davu během nabíjení Triumfálního povstání.',
             br: 'Hazel é imune a todo dano e efeitos de controle de multidão enquanto carrega o Levante Triunfante.',
             zh: 'Hazel 在充能凯旋巨浪时免疫所有伤害和控制效果。',
@@ -752,7 +751,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             en: `Lightning Shock Duration +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            ru: `Удар молнии длится +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)} сек.`,
+            ru: `+${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)} сек. к длительности Удара молнии`,
             cz: `Úder blesku trvání +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
             zh: `闪电冲击持续时间 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
             fr: `Durée de l'impact de foudre +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
@@ -773,7 +772,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           title: {
             en: `Rain of Spark +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} spark`,
             // Translate also the name of spell
-            ru: `Дождь искр +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} искра`,
+            ru: `+${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} искр у Дождя искр`,
             cz: `Déšť jisker +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} jiskra`,
             zh: `火花雨 +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} 火花`,
             fr: `Pluie d'étincelles +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} étincelle`,
@@ -791,7 +790,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Lightning shock now chain to closest unit, can be enemy or friendly and apply the Lightning Shock effect with 25% less effect per chain.`,
-            ru: `Удар молнии теперь перепрыгивает на ближайшую цель, может быть врагом или союзником, и накладывает эффект Удара молнии с уменьшением эффекта на 25% за каждое перепрыгивание.`,
+            ru: `Удар молнии теперь перепрыгивает на ближайшую цель, которая может быть врагом или союзником, и накладывает эффект Удара молнии с уменьшением эффекта на 25% за каждое перепрыгивание.`,
             cz: `Úder blesku se nyní řetí k nejbližší jednotce, může to být nepřítel nebo spojenec a aplikuje efekt Úder
             blesku s 25% menším efektem za řetěz.`,
             zh: `闪电冲击现在可以连锁到最近的单位，可以是敌人或友军，并且每次连锁减少 25% 的效果。`,
@@ -866,7 +865,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Grenade radius +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
-            ru: `+${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}% к радиусу гранат`,
+            ru: `+${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}% к радиусу Взрывной гранаты`,
             cz: `Poloměr granátu +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
             zh: `手榴弹半径 +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
             fr: `Rayon de la grenade +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
@@ -890,7 +889,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             en: `Haunted Ghosts Heal`,
-            ru: `Лечение Проклятых призраков`,
+            ru: `Одержимый призрак исцеляет`,
             cz: `Léčba Strašidelných duchů`,
             zh: `治疗幽灵`,
             fr: `Soins des Fantômes hantés`,
@@ -898,7 +897,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Haunted Ghosts returns to the owner and heals for ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% of the damage dealt.`,
-            ru: `Проклятые призраки возвращаются к владельцу и лечат на ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% от нанесенного урона.`,
+            ru: `По возвращению Одержимого призрака к Магдалине, она восстанавливает себе здоровье в размере ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% от нанесенного урона.`,
             cz: `Strašidelné duchy se vrátí majiteli a vyléčí za ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% způsobeného poškození.`,
             zh: `幽灵返回给主人并治疗 ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% 造成的伤害。`,
             fr: `Les Fantômes hantés retournent au propriétaire et soignent pour ${fixed(MagdaleneAbilityData.TALENT_T1_LEFT_HAUNTED_GHOST_HEAL_ON_EXPIRE * 100, 1)}% des dégâts infligés.`,
@@ -918,7 +917,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Crippling Ghost`,
-            ru: `Урон Проклятого призрака`,
+            ru: `Цепенящий призрак`,
             cz: `Oslnivý duch`,
             zh: `致残幽灵`,
             fr: `Fantôme paralysant`,
@@ -926,7 +925,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Haunted Ghost applies movement slow ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
-            ru: `Проклятый призрак накладывает замедление на ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
+            ru: `Одержимый призрак снижает скорость передвижения цели на ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
             cz: `Strašidelný duch aplikuje zpomalení pohybu ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
             zh: `幽灵应用移动减速 ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
             fr: `Le Fantôme hanté applique un ralentissement des mouvements ${MagdaleneAbilityData.TALENT_T2_RIGHT_HAUNTED_GHOST_SLOW_MS}.`,
@@ -958,7 +957,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             en: 'Enhanced Ball protection',
-            ru: 'Улучшенная защита мяча',
+            ru: 'Шар: защита',
             cz: 'Vylepšená ochrana míče',
             zh: '增强球保护',
             fr: 'Protection améliorée de la balle',
@@ -976,7 +975,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_right: {
           title: {
             en: `Ball max-range +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            ru: `Макс. дальность мяча +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            ru: `+${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE} к максимальной дальности шара`,
             cz: `Maximální dosah míče +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
             zh: `球最大范围 +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
             fr: `Portée maximale de la balle +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
@@ -986,7 +985,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_right: {
           title: {
             en: 'Enhanced Gravitational Pull',
-            ru: 'Улучшенное Гравитационное тяготение',
+            ru: 'Сильное притяжение',
             cz: 'Vylepšené Gravitační tahání',
             zh: '增强引力拉',
             fr: 'Gravitational Pull amélioré',
@@ -994,7 +993,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Increase Gravitational Pull damage and stun duration by ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            ru: `Увеличивает урон и длительность оглушения Гравитационного тяготения на ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            ru: `Увеличивает урон и длительность оглушения Гравитационного притяжения на ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             cz: `Zvyšuje poškození a dobu omráčení Gravitačního tahání o ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             zh: `增加引力拉的伤害和眩晕持续时间 ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             fr: `Augmente les dégâts et la durée d'étourdissement de la traction gravitationnelle de ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
@@ -1004,7 +1003,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Gravitational Pull Radius + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
-            ru: `Радиус Гравитационного тяготения + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            ru: `+ ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS} к радиусу Гравитационного притяжения`,
             cz: `Poloměr Gravitačního tahání + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
             zh: `引力拉半径 + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
             fr: `Rayon de la traction gravitationnelle + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
