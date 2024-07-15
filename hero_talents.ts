@@ -965,12 +965,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Proteção aprimorada da bola',
           },
           description: {
-            en: `Enhanced Ball protection provide additional ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} movement speed and armor, when the ball is attached to a hero.`,
-            ru: `Улучшенная защита мяча предоставляет дополнительные ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} скорости передвижения и брони, когда мяч прикреплен к герою.`,
-            cz: `Vylepšená ochrana míče poskytuje dodatečnou ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} rychlost pohybu a brnění, když je míč připojen k hrdinovi.`,
-            zh: `增强球保护在球附着在英雄身上时提供额外的 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} 移动速度和护甲。`,
-            fr: `La protection améliorée de la balle fournit ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} vitesse de déplacement et armure supplémentaires, lorsque la balle est attachée à un héros.`,
-            br: `A proteção aprimorada da bola fornece ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED_AND_ARMOR} velocidade de movimento e armadura adicionais, quando a bola está anexada a um herói.`,
+            en: `Enhanced Ball protection provide additional ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} movement speed and ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} armor, when the ball is attached to a hero.`,
+            ru: `Улучшенная защита мяча предоставляет дополнительную скорость передвижения ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} и броню ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, когда мяч прикреплен к герою.`,
+            cz: `Vylepšená ochrana míče poskytuje dodatečnou rychlost pohybu ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} a brnění ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, když je míč připojen k hrdinovi.`,
+            zh: `增强球保护为英雄提供额外的移动速度 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} 和护甲 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}，当球附着在英雄身上时。`,
+            fr: `La protection améliorée de la balle fournit une vitesse de déplacement supplémentaire de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} et une armure de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, lorsque la balle est attachée à un héros.`,
+            br: `A Proteção aprimorada da bola fornece velocidade de movimento adicional de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} e armadura de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, quando a bola está anexada a um herói.`,
           },
         },
         tier1_right: {
