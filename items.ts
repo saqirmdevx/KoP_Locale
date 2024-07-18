@@ -663,22 +663,22 @@ const _getLocaleItemDescription = (
         desc: {
           en:
             'Whenever your Abilities hit an enemy, your Movement Speed increases by 10 for 1.5 Seconds. Your abilites also applies a stack of poison \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
           ru:
             'Когда ваши способности попадают по врагу, ваша Скорость передвижения увеличивается на 10 на 1.5 сек. Ваши способности также накладывают стак яда \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
           br:
             'Sempre que suas habilidades atingem um inimigo, sua velocidade de movimento aumenta em 10 por 1,5 segundos. Suas habilidades também aplicam uma pilha de veneno \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
           fr:
             'Chaque fois que vos capacités touchent un ennemi, votre vitesse de déplacement augmente de 10 pendant 1,5 seconde. Vos capacités appliquent également une pile de poison \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
           zh:
             '每當你的技能擊中敵人時，你的移動速度將在1.5秒內增加10。 你的技能也會施加一層毒 \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
           cz:
             'Když vaše schopnosti zasáhnou nepřítele, vaše rychlost pohybu se po dobu 1,5 sekundy zvýší o 10. Vaše schopnosti také aplikují stack jedu \n \n' +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(false),
         },
       }
     case ItemList.Poison_Bow:
@@ -692,12 +692,12 @@ const _getLocaleItemDescription = (
           cz: 'Jedovatý Luk',
         },
         desc: {
-          en: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
-          ru: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
-          br: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
-          fr: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
-          zh: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
-          cz: getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_1),
+          en: getPoisonBowDescription(false),
+          ru: getPoisonBowDescription(false),
+          br: getPoisonBowDescription(false),
+          fr: getPoisonBowDescription(false),
+          zh: getPoisonBowDescription(false),
+          cz: getPoisonBowDescription(false),
         },
       }
 
@@ -719,7 +719,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             ).toFixed(1)} Seconds.\n` +
             `This effect prevents you from casting abilities.\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
           ru:
             `Искажает вашу кровь и делает вас быстрее, увеличивая Скорость атаки на ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
@@ -727,7 +727,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } сек.\n` +
             `Этот эффект мешает вам использовать способности.\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
           br:
             `Corrompe seu sangue e o torna mais rápido, aumentando sua Velocidade de Ataque em ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
@@ -735,7 +735,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } segundos.\n` +
             `Este efeito impede que você use habilidades.\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
           fr:
             `Corrompt votre sang et vous rend plus rapide, augmentant votre vitesse d'attaque de ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
@@ -743,7 +743,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } secondes.\n` +
             `Cet effet vous empêche d'utiliser des capacités.\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
           zh:
             `腐化你的血液使你更快，增加你的攻擊速度 ${(
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
@@ -751,7 +751,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } 秒。\n` +
             `這個效果會阻止你施放技能。\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
           cz:
             `Zkresluje vaši krev a zrychluje vás, zvyšuje vaši rychlost útoku o ${
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
@@ -759,7 +759,7 @@ const _getLocaleItemDescription = (
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } sekund.\n` +
             `Tento efekt vám brání v používání schopností.\n \n` +
-            getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2),
+            getPoisonBowDescription(true),
         },
       }
     case ItemList.Hunters_Longbow:
@@ -1604,18 +1604,18 @@ const _getLocaleItemDescription = (
           fr: 'Anneau de berserker',
         },
         desc: {
-          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen for ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} Seconds.
-          \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times. This effect can occur only once per 100ms.`,
-          ru: `При получении урона вы получаете стак берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья на ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} сек.
-          \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}. Этот эффект может происходить только один раз в 100 мс.`,
-          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida por ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} seg.
-          \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes. Este efeito só pode ocorrer uma vez a cada 100ms.`,
-          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance de berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé pendant ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sec.
-          \n Empile jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois. Cet effet ne peut se produire qu'une fois toutes les 100ms.`,
-          zh: `當你受到傷害時，你將獲得一層狂戰士的耐力。每層你將在 ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} 秒內獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 的生命回復。
-          \n 最多堆疊 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 次。此效果每 100ms 只能發生一次。`,
-          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví po dobu ${(ItemAbilityData.BERSERKER_RING_DURATION / 1000).toFixed(1)} sekund.
-          \n Stacks až ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} krát. Tento efekt může nastat pouze jednou za 100 ms.`,
+          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen and ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% Attack Speed for ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times.`,
+          ru: `При получении урона вы получаете стак Берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья и ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% скорости атаки на ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)} сек.
+          \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
+          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida e ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% de Velocidade de Ataque por ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes.`,
+          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          \n Empilez jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois.`,
+          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層你將獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 生命恢復和 ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% 攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
+          \n 最多疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
+          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          \n Maximální počet stacků: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
         },
       }
 
@@ -1919,45 +1919,35 @@ const _getLocaleItemDescription = (
           ru: 'Лук Кирина',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack of magical poison. At ${
+          en: `Your Basic Attacks apply a stack of kirin's poison. At ${
             ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } stacks, the magical poison explodes, dealing ${
+          } stacks, the magical kirin's explodes, reduce target's magic resistance by ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)} and dealing ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
           } Magic Damage to all nearby enemies and apply maximum stacks of poison. \n \n ${getPoisonBowDescription(
-            ItemAbilityData.POISON_BOW_DURATION_2
+            false
           )}`,
-          zh: `你的基本攻擊會施加一層魔法毒素。當達到 ${
-            ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } 層時，魔法毒素會爆炸，對所有附近敵人造成 ${
+          zh: `你的普通攻擊會使目標中毒。當達到 ${ItemAbilityData.KIRINS_BOW_MAX_STACKS}層時，魔法麒麟會爆炸，降低目標的魔法抗性 ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)}並對附近敵人造成 ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          } 魔法傷害並施加最大層數的毒素。 \n \n ${getPoisonBowDescription(ItemAbilityData.POISON_BOW_DURATION_2)}`,
-          cz: `Vaše základní útoky aplikují vrstvu magického jedu. Při ${
-            ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } vrstvách magický jed exploduje, způsobí ${
+          }點魔法傷害並使他們中毒。 \n \n ${getPoisonBowDescription(true)}`,
+          cz: `Tvoje základní útoky aplikují stack jedu Kirina. Při ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stacků se magický Kirin vybuchne, sníží magickou odolnost cíle o ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)} a způsobí ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          } magického poškození všem nepřátelům v okolí a aplikuje maximální vrstvy jedu. \n \n ${getPoisonBowDescription(
-            ItemAbilityData.POISON_BOW_DURATION_2
+          } magického poškození všem nepřátelům v okolí a aplikuje maximální počet stacků jedu. \n \n ${getPoisonBowDescription(
+            false
           )}`,
-          fr: `Vos attaques de base appliquent une pile de poison magique. À ${
-            ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } piles, le poison magique explose, infligeant ${
+          fr: `Vos attaques de base appliquent une pile de poison de Kirin. À ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} piles, le kirin magique explose, réduit la résistance magique de la cible de ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)} et inflige ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          } dégâts magiques à tous les ennemis proches et applique le maximum de piles de poison. \n \n ${getPoisonBowDescription(
-            ItemAbilityData.POISON_BOW_DURATION_2
+          } dégâts magiques à tous les ennemis à proximité et applique le maximum de piles de poison. \n \n ${getPoisonBowDescription(
+            false
           )}`,
-          br: `Seus ataques básicas aplicam uma pilha de veneno mágico. Em ${
-            ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } pilhas, o veneno mágico explode, causando ${
+          br: `Seus ataques básicas aplicam uma pilha de veneno de Kirin. Em ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} pilhas, o kirin mágico explode, reduz a resistência mágica do alvo em ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)} e causa ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          } de dano mágico a todos os inimigos próximos e aplicando o máximo de pilhas de veneno. \n \n ${getPoisonBowDescription(
-            ItemAbilityData.POISON_BOW_DURATION_2
+          } de dano mágico a todos os inimigos próximos e aplica o máximo de pilhas de veneno. \n \n ${getPoisonBowDescription(
+            false
           )}`,
-          ru: `Ваши базовые атаки накладывают слой магического яда. При ${
-            ItemAbilityData.KIRINS_BOW_MAX_STACKS
-          } слоях магический яд взрывается, нанося ${
+          ru: `Твои базовые атаки накладывают яд Кирина. При ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} стаках магический Кирин взрывается, снижает магическое сопротивление цели на ${fixed(ItemAbilityData.KIRINS_BOW_MAGIC_RESISTANCE_REDUCTION * 100, 1)} и наносит ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          } магического урона всем ближайшим врагам и накладывая максимальное количество слоёв яда. \n \n ${getPoisonBowDescription(
-            ItemAbilityData.POISON_BOW_DURATION_2
+          } магического урона всем ближайшим врагам и накладывает максимальное количество стаков яда. \n \n ${getPoisonBowDescription(
+            false
           )}`,
         },
       }
@@ -2097,38 +2087,31 @@ const _getLocaleItemDescription = (
   }
 }
 
-const getPoisonBowDescription = (duration: number) => {
+const getPoisonBowDescription = (isUpgraded: boolean) => {
+  const duration = isUpgraded ? ItemAbilityData.POISON_BOW_DURATION_2 : ItemAbilityData.POISON_BOW_DURATION_1
+  const damageOverTime = isUpgraded
+    ? ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME_2
+    : ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
+
   const text: { [key: string]: string } = {
-    en: `Your Basic Attacks apply a stack of deadly poison, up to a maximum of 5 stacks. Each stack reduces Movement Speed by ${
+    en: `Your Basic Attacks apply a stack of deadly poison, up to a maximum of ${ItemAbilityData.POISON_BOW_MAX_STACKS} stacks. Each stack reduces Movement Speed by ${
       ItemAbilityData.POISON_BOW_SLOW
-    } and deals ${
-      ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
-    } Magic Damage per second for ${(duration / 1000).toFixed(1)} Seconds. `,
-    ru: `Ваши атаки накладывают смертельный яд на вражеских героев, замедляя их на ${
+    } and deals ${damageOverTime} Magic Damage per second for ${(duration / 1000).toFixed(1)} Seconds. `,
+    ru: `Ваши базовые атаки накладывают стек смертельного яда, до максимума ${ItemAbilityData.POISON_BOW_MAX_STACKS} стеков. Каждый стек уменьшает Скорость передвижения на ${
       ItemAbilityData.POISON_BOW_SLOW
-    } и нанося ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} урона в секунду в течение ${(duration / 1000).toFixed(
-      1
-    )} сек. (Этот эффект может складываться до 5 раз, и каждая последующая атака обновляет их длительность.)`,
-    br: `Seus ataques aplicam veneno no personagem inimigo e retarda o alvo por ${
+    } и наносит ${damageOverTime} магического урона в секунду в течение ${(duration / 1000).toFixed(1)} секунд.`,
+    br: `Seus ataques básicos aplicam uma pilha de veneno mortal, até um máximo de ${ItemAbilityData.POISON_BOW_MAX_STACKS} pilhas. Cada pilha reduz a Velocidade de Movimento em ${
       ItemAbilityData.POISON_BOW_SLOW
-    } e adiciona ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} de dano por seg, por ${(duration / 1000).toFixed(
-      1
-    )} seg.\n (Este efeito pode acumular 5 vezes, cada duração de atualização de ataque.)`,
-    fr: `Tes attaques J empoisonne ton ennemie pour ${(duration / 1000).toFixed(
-      1
-    )} sec. Pendant cette période, il est ralenti de ${ItemAbilityData.POISON_BOW_SLOW} et reçoit ${
-      ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
-    } dégâts supplémentaires. \n (Cet effet peut se cumuler jusqu'à 5 fois, le délai d'empoisennement est remis à zéro à chaque attaque)`,
-    zh: `你的一般攻擊給予敵方英雄致命毒害，降低應目標物移動速度值 ${
+    } e causa ${damageOverTime} de Dano Mágico por segundo por ${(duration / 1000).toFixed(1)} segundos.`,
+    fr: `Vos attaques de base appliquent une pile de poison mortel, jusqu'à un maximum de ${ItemAbilityData.POISON_BOW_MAX_STACKS} piles. Chaque pile réduit la vitesse de déplacement de ${
       ItemAbilityData.POISON_BOW_SLOW
-    }點並給予 ${(duration / 1000).toFixed(1)}秒 ${
-      ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
-    }點傷害。(此效果能疊加五次，每次攻擊刷新時長)`,
-    cz: `Vaše základní útoky aplikují nepřátelským hrdinům smrtící jed, zpomalující je o ${
+    } et inflige ${damageOverTime} de dégâts magiques par seconde pendant ${(duration / 1000).toFixed(1)} secondes.`,
+    zh: `你的基本攻擊會施加一層致命毒素，最多不超過 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 層。每層降低移動速度 ${
       ItemAbilityData.POISON_BOW_SLOW
-    } a způsobující ${ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME} magického poškození za sekundu po dobu ${(
-      duration / 1000
-    ).toFixed(1)} sek. (Tento efekt může být naskládán až 5krát a každý další útok obnovuje jejich trvání.)`,
+    } 並在 ${(duration / 1000).toFixed(1)} 秒內每秒造成 ${damageOverTime} 點魔法傷害。`,
+    cz: `Tvé základní útoky aplikují stack smrtícího jedu, až do maxima ${ItemAbilityData.POISON_BOW_MAX_STACKS} stacků. Každý stack snižuje rychlost pohybu o ${
+      ItemAbilityData.POISON_BOW_SLOW
+    } a způsobuje ${damageOverTime} magického poškození za sekundu po dobu ${(duration / 1000).toFixed(1)} sekund.`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']

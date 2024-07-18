@@ -891,8 +891,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     en: 'You are banned from queue for rejecting a match! Try again in ',
     ru: 'Ваша возможность стать в очередь заблокирована, так как вы отклоняли слишком много матчей! Попробуйте снова через ',
     br: 'Você foi banido da fila por rejeitar varias partidas! tente novamente em ',
-    cz: 'Máte zákaz vstupu do fronty za odmítnutí zápasů! Zkuste to za',
-    zh: '你因拒絕參戰被禁止入隊！請重試於',
+    cz: 'Máte zákaz vstupu do fronty za odmítnutí zápasů! Zkuste to za ',
+    zh: '你因拒絕參戰被禁止入隊！請重試於 ',
     fr: "Vous êtes banni de la file d'attente pour avoir refusé un match ! Réessayez dans ",
   },
   [LOCALE.AN_GOT_A]: {
@@ -2101,14 +2101,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Salons',
     br: 'Salas',
   },
-  [LOCALE.PLAY_PAGE_COOP_VS_AI]: {
-    en: 'Co-op vs AI',
-    cz: 'Spolupráce proti umělé inteligenci',
-    zh: '合作对抗人工智能',
-    ru: 'Игроки против ИИ',
-    fr: 'Coopération contre IA',
-    br: 'Co-op vs IA',
-  },
   [LOCALE.PLAY_PAGE_PVP]: {
     en: 'PvP',
     cz: 'PvP',
@@ -2960,6 +2952,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '游戏可以安全离开。游戏不会被计算。',
     fr: 'Le jeu est sûr de quitter. Le jeu ne sera pas compté.',
     br: 'O jogo é seguro para sair. O jogo não será contado.',
+  },
+  [LOCALE.LOGIN_WITH_CRAZYGAMES]: {
+    en: 'Login with CrazyGames Account',
+    ru: 'Войти через аккаунт CrazyGames',
+    cz: 'Přihlásit se pomocí účtu CrazyGames',
+    zh: '使用CrazyGames账户登录',
+    fr: 'Se connecter avec un compte CrazyGames',
+    br: 'Login com a conta CrazyGames',
   },
 }
 export default locale_data
