@@ -1215,23 +1215,29 @@ const _getSpellDescriptionLang = (
 
       return {
         en: `Prim commands the Ball to move forward in Prim's direction. When stopped, deals ${damage} to all nearby enemies and slows their movement and attack speed for a short duration.
-          \n\nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at its detaching location.
+          \nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at its detaching location.
+          \nThe new cooldown starts when the Ball is returned to a Prim except if she pickup ball. 
           \nCan be re-casted to stop the Ball earlier.`,
-        ru: `Прим приказывает шару лететь вперед. При остановке он наносит ${damage} магического урона всем близлежащим врагам, уменьшая их скорость передвижения и скорость атаки на короткое время.
-          \n\nЕсли шар Прим отсоединен, она прикажет ему вернуться. Шар наносит урон в области своей позиции перед возвращением.
-          \nМожет быть использовано повторно, чтобы остановить полёт шара раньше.`,
-        cz: `Prim přikáže míči, aby se pohyboval vpřed ve směru Prim. Když se zastaví, způsobí ${damage} všem nepřátelským jednotkám v okolí a zpomalí jejich rychlost pohybu a rychlost útoku na krátkou dobu.
-          \n\nPokud je míč Prim odpojen, přikáže míči, aby se vrátil. Míč způsobí poškození na místě odpojení.
-          \nMůže být znovu použito k zastavení míče dříve.`,
+        ru: `Прим приказывает шару двигаться вперёд в направлении Прим. При остановке наносит ${damage} всем близлежащим врагам, замедляя их скорость передвижения и атаки на короткое время.
+          \nЕсли шар Прим откреплён, она прикажет шару вернуться. Шар наносит урон в месте открепления.
+          \nНовое время восстановления начинается, когда шар возвращается к Прим, за исключением случая, когда она подбирает шар.
+          \nМожет быть повторно использовано, чтобы раньше остановить шар.`,
+        cz: `Prim přikáže míči pohybovat se vpřed ve směru Prim. Když se zastaví, způsobí ${damage} všem nepřátelským jednotkám v okolí a zpomalí jejich pohyb a rychlost útoku na krátkou dobu.
+          \nPokud je míč Prim odpojen, přikáže míči, aby se vrátil. Míč způsobí poškození na místě odpojení.
+          \nNový cooldown začíná, když se míč vrátí k Prim, s výjimkou situace, kdy Prim míč sebrala.
+          \nMůže být znovu použito k dřívějšímu zastavení míče.`,
         br: `Prim comanda a Bola para se mover para frente na direção de Prim. Quando parado, causa ${damage} a todos os inimigos próximos e diminui a velocidade de movimento e a velocidade de ataque deles por um curto período.
-          \n\nSe a Bola de Prim estiver desanexada, ela comandará a Bola a retornar. A bola causa dano na sua localização de desanexação.
-          \nPode ser recastado para parar a Bola mais cedo.`,
-        zh: `Prim 命令球向前移動，方向是 Prim。當停止時，對所有附近的敵人造成 ${damage}點傷害，並使他們的移動速度和攻擊速度降低一小段時間。
-          \n\n如果 Prim 的球被分離，她將命令球返回。球在分離位置造成傷害。
+          \nSe a Bola de Prim estiver desanexada, ela comandará a Bola a retornar. A bola causa dano em sua localização de desanexação.
+          \nO novo tempo de recarga começa quando a Bola é devolvida a um Prim, exceto se ela pegar a bola.
+          \nPode ser recast para parar a Bola mais cedo.`,
+        zh: `Prim 命令球向前移動到 Prim 的方向。當停止時，對所有附近的敵人造成 ${damage}點傷害並使他們的移動和攻擊速度降低一小段時間。
+          \n如果 Prim 的球被分離，她將命令球返回。球在分離位置造成傷害。
+          \n當球返回到 Prim 時，新的冷卻時間開始，除非她撿起球。
           \n可以重新施放以更早地停止球。`,
         fr: `Prim commande à la Balle de se déplacer vers l'avant dans la direction de Prim. Lorsqu'il s'arrête, inflige ${damage} à tous les ennemis à proximité et ralentit leur vitesse de déplacement et leur vitesse d'attaque pendant une courte période.
-          \n\nSi la Balle de Prim est détachée, elle commandera à la Balle de revenir. La balle inflige des dégâts à son emplacement de détachement.
-          \nPeut être re-casté pour arrêter la Balle plus tôt.`,
+          \nSi la Balle de Prim est détachée, elle commandera à la Balle de revenir. La balle inflige des dégâts à son emplacement de détachement.
+          \nLe nouveau temps de recharge commence lorsque la Balle est retournée à un Prim, sauf si elle ramasse la balle.
+          \nPeut être re-cast pour arrêter la Balle plus tôt.`,
       }
     }
 

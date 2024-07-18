@@ -160,12 +160,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Parabéns',
   },
   [LOCALE.PLAY_PAGE_RANKED_DESCRIPTION]: {
-    en: ' - Reward: experience, coins and ELO\n - <b>+25% experience and coins</b>\n - Rank based matchmaking\n - 2 vs 2 only',
-    ru: ' - Награды: опыт, монеты и Очки рейтинга\n - <b>+25% к получаемому опыту и монетам</b>\n - Подбор на основе ранга\n - Только 2 vs 2',
-    cz: ' - Odměna: zkušenosti, mince a ELO\n - <b>+25% více zkušeností a mincí</b>\n - Dohazování na základě hodnocení\n - Pouze 2 vs 2',
-    zh: ' - 奖励：经验、硬币和ELO\n - <b>+25% 经验和硬币</b>\n - 基于排名的匹配\n - 仅限2对2',
-    fr: " - Récompense : expérience, pièces et ELO\n - <b>+25% d'expérience et de pièces</b>\n - Matchmaking basé sur le rang\n - 2 vs 2 seulement",
-    br: ' - Recompensa: experiência, moedas e ELO\n - <b>+25% de experiência e moedas</b>\n - Matchmaking baseado em classificação\n - Apenas 2 vs 2',
+    en: ' - Reward: experience, coins and ELO\n - <b>+15% experience and coins</b>\n - Rank based matchmaking\n - 2 vs 2 only',
+    ru: ' - Награды: опыт, монеты и Очки рейтинга\n - <b>+15% к получаемому опыту и монетам</b>\n - Подбор на основе ранга\n - Только 2 vs 2',
+    cz: ' - Odměna: zkušenosti, mince a ELO\n - <b>+15% více zkušeností a mincí</b>\n - Dohazování na základě hodnocení\n - Pouze 2 vs 2',
+    zh: ' - 奖励：经验、硬币和ELO\n - <b>+15% 经验和硬币</b>\n - 基于排名的匹配\n - 仅限2对2',
+    fr: " - Récompense : expérience, pièces et ELO\n - <b>+15% d'expérience et de pièces</b>\n - Matchmaking basé sur le rang\n - 2 vs 2 seulement",
+    br: ' - Recompensa: experiência, moedas e ELO\n - <b>+15% de experiência e moedas</b>\n - Matchmaking baseado em classificação\n - Apenas 2 vs 2',
   },
   [LOCALE.PLAY_PAGE_UNRANKED_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 1 vs 1 and 2 vs 2',
