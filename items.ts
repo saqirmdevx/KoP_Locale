@@ -1604,17 +1604,17 @@ const _getLocaleItemDescription = (
           fr: 'Anneau de berserker',
         },
         desc: {
-          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen and ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% Attack Speed for ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen and ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% Attack Speed for ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times.`,
-          ru: `При получении урона вы получаете стак Берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья и ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% скорости атаки на ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)} сек.
+          ru: `При получении урона вы получаете стак Берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья и ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% скорости атаки на ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)} сек.
           \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
-          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida e ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% de Velocidade de Ataque por ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida e ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% de Velocidade de Ataque por ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes.`,
-          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Empilez jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois.`,
-          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層你將獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 生命恢復和 ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% 攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
+          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層你將獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 生命恢復和 ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% 攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
           \n 最多疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
-          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${fixed(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
+          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100)}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Maximální počet stacků: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
         },
       }

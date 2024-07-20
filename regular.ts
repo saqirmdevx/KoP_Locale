@@ -1169,14 +1169,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: 'br',
     fr: 'br',
   },
-  [LOCALE.POPUP_LOGOUT_TITLE]: {
-    en: 'Are you sure?',
-    ru: 'Уверены ли вы?',
-    br: 'Tem certeza?',
-    cz: 'Jste si jisti?',
-    zh: '確定嗎？',
-    fr: 'Êtes-vous sûr?',
-  },
   [LOCALE.MSAA]: {
     en: 'Anti-aliasing',
     cz: 'Vyhlazování',
