@@ -1378,9 +1378,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Nepřítel na tahu, Zakazování hrdinů!',
     zh: '輪到敵方禁角！',
     fr: "Tour de l'ennemi pour bannir!",
-    cz: 'Nepřítel na tahu, Zakazování hrdinů!',
-    ru: 'Вражеская очередь блокировать!',
-    br: 'Turno do inimigo para banir!',
   },
   [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_BAN]: {
     en: 'Your turn to ban!',
@@ -1398,9 +1395,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Nepřítel na tahu, vyberáni hrdinů!',
     zh: '輪到敵方選角！',
     fr: "Tour de l'ennemi de choisir!",
-    cz: 'Nepřítel na tahu, vyberáni hrdinů!',
-    ru: 'Вражеская очередь выбирать!',
-    br: 'Turno do inimigo para escolher!',
   },
   [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_PICK]: {
     en: 'Your turn to pick!',
@@ -1409,9 +1403,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Jsi na tahu, vyberáni hrdinů!',
     zh: '輪到你選角',
     fr: 'À votre tour de choisir!',
-    cz: 'Ваша черга вибирати!',
-    ru: 'Ваша очередь выбирать!',
-    br: 'Sua vez de escolher!',
   },
   [LOCALE.CAPTAIN_DRAFT_SELECT_HERO]: {
     en: 'Select a Hero!',
@@ -1420,9 +1411,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Vybrat hrdinu',
     zh: '選擇一個英雄！',
     fr: 'Sélectionnez un héros !',
-    cz: 'Выберите героя!',
-    ru: 'Выберите героя!',
-    br: 'Selecione seu personagem!',
   },
   [LOCALE.CAPTAIN_DRAFT_BECOME_CAPTAIN]: {
     en: 'Become Captain!',
