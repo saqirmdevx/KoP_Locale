@@ -2838,12 +2838,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Mudança de MMR',
   },
   [LOCALE.DUMMY_ATTACK]: {
-    en: 'Dummy Attack',
-    ru: 'Атака манекена',
-    cz: 'Utok na figurínu',
-    zh: '傀儡攻击',
-    fr: 'Attaque du mannequin',
-    br: 'Ataque de boneco',
+    en: "Enable Dummy's Attack",
+    ru: 'Включить атаку манекена',
+    cz: 'Povolit útoky figuríny',
+    zh: '启用Dummy的攻击',
+    fr: "Activer l'attaque du mannequin",
+    br: 'Ativar Ataque do Dummy',
   },
   [LOCALE.NO]: {
     en: 'No',
@@ -2900,6 +2900,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '使用CrazyGames账户登录',
     fr: 'Se connecter avec un compte CrazyGames',
     br: 'Login com a conta CrazyGames',
+  },
+  [LOCALE.SERVER_IS_FULL_BTN]: {
+    en: 'Server Full',
+    ru: 'Сервер заполнен',
+    cz: 'Server plný',
+    zh: '服务器已满',
+    fr: 'Serveur complet',
+    br: 'Servidor cheio',
   },
 }
 export default locale_data
