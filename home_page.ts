@@ -120,12 +120,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar como',
   },
   [LOCALE.RENAME_ERROR_ALREADY_EXISTS]: {
-    en: 'This name already exists!',
-    ru: 'Это имя уже занято!',
-    cz: 'Toto jméno již existuje!',
-    zh: '此名称已存在！',
-    fr: 'Ce nom existe déjà!',
-    br: 'Este nome já existe!',
+    en: 'Name is already taken. Select another one!',
+    ru: 'Это имя уже занято. Выберите другое!',
+    cz: 'Toto jméno je již obsazeno. Vyberte jiné!',
+    zh: '此名称已被使用。请选择另一个！',
+    fr: 'Le nom est déjà pris. Sélectionnez-en un autre!',
+    br: 'Nome já está em uso. Selecione outro!',
   },
   [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
     en: 'This name contains forbidden letters or is too short!',
