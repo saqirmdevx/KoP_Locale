@@ -183,4 +183,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: " - Récompense : expérience et pièces\n - 2 joueurs contre 2 IA difficiles\n - 25% d'expérience et de pièces en moins",
     br: ' - Recompensa: experiência e moedas\n - 2 Jogadores vs 2 IA Difícil\n - 25% menos experiência e moedas',
   },
+  [LOCALE.POPUP_GENERATE_NAME]: {
+    en: 'Generate Name',
+    ru: 'Сгенерировать имя',
+    cz: 'Generovat jméno',
+    zh: '生成名称',
+    fr: 'Générer un nom',
+    br: 'Gerar Nome',
+  },
 }
