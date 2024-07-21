@@ -2909,5 +2909,13 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Serveur complet',
     br: 'Servidor cheio',
   },
+  [LOCALE.DEATH_RECAP]: {
+    en: 'Death Recap',
+    ru: 'Резюме смерти',
+    cz: 'Recapitulace smrti',
+    zh: '死亡回顾',
+    fr: 'Récapitulatif de la mort',
+    br: 'Recapitulação da morte',
+  },
 }
 export default locale_data
