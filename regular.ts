@@ -1445,12 +1445,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Classé',
   },
   [LOCALE.NORMAL_MATCH]: {
-    en: 'Unranked',
-    ru: 'Обычная очередь',
-    cz: 'Nehodnocení',
-    zh: '非排名',
-    fr: 'Non classé',
-    br: 'Não ranqueado',
+    en: 'Play a Game!',
+    ru: 'Играть!',
+    br: 'Jogar uma partida!',
+    cz: 'Hrát hru!',
+    zh: '開始遊戲！',
+    fr: 'Jouer une partie!',
   },
   [LOCALE.AI_MATCH]: {
     en: 'AI Matches (PvAI):',
