@@ -191,4 +191,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Générer un nom',
     br: 'Gerar Nome',
   },
+  [LOCALE.LOGIN_ALREADY_LOGGED_IN]: {
+    en: 'You are already logged in',
+    ru: 'Вы уже вошли в систему',
+    cz: 'Již jste přihlášeni',
+    zh: '您已经登录',
+    fr: 'Vous êtes déjà connecté',
+    br: 'Você já está logado',
+  },
 }
