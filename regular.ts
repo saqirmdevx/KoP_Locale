@@ -1742,12 +1742,12 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Musique de fond',
   },
   [LOCALE.LOBBY_SHARE_GAME]: {
-    en: 'Copy Sharable Link',
-    cz: 'Kopírovat sdílitelný odkaz',
-    zh: '複製分享連結',
-    ru: 'Скопировать ссылку на лобби',
-    fr: 'Copier le lien partageable',
-    br: 'Copiar link compartilhável',
+    en: 'Copy link to invite friends',
+    ru: 'Скопировать ссылку для приглашения друзей',
+    br: 'Copiar link para convidar amigos',
+    cz: 'Kopírovat odkaz pro pozvání přátel',
+    zh: '複製邀請連結',
+    fr: 'Copier le lien pour inviter des amis',
   },
   [LOCALE.ST_ATMOSPHERIC_DETAILS]: {
     en: 'Atmospheric Details',
