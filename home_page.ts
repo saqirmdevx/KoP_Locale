@@ -128,12 +128,12 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Nome já está em uso. Selecione outro!',
   },
   [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
-    en: 'The name must be between 3 and 15 letters long and cannot contain forbidden letters.',
-    ru: 'Имя должно быть от 3 до 15 букв и не должно содержать запрещенных символов.',
-    cz: 'Jméno musí být dlouhé 3 až 15 písmen a nesmí obsahovat zakázané znaky.',
-    zh: '名称必须介于3到15个字母之间，且不能包含禁用字母。',
-    fr: 'Le nom doit comporter entre 3 et 15 lettres et ne peut pas contenir de lettres interdites.',
-    br: 'O nome deve ter entre 3 e 15 letras e não pode conter letras proibidas.',
+    en: 'The name must be between 3 and 12 letters long and cannot contain forbidden letters.',
+    ru: 'Имя должно быть от 3 до 12 букв и не должно содержать запрещенных символов.',
+    cz: 'Jméno musí být dlouhé 3 až 12 písmen a nesmí obsahovat zakázané znaky.',
+    zh: '名称必须介于3到12个字母之间，且不能包含禁用字母。',
+    fr: 'Le nom doit comporter entre 3 et 12 lettres et ne peut pas contenir de lettres interdites.',
+    br: 'O nome deve ter entre 3 e 12 letras e não pode conter letras proibidas.',
   },
   [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
     en: "Can't connect with server",
