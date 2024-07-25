@@ -734,7 +734,12 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.HAZEL_SHOCKWAVE: {
-      const damage = getDamage(HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health, abilityData.damageType, 0, 'Health')
+      const damage = getDamage(
+        HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health,
+        abilityData.damageType,
+        HazelAbilityData.SHOCKWAVE_BASE_DAMAGE,
+        'Health'
+      )
       const apDamage = getDamage(
         HazelAbilityData.SHOCKWAVE_AP_SCALING * abilityPower,
         abilityData.damageType,

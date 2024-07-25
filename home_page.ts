@@ -213,7 +213,6 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '非排名赛',
     fr: 'Partie non classée',
     ru: 'Не ранговая игра',
-    fr: 'Partie non classée',
     br: 'Partida sem classificação',
   },
   [LOCALE.PLAY_PAGE_PLAY_A_GAME]: {
@@ -230,8 +229,22 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Partida contra Bot (PvAI):',
     cz: 'Zápasy proti AI (PvAI):',
     zh: 'AI 对战 (人机对战)：',
-    ru: 'Игры против ИИ:',
     fr: "Matchs contre l'IA (PvIA):",
-    br: 'Partida contra IA (PvIA):',
+  },
+  [LOCALE.ACTIVATE_ITEM]: {
+    en: 'Activate Item',
+    ru: 'Активировать',
+    br: 'Ativar Item',
+    cz: 'Aktivovat položku',
+    zh: '激活物品',
+    fr: "Activer l'objet",
+  },
+  [LOCALE.ACTIVE_ITEM]: {
+    en: 'Item Active',
+    ru: 'Предмет активен',
+    br: 'Item Ativo',
+    cz: 'Položka aktivní',
+    zh: '物品激活',
+    fr: 'Objet actif',
   },
 }
