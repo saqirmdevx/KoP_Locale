@@ -38,6 +38,11 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   },
   [LOCALE.LINK_CODE]: {
     en: 'Link Code',
+    ru: 'Код ссылки',
+    cz: 'Kód odkazu',
+    zh: '链接代码',
+    fr: 'Code de lien',
+    br: 'Código de link',
   },
   [LOCALE.SELECT_REGION]: {
     en: 'Select Region',
