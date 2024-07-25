@@ -11,6 +11,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '以游客身份登录',
     fr: "Se connecter en tant qu'invité",
     br: 'Entrar como convidado',
+    vi: 'Đăng nhập dưới dạng khách',
+    id: 'Masuk sebagai Tamu',
   },
   [LOCALE.LOGIN_LINK_CODE]: {
     en: 'Login with Link Code',
@@ -19,6 +21,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '使用链接代码登录',
     fr: 'Se connecter avec un code de lien',
     br: 'Entrar com código de link',
+    vi: 'Đăng nhập bằng mã liên kết',
+    id: 'Masuk dengan Kode Tautan',
   },
   [LOCALE.LOGIN_OTHER_METHODS]: {
     en: 'Login with Other Methods',
@@ -27,6 +31,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '使用其他方法登录',
     fr: "Se connecter avec d'autres méthodes",
     br: 'Entrar com outros métodos',
+    vi: 'Đăng nhập bằng các phương pháp khác',
+    id: 'Masuk dengan Metode Lainnya',
   },
   [LOCALE.USERNAME]: {
     en: 'Username',
@@ -35,6 +41,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '用户名',
     fr: "Nom d'utilisateur",
     br: 'Nome de usuário',
+    vi: 'Tên người dùng',
+    id: 'Nama Pengguna',
   },
   [LOCALE.LINK_CODE]: {
     en: 'Link Code',
@@ -43,6 +51,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '链接代码',
     fr: 'Code de lien',
     br: 'Código de link',
+    vi: 'Mã liên kết',
+    id: 'Kode Tautan',
   },
   [LOCALE.SELECT_REGION]: {
     en: 'Select Region',
@@ -51,6 +61,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '选择地区',
     fr: 'Sélectionner une région',
     br: 'Selecione a região',
+    vi: 'Chọn Khu vực',
+    id: 'Pilih Wilayah',
   },
   [LOCALE.SERVER]: {
     en: 'Server',
@@ -59,22 +71,17 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '服务器',
     fr: 'Serveur',
     br: 'Servidor',
+    vi: 'Máy chủ',
+    id: 'Server',
   },
   [LOCALE.PING]: {
     en: 'Ping',
     ru: 'Пинг',
-    cz: 'Ping',
-    zh: 'Ping',
-    fr: 'Ping',
-    br: 'Ping',
   },
   [LOCALE.DISCORD]: {
     en: 'Discord',
-    ru: 'Discord',
-    cz: 'Discord',
-    zh: 'Discord',
-    fr: 'Discord',
-    br: 'Discord',
+    // Discord in Russian
+    ru: 'Дискорд',
   },
   [LOCALE.TERMS_OF_SERVICES]: {
     en: 'Terms of Service',
@@ -83,6 +90,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '服务条款',
     fr: "Conditions d'utilisation",
     br: 'Termos de serviço',
+    vi: 'Điều khoản Dịch vụ',
+    id: 'Syarat Layanan',
   },
   [LOCALE.PRIVACY_POLICY]: {
     en: 'Privacy Policy',
@@ -91,6 +100,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '隐私政策',
     fr: 'Politique de confidentialité',
     br: 'Política de privacidade',
+    vi: 'Chính sách Bảo mật',
+    id: 'Kebijakan Privasi',
   },
   [LOCALE.PARTNERS]: {
     en: 'Partners',
@@ -99,6 +110,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '合作伙伴',
     fr: 'Partenaires',
     br: 'Parceiros',
+    vi: 'Đối tác',
+    id: 'Mitra',
   },
   [LOCALE.SOCIAL]: {
     en: 'Social',
@@ -107,6 +120,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '社交',
     fr: 'Social',
     br: 'Social',
+    vi: 'Xã hội',
+    id: 'Sosial',
   },
   [LOCALE.INFORMATIONS]: {
     en: 'Information',
@@ -115,6 +130,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '信息',
     fr: 'Informations',
     br: 'Informações',
+    vi: 'Thông tin',
+    id: 'Informasi',
   },
   [LOCALE.LOGIN_AS]: {
     en: 'Login as',
@@ -123,6 +140,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '登录为',
     fr: 'Se connecter en tant que',
     br: 'Entrar como',
+    vi: 'Đăng nhập như',
+    id: 'Masuk sebagai',
   },
   [LOCALE.RENAME_ERROR_ALREADY_EXISTS]: {
     en: 'Name is already taken. Select another one!',
@@ -131,6 +150,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '此名称已被使用。请选择另一个！',
     fr: 'Le nom est déjà pris. Sélectionnez-en un autre!',
     br: 'Nome já está em uso. Selecione outro!',
+    vi: 'Tên đã được sử dụng. Chọn một cái khác!',
+    id: 'Nama sudah digunakan. Pilih yang lain!',
   },
   [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
     en: 'The name must be between 3 and 12 letters long and cannot contain forbidden letters.',
@@ -139,6 +160,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '名称必须介于3到12个字母之间，且不能包含禁用字母。',
     fr: 'Le nom doit comporter entre 3 et 12 lettres et ne peut pas contenir de lettres interdites.',
     br: 'O nome deve ter entre 3 e 12 letras e não pode conter letras proibidas.',
+    vi: 'Tên phải từ 3 đến 12 chữ cái và không được chứa chữ cái bị cấm.',
+    id: 'Nama harus terdiri dari 3 hingga 12 huruf dan tidak boleh mengandung huruf yang dilarang.',
   },
   [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
     en: "Can't connect with server",
@@ -147,6 +170,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '无法连接到服务器',
     fr: 'Impossible de se connecter au serveur',
     br: 'Não é possível conectar-se ao servidor',
+    vi: 'Không thể kết nối với máy chủ',
+    id: 'Tidak dapat terhubung dengan server',
   },
   [LOCALE.LOADING]: {
     en: 'Loading...',
@@ -155,6 +180,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '载入中...',
     fr: 'Chargement...',
     br: 'Carregando...',
+    vi: 'Đang tải...',
+    id: 'Memuat...',
   },
   [LOCALE.CONGRATULATION]: {
     en: 'Congratulations',
@@ -163,6 +190,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '祝贺',
     fr: 'Félicitations',
     br: 'Parabéns',
+    vi: 'Chúc mừng',
+    id: 'Selamat',
   },
   [LOCALE.PLAY_PAGE_RANKED_DESCRIPTION]: {
     en: ' - Reward: experience, coins and ELO\n - <b>+15% experience and coins</b>\n - Rank based matchmaking\n - 2 vs 2 only',
@@ -171,6 +200,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: ' - 奖励：经验、硬币和ELO\n - <b>+15% 经验和硬币</b>\n - 基于排名的匹配\n - 仅限2对2',
     fr: " - Récompense : expérience, pièces et ELO\n - <b>+15% d'expérience et de pièces</b>\n - Matchmaking basé sur le rang\n - 2 vs 2 seulement",
     br: ' - Recompensa: experiência, moedas e ELO\n - <b>+15% de experiência e moedas</b>\n - Matchmaking baseado em classificação\n - Apenas 2 vs 2',
+    vi: ' - Phần thưởng: kinh nghiệm, xu và ELO\n - <b>+15% kinh nghiệm và xu</b>\n - Xếp hạng dựa trên kỹ năng\n - Chỉ 2 vs 2',
+    id: ' - Hadiah: pengalaman, koin, dan ELO\n - <b>+15% pengalaman dan koin</b>\n - Peringkat berdasarkan peringkat\n - Hanya 2 vs 2',
   },
   [LOCALE.PLAY_PAGE_UNRANKED_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 1 vs 1 and 2 vs 2',
@@ -179,6 +210,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: ' - 奖励：经验和硬币\n - 1对1和2对2',
     fr: ' - Récompense : expérience et pièces\n - 1 vs 1 et 2 vs 2',
     br: ' - Recompensa: experiência e moedas\n - 1 vs 1 e 2 vs 2',
+    vi: ' - Phần thưởng: kinh nghiệm và xu\n - 1 vs 1 và 2 vs 2',
+    id: ' - Hadiah: pengalaman dan koin\n - 1 vs 1 dan 2 vs 2',
   },
   [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 2 Players vs 2 Hard AI\n - 25% less experience and coins',
@@ -187,6 +220,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: ' - 奖励：经验和硬币\n - 2玩家对2个困难AI\n - 减少25%的经验和硬币',
     fr: " - Récompense : expérience et pièces\n - 2 joueurs contre 2 IA difficiles\n - 25% d'expérience et de pièces en moins",
     br: ' - Recompensa: experiência e moedas\n - 2 Jogadores vs 2 IA Difícil\n - 25% menos experiência e moedas',
+    vi: ' - Phần thưởng: kinh nghiệm và xu\n - 2 Người chơi vs 2 AI Khó\n - 25% ít kinh nghiệm và xu',
+    id: ' - Hadiah: pengalaman dan koin\n - 2 Pemain vs 2 AI Sulit\n - 25% kurang pengalaman dan koin',
   },
   [LOCALE.POPUP_GENERATE_NAME]: {
     en: 'Generate Name',
@@ -195,6 +230,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '生成名称',
     fr: 'Générer un nom',
     br: 'Gerar Nome',
+    vi: 'Tạo Tên',
+    id: 'Buat Nama',
   },
   [LOCALE.LOGIN_ALREADY_LOGGED_IN]: {
     en: 'You are already logged in',
@@ -203,14 +240,18 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '您已经登录',
     fr: 'Vous êtes déjà connecté',
     br: 'Você já está logado',
+    vi: 'Bạn đã đăng nhập',
+    id: 'Anda sudah masuk',
   },
   [LOCALE.RANKED_MATCH]: {
-    en: 'Ranked',
-    ru: 'Ранговая очередь',
-    br: 'Lutas',
-    cz: 'Hodnocení',
-    zh: '爬分賽',
-    fr: 'Classé',
+    en: 'Ranked Match',
+    ru: 'Ранговая игра',
+    br: 'Partida Ranqueada',
+    cz: 'Hra s hodnocením',
+    zh: '排名赛',
+    fr: 'Partie classée',
+    vi: 'Trận đấu xếp hạng',
+    id: 'Pertandingan Berperingkat',
   },
   [LOCALE.NORMAL_MATCH]: {
     en: 'Unranked Game',
@@ -219,6 +260,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Partie non classée',
     ru: 'Не ранговая игра',
     br: 'Partida sem classificação',
+    vi: 'Trò chơi không xếp hạng',
+    id: 'Permainan Tidak Berperingkat',
   },
   [LOCALE.PLAY_PAGE_PLAY_A_GAME]: {
     en: 'Play a Game!',
@@ -227,6 +270,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Hrát hru!',
     zh: '開始遊戲！',
     fr: 'Jouer une partie!',
+    vi: 'Chơi game!',
+    id: 'Mainkan game!',
   },
   [LOCALE.AI_MATCH]: {
     en: 'AI Matches (PvAI):',
@@ -235,6 +280,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Zápasy proti AI (PvAI):',
     zh: 'AI 对战 (人机对战)：',
     fr: "Matchs contre l'IA (PvIA):",
+    vi: 'Trận đấu AI (PvAI):',
+    id: 'Pertandingan AI (PvAI):',
   },
   [LOCALE.ACTIVATE_ITEM]: {
     en: 'Activate Item',
@@ -243,6 +290,8 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Aktivovat položku',
     zh: '激活物品',
     fr: "Activer l'objet",
+    vi: 'Kích hoạt mục',
+    id: 'Aktifkan Item',
   },
   [LOCALE.ACTIVE_ITEM]: {
     en: 'Item Active',
@@ -251,5 +300,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Položka aktivní',
     zh: '物品激活',
     fr: 'Objet actif',
+    vi: 'Mục hoạt động',
+    id: 'Item Aktif',
   },
 }
