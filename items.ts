@@ -1903,14 +1903,14 @@ const _getLocaleItemDescription = (
           id: 'Potion Sihir',
         },
         desc: {
-          en: 'Grants a permanent stack of magical strength, up to a maximum of 5 stacks. Each stack increases Ability Power by ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!',
-          br: 'Da a quem beber ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} de Poder de habilidade permanentemente, acumula até 5 vezes!\n Sabor uva da floresta.',
-          ru: 'Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} Силы умений навсегда. Эффект складывается до 5 раз!',
-          zh: '永久提供 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！',
-          cz: 'Dává ti trvalý stack magické síly, až do maxima 5 stacků. Každý stack zvyšuje Sílu útoků o ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!',
-          fr: "Accorde une pile permanente de force magique, jusqu'à un maximum de 5 piles. Chaque pile augmente la puissance d'attaque de ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!",
-          vi: 'Cung cấp một điểm sức mạnh ma thuật vĩnh viễn, tối đa là 5 điểm. Mỗi điểm tăng Sức mạnh Kỹ năng lên ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!',
-          id: 'Memberikan tumpukan kekuatan ajaib permanen, hingga maksimum 5 tumpukan. Setiap tumpukan meningkatkan Kekuatan Kemampuan sebesar ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!',
+          en: `Grants a permanent stack of magical strength, up to a maximum of 5 stacks. Each stack increases Ability Power by ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
+          br: `Da a quem beber ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} de Poder de habilidade permanentemente, acumula até 5 vezes!\n Sabor uva da floresta.`,
+          ru: `Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} Силы умений навсегда. Эффект складывается до 5 раз!`,
+          zh: `永久提供 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
+          cz: `Dává ti trvalý stack magické síly, až do maxima 5 stacků. Každý stack zvyšuje Sílu útoků o ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
+          fr: `Accorde une pile permanente de force magique, jusqu'à un maximum de 5 piles. Chaque pile augmente la puissance d'attaque de ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
+          vi: `Cung cấp một điểm sức mạnh ma thuật vĩnh viễn, tối đa là 5 điểm. Mỗi điểm tăng Sức mạnh Kỹ năng lên ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
+          id: `Memberikan tumpukan kekuatan ajaib permanen, hingga maksimum 5 tumpukan. Setiap tumpukan meningkatkan Kekuatan Kemampuan sebesar ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
         },
       }
     case ItemList.Corrupted_Potion:
@@ -2130,7 +2130,7 @@ const _getLocaleItemDescription = (
 }
 
 const getPoisonBowDescription = (isUpgraded: boolean) => {
-  const duration = fixed(isUpgraded ? ItemAbilityData.POISON_BOW_DURATION_2 : ItemAbilityData.POISON_BOW_DURATION_1, 1)
+  const duration = toSecRaw(isUpgraded ? ItemAbilityData.POISON_BOW_DURATION_2 : ItemAbilityData.POISON_BOW_DURATION_1)
   const damageOverTime = isUpgraded
     ? ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME_2
     : ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
