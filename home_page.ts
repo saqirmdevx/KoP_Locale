@@ -213,6 +213,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: ' - Phần thưởng: kinh nghiệm và xu\n - 1 vs 1 và 2 vs 2',
     id: ' - Hadiah: pengalaman dan koin\n - 1 vs 1 dan 2 vs 2',
   },
+  [LOCALE.PLAY_PAGE_BLITZ_DESCRIPTION]: {
+    br: ' - 2-6 vs jogadores\n - Vença também fazendo 15 pontos em menos de 5 minutos\n - Abates: 1 ponto, Runa de Ouro: 3 pontos e Torre: 6 pontos\nRecompensa: experiência e moedas\n',
+    vi: ' - 2-6 vs người chơi\n - Giành 15 điểm trong dưới 5 phút\n - Hạ gục: 1 điểm, Runa Vàng: 3 điểm và Tháp: 6 điểm\nPhần thưởng: kinh nghiệm và xu',
+    id: ' - 2-6 vs pemain\n - Dapatkan 15 poin dalam waktu kurang dari 5 menit\n - Kills: 1 poin, Runa Emas: 3 poin dan Menara: 6 poin\nHadiah: pengalaman dan koin',
+    en: ' - 2-6 vs players\n - 15 points in less than 5 minutes\n - Kills: 1 point, Gold Rune: 3 points, Tower: 6 points\nReward: experience and coins',
+    ru: ' - 2-6 против игроков\n - Наберите 15 очков менее чем за 5 минут\n - Убийства: 1 очко, Золотая руна: 3 очка, Башня: 6 очков\nНаграда: опыт и монеты',
+    cz: ' - 2-6 vs hráčů\n - 15 bodů za méně než 5 minut\n - Zabiják: 1 bod, Zlatá runa: 3 body, Věž: 6 bodů\nOdměna: zkušenosti a mince',
+    zh: ' - 2-6 对玩家\n - 在不到5分钟内获得15分\n - 击杀: 1 分, 金色符文: 3 分, 塔: 6 分\n奖励: 经验和金币',
+    fr: " - 2-6 contre des joueurs\n - 15 points en moins de 5 minutes\n - Kills: 1 point, Rune d'Or: 3 points, Tour: 6 points\nRécompense: expérience et pièces",
+  },  
   [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 2 Players vs 2 Hard AI\n - 25% less experience and coins',
     ru: ' - Награды: опыт и монеты\n - 2 игрока против 2 Сложных ботов\n - На 25% меньше получаемого опыта и монет',
@@ -272,6 +282,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Jouer une partie!',
     vi: 'Chơi game!',
     id: 'Mainkan game!',
+  },
+  [LOCALE.BLITZ_MATCH]: {
+    en: 'Blitz',
+    ru: 'Блиц',
+    br: 'Blitz',
+    cz: 'Blitz',
+    zh: '快速',
+    fr: 'Blitz',
+    vi: 'Blitz',
+    id: 'Blitz',
   },
   [LOCALE.AI_MATCH]: {
     en: 'AI Matches (PvAI):',
