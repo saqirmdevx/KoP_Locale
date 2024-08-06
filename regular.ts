@@ -1569,6 +1569,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Judul',
     vi: 'Tiêu đề',
   },
+  [LOCALE.LOBBY_BLITZ_MODE]: {
+    en: 'Blitz Mode',
+    ru: 'Блиц режим',
+    br: 'Modo Blitz',
+    cz: 'Blitz režim',
+    zh: '闪电模式',
+    fr: 'Mode Blitz',
+    id: 'Mode Blitz',
+    vi: 'Chế độ Blit',
+  },
   [LOCALE.LOBBY_INIT_GOLDS]: {
     en: 'Initial Gold',
     ru: 'Начальное золото',
