@@ -521,25 +521,28 @@ const _getLocaleItemDescription = (
           vi: 'Gươm Thần Thánh',
         },
         desc: {
-          en: `Cleanses all negative effects. And make you immune to all slows, stuns and other crowd-control effects for ${toSec(
+          en: `Cleanses all negative effects and make you immune to all slows, stuns and other crowd-control effects for ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          ru: `Снимает все негативные эффекты. И делает вас невосприимчивым ко всем замедлениям, оглушениям и другим эффектам контроля над толпой на ${toSec(
+          ru: `Очищает от всех отрицательных эффектов и делает вас невосприимчивым ко всем замедлениям, оглушениям и другим эффектам контроля над толпой на ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          br: `Limpa todos os efeitos negativos. E torna você imune a todos os slows, stuns e outros efeitos de controle de multidão por ${toSec(
+          br: `Limpa todos os efeitos negativos e te torna imune a todos os slows, stuns e outros efeitos de controle de multidão por ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          cz: `Vyčistí všechny negativní efekty. A činí vás imunními vůči všem zpomalením, omráčením a dalším efektům kontroly davu po dobu ${toSec(
+          cz: `Vyčistí všechny negativní efekty a vás imunní vůči všem zpomalením, omráčením a jiným efektům kontroly davu po dobu ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          fr: `Nettoie tous les effets négatifs. Et vous rend immunisé contre tous les ralentissements, étourdissements et autres effets de contrôle de foule pendant ${toSec(
+          fr: `Nettoie tous les effets négatifs et vous rend immunisé contre tous les ralentissements, étourdissements et autres effets de contrôle de foule pendant ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          zh: `清除所有負面效果。並使您免疫所有減速、暈眩和其他控場效果 ${toSec(
+          zh: `清除所有負面效果，使你免疫所有減速、暈眩和其他控制效果 ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}。`,
-          vi: `Làm sạch tất cả các hiệu ứng tiêu cực. Và khiến bạn miễn dịch với tất cả các hiệu ứng làm chậm, làm choáng và các hiệu ứng kiểm soát đám đông khác trong ${toSec(
+          vi: `Làm sạch tất cả các hiệu ứng tiêu cực và khiến bạn miễn dịch với tất cả các hiệu ứng làm chậm, làm choáng và các hiệu ứng kiểm soát đám đông khác trong ${toSec(
+            ItemAbilityData.DIVINE_SWORD_DURATION
+          )}.`,
+          id: `Membersihkan semua efek negatif dan membuat Anda kebal terhadap semua perlambatan, stun, dan efek pengendalian kerumunan lainnya selama ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
         },
