@@ -521,28 +521,25 @@ const _getLocaleItemDescription = (
           vi: 'Gươm Thần Thánh',
         },
         desc: {
-          en: `Cleanses all negative effects. Decreases your Attack Damage by 75% and makes you immune to all incoming damage and negative effects for ${toSec(
+          en: `Cleanses all negative effects. And make you immune to all slows, stuns and other crowd-control effects for ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          br: `Escudo Divino - Torna você imune a todos os efeitos por${toSec(
-            ItemAbilityData.DIVINE_SWORD_DURATION
-          )} e reduza seu dano de ataque em 75%.`,
-          ru: `Вы становитесь неуязвимы к входящему урону и эффектам контроля на ${toSec(
-            ItemAbilityData.DIVINE_SWORD_DURATION
-          )}, а также ваша Сила атаки уменьшается на 75%. При этом, вы не лишаетесь возможности атаковать, использовать способности или предметы.`,
-          zh: `神聖護盾 - 使你 ${toSec(
-            ItemAbilityData.DIVINE_SWORD_DURATION
-          )}無視所有效果並將你受到的攻擊傷害降至為 75%。`,
-          cz: `Očistí všechny negativní efekty. Sníží vaše útočné poškození o 75% a činí vás imunními vůči všem přicházejícím poškozením a negativním efektům po dobu ${toSec(
+          ru: `Снимает все негативные эффекты. И делает вас невосприимчивым ко всем замедлениям, оглушениям и другим эффектам контроля над толпой на ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          fr: `Nettoie tous les effets négatifs. Diminue vos dégâts d'attaque de 75% et vous rend immunisé contre tous les dégâts entrants et les effets négatifs pendant ${toSec(
+          br: `Limpa todos os efeitos negativos. E torna você imune a todos os slows, stuns e outros efeitos de controle de multidão por ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          vi: `Làm sạch tất cả các hiệu ứng tiêu cực. Giảm Sát Thương Tấn Công của bạn đi 75% và khiến bạn miễn nhiễm với tất cả sát thương và hiệu ứng tiêu cực trong ${toSec(
+          cz: `Vyčistí všechny negativní efekty. A činí vás imunními vůči všem zpomalením, omráčením a dalším efektům kontroly davu po dobu ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          id: `Membersihkan semua efek negatif. Mengurangi Serangan Anda sebesar 75% dan membuat Anda kebal terhadap semua kerusakan dan efek negatif yang masuk selama ${toSec(
+          fr: `Nettoie tous les effets négatifs. Et vous rend immunisé contre tous les ralentissements, étourdissements et autres effets de contrôle de foule pendant ${toSec(
+            ItemAbilityData.DIVINE_SWORD_DURATION
+          )}.`,
+          zh: `清除所有負面效果。並使您免疫所有減速、暈眩和其他控場效果 ${toSec(
+            ItemAbilityData.DIVINE_SWORD_DURATION
+          )}。`,
+          vi: `Làm sạch tất cả các hiệu ứng tiêu cực. Và khiến bạn miễn dịch với tất cả các hiệu ứng làm chậm, làm choáng và các hiệu ứng kiểm soát đám đông khác trong ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
         },
@@ -930,28 +927,14 @@ const _getLocaleItemDescription = (
           id: 'Busur Panjang Pemburu',
         },
         desc: {
-          en: `Attacking an enemy hero grants you a Hunter's Focus and increases movement speed by ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} for a duration of ${toSec(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION)}`,
-          ru: `Атака вражеского героя дарует вам Охотничий фокус и увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} на ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )} секунд`,
-          br: `Atacar um herói inimigo concede a você um Foco de Caçador e aumenta a velocidade de movimento em ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} por uma duração de ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )}`,
-          fr: `Attaquer un héros ennemi vous accorde un Focus de chasseur et augmente la vitesse de déplacement de ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} pour une durée de ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )}`,
-          zh: `攻擊敵方英雄將獲得獵人的專注並增加移動速度 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 持續時間 ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )}`,
-          cz: `Útok na nepřátelského hrdinu vám poskytne Lovecký záměr a zvýší rychlost pohybu o ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} po dobu ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )} sekund`,
-          vi: `Tấn công một anh hùng địch mang lại cho bạn một Trọng tâm của Thợ Săn và tăng tốc độ di chuyển lên ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} trong thời gian ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )}`,
-          id: `Menyerang pahlawan musuh memberikan Anda Fokus Pemburu dan meningkatkan kecepatan bergerak sebesar ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} selama ${toSec(
-            ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_DURATION
-          )}`,
+          en: `Attacking an enemy hero grants you a Hunter's Focus and increases movement speed by ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} and makes you immune to slow effects for a short duration`,
+          ru: `Атака вражеского героя дарует вам Охотничий фокус и увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} и делает вас невосприимчивым к замедляющим эффектам на короткое время`,
+          br: `Atacar um herói inimigo concede a você um Foco de Caçador e aumenta a velocidade de movimento em ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} e torna você imune a efeitos de lentidão por um curto período`,
+          fr: `Attaquer un héros ennemi vous accorde un Focus de chasseur et augmente la vitesse de déplacement de ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} et vous rend immunisé contre les effets de ralentissement pendant une courte durée`,
+          zh: `攻击敌方英雄会给予你猎人的专注，增加移动速度 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 并使你免疫减速效果一段时间`,
+          cz: `Útok na nepřátelského hrdinu vám poskytne Lovecký záměr a zvýší rychlost pohybu o ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} a na krátkou dobu vás zbaví zpomalení`,
+          vi: `Tấn công một anh hùng địch mang lại cho bạn một Trọng tâm Thợ Săn và tăng tốc độ di chuyển lên ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} và khiến bạn miễn dịch với hiệu ứng làm chậm trong một khoảng thời gian ngắn`,
+          id: `Menyerang pahlawan musuh memberi Anda Fokus Pemburu dan meningkatkan kecepatan gerakan sebesar ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} dan membuat Anda kebal terhadap efek pelambatan untuk jangka waktu yang singkat`,
         },
       }
     /** Nowice staff */
@@ -1363,7 +1346,7 @@ const _getLocaleItemDescription = (
           id: 'Perisai Ilahi',
         },
         desc: {
-          en: `Cleanses all negative effects from nearby allies and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health Regen to nearby allies for 4 Seconds.`,
+          en: `Cleanses all negative effects from nearby allies and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health Regen to nearby allies for ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)} Seconds.`,
           ru: `Снимает все негативные эффекты с ближайших союзников и дополнительно даёт им ${
             ItemAbilityData.DIVINE_SHIELD_BONUS_HPR
           } Регенерации здоровья на ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}.`,
