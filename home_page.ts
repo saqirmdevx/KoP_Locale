@@ -316,7 +316,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   [LOCALE.BLITZ_PLAYERS_AND_TIME]: {
     en: '5min - 2V2',
     ru: '5мин - 2на2',
-    br: '5min - 2x2',
+    br: '5min - 2V2',
     cz: '5min - 2v2',
     zh: '5分钟 - 2v2',
     fr: '5min - 2v2',
@@ -326,7 +326,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   [LOCALE.RANKED_PLAYERS_AND_TIME]: {
     en: '10min - 2V2',
     ru: '10мин - 2 на 2',
-    br: '10min - 2x2',
+    br: '10min - 2V2',
     cz: '10min - 2v2',
     zh: '10分钟 - 2v2',
     fr: '10min - 2v2',
@@ -344,14 +344,14 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     id: '8/10menit - 1V1/2V2',
   },
   [LOCALE.COOP_PLAYERS_AND_TIME]: {
-    en: '10min - 2V2IA',
-    ru: '10мин - 2на2ИА',
+    en: '10min - 2V2AI',
+    ru: '10мин - 2 на 2 с ИИ',
     br: '10min - 2V2IA',
-    cz: '10min - 2V2IA',
-    zh: '10分钟 - 2V2IA',
+    cz: '10min - 2V2AI',
+    zh: '10分钟 - 2对2AI',
     fr: '10min - 2V2IA',
-    vi: '10phút - 2V2IA',
-    id: '10menit - 2V2IA',
+    vi: '10 phút - 2V2AI',
+    id: '10menit - 2V2AI',
   },
   [LOCALE.ACTIVATE_ITEM]: {
     en: 'Activate Item',
