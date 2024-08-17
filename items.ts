@@ -1308,30 +1308,28 @@ const _getLocaleItemDescription = (
         desc: {
           en: `Upon taking player-based damage and falling below ${threshold}% Health, cleanses all negative effects and increases Health Regeneration by ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } for ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
-          ru: `При получении урона, при котором ваше здоровье опускается ниже ${threshold}%, вы снимаете с себя все негативные эффекты и получаете ${
+          } for ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. During the effect, the owner is immune to all slow effects.`,
+          ru: `Получив урон от игроков и упав ниже ${threshold}% здоровья, очищает все негативные эффекты и увеличивает Регенерацию здоровья на ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } Регенерации здоровья на ${toSec(
-            ItemAbilityData.VAMPIRIC_SHIELD_DURATION
-          )} (Срабатывает только при получении урона от вражеских героев)`,
-          br: `Ao receber dano e cair abaixo de ${threshold}% de vida, remove todos os efeitos negativos e aumenta a regeneração de vida em ${
+          } на ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Во время действия эффекта владелец невосприимчив к всем замедляющим эффектам.`,
+          br: `Ao receber dano de jogadores e cair abaixo de ${threshold}% de Vida, limpa todos os efeitos negativos e aumenta a Regeneração de Vida em ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } por ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
-          fr: `Lorsque vous subissez des dégâts et que votre vie descend en dessous de ${threshold}%, supprime tous les effets négatifs et augmente la régénération de santé de ${
+          } por ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Durante o efeito, o dono é imune a todos os efeitos de lentidão.`,
+          fr: `Après avoir subi des dégâts de joueur et être tombé en dessous de ${threshold}% de Santé, nettoie tous les effets négatifs et augmente la Régénération de Santé de ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } pour ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
-          zh: `當你受到傷害並掉到 ${threshold}%生命以下時，清除所有負面效果並增加 ${
+          } pour ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Pendant l'effet, le propriétaire est immunisé contre tous les effets de ralentissement.`,
+          zh: `在承受玩家傷害並掉到 ${threshold}%以下的生命值時，清除所有負面效果並增加 ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          }生命回復，持續 ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}。`,
-          cz: `Po přijetí hráčského poškození a poklesu pod ${threshold}% zdraví, očistí všechny negativní účinky a zvýší Regeneraci zdraví o ${
+          }生命再生，持續 ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}。在效果期間，擁有者免疫所有減速效果。`,
+          cz: `Po obdržení hráčského poškození a poklesu pod ${threshold}% zdraví, očistí všechny negativní účinky a zvýší Regeneraci zdraví o ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } po dobu ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
-          vi: `Khi nhận sát thương từ người chơi và rơi xuống dưới ${threshold}% Máu, loại bỏ tất cả các hiệu ứng tiêu cực và tăng Hồi Máu lên ${
+          } na ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Během efektu je majitel imunní vůči všem zpomalujícím efektům.`,
+          vi: `Khi nhận sát thương từ người chơi và rơi dưới ${threshold}% Máu, làm sạch tất cả các hiệu ứng tiêu cực và tăng Hồi Máu lên ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } trong ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
-          id: `Ketika menerima kerusakan berbasis pemain dan jatuh di bawah ${threshold}% Kesehatan, membersihkan semua efek negatif dan meningkatkan Regenerasi Kesehatan sebesar ${
+          } trong ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Trong khi hiệu ứng, chủ sở hữu miễn dịch với tất cả các hiệu ứng làm chậm.`,
+          id: `Setelah menerima kerusakan dari pemain dan jatuh di bawah ${threshold}% Kesehatan, membersihkan semua efek negatif dan meningkatkan Regenerasi Kesehatan sebesar ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } selama ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}.`,
+          } selama ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Selama efek, pemilik kebal terhadap semua efek perlambatan.`,
         },
       }
     }
