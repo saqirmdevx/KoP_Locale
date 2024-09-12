@@ -254,12 +254,18 @@ Now, as the Thorn Enchantress, Belle roams the land, using her magical abilities
     en: 'Foxy was born into a family of survivalists deep in the forests. His parents, former military operatives, taught him everything they knew about survival, combat, and weaponry from a young age. Growing up in this harsh environment, Foxy developed a keen sense of awareness and a fierce independence. Her skill with firearms and explosives quickly became apparent.
 
 When he was 18, tragedy struck. A rogue hermit group attacked his family, seeking to eliminate any threats to their illegal operations in the region. Foxy's parents were killed in the assault, but he managed to escape, swearing revenge. Driven by this loss, he spent the next decade honing his skills, training with various heroes and the strongest champions he could find.',
+    ru: 'Фокси родился в семье выживальщиков, глубоко в лесных дебрях. Его родители, бывшие военные, с ранних лет учили его всему, что знали о выживании, боевых искусствах и обращении с оружием. Выросший в этих суровых условиях, Фокси обрёл острое чувство бдительности и неукротимую независимость. Его талант в стрельбе и работе с взрывчаткой раскрылся с поразительной быстротой.
+
+Когда ему исполнилось восемнадцать, случилась трагедия. Отряд отшельников-ренегатов напал на его семью, стремясь устранить любую угрозу своим незаконным делам в этом крае. Родители Фокси погибли в сражении, но он сумел бежать, дав клятву отомстить. Охваченный болью утраты, он посвятил следующие десять лет тому, чтобы отточить свои навыки ещё больше, тренируясь с героями и сильнейшими чемпионами, которых мог найти.',
   },
   [LOCALE.MAGDALENE_DESCRIPTION]: {
     en: 'Magdalene was once a revered priestess in a forgotten realm, dedicated to maintaining the balance between life and death. She served as a bridge between the living and the dead, guiding souls to their final resting place with compassion and wisdom. However, her peaceful existence was shattered when the hermit force invaded her homeland, corrupting the land and enslaving the souls of the departed.
 
 Desperate to save her people and the souls she had sworn to protect, Magdalene performed a forbidden ritual, merging her essence with the power of an ancient, dark scythe. This act transformed her into a being of immense power, but at a great cost. She became the Soul Reaper, a harbinger of death who could command the souls of the fallen. While she succeeded in driving back the invaders, the corruption had taken root within her, and she was forever changed.',
-  },
+    ru: 'Магдалина некогда была почитаемой жрицей в затерянном измерении, посвящённой сохранению равновесия между жизнью и смертью. Она служила проводницей между миром живых и царством мёртвых, с мудростью и состраданием провожая души в их последний путь. Но её мирное существование было разрушено, когда силы отшельников вторглись в её родные земли, осквернив их и поработив души умерших.
+
+В отчаянной попытке спасти свой народ и тех, чьи души она клялась оберегать, Магдалина совершила запретный ритуал, соединив свою сущность с древним тёмным серпом. Этот акт наделил её невероятной мощью, но это стоило ей многого. Она стала Жницей Душ — вестницей смерти, способной повелевать павшими душами. Ей удалось изгнать захватчиков, но тьма пустила корни в её сердце, навсегда изменив её.',  
+},
   [LOCALE.DAMAGE_TYPE_NORMAL]: {
     en: 'Normal',
     ru: 'Физический',
