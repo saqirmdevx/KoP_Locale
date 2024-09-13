@@ -810,7 +810,7 @@ const _getSpellDescriptionLang = (
 
       return {
         en: `Alvar attacks with a punch, dealing ${baseDamage}. \n
-                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which lasts for ${duration}. At three stacks, the enemy receievs a Divine Mark, dealing ${markDamage}.`,
+                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which lasts for ${duration}. At three stacks, the enemy receives a Divine Mark, dealing ${markDamage}.`,
         br: `Alvar acerta com seu punho todos os alvos à sua frente causando ${baseDamage} de dano normal. \n
                 \n<b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${duration}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage} de dano normal.`,
         ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage} физического урона. \n
@@ -905,7 +905,7 @@ const _getSpellDescriptionLang = (
       const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod)
 
       return {
-        en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a bararge of bullets. Each bullet deals ${baseDamage}. <br/> <b>Rapid Fire attack rate scales with Attack Speed.</b>`,
+        en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a barrage of bullets. Each bullet deals ${baseDamage}. <br/> <b>Rapid Fire attack rate scales with Attack Speed.</b>`,
         ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Чем выше Скорость атаки, тем больше пуль будет выпущено. </i>`,
         cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`,
         br: `Foxy canaliza sua arma, diminuindo sua velocidade de movimento e disparando rapidamente uma rajada de balas. Cada bala causa ${baseDamage}. <br/> <i> A taxa de ataque de Fogo Rápido escala com a Velocidade de Ataque. </i>`,

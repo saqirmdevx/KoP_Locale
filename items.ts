@@ -1347,7 +1347,7 @@ const _getLocaleItemDescription = (
           id: 'Perisai Ilahi',
         },
         desc: {
-          en: `Cleanses all negative effects from nearby allies and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health Regen to nearby allies for ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)} Seconds.`,
+          en: `Cleanses all negative effects from nearby allies and grants ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} Health Regen to nearby allies for ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}.`,
           ru: `Снимает все негативные эффекты с ближайших союзников и дополнительно даёт им ${
             ItemAbilityData.DIVINE_SHIELD_BONUS_HPR
           } Регенерации здоровья на ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}.`,

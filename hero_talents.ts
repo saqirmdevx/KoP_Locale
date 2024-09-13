@@ -343,7 +343,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: 'Floral Rejuvation',
+            en: 'Floral Rejuvenation',
             ru: 'Цветочное оздоровление',
             cz: 'Květinová obnova',
             zh: '花瓣恢复',
