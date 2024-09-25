@@ -54,7 +54,7 @@ const _getLocaleItemDescription = (
           br: 'Graveto Mágico',
           cz: 'Učňova Hůl',
           fr: 'Bâton de novice',
-          zh: '木杖',
+          zh: '新手法杖',
           vi: 'Gậy Tân Thủ',
           id: 'Tongkat Pemula',
         },
@@ -67,7 +67,7 @@ const _getLocaleItemDescription = (
           br: 'Anel olho da Floresta',
           cz: 'Železný Prsten',
           fr: 'Anneau de fer',
-          zh: '鐵環',
+          zh: '木環',
           vi: 'Nhẫn Gỗ',
           id: 'Cincin Kayu',
         },
@@ -132,7 +132,7 @@ const _getLocaleItemDescription = (
           br: 'Katana Corrompida',
           cz: 'Zvrácená Katana',
           fr: 'Katana corrompu',
-          zh: '腐化的武士刀',
+          zh: '腐化武士刀',
           vi: 'Katana Bị Nhiễm',
           id: 'Katana Tercemar',
         },
@@ -155,7 +155,7 @@ const _getLocaleItemDescription = (
           br: 'Espada dos Guerreiros de ferro',
           cz: 'Ocelový Meč',
           fr: 'Épée de fer',
-          zh: '鐵劍',
+          zh: '鋼鐵勇者之劍',
           vi: 'Gươm của Chiến Binh Sắt',
           id: 'Pedang Para Pejuang Besi',
         },
@@ -181,7 +181,7 @@ const _getLocaleItemDescription = (
           ru: 'Ловкий длинный лук',
           br: 'Besta da Resiliência encantada',
           fr: 'Arc long résistant',
-          zh: '強靭長弓',
+          zh: '敏捷長弓',
           vi: 'Cung Dài Linh Hoạt',
           id: 'Busur Panjang Tangkas',
         },
@@ -190,7 +190,7 @@ const _getLocaleItemDescription = (
           ru: `Увеличивает дальность полёта снарядов на ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} пикселей и скорость их полёта на ${speed}%.`,
           br: `Aumenta o alcance das balas em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} e a velocidade em ${speed}%.`,
           fr: `Augmente la portée des balles de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} et la vitesse de ${speed}%.`,
-          zh: `增加${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}的子弹射程和${speed}%的子弹速度。`,
+          zh: `增加 ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}像素子弹射程和 ${speed}%的子弹速度。`,
           cz: `Zvýší dolet střelby o ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} a rychlost o ${speed}%.`,
           vi: `Tăng tầm bắn của đạn lên ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} và tốc độ của đạn lên ${speed}%.`,
           id: `Meningkatkan jangkauan peluru sebesar ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} dan kecepatan peluru sebesar ${speed}%.`,
@@ -218,7 +218,7 @@ const _getLocaleItemDescription = (
           br: 'Escudo dos Guerreiros de ferro',
           cz: 'Železný Pukléř',
           fr: 'Bouclier de fer',
-          zh: '鐵圓盾',
+          zh: '鋼鐵勇者之圓盾',
           vi: 'Khiên của Chiến Binh Sắt',
           id: 'Buckler Para Pejuang Besi',
         },
@@ -231,7 +231,7 @@ const _getLocaleItemDescription = (
           br: 'Escudo Encantado',
           cz: 'Magický Štít',
           fr: 'Bouclier magique',
-          zh: '魔法護盾',
+          zh: '強化護盾',
           vi: 'Khiên Phù Thủy',
           id: 'Perisai Sihir',
         },
@@ -296,7 +296,7 @@ const _getLocaleItemDescription = (
           br: 'Armadura de Aprendiz',
           cz: 'Kožená Zbroj',
           fr: 'Armure de cuir',
-          zh: '皮革裝甲',
+          zh: '見習生裝甲',
           vi: 'Áo Giáp của Thực Tập Sinh',
           id: 'Baju Besi',
         },
@@ -309,7 +309,7 @@ const _getLocaleItemDescription = (
           br: 'Armadura dos Guerreiros de ferro',
           cz: 'Železná Zbroj',
           fr: 'Armure de fer',
-          zh: '鐵裝甲',
+          zh: '鋼鐵勇者之裝甲',
           vi: 'Áo Giáp của Chiến Binh Sắt',
           id: 'Baju Besi',
         },
@@ -320,7 +320,7 @@ const _getLocaleItemDescription = (
           en: 'Charming Pendant',
           br: 'Pingente encantador',
           fr: 'Pendentif charmant',
-          zh: '迷人的吊坠',
+          zh: '迷人的吊墜',
           cz: 'Okouzlující přívěsek',
           ru: 'Очаровательная подвеска',
           vi: 'Dây Chuyền Quyến Rũ',
@@ -355,7 +355,7 @@ const _getLocaleItemDescription = (
           fr: `Amplifie tous les effets de guérison et de régénération de ${Math.floor(
             ItemAbilityData.PLATE_ARMOR_HP_AMP * 100
           )}%.`,
-          zh: `增強所有治療和再生效果 ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%。`,
+          zh: `增強所有治癒和回血效果 ${Math.floor(ItemAbilityData.PLATE_ARMOR_HP_AMP * 100)}%。`,
           vi: `Tăng cường tất cả hiệu ứng hồi máu và tái sinh lên ${Math.floor(
             ItemAbilityData.PLATE_ARMOR_HP_AMP * 100
           )}%.`,
@@ -411,7 +411,7 @@ const _getLocaleItemDescription = (
           br: 'Botas dos Guerreiros de ferro',
           cz: 'Svaté Sandále',
           fr: 'Bottes divines',
-          zh: '神聖之靴',
+          zh: '鋼鐵勇者之靴',
           vi: 'Giày của Chiến Binh Sắt',
           id: 'Sepatu Para Pejuang Besi',
         },
@@ -485,11 +485,11 @@ const _getLocaleItemDescription = (
           zh: `每次基本攻擊造成敵人最大生命值的 ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
           )}% 作為額外魔法傷害。 \n \n
-          暗影詛咒：基本攻擊阻止敵人的生命恢復，並造成（${
+          暗影詛咒：基本攻擊阻止敵人的生命恢復，並造成每秒（${
             ItemAbilityData.SHADOW_SLAYER_HP_REGEN_MODIFIER * 100
-          }% 敵人生命恢復）每秒純粹傷害，持續 ${toSec(
+          }% 敵人生命恢復）的純粹傷害，持續 ${toSec(
             ItemAbilityData.SHADOW_SLAYER_DURATION
-          )}。每 ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)} 可發生一次`,
+          )}。每 ${toSec(ItemAbilityData.SHADOW_SLAYER_COOLDOWN)}可發動一次。`,
           vi: `Mỗi Đòn tấn công cơ bản gây ${(ItemAbilityData.SHADOW_SLAYER_PERC_DMG * 100).toFixed(
             1
           )}% máu tối đa của kẻ địch dưới dạng sát thương phép bổ sung. \n \n
@@ -536,7 +536,7 @@ const _getLocaleItemDescription = (
           fr: `Nettoie tous les effets négatifs et vous rend immunisé contre tous les ralentissements, étourdissements et autres effets de contrôle de foule pendant ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}.`,
-          zh: `清除所有負面效果，使你免疫所有減速、暈眩和其他控制效果 ${toSec(
+          zh: `清除所有負面效果，使你免疫所有減速、暈眩和其他群體控制效果 ${toSec(
             ItemAbilityData.DIVINE_SWORD_DURATION
           )}。`,
           vi: `Làm sạch tất cả các hiệu ứng tiêu cực và khiến bạn miễn dịch với tất cả các hiệu ứng làm chậm, làm choáng và các hiệu ứng kiểm soát đám đông khác trong ${toSec(
@@ -564,7 +564,7 @@ const _getLocaleItemDescription = (
           en: 'Throws a fragment of the katana, which reduces the Movement Speed of enemies and silences enemies inside its radius. Provides unobstructed vision and reveals all invisible units in its radius.',
           ru: 'Вы бросаете фрагмент катаны перед собой, который при приземлении замедляет и накладывает немоту на всех ближайших вражеских героев, а также раскрывает все невидимые цели вокруг себя и даёт беспрепятственный обзор, пока находится на земле.',
           br: 'Joga a katana divina perto de você, no momento do impacto fornece visão desobstruída, silencia e desacelera todos os heróis inimigos na área. Além disso, revelará todas as unidades invisíveis na área.',
-          zh: '在你前方投擲片段武士刀，提供寬廣視野，沉默且減速在範圍內的敵方英雄。此外能揭發隱蔽單位',
+          zh: '在你前方投擲武士刀碎片，減緩範圍內的敵方英雄移動速度並且沉默他們。提供寬廣視野且揭發所有隱蔽單位。',
           cz: 'Vhodíte před sebe fragment katany, který zpomaluje a umlčuje všechny nepřátelské hrdiny v okolí. Navíc poskytuje neomezené vidění a odhaluje všechny neviditelné jednotky v okolí.',
           fr: 'Lance un fragment de la katana devant vous, qui ralentit et réduit au silence tous les héros ennemis à proximité. De plus, il fournit une vision dégagée et révèle toutes les unités invisibles à proximité.',
           vi: 'Ném một mảnh của katana phía trước, làm chậm lại và làm im lặng tất cả các anh hùng địch trong khu vực. Ngoài ra, cung cấp tầm nhìn không bị cản trở và tiết lộ tất cả các đơn vị vô hình trong khu vực.',
@@ -577,7 +577,7 @@ const _getLocaleItemDescription = (
           en: 'Spiked Mace',
           ru: 'Шипастая булава',
           br: 'Maçã Cravada',
-          zh: '尖刺錘',
+          zh: '尖刺鐵錘',
           fr: 'Masse à pointes',
           cz: 'Hrotatá palice',
           vi: 'Gậy Móc',
@@ -596,9 +596,9 @@ const _getLocaleItemDescription = (
           fr: `Votre attaque normale tue instantanément l'ennemi lorsque la santé de l'ennemi est inférieure à ${(
             ItemAbilityData.SPIKED_MACE_THRESHOLD * 100
           ).toFixed(1)}%`,
-          zh: `当敌人的生命值低于${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(
+          zh: `當敵人生命值低於 ${(ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(
             1
-          )}%时，你的普通攻击会瞬间杀死敌人`,
+          )}%時，你的普通攻擊會立即殺死敵人。`,
           cz: `Tvůj normální útok okamžitě zabije nepřítele, když je zdraví nepřítele pod ${(
             ItemAbilityData.SPIKED_MACE_THRESHOLD * 100
           ).toFixed(1)}%`,
@@ -635,7 +635,7 @@ const _getLocaleItemDescription = (
           fr: `Augmente la durée de ${Math.floor(
             ItemAbilityData.PLAGUE_RING_MODIFIER * 100
           )}% de tous les effets négatifs appliqués par vos capacités.`,
-          zh: `增加 ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}% 所有负面效果应用于你的技能持续时间.`,
+          zh: `增加所有你技能的負面效果持續時間 ${Math.floor(ItemAbilityData.PLAGUE_RING_MODIFIER)}%。`,
           cz: `Zvyšte dobu trvání o ${Math.floor(
             ItemAbilityData.PLAGUE_RING_MODIFIER * 100
           )}% všech negativních efektů, které vaše schopnosti aplikují.`,
@@ -655,7 +655,7 @@ const _getLocaleItemDescription = (
           ru: 'Меч Ледяного Императора',
           br: 'Espada do Imperador Congelado',
           fr: 'Épée gelée',
-          zh: '寒冰之劍',
+          zh: '寒冰帝王之劍',
           cz: 'Meč Zmrzlého Císaře',
           vi: 'Gươm của Hoàng Đế Lạnh',
           id: 'Pedang Kaisar Beku',
@@ -681,9 +681,9 @@ const _getLocaleItemDescription = (
           } par pile. À ${
             ItemAbilityData.COLD_SWORD_STACKS
           } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
-          zh: `你的基本攻击对敌人施加物理冰霜，每层减速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
+          zh: `你的基本攻擊地敵人造成物理結霜疊加，每層減速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
             ItemAbilityData.COLD_SWORD_STACKS
-          } 层时，敌人会受到寒冷诅咒 - ${getFrigidCurseDescription()}`,
+          } 層時，敵人會受到寒冰詛咒 - ${getFrigidCurseDescription()}`,
           cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${
             ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
           } za každý stack. Při ${
@@ -708,7 +708,7 @@ const _getLocaleItemDescription = (
           ru: 'Искажённый губитель света',
           br: 'Corta Luz corrompido',
           fr: 'Tueur de Lumière Corrompu',
-          zh: '腐化的輕量殺手',
+          zh: '腐化輕量殺手',
           cz: 'Zkreslený světelný vrah',
           vi: 'Kẻ Sát Ánh Sáng Bị Nhiễm Độc',
           id: 'Pembunuh Cahaya Tercemar',
@@ -728,7 +728,7 @@ const _getLocaleItemDescription = (
           } Dégâts d'Attaque aux alliés proches.`,
           zh: `提供 ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% 生命偷取和 ${
             ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
-          } 攻击伤害给附近的盟友.`,
+          } 攻擊傷害给附近的盟友。`,
           cz: `Poskytuje ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(
             1
           )}% životodárného kradení a ${
@@ -771,7 +771,7 @@ const _getLocaleItemDescription = (
           fr: `Chaque attaque J réussie augmente ta vitesse d'attaque de ${Math.floor(
             ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100
           )}% pour ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec.`,
-          zh: `每當你的一般攻擊擊中敵方英雄，增加 ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(
+          zh: `每當你的基本攻擊擊中敵方，疊加一層狂暴，最多可疊加 ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} 層。每層疊加增加 ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(
             1
           )}秒你的攻擊速度 ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}%`,
           vi: `Mỗi khi Đòn tấn công cơ bản của bạn trúng kẻ địch, tăng Tốc độ tấn công của bạn lên ${Math.floor(
@@ -808,7 +808,7 @@ const _getLocaleItemDescription = (
             'Chaque fois que vos capacités touchent un ennemi, votre vitesse de déplacement augmente de 10 pendant 1,5 seconde. Vos capacités appliquent également une pile de poison \n \n' +
             getPoisonBowDescription(false),
           zh:
-            '每當你的技能擊中敵人時，你的移動速度將在1.5秒內增加10。 你的技能也會施加一層毒 \n \n' +
+            '每當你的技能擊中敵人時，你的移動速度將在1.5秒內增加10，你的技能也會施加一層毒。 \n \n' +
             getPoisonBowDescription(false),
           cz:
             'Když vaše schopnosti zasáhnou nepřítele, vaše rychlost pohybu se po dobu 1,5 sekundy zvýší o 10. Vaše schopnosti také aplikují stack jedu \n \n' +
@@ -845,7 +845,7 @@ const _getLocaleItemDescription = (
           ru: 'Искажённый длинный лук',
           br: 'Arco Corrompido',
           fr: 'Arc long corrompu',
-          zh: '腐化的長弓',
+          zh: '腐化長弓',
           cz: 'Zkreslený dlouhý luk',
           vi: 'Cung Dài Bị Nhiễm Độc',
           id: 'Busur Panjang Tercemar',
@@ -886,7 +886,7 @@ const _getLocaleItemDescription = (
           zh:
             `腐化你的血液使你更快，增加你的攻擊速度 ${(
               ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100
-            ).toFixed(1)}% 並增加你的移動速度 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} 在 ${
+            ).toFixed(1)}% 並增加你 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}移動速度值 ${
               ItemAbilityData.CORRUPTED_LONGBOW_DURATION / 1000
             } 秒。\n` +
             `這個效果會阻止你施放技能。\n \n` +
@@ -934,7 +934,7 @@ const _getLocaleItemDescription = (
           ru: `Атака вражеского героя дарует вам Охотничий фокус и увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} и делает вас невосприимчивым к замедляющим эффектам на короткое время`,
           br: `Atacar um herói inimigo concede a você um Foco de Caçador e aumenta a velocidade de movimento em ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} e torna você imune a efeitos de lentidão por um curto período`,
           fr: `Attaquer un héros ennemi vous accorde un Focus de chasseur et augmente la vitesse de déplacement de ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} et vous rend immunisé contre les effets de ralentissement pendant une courte durée`,
-          zh: `攻击敌方英雄会给予你猎人的专注，增加移动速度 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 并使你免疫减速效果一段时间`,
+          zh: `攻擊敵方英雄會给予你獵人的專注，增加移動速度 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 並使你短時間內免疫减速效果。`,
           cz: `Útok na nepřátelského hrdinu vám poskytne Lovecký záměr a zvýší rychlost pohybu o ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} a na krátkou dobu vás zbaví zpomalení`,
           vi: `Tấn công một anh hùng địch mang lại cho bạn một Trọng tâm Thợ Săn và tăng tốc độ di chuyển lên ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} và khiến bạn miễn dịch với hiệu ứng làm chậm trong một khoảng thời gian ngắn`,
           id: `Menyerang pahlawan musuh memberi Anda Fokus Pemburu dan meningkatkan kecepatan gerakan sebesar ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} dan membuat Anda kebal terhadap efek pelambatan untuk jangka waktu yang singkat`,
@@ -954,7 +954,7 @@ const _getLocaleItemDescription = (
           id: 'Tongkat Terbakar',
         },
         desc: {
-          en: `Your abilites ignite enemy heroes, dealing ${fixed(
+          en: `Your abilites ignite all the enemy units, dealing ${fixed(
             ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100,
             1
           )}% of their Max Health as Magic Damage over ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(
@@ -974,9 +974,9 @@ const _getLocaleItemDescription = (
             ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100,
             1
           )}% de leurs points de vie maximum pour ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(1)} sec.`,
-          zh: `你的技能點燃敵方並額外給予 ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(
+          zh: `你的技能點燃所有敵方單位，給予 ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(
             1
-          )}秒每秒最大血量 ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}%傷害`,
+          )}秒每秒最大血量 ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}%的魔法傷害`,
           cz: `Vaše schopnosti zapalují nepřátele, způsobují ${fixed(
             ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100,
             1
@@ -1022,10 +1022,10 @@ const _getLocaleItemDescription = (
             ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100,
             1
           )}% (на 70% слабее против миньонов) от нанесённого урона.`,
-          zh: `當你的魔法攻擊擊中敵方英雄，從${fixed(
+          zh: `你的技能治癒你 ${fixed(
             ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100,
             1
-          )}%給予的傷害恢復自己生命值。`,
+          )}% 你對敵方造成的傷害 (對小兵會弱化65%)。`,
           cz: `Vaše schopnosti vás léčí za ${fixed(
             ItemAbilityData.VAMPIRIC_ROD_HP_STEAL * 100,
             1
@@ -1051,7 +1051,7 @@ const _getLocaleItemDescription = (
           ru: 'Посох Кирина',
           br: 'Cajado de Kirin',
           fr: 'Bâton de Kirin',
-          zh: '麒麟法棍',
+          zh: '麒麟的法棍',
           cz: 'Kirinův hůl',
           vi: 'Gậy Kirin',
           id: 'Tongkat Kirin',
@@ -1069,10 +1069,10 @@ const _getLocaleItemDescription = (
             ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100,
             1
           )}% на 4 секунды. Этот эффект не складывается с другими источниками`,
-          zh: `你的技能拆穿目標物的魔法抗性 ${fixed(
+          zh: `你的技能降低4秒鐘敵方魔法抗性 ${fixed(
             ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100,
             1
-          )}%，此效果將不會疊加於其他資源`,
+          )}%。`,
           cz: `Vaše schopnosti snižují magickou odolnost cíle o ${fixed(
             ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100,
             1
@@ -1097,7 +1097,7 @@ const _getLocaleItemDescription = (
           en: 'Corrupted Staff',
           br: 'Cajado corrompido',
           ru: 'Искажённый посох',
-          zh: '腐化的法棍',
+          zh: '腐化法棍',
           cz: 'Zkreslený hůl',
           fr: 'Bâton corrompu',
           vi: 'Gậy Bị Nhiễm Độc',
@@ -1110,7 +1110,7 @@ const _getLocaleItemDescription = (
             1
           )}% de poder de habilidade!`,
           ru: `Повышает вашу Силу умений на ${fixed(ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100, 1)}%.`,
-          zh: `提供額外的 ${fixed(ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100, 1)}%技能威力！`,
+          zh: `增加你的技能威力 ${fixed(ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100, 1)}%。`,
           cz: `Zvyšuje vaši sílu schopností o ${fixed(ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100, 1)}%.`,
           fr: `Augmente votre puissance des compétences de ${fixed(
             ItemAbilityData.CORRUPTED_STAFF_BONUS_AP * 100,
@@ -1127,7 +1127,7 @@ const _getLocaleItemDescription = (
           ru: 'Посох Ледяной Императрицы',
           br: 'Cajado da Imperatriz Congelada',
           fr: 'Baguette gelée',
-          zh: '冰結法棍',
+          zh: '寒冰帝王之法棍',
           cz: 'Hůl Zmrzlé císařovny',
           vi: 'Gậy của Nữ Hoàng Băng Giá',
           id: 'Tongkat Ratu Beku',
@@ -1145,9 +1145,9 @@ const _getLocaleItemDescription = (
           fr: `Vos capacités appliquent des stacks ennemis. Une fois que ${
             ItemAbilityData.FROZEN_STAFF_STACKS
           } s'empilent, l'ennemi est affecté par la Malédiction de Givre- ${getFrigidCurseDescription()}`,
-          zh: `你的技能会给敌人造成层数。当敌人达到 ${
+          zh: `你的技能會給敵方疊加魔法冰霜。當達到 ${
             ItemAbilityData.FROZEN_STAFF_STACKS
-          } 层时，将会被冰封诅咒，- ${getFrigidCurseDescription()}`,
+          } 層時，敵方將會受到冰凍诅咒 - ${getFrigidCurseDescription()}`,
           cz: `Vaše schopnosti působí na nepřátele vrstvami. Po dosažení ${
             ItemAbilityData.FROZEN_STAFF_STACKS
           } vrstev je nepřítel postižen Zimní proklěti - ${getFrigidCurseDescription()}`,
@@ -1166,7 +1166,7 @@ const _getLocaleItemDescription = (
           ru: 'Жезл железных воинов',
           br: 'Cajado dos Guerreiros de ferro',
           fr: 'Baguette de fer',
-          zh: '鐵之法棒',
+          zh: '鋼鐵勇者之法棒',
           cz: 'Hůl železných válečníků',
           vi: 'Gậy của Chiến Binh Sắt',
           id: 'Tongkat Prajurit Besi',
@@ -1235,7 +1235,7 @@ const _getLocaleItemDescription = (
           zh:
             `向前方釋放暗箭貫穿敵方，沉默 ${(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DURATION / 1000).toFixed(
               1
-            )}秒所有敵方並在沉默結束後，期間造成的傷害 ${(
+            )}秒所有敵方並在沉默結束後，期間內造成的傷害 ${(
               ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100
             ).toFixed(1)}%追加為魔法傷害。` +
             '\n' +
@@ -1285,7 +1285,7 @@ const _getLocaleItemDescription = (
           ru: `Восстанавливает ${heal} здоровья для ближайших союзников и дарует ${speed} скорости передвижения на ${duration} секунд всем ближайшим союзникам.\n Этот эффект имеет внутреннее время восстановления, которое предотвращает любые другие активации в течение 12 секунд. Это внутреннее время восстановления не может быть снижено с помощью Скорости действия.`,
           br: `Restaura ${heal} de Vida para os aliados próximos e concede ${speed} de Velocidade de Movimento por ${duration} Segundos para todos os aliados próximos.\n Este efeito tem um tempo de recarga interno que impede qualquer outra ativação por 12 Segundos. Este tempo de recarga interno não pode ser reduzido por Aceleração de Habilidade.`,
           fr: `Restaure ${heal} Santé pour les alliés proches et accorde ${speed} Vitesse de déplacement pendant ${duration} Secondes à tous les alliés proches.\n Cet effet a un temps de recharge interne qui empêche toute autre activation pendant 12 Secondes. Ce temps de recharge interne ne peut pas être réduit par la Vitesse d'habileté.`,
-          zh: `為附近的盟友恢復 ${heal}生命值並為所有附近的盟友提供 ${speed}移動速度，持續 ${duration}秒。\n 這個效果有一個內部冷卻時間，防止在12秒內進行任何其他激活。這個內部冷卻時間不能通過技能急速減少。`,
+          zh: `為附近的盟友恢復 ${heal}生命值並為所有附近的盟友提供 ${duration}秒的 ${speed}移動速度。\n 這個效果有一個內部冷卻時間，防止在12秒內進行任何其他激活。這個內部冷卻時間不能通過技能冷卻加速減少。`,
           cz: `Obnovuje ${heal} zdraví pro blízké spojence a poskytuje ${speed} rychlosti pohybu po dobu ${duration} sekund všem blízkým spojencům.\n Tento efekt má vnitřní dobu odpočinku, která brání jakémukoli jinému spuštění po dobu 12 sekund. Tato vnitřní doba odpočinku nemůže být snížena pomocí schopnosti spěchu.`,
           vi: `Hồi ${heal} Máu cho đồng minh gần và tăng ${speed} Tốc Độ Di Chuyển trong ${duration} Giây cho tất cả đồng minh gần.\n Hiệu ứng này có một thời gian hồi nội bộ ngăn chặn bất kỳ kích hoạt nào khác trong 12 Giây. Thời gian hồi nội bộ này không thể giảm bởi Tăng Tốc Độ Kỹ Năng.`,
           id: `Mengembalikan ${heal} Kesehatan untuk sekutu terdekat dan memberikan ${speed} Kecepatan Gerak selama ${duration} Detik untuk semua sekutu terdekat.\n Efek ini memiliki cooldown dalam yang mencegah aktivasi lain selama 12 Detik. Cooldown dalam ini tidak dapat dikurangi oleh Ability Haste.`,
@@ -1320,7 +1320,7 @@ const _getLocaleItemDescription = (
           } pour ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Pendant l'effet, le propriétaire est immunisé contre tous les effets de ralentissement.`,
           zh: `在承受玩家傷害並掉到 ${threshold}%以下的生命值時，清除所有負面效果並增加 ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          }生命再生，持續 ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}。在效果期間，擁有者免疫所有減速效果。`,
+          }回血速度，持續 ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}。在效果期間內，擁有者免疫所有減速效果。`,
           cz: `Po obdržení hráčského poškození a poklesu pod ${threshold}% zdraví, očistí všechny negativní účinky a zvýší Regeneraci zdraví o ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } na ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Během efektu je majitel imunní vůči všem zpomalujícím efektům.`,
@@ -1352,7 +1352,7 @@ const _getLocaleItemDescription = (
             ItemAbilityData.DIVINE_SHIELD_BONUS_HPR
           } Регенерации здоровья на ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}.`,
           br: `Aplique a purificação a todos os aliados próximos, removendo todos os efeitos negativos e concedendo ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} regen de saúde por curto período de tempo.`,
-          zh: `将净化应用于所有附近的盟友，可消除所有负面效果并赋予${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}短时间的恢复健康。`,
+          zh: `替所有附近盟友清除所有負面效果，並且在 ${toSec(ItemAbilityData.DIVINE_SHIELD_DURATION)}秒內給予 ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR}回血加速。`,
           cz: `Aplikujte očištění všem blízkým spojencům, které odstraní všechny negativní účinky a poskytne ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} obnovu zdraví po krátkou dobu.`,
           fr: `Appliquer le nettoyage à tous les alliés proches qui supprime tous les effets négatifs et accorde ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} de régénération de santé pour une courte durée.`,
           vi: `Áp dụng làm sạch cho tất cả đồng minh gần, loại bỏ tất cả các hiệu ứng tiêu cực và trao ${ItemAbilityData.DIVINE_SHIELD_BONUS_HPR} hồi máu trong thời gian ngắn.`,
@@ -1367,14 +1367,14 @@ const _getLocaleItemDescription = (
           ru: 'Щит неповиновения',
           br: 'Escudo da Defesa',
           fr: 'Bouclier de Défiance',
-          zh: '蔑视之盾',
+          zh: '蔑視之盾',
           cz: 'Štít odporu',
         },
         desc: {
           en: `Grants ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Magic Resistance and ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Health Regen to nearby allies.`,
           br: `Concede aos aliados mais próximos ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de resistência mágica e ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de regeneração de vida.`,
           fr: `Accorde à vos alliés voisins ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} de résistance magique et ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} de régénération de vie.`,
-          zh: `为附近的盟友提供${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}魔法抗性和${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}生命回复。`,
+          zh: `為附近的盟友提供 ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR}魔法抗性和 ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}回血速度。`,
           cz: `Poskytuje sousedním spojencům ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} odolnost proti kouzlu a ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} regeneraci zdraví.`,
           ru: `Увеличивает Сопротивление магии у всех ближайших союзников на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} и Регенерацию здоровья на ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR}.`,
           vi: `Trao cho đồng minh gần ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_MR} Kháng phép và ${ItemAbilityData.SHIELD_OF_DEFIANCE_BONUS_HPR} Hồi Máu.`,
@@ -1400,7 +1400,7 @@ const _getLocaleItemDescription = (
           ru: `На ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} сек. наносит врагу ${value}% урона, который был получен вами. Тип урона такой же, как и полученный.`,
           br: `Por ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} seg, reflete ${value}% do dano recebido de volta ao atacante. O dano refletido é do mesmo tipo que o recebido.`,
           fr: `Pendant ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} sec, le porteur réfléchit ${value}% des dégâts reçus à l'attaquant. Les dégâts réfléchis sont du même type que ceux reçus.`,
-          zh: `在 ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} 秒内，反射 ${value}% 所受到的傷害給予攻擊者。反射傷害與所受到的傷害相同。`,
+          zh: `在 ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} 秒内，反射 ${value}% 受到的傷害給攻擊者。反射傷害與所受到的傷害類型相同。`,
           cz: `Po dobu ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)} sekund odrazí ${value}% poškození zpět na útočníka. Odražené poškození je stejného typu jako přijaté.`,
           vi: `Trong ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)}, người mang phản ánh ${value}% sát thương nhận được trở lại kẻ tấn công. Sát thương phản ánh là cùng loại sát thương nhận được.`,
           id: `Selama ${toSec(ItemAbilityData.SPIKE_SHIELD_DURATION)}, pembawa memantulkan ${value}% kerusakan yang diterima kembali ke penyerang. Kerusakan pantulan adalah jenis kerusakan yang sama dengan yang diterima.`,
@@ -1444,11 +1444,9 @@ const _getLocaleItemDescription = (
           } de dégâts normaux. Cet effet ne peut se déclencher qu'une seule fois tous les ${toSec(
             ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
           )}.`,
-          zh: `如果您的生命值低于${threshold}%时受到伤害，您将在0.5秒后释放一道冲击波，使附近所有敌人昏迷${toSec(
+          zh: `如果您的生命值低於 ${threshold}%時受到傷害，您將在0.5秒後釋放一道衝擊波，使附近所有敵人昏迷${toSec(
             ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )}，并造成${ItemAbilityData.GARUNS_DEFENDER_DAMAGE}的常规伤害。此效果每${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
-          )}不能触发一次。`,
+          )}，並造成${ItemAbilityData.GARUNS_DEFENDER_DAMAGE}一般傷害。`,
           cz: `Pokud utrpíte poškození pod ${threshold}% životů, spustíte vlnu šoku s 0,5sekundovým zpožděním, která ochromí všechny nepřátele v okolí na ${toSec(
             ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
           )} a způsobí ${
@@ -1483,7 +1481,7 @@ const _getLocaleItemDescription = (
           ru: `Выпускает ударную волну, которая пролетает в воздухе, обнаруживает всех врагов и наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} физического урона всем врагам, которых она задела, снижая их Скорость передвижения и Скорость атаки на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} на ${duration} сек.`,
           br: `Libera uma onda de choque que viaja pelo ar, revelando todos os inimigos e causando ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} de dano normal a todos os inimigos atingidos, reduzindo a velocidade de movimento e a velocidade de ataque em ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} por ${duration} seg.`,
           fr: `Libère une onde de choc qui traverse l'air, révélant tous les ennemis et infligeant ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} de dégâts normaux à tous les ennemis touchés et réduisant leur vitesse de déplacement et leur vitesse d'attaque de ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} pendant ${duration} sec.`,
-          zh: `释放一道穿过空气的冲击波，揭示所有敌人并对所有被击中的敌人造成 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} 常规伤害，降低他们的移动速度和攻击速度 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}，持续 ${duration} 秒。`,
+          zh: `釋放一道穿過空氣的衝擊波，揭發所有敵人並對所有被擊中的敵人造成 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} 一般傷害，降低他們 ${duration}秒的移動速度和攻擊速度 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}。`,
           cz: `Uvolní šokovou vlnu, která letí vzduchem, odhaluje všechny nepřátele a způsobuje ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} normální poškození všem zasaženým nepřátelům a snižuje jejich Rychlost pohybu a Rychlost útoku o ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} po dobu ${duration} sekund.`,
           vi: `Phóng một sóng gió đi qua không khí, tiết lộ tất cả kẻ địch và gây ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Sát Thương Phép cho tất cả kẻ địch bị trúng, giảm Tốc Độ Di Chuyển và Tốc Độ Tấn Công của họ đi ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} trong ${duration} Giây.`,
           id: `Melepaskan gelombang kejut yang berjalan melalui udara, mengungkapkan semua musuh dan memberikan ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Kerusakan Normal kepada semua musuh yang terkena dan mengurangi Kecepatan Gerak dan Kecepatan Serangan mereka sebesar ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE} selama ${duration} Detik.`,
@@ -1510,7 +1508,7 @@ const _getLocaleItemDescription = (
           en: `Upon getting hit by any Crowd Control effect, block that effect. Successfully blocking increases Magic Resistance by ${magicDefense} for ${duration} Seconds.`,
           br: `Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${cooldown} seg, se o bloqueio for bem sucedido, fornecer ${magicDefense} de resistência mágica por ${duration} seg.`,
           ru: `Блокирует любой эффект контроля каждые ${cooldown} сек. Успешный блок повышает ваше Сопротивление магии на  ${magicDefense} на ${duration} сек.`,
-          zh: `麒麟的守護者每次發動 ${cooldown}秒內格擋下一個有冷卻時間效果的招式，成功格擋時提供 ${duration}秒 ${magicDefense}的魔法抗性。`,
+          zh: `被群體控制效果擊中時，阻擋其效果。成功阻擋時增加 ${duration}秒魔法抗性 ${magicDefense}。`,
           cz: `Po zásahu jakýmkoli efektem kontroly davu blokuje tento efekt. Úspěšné blokování zvyšuje odolnost proti magii o ${magicDefense} po dobu ${duration} sekund.`,
           fr: `Bloque le prochain effet de contrôle de foule une fois toutes les ${cooldown} sec. Si le blocage réussit, augmente la résistance magique de ${magicDefense} pour ${duration} sec.`,
           vi: `Khi bị tác động bởi bất kỳ hiệu ứng Kiểm soát Tập trung nào, chặn hiệu ứng đó. Chặn thành công tăng Kháng Phép lên ${magicDefense} trong ${duration} Giây.`,
@@ -1536,7 +1534,7 @@ const _getLocaleItemDescription = (
           br: `Seus ataques normais diminuem a armadura inimiga em ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} por 4 segundos.`,
           ru: `Ваши атаки уменьшают вражескую Броню на ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} на 4 сек (складывается до ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} раз).`,
           cz: `Tvé základní útoky snižují nepřátelskou zbroj o ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} na 4 sekundy.`,
-          zh: `你的一般攻擊降低 4秒敵方裝甲值 ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION}`,
+          zh: `你的基本攻擊疊加邪惡的弱化，最多可疊加 ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS}層。每層疊加降低4秒敵方裝甲值 ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION}。`,
           fr: `Vos attaques de base appliquent une pile d'affaiblissement démoniaque, jusqu'à un maximum de ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} piles. Chaque pile réduit l'armure de ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} pendant 4 secondes.`,
           vi: `Đòn tấn công cơ bản của bạn áp dụng một lớp yếu hơn quỷ, lên tới tối đa ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} lớp. Mỗi lớp giảm Arm bởi ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} trong 4 Giây.`,
           id: `Serangan Dasar Anda menerapkan tumpukan pelemahan setan, hingga maksimum ${ItemAbilityData.DEMON_SABRE_ARP_MAX_STACKS} tumpukan. Setiap tumpukan mengurangi Armor sebesar ${ItemAbilityData.DEMON_SABRE_ARMOR_REDUCTION} selama 4 Detik.`,
@@ -1566,8 +1564,8 @@ const _getLocaleItemDescription = (
             \nToda vez que você mata um minion (+1 acúmulos), personagem inimigo (+5 acúmulos) ou recebe assistência (+2 acúmulos), você ganha ${ItemAbilityData.DEMON_RING_STACK_DMG} de dano (máximo ${maximumAD}).\n Todas os acúmulos são perdidas após a morte.`,
           cz: `Tvé útoky snižují zbroj o ${armorReduction}% na 4 vteřiny.
             \nPokud zabiješ nepřátelského miniona, hrdinu (+5) nebo assistujes (+2) dostaneš ${ItemAbilityData.DEMON_RING_STACK_DMG} zraneni permanentne, (max ${maximumAD}). Efekt sa zresetuje po smrti.`,
-          zh: `你的一般攻擊降低 4秒敵方裝甲值 ${armorReduction}%
-            \n每當你殺死小兵 (疊加 1)、敵方英雄 (疊加 5) 或是助攻 (疊加 2)，你獲得 ${ItemAbilityData.DEMON_RING_STACK_DMG}點攻擊傷害 (最大值 ${maximumAD})。所有疊加在死亡後歸零。`,
+          zh: `你的基本攻擊降低4秒敵方裝甲值 ${armorReduction}%
+            \n每當你殺死小兵（疊加1）、敵方英雄（疊加5）或是助攻（疊加2），你獲得 ${ItemAbilityData.DEMON_RING_STACK_DMG}點攻擊傷害 (最大值 ${maximumAD})。所有疊加在死亡後歸零。`,
           fr: `Vos attaques de base réduisent l'armure de l'ennemi de ${armorReduction}% pendant 4 secondes. 
             \nGagnez jusqu'à ${ItemAbilityData.DEMON_RING_MAX_STACKS} piles de puissance démoniaque pour chaque minion tué (+1 pile), héros tué (+5 piles) ou assistance (+2 piles). Chaque pile augmente vos dégâts d'attaque de ${ItemAbilityData.DEMON_RING_STACK_DMG} (Max: ${maximumAD} dégâts d'attaque à ${ItemAbilityData.DEMON_RING_MAX_STACKS} piles). Toutes les piles sont supprimées à la mort.`,
           vi: `Đòn tấn công cơ bản của bạn giảm Arm của kẻ địch bởi ${armorReduction}% trong 4 Giây.
@@ -1585,7 +1583,7 @@ const _getLocaleItemDescription = (
           ru: 'Божественное кольцо',
           br: 'Anel Divino',
           cz: 'Božský prsten',
-          zh: '神圣戒指',
+          zh: '神聖戒指',
           fr: 'Anneau divin',
           vi: 'Nhẫn Thần Thánh',
           id: 'Cincin Ilahi',
@@ -1595,7 +1593,7 @@ const _getLocaleItemDescription = (
           ru: `Дает вам короткое перемещение вперед. \n \n [ПАССИВ]: Увеличивает все исцеление на ${bonusHealing}%.`,
           br: `Te impulsiona para frente por uma curta distância. \n \n [PASSIVO]: Aumenta todo o dano de cura em ${bonusHealing}%.`,
           cz: `Vás posune vpřed na krátkou vzdálenost. \n \n [PASIVNÍ]: Zvyšuje veškeré léčení o ${bonusHealing}%.`,
-          zh: `向前方短距離衝刺。 \n \n [被動]: 增加所有治療效果 ${bonusHealing}%.`,
+          zh: `向前方短距離衝刺。 \n \n [被動]：增加所有治癒效果 ${bonusHealing}%.`,
           fr: `Vous propulse vers l'avant sur une courte distance. \n \n [PASSIF]: Augmente tout les soins de ${bonusHealing}%.`,
           vi: `Đẩy bạn về phía trước một khoảng ngắn. \n \n [PASSIVE]: Tăng tất cả hồi máu lên ${bonusHealing}%.`,
           id: `Mendorong Anda maju untuk jarak pendek. \n \n [PASSIVE]: Meningkatkan semua penyembuhan sebesar ${bonusHealing}%.`,
@@ -1610,7 +1608,7 @@ const _getLocaleItemDescription = (
           en: 'Ring of the Frozen Empress',
           ru: 'Кольцо Ледяной Императрицы',
           br: 'Anel Congelado da Imperatriz',
-          zh: '冰霜手環',
+          zh: '寒冰帝王之手環',
           cz: 'Prsten zamrzlé císařovny',
           fr: "Anneau de l'impératrice gelée",
           vi: 'Nhẫn của Nữ Hoàng Băng Giá',
@@ -1621,7 +1619,7 @@ const _getLocaleItemDescription = (
           ru: `Излучает ледяную волну, наносящую ${ItemAbilityData.FROST_RING_DAMAGE} магического урона врагам и накладывая на них Морозное проклятие - (${frigidCurseDesc}). Если на цель уже было наложено Морозное проклятие, волна заморозит врага на ${duration}, обездвиживая его.`,
           br: `Emite uma onda congelante que causa ${ItemAbilityData.FROST_RING_DAMAGE} de dano mágico aos inimigos e aplica a Maldição do Frio - (${frigidCurseDesc}). Se o alvo estiver afetado pela Maldição do Frio, ela o congelará por ${duration} impossibilitando-o de se mover.`,
           fr: `[Actif] : Emet une onde de gel qui inflige ${ItemAbilityData.FROST_RING_DAMAGE} de dégâts magiques aux ennemis et applique la Malédiction du froid - (${frigidCurseDesc}). Si la cible est affectée par la Malédiction du froid, elle sera gelée pour ${duration} empêchant tout mouvement.`,
-          zh: `[动作]:释放一道冰冻波动，对敌人造成${ItemAbilityData.FROST_RING_DAMAGE}魔法伤害，并施加冰冷诅咒-(${frigidCurseDesc})。如果目标受到冰冷诅咒影响，将会冻结敌人${duration}，阻止一切移动。`,
+          zh: `發出一道寒冰波動，對所有敵方造成 ${ItemAbilityData.FROST_RING_DAMAGE}魔法傷害。如果敵方沒有受到冰冷詛咒影響，則波動造成冰冷詛咒 - (${frigidCurseDesc})。如果敵方已受到冰冷詛咒影響，波動會結凍敵人 ${duration}秒，阻止所有形式的移動。`,
           cz: `[Aktivní]: Vyzařuje mrazivou vlnu, která způsobí ${ItemAbilityData.FROST_RING_DAMAGE} magického poškození nepřátelům a aplikuje Prokletí mrazu - (${frigidCurseDesc}). Pokud je cíl ovlivněn Prokletím mrazu, zmrazí nepřítele na ${duration} a zabrání mu všem pohybům.`,
           vi: `Phát ra một làn sóng lạnh, gây ${ItemAbilityData.FROST_RING_DAMAGE} Sát Thương Phép cho tất cả kẻ địch và áp dụng Lời Nguyền Lạnh - (${frigidCurseDesc}). Nếu kẻ địch bị ảnh hưởng bởi Lời Nguyền Lạnh, sóng sẽ đóng băng kẻ địch đó trong ${duration} Giây, ngăn mọi hình thức di chuyển.`,
           id: `Mengeluarkan gelombang pembekuan, memberikan ${ItemAbilityData.FROST_RING_DAMAGE} Kerusakan Sihir kepada semua musuh dan menerapkan Kutukan Beku - (${frigidCurseDesc}). Jika musuh terkena Kutukan Beku, gelombang membekukan musuh tersebut selama ${duration} Detik, mencegah semua bentuk pergerakan.`,
@@ -1651,9 +1649,9 @@ const _getLocaleItemDescription = (
           fr: `Chaque fois que vous lancez une capacité, réduisez tous vos temps de recharge de ${toSec(
             ItemAbilityData.CHRONOS_RING_CD_REDUCTION
           )}.\nSi vous obtenez une mort ou une assistance sur un héros ennemi, vos temps de recharge de capacité seront réinitialisés. (La réinitialisation ne fonctionne pas sur les objets)`,
-          zh: `每次施放技能时，所有冷却时间都会减少${toSec(
+          zh: `每次施放技能時，所有冷卻時間減少 ${toSec(
             ItemAbilityData.CHRONOS_RING_CD_REDUCTION
-          )}。\n如果你在敌方英雄上获得击杀或助攻，你的技能冷却时间将会重置。（重置不适用于物品）`,
+          )}。\n如果你在敵方英雄上獲得擊殺或助攻，你的技能冷卻時間會重置。（重置不適用於物品的冷卻時間）`,
           cz: `Pokaždé, když použijete schopnost, sníží se všechny vaše časy načasování o ${toSec(
             ItemAbilityData.CHRONOS_RING_CD_REDUCTION
           )}。\nPokud získáte zabíjení nebo asistenci na nepřátelském hrdinovi, vaše časy pro schopnosti se resetují. (Resetování nefunguje na předměty)`,
@@ -1675,7 +1673,7 @@ const _getLocaleItemDescription = (
           en: 'Corrupted Ring',
           ru: 'Искажённое кольцо',
           br: 'Anel Corrompido',
-          zh: '腐化的手環',
+          zh: '腐化手環',
           cz: 'Korupční prsten',
           fr: 'Anneau corrompu',
           vi: 'Nhẫn Bị Nhiễm',
@@ -1686,7 +1684,7 @@ const _getLocaleItemDescription = (
           ru: `Увеличивает дальность полёта снарядов на ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} пикселей и скорость их полёта на ${speed}%.`,
           br: `Aumenta o alcance das balas em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} e a velocidade em ${speed}%.`,
           fr: `Augmente la portée des balles de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} et la vitesse de ${speed}%.`,
-          zh: `增加${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}的子弹射程和${speed}%的子弹速度。`,
+          zh: `增加 ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}像素射程和 ${speed}%射擊速度。`,
           cz: `Zvýší dolet střelby o ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} a rychlost o ${speed}%.`,
           vi: `Tăng tầm bắn đạn lên ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} và tốc độ đạn lên ${speed}%.`,
           id: `Meningkatkan jangkauan proyektil sebesar ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px dan kecepatan proyektil sebesar ${speed}%.`,
@@ -1715,8 +1713,8 @@ const _getLocaleItemDescription = (
           \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes.`,
           fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${attackSpeed}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Empilez jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois.`,
-          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層你將獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} 生命恢復和 ${attackSpeed}% 攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
-          \n 最多疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
+          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層使你獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN}回血速度和 ${attackSpeed}%攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
+          \n 最多可疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
           cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${attackSpeed}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
           \n Maximální počet stacků: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
           vi: `Khi bạn nhận sát thương, bạn sẽ nhận một tấm Sức Bền Chiến Binh. Đối với mỗi tấm, bạn nhận ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} hồi máu và ${attackSpeed}% Tốc Độ Tấn Công trong ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
@@ -1734,7 +1732,7 @@ const _getLocaleItemDescription = (
           en: 'Armor of the Frozen Emperor',
           ru: 'Броня Ледяного Императора',
           br: 'Armadura do Lorde congelado',
-          zh: '冰霜鎧甲',
+          zh: '寒冰帝王之鎧甲',
           cz: 'Brnění zamrzlého císaře',
           fr: "Armure de l'empereur gelé",
           vi: 'Bộ Giáp của Hoàng Đế Băng Giá',
@@ -1744,7 +1742,7 @@ const _getLocaleItemDescription = (
           en: `Reduces attack speed and effect of all heals, regeneration, and lifesteal for nearby enemies by ${reduction}%.`,
           ru: `Снижает скорость атаки и эффект всех исцелений, регенерации и перехвата жизни для ближайших врагов на ${reduction}%.`,
           br: `Reduz a velocidade de ataque e o efeito de todos os curativos, regeneração e roubo de vida para inimigos próximos em ${reduction}%.`,
-          zh: `降低附近敵人${reduction}%的攻擊速度和所有治療、再生和吸血的效果。`,
+          zh: `降低附近敵人 ${reduction}%攻擊速度和所有治癒、回血及吸血效果。`,
           cz: `Sníží rychlost útoku a efekt všech léčení, regenerace a lifestealu pro blízké nepřátele o ${reduction}%.`,
           fr: `Réduit la vitesse d'attaque et l'effet de tous les soins, régénérations et vol de vie des ennemis proches de ${reduction}%.`,
           vi: `Giảm tốc độ tấn công và hiệu ứng của tất cả các hồi máu, tái tạo và hút máu cho kẻ địch gần đó lên ${reduction}%.`,
@@ -1771,7 +1769,7 @@ const _getLocaleItemDescription = (
           en: `Grants you invisibility for ${duration} Seconds and increases Movement Speed by ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Upon casting an Ability or using a Basic Attack while invisible, remove your invisibility and bonus Movement Speed, and increase Attack Damage by ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} for a short duration.`,
           ru: `Вы получаете невидимость на ${duration} сек., а также ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Скорости передвижения и ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Силы атаки.\n (эффект пропадает при атаке или использовании способностей)`,
           br: `Torna você invisível por ${duration} seg, além disso, aumente sua velocidade de movimento em ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} e dano por ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} seg.\n (Acaba quando você usa algum ataque.)`,
-          zh: `使你 ${duration}秒隱蔽，額外增加你的移動速度值 ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}與一般傷害值 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} (效果在攻擊或發動技能後移除)`,
+          zh: `使你 ${duration}秒隱蔽並增加移動速度值 ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}。當隱蔽狀態施放一個技能或使用基本攻擊時，移除你的隱蔽與額外移動速度，並在短時間內增加攻擊傷害 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE}。`,
           cz: `Dává vám neviditelnost na ${duration} sekund a zvyšuje rychlost pohybu o ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Po použití schopnosti nebo základního útoku během neviditelnosti, odstraňte neviditelnost a bonus rychlosti pohybu a zvyšte útočný poškození o ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} po krátkou dobu.`,
           fr: `Vous rend invisible pendant ${duration} secondes et augmente votre vitesse de déplacement de ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Après avoir lancé une capacité ou utilisé une attaque de base tout en étant invisible, supprimez votre invisibilité et votre vitesse de déplacement bonus, et augmentez les dégâts d'attaque de ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} pendant une courte durée.`,
           vi: `Cho bạn vô hình trong ${duration} Giây và tăng Tốc Độ Di Chuyển thêm ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Khi sử dụng kỹ năng hoặc tấn công cơ bản trong thời gian vô hình, gỡ bỏ vô hình và tốc độ di chuyển thêm, và tăng Sát Thương Tấn Công thêm ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} trong một thời gian ngắn.`,
@@ -1797,7 +1795,7 @@ const _getLocaleItemDescription = (
           en: `Makes you immune to all incoming damage for ${duration} Seconds, increases Health Regeneration by ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, and cleanses all negative effects. During the effect, you cannot move or use Abilities, Basic Attacks, and Items.`,
           ru: `Вы становитесь неуязвимы, избавляетесь от негативных эффектов, а также получаете прибавку к Регенерации здоровья в размере ${ItemAbilityData.TITAN_ARMOR_REGENERATION} на ${duration} сек. Вы не можете выполнять никакие действия, пока активен данный эффект.`,
           br: `Aumente sua regeneração de vida em ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, remove todos os efeitos negativos e o torna imune a todos os danos recebidos por ${duration} seg.\n (Você não pode fazer nenhuma ação durante este efeito.)`,
-          zh: `增加你的回血速度 ${ItemAbilityData.TITAN_ARMOR_REGENERATION}點，移除所有負面效果並使你 ${duration}秒內無視所有襲來的攻擊。效果期間你無法採取任何動作`,
+          zh: `使你 ${duration}秒內無視所有襲來的攻擊，增加回血速度 ${ItemAbilityData.TITAN_ARMOR_REGENERATION}點並移除所有負面效果。發動效果期間你無法移動或使用技能、基本攻擊和道具。`,
           cz: `Zajišťuje ti imunitu proti veškerému příchozímu poškození po dobu ${duration} sekund, zvyšuje regeneraci zdraví o ${ItemAbilityData.TITAN_ARMOR_REGENERATION} a čistí všechny negativní efekty. Během efektu nemůžeš používat schopnosti, základní útoky a předměty.`,
           fr: `Vous rend immunisé contre tous les dégâts entrants pendant ${duration} secondes, augmente la régénération de santé de ${ItemAbilityData.TITAN_ARMOR_REGENERATION} et nettoie tous les effets négatifs. Pendant l'effet, vous ne pouvez pas bouger ou utiliser des capacités, des attaques de base et des objets.`,
           vi: `Cho bạn miễn nhiễm với tất cả sát thương trong ${duration} Giây, tăng Hồi Máu thêm ${ItemAbilityData.TITAN_ARMOR_REGENERATION}, và làm sạch tất cả các hiệu ứng tiêu cực. Trong thời gian này, bạn không thể di chuyển hoặc sử dụng Kỹ Năng, Tấn Công Cơ Bản, và Vật Phẩm.`,
@@ -1824,7 +1822,7 @@ const _getLocaleItemDescription = (
           ru: `Всякий раз, когда вы получаете магический урон, атакующий будет проклят, а его Скорость передвижения будет уменьшена на ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} и Сила умений на ${apReduction}%. (Складывается до ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} раз)`,
           br: `Quando você sofrer dano mágico, um feitiço será aplicado no lançador, reduzindo a velocidade de movimento em ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} e o poder de habilidade em ${apReduction}%. (O feitiço pode ser acumulado até ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} vezes)`,
           fr: `Lorsque vous subissez des dégâts magiques, un sort est lancé sur le lanceur, réduisant sa vitesse de déplacement de ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} et sa puissance d'attaque de ${apReduction}%. (Le sort peut s'accumuler jusqu'à ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} fois)`,
-          zh: `当你受到魔法伤害时，施法者将被诅咒，减少移动速度${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS}和能力值${apReduction}% 。(最多可堆叠${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}层)`,
+          zh: `當受到魔法傷害時，對施放者施加惡毒詛咒，最多可疊加 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}層。每層疊加降低移動速度 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS}和技能威力 ${apReduction}%。`,
           cz: `Když dostaneš magickou újmu, na kouzelníkovi se aplikuje prokletí, které snižuje rychlost pohybu o ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} a sílu zaklínání o ${apReduction}%. (Prokletí se může nakumulovat až do ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} vrstev)`,
           vi: `Khi nhận Sát Thương Phép, áp dụng một tấm lớp ác ý lên người gây sát thương, tối đa ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} tấm. Mỗi tấm giảm Tốc Độ Di Chuyển đi ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} và Sức Mạnh Kỹ Năng đi ${apReduction}%.`,
           id: `Setiap menerima Kerusakan Sihir, terapkan tumpukan kutukan jahat pada penyerang, hingga maksimal ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} tumpukan. Setiap tumpukan mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} dan Daya Kemampuan sebesar ${apReduction}%.`,
@@ -1890,7 +1888,7 @@ const _getLocaleItemDescription = (
           en: `Grants a permanent stack of magical strength, up to a maximum of 5 stacks. Each stack increases Ability Power by ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
           br: `Da a quem beber ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} de Poder de habilidade permanentemente, acumula até 5 vezes!\n Sabor uva da floresta.`,
           ru: `Даёт вам ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER} Силы умений навсегда. Эффект складывается до 5 раз!`,
-          zh: `永久提供 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力，疊加最多五次！`,
+          zh: `永久提供魔法力量，最多可疊加五層。每層疊加增加 ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}點技能威力。`,
           cz: `Dává ti trvalý stack magické síly, až do maxima 5 stacků. Každý stack zvyšuje Sílu útoků o ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
           fr: `Accorde une pile permanente de force magique, jusqu'à un maximum de 5 piles. Chaque pile augmente la puissance d'attaque de ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
           vi: `Cung cấp một điểm sức mạnh ma thuật vĩnh viễn, tối đa là 5 điểm. Mỗi điểm tăng Sức mạnh Kỹ năng lên ${ItemAbilityData.POTION_OF_MAGIC_ABILITY_POWER}!`,
@@ -1903,7 +1901,7 @@ const _getLocaleItemDescription = (
           en: 'Corrupted Potion',
           br: 'Poção de força corrompida',
           ru: 'Искажённое зелье',
-          zh: '腐化的藥水',
+          zh: '腐化藥水',
           cz: 'Zkreslený lektvar',
           fr: 'Potion corrompue',
           vi: 'Thuốc Sức Mạnh',
@@ -1913,7 +1911,7 @@ const _getLocaleItemDescription = (
           en: `Grants a permanent stack of physical strength, up to a maximum of 5 stacks. Each stack increases Attack Damage by ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}!`,
           br: `Da a quem beber ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} de dano de ataque permanentemente, acumula até 5 vezes!\n Sabor cereja do campo.`,
           ru: `Даёт вам ${ItemAbilityData.CORRUPTED_POTION_DAMAGE} Силы атаки навсегда. Эффект складывается до 5 раз!`,
-          zh: `永久提供 ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害，疊加最多五次！`,
+          zh: `永久提供物理力量，最多可疊加五層。每層疊加增加 ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}點攻擊傷害。`,
           cz: `Dává ti trvalý stack fyzické síly, až do maxima 5 stacků. Každý stack zvyšuje Útočnou sílu o ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}!`,
           fr: `Accorde une pile permanente de force physique, jusqu'à un maximum de 5 piles. Chaque pile augmente les dégâts d'attaque de ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}!`,
           vi: `Cung cấp một điểm sức mạnh vật lý vĩnh viễn, tối đa là 5 điểm. Mỗi điểm tăng Sát Thương Tấn Công lên ${ItemAbilityData.CORRUPTED_POTION_DAMAGE}!`,
@@ -1942,9 +1940,9 @@ const _getLocaleItemDescription = (
           } Magic Damage to all nearby enemies and apply maximum stacks of poison. \n \n ${getPoisonBowDescription(
             false
           )}`,
-          zh: `你的普通攻擊會使目標中毒。當達到 ${ItemAbilityData.KIRINS_BOW_MAX_STACKS}層時，魔法麒麟會爆炸，降低目標的魔法抗性 ${magicResistanceReduction}並對附近敵人造成 ${
+          zh: `你的基本攻擊會疊加麒麟之毒，到第 ${ItemAbilityData.KIRINS_BOW_MAX_STACKS}層時，魔法麒麟會爆炸，降低目標魔法抗性 ${magicResistanceReduction}並對所有附近敵人造成 ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
-          }點魔法傷害並使他們中毒。 \n \n ${getPoisonBowDescription(true)}`,
+          }點魔法傷害並使他們得到最高層疊加的中毒。 \n \n ${getPoisonBowDescription(true)}`,
           cz: `Tvoje základní útoky aplikují stack jedu Kirina. Při ${ItemAbilityData.KIRINS_BOW_MAX_STACKS} stacků se magický Kirin vybuchne, sníží magickou odolnost cíle o ${magicResistanceReduction} a způsobí ${
             ItemAbilityData.KIRINS_BOW_TRIGGER_DAMAGE
           } magického poškození všem nepřátelům v okolí a aplikuje maximální počet stacků jedu. \n \n ${getPoisonBowDescription(
@@ -1986,7 +1984,7 @@ const _getLocaleItemDescription = (
           en: "Garun's Charm",
           br: 'Encanto de Garun',
           fr: 'Charme de Garun',
-          zh: '加伦的魅力',
+          zh: '加侖的魅力',
           cz: 'Kouzlo Garunové',
           ru: 'Оберег Гаруна',
           vi: 'Bùa của Garun',
@@ -2003,7 +2001,7 @@ const _getLocaleItemDescription = (
             `Toutes les ${cooldown}, gagnez une pile de protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n` +
             getObserverWardDescription(),
           zh:
-            `每 ${cooldown}，獲得一層加伦的保護，最多不超過 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} 層。受到普通傷害會移除一層。每層增加你的護甲 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} 護甲 \n\n` +
+            `每 ${cooldown}，獲得一層加侖的守護，最多疊加到 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}層。受到普通傷害會移除一層。每層增加你的裝甲值 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}裝甲值 \n\n` +
             getObserverWardDescription(),
           cz:
             `Každých ${cooldown} získáš stack Garunovy ochrany, až do maxima ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacků. Přijetí Normálního poškození odebere stack. Každý stack zvyšuje tvou Obranu o ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
@@ -2088,7 +2086,7 @@ const _getLocaleItemDescription = (
             `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n` +
             getObserverWardDescription(),
           zh:
-            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} 提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加 2 次。\n\n` +
+            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)}提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加2次。\n\n` +
             getObserverWardDescription(),
           cz:
             `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n` +
@@ -2124,7 +2122,7 @@ const getPoisonBowDescription = (isUpgraded: boolean) => {
     ru: `Ваши базовые атаки накладывают стек смертельного яда, до максимума ${ItemAbilityData.POISON_BOW_MAX_STACKS} стеков. Каждый стек уменьшает Скорость передвижения на ${ItemAbilityData.POISON_BOW_SLOW} и наносит ${damageOverTime} магического урона в секунду в течение ${duration} секунд.`,
     br: `Seus ataques básicos aplicam uma pilha de veneno mortal, até um máximo de ${ItemAbilityData.POISON_BOW_MAX_STACKS} pilhas. Cada pilha reduz a Velocidade de Movimento em ${ItemAbilityData.POISON_BOW_SLOW} e causa ${damageOverTime} de Dano Mágico por segundo por ${duration} segundos.`,
     fr: `Vos attaques de base appliquent une pile de poison mortel, jusqu'à un maximum de ${ItemAbilityData.POISON_BOW_MAX_STACKS} piles. Chaque pile réduit la vitesse de déplacement de ${ItemAbilityData.POISON_BOW_SLOW} et inflige ${damageOverTime} de dégâts magiques par seconde pendant ${duration} secondes.`,
-    zh: `你的基本攻擊會施加一層致命毒素，最多不超過 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 層。每層降低移動速度 ${ItemAbilityData.POISON_BOW_SLOW} 並在 ${duration} 秒內每秒造成 ${damageOverTime} 點魔法傷害。`,
+    zh: `你的基本攻擊會施加一層致命毒素，最多疊加到 ${ItemAbilityData.POISON_BOW_MAX_STACKS}層。每層降低移動速度 ${ItemAbilityData.POISON_BOW_SLOW}並在 ${duration}秒內每秒造成 ${damageOverTime}點魔法傷害。`,
     cz: `Tvé základní útoky aplikují stack smrtícího jedu, až do maxima ${ItemAbilityData.POISON_BOW_MAX_STACKS} stacků. Každý stack snižuje rychlost pohybu o ${ItemAbilityData.POISON_BOW_SLOW} a způsobuje ${damageOverTime} magického poškození za sekundu po dobu ${duration} sekund.`,
     vi: `Các Đòn Tấn Công Cơ Bản của bạn áp dụng một tấm độc chết người, tối đa là ${ItemAbilityData.POISON_BOW_MAX_STACKS} tấm. Mỗi tấm giảm Tốc Độ Di Chuyển đi ${ItemAbilityData.POISON_BOW_SLOW} và gây ${damageOverTime} Sát Thương Phép mỗi giây trong ${duration} Giây.`,
     id: `Serangan Dasar kamu memberikan tumpukan racun mematikan, hingga maksimal ${ItemAbilityData.POISON_BOW_MAX_STACKS} tumpukan. Setiap tumpukan mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.POISON_BOW_SLOW} dan memberikan ${damageOverTime} Kerusakan Sihir per detik selama ${duration} Detik.`,
@@ -2144,7 +2142,7 @@ const getIronRodOrHarpoonDescription = (tier2 = false) => {
     ru: `Когда ваши способности попадают по вражескому герою, ваша следующая атака нанесёт дополнительно ${baseDamage} (+ ${bonusDamage}% Силы умений) магического урона.`,
     br: `Quando suas habilidades atingem um personagem inimigo, seu próximo ataque normal ganha um bônus de ${baseDamage} + ${bonusDamage}% de dano.`,
     fr: `Quand tes compétences K et L touchent un héros ennemi, ta prochaine attaque J fait ${baseDamage} + ${bonusDamage}% dégâts supplémentaires.`,
-    zh: `當你的魔法攻擊擊中敵方英雄，你的下一個一般攻擊對敵方英雄造成額外 ${baseDamage} + ${bonusDamage}%  點一般傷害`,
+    zh: `當你的技能擊中敵方英雄，你的下一個基本攻擊對敵方英雄造成額外 ${baseDamage}（+ ${bonusDamage}%技能威力）點魔法傷害。`,
     cz: `Když tvé schopnosti zasáhnou nepřátelského hrdinu, tvůj další základní útok způsobí ${baseDamage} (+ ${bonusDamage}% Síly útoků) bonusové magické poškození nepřátelským hrdinům.`,
     vi: `Khi Kỹ Năng của bạn trúng mục tiêu kẻ địch, Đòn Tấn Công Cơ Bản tiếp theo của bạn gây thêm ${baseDamage} (+ ${bonusDamage}% Sức Mạnh Kỹ Năng) Sát Thương Phép cho kẻ địch.`,
     id: `Ketika kemampuanmu mengenai pahlawan musuh, serangan dasar berikutnya kamu memberikan ${baseDamage} (+ ${bonusDamage}% Kekuatan Kemampuan) Kerusakan Sihir tambahan kepada pahlawan musuh.`,
@@ -2162,7 +2160,7 @@ export const getFrigidCurseDescription = () => {
     ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
     br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
     fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
-    zh: `减少移动速度${ItemAbilityData.FRIGIT_CURSE_SLOW}和所有治疗和再生效果${healingReduction}%为${duration}`,
+    zh: `降低移動速度 ${ItemAbilityData.FRIGIT_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
     cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
     vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGIT_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và tái tạo bởi ${healingReduction}% trong ${duration}`,
     id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGIT_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
@@ -2178,7 +2176,7 @@ export const getObserverWardDescription = () => {
     en: `Plants an Observer Ward, an invisible watcher that gives your team obstructed vision in a ${ItemAbilityData.WARD_VISION}px radius for up to ${duration} Seconds. If the ward is visible to the enemy team, they can destroy it!`,
     br: `Planta uma pedra Observadora invisível que dá visão obstruída em ${ItemAbilityData.WARD_VISION} px raio para sua equipe.\n Dura ${duration} seg. Se ela estiver visível para a equipe inimiga, eles podem destruí-la!`,
     ru: `Вы устанавливаете невидимый тотем, который раскрывает область и все невидимые вражеские цели вокруг себя в радиусе ${ItemAbilityData.WARD_VISION} пикселей в течение ${duration} сек. Если тотем видим для врагов, они могут уничтожить его!`,
-    zh: `植入一個偵查守衛，一個隱蔽的觀察者賜予己方團隊半徑 ${ItemAbilityData.WARD_VISION}像素範圍內的受限視線。持續 ${duration}。如果守衛能被敵隊看見，他們能摧毀它！`,
+    zh: `植入一個偵查守衛，一個隱蔽的觀察者，賜予 ${duration}秒己方團隊半徑 ${ItemAbilityData.WARD_VISION}像素範圍內的觀察視線。如果守衛能被敵隊看見，他們能摧毀它！`,
     cz: `Nainstaluješ Pozorovací totem, který ti poskytne týmu zablokovanou viditelnost v poloměru ${ItemAbilityData.WARD_VISION}px po dobu až ${duration} sekund. Pokud je totem viditelný pro nepřátelský tým, mohou ho zničit!`,
     fr: `Plante un Ward de l'observateur, un observateur invisible qui donne à votre équipe une vision obstruée dans un rayon de ${ItemAbilityData.WARD_VISION}px pendant ${duration} secondes. Si le ward est visible pour l'équipe ennemie, ils peuvent le détruire!`,
     vi: `Trồng một Chiến Binh Quan Sát, một người quan sát vô hình mang lại tầm nhìn bị cản trở cho đội của bạn trong bán kính ${ItemAbilityData.WARD_VISION} px trong tối đa ${duration} Giây. Nếu Chiến Binh Quan Sát có thể nhìn thấy bởi đội địch, họ có thể phá hủy nó!`,
