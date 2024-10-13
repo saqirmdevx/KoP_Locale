@@ -16,6 +16,7 @@ import {
   FoxyAbilityData,
   MagdaleneAbilityData,
   PrimAbilityData,
+  SeerAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -1030,6 +1031,99 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
         },
       }
+    case Shared.HEROES.SEER: {
+      return {
+        tier1_left: {
+          title: {
+            // Name for a debuff that destroy armor
+            en: 'Corrosive Curse',
+            ru: 'Коррозивное проклятие',
+            cz: 'Korozivní kletba',
+            zh: '腐蝕詛咒',
+            fr: 'Malédiction corrosive',
+            br: 'Maldição corrosiva',
+            vi: 'Lời Nguyền ăn mòn',
+            id: 'Kutukan Korosif',
+          },
+          description: {
+            en: `Seer's passive ability now also adjusts armor, reducing it for enemies and increasing it for allies by ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} per stack.`,
+            ru: `Пассивная способность Сир теперь также корректирует броню, уменьшая ее для врагов и увеличивая для союзников на ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} за стак.`,
+            cz: `Pasivní schopnost Seera nyní také upravuje brnění, snižuje ho pro nepřátele a zvyšuje pro spojence o ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} za stack.`,
+            zh: `先知的被动技能现在也调整护甲，每层减少敌人的护甲并增加盟友的护甲 ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER}。`,
+            fr: `La capacité passive du Voyant ajuste désormais également l'armure, la réduisant pour les ennemis et l'augmentant pour les alliés de ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} par stack.`,
+            br: `A habilidade passiva de Seer agora também ajusta a armadura, reduzindo para inimigos e aumentando para aliados em ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} por stack.`,
+            vi: `Khả năng passives của Seer giờ cũng điều chỉnh giáp, giảm cho kẻ thù và tăng cho đồng minh ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} mỗi stack.`,
+            id: `Kemampuan pasif Seer sekarang juga menyesuaikan armor, mengurangi untuk musuh dan meningkatkan untuk sekutu sebesar ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} per stack.`,
+          },
+        },
+        tier1_right: {
+          title: {
+            en: 'Increase passive stacks',
+            ru: 'Увеличение стаков пассивки',
+            cz: 'Zvýšení pasivních stacků',
+            zh: '增加被动层数',
+            fr: 'Augmenter les stacks passifs',
+            br: 'Aumentar stacks passivos',
+            vi: 'Tăng stacks passives',
+            id: 'Meningkatkan tumpukan pasif',
+          },
+          description: {
+            en: `Increase the number of stacks of Seer's passive ability by ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            ru: `Увеличивает количество стаков пассивки Сир на ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            cz: `Zvýší počet stacků pasivní schopnosti Seera o ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            zh: `增加先知被动技能的层数 ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}。`,
+            fr: `Augmente le nombre de stacks de la capacité passive du Voyant de ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            br: `Aumenta o número de stacks da habilidade passiva de Seer em ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            vi: `Tăng số lượng stacks của khả năng passives của Seer lên ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            id: `Meningkatkan jumlah tumpukan kemampuan pasif Seer sebesar ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+          },
+        },
+        tier2_left: {
+          title: {
+            en: 'Enhanced Benevolent Flare',
+            ru: 'Улучшенный благотворный свет',
+            cz: 'Vylepšený dobrovolný záblesk',
+            zh: '強化仁慈之光',
+            fr: 'Flare bienveillant amélioré',
+            br: 'Flare Benevolente aprimorado',
+            vi: 'Bức Sáng Nhân Hậu',
+            id: 'Flare Baik Ditingkatkan',
+          },
+          description: {
+            en: 'Benevolent Flare now heals all nearby allied heroes, including yourself, and grants immunity to slow effects while boosting movement speed to its maximum.',
+            ru: 'Благотворный свет теперь исцеляет всех ближайших союзных героев, включая вас, и дает иммунитет к замедляющим эффектам, увеличивая скорость передвижения до максимума.',
+            cz: 'Dobrovolný záblesk nyní léčí všechny blízké spojenecké hrdiny, včetně vás samotného, a poskytuje imunitu proti zpomalujícím efektům a zvyšuje rychlost pohybu na maximum.',
+            zh: '仁慈之光现在治疗所有附近的盟友英雄，包括你自己，并赋予免疫减速效果的同时提高移动速度到最大。',
+            fr: "Le Flare bienveillant soigne désormais tous les héros alliés proches, y compris vous-même, et accorde l'immunité aux effets de ralentissement tout en augmentant la vitesse de déplacement à son maximum.",
+            br: 'Flare Benevolente agora cura todos os heróis aliados próximos, incluindo você, e concede imunidade aos efeitos de lentidão enquanto aumenta a velocidade de movimento para o máximo.',
+            vi: 'Bức Sáng Nhân Hậu giờ đây hồi phục tất cả anh hùng đồng minh ở gần, bao gồm cả bạn, và cấp miễn dịch với hiệu ứng chậm lại trong khi tăng tốc độ di chuyển lên tối đa.',
+            id: 'Flare Baik sekarang menyembuhkan semua pahlawan sekutu terdekat, termasuk diri Anda sendiri, dan memberikan kekebalan terhadap efek pelambatan sambil meningkatkan kecepatan gerak ke maksimum.',
+          },
+        },
+        tier2_right: {
+          title: {
+            en: 'Call of Malevolence',
+            ru: 'Призыв злобы',
+            cz: 'Volání zloby',
+            zh: '召唤恶意',
+            fr: 'Appel de la malveillance',
+            br: 'Chamado da Malevolência',
+            vi: 'Tiếng Gọi Ác Ý',
+            id: 'Panggilan Keburukan',
+          },
+          description: {
+            en: `Malevolent Surge now pulls all enemies towards the Seer and applies a root effect for ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+            ru: `Волна злобы теперь тянет всех врагов к Сиру и накладывает эффект корня на ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)} сек.`,
+            cz: `Zlobivý nápor nyní přitahuje všechny nepřátele k Seerovi a aplikuje efekt zakořenění po dobu ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+            zh: `恶意激增现在将所有敌人拉向先知，并施加根效果 ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s。`,
+            fr: `La montée de la malveillance attire désormais tous les ennemis vers le Voyant et applique un effet de racine pendant ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+            br: `A Onda Malévola agora puxa todos os inimigos em direção ao Seer e aplica um efeito de raiz por ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+            vi: `Sóng Ác Ý giờ đây kéo tất cả kẻ thù về phía Seer và áp dụng hiệu ứng gốc trong ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+            id: `Gelombang Keburukan sekarang menarik semua musuh ke Seer dan menerapkan efek root selama ${toSec(SeerAbilityData.MALEVOLENT_SURGE_ROOT_DURATION)}s.`,
+          },
+        },
+      }
+    }
     default:
       return {
         tier1_left: {

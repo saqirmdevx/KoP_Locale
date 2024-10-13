@@ -771,9 +771,9 @@ const _getLocaleItemDescription = (
           fr: `Chaque attaque J réussie augmente ta vitesse d'attaque de ${Math.floor(
             ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100
           )}% pour ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} sec.`,
-          zh: `每當你的基本攻擊擊中敵方，疊加一層狂暴，最多可疊加 ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} 層。每層疊加增加 ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(
-            1
-          )}秒你的攻擊速度 ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}%`,
+          zh: `每當你的基本攻擊擊中敵方，疊加一層狂暴，最多可疊加 ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} 層。每層疊加增加 ${(
+            ItemAbilityData.BERSERKER_BOW_DURATION / 1000
+          ).toFixed(1)}秒你的攻擊速度 ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}%`,
           vi: `Mỗi khi Đòn tấn công cơ bản của bạn trúng kẻ địch, tăng Tốc độ tấn công của bạn lên ${Math.floor(
             ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100
           )}% trong ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} giây.`,
@@ -1409,7 +1409,6 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.GarunsDefender: {
-      const threshold = fixed(ItemAbilityData.GARUNS_DEFENDER_THRESHOLD * 100, 1)
       return {
         name: {
           en: "Garun's Defender",
@@ -1422,44 +1421,39 @@ const _getLocaleItemDescription = (
           id: 'Pertahanan Garun',
         },
         desc: {
-          en: `Upon receiving player-based damage and falling below ${threshold}% Health, unleash a shockwave after 0.5 Seconds, dealing ${
+          en: `On activate, unleash a shockwave after a short delay, dealing ${
             ItemAbilityData.GARUNS_DEFENDER_DAMAGE
           } Normal Damage and stunning nearby enemies for ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
-          ru: `При получении урона, при котором ваше здоровье опускается ниже ${threshold}%, вы создаёте ударную волну с задержкой в 0,5 сек., которая оглушает всех ближайших врагов на ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )} и наносит ${ItemAbilityData.GARUNS_DEFENDER_DAMAGE} физического урона. (Перезарядка: ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
-          )})`,
-          br: `Se você tomar dano abaixo de ${threshold}% da saúde, você desencadeia uma onda de choque com um atraso de 0,5 segundos que atordoa todos os inimigos próximos por ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )} e causar ${
+          ru: `При активации выпускает ударную волну после короткой задержки, нанося ${
             ItemAbilityData.GARUNS_DEFENDER_DAMAGE
-          } de dano normal. Este efeito não pode ser ativado mais de uma vez a cada ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
+          } физического урона и оглушая ближайших врагов на ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
+          br: `Ao ativar, libera uma onda de choque após um curto atraso, causando ${
+            ItemAbilityData.GARUNS_DEFENDER_DAMAGE
+          } de dano normal e atordoando inimigos próximos por ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
+          fr: `À l'activation, libère une onde de choc après un court délai, infligeant ${
+            ItemAbilityData.GARUNS_DEFENDER_DAMAGE
+          } dégâts normaux et étourdissant les ennemis proches pendant ${toSec(
+            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
           )}.`,
-          fr: `Si vous subissez des dégâts en dessous de ${threshold}% de vie, vous libérez une onde de choc avec un délai de 0,5 seconde qui assomme tous les ennemis à proximité pendant ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )} et inflige ${
+          zh: `在激活後，經過短暫延遲後釋放衝擊波，造成 ${
             ItemAbilityData.GARUNS_DEFENDER_DAMAGE
-          } de dégâts normaux. Cet effet ne peut se déclencher qu'une seule fois tous les ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
+          } 一般傷害並使附近敵人暈眩 ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}。`,
+          cz: `Po aktivaci uvolní šokovou vlnu po krátké prodlevě, způsobující ${
+            ItemAbilityData.GARUNS_DEFENDER_DAMAGE
+          } normální poškození a omráčení blízkých nepřátel po dobu ${toSec(
+            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
           )}.`,
-          zh: `如果您的生命值低於 ${threshold}%時受到傷害，您將在0.5秒後釋放一道衝擊波，使附近所有敵人昏迷${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )}，並造成${ItemAbilityData.GARUNS_DEFENDER_DAMAGE}一般傷害。`,
-          cz: `Pokud utrpíte poškození pod ${threshold}% životů, spustíte vlnu šoku s 0,5sekundovým zpožděním, která ochromí všechny nepřátele v okolí na ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
-          )} a způsobí ${
+          vi: `Khi kích hoạt, phóng sóng gió sau một thời gian chờ ngắn, gâ
+            y ${
+              ItemAbilityData.GARUNS_DEFENDER_DAMAGE
+            } Sát Thương Phép và làm cho kẻ địch gần đó bị Choáng trong ${toSec(
+              ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
+            )}.`,
+          id: `Pada saat diaktifkan, lepaskan gelombang kejut setelah jeda singkat, memberikan ${
             ItemAbilityData.GARUNS_DEFENDER_DAMAGE
-          } normálního poškození. Tento efekt nemůže být aktivován více než jednou za ${toSec(
-            ItemAbilityData.GARUNS_DEFENDER_COOLDOWN
+          } Kerusakan Normal dan membius musuh di sekitar selama ${toSec(
+            ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION
           )}.`,
-          vi: `Khi nhận sát thương dưới ${threshold}% Máu, phóng một sóng gió sau 0.5 Giây, gây ${
-            ItemAbilityData.GARUNS_DEFENDER_DAMAGE
-          } Sát Thương Phép và làm cho kẻ địch gần bị Choáng trong ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
-          id: `Ketika menerima kerusakan di bawah ${threshold}% Kesehatan, lepaskan gelombang kejut setelah 0.5 Detik, menyebabkan ${
-            ItemAbilityData.GARUNS_DEFENDER_DAMAGE
-          } Kerusakan Normal dan membius musuh di sekitar selama ${toSec(ItemAbilityData.GARUNS_DEFENDER_STUN_DURATION)}.`,
         },
       }
     }
@@ -1852,6 +1846,34 @@ const _getLocaleItemDescription = (
           fr: `Augmente la régénération de santé de ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} pendant ${duration} secondes. \n Si vous subissez des dégâts, l'effet est perdu!`,
           vi: `Tăng Hồi Máu thêm ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} trong ${duration} Giây. \n Nếu bạn nhận sát thương, hiệu ứng sẽ mất!`,
           id: `Meningkatkan Regenerasi Kesehatan sebesar ${ItemAbilityData.HEALING_POTION_HEAL_PER_SEC} selama ${duration} Detik. \n Jika kamu menerima kerusakan, efeknya akan hilang!`,
+        },
+      }
+    }
+
+    case ItemList.VileFlask: {
+      const duration = toSecRaw(ItemAbilityData.VILE_FLASK_DURATION)
+      return {
+        name: {
+          en: 'Vile Flask',
+          ru: 'Гнусная колба',
+          br: 'Frasco de veneno',
+          zh: '惡毒瓶',
+          cz: 'Ohavná láhev',
+          fr: 'Flasque vile',
+          vi: 'Bình Độc Hại',
+          id: 'Botol Beracun',
+        },
+        desc: {
+          en: `Throws a Vile Flask that breaks after it hits the ground, affecting all nearby enemies with a debuff that reduces their Movement Speed by ${ItemAbilityData.VILE_FLASK_SLOW} and deals ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per second for ${duration} Seconds.`,
+          ru: `Бросьте Гнусную колбу, которая разобьётся при падении и наклад
+          вает на всех ближайших врагов дебафф, уменьшающий их Скорость передвижения на ${ItemAbilityData.VILE_FLASK_SLOW} и наносящий ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} урона в секунду на ${duration} сек.`,
+          br: `Jogue um frasco de veneno que quebra ao atingir o chão, afetando todos os inimigos próximos com um debuff que reduz a velocidade de movimento em ${ItemAbilityData.VILE_FLASK_SLOW} e causa ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} de dano por segundo por ${duration} seg.`,
+          zh: `投擲惡毒瓶，瓶子破碎後影響所有附近敵人，降低他們 ${ItemAbilityData.VILE_FLASK_SLOW}移動速度並造成 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC}點傷害，持續 ${duration}秒。`,
+          cz: `Hodí Ohavnou láhev, která se rozbije po dopadu na zem a ovlivní všechny blízké nepřátele debuffem, který snižuje jejich rychlost pohybu o ${ItemAbilityData.VILE_FLASK_SLOW} a způsobuje ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} poškození za sekundu po dobu ${duration} sekund.`,
+          fr: `Lance une flasque vile qui se brise après avoir touché le sol, affectant tous les ennemis proches avec un debuff qui réduit leur vitesse de déplacement de ${ItemAbilityData.VILE_FLASK_SLOW} et inflige ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} dégâts par seconde pendant ${duration} secondes.`,
+          vi: `Ném một Bình Độc Hại rơi xuống đất, ảnh hưởng tất cả kẻ địch gần đó với một debuff giảm Tốc Độ Di Chuyển đi ${ItemAbilityData.VILE_FLASK_SLOW} và
+          g ây ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} sát thương mỗi giây trong ${duration} Giây.`,
+          id: `Melempar Botol Beracun yang pecah setelah mengenai tanah, mempengaruhi semua musuh di sekitar dengan debuff yang mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.VILE_FLASK_SLOW} dan memberikan ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} kerusakan per detik selama ${duration} Detik.`,
         },
       }
     }
