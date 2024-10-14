@@ -1037,7 +1037,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           title: {
             // Name for a debuff that destroy armor
             en: 'Corrosive Curse',
-            ru: 'Коррозивное проклятие',
+            ru: 'Едкое проклятие',
             cz: 'Korozivní kletba',
             zh: '腐蝕詛咒',
             fr: 'Malédiction corrosive',
@@ -1047,7 +1047,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Seer's passive ability now also adjusts armor, reducing it for enemies and increasing it for allies by ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} per stack.`,
-            ru: `Пассивная способность Сир теперь также корректирует броню, уменьшая ее для врагов и увеличивая для союзников на ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} за стак.`,
+            ru: `Пассивный эффект Провидца теперь также изменяет броню, уменьшая её для врагов и увеличивая для союзников на ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} за заряд.`,
             cz: `Pasivní schopnost Seera nyní také upravuje brnění, snižuje ho pro nepřátele a zvyšuje pro spojence o ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} za stack.`,
             zh: `先知的被动技能现在也调整护甲，每层减少敌人的护甲并增加盟友的护甲 ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER}。`,
             fr: `La capacité passive du Voyant ajuste désormais également l'armure, la réduisant pour les ennemis et l'augmentant pour les alliés de ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} par stack.`,
@@ -1059,7 +1059,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_right: {
           title: {
             en: 'Increase passive stacks',
-            ru: 'Увеличение стаков пассивки',
+            ru: '+1 к заряду пассивного эффекта',
             cz: 'Zvýšení pasivních stacků',
             zh: '增加被动层数',
             fr: 'Augmenter les stacks passifs',
@@ -1069,7 +1069,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Increase the number of stacks of Seer's passive ability to ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
-            ru: `Увеличивает количество стаков пассивной способности Сира до ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
+            ru: `Увеличивает количество зарядов пассивного эффекта Провидца с 4 до ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
             cz: `Zvyšuje počet stacků pasivní schopnosti Seera na ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
             zh: `增加先知的被动技能层数至 ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}。`,
             fr: `Augmente le nombre de stacks de la capacité passive du Voyant à ${SeerAbilityData.TALENT_T1_RIGHT_MAX_PASSIVE_STACKS}.`,
@@ -1081,7 +1081,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: 'Benevolent Flare Speed Burst',
-            ru: 'Скоростной всплеск благости',
+            ru: 'Ускоряющая Благосклонность',
             cz: 'Rychlostní výbuch dobra',
             zh: '善意耀斑速度爆发',
             fr: 'Rafale de vitesse de lueur bienveillante',
@@ -1093,7 +1093,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_right: {
           title: {
             en: 'Call of Malevolence',
-            ru: 'Призыв злобы',
+            ru: 'Зов злобы',
             cz: 'Volání zloby',
             zh: '召唤恶意',
             fr: 'Appel de la malveillance',
@@ -1103,7 +1103,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Malevolent Surge now pulls all enemies towards the Seer and applies a stun effect for ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)}s.`,
-            ru: `Волна злобы теперь тянет всех врагов к Сиру и накладывает эффект оглушения на ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)}с.`,
+            ru: `Неприязнь теперь притягивает всех врагов к Провидцу и накладывает эффект оглушения на ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)}сек.`,
             cz: `Zlobivý nápor nyní přitahuje všechny nepřátele k Seerovi a aplikuje efekt omráčení na ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)}s.`,
             zh: `恶意波现在将所有敌人拉向先知，并施加 ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)} 秒的眩晕效果。`,
             fr: `La montée de malveillance attire désormais tous les ennemis vers le Voyant et applique un effet d'étourdissement pendant ${toSec(SeerAbilityData.MALEVOLENT_SURGE_STUN_DURATION)}s.`,

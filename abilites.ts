@@ -1186,11 +1186,11 @@ const _getSpellDescriptionLang = (
         \n\n[Passive]: Seer's basic attack and abilites applies malevolent curse to enemies and benevolent amplification to allies for ${passiveDuration} and stacks up to ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} times..
         \n\nMalevolent Curse: Deals ${malevolentCurseDamage} magical damage per second
         \nBenevolent Amplification: Increases healing received by ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack`,
-        ru: `[Благосклонная форма]: Сир выпускает волну энергии, наносящую ${baseDamageBenevolent} врагам и исцеляющую союзников на ${healing} и накладывающую благосклонное усиление.
-        \n\n[Зловещая форма]: Сир выпускает волну энергии, наносящую ${baseDamage} врагам и накладывающую зловещее проклятие.
-        \n\n[Пассивное]: Базовая атака и способности Сира накладывают зловещее проклятие на врагов и благосклонное усиление на союзников на ${passiveDuration} и накапливаются до ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} раз.
-        \n\nЗловещее проклятие: Наносит ${malevolentCurseDamage} магического урона в секунду
-        \nБлагосклонное усиление: Увеличивает исцеление на ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% за стак`,
+        ru: `[Благосклонная форма]: Провидец выпускает волну энергии, наносящую ${baseDamageBenevolent} магического урона врагам и исцеляющую союзников на ${healing} здоровья и накладывающую Благоговение на союзников.
+        \n\n[Зловещая форма]: Провидец выпускает волну энергии, наносящую ${baseDamage} магического урона врагам и накладывающую на них Упадок.
+        \n\n[Пассивно]: Базовая атака и способности Провидца накладывают Упадок на врагов и Благоговение на союзников на ${passiveDuration} (складывается до ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} раз.)
+        \n\nУпадок: Наносит ${malevolentCurseDamage} магического урона в секунду за заряд.
+        \nБлагоговение: Увеличивает получаемое исцеление на ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% за заряд`,
         cz: `[Přívětivá forma]: Prorok uvolní vlnu energie, která způsobí ${baseDamageBenevolent} nepřátelům a uzdraví spojence o ${healing} a aplikuje přívětivé zesílení.
         \n\n[Zlověstná forma]: Prorok uvolní vlnu energie, která způsobí ${baseDamage} nepřátelům a aplikuje zlověstné prokletí.
         \n\n[Passive]: Základní útok a schopnosti Proroka aplikují zlověstné prokletí na nepřátele a přívětivé zesílení na spojence po dobu ${passiveDuration} a stackuje až ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} krát.
@@ -1241,8 +1241,8 @@ const _getSpellDescriptionLang = (
       return {
         en: `[Benevolent Form]: Seer create a benevolent flare that heals allies for ${healing}, applies benevolent amplification and increases movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to allies.
         \n\n[Malevolent Form]: Seer creates a malevolent surge that deals ${malevolentDamage} magical damage to enemies, applies malevolent curse and reduces their movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to allies.`,
-        ru: `[Благосклонная форма]: Сир создает благосклонную вспышку, исцеляющую союзников на ${healing}, накладывающую благосклонное усиление и увеличивающую скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration} союзников.
-        \n\n[Зловещая форма]: Сир создает зловещий всплеск, наносящий ${malevolentDamage} магического урона врагам, накладывающий зловещее проклятие и уменьшающий их скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration} союзников.`,
+        ru: `[Благосклонная форма]: Провидец создаёт вспышку благосклонности, исцеляющую союзникам ${healing} здоровья, накладывающую Благоговение и увеличивающую скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.
+        \n\n[Зловещая форма]: Провидец создаёт зловещий всплеск, наносящий ${malevolentDamage} магического урона врагам, накладывающий Упадок и уменьшающий их скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.`,
         cz: `[Přívětivá forma]: Prorok vytvoří přívětivý záblesk, který uzdraví spojence o ${healing}, aplikuje přívětivé zesílení a zvýší rychlost pohybu o ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} na ${passiveDuration} spojenců.
         \n\n[Zlověstná forma]: Prorok vytvoří zlověstný nápor, který způsobí nepřátelům ${malevolentDamage} magického poškození, aplikuje zlověstné prokletí a sníží jejich rychlost pohybu o ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} na ${passiveDuration} spojenců.`,
         br: `[Forma Benevolente]: Seer cria um clarão benevolente que cura os aliados em ${healing}, aplica amplificação benevolente e aumenta a velocidade de movimento em ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} por ${passiveDuration} aos aliados.
@@ -1261,7 +1261,7 @@ const _getSpellDescriptionLang = (
     case SpellList.SEER_CHANGE_FORM: {
       return {
         en: `Seer changes her form between benevolent and malevolent. In benevolent form, Seer heals allies and applies benevolent amplification. In malevolent form, Seer deals damage to enemies and applies malevolent curse.`,
-        ru: `Сир меняет свою форму между благосклонной и зловещей. В благосклонной форме Сир исцеляет союзников и накладывает благосклонное усиление. В зловещей форме Сир наносит урон врагам и накладывает зловещее проклятие.`,
+        ru: `Провидец меняет свою форму между благосклонной и зловещей. В благосклонной форме Провидец исцеляет союзников и накладывает Благоговение, а в зловещей форме Провидец наносит урон врагам и накладывает на них Упадок.`,
         cz: `Prorok mění svou formu mezi přívětivou a zlověstnou. V přívětivé formě Prorok uzdravuje spojence a aplikuje přívětivé zesílení. V zlověstné formě Prorok způsobuje nepřátelům poškození a aplikuje zlověstné prokletí.`,
         br: `Seer muda sua forma entre benevolente e malevolente. Na forma benevolente, Seer cura os aliados e aplica amplificação benevolente. Na forma malevolente, Seer causa dano aos inimigos e
         aplica maldição malevolente.`,
@@ -1661,7 +1661,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
     case SpellList.SEER_BENEVOLENT_FLARE:
       return {
         en: 'Benevolent Flare / Malevolent Surge',
-        ru: 'Добрый свет / Зловещий всплеск',
+        ru: 'Благосклонность / Неприязнь',
         br: 'Clarão Benevolente / Surto Malevolente',
         fr: 'Flamme bienveillante / Vague malveillante',
         zh: '仁慈之光 / 邪惡之潮',
@@ -1673,7 +1673,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
     case SpellList.SEER_CHANGE_FORM:
       return {
         en: 'Transform',
-        ru: 'Преобразование',
+        ru: 'Смена формы',
         br: 'Transformar',
         fr: 'Transformer',
         zh: '變形',
