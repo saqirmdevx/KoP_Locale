@@ -1855,7 +1855,7 @@ const _getLocaleItemDescription = (
       return {
         name: {
           en: 'Vile Flask',
-          ru: 'Гнусная колба',
+          ru: 'Мерзкая склянка',
           br: 'Frasco de veneno',
           zh: '惡毒瓶',
           cz: 'Ohavná láhev',
@@ -1865,8 +1865,7 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en: `Throws a Vile Flask that breaks after it hits the ground, affecting all nearby enemies with a debuff that reduces their Movement Speed by ${ItemAbilityData.VILE_FLASK_SLOW} and deals ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per second for ${duration} Seconds.`,
-          ru: `Бросьте Гнусную колбу, которая разобьётся при падении и наклад
-          вает на всех ближайших врагов дебафф, уменьшающий их Скорость передвижения на ${ItemAbilityData.VILE_FLASK_SLOW} и наносящий ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} урона в секунду на ${duration} сек.`,
+          ru: `Вы бросаете мерзкую склянку, которая при соприкосновении с землёй разбивается и накладывает на задетых врагов эффект, уменьшающий их Скорость передвижения на ${ItemAbilityData.VILE_FLASK_SLOW} и наносящий ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} урона в секунду в течение ${duration} сек.`,
           br: `Jogue um frasco de veneno que quebra ao atingir o chão, afetando todos os inimigos próximos com um debuff que reduz a velocidade de movimento em ${ItemAbilityData.VILE_FLASK_SLOW} e causa ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} de dano por segundo por ${duration} seg.`,
           zh: `投擲惡毒瓶，瓶子破碎後影響所有附近敵人，降低他們 ${ItemAbilityData.VILE_FLASK_SLOW}移動速度並造成 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC}點傷害，持續 ${duration}秒。`,
           cz: `Hodí Ohavnou láhev, která se rozbije po dopadu na zem a ovlivní všechny blízké nepřátele debuffem, který snižuje jejich rychlost pohybu o ${ItemAbilityData.VILE_FLASK_SLOW} a způsobuje ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} poškození za sekundu po dobu ${duration} sekund.`,
