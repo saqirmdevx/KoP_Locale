@@ -416,7 +416,9 @@ const _getSpellDescriptionLang = (
       const enhanced_dmg = getDamage(
         VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier,
         Shared.DamageTypes.MAGICAL,
-        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier
+        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) *
+          modifier,
+        'AbilityPower'
       )
 
       return {
@@ -1166,7 +1168,8 @@ const _getSpellDescriptionLang = (
       const healing = getDamage(
         SeerAbilityData.ATTACK_HEALING_MOD * abilityPower,
         Shared.DamageTypes.HEAL,
-        SeerAbilityData.ATTACK_HEALING_BASE + SeerAbilityData.ATTACK_HEALING_PER_LEVEL * (level - 1)
+        SeerAbilityData.ATTACK_HEALING_BASE + SeerAbilityData.ATTACK_HEALING_PER_LEVEL * (level - 1),
+        'AbilityPower'
       )
 
       const malevolentCurseDamage = getDamage(
@@ -1178,8 +1181,8 @@ const _getSpellDescriptionLang = (
       const passiveDuration = toSec(SeerAbilityData.SEER_PASSIVE_DURATION)
 
       return {
-        en: `[Benevolent Form]: Seer release a weve of energy that deals ${baseDamageBenevolent} to enemies and heals allies for ${healing} and applies benevolent amplification.
-        \n\n[Malevolent Form]: Seer release a weve of energy that deals ${baseDamage} to enemies and applies malevolent curse.
+        en: `[Benevolent Form]: Seer release a weave of energy that deals ${baseDamageBenevolent} to enemies and heals allies for ${healing} and applies benevolent amplification.
+        \n\n[Malevolent Form]: Seer release a weave of energy that deals ${baseDamage} to enemies and applies malevolent curse.
         \n\n[Passive]: Seer's basic attack and abilites applies malevolent curse to enemies and benevolent amplification to allies for ${passiveDuration} and stacks up to ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} times..
         \n\nMalevolent Curse: Deals ${malevolentCurseDamage} magical damage per second
         \nBenevolent Amplification: Increases healing received by ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack`,
