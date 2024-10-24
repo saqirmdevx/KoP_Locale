@@ -2091,6 +2091,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Tampilkan Obrolan',
     vi: 'Hiện Chat',
   },
+  [LOCALE.HIDE_CHAT_IN_GAME]: {
+    en: 'Hide Global chat in Game',
+    cz: 'Skrýt globální chat ve hře',
+    br: 'Ocultar chat global no jogo',
+    ru: 'Скрыть глобальный чат в игре',
+    zh: '隱藏遊戲中的全域聊天',
+    fr: 'Masquer le chat global dans le jeu',
+    id: 'Sembunyikan obrolan global dalam game',
+    vi: 'Ẩn chat toàn cầu trong trò chơi',
+  },
   [LOCALE.VIDEO]: {
     en: 'Video',
     ru: 'Графика',

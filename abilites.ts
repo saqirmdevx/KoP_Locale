@@ -20,6 +20,7 @@ import {
   SpellList,
   PrimAbilityData,
   SeerAbilityData,
+  ItemAbilityData,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
@@ -151,15 +152,18 @@ const _getSpellDescriptionLang = (
           )
         : Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100)
 
+      const healingReduction = fixed(ItemAbilityData.GRIVEOUS_WOUND * 100, 1)
+      const healingReductionDuration = toSec(SparrowAbilityData.GROUND_SLAM_GRIVEOUS_WOUND_DURATION)
+
       return {
-        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health).`,
-        ru: `Спарроу высвобождает силу своего меча, создавая демоническую волну, наносящую ${base_damage} магического урона (плюс ${percDamage}% от недостающего здоровья цели) задетым врагам.`,
-        cz: `Sparrow uvolní sílu uvnitř svého meče a vytvoří paprsek ve tvaru půlměsíce, který udělí ${base_damage} (plus ${percDamage} % chybějícího zdraví cíle) zasaženým nepřátelům.`,
-        br: `Sparrow canaliza todo o poder de sua espada, criando um feixe na sua frente que causa ${base_damage} (mais ${percDamage}% de vida perdida do alvo) para os inimigos que são atingidos.`,
-        zh: `史佩羅釋放惡魔的力量，從她的劍發射腐壞震波，造成 ${base_damage} (加上 ${percDamage}%敵方損失血量)。`,
-        fr: `Sparrow libère le pouvoir de son épée, lançant une vague corrompue, infligeant ${base_damage} (plus un bonus de ${percDamage}% des points de vie manquants de la cible).`,
-        vi: `Sparrow phóng ra sức mạnh của quỷ, tạo ra một sóng thần từ thanh kiếm, gây ${base_damage} (cộng thêm ${percDamage}% máu mục tiêu đã mất).`,
-        id: `Sparrow melepaskan kekuatan pedangnya, meluncurkan gelombang korupsi dari pedangnya, memberikan ${base_damage} (ditambah bonus ${percDamage}% dari kesehat yang hilang).`,
+        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health). \n\n Reduce healing by ${healingReduction}% for ${healingReductionDuration}.`,
+        ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${base_damage} (плюс бонус ${percDamage}% от потерянного здоровья цели). \n\n Уменьшает исцеление на ${healingReduction}% на ${healingReductionDuration}.`,
+        cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${base_damage} (plus bonus ${percDamage}% ztraceného zdraví cíle). \n\n Sníží léčení o ${healingReduction}% po dobu ${healingReductionDuration}.`,
+        br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${base_damage} (mais um bônus de ${percDamage}% da vida perdida do alvo). \n\n Reduz a cura em ${healingReduction}% por ${healingReductionDuration}.`,
+        zh: `史佩羅釋放出惡魔的力量，從她的劍中發射出一道腐敗的波浪，造成 ${base_damage} (再加上目標失去生命值的 ${percDamage}%)。 \n\n 降低 ${healingReduction}% 的治療效果，持續 ${healingReductionDuration}。`,
+        fr: `Sparrow libère la puissance des démons, lançant une vague corrompue de son épée, infligeant ${base_damage} (plus un bonus de ${percDamage}% de la vie manquante de la cible). \n\n Réduit la guérison de ${healingReduction}% pendant ${healingReductionDuration}.`,
+        vi: `Sparrow giải phóng sức mạnh của quỷ dữ, tung ra một làn sóng tà ác từ thanh kiếm của cô ấy, gây ${base_damage} (cộng thêm ${percDamage}% lượng máu đã mất của mục tiêu). \n\n Giảm khả năng hồi máu đi ${healingReduction}% trong vòng ${healingReductionDuration}.`,
+        id: `Sparrow melepaskan kekuatan iblis, meluncurkan gelombang korupsi dari pedangnya, memberikan ${base_damage} (ditambah bonus ${percDamage}% dari kesehatan yang hilang target). \n\n Mengurangi penyembuhan sebesar ${healingReduction}% selama ${healingReductionDuration}.`,
       }
     }
 
@@ -673,14 +677,14 @@ const _getSpellDescriptionLang = (
       const delay = toSec(HazelAbilityData.SHOCKWAVE_DELAY)
 
       return {
-        en: `Hazel begins to channel her energy. After ${delay}, she releases a shockwave which travels through the air, dealing ${damage} (Based of Hazel's max health) + ${apDamage} and knocking back enemies.`,
-        br: `Hazel começa a canalizar sua energia. Após ${delay}, ela libera uma onda de choque que viaja pelo ar, causando ${damage} (Baseado na vida máxima de Hazel) + ${apDamage} de dano mágico e repelindo inimigos.`,
-        ru: `Хейзел сосредотачивает энергию. Спустя ${delay}, она выпускает ударную волну, которая наносит ${damage} магического урона вокруг (от максимального здоровья Хейзел) + ${apDamage} магического урона, отбрасывая врагов.`,
-        cz: `Hazel začne kanalizovat svou energii. Po ${delay} uvolní šokovou vlnu, která letí vzduchem, způsobuje ${damage} (Založeno na maximálním zdraví Hazel) + ${apDamage} magického poškození a odhazuje nepřátele.`,
-        zh: `哈傑爾開始引導她的能量。${delay}後，她釋放一道衝擊波在空氣中遊走，造成 ${damage} (基於哈傑爾的最大生命值) + ${apDamage}並擊退敵人。`,
-        fr: `Hazel commence à canaliser son énergie. Après ${delay}, elle libère une onde de choc qui se déplace dans l'air, infligeant ${damage} (Basé sur la vie maximale de Hazel) + ${apDamage} dégâts magiques et repoussant les ennemis.`,
-        vi: `Hazel bắt đầu tập trung năng lượng của mình. Sau ${delay}, cô phát ra một cơn sóng gió đi qua không khí, gây ${damage} (Dựa trên máu tối đa của Hazel) + ${apDamage} sát thương phép và đẩy lùi kẻ địch.`,
-        id: `Hazel mulai mengalirkan energinya. Setelah ${delay}, dia melepaskan gelombang kejut yang berjalan melalui udara, memberikan ${damage} (Berdasarkan pada kesehatan maksimal Hazel) + ${apDamage} kerusakan magis dan mendorong musuh.`,
+        en: `Hazel begins to channel her energy. After ${delay}, she releases a shockwave which travels through the air, dealing ${damage} (Based on Hazel's max health) + ${apDamage} and pulling enemies towards Hazel.`,
+        ru: `Хейзел начинает накапливать энергию. Через ${delay} она выпускает ударную волну, которая распространяется по воздуху, нанося ${damage} (Зависит от максимального здоровья Хейзел) + ${apDamage} и притягивая врагов к Хейзел.`,
+        br: `Hazel começa a canalizar sua energia. Após ${delay}, ela libera uma onda de choque que viaja pelo ar, causando ${damage} (Baseado na vida máxima de Hazel) + ${apDamage} e puxando inimigos em direção a Hazel.`,
+        fr: `Hazel commence à canaliser son énergie. Après ${delay}, elle libère une onde de choc qui traverse l'air, infligeant ${damage} (Basé sur la santé maximale de Hazel) + ${apDamage} et attirant les ennemis vers Hazel.`,
+        zh: `Hazel开始引导她的能量。 ${delay}后，她释放出穿过空气的冲击波，造成${damage}（基于Hazel的最大生命值） + ${apDamage} 并将敌人拉向Hazel。`,
+        cz: `Hazel začíná koncentrovat svou energii. Po ${delay} uvolní rázovou vlnu, která se šíří vzduchem a způsobuje ${damage} (Podle maximálního zdraví Hazel) + ${apDamage} a přitahuje nepřátele směrem k Hazel.`,
+        vi: `Hazel bắt đầu tập trung năng lượng. Sau ${delay}, cô ấy giải phóng một làn sóng xung kích di chuyển qua không khí, gây ${damage} (Dựa trên lượng máu tối đa của Hazel) + ${apDamage} và kéo kẻ địch về phía Hazel.`,
+        id: `Hazel mulai menyalurkan energinya. Setelah ${delay}, dia melepaskan gelombang kejut yang bergerak melalui udara, memberikan ${damage} (Berdasarkan kesehatan maksimal Hazel) + ${apDamage} dan menarik musuh ke arah Hazel.`,
       }
     }
 
