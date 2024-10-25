@@ -949,14 +949,14 @@ const _getLocaleItemDescription = (
           id: 'Tongkat Vampir',
         },
         desc: {
-          en: `On a spell hit, the Vampiric Rod deals extra ${leechValue} (+ ${leechMod}% of ability power) damage and heals the wielder for the same amount.`,
-          ru: `При попадании заклинания вампирический жезл наносит дополнительный урон ${leechValue} (+ ${leechMod}% от силы способностей) и восстанавливает владельцу такое же количество здоровья.`,
-          br: `Ao acertar uma habilidade, o Cajado Vampírico causa dano extra de ${leechValue} (+ ${leechMod}% do poder de habilidade) e cura o portador pelo mesmo valor.`,
-          fr: `Lorsqu'un sort touche, la Baguette vampirique inflige ${leechValue} (+ ${leechMod}% de la puissance des sorts) de dégâts supplémentaires et soigne le porteur du même montant.`,
-          zh: `法术命中时，吸血鬼法棒造成额外 ${leechValue} (+ ${leechMod}% 法术强度) 伤害，并为持有者恢复相同的生命值。`,
-          cz: `Při zásahu kouzlem způsobí Vampýří hůl extra poškození ${leechValue} (+ ${leechMod}% síly schopností) a vyléčí nositele za stejnou hodnotu.`,
-          vi: `Khi đánh trúng bằng phép, Gậy Hút Máu gây thêm ${leechValue} (+ ${leechMod}% sức mạnh kỹ năng) sát thương và hồi máu cho người dùng bằng đúng số đó.`,
-          id: `Saat mantra mengenai musuh, Tongkat Vampir memberikan tambahan ${leechValue} (+ ${leechMod}% dari kekuatan kemampuan) kerusakan dan menyembuhkan pengguna dengan jumlah yang sama.`,
+          en: `On a spell hit, the Vampiric Rod deals extra ${leechValue} (+ ${leechMod}% of ability power) damage and heals the wielder for twice the amount.`,
+          ru: `При попадании заклинанием вампирический жезл наносит дополнительный урон ${leechValue} (+ ${leechMod}% от силы способностей) и восстанавливает владельцу вдвое большее количество здоровья.`,
+          br: `Ao acertar uma habilidade, o Cajado Vampírico causa dano extra de ${leechValue} (+ ${leechMod}% do poder de habilidade) e cura o portador pelo dobro do valor.`,
+          fr: `Lorsqu'un sort touche, la Baguette vampirique inflige ${leechValue} (+ ${leechMod}% de la puissance des sorts) de dégâts supplémentaires et soigne le porteur pour le double du montant.`,
+          zh: `法术命中时，吸血鬼法棒造成额外 ${leechValue} (+ ${leechMod}% 法术强度) 伤害，并为持有者恢复两倍的生命值。`,
+          cz: `Při zásahu kouzlem způsobí Vampýří hůl extra poškození ${leechValue} (+ ${leechMod}% síly schopností) a vyléčí nositele na dvojnásobek této hodnoty.`,
+          vi: `Khi đánh trúng bằng phép, Gậy Hút Máu gây thêm ${leechValue} (+ ${leechMod}% sức mạnh kỹ năng) sát thương và hồi máu cho người dùng gấp đôi số đó.`,
+          id: `Saat mantra mengenai musuh, Tongkat Vampir memberikan tambahan ${leechValue} (+ ${leechMod}% dari kekuatan kemampuan) kerusakan dan menyembuhkan pengguna dua kali lipat dari jumlah tersebut.`,
         },
       }
     }
