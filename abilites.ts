@@ -127,7 +127,7 @@ const _getSpellDescriptionLang = (
       const dashDamage = getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)
       const stunduration = toSec(SparrowAbilityData.DASH_STUN_DURATION)
       return {
-        en: `Sparrow quickly dashes forward, harnessing the wind, dealing enemy heroes ${dashDamage} and stunning them for ${stunduration}.`,
+        en: `Sparrow quickly dashes forward, harnessing the wind, dealing ${dashDamage} to enemy heroes and stunning them for ${stunduration}.`,
         ru: `Спарроу совершает стремительный рывок, оглушая задетых врагов на ${stunduration} и нанося им ${dashDamage} физического урона.`,
         cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž omráčí nepřátele které zasáhne na ${stunduration} a způsobí ${dashDamage} normalního poškozeni.`,
         br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${stunduration} e dando ${dashDamage} de dano.`,
@@ -156,7 +156,7 @@ const _getSpellDescriptionLang = (
       const healingReductionDuration = toSec(SparrowAbilityData.GROUND_SLAM_GRIVEOUS_WOUND_DURATION)
 
       return {
-        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health). \n\n Reduce healing by ${healingReduction}% for ${healingReductionDuration}.`,
+        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health). \n\nReduces healing by ${healingReduction}% for ${healingReductionDuration}.`,
         ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${base_damage} (плюс бонус ${percDamage}% от потерянного здоровья цели). \n\n Уменьшает исцеление на ${healingReduction}% на ${healingReductionDuration}.`,
         cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${base_damage} (plus bonus ${percDamage}% ztraceného zdraví cíle). \n\n Sníží léčení o ${healingReduction}% po dobu ${healingReductionDuration}.`,
         br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${base_damage} (mais um bônus de ${percDamage}% da vida perdida do alvo). \n\n Reduz a cura em ${healingReduction}% por ${healingReductionDuration}.`,
@@ -223,7 +223,7 @@ const _getSpellDescriptionLang = (
       return {
         en:
           `<b>First cast: </b>I'ceat slides on the ground, increasing his Movement Speed by ${bonusSpeed} for ${duration} and leaving behind an icy trail.` +
-          `Enemies standing on top of the icy trail receive ${base_damage} per second and have their Movement Speed reduced for a short duration.<br/>` +
+          ` Enemies standing on top of the icy trail take ${base_damage} damage per second and have their Movement Speed reduced for a short duration.<br/>` +
           `<b>Second cast: </b>I'ceat stops sliding, returning his Movement Speed to normal, and stops leaving behind an icy trail.`,
         ru:
           `<b>Первое применение: </b>Ай'сит скользит по земле, получая ${bonusSpeed} скорости передвижения на ${duration} и оставляя ледяной след позади, ` +
@@ -282,8 +282,8 @@ const _getSpellDescriptionLang = (
 
       return {
         en:
-          `Belle casts a piercing vine, dealing ${damage} to enemies that get hit. If the vine comes into contact with an enemy hero, it attaches to that hero. Attached vines can be broken if the enemy hero moves far enough from Belle.` +
-          `\nAfter a short time, if the vine is still attached, the vine entangles the enemy, dealing ${damage} and stunning for ${stunDuration}`,
+          `Belle casts a piercing vine, dealing ${damage} to enemies that get hit. If the vine comes in contact with an enemy hero, it attaches to that hero. Attached vines can be broken if the enemy hero moves far enough away from Belle.` +
+          `\nAfter a short time, if the vine is still attached, the vine entangles the enemy, dealing ${damage} and stunning for ${stunDuration}.`,
         ru:
           `Белла выпускает лозу перед собой, наносящую ${damage} магического урона и прикрепляющуюся к перворму вражескому герою на своём пути. \nСпособность может быть прервана, если враг отойдёт слишком далеко от Беллы.` +
           `\nСпустя небольшой промежуток времени, если лоза всё ещё прикреплена к врагу, она исчезает и оглушает цель на ${stunDuration}, нанося ${damage} магического урона.`,
@@ -469,7 +469,7 @@ const _getSpellDescriptionLang = (
       return {
         en:
           `Veil dashes forward with high velocity, dealing ${base_damage} to enemy heroes.\n\n` +
-          `Enhanced: Veil steps into the astral realm, dealing a bonus ${enh_dmg} and slowing enemy hero, removing her enhanced state. <b>Sucessfully hitting an enemy resets this Ability's cooldown. </b>`,
+          `Enhanced: Veil steps into the astral realm, dealing a bonus ${enh_dmg}, slowing enemy heroes, and removing her enhanced state. <b>Sucessfully hitting an enemy resets this Ability's cooldown. </b>`,
         ru:
           `Вэйл совершает рывок вперёд, который наносит ${base_damage} физического урона первому вражескому герою на своём пути.\n\n` +
           `[Усиленная]: Вэйл шагает в астральное измерение и наносит ${enh_dmg} физического урона, замедляя врага. (поглощает эффект усиления) <b> Успешное попадание сбрасывает перезарядку Астрального шага. </b>`,
@@ -820,7 +820,7 @@ const _getSpellDescriptionLang = (
 
       return {
         en: `Alvar attacks with a punch, dealing ${baseDamage}. \n
-                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which lasts for ${duration}. At three stacks, the enemy receives a Divine Mark, dealing ${markDamage}.`,
+                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which last for ${duration}. At three stacks, the enemy receives a Divine Mark, dealing ${markDamage}.`,
         br: `Alvar acerta com seu punho todos os alvos à sua frente causando ${baseDamage} de dano normal. \n
                 \n<b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${duration}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage} de dano normal.`,
         ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage} физического урона. \n
@@ -848,9 +848,7 @@ const _getSpellDescriptionLang = (
       const buffDuration = toSec(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)
 
       return {
-        en: `Alvar launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${duration}. \n\n
-            Applies a stack of divine impact on all enemy heroes hit by Furious Kick.\n
-            In addition alvar grants himself and all his nearby alies ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} bonus movement speed for ${buffDuration}`,
+        en: `Alvar launches enemies backwards with a powerful kick, dealing ${baseDamage} and stunning for ${duration}. \n\nApplies a stack of divine impact on all enemy heroes hit by Furious Kick.\n\nIn addition, Alvar grants himself and all his nearby allies ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} bonus movement speed for ${buffDuration}`,
         br: `Alvar lança seus inimigos para trás com um poderoso chute, causando ${baseDamage} de dano normal e atordoando por ${duration}. \n\n
             Aplica um debuff em todos os personagens inimigos atingidos pelo chute furioso.\n
             Além disso, Alvar concede a si mesmo e a todos os seus aliados próximos ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} de velocidade de movimento por ${buffDuration}`,
@@ -880,7 +878,7 @@ const _getSpellDescriptionLang = (
       const slowDuration = toSec(AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION)
 
       return {
-        en: `Alvar teleports towards the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and reducing the Movement Speed of the enemy hero for ${slowDuration}. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
+        en: `Alvar teleports to the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and reducing the Movement Speed of the enemy hero for ${slowDuration}. If there is no enemy with Divine Mark nearby, this ability can't be used.`,
         br: `Alvar teleporta-se para o herói inimigo mais próximo com Marca Divina, causando ${baseDamage}, removendo a Marca Divina e reduzindo a Velocidade de Movimento do herói inimigo por ${slowDuration}. Se não houver inimigo com Marca Divina por perto, esta habilidade não pode ser usada.`,
         ru: `Алвар телепортируется к ближайшему вражескому герою с Божественной Меткой, нанося ${baseDamage}, удаляя Божественную Метку и уменьшая скорость передвижения вражеского героя на ${slowDuration}. Если рядом нет врага с Божественной Меткой, это умение не может быть использовано.`,
         cz: `Alvar se teleportuje k nejbližšímu nepřátelskému hrdinovi s Božskou značkou, způsobí ${baseDamage}, odstraní Božskou značku a sníží rychlost pohybu nepřátelského hrdiny na ${slowDuration}. Pokud není v dosahu žádný nepřítel s Božskou značkou, tato schopnost nemůže být použita.`,
@@ -915,7 +913,7 @@ const _getSpellDescriptionLang = (
       const baseDamage = getDamage(FoxyAbilityData.RAPID_FIRE_DAMAGE_MULTIPLIER * damage * mod)
 
       return {
-        en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a barrage of bullets. Each bullet deals ${baseDamage}. <br/> <b>Rapid Fire attack rate scales with Attack Speed.</b>`,
+        en: `Foxy channels his weapon, lowering his movement speed and rapidly firing a barrage of bullets. Each bullet deals ${baseDamage}. <br/><b>Rapid Fire attack rate scales with Attack Speed.</b>`,
         ru: `Фокси подготавливает своё оружие и быстро выпускает шквал пуль, нанося ${baseDamage} физического урона. <br/> <i> Чем выше Скорость атаки, тем больше пуль будет выпущено. </i>`,
         cz: `Foxy nasměruje svou zbraň a rychle vypálí příval kulek, které způsobí ${baseDamage} fyzické poškození. <br/> <i> Rýchlost útoku zrychly tento effekt. Pohyb zastaví channeling </i>`,
         br: `Foxy canaliza sua arma, diminuindo sua velocidade de movimento e disparando rapidamente uma rajada de balas. Cada bala causa ${baseDamage}. <br/> <i> A taxa de ataque de Fogo Rápido escala com a Velocidade de Ataque. </i>`,
@@ -945,7 +943,7 @@ const _getSpellDescriptionLang = (
         en:
           `<b>First cast: </b>Foxy throws a grenade which detonates upon impact with the ground, dealing ${baseDamage} + ${apDamage} in an area and knocking back units. If the grenade's falling speed is fast enough, it will bounce once before detonation. ` +
           'Knockback is based on the distance between the enemy unit and the grenade.\n' +
-          '<b>Second cast: </b>Detonate the grenade early.',
+          '<b>Second cast: </b>Detonates the grenade early.',
         ru:
           `<b>Первое применение: </b>Фокси бросает гранату, которая взрывается при соприкосновении с землёй. Если скорость падения была слишком высока, граната отскочит от поверхности. При взрыве она наносит ${baseDamage} + ${apDamage} физического урона. ` +
           'Когда граната взрывается, она отбрасывает ближайших врагов. Сила отбрасывания зависит от того, как близко находился враг к центру взрыва.\n' +
@@ -988,9 +986,9 @@ const _getSpellDescriptionLang = (
       )
 
       return {
-        en: `Magdalene sends a burst of energy from her dark scythe, dealing ${baseDamage}.
+        en: `Magdalene sends out a burst of energy from her dark scythe, dealing ${baseDamage}.
         \n\nPassive: Magdalene steals an enemy's soul after killing an enemy hero or minion. Magdalene can store up to ${maxSouls} souls. Each soul increases her Ability Power by 1.
-        \nWhen Magdalene dies, she will release all souls in a short area and deals ${soulDamage} per soul to all enemies and fear them for a short duration.`,
+        \nWhen Magdalene dies, she will release all souls in a small radius and deal ${soulDamage} damage per soul to all enemies and apply fear for a short duration.`,
         ru: `Магдалина испускает сгусток энергии, нанося ${baseDamage}.
         \n\n[ПАССИВНО]: Магдалина крадёт душу врага после убийства вражеского героя или миньона. Она может хранить до ${maxSouls} душ. Каждая душа увеличивает её Силу умений на 1.
         \nКогда Магдалина умирает, она высвобождает все души, нанося ${soulDamage} магического урона за каждую душу всем врагам вокруг себя, накладывая страх на короткое время.`,
@@ -1026,7 +1024,7 @@ const _getSpellDescriptionLang = (
       const pushbackDuration = toSec(MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION)
 
       return {
-        en: `Magdalene sends out an ear-splitting scream, dealing ${damage} to enemies in front of her, knocking them back, and silencing them for ${silenceDuration}. \nConsumes Haunted Ghosts if target is affected, deals additional damage and fear the target for ${pushbackDuration}.`,
+        en: `Magdalene sends out an ear-splitting scream, dealing ${damage} to enemies in front of her, knocking them back, and silencing them for ${silenceDuration}. \nConsumes Haunted Ghost if the target is afflicted, deals additional damage and applies fear to the target for ${pushbackDuration}.`,
         ru: `Магдалина издаёт пронзительный крик, нанося ${damage} магического урона врагам перед собой, отбрасывая их назад и накладывая немоту на ${silenceDuration}. \nЕсли цель находится под эффектом Одержимого призрака, Магдалина поглощает этот эффект и наносит дополнительный урон, также накладывая страх на цель на ${pushbackDuration}.`,
         br: `Magdalene solta um grito estridente, causando ${damage} de dano mágico nos inimigos à sua frente, empurrando-os para trás e silenciando-os por ${silenceDuration}. \nConsumir Fantasmas Assombrados se o alvo for afetado, causa dano adicional e medo no alvo por ${pushbackDuration}.`,
         fr: `Magdalene lance un cri déchirant, infligeant ${damage} de dégâts magiques aux ennemis devant elle, les repoussant et les réduisant au silence pendant ${silenceDuration}. \nConsomme les Fantômes hantés si la cible est affectée, inflige des dégâts supplémentaires et effraie la cible pendant ${pushbackDuration}.`,
@@ -1047,8 +1045,8 @@ const _getSpellDescriptionLang = (
       const hauntedDuration = toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)
 
       return {
-        en: `Magdalene sends a haunted ghost in a direction. When it hits the enemy, it will inflict a haunted ghost, dealing ${damage} per second to an inflicted enemy. The ghost lasts for ${hauntedDuration}. 
-        \n When the haunted ghost debuff expires or is consumed by Scream of Pain, it returns back to Magdalene and reset the cooldown of Haunted Ghost.`,
+        en: `Magdalene sends a haunted ghost in the direction she is facing. If it hits an enemy, it will afflict the opponent with a haunted ghost, dealing ${damage} per second to an afflicted enemy. The ghost lasts for ${hauntedDuration}. 
+        \nWhen the haunted ghost debuff expires or is consumed by Scream of Pain, it returns back to Magdalene and resets the cooldown of Haunted Ghost.`,
         ru: `Магдалина посылает призрака вперёд. При столкновении с врагом он вселяется в него, накладывая эффект Одержимый призрак, наносящий ${damage} магического урона в секунду. Одержимый призрак длится ${hauntedDuration}.
         \n Когда время действия эффекта Одержимый призрак истекает или используется Загробный вопль, он возвращается к Магдалине, сбрасывая перезарядку этой способности.`,
         br: `Magdalene envia um fantasma assombrado em uma direção, quando atinge o inimigo, ele inflige um fantasma assombrado, causando ${damage} de dano mágico por segundo a um inimigo afetado. O fantasma dura por ${hauntedDuration}.
@@ -1079,8 +1077,8 @@ const _getSpellDescriptionLang = (
         : PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR
 
       return {
-        en: `Prim throws 3 sharp pieces of iron that deals ${baseDamage} when hit enemy unit. 
-        \n\nPassive: When Prim's Ball is attached to prim, she gains bonus ${bonusMoveSpeed} movement speed and ${bonusArmor} armor.`,
+        en: `Prim throws 3 sharp pieces of iron that deal ${baseDamage} when an enemy unit is hit. 
+        \n\nPassive: When Prim's Ball is attached to Prim, she gains ${bonusMoveSpeed} bonus movement speed and ${bonusArmor} armor.`,
         ru: `Прим бросает 3 острых снаряда, которые наносят ${baseDamage} физического урона при попадании во врага.
         \n\n[ПАССИВНО]: Когда шар Прим прикреплён к ней, она получает ${bonusMoveSpeed} скорости передвижения и ${bonusArmor} брони.`,
         cz: `Prim hodí 3 ostré kusy železa, které způsobí ${baseDamage} normálního poškození při zásahu nepřátelské jednotky.
@@ -1106,10 +1104,10 @@ const _getSpellDescriptionLang = (
       )
 
       return {
-        en: `Prim commands the Ball to move forward in Prim's direction. When stopped, deals ${damage} to all nearby enemies and slows their movement and attack speed for a short duration.
-          \nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at its detaching location.
-          \nThe new cooldown starts when the Ball is returned to a Prim except if she pickup ball. 
-          \nCan be re-casted to stop the Ball earlier.`,
+        en: `Prim commands the Ball to move forward in Prim's direction. When stopped, it deals ${damage} to all nearby enemies and slows their movement and attack speed for a short duration.
+          \nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at the location where it is detached.
+          \nThe new cooldown starts when the Ball is returned to Prim unless she picks up the ball. 
+          \nCan be re-casted to stop the Ball earlier in its trajectory.`,
         ru: `Прим приказывает шару двигаться вперёд в направлении Прим. При остановке наносит ${damage} всем близлежащим врагам, замедляя их скорость передвижения и атаки на короткое время.
           \nЕсли шар Прим откреплён, она прикажет шару вернуться. Шар наносит урон в месте открепления.
           \nНовое время восстановления начинается, когда шар возвращается к Прим, за исключением случая, когда она подбирает шар.
@@ -1156,7 +1154,7 @@ const _getSpellDescriptionLang = (
       const stunDuration = toSec(PrimAbilityData.GRAVITATIONAL_PULL_STUN_DURATION * modifier)
 
       return {
-        en: `Prim commands the Ball to pull all nearby enemies towards it, dealing ${damage} and stunning them for a ${stunDuration} duration.`,
+        en: `Prim commands the Ball to pull all nearby enemies towards it, dealing ${damage} and stunning them for ${stunDuration}.`,
         ru: `Прим приказывает шару притянуть всех близлежащих врагов к себе, нанося ${damage} магического урона и оглушая их на ${stunDuration}.`,
         cz: `Prim přikáže míči přitáhnout všechny nepřátelské jednotky v okolí k sobě, způsobující ${damage} magického poškození a omráčení na ${stunDuration} sekund.`,
         br: `Prim comanda a Bola para puxar todos os inimigos próximos para perto dela, causando ${damage} de dano mágico e atordoando-os por ${stunDuration} segundos.`,
@@ -1187,11 +1185,11 @@ const _getSpellDescriptionLang = (
       const passiveDuration = toSec(SeerAbilityData.SEER_PASSIVE_DURATION)
 
       return {
-        en: `[Benevolent Form]: Seer release a weave of energy that deals ${baseDamageBenevolent} to enemies and heals allies for ${healing} and applies benevolent amplification.
-        \n\n[Malevolent Form]: Seer release a weave of energy that deals ${baseDamage} to enemies and applies malevolent curse.
-        \n\n[Passive]: Seer's basic attack and abilites applies malevolent curse to enemies and benevolent amplification to allies for ${passiveDuration} and stacks up to ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} times..
-        \n\nMalevolent Curse: Deals ${malevolentCurseDamage} magical damage per second
-        \nBenevolent Amplification: Increases healing received by ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack`,
+        en: `[Benevolent Form]: Seer releases a wave of energy that deals ${baseDamageBenevolent} to enemies, heals allies for ${healing}, and applies 1 stack benevolent amplification.
+        \n\n[Malevolent Form]: Seer releases a wave of energy that deals ${baseDamage} to enemies and applies 1 stack of malevolent curse.
+        \n\n[Passive]: Seer's basic attack and abilites apply 1 stack of malevolent curse to enemies and benevolent amplification to allies for ${passiveDuration} and stack up to ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} times.
+        \n\nMalevolent Curse: Deals ${malevolentCurseDamage} magical damage per second.
+        \nBenevolent Amplification: Increases healing received by ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack.`,
         ru: `[Благосклонная форма]: Провидец выпускает волну энергии, наносящую ${baseDamageBenevolent} магического урона врагам и исцеляющую союзников на ${healing} здоровья и накладывающую Благоговение на союзников.
         \n\n[Зловещая форма]: Провидец выпускает волну энергии, наносящую ${baseDamage} магического урона врагам и накладывающую на них Упадок.
         \n\n[Пассивно]: Базовая атака и способности Провидца накладывают Упадок на врагов и Благоговение на союзников на ${passiveDuration} (складывается до ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} раз.)
@@ -1245,8 +1243,8 @@ const _getSpellDescriptionLang = (
       const passiveDuration = toSec(SeerAbilityData.BENEVOLENT_FLARE_DURATION)
 
       return {
-        en: `[Benevolent Form]: Seer create a benevolent flare that heals allies for ${healing}, applies benevolent amplification and increases movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to allies.
-        \n\n[Malevolent Form]: Seer creates a malevolent surge that deals ${malevolentDamage} magical damage to enemies, applies malevolent curse and reduces their movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to allies.`,
+        en: `[Benevolent Form]: Seer creates a benevolent flare that heals allies for ${healing}, applies one stack of benevolent amplification, and increases movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to all allies hit.
+        \n\n[Malevolent Form]: Seer creates a malevolent surge that deals ${malevolentDamage} magical damage to enemies, applies one stack of malevolent curse, and reduces their movement speeds by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration}`,
         ru: `[Благосклонная форма]: Провидец создаёт вспышку благосклонности, исцеляющую союзникам ${healing} здоровья, накладывающую Благоговение и увеличивающую скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.
         \n\n[Зловещая форма]: Провидец создаёт зловещий всплеск, наносящий ${malevolentDamage} магического урона врагам, накладывающий Упадок и уменьшающий их скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.`,
         cz: `[Přívětivá forma]: Prorok vytvoří přívětivý záblesk, který uzdraví spojence o ${healing}, aplikuje přívětivé zesílení a zvýší rychlost pohybu o ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} na ${passiveDuration} spojenců.
@@ -1266,7 +1264,7 @@ const _getSpellDescriptionLang = (
 
     case SpellList.SEER_CHANGE_FORM: {
       return {
-        en: `Seer changes her form between benevolent and malevolent. In benevolent form, Seer heals allies and applies benevolent amplification. In malevolent form, Seer deals damage to enemies and applies malevolent curse.`,
+        en: `Seer changes its form between benevolent and malevolent form. In benevolent form, Seer heals allies and applies benevolent amplification. In malevolent form, Seer deals damage to enemies and applies malevolent curse.`,
         ru: `Провидец меняет свою форму между благосклонной и зловещей. В благосклонной форме Провидец исцеляет союзников и накладывает Благоговение, а в зловещей форме Провидец наносит урон врагам и накладывает на них Упадок.`,
         cz: `Prorok mění svou formu mezi přívětivou a zlověstnou. V přívětivé formě Prorok uzdravuje spojence a aplikuje přívětivé zesílení. V zlověstné formě Prorok způsobuje nepřátelům poškození a aplikuje zlověstné prokletí.`,
         br: `Seer muda sua forma entre benevolente e malevolente. Na forma benevolente, Seer cura os aliados e aplica amplificação benevolente. Na forma malevolente, Seer causa dano aos inimigos e
