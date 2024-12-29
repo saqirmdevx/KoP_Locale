@@ -26,7 +26,7 @@ import {
 // @ts-ignore
 import type { IAbilityTooltipsDataFinal } from '../abilityLangData'
 // @ts-ignore
-import { getDamage } from '../abilityLangData'
+import { colorize, getDamage } from '../abilityLangData'
 // @ts-ignore
 import { LANG } from 'lang/lang'
 
@@ -537,17 +537,19 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.FLIN_MARKSMANSHIP: {
-      const marksmanshipDuration = toSec(FlinAbilityData.MARKSMANSHIP_DURATION)
-      const marksmanshipDamageReduction = fixed(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100)
+      const marksmanshipDuration = colorize(toSec(FlinAbilityData.MARKSMANSHIP_DURATION))
+      const marksmanshipDamageReduction = colorize(fixed(FlinAbilityData.MARKSMANSHIP_REDUCE_DAMAGE_PER_UNIT * 100))
+      const bonusAttackSpeed = fixed(100 * FlinAbilityData.MARKSMANSHIP_BONUS_ATTACK_SPEED)
+
       return {
-        en: `Flin increases his focus for ${marksmanshipDuration}. While focused, his next ${FlinAbilityData.MARKSMANSHIP_STACKS} arrows will deal additional damage and pierce enemy units. Every unit hit by Flin's piercing arrows reduces the arrow's damage by ${marksmanshipDamageReduction}%.`,
-        br: `Flin aumenta seu foco por ${marksmanshipDuration} e seus próximos ${FlinAbilityData.MARKSMANSHIP_STACKS} ataques normais causarão dano adicional e perfurarão unidades inimigas.\n Cada unidade perfurada atingida reduzirá o dano da flecha em ${marksmanshipDamageReduction}%.`,
-        ru: `Флин повышает свою точность на ${marksmanshipDuration} или на следующее количество атак: (${FlinAbilityData.MARKSMANSHIP_STACKS}). В течение этого времени базовые атаки наносят дополнительный урон и пронзают вражеские цели. Урон от пронзающих выстрелов уменьшается на ${marksmanshipDamageReduction}% за каждую последующую цель.`,
-        cz: `Flin zvýší své soustředění na útok a po dobu ${marksmanshipDuration} nebo pro další ${FlinAbilityData.MARKSMANSHIP_STACKS} zásahy flin způsoby bonusové poškození a jeho šípy budou přecházet přes nepřátelské jednotky. Pokažde ak šip prejde přes nepřátelsku jednotku, poškození se sniží o ${marksmanshipDamageReduction}%`,
-        zh: `弗林增加 ${marksmanshipDuration}他的集中力，並在接下來 ${FlinAbilityData.MARKSMANSHIP_STACKS}發基礎射擊造成額外傷害並貫穿敵方單位。每次貫穿擊中一個單位降低弓箭傷害${marksmanshipDamageReduction}%。`,
-        fr: `Flin augmente sa concentration pendant ${marksmanshipDuration}. Pendant cette période, ses prochaines ${FlinAbilityData.MARKSMANSHIP_STACKS} flèches infligeront des dégâts supplémentaires et traverseront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${marksmanshipDamageReduction}%.`,
-        vi: `Flin tăng tập trung trong ${marksmanshipDuration}. Trong thời gian này, ${FlinAbilityData.MARKSMANSHIP_STACKS} mũi tên tiếp theo của anh sẽ gây thêm sát thương và xuyên qua kẻ địch. Mỗi kẻ địch bị mũi tên xuyên qua giảm sát thương mũi tên ${marksmanshipDamageReduction}%.`,
-        id: `Flin meningkatkan fokusnya selama ${marksmanshipDuration}. Selama fokus, serangan berikutnya Flin akan memberikan kerusakan tambahan dan menembus unit musuh. Setiap unit yang terkena panah Flin akan mengurangi kerusakan panah sebesar ${marksmanshipDamageReduction}%.`,
+        en: `Flin increases his focus for ${marksmanshipDuration}. While focused, Flin gains bonus ${colorize(`${bonusAttackSpeed}% attack speed`)}, and his next ${FlinAbilityData.MARKSMANSHIP_STACKS} arrows will deal additional damage and pierce enemy units. Every unit hit by Flin's piercing arrows reduces the arrow's damage by ${marksmanshipDamageReduction}%.`,
+        br: `Flin aumenta seu foco por ${marksmanshipDuration}. Enquanto focado, Flin ganha ${colorize(`${bonusAttackSpeed}% de velocidade de ataque`)}, e suas próximas ${FlinAbilityData.MARKSMANSHIP_STACKS} flechas causarão dano adicional e perfurarão unidades inimigas. Cada unidade atingida pelas flechas de Flin reduz o dano da flecha em ${marksmanshipDamageReduction}%.`,
+        ru: `Флин увеличивает свою концентрацию на ${marksmanshipDuration}. Пока он сосредоточен, Флин получает бонус ${colorize(`${bonusAttackSpeed}% к скорости атаки`)}, и его следующие ${FlinAbilityData.MARKSMANSHIP_STACKS} стрелы наносят дополнительный урон и пронзают вражеские юниты. Каждая юнита, пораженная стрелами Флина, уменьшает урон стрел на ${marksmanshipDamageReduction}%.`,
+        cz: `Flin zvyšuje svůj záměr na ${marksmanshipDuration}. Během záměru získá bonus ${colorize(`${bonusAttackSpeed}% rychlosti útoku`)}, a jeho další ${FlinAbilityData.MARKSMANSHIP_STACKS} šípy způsobí dodatečné poškození a prorazí nepřátelské jednotky. Každá jednotka zasažená Flinovými průstřelnými šípy sníží poškození šípu o ${marksmanshipDamageReduction}%.`,
+        zh: `弗林提高他的专注力 ${marksmanshipDuration}。在专注时，弗林获得额外 ${colorize(`${bonusAttackSpeed}% 攻击速度`)}, 他的接下来的 ${FlinAbilityData.MARKSMANSHIP_STACKS} 箭矢将造成额外伤害并穿透敌方单位。每个被弗林穿透的单位会减少箭矢的伤害 ${marksmanshipDamageReduction}%.`,
+        fr: `Flin augmente sa concentration pendant ${marksmanshipDuration}. Pendant cette période, Flin gagne ${colorize(`${bonusAttackSpeed}% de vitesse d'attaque`)}, et ses ${FlinAbilityData.MARKSMANSHIP_STACKS} flèches suivantes infligeront des dégâts supplémentaires et perceront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${marksmanshipDamageReduction}%.`,
+        vi: `Flin tăng cường tập trung trong ${marksmanshipDuration}. Trong thời gian tập trung, Flin nhận được thêm ${colorize(`${bonusAttackSpeed}% tốc độ tấn công`)}, và ${FlinAbilityData.MARKSMANSHIP_STACKS} mũi tên tiếp theo của anh ấy sẽ gây thêm sát thương và xuyên qua các đơn vị địch. Mỗi đơn vị bị trúng tên xuyên của Flin sẽ giảm sát thương của mũi tên đi ${marksmanshipDamageReduction}%.`,
+        id: `Flin meningkatkan fokusnya selama ${marksmanshipDuration}. Saat fokus, Flin mendapatkan bonus ${colorize(`${bonusAttackSpeed}% kecepatan serangan`)}, dan ${FlinAbilityData.MARKSMANSHIP_STACKS} panah berikutnya akan memberikan kerusakan tambahan dan menembus unit musuh. Setiap unit yang terkena panah menembus Flin akan mengurangi kerusakan panah sebesar ${marksmanshipDamageReduction}%.`,
       }
     }
 
