@@ -916,7 +916,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'TẤT CẢ',
   },
   [LOCALE.CHAT_ALLIES]: {
-    en: 'ALLIES',
+    en: 'POOKIES',
     ru: 'СОЮЗНИКАМ',
     br: 'Grupo',
     cz: 'SPOJENCI',
@@ -1383,7 +1383,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'đã lấy',
   },
   [LOCALE.POPUP_DISCONNECTED]: {
-    en: "You've been disconected from the server, please refresh the page!",
+    en: "You've been disconnected from the server, please refresh the page!",
     ru: 'Потеряно соединение с сервером. Пожалуйста, обновите страницу!',
     br: 'Você foi desconectado do servidor, atualize a página!',
     cz: 'Nebylo možné navázat spojení s hrou. Obnovte webovou stránku.',
@@ -2210,7 +2210,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Tỷ lệ giao diện',
   },
   [LOCALE.CHAT_COMMAND_GLOBAL]: {
-    en: '/g <message> - send message in global chat, visible to all players',
+    en: '/g <message> - send a message through global chat, visible to players within the server you are currently in',
     ru: '/g <сообщение> - отправить сообщение всем игрокам в глобальном чате',
     br: '/g <mensagem> - enviar mensagem para todos os jogadores',
     cz: '/g <zpráva> - poslat zprávu všem hráčům',
