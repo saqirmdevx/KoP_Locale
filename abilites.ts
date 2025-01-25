@@ -143,7 +143,7 @@ const _getSpellDescriptionLang = (
         ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
         : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
 
-      const base_damage = getDamage(0, type, damage)
+      const base_damage = getDamage(SparrowAbilityData.DEMONICWRATH_AP_RATIO * abilityPower, type, damage)
       const percDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? Math.floor(
             (SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG +
@@ -154,6 +154,7 @@ const _getSpellDescriptionLang = (
 
       const healingReduction = fixed(ItemAbilityData.GRIVEOUS_WOUND * 100, 1)
       const healingReductionDuration = toSec(SparrowAbilityData.GROUND_SLAM_GRIVEOUS_WOUND_DURATION)
+      const scaling = getDamage()
 
       return {
         en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health). \n\nReduces healing by ${healingReduction}% for ${healingReductionDuration}.`,
