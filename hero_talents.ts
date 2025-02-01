@@ -1036,24 +1036,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier1_left: {
           title: {
             // Name for a debuff that destroy armor
-            en: 'Corrosive Curse',
-            ru: 'Едкое проклятие',
-            cz: 'Korozivní kletba',
-            zh: '腐蝕詛咒',
-            fr: 'Malédiction corrosive',
-            br: 'Maldição corrosiva',
-            vi: 'Lời Nguyền ăn mòn',
-            id: 'Kutukan Korosif',
-          },
-          description: {
-            en: `Seer's passive ability now also adjusts armor, reducing it for enemies and increasing it for allies by ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} per stack.`,
-            ru: `Пассивный эффект Провидца теперь также изменяет броню, уменьшая её для врагов и увеличивая для союзников на ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} за заряд.`,
-            cz: `Pasivní schopnost Seera nyní také upravuje brnění, snižuje ho pro nepřátele a zvyšuje pro spojence o ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} za stack.`,
-            zh: `先知的被动技能现在也调整护甲，每层减少敌人的护甲并增加盟友的护甲 ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER}。`,
-            fr: `La capacité passive du Voyant ajuste désormais également l'armure, la réduisant pour les ennemis et l'augmentant pour les alliés de ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} par stack.`,
-            br: `A habilidade passiva de Seer agora também ajusta a armadura, reduzindo para inimigos e aumentando para aliados em ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} por stack.`,
-            vi: `Khả năng passives của Seer giờ cũng điều chỉnh giáp, giảm cho kẻ thù và tăng cho đồng minh ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} mỗi stack.`,
-            id: `Kemampuan pasif Seer sekarang juga menyesuaikan armor, mengurangi untuk musuh dan meningkatkan untuk sekutu sebesar ${SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_ARMOR_MODIFIER} per stack.`,
+            en: `Abilites applies +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
+            ru: `Способности накладывают +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} заряд`,
+            cz: `Schopnosti aplikují +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
+            zh: `技能附加 +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} 层`,
+            fr: `Les compétences appliquent +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
+            br: `Habilidades aplicam +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
+            vi: `Khả năng áp dụng +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
+            id: `Kemampuan menerapkan +${SeerAbilityData.TALENT_T1_LEFT_BONUS_STACK_ON_K} stack`,
           },
         },
         tier1_right: {

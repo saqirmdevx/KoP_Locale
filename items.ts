@@ -253,17 +253,17 @@ const _getLocaleItemDescription = (
           id: 'Tongkat Sihir',
         },
       }
-    case ItemList.Ring_Of_Regeneration:
+    case ItemList.Ring_Of_Power:
       return {
         name: {
-          en: 'Ring of Regeneration',
-          ru: 'Кольцо регенерации',
-          br: 'Anel da Regeneração',
-          cz: 'Prsten Regenerace',
-          fr: 'Anneau de régénération',
-          zh: '再生手環',
-          vi: 'Nhẫn Tái Sinh',
-          id: 'Cincin Regenerasi',
+          en: 'Ring of Power',
+          ru: 'Кольцо силы',
+          br: 'Anel do Poder',
+          cz: 'Prsten Moci',
+          fr: 'Anneau de puissance',
+          zh: '力量戒指',
+          vi: 'Nhẫn Sức Mạnh',
+          id: 'Cincin Kekuatan',
         },
       }
     case ItemList.Ring_Of_Time:
@@ -597,44 +597,14 @@ const _getLocaleItemDescription = (
           id: 'Pedang Kaisar Beku',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack of physical frost on the enemy, slowing them by ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } per stack. At ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
-          ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } за каждый стак. При ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } стаках, врага поражает Ледяное Проклятие - ${getFrigidCurseDescription()}.`,
-          br: `Seus ataques básicos aplicam uma pilha de gelo físico no inimigo, diminuindo a velocidade deles em ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } por pilha. Em ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } pilhas, o inimigo é atingido pela Maldição Gélida - ${getFrigidCurseDescription()}.`,
-          fr: `Vos attaques de base appliquent une pile de gel physique sur l'ennemi qui les ralentit de ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } par pile. À ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
-          zh: `你的基本攻擊地敵人造成物理結霜疊加，每層減速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } 層時，敵人會受到寒冰詛咒 - ${getFrigidCurseDescription()}`,
-          cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } za každý stack. Při ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } stackách je nepřítel postižen Ledovým prokletím - ${getFrigidCurseDescription()}.`,
-          vi: `Các đòn tấn công cơ bản của bạn áp dụng một cục băng vật lý lên kẻ địch, làm chậm lại họ ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } mỗi cục. Ở ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } cục, kẻ địch bị Trừng Phạt Lạnh - ${getFrigidCurseDescription()}.`,
-          id: `Serangan Dasar Anda menerapkan tumpukan es fisik pada musuh, melambatkan mereka sebesar ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } per tumpukan. Pada ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } tumpukan, musuh terkena Kutukan Dingin - ${getFrigidCurseDescription()}.`,
+          en: `Your Basic Attacks applies a Frigid Curse on the enemy target - ${getFrigidCurseDescription()}.`,
+          ru: `Ваши базовые атаки накладывают Ледяное Проклятие на цель - ${getFrigidCurseDescription()}.`,
+          br: `Seus ataques básicos aplicam uma Maldição Gélida no alvo inimigo - ${getFrigidCurseDescription()}.`,
+          fr: `Vos attaques de base appliquent une Malédiction glaciale à la cible ennemie - ${getFrigidCurseDescription()}.`,
+          zh: `你的基本攻击对敌人目标施加了寒冷诅咒 - ${getFrigidCurseDescription()}.`,
+          cz: `Tvoje základní útoky aplikují na cílový nepřítel Zmrzlou kletbu - ${getFrigidCurseDescription()}.`,
+          vi: `Đòn đánh cơ bản của bạn áp dụng Lời Nguyền Lạnh lẽo lên mục tiêu địch - ${getFrigidCurseDescription()}.`,
+          id: `Serangan Dasar Anda menerapkan Kutukan Dingin pada target musuh - ${getFrigidCurseDescription()}.`,
         },
       }
     case ItemList.Corrupted_Light_Slayer:
