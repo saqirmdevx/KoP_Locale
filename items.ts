@@ -253,17 +253,17 @@ const _getLocaleItemDescription = (
           id: 'Tongkat Sihir',
         },
       }
-    case ItemList.Ring_Of_Regeneration:
+    case ItemList.Ring_Of_Power:
       return {
         name: {
-          en: 'Ring of Regeneration',
-          ru: 'Кольцо регенерации',
-          br: 'Anel da Regeneração',
-          cz: 'Prsten Regenerace',
-          fr: 'Anneau de régénération',
-          zh: '再生手環',
-          vi: 'Nhẫn Tái Sinh',
-          id: 'Cincin Regenerasi',
+          en: 'Ring of Power',
+          ru: 'Кольцо силы',
+          br: 'Anel do Poder',
+          cz: 'Prsten Mocy',
+          fr: 'Anneau de pouvoir',
+          zh: '力量手環',
+          vi: 'Nhẫn Quyền Lực',
+          id: 'Cincin Daya',
         },
       }
     case ItemList.Ring_Of_Time:
