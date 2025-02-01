@@ -2049,18 +2049,18 @@ const getIronRodOrHarpoonDescription = (tier2 = false) => {
 }
 
 const getFrigidCurseDescription = () => {
-  const healingReduction = fixed(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100, 1)
-  const duration = toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)
+  const healingReduction = fixed(ItemAbilityData.FRIGID_CURSE_HEALING_REDUCTION * 100, 1)
+  const duration = toSec(ItemAbilityData.FRIGID_CURSE_DURATION)
 
   const text: { [key: string]: string } = {
-    en: `Reduces Movement Speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduces all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
-    ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
-    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
-    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
-    zh: `降低移動速度 ${ItemAbilityData.FRIGIT_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
-    cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
-    vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGIT_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và tái tạo bởi ${healingReduction}% trong ${duration}`,
-    id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGIT_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
+    en: `Reduces Movement Speed by ${ItemAbilityData.FRIGID_CURSE_SLOW} and reduces all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
+    ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGID_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
+    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGID_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
+    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGID_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
+    zh: `降低移動速度 ${ItemAbilityData.FRIGID_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
+    cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGID_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
+    vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGID_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và tái tạo bởi ${healingReduction}% trong ${duration}`,
+    id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGID_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
