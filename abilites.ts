@@ -143,7 +143,6 @@ const _getSpellDescriptionLang = (
         ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
         : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
 
-      const base_damage = getDamage(SparrowAbilityData.DEMONICWRATH_AP_RATIO * abilityPower, type, damage)
       const percDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? Math.floor(
             (SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG +
@@ -153,14 +152,14 @@ const _getSpellDescriptionLang = (
         : Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100)
 
       return {
-        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${base_damage} (plus a bonus ${percDamage}% of target's missing health). `,
-        ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${base_damage} (плюс бонус ${percDamage}% от потерянного здоровья цели). `,
-        cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${base_damage} (plus bonus ${percDamage}% ztraceného zdraví cíle).`,
-        br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${base_damage} (mais um bônus de ${percDamage}% da vida perdida do alvo). `,
-        zh: `史佩羅釋放出惡魔的力量，從她的劍中發射出一道腐敗的波浪，造成 ${base_damage} (再加上目標失去生命值的 ${percDamage}%)。 `,
-        fr: `Sparrow libère la puissance des démons, lançant une vague corrompue de son épée, infligeant ${base_damage} (plus un bonus de ${percDamage}% de la vie manquante de la cible). `,
-        vi: `Sparrow giải phóng sức mạnh của quỷ dữ, tung ra một làn sóng tà ác từ thanh kiếm của cô ấy, gây ${base_damage} (cộng thêm ${percDamage}% lượng máu đã mất của mục tiêu). `,
-        id: `Sparrow melepaskan kekuatan iblis, meluncurkan gelombang korupsi dari pedangnya, memberikan ${base_damage} (ditambah bonus ${percDamage}% dari kesehatan yang hilang target).`,
+        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${damage} (plus a bonus ${percDamage}% of target's missing health). `,
+        ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${damage} (плюс бонус ${percDamage}% от потерянного здоровья цели). `,
+        cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${damage} (plus bonus ${percDamage}% ztraceného zdraví cíle).`,
+        br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${damage} (mais um bônus de ${percDamage}% da vida perdida do alvo). `,
+        zh: `史佩羅釋放出惡魔的力量，從她的劍中發射出一道腐敗的波浪，造成 ${damage} (再加上目標失去生命值的 ${percDamage}%)。 `,
+        fr: `Sparrow libère la puissance des démons, lançant une vague corrompue de son épée, infligeant ${damage} (plus un bonus de ${percDamage}% de la vie manquante de la cible). `,
+        vi: `Sparrow giải phóng sức mạnh của quỷ dữ, tung ra một làn sóng tà ác từ thanh kiếm của cô ấy, gây ${damage} (cộng thêm ${percDamage}% lượng máu đã mất của mục tiêu). `,
+        id: `Sparrow melepaskan kekuatan iblis, meluncurkan gelombang korupsi dari pedangnya, memberikan ${damage} (ditambah bonus ${percDamage}% dari kesehatan yang hilang target).`,
       }
     }
 
