@@ -203,14 +203,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Icicle Bolt freeze +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            ru: `+${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)} сек. к обездвиживанию Сосулек`,
-            cz: `Icicle Bolt zmrazení +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            zh: `寒冰飛箭凍結 +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}秒`,
-            fr: `Gel de glace +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            br: `Gelo do Pico +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            vi: `Đóng băng Icicle Bolt +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
-            id: `Icicle Bolt membekukan +${toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)}s`,
+            en: `Icicle Bolt freeze +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            ru: `+${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)} сек. к обездвиживанию Сосулек`,
+            cz: `Icicle Bolt zmrazení +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            zh: `寒冰飛箭凍結 +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}秒`,
+            fr: `Gel de glace +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            br: `Gelo do Pico +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            vi: `Đóng băng Icicle Bolt +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            id: `Icicle Bolt membekukan +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
           },
         },
         tier2_right: {

@@ -219,11 +219,11 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     ru: ' - Наберите 15 очков менее чем за 5 минут, чтобы победить\n - Убийства: 1 очко, Золотая руна: 3 очка, Башня: 6 очков\n - На 50% меньше получаемого опыта и монет',
     cz: ' - Získejte 15 bodů za méně než 5 minut pro výhru\n - Zabití: 1 bod, Zlatá runa: 3 body, Věž: 6 bodů\n - o 50% méně zkušeností a mincí',
     zh: ' - 在5分鐘内得15分獲勝\n - 擊殺：1分，黃金符文：3分，城池：6分\n - 减少 50% 的經驗值和金幣',
-    fr: " - Marquez 15 points en moins de 5 minutes pour gagner\n - Tués: 1 point, Rune d\'or: 3 points, Tour: 6 points\n - 50% d'expérience et de pièces en moins",
+    fr: " - Marquez 15 points en moins de 5 minutes pour gagner\n - Tués: 1 point, Rune d'or: 3 points, Tour: 6 points\n - 50% d'expérience et de pièces en moins",
     br: ' - Ao fazer 15 pontos em menos de 5 minutos, sua equipe vence\n - Abates: 1 ponto, Runa de Ouro: 3 pontos e Torre: 6 pontos\n - 50% menos experiência e moedas',
     vi: ' - Đạt 15 điểm trong vòng dưới 5 phút để chiến thắng\n - Hạ gục: 1 điểm, Runa Vàng: 3 điểm, Tháp: 6 điểm\n - 50% ít kinh nghiệm và xu',
     id: ' - Kumpulkan 15 poin dalam waktu kurang dari 5 menit untuk menang\n - Membunuh: 1 poin, Rune Emas: 3 poin, Menara: 6 poin\n - 50% kurang pengalaman dan koin',
-  }, 
+  },
   [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 25% less experience and coins',
     ru: ' - Награды: опыт и монеты\n - На 25% меньше получаемого опыта и монет',

@@ -1370,8 +1370,6 @@ const _getLocaleItemDescription = (
     }
     case ItemList.Kirins_Defender: {
       const duration = toSecRaw(ItemAbilityData.KIRINS_DEFENDER_DURATION)
-      const cooldown = toSecRaw(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN)
-      const magicDefense = calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)
 
       return {
         name: {
@@ -1385,14 +1383,14 @@ const _getLocaleItemDescription = (
           id: 'Pertahanan Kirin',
         },
         desc: {
-          en: `Upon getting hit by any Crowd Control effect, block that effect. Successfully blocking increases Magic Resistance by ${magicDefense} for ${duration} Seconds.`,
-          br: `Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${cooldown} seg, se o bloqueio for bem sucedido, fornecer ${magicDefense} de resistência mágica por ${duration} seg.`,
-          ru: `Блокирует любой эффект контроля каждые ${cooldown} сек. Успешный блок повышает ваше Сопротивление магии на  ${magicDefense} на ${duration} сек.`,
-          zh: `被群體控制效果擊中時，阻擋其效果。成功阻擋時增加 ${duration}秒魔法抗性 ${magicDefense}。`,
-          cz: `Po zásahu jakýmkoli efektem kontroly davu blokuje tento efekt. Úspěšné blokování zvyšuje odolnost proti magii o ${magicDefense} po dobu ${duration} sekund.`,
-          fr: `Bloque le prochain effet de contrôle de foule une fois toutes les ${cooldown} sec. Si le blocage réussit, augmente la résistance magique de ${magicDefense} pour ${duration} sec.`,
-          vi: `Khi bị tác động bởi bất kỳ hiệu ứng Kiểm soát Tập trung nào, chặn hiệu ứng đó. Chặn thành công tăng Kháng Phép lên ${magicDefense} trong ${duration} Giây.`,
-          id: `Setiap kali terkena efek Crowd Control, blokir efek tersebut. Berhasil memblokir meningkatkan Ketahanan Sihir sebesar ${magicDefense} selama ${duration} Detik.`,
+          en: `Upon getting hit by any Crowd Control effect, fully blocks the crowd control effect and makes the carrier immune to all CCs for ${duration} Seconds.`,
+          ru: `При получении урона от любого эффекта контроля толпы блокирует его и делает владельца невосприимчивым ко всем эффектам контроля толпы на ${duration} секунд.`,
+          br: `Ao ser atingido por qualquer efeito de Controle de Multidão, bloqueia o efeito de controle de multidão e torna o portador imune a todos os Efeitos de Controle de Multidão por ${duration} seg.`,
+          fr: `Lorsqu'il est touché par un effet de contrôle de foule, bloque complètement l'effet de contrôle de foule et rend le porteur immunisé contre tous les effets de contrôle de foule pendant ${duration} sec.`,
+          zh: `受到任何群控效果的打擊時，完全阻止群控效果並使攜帶者對所有群控免疫 ${duration} 秒。`,
+          cz: `Po zasažení jakýmkoli efektem kontroly davu plně blokuje tento efekt a činí nositele imunní vůči všem efektům kontroly davu po dobu ${duration} sekund.`,
+          vi: `Khi bị bất kỳ hiệu ứng Kiểm Soát Đám Đông nào, hoàn toàn chặn hiệu ứng kiểm soát đám đông và khiến người mang miễn dịch với tất cả các hiệu ứng Kiểm Soát Đám Đông trong ${duration} Giây.`,
+          id: `Setelah terkena efek Crowd Control apa pun, sepenuhnya memblokir efek crowd control dan membuat pemilik kebal terhadap semua Crowd Control selama ${duration} Detik.`,
         },
       }
     }
@@ -1561,36 +1559,28 @@ const _getLocaleItemDescription = (
         desc: getNimbleBowDescription(),
       }
     }
-    case ItemList.Berserker_Ring: {
-      const attackSpeed = fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100, 1)
+    case ItemList.Tenacity_Ring: {
+      const reductionTime = fixed(ItemAbilityData.TENACITY_RING_CC_REDUCTION * 100, 1)
       return {
         name: {
-          en: 'Berserker Ring',
-          br: 'Anel do Lutador',
-          ru: 'Кольцо берсерка',
-          zh: '狂戰士手環',
-          cz: 'Prsten berserka',
-          fr: 'Anneau de berserker',
-          vi: 'Nhẫn Chiến Binh',
-          id: 'Cincin Berserker',
+          en: 'Tenacity Ring',
+          ru: 'Кольцо стойкости',
+          br: 'Anel da Tenacidade',
+          zh: '韌性戒指',
+          cz: 'Prsten odolnosti',
+          fr: 'Anneau de ténacité',
+          vi: 'Nhẫn Sức Mạnh',
+          id: 'Cincin Kekuatan',
         },
         desc: {
-          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen and ${attackSpeed}% Attack Speed for ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times.`,
-          ru: `При получении урона вы получаете стак Берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья и ${attackSpeed}% скорости атаки на ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)} сек.
-          \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
-          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida e ${attackSpeed}% de Velocidade de Ataque por ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes.`,
-          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${attackSpeed}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Empilez jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois.`,
-          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層使你獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN}回血速度和 ${attackSpeed}%攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
-          \n 最多可疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
-          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${attackSpeed}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Maximální počet stacků: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
-          vi: `Khi bạn nhận sát thương, bạn sẽ nhận một tấm Sức Bền Chiến Binh. Đối với mỗi tấm, bạn nhận ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} hồi máu và ${attackSpeed}% Tốc Độ Tấn Công trong ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Tối đa ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} lần.`,
-          id: `Ketika Anda menerima kerusakan, Anda akan mendapatkan tumpukan Ketahanan Berserker. Untuk setiap tumpukan, Anda mendapatkan ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerasi kesehatan dan ${attackSpeed}% Kecepatan Serangan selama ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Maksimal ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} kali.`,
+          en: `Reduce duration of all negative effects by ${reductionTime}%.`,
+          ru: `Уменьшает длительность всех негативных эффектов на ${reductionTime}%.`,
+          br: `Reduz a duração de todos os efeitos negativos em ${reductionTime}%.`,
+          zh: `減少所有負面效果的持續時間 ${reductionTime}%。`,
+          cz: `Sníží dobu trvání všech negativních efektů o ${reductionTime}%.`,
+          fr: `Réduit la durée de tous les effets négatifs de ${reductionTime}%.`,
+          vi: `Giảm thời gian của tất cả các hiệu ứng tiêu cực đi ${reductionTime}%.`,
+          id: `Mengurangi durasi semua efek negatif sebesar ${reductionTime}%.`,
         },
       }
     }
