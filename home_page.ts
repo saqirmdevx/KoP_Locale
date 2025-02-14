@@ -374,4 +374,14 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: 'Mục hoạt động',
     id: 'Item Aktif',
   },
+  [LOCALE.CURRENT_SEASON]: {
+    en: 'Ongoing Season {} ends in ',
+    ru: 'Текущий сезон {} заканчивается через ',
+    br: 'Temporada atual {} termina em ',
+    cz: 'Probíhající sezóna {} končí za ',
+    zh: '正在进行的第 {} 季将在 ',
+    fr: 'La saison en cours {} se termine dans ',
+    vi: 'Mùa hiện tại {} kết thúc trong ',
+    id: 'Musim {} berakhir dalam ',
+  },
 }
