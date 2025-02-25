@@ -552,13 +552,11 @@ const _getSpellDescriptionLang = (
     /** Kira  */
     case SpellList.KIRA_AUTOATTACK: {
       const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const healingMod = KiraAbilityData.ENHANCED_ATTACK_HEALING_MOD
 
       const enh_damage_heal = getDamage(
-        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower * healingMod,
+        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.HEAL,
-        (KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)) *
-          healingMod
+        KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
       )
       const bonusAttackSpeed = fixed(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100, 1)
 
