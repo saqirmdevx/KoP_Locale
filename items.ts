@@ -1059,6 +1059,38 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodOrHarpoonDescription() },
       }
+    case ItemList.EnchantedSpear:
+        const leechMod = fixed(ItemAbilityData.ENCHANTED_SPEAR_AP_MOD * 100, 1)
+        return {
+          name: {
+            en: 'Enchanted Spear',
+            ru: 'Зачарованная лук',
+            br: 'Lança Encantada',
+            fr: 'Lance enchante',
+            zh: '魔法矛',
+            cz: 'Začarovaná luka',
+            vi: 'Móc Phép Thuật',
+            id: 'Pisau Enchanter',
+          },
+          desc: {
+            br: `Seus ataques causam (+ ${leechMod}% of ability power) de dano mágico.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            en: `Your attacks deal (+ ${leechMod}% of ability power) magic damage.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            fr: `Vos attaques infligent (+ ${leechMod}% de la puissance de l'abilité) de dano mágico.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            ru: `Ваши атаки наносят (+ ${leechMod}% силы способности) магического урона.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            zh: `你的攻击造成(+ ${leechMod}%的技能能力)魔法伤害。` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            cz: `Vasí atacky následují (+ ${leechMod}% silu schopnosti) magická obrazovitost.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            vi: `Các tập lý cơ hội cơ bản (+ ${leechMod}% cơ hội cơ bản) đánh bài phép thuật.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+            id: `Serangan Anda menimbulkan (+ ${leechMod}% dari kekuatan kemampuan) serangan magis.` +
+            '\n' + getIronRodOrHarpoonDescription(),
+          },
+        }
     case ItemList.Magic_Harpoon: {
       return {
         name: {
@@ -1639,6 +1671,32 @@ const _getLocaleItemDescription = (
       }
     }
 
+    case ItemList.DivineArmor: {
+      const duration = toSecRaw(ItemAbilityData.DIVINE_ARMOR_DURATION)
+      return {
+        name: {
+          en: "Divine Armor",
+          ru: "Божественная броня",
+          br: "Armadura Divina",
+          zh: "神聖鎧甲",
+          cz: "Božské brnění",
+          fr: "Armure Divine",
+          vi: "Giáp Thần Thánh",
+          id: "Baju Zirah Ilahi",
+        },
+        desc: {
+          en: `Reduces all incoming damage to allies by ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% for ${duration} Seconds.`,
+          ru: `Снижает весь входящий урон для союзников на ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% в течение ${duration} сек.`,
+          br: `Reduz todo o dano recebido pelos aliados em ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% por ${duration} seg.`,
+          zh: `為所有盟友減少 ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% 的傷害，持續 ${duration} 秒。`,
+          cz: `Snižuje veškeré příchozí poškození spojenců o ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% po dobu ${duration} sekund.`,
+          fr: `Réduit tous les dégâts subis par les alliés de ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% pendant ${duration} secondes.`,
+          vi: `Giảm ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% sát thương nhận vào cho tất cả đồng minh trong ${duration} Giây.`,
+          id: `Mengurangi semua kerusakan yang diterima oleh sekutu sebesar ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% selama ${duration} Detik.`,
+        },
+      }
+    }
+
     case ItemList.Titans_Armor: {
       const duration = toSecRaw(ItemAbilityData.TITAN_ARMOR_DURATION)
       return {
@@ -1990,6 +2048,156 @@ const _getLocaleItemDescription = (
         },
       }
     }
+    
+    case ItemList.Vampiric_Armor: {
+      const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_REFLECT * 100, 1)
+      return {
+        name: {
+          en: 'Vampiric Armor',
+          ru: 'Вампирическая броня',
+          br: 'Armadura Vampírica',
+          fr: 'Armure vampirique',
+          zh: '吸血護甲',
+          cz: 'Vampírní zbroj',
+          vi: 'Giáp Vampie',
+          id: 'Perisai Vampir',
+        },
+        desc: {
+          en: `For ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} seconds, converts ${value}% of damage taken back to health.`,
+          ru: `На ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} сек. переводит ${value}% урона в здоровье.`,
+          br: `Por ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} seg, converte ${value}% do dano recebido em vida.`,
+          fr: `Pendant ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} sec, convertit ${value}% des dégâts reçus en santé.`,
+          zh: `在 ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} 秒内，将 ${value}% 受到的傷害轉化為血量。`,
+          cz: `Po dobu ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} sekund odrazí ${value}% poškození zpět na zdraví.`,
+          vi: `Trong ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)}, chuyển ${value}% sát thương nhận được trên sức khỏe.`,
+
+        },
+      }
+    }
+
+    case ItemList.MoltenShield: {
+      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2);
+      return {
+        name: {
+          en: 'Molten Shield',
+          ru: 'Огненный щит',
+          br: 'Escudo Queimado',
+          cz: 'Pohledové schity',
+          zh: '炽热之盾',
+          fr: 'Bouclier flamboyant',
+          vi: 'Bao tay nhá',
+          id: 'Pisau Melting',
+        },
+        desc: {
+          br: `Cause dano mágico equivalente a ${hpPercent}% de sua vida máxima por segundo aos seus inimigos próximos.`,
+          cz: `Zpomalí ${hpPercent}% zdraví v sekundovych intervalech.`,
+          en: `Cause magic damage equivalent to ${hpPercent}% of your maximum health per second to nearby enemies.`,
+          ru: `Наносит магический урон эквивалентный ${hpPercent}% вашего максимального здоровья в секунду.`,
+          zh: `每秒对附近敌人造成 ${hpPercent}% 最大生命值的魔法伤害。`,
+          fr: `Inflige des dés de magie equivalent aux ${hpPercent}% de votre vie maximale par seconde.`,
+          vi: `Sinh lẻnh mạng ${hpPercent}% trong giáp nhá trong giáp nhá`,
+          id: `Menyerang musuh sekitar dengan serangan magis ${hpPercent}% darah maksimum Anda per detik.`,
+        },
+      }
+    }
+
+    case ItemList.ChronosShield: {
+      const threshold = fixed(ItemAbilityData.CHRONOS_SHIELD_THRESHOLD * 100, 1)
+      return {
+        name: {
+          en: 'Chronos Shield',
+          ru: 'Щит Хроноса',
+          br: 'Escudo Chronos',
+          cz: 'Chronosovský štít',
+          zh: '克洛诺之盾',
+          fr: 'Bouclier Chronos',
+          vi: 'Khiên Chronos',
+          id: 'Perisai Chronos',
+        },
+        desc: {
+          br: `Ao receber dano de jogadores e cair abaixo de ${threshold}% de Vida, zera o cooldown de todas as habilidades.`,
+          cz: `Při obdržení poškození od hráčů a poklesu pod ${threshold}% zdraví se obnoví časovače všech schopností.`,
+          en: `When taking damage from players and falling below ${threshold}% health, resets all ability cooldowns.`,
+          ru: `При получении урона от игроков и падении ниже ${threshold}% здоровья, сбрасываются все перезарядки способностей.`,
+          zh: `当受到玩家伤害且生命值降至低于 ${threshold}% 时，所有技能的冷却时间将被重置。`,
+          fr: `Lorsqu'il subit des dégâts de la part des joueurs et que sa santé tombe en dessous de ${threshold}%, tous les temps de recharge des compétences sont réinitialisés.`,
+          vi: `Khi nhận sát thương từ người chơi và máu giảm xuống dưới ${threshold}%, thời gian hồi chiêu của tất cả kỹ năng sẽ được đặt lại.`,
+          id: `Saat menerima kerusakan dari pemain dan kesehatan turun di bawah ${threshold}%, semua waktu cooldown kemampuan di-reset.`,
+        },
+      }
+    }
+
+    case ItemList.VoidSword: {
+      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1);
+      const radius = ItemAbilityData.VOID_SWORD_RADIUS;
+      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED;
+      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED;
+    
+      return {
+        name: {
+          en: "Void Sword",
+          ru: "Меч Пустоты",
+          br: "Espada do Vazio",
+          cz: "Meč prázdnoty",
+          zh: "虚空之剑",
+          fr: "Épée du Néant",
+          vi: "Kiếm Hư Vô",
+          id: "Pedang Void",
+        },
+        desc: {
+          en: `Channel the void with this sword to create an aura lasting ${duration} seconds in a radius of ${radius} units. Allies gain +${movespeed} movement speed and +${attackspeed} attack speed, while enemies suffer reductions in these stats.`,
+          ru: `Используйте Меч Пустоты, чтобы создать ауру длительностью ${duration} сек. и радиусом ${radius} единиц. Союзники получают +${movespeed} скорости передвижения и +${attackspeed} скорости атаки, а враги – снижение этих показателей.`,
+          br: `Canalize o vazio com esta espada para criar uma aura que dura ${duration} segundos, com um raio de ${radius} unidades. Aliados ganham +${movespeed} de velocidade de movimento e +${attackspeed} de velocidade de ataque, enquanto inimigos sofrem redução nesses atributos.`,
+          cz: `Využijte Meč prázdnoty k vytvoření aury trvající ${duration} sekundy v poloměru ${radius} jednotek. Spojenci získají +${movespeed} rychlosti pohybu a +${attackspeed} rychlosti útoku, zatímco nepřátelé mají tyto statistiky snížené.`,
+          zh: `使用虚空之剑释放光环，持续 ${duration} 秒，半径 ${radius} 单位。友军获得 +${movespeed} 移动速度和 +${attackspeed} 攻击速度`,
+          fr: `Canalisez le néant avec cette épée pour créer une aura durant ${duration} secondes dans un rayon de ${radius} unités. Les alliés gagnent +${movespeed} en vitesse de déplacement et +${attackspeed} en vitesse d’attaque, tandis que les ennemis voient ces statistiques réduites.`,
+          vi: `Khai thác sức mạnh của hư vô với Kiếm Hư Vô để tạo ra hiệu ứng aura kéo dài ${duration} giây với bán kính ${radius} đơn vị. Đồng minh nhận được +${movespeed} tốc độ di chuyển và +${attackspeed} tốc độ tấn công, trong khi kẻ địch bị giảm các chỉ số này.`,
+          id: `Salurkan kekuatan kekosongan dengan Pedang Void untuk menciptakan aura selama ${duration} detik dalam radius ${radius} unit. Sekutu mendapatkan tambahan +${movespeed} kecepatan gerak dan +${attackspeed} kecepatan serang, sedangkan musuh mengalami penurunan statistik tersebut.`,
+        },
+      }
+    }
+
+    case ItemList.ChronosSword: {
+      return {
+        name: {
+          en: 'Chronos Sword',
+          ru: 'Меч Хроноса',
+          br: 'Espada Chronos',
+          cz: 'Chronosovské mечy',
+          zh: '克洛诺之剑',
+          fr: 'Epee Chronos',
+          vi: 'Bao tay Chronos',
+          id: 'Pisau Chronos',
+        },
+        desc: {
+          en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} seconds. Tripled on critical hits.`,
+          ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} сек. Утраивается при критическом ударе.`,
+          br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} segundos. Triplica em acertos críticos.`,
+          fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} secondes. Triplé en cas de coup critique.`,
+          zh: `每次普通攻击命中减少技能冷却 ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} 秒，暴击时效果提升三倍。`,
+          cz: `Každý základní útok zkrátí přestávky schopností o ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} sekund. Při kritickém zásahu trojnásobně.`,
+          vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} giây. Gấp ba nếu chí mạng.`,
+          id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} detik. Menjadi tiga kali lipat saat serangan kritikal.`,
+        },
+      }
+    }
+
     default:
       return {
         name: { en: '' },
