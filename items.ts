@@ -1059,38 +1059,55 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodOrHarpoonDescription() },
       }
-    case ItemList.EnchantedSpear:
-        const leechMod = fixed(ItemAbilityData.ENCHANTED_SPEAR_AP_MOD * 100, 1)
-        return {
-          name: {
+      case ItemList.EnchantedSpear:
+    const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
+    return {
+        name: {
             en: 'Enchanted Spear',
-            ru: 'Зачарованная лук',
+            ru: 'Зачарованное копьё',
             br: 'Lança Encantada',
-            fr: 'Lance enchante',
+            fr: 'Lance enchantée',
             zh: '魔法矛',
-            cz: 'Začarovaná luka',
-            vi: 'Móc Phép Thuật',
-            id: 'Pisau Enchanter',
-          },
-          desc: {
-            br: `Seus ataques causam (+ ${leechMod}% of ability power) de dano mágico.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            en: `Your attacks deal (+ ${leechMod}% of ability power) magic damage.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            fr: `Vos attaques infligent (+ ${leechMod}% de la puissance de l'abilité) de dano mágico.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            ru: `Ваши атаки наносят (+ ${leechMod}% силы способности) магического урона.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            zh: `你的攻击造成(+ ${leechMod}%的技能能力)魔法伤害。` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            cz: `Vasí atacky následují (+ ${leechMod}% silu schopnosti) magická obrazovitost.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            vi: `Các tập lý cơ hội cơ bản (+ ${leechMod}% cơ hội cơ bản) đánh bài phép thuật.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-            id: `Serangan Anda menimbulkan (+ ${leechMod}% dari kekuatan kemampuan) serangan magis.` +
-            '\n' + getIronRodOrHarpoonDescription(),
-          },
-        }
+            cz: 'Okouzlené kopí',
+            vi: 'Thương Phép Thuật',
+            id: 'Tombak Ajaib',
+        },
+        desc: {
+            en: 
+                `If a target is at or below ${executionThreshold}% health, any Magic Damage will instantly execute it.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            ru: 
+                `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            br: 
+                `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            fr: 
+                `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            zh: 
+                `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            cz: 
+                `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            vi: 
+                `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            id: 
+                `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+        },
+    }
+  
     case ItemList.Magic_Harpoon: {
       return {
         name: {
@@ -2050,7 +2067,7 @@ const _getLocaleItemDescription = (
     }
     
     case ItemList.Vampiric_Armor: {
-      const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_REFLECT * 100, 1)
+      const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_ABSORPTION * 100, 1)
       return {
         name: {
           en: 'Vampiric Armor',
@@ -2063,14 +2080,14 @@ const _getLocaleItemDescription = (
           id: 'Perisai Vampir',
         },
         desc: {
-          en: `For ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} seconds, converts ${value}% of damage taken back to health.`,
-          ru: `На ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} сек. переводит ${value}% урона в здоровье.`,
-          br: `Por ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} seg, converte ${value}% do dano recebido em vida.`,
-          fr: `Pendant ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} sec, convertit ${value}% des dégâts reçus en santé.`,
-          zh: `在 ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} 秒内，将 ${value}% 受到的傷害轉化為血量。`,
-          cz: `Po dobu ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)} sekund odrazí ${value}% poškození zpět na zdraví.`,
-          vi: `Trong ${toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)}, chuyển ${value}% sát thương nhận được trên sức khỏe.`,
-
+          en: `Your attacks absorb damage dealt, converting ${value}% of damage inflicted into health.`,
+          ru: `Ваши атаки поглощают нанесённый урон, превращая ${value}% от нанесённого урона в здоровье.`,
+          br: `Seus ataques absorvem o dano causado, convertendo ${value}% do dano infligido em vida.`,
+          fr: `Vos attaques absorbent les dégâts infligés, convertissant ${value}% des dégâts causés en santé.`,
+          zh: `你的攻击吸收造成的伤害，将造成的伤害的${value}%转化为生命值。`,
+          cz: `Vaše útoky pohlcují způsobené poškození, přeměňují ${value}% z daného poškození na zdraví.`,
+          vi: `Các đòn tấn công của bạn hấp thụ sát thương gây ra, chuyển đổi ${value}% sát thương gây ra thành máu.`,
+          id: `Serangan Anda menyerap kerusakan yang ditimbulkan, mengubah ${value}% dari kerusakan yang diberikan menjadi kesehatan.`,
         },
       }
     }
@@ -2102,7 +2119,6 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosShield: {
-      const threshold = fixed(ItemAbilityData.CHRONOS_SHIELD_THRESHOLD * 100, 1)
       return {
         name: {
           en: 'Chronos Shield',
@@ -2110,19 +2126,19 @@ const _getLocaleItemDescription = (
           br: 'Escudo Chronos',
           cz: 'Chronosovský štít',
           zh: '克洛诺之盾',
-          fr: 'Bouclier Chronos',
+          fr: 'Bouclier de Chronos',
           vi: 'Khiên Chronos',
           id: 'Perisai Chronos',
         },
         desc: {
-          br: `Ao receber dano de jogadores e cair abaixo de ${threshold}% de Vida, zera o cooldown de todas as habilidades.`,
-          cz: `Při obdržení poškození od hráčů a poklesu pod ${threshold}% zdraví se obnoví časovače všech schopností.`,
-          en: `When taking damage from players and falling below ${threshold}% health, resets all ability cooldowns.`,
-          ru: `При получении урона от игроков и падении ниже ${threshold}% здоровья, сбрасываются все перезарядки способностей.`,
-          zh: `当受到玩家伤害且生命值降至低于 ${threshold}% 时，所有技能的冷却时间将被重置。`,
-          fr: `Lorsqu'il subit des dégâts de la part des joueurs et que sa santé tombe en dessous de ${threshold}%, tous les temps de recharge des compétences sont réinitialisés.`,
-          vi: `Khi nhận sát thương từ người chơi và máu giảm xuống dưới ${threshold}%, thời gian hồi chiêu của tất cả kỹ năng sẽ được đặt lại.`,
-          id: `Saat menerima kerusakan dari pemain dan kesehatan turun di bawah ${threshold}%, semua waktu cooldown kemampuan di-reset.`,
+          br: `Redefine o tempo de recarga de suas habilidades (Redefinir não funciona em itens).`,
+          en: `Resets the cooldown time of your abilities (Reset does not work on items).`,
+          ru: `Сбрасывает время перезарядки ваших способностей (Сброс не работает на предметах).`,
+          cz: `Obnoví čas obnovení vašich schopností (Obnovení nefunguje na předmětech).`,
+          zh: `重置你的技能冷却时间（重置对物品无效）。`,
+          fr: `Réinitialise le temps de recharge de vos compétences (La réinitialisation ne fonctionne pas sur les objets).`,
+          vi: `Đặt lại thời gian hồi chiêu của kỹ năng của bạn (Đặt lại không hoạt động trên vật phẩm).`,
+          id: `Mengatur ulang waktu cooldown dari kemampuan Anda (Reset tidak berfungsi pada item).`,
         },
       }
     }
@@ -2158,45 +2174,46 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosSword: {
-      return {
-        name: {
-          en: 'Chronos Sword',
-          ru: 'Меч Хроноса',
-          br: 'Espada Chronos',
-          cz: 'Chronosovské mечy',
-          zh: '克洛诺之剑',
-          fr: 'Epee Chronos',
-          vi: 'Bao tay Chronos',
-          id: 'Pisau Chronos',
-        },
-        desc: {
-          en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} seconds. Tripled on critical hits.`,
-          ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} сек. Утраивается при критическом ударе.`,
-          br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} segundos. Triplica em acertos críticos.`,
-          fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} secondes. Triplé en cas de coup critique.`,
-          zh: `每次普通攻击命中减少技能冷却 ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} 秒，暴击时效果提升三倍。`,
-          cz: `Každý základní útok zkrátí přestávky schopností o ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} sekund. Při kritickém zásahu trojnásobně.`,
-          vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} giây. Gấp ba nếu chí mạng.`,
-          id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
-            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-          )} detik. Menjadi tiga kali lipat saat serangan kritikal.`,
-        },
-      }
-    }
+  return {
+    name: {
+      en: 'Chronos Sword',
+      ru: 'Меч Хроноса',
+      br: 'Espada Chronos',
+      cz: 'Chronosovské meče',
+      zh: '克洛诺之剑',
+      fr: 'Épée Chronos',
+      vi: 'Kiếm Chronos',
+      id: 'Pedang Chronos',
+    },
+    desc: {
+      en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} seconds. Doubles on critical hits.`,
+      ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} сек. Эффект удваивается при критическом ударе.`,
+      br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} segundos. O efeito é dobrado em acertos críticos.`,
+      fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} secondes. L'effet est doublé en cas de coup critique.`,
+      zh: `每次普通攻击命中减少技能冷却 ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} 秒，暴击时效果翻倍。`,
+      cz: `Každý základní útok zkracuje dobu přebíjení schopností o ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} sekund. Při kritickém zásahu se efekt zdvojnásobí.`,
+      vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} giây. Hiệu ứng được nhân đôi nếu chí mạng.`,
+      id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} detik. Efek menjadi dua kali lipat saat serangan kritikal.`,
+    },
+  }
+}
+
 
     default:
       return {
