@@ -259,7 +259,7 @@ const _getLocaleItemDescription = (
           en: 'Ring of Power',
           ru: 'Кольцо силы',
           br: 'Anel do Poder',
-          cz: 'Prsten Mocy',
+          cz: 'Prsten Moci',
           fr: 'Anneau de pouvoir',
           zh: '力量手環',
           vi: 'Nhẫn Quyền Lực',
@@ -317,6 +317,16 @@ const _getLocaleItemDescription = (
           vi: 'Dây Chuyền Quyến Rũ',
           id: 'Kalung Menawan',
         },
+        desc: {
+          en:  getObserverWardDescription(),
+          ru:  getObserverWardDescription(),
+          br:  getObserverWardDescription(),
+          cz:  getObserverWardDescription(),
+          fr:  getObserverWardDescription(),
+          zh:  getObserverWardDescription(),
+          vi:  getObserverWardDescription(),
+          id:  getObserverWardDescription(),
+        }
       }
     case ItemList.Plate_Armor:
       return {
@@ -597,44 +607,14 @@ const _getLocaleItemDescription = (
           id: 'Pedang Kaisar Beku',
         },
         desc: {
-          en: `Your Basic Attacks apply a stack of physical frost on the enemy, slowing them by ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } per stack. At ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } stacks, the enemy is inflicted with Frigid Curse - ${getFrigidCurseDescription()}.`,
-          ru: `Ваши атаки накладывают на врага физический мороз, замедляющий его на ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } за каждый стак. При ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } стаках, врага поражает Ледяное Проклятие - ${getFrigidCurseDescription()}.`,
-          br: `Seus ataques básicos aplicam uma pilha de gelo físico no inimigo, diminuindo a velocidade deles em ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } por pilha. Em ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } pilhas, o inimigo é atingido pela Maldição Gélida - ${getFrigidCurseDescription()}.`,
-          fr: `Vos attaques de base appliquent une pile de gel physique sur l'ennemi qui les ralentit de ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } par pile. À ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } piles, l'ennemi est affecté par la Malédiction glaciale - ${getFrigidCurseDescription()}.`,
-          zh: `你的基本攻擊地敵人造成物理結霜疊加，每層減速 ${ItemAbilityData.COLD_SWORD_SLOW_PER_STACK}。在 ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } 層時，敵人會受到寒冰詛咒 - ${getFrigidCurseDescription()}`,
-          cz: `Vaše základní útoky aplikují nepříteli fyzický mráz, který ho zpomaluje o ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } za každý stack. Při ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } stackách je nepřítel postižen Ledovým prokletím - ${getFrigidCurseDescription()}.`,
-          vi: `Các đòn tấn công cơ bản của bạn áp dụng một cục băng vật lý lên kẻ địch, làm chậm lại họ ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } mỗi cục. Ở ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } cục, kẻ địch bị Trừng Phạt Lạnh - ${getFrigidCurseDescription()}.`,
-          id: `Serangan Dasar Anda menerapkan tumpukan es fisik pada musuh, melambatkan mereka sebesar ${
-            ItemAbilityData.COLD_SWORD_SLOW_PER_STACK
-          } per tumpukan. Pada ${
-            ItemAbilityData.COLD_SWORD_STACKS
-          } tumpukan, musuh terkena Kutukan Dingin - ${getFrigidCurseDescription()}.`,
+          en: `Your Basic Attacks applies a Frigid Curse on the enemy target - ${getFrigidCurseDescription()}.`,
+          ru: `Ваши базовые атаки накладывают Ледяное Проклятие на цель - ${getFrigidCurseDescription()}.`,
+          br: `Seus ataques básicos aplicam uma Maldição Gélida no alvo inimigo - ${getFrigidCurseDescription()}.`,
+          fr: `Vos attaques de base appliquent une Malédiction glaciale à la cible ennemie - ${getFrigidCurseDescription()}.`,
+          zh: `你的基本攻击对敌人目标施加了寒冷诅咒 - ${getFrigidCurseDescription()}.`,
+          cz: `Tvoje základní útoky aplikují na cílový nepřítel Zmrzlou kletbu - ${getFrigidCurseDescription()}.`,
+          vi: `Đòn đánh cơ bản của bạn áp dụng Lời Nguyền Lạnh lẽo lên mục tiêu địch - ${getFrigidCurseDescription()}.`,
+          id: `Serangan Dasar Anda menerapkan Kutukan Dingin pada target musuh - ${getFrigidCurseDescription()}.`,
         },
       }
     case ItemList.Corrupted_Light_Slayer:
@@ -1400,8 +1380,6 @@ const _getLocaleItemDescription = (
     }
     case ItemList.Kirins_Defender: {
       const duration = toSecRaw(ItemAbilityData.KIRINS_DEFENDER_DURATION)
-      const cooldown = toSecRaw(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN)
-      const magicDefense = calculateMagicDefense(ItemAbilityData.KIRINS_DEFENDER_BONUS_MR)
 
       return {
         name: {
@@ -1415,14 +1393,14 @@ const _getLocaleItemDescription = (
           id: 'Pertahanan Kirin',
         },
         desc: {
-          en: `Upon getting hit by any Crowd Control effect, block that effect. Successfully blocking increases Magic Resistance by ${magicDefense} for ${duration} Seconds.`,
-          br: `Defensor de Kirin bloqueia o próximo efeito de CC uma vez a cada ${cooldown} seg, se o bloqueio for bem sucedido, fornecer ${magicDefense} de resistência mágica por ${duration} seg.`,
-          ru: `Блокирует любой эффект контроля каждые ${cooldown} сек. Успешный блок повышает ваше Сопротивление магии на  ${magicDefense} на ${duration} сек.`,
-          zh: `被群體控制效果擊中時，阻擋其效果。成功阻擋時增加 ${duration}秒魔法抗性 ${magicDefense}。`,
-          cz: `Po zásahu jakýmkoli efektem kontroly davu blokuje tento efekt. Úspěšné blokování zvyšuje odolnost proti magii o ${magicDefense} po dobu ${duration} sekund.`,
-          fr: `Bloque le prochain effet de contrôle de foule une fois toutes les ${cooldown} sec. Si le blocage réussit, augmente la résistance magique de ${magicDefense} pour ${duration} sec.`,
-          vi: `Khi bị tác động bởi bất kỳ hiệu ứng Kiểm soát Tập trung nào, chặn hiệu ứng đó. Chặn thành công tăng Kháng Phép lên ${magicDefense} trong ${duration} Giây.`,
-          id: `Setiap kali terkena efek Crowd Control, blokir efek tersebut. Berhasil memblokir meningkatkan Ketahanan Sihir sebesar ${magicDefense} selama ${duration} Detik.`,
+          en: `Upon getting hit by any Crowd Control effect, fully blocks the crowd control effect and makes the carrier immune to all CCs for ${duration} Seconds.`,
+          ru: `При получении урона от любого эффекта контроля толпы блокирует его и делает владельца невосприимчивым ко всем эффектам контроля толпы на ${duration} секунд.`,
+          br: `Ao ser atingido por qualquer efeito de Controle de Multidão, bloqueia o efeito de controle de multidão e torna o portador imune a todos os Efeitos de Controle de Multidão por ${duration} seg.`,
+          fr: `Lorsqu'il est touché par un effet de contrôle de foule, bloque complètement l'effet de contrôle de foule et rend le porteur immunisé contre tous les effets de contrôle de foule pendant ${duration} sec.`,
+          zh: `受到任何群控效果的打擊時，完全阻止群控效果並使攜帶者對所有群控免疫 ${duration} 秒。`,
+          cz: `Po zasažení jakýmkoli efektem kontroly davu plně blokuje tento efekt a činí nositele imunní vůči všem efektům kontroly davu po dobu ${duration} sekund.`,
+          vi: `Khi bị bất kỳ hiệu ứng Kiểm Soát Đám Đông nào, hoàn toàn chặn hiệu ứng kiểm soát đám đông và khiến người mang miễn dịch với tất cả các hiệu ứng Kiểm Soát Đám Đông trong ${duration} Giây.`,
+          id: `Setelah terkena efek Crowd Control apa pun, sepenuhnya memblokir efek crowd control dan membuat pemilik kebal terhadap semua Crowd Control selama ${duration} Detik.`,
         },
       }
     }
@@ -1591,36 +1569,28 @@ const _getLocaleItemDescription = (
         desc: getNimbleBowDescription(),
       }
     }
-    case ItemList.Berserker_Ring: {
-      const attackSpeed = fixed(ItemAbilityData.BERSERKER_RING_BONUS_ATTACK_SPEED * 100, 1)
+    case ItemList.Tenacity_Ring: {
+      const reductionTime = fixed(ItemAbilityData.TENACITY_RING_CC_REDUCTION * 100, 1)
       return {
         name: {
-          en: 'Berserker Ring',
-          br: 'Anel do Lutador',
-          ru: 'Кольцо берсерка',
-          zh: '狂戰士手環',
-          cz: 'Prsten berserka',
-          fr: 'Anneau de berserker',
-          vi: 'Nhẫn Chiến Binh',
-          id: 'Cincin Berserker',
+          en: 'Tenacity Ring',
+          ru: 'Кольцо стойкости',
+          br: 'Anel da Tenacidade',
+          zh: '韌性戒指',
+          cz: 'Prsten odolnosti',
+          fr: 'Anneau de ténacité',
+          vi: 'Nhẫn Sức Mạnh',
+          id: 'Cincin Kekuatan',
         },
         desc: {
-          en: `When you take a damage, you will gain a stack of Berserker's Endurance. For every stack you gain ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} health regen and ${attackSpeed}% Attack Speed for ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Stacks up to ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} times.`,
-          ru: `При получении урона вы получаете стак Берсеркерской выносливости. За каждый стак вы получаете ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} регенерации здоровья и ${attackSpeed}% скорости атаки на ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)} сек.
-          \n Максимальное количество стаков: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
-          br: `Quando você sofre dano, você ganha uma pilha de Resistência do Lutador. Para cada pilha, você ganha ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de regeneração de vida e ${attackSpeed}% de Velocidade de Ataque por ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Acumula até ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} vezes.`,
-          fr: `Lorsque vous subissez des dégâts, vous gagnez une pile d'Endurance du berserker. Pour chaque pile, vous gagnez ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} de régénération de santé et ${attackSpeed}% de vitesse d'attaque pendant ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Empilez jusqu'à ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} fois.`,
-          zh: `當你受到傷害時，你將獲得一層狂戰士耐力。每層使你獲得 ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN}回血速度和 ${attackSpeed}%攻擊速度，持續 ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}。
-          \n 最多可疊加 ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} 層。`,
-          cz: `Když utrpíte poškození, získáte stack Berserkerovy vytrvalosti. Za každý stack získáte ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerace zdraví a ${attackSpeed}% rychlosti útoku po dobu ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Maximální počet stacků: ${ItemAbilityData.BERSERKER_RING_MAX_STACKS}.`,
-          vi: `Khi bạn nhận sát thương, bạn sẽ nhận một tấm Sức Bền Chiến Binh. Đối với mỗi tấm, bạn nhận ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} hồi máu và ${attackSpeed}% Tốc Độ Tấn Công trong ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Tối đa ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} lần.`,
-          id: `Ketika Anda menerima kerusakan, Anda akan mendapatkan tumpukan Ketahanan Berserker. Untuk setiap tumpukan, Anda mendapatkan ${ItemAbilityData.BERSERKER_RING_BONUS_HEALTH_REGEN} regenerasi kesehatan dan ${attackSpeed}% Kecepatan Serangan selama ${toSec(ItemAbilityData.BERSERKER_RING_DURATION)}.
-          \n Maksimal ${ItemAbilityData.BERSERKER_RING_MAX_STACKS} kali.`,
+          en: `Reduce duration of all negative effects by ${reductionTime}%.`,
+          ru: `Уменьшает длительность всех негативных эффектов на ${reductionTime}%.`,
+          br: `Reduz a duração de todos os efeitos negativos em ${reductionTime}%.`,
+          zh: `減少所有負面效果的持續時間 ${reductionTime}%。`,
+          cz: `Sníží dobu trvání všech negativních efektů o ${reductionTime}%.`,
+          fr: `Réduit la durée de tous les effets négatifs de ${reductionTime}%.`,
+          vi: `Giảm thời gian của tất cả các hiệu ứng tiêu cực đi ${reductionTime}%.`,
+          id: `Mengurangi durasi semua efek negatif sebesar ${reductionTime}%.`,
         },
       }
     }
@@ -2079,18 +2049,18 @@ const getIronRodOrHarpoonDescription = (tier2 = false) => {
 }
 
 const getFrigidCurseDescription = () => {
-  const healingReduction = fixed(ItemAbilityData.FRIGIT_CURSE_HEALING_REDUCTION * 100, 1)
-  const duration = toSec(ItemAbilityData.FRIGIT_CURSE_DURATION)
+  const healingReduction = fixed(ItemAbilityData.FRIGID_CURSE_HEALING_REDUCTION * 100, 1)
+  const duration = toSec(ItemAbilityData.FRIGID_CURSE_DURATION)
 
   const text: { [key: string]: string } = {
-    en: `Reduces Movement Speed by ${ItemAbilityData.FRIGIT_CURSE_SLOW} and reduces all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
-    ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGIT_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
-    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGIT_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
-    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGIT_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
-    zh: `降低移動速度 ${ItemAbilityData.FRIGIT_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
-    cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGIT_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
-    vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGIT_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và tái tạo bởi ${healingReduction}% trong ${duration}`,
-    id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGIT_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
+    en: `Reduces Movement Speed by ${ItemAbilityData.FRIGID_CURSE_SLOW} and reduces all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
+    ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGID_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
+    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGID_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
+    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGID_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
+    zh: `降低移動速度 ${ItemAbilityData.FRIGID_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
+    cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGID_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
+    vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGID_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và tái tạo bởi ${healingReduction}% trong ${duration}`,
+    id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGID_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
