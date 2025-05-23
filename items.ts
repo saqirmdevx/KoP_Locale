@@ -1069,6 +1069,55 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodOrHarpoonDescription() },
       }
+      case ItemList.EnchantedSpear:
+    const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
+    return {
+        name: {
+            en: 'Enchanted Spear',
+            ru: 'Зачарованное копьё',
+            br: 'Lança Encantada',
+            fr: 'Lance enchantée',
+            zh: '魔法矛',
+            cz: 'Okouzlené kopí',
+            vi: 'Thương Phép Thuật',
+            id: 'Tombak Ajaib',
+        },
+        desc: {
+            en: 
+                `If a target is at or below ${executionThreshold}% health, any Magic Damage will instantly execute it.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            ru: 
+                `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            br: 
+                `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            fr: 
+                `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            zh: 
+                `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            cz: 
+                `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            vi: 
+                `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+            id: 
+                `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
+                '\n' +
+                getIronRodOrHarpoonDescription(),
+        },
+    }
+  
     case ItemList.Magic_Harpoon: {
       return {
         name: {
@@ -1596,28 +1645,31 @@ const _getLocaleItemDescription = (
     }
     /** Armors */
     case ItemList.Frost_Armor: {
-      const reduction = fixed(ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION * 100, 1)
-      const attackSpeedReduction = fixed(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100, 1)
+      const stacks = ItemAbilityData.FROST_ARMOR_MAX_STACKS
+      const duration = ItemAbilityData.FROST_ARMOR_DURATION // MILISECONDS
+      const moveSpeedReduction = ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION
+      const attackSpeedReduction = ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100
+    
       return {
         name: {
           en: 'Armor of the Frozen Emperor',
           ru: 'Броня Ледяного Императора',
-          br: 'Armadura do Lorde congelado',
+          br: 'Armadura do Lorde Congelado',
           zh: '寒冰帝王之鎧甲',
-          cz: 'Brnění zamrzlého císaře',
+          cz: 'Brnění Zamrzlého Císaře',
           fr: "Armure de l'empereur gelé",
           vi: 'Bộ Giáp của Hoàng Đế Băng Giá',
           id: 'Baju Zirah Kaisar Beku',
         },
         desc: {
-          en: `[AURA] Reduces attack speed by ${attackSpeedReduction}% and effect of all heals, regeneration, and lifesteal for nearby enemies by ${reduction}%.`,
-          ru: `[АУРА] Уменьшает скорость атаки на ${attackSpeedReduction}% и эффект всех исцелений, регенерации и высасывания жизни для ближайших врагов на ${reduction}%.`,
-          br: `[AURA] Reduz a velocidade de ataque em ${attackSpeedReduction}% e o efeito de todas as curas, regenerações e roubo de vida para inimigos próximos em ${reduction}%.`,
-          zh: `[光環] 減少附近敵人的攻擊速度 ${attackSpeedReduction}% 和所有治療、再生和生命偷取效果 ${reduction}%.`,
-          cz: `[AURA] Sníží rychlost útoku o ${attackSpeedReduction}% a efekt všech léčení, regenerace a životního odsávání pro blízké nepřátele o ${reduction}%.`,
-          fr: `[AURA] Réduit la vitesse d'attaque de ${attackSpeedReduction}% et l'effet de tous les soins, régénérations et vol de vie pour les ennemis proches de ${reduction}%.`,
-          vi: `[AURA] Giảm tốc độ tấn công ${attackSpeedReduction}% và hiệu ứng của tất cả các hồi máu, tái sinh và hút máu cho kẻ địch gần đó ${reduction}%.`,
-          id: `[AURA] Mengurangi kecepatan serangan sebesar ${attackSpeedReduction}% dan efek semua penyembuhan, regenerasi, dan lifesteal untuk musuh di sekitar sebesar ${reduction}%.`,
+          en: `Each time you take physical damage, apply a stack to the attacker (max ${stacks} stacks). Each stack reduces their movement speed by ${moveSpeedReduction} and attack speed by ${attackSpeedReduction}% for ${duration / 1000}s.`,
+          ru: `Каждый раз при получении физического урона накладывает эффект на атакующего (макс. ${stacks} эффектов). Каждый эффект снижает скорость передвижения на ${moveSpeedReduction} и скорость атаки на ${attackSpeedReduction}% на ${duration / 1000}сек.`,
+          br: `Ao receber dano físico, aplica um acúmulo no atacante (máx. ${stacks} acúmulos). Cada acúmulo reduz a velocidade de movimento em ${moveSpeedReduction} e a velocidade de ataque em ${attackSpeedReduction}% por ${duration / 1000}s.`,
+          zh: `每次受到物理伤害时，对攻击者施加一层效果（最多 ${stacks} 层）。每层效果降低其移动速度 ${moveSpeedReduction} 和攻击速度 ${attackSpeedReduction}%，持续 ${duration / 1000} 秒。`,
+          cz: `Pokaždé, když obdržíš fyzické poškození, aplikuje se efekt na útočníka (max ${stacks} efektů). Každý efekt snižuje rychlost pohybu o ${moveSpeedReduction} a rychlost útoku o ${attackSpeedReduction}% po dobu ${duration / 1000}s.`,
+          fr: `À chaque fois que vous subissez des dégâts physiques, applique un effet à l’attaquant (max ${stacks} cumuls). Chaque effet réduit sa vitesse de déplacement de ${moveSpeedReduction} et sa vitesse d’attaque de ${attackSpeedReduction}% pendant ${duration / 1000}s.`,
+          vi: `Mỗi khi nhận sát thương vật lý, gây một cộng dồn lên kẻ tấn công (tối đa ${stacks} cộng dồn). Mỗi cộng dồn giảm ${moveSpeedReduction} tốc độ di chuyển và ${attackSpeedReduction}% tốc độ đánh trong ${duration / 1000} giây.`,
+          id: `Setiap kali menerima kerusakan fisik, memberikan satu tumpukan pada penyerang (maks ${stacks} tumpukan). Setiap tumpukan mengurangi kecepatan gerak sebesar ${moveSpeedReduction} dan kecepatan serangan sebesar ${attackSpeedReduction}% selama ${duration / 1000} detik.`,
         },
       }
     }
@@ -1645,6 +1697,32 @@ const _getLocaleItemDescription = (
           fr: `Vous rend invisible pendant ${duration} secondes et augmente votre vitesse de déplacement de ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Après avoir lancé une capacité ou utilisé une attaque de base tout en étant invisible, supprimez votre invisibilité et votre vitesse de déplacement bonus, et augmentez les dégâts d'attaque de ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} pendant une courte durée.`,
           vi: `Cho bạn vô hình trong ${duration} Giây và tăng Tốc Độ Di Chuyển thêm ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Khi sử dụng kỹ năng hoặc tấn công cơ bản trong thời gian vô hình, gỡ bỏ vô hình và tốc độ di chuyển thêm, và tăng Sát Thương Tấn Công thêm ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} trong một thời gian ngắn.`,
           id: `Memberikan kamu kekebalan selama ${duration} Detik dan meningkatkan Kecepatan Gerak sebesar ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}. Setelah menggunakan kemampuan atau menyerang dasar saat tak terlihat, hilangkan kekebalan dan kecepatan gerak bonus, dan tingkatkan Serangan sebesar ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} untuk waktu yang singkat.`,
+        },
+      }
+    }
+
+    case ItemList.DivineArmor: {
+      const duration = toSecRaw(ItemAbilityData.DIVINE_ARMOR_DURATION)
+      return {
+        name: {
+          en: "Divine Armor",
+          ru: "Божественная броня",
+          br: "Armadura Divina",
+          zh: "神聖鎧甲",
+          cz: "Božské brnění",
+          fr: "Armure Divine",
+          vi: "Giáp Thần Thánh",
+          id: "Baju Zirah Ilahi",
+        },
+        desc: {
+          en: `Reduces all incoming damage to allies by ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% for ${duration} Seconds.`,
+          ru: `Снижает весь входящий урон для союзников на ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% в течение ${duration} сек.`,
+          br: `Reduz todo o dano recebido pelos aliados em ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% por ${duration} seg.`,
+          zh: `為所有盟友減少 ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% 的傷害，持續 ${duration} 秒。`,
+          cz: `Snižuje veškeré příchozí poškození spojenců o ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% po dobu ${duration} sekund.`,
+          fr: `Réduit tous les dégâts subis par les alliés de ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% pendant ${duration} secondes.`,
+          vi: `Giảm ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% sát thương nhận vào cho tất cả đồng minh trong ${duration} Giây.`,
+          id: `Mengurangi semua kerusakan yang diterima oleh sekutu sebesar ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% selama ${duration} Detik.`,
         },
       }
     }
@@ -2000,6 +2078,164 @@ const _getLocaleItemDescription = (
         },
       }
     }
+    
+    case ItemList.Vampiric_Armor: {
+      const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_ABSORPTION * 100, 1)
+      const duration = toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)
+    
+      return {
+        name: {
+          en: 'Vampiric Armor',
+          ru: 'Вампирическая броня',
+          br: 'Armadura Vampírica',
+          fr: 'Armure vampirique',
+          zh: '吸血護甲',
+          cz: 'Vampírní zbroj',
+          vi: 'Giáp Vampie',
+          id: 'Perisai Vampir',
+        },
+        desc: {
+          en: `For ${duration}s, all damage you deal heals you for ${value}% of the amount inflicted.`,
+          ru: `В течение ${duration} сек. весь нанесённый урон исцеляет вас на ${value}% от его величины.`,
+          br: `Por ${duration}s, todo o dano que você causar irá curá-lo em ${value}% do valor causado.`,
+          fr: `Pendant ${duration}s, tous les dégâts que vous infligez vous soignent à hauteur de ${value}%.`,
+          zh: `在持续 ${duration} 秒内，你造成的所有伤害将为你回复 ${value}% 的生命值。`,
+          cz: `Po dobu ${duration}s vás léčí ${value}% veškerého vámi způsobeného poškození.`,
+          vi: `Trong ${duration} giây, toàn bộ sát thương bạn gây ra sẽ hồi lại ${value}% máu cho bạn.`,
+          id: `Selama ${duration} detik, semua kerusakan yang Anda berikan akan menyembuhkan Anda sebesar ${value}% dari jumlahnya.`,
+        },
+      }
+    }
+    
+
+    case ItemList.MoltenShield: {
+      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2);
+      return {
+        name: {
+          en: 'Molten Shield',
+          ru: 'Огненный щит',
+          br: 'Escudo Queimado',
+          cz: 'Pohledové schity',
+          zh: '炽热之盾',
+          fr: 'Bouclier flamboyant',
+          vi: 'Bao tay nhá',
+          id: 'Pisau Melting',
+        },
+        desc: {
+          br: `Cause dano mágico equivalente a ${hpPercent}% de sua vida máxima por segundo aos seus inimigos próximos.`,
+          cz: `Zpomalí ${hpPercent}% zdraví v sekundovych intervalech.`,
+          en: `Cause magic damage equivalent to ${hpPercent}% of your maximum health per second to nearby enemies.`,
+          ru: `Наносит магический урон эквивалентный ${hpPercent}% вашего максимального здоровья в секунду.`,
+          zh: `每秒对附近敌人造成 ${hpPercent}% 最大生命值的魔法伤害。`,
+          fr: `Inflige des dés de magie equivalent aux ${hpPercent}% de votre vie maximale par seconde.`,
+          vi: `Sinh lẻnh mạng ${hpPercent}% trong giáp nhá trong giáp nhá`,
+          id: `Menyerang musuh sekitar dengan serangan magis ${hpPercent}% darah maksimum Anda per detik.`,
+        },
+      }
+    }
+
+    case ItemList.ChronosShield: {
+      const hasteReductionPerStack = ItemAbilityData.CHRONOS_SHIELD_ABILITY_HASTE_REDUCTION
+      const maxStacks = ItemAbilityData.CHRONOS_SHIELD_MAX_STACKS
+      const duration = ItemAbilityData.CHRONOS_SHIELD_DURATION // MILLISECONDS
+    
+      return {
+        name: {
+          en: 'Chronos Shield',
+          ru: 'Щит Хроноса',
+          br: 'Escudo Chronos',
+          cz: 'Chronosovský štít',
+          zh: '克洛诺之盾',
+          fr: 'Bouclier de Chronos',
+          vi: 'Khiên Chronos',
+          id: 'Perisai Chronos',
+        },
+        desc: {
+          br: `Sempre que recebe qualquer tipo de dano (exceto dano periódico), aplica um acúmulo que reduz sua aceleração de habilidade em ${hasteReductionPerStack} por ${duration / 1000}s. Acumula até ${maxStacks} vezes.`,
+          en: `Each time you take any damage (except damage over time), you gain a stack that reduces your ability haste by ${hasteReductionPerStack} for ${duration / 1000}s. Stacks up to ${maxStacks} times.`,
+          ru: `Каждый раз, когда вы получаете любой урон (кроме периодического), накладывается эффект, уменьшающий ускорение способностей на ${hasteReductionPerStack} на ${duration / 1000} сек. Эффекты накапливаются до ${maxStacks} раз.`,
+          cz: `Pokaždé, když obdržíš jakékoli poškození (kromě poškození v čase), získáš efekt, který snižuje zrychlení schopností o ${hasteReductionPerStack} na ${duration / 1000}s. Může se nasčítat až ${maxStacks}krát.`,
+          zh: `每当你受到任何类型的伤害（不包括持续性伤害）时，获得一层效果，使技能加速减少 ${hasteReductionPerStack}，持续 ${duration / 1000} 秒，最多叠加 ${maxStacks} 层。`,
+          fr: `Chaque fois que vous subissez des dégâts (sauf des dégâts sur la durée), vous recevez un effet qui réduit votre accélération de compétence de ${hasteReductionPerStack} pendant ${duration / 1000}s. Cumulable jusqu'à ${maxStacks} fois.`,
+          vi: `Mỗi khi bạn nhận sát thương (trừ sát thương theo thời gian), bạn sẽ nhận một cộng dồn làm giảm tốc độ hồi kỹ năng đi ${hasteReductionPerStack} trong ${duration / 1000} giây. Tối đa ${maxStacks} cộng dồn.`,
+          id: `Setiap kali Anda menerima kerusakan (kecuali kerusakan berkala), Anda mendapatkan satu tumpukan yang mengurangi percepatan kemampuan sebesar ${hasteReductionPerStack} selama ${duration / 1000} detik. Maksimal ${maxStacks} tumpukan.`,
+        },
+      }
+    }
+    
+
+    case ItemList.VoidSword: {
+      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1);
+      const radius = ItemAbilityData.VOID_SWORD_RADIUS;
+      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED;
+      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED;
+    
+      return {
+        name: {
+          en: "Void Sword",
+          ru: "Меч Пустоты",
+          br: "Espada do Vazio",
+          cz: "Meč prázdnoty",
+          zh: "虚空之剑",
+          fr: "Épée du Néant",
+          vi: "Kiếm Hư Vô",
+          id: "Pedang Void",
+        },
+        desc: {
+          en: `Channel the void with this sword to create an aura lasting ${duration} seconds in a radius of ${radius} units. Allies gain +${movespeed} movement speed and +${attackspeed} attack speed, while enemies suffer reductions in these stats.`,
+          ru: `Используйте Меч Пустоты, чтобы создать ауру длительностью ${duration} сек. и радиусом ${radius} единиц. Союзники получают +${movespeed} скорости передвижения и +${attackspeed} скорости атаки, а враги – снижение этих показателей.`,
+          br: `Canalize o vazio com esta espada para criar uma aura que dura ${duration} segundos, com um raio de ${radius} unidades. Aliados ganham +${movespeed} de velocidade de movimento e +${attackspeed} de velocidade de ataque, enquanto inimigos sofrem redução nesses atributos.`,
+          cz: `Využijte Meč prázdnoty k vytvoření aury trvající ${duration} sekundy v poloměru ${radius} jednotek. Spojenci získají +${movespeed} rychlosti pohybu a +${attackspeed} rychlosti útoku, zatímco nepřátelé mají tyto statistiky snížené.`,
+          zh: `使用虚空之剑释放光环，持续 ${duration} 秒，半径 ${radius} 单位。友军获得 +${movespeed} 移动速度和 +${attackspeed} 攻击速度`,
+          fr: `Canalisez le néant avec cette épée pour créer une aura durant ${duration} secondes dans un rayon de ${radius} unités. Les alliés gagnent +${movespeed} en vitesse de déplacement et +${attackspeed} en vitesse d’attaque, tandis que les ennemis voient ces statistiques réduites.`,
+          vi: `Khai thác sức mạnh của hư vô với Kiếm Hư Vô để tạo ra hiệu ứng aura kéo dài ${duration} giây với bán kính ${radius} đơn vị. Đồng minh nhận được +${movespeed} tốc độ di chuyển và +${attackspeed} tốc độ tấn công, trong khi kẻ địch bị giảm các chỉ số này.`,
+          id: `Salurkan kekuatan kekosongan dengan Pedang Void untuk menciptakan aura selama ${duration} detik dalam radius ${radius} unit. Sekutu mendapatkan tambahan +${movespeed} kecepatan gerak dan +${attackspeed} kecepatan serang, sedangkan musuh mengalami penurunan statistik tersebut.`,
+        },
+      }
+    }
+
+    case ItemList.ChronosSword: {
+  return {
+    name: {
+      en: 'Chronos Sword',
+      ru: 'Меч Хроноса',
+      br: 'Espada Chronos',
+      cz: 'Chronosovské meče',
+      zh: '克洛诺之剑',
+      fr: 'Épée Chronos',
+      vi: 'Kiếm Chronos',
+      id: 'Pedang Chronos',
+    },
+    desc: {
+      en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} seconds. Doubles on critical hits.`,
+      ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} сек. Эффект удваивается при критическом ударе.`,
+      br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} segundos. O efeito é dobrado em acertos críticos.`,
+      fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} secondes. L'effet est doublé en cas de coup critique.`,
+      zh: `每次普通攻击命中减少技能冷却 ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} 秒，暴击时效果翻倍。`,
+      cz: `Každý základní útok zkracuje dobu přebíjení schopností o ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} sekund. Při kritickém zásahu se efekt zdvojnásobí.`,
+      vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} giây. Hiệu ứng được nhân đôi nếu chí mạng.`,
+      id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
+        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+      )} detik. Efek menjadi dua kali lipat saat serangan kritikal.`,
+    },
+  }
+}
+
+
     default:
       return {
         name: { en: '' },
