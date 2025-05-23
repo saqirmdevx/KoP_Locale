@@ -407,6 +407,19 @@ const _getLocaleItemDescription = (
           id: 'Sepatu Para Pejuang Besi',
         },
       }
+    case ItemList.Kirins_Boots:
+        return {
+          name: {
+            en: 'Kirin\'s Boots',
+            ru: 'Ботинки Кирина',
+            br: 'Botas de Kirin',
+            cz: 'Svaté Sandále',
+            fr: 'Bottes de Kirin',
+            zh: '神龍之靴',
+            vi: 'Giày Kírinh',
+            id: 'Sepatu Kirin',
+          },
+        }
     case ItemList.Traveling_Boots:
       return {
         name: {
@@ -1609,7 +1622,6 @@ const _getLocaleItemDescription = (
       }
     }
     case ItemList.Tenacity_Ring: {
-      const reductionTime = fixed(ItemAbilityData.TENACITY_RING_CC_REDUCTION * 100, 1)
       return {
         name: {
           en: 'Tenacity Ring',
@@ -1620,16 +1632,6 @@ const _getLocaleItemDescription = (
           fr: 'Anneau de ténacité',
           vi: 'Nhẫn Sức Mạnh',
           id: 'Cincin Kekuatan',
-        },
-        desc: {
-          en: `Reduce duration of all negative effects by ${reductionTime}%.`,
-          ru: `Уменьшает длительность всех негативных эффектов на ${reductionTime}%.`,
-          br: `Reduz a duração de todos os efeitos negativos em ${reductionTime}%.`,
-          zh: `減少所有負面效果的持續時間 ${reductionTime}%。`,
-          cz: `Sníží dobu trvání všech negativních efektů o ${reductionTime}%.`,
-          fr: `Réduit la durée de tous les effets négatifs de ${reductionTime}%.`,
-          vi: `Giảm thời gian của tất cả các hiệu ứng tiêu cực đi ${reductionTime}%.`,
-          id: `Mengurangi durasi semua efek negatif sebesar ${reductionTime}%.`,
         },
       }
     }
@@ -2125,10 +2127,8 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosShield: {
-      const hasteReductionPerStack = ItemAbilityData.CHRONOS_SHIELD_ABILITY_HASTE_REDUCTION
-      const maxStacks = ItemAbilityData.CHRONOS_SHIELD_MAX_STACKS
-      const duration = ItemAbilityData.CHRONOS_SHIELD_DURATION // MILLISECONDS
-    
+      const cdReductionSeconds = ItemAbilityData.CHRONOS_SHIELD_CD_REDUCTION / 1000;
+
       return {
         name: {
           en: 'Chronos Shield',
@@ -2141,14 +2141,14 @@ const _getLocaleItemDescription = (
           id: 'Perisai Chronos',
         },
         desc: {
-          br: `Sempre que recebe qualquer tipo de dano (exceto dano periódico), aplica um acúmulo que reduz sua aceleração de habilidade em ${hasteReductionPerStack} por ${duration / 1000}s. Acumula até ${maxStacks} vezes.`,
-          en: `Each time you take any damage (except damage over time), you gain a stack that reduces your ability haste by ${hasteReductionPerStack} for ${duration / 1000}s. Stacks up to ${maxStacks} times.`,
-          ru: `Каждый раз, когда вы получаете любой урон (кроме периодического), накладывается эффект, уменьшающий ускорение способностей на ${hasteReductionPerStack} на ${duration / 1000} сек. Эффекты накапливаются до ${maxStacks} раз.`,
-          cz: `Pokaždé, když obdržíš jakékoli poškození (kromě poškození v čase), získáš efekt, který snižuje zrychlení schopností o ${hasteReductionPerStack} na ${duration / 1000}s. Může se nasčítat až ${maxStacks}krát.`,
-          zh: `每当你受到任何类型的伤害（不包括持续性伤害）时，获得一层效果，使技能加速减少 ${hasteReductionPerStack}，持续 ${duration / 1000} 秒，最多叠加 ${maxStacks} 层。`,
-          fr: `Chaque fois que vous subissez des dégâts (sauf des dégâts sur la durée), vous recevez un effet qui réduit votre accélération de compétence de ${hasteReductionPerStack} pendant ${duration / 1000}s. Cumulable jusqu'à ${maxStacks} fois.`,
-          vi: `Mỗi khi bạn nhận sát thương (trừ sát thương theo thời gian), bạn sẽ nhận một cộng dồn làm giảm tốc độ hồi kỹ năng đi ${hasteReductionPerStack} trong ${duration / 1000} giây. Tối đa ${maxStacks} cộng dồn.`,
-          id: `Setiap kali Anda menerima kerusakan (kecuali kerusakan berkala), Anda mendapatkan satu tumpukan yang mengurangi percepatan kemampuan sebesar ${hasteReductionPerStack} selama ${duration / 1000} detik. Maksimal ${maxStacks} tumpukan.`,
+          br: `Sempre que recebe dano direto (exceto dano periódico), reduz o tempo de recarga de todas as habilidades em ${cdReductionSeconds.toFixed(1)}s.`,
+          en: `Whenever you take direct damage (excluding damage over time), reduce the cooldown of all abilities by ${cdReductionSeconds.toFixed(1)}s.`,
+          ru: `Каждый раз, когда вы получаете прямой урон (кроме периодического), время перезарядки всех способностей сокращается на ${cdReductionSeconds.toFixed(1)} сек.`,
+          cz: `Pokaždé, když obdržíš přímé poškození (kromě poškození v čase), se doba přebíjení všech schopností zkrátí o ${cdReductionSeconds.toFixed(1)}s.`,
+          zh: `每当你受到直接伤害（不包括持续伤害）时，所有技能的冷却时间减少 ${cdReductionSeconds.toFixed(1)} 秒。`,
+          fr: `Chaque fois que vous subissez des dégâts directs (hors dégâts sur la durée), le temps de recharge de toutes vos compétences est réduit de ${cdReductionSeconds.toFixed(1)}s.`,
+          vi: `Mỗi khi bạn nhận sát thương trực tiếp (trừ sát thương theo thời gian), thời gian hồi chiêu của tất cả kỹ năng sẽ giảm ${cdReductionSeconds.toFixed(1)} giây.`,
+          id: `Setiap kali Anda menerima kerusakan langsung (kecuali kerusakan berkala), waktu pemulihan semua kemampuan akan dikurangi sebesar ${cdReductionSeconds.toFixed(1)} detik.`,
         },
       }
     }
