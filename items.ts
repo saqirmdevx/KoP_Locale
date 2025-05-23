@@ -317,6 +317,16 @@ const _getLocaleItemDescription = (
           vi: 'Dây Chuyền Quyến Rũ',
           id: 'Kalung Menawan',
         },
+        desc: {
+          en:  getObserverWardDescription(),
+          ru:  getObserverWardDescription(),
+          br:  getObserverWardDescription(),
+          cz:  getObserverWardDescription(),
+          fr:  getObserverWardDescription(),
+          zh:  getObserverWardDescription(),
+          vi:  getObserverWardDescription(),
+          id:  getObserverWardDescription(),
+        }
       }
     case ItemList.Plate_Armor:
       return {
