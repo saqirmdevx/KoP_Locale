@@ -260,10 +260,10 @@ const _getLocaleItemDescription = (
           ru: 'Кольцо силы',
           br: 'Anel do Poder',
           cz: 'Prsten Moci',
-          fr: 'Anneau de pouvoir',
-          zh: '力量手環',
-          vi: 'Nhẫn Quyền Lực',
-          id: 'Cincin Daya',
+          fr: 'Anneau de puissance',
+          zh: '力量戒指',
+          vi: 'Nhẫn Sức Mạnh',
+          id: 'Cincin Kekuatan',
         },
       }
     case ItemList.Ring_Of_Time:
