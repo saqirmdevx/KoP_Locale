@@ -1148,7 +1148,7 @@ const _getSpellDescriptionLang = (
       const stunDuration = toSec(PrimAbilityData.GRAVITATIONAL_PULL_STUN_DURATION * modifier)
 
       return {
-        en: `Prim commands the Ball to pull all nearby enemies towards it, dealing ${damage} and stunning them for ${stunDuration}.`,
+        en: `Prim commands the Ball to expand .`, // TODO:
         ru: `Прим приказывает шару притянуть всех близлежащих врагов к себе, нанося ${damage} магического урона и оглушая их на ${stunDuration}.`,
         cz: `Prim přikáže míči přitáhnout všechny nepřátelské jednotky v okolí k sobě, způsobující ${damage} magického poškození a omráčení na ${stunDuration} sekund.`,
         br: `Prim comanda a Bola para puxar todos os inimigos próximos para perto dela, causando ${damage} de dano mágico e atordoando-os por ${stunDuration} segundos.`,
@@ -1161,112 +1161,112 @@ const _getSpellDescriptionLang = (
 
     case SpellList.SEER_ATTACK: {
       const baseDamage = getDamage(SeerAbilityData.ATTACK_DAMAGE_MOD * damage)
-      const baseDamageBenevolent = getDamage(SeerAbilityData.ATTACK_DAMAGE_MOD_BENEVOLENT * damage)
-
-      const healing = getDamage(
-        SeerAbilityData.ATTACK_HEALING_MOD * abilityPower,
-        Shared.DamageTypes.HEAL,
-        SeerAbilityData.ATTACK_HEALING_BASE + SeerAbilityData.ATTACK_HEALING_PER_LEVEL * (level - 1),
+      const baseDamageBenevolent = getDamage(
+        SeerAbilityData.ATTACK_DAMAGE_MOD_BENEVOLENT_AP * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        0,
         'AbilityPower'
       )
 
-      const malevolentCurseDamage = getDamage(
-        SeerAbilityData.SEER_MALEVOLENT_CURSE_DAMAGE_MODIFIER * abilityPower,
-        Shared.DamageTypes.MAGICAL,
-        SeerAbilityData.SEER_MALEVOLENT_CURSE_BASE_DAMAGE +
-          SeerAbilityData.SEER_MALEVOLENT_CURSE_DAMAGE_PER_LEVEL * (level - 1)
-      )
-      const passiveDuration = toSec(SeerAbilityData.SEER_PASSIVE_DURATION)
-
-      return {
-        en: `[Benevolent Form]: Seer releases a wave of energy that deals ${baseDamageBenevolent} to enemies, heals allies for ${healing}, and applies 1 stack benevolent amplification.
-        \n\n[Malevolent Form]: Seer releases a wave of energy that deals ${baseDamage} to enemies and applies 1 stack of malevolent curse.
-        \n\n[Passive]: Seer's basic attack and abilites apply 1 stack of malevolent curse to enemies and benevolent amplification to allies for ${passiveDuration} and stack up to ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} times.
-        \n\nMalevolent Curse: Deals ${malevolentCurseDamage} magical damage per second.
-        \nBenevolent Amplification: Increases healing received by ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack.`,
-        ru: `[Благосклонная форма]: Провидец выпускает волну энергии, наносящую ${baseDamageBenevolent} магического урона врагам и исцеляющую союзников на ${healing} здоровья и накладывающую Благоговение на союзников.
-        \n\n[Зловещая форма]: Провидец выпускает волну энергии, наносящую ${baseDamage} магического урона врагам и накладывающую на них Упадок.
-        \n\n[Пассивно]: Базовая атака и способности Провидца накладывают Упадок на врагов и Благоговение на союзников на ${passiveDuration} (складывается до ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} раз.)
-        \n\nУпадок: Наносит ${malevolentCurseDamage} магического урона в секунду за заряд.
-        \nБлагоговение: Увеличивает получаемое исцеление на ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% за заряд`,
-        cz: `[Přívětivá forma]: Prorok uvolní vlnu energie, která způsobí ${baseDamageBenevolent} nepřátelům a uzdraví spojence o ${healing} a aplikuje přívětivé zesílení.
-        \n\n[Zlověstná forma]: Prorok uvolní vlnu energie, která způsobí ${baseDamage} nepřátelům a aplikuje zlověstné prokletí.
-        \n\n[Passive]: Základní útok a schopnosti Proroka aplikují zlověstné prokletí na nepřátele a přívětivé zesílení na spojence po dobu ${passiveDuration} a stackuje až ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} krát.
-        \n\nZlověstné prokletí: Způsobí ${malevolentCurseDamage} magického poškození za sekundu
-        \nPřívětivé zesílení: Zvyšuje léčení o ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% za stack`,
-        br: `[Forma Benevolente]: Seer libera uma onda de energia que causa ${baseDamageBenevolent} aos inimigos e cura os aliados em ${healing} e aplica amplificação benevolente.
-        \n\n[Forma Malevolente]: Seer libera uma onda de energia que causa ${baseDamage} aos inimigos e aplica maldição malevolente.
-        \n\n[Passivo]: O ataque básico e as habilidades de Seer aplicam maldição malevolente aos inimigos e amplificação benevolente aos aliados por ${passiveDuration} e acumula até ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} vezes.
-        \n\nMaldição Malevolente: Causa ${malevolentCurseDamage} de dano mágico por segundo
-        \nAmplificação Benevolente: Aumenta a cura recebida em ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% por stack`,
-        zh: `[仁慈形态]: 先知释放一波能量，对敌人造成 ${baseDamageBenevolent} 并治疗盟友 ${healing} 并应用仁慈增幅。
-        \n\n[邪恶形态]: 先知释放一波能量，对敌人造成 ${baseDamage} 并应用邪恶诅咒。
-        \n\n[被动]: 先知的基础攻击和技能对敌人施加邪恶诅咒，对盟友施加仁慈增幅，持续 ${passiveDuration} 并最多叠加 ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} 次。
-        \n\n邪恶诅咒: 每秒造成 ${malevolentCurseDamage} 魔法伤害
-        \n仁慈增幅: 每层增加 ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% 治疗`,
-        fr: `[Forme Bienveillante]: Le Voyant libère une onde d'énergie qui inflige ${baseDamageBenevolent} aux ennemis et soigne les alliés de ${healing} et applique une amplification bienveillante.
-        \n\n[Forme Malveillante]: Le Voyant libère une onde d'énergie qui inflige ${baseDamage} aux ennemis et applique une malédiction malveillante.
-        \n\n[Passif]: L'attaque de base et les compétences du Voyant appliquent une malédiction malveillante aux ennemis et une amplification bienveillante aux alliés pendant ${passiveDuration} et s'accumulent jusqu'à ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} fois.
-        \n\nMalédiction Malveillante: Inflige ${malevolentCurseDamage} de dégâts magiques par seconde
-        \nAmplification Bienveillante: Augmente les soins reçus de ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% par stack`,
-        vi: `[Benevolent Form]: Tiên tri giải phóng một làn sóng năng lượng gây ${baseDamageBenevolent} sát thương lên kẻ địch và hồi máu cho đồng minh là ${healing} và áp dụng khuếch đại từ bi.
-        \n\n[Malevolent Form]: Tiên tri giải phóng một làn sóng năng lượng gây ${baseDamage} sát thương lên kẻ địch và áp dụng lời nguyền ác độc.
-        \n\n[Passive]: Đòn đánh cơ bản và kỹ năng của Tiên tri áp dụng lời nguyền ác độc lên kẻ địch và khuếch đại từ bi lên đồng minh trong ${passiveDuration} và cộng dồn tối đa ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} lần.
-        \n\nLời nguyền ác độc: Gây ${malevolentCurseDamage} sát thương phép mỗi giây.
-        \nKhuếch đại từ bi: Tăng lượng hồi máu nhận được thêm ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% mỗi cộng dồn.`,
-        id: `[Benevolent Form]: Seer melepaskan gelombang energi yang memberikan ${baseDamageBenevolent} kepada musuh dan menyembuhkan sekutu sebesar ${healing} dan menerapkan amplifikasi yang baik.
-        \n\n[Malevolent Form]: Seer melepaskan gelombang energi yang memberikan ${baseDamage} kepada musuh dan menerapkan kutukan jahat.
-        \n\n[Passive]: Serangan dasar dan kemampuan Seer menerapkan kutukan jahat kepada musuh dan amplifikasi yang baik kepada sekutu selama ${passiveDuration} dan menumpuk hingga ${SeerAbilityData.SEER_PASSIVE_MAX_STACKS} kali.
-        \n\nKutukan Jahat: Memberikan ${malevolentCurseDamage} kerusakan magis per detik
-        \nAmplifikasi Baik: Meningkatkan penyembuhan yang diterima sebesar ${fixed(SeerAbilityData.SEER_AMPLIFICATION_HEAL * 100)}% per stack`,
-      }
-    }
-
-    case SpellList.SEER_BENEVOLENT_FLARE: {
-      const healing = getDamage(
-        SeerAbilityData.BENEVOLENT_FLARE_HEAL_MODIFIER * abilityPower,
+      const benevolentCurseHealing = getDamage(
+        SeerAbilityData.BENEVOLENT_CURSE_HEAL_MODIFIER * abilityPower,
         Shared.DamageTypes.HEAL,
-        SeerAbilityData.BENEVOLENT_FLARE_BASE_HEAL + SeerAbilityData.BENEVOLENT_FLARE_HEAL_PER_LEVEL * (level - 1)
+        SeerAbilityData.BENEVOLENT_CURSE_BASE_HEAL + SeerAbilityData.BENEVOLENT_CURSE_HEAL_PER_LEVEL * (level - 1)
       )
 
-      const malevolentDamage = getDamage(
-        SeerAbilityData.MALEVOLENT_SURGE_AP_MODIFIER * abilityPower,
+      const malevolentCurseDamage = getDamage(
+        SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        SeerAbilityData.MALEVOLENT_SURGE_BASE_DAMAGE + SeerAbilityData.MALEVOLENT_SURGE_DAMAGE_PER_LEVEL * (level - 1)
+        SeerAbilityData.MALEVOLENT_CURSE_BASE_DAMAGE + SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_PER_LEVEL * (level - 1),
+        'AbilityPower'
       )
-      const passiveDuration = toSec(SeerAbilityData.BENEVOLENT_FLARE_DURATION)
+
+      const curseDelay = toSec(SeerAbilityData.CURSE_DELAY_AND_DURATION)
+      const healModifier = fixed(SeerAbilityData.BENEVOLENT_FLARE_HEAL_MODIFIER * 100)
 
       return {
-        en: `[Benevolent Form]: Seer creates a benevolent flare that heals allies for ${healing}, applies one stack of benevolent amplification, and increases movement speed by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration} to all allies hit.
-        \n\n[Malevolent Form]: Seer creates a malevolent surge that deals ${malevolentDamage} magical damage to enemies, applies one stack of malevolent curse, and reduces their movement speeds by ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} for ${passiveDuration}`,
-        ru: `[Благосклонная форма]: Провидец создаёт вспышку благосклонности, исцеляющую союзникам ${healing} здоровья, накладывающую Благоговение и увеличивающую скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.
-        \n\n[Зловещая форма]: Провидец создаёт зловещий всплеск, наносящий ${malevolentDamage} магического урона врагам, накладывающий Упадок и уменьшающий их скорость передвижения на ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} на ${passiveDuration}.`,
-        cz: `[Přívětivá forma]: Prorok vytvoří přívětivý záblesk, který uzdraví spojence o ${healing}, aplikuje přívětivé zesílení a zvýší rychlost pohybu o ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} na ${passiveDuration} spojenců.
-        \n\n[Zlověstná forma]: Prorok vytvoří zlověstný nápor, který způsobí nepřátelům ${malevolentDamage} magického poškození, aplikuje zlověstné prokletí a sníží jejich rychlost pohybu o ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} na ${passiveDuration} spojenců.`,
-        br: `[Forma Benevolente]: Seer cria um clarão benevolente que cura os aliados em ${healing}, aplica amplificação benevolente e aumenta a velocidade de movimento em ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} por ${passiveDuration} aos aliados.
-        \n\n[Forma Malevolente]: Seer cria uma onda mal intencionada que causa ${malevolentDamage} de dano mágico aos inimigos, aplica maldição malevolente e reduz a velocidade de movimento em ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} por ${passiveDuration} aos aliados.`,
-        zh: `[仁慈形态]: 先知创造一个仁慈的耀斑，治疗盟友 ${healing}，应用仁慈增幅并增加 ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} 移动速度 ${passiveDuration}。
-        \n\n[邪恶形态]: 先知创造一个邪恶的冲击，对敌人造成 ${malevolentDamage} 魔法伤害，应用邪恶诅咒并减少他们的移动速度 ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} ${passiveDuration}。`,
-        fr: `[Forme Bienveillante]: Le Voyant crée un éclair bienveillant qui soigne les alliés de ${healing}, applique une amplification bienveillante et augmente la vitesse de déplacement de ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} pour ${passiveDuration} aux alliés.
-        \n\n[Forme Malveillante]: Le Voyant crée une onde malveillante qui inflige ${malevolentDamage} de dégâts magiques aux ennemis, applique une malédiction malveillante et réduit leur vitesse de déplacement de ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} pour ${passiveDuration} aux alliés.`,
-        vi: `[Benevolent Form]: Tiên tri tạo ra một ánh sáng từ bi hồi máu cho đồng minh là ${healing}, áp dụng khuếch đại từ bi và tăng tốc độ di chuyển thêm ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} trong ${passiveDuration} cho đồng minh.
-        \n\n[Malevolent Form]: Tiên tri tạo ra một đợt năng lượng ác độc gây ${malevolentDamage} sát thương phép lên kẻ địch, áp dụng lời nguyền ác độc và giảm tốc độ di chuyển của chúng đi ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} trong ${passiveDuration}.`,
-        id: `[Benevolent Form]: Seer membuat kilatan yang baik yang menyembuhkan sekutu sebesar ${healing}, menerapkan amplifikasi baik dan meningkatkan kecepatan bergerak sebesar ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} selama ${passiveDuration} ke sek
-          \n\n[Malevolent Form]: Seer membuat gelombang yang jahat yang memberikan ${malevolentDamage} kerusakan magis kepada musuh, menerapkan kutukan jahat dan mengurangi kecepatan bergerak mereka sebesar ${SeerAbilityData.BENEVOLENT_FLARE_BONUS_MOVEMENT_SPEED} selama ${passiveDuration} ke sekutu.`,
+        en: `[Benevolent Form]: Seer fires a bolt of benevolent energy that deals ${baseDamage} damage to enemies. On hit, it applies a Benevolent Curse.
+        \n\n[Malevolent Form]: Seer empowers the energy bolt with malevolent force, dealing an additional ${baseDamageBenevolent} magic damage. On hit, it also applies a Malevolent Curse.
+        \n\n[Benevolent Curse]: After ${curseDelay}, the curse expires, releasing a burst of benevolent energy. It heals nearby allies for ${benevolentCurseHealing} and applies Benevolent Flare, increasing all healing received by ${healModifier}% for a short duration.
+        \n\n[Malevolent Curse]: After ${curseDelay}, the curse expires, releasing a burst of malevolent energy that deals ${malevolentCurseDamage} magic damage to nearby enemies.`,
+        ru: `[Благосклонная форма]: Провидец стреляет в противника лучом благосклонной энергии, наносящий ${baseDamage} урона. По попаданию, он накладывает Благосклонный проклятье.
+        \n\n[Зловещая форма]: Провидец усиливает луч злобной энергией, нанося дополнительные ${baseDamageBenevolent} урона. По попаданию, он также накладывает Злобное проклятье.
+        \n\n[Благосклонное проклятье]: Через ${curseDelay}, проклятье истекает, выпуская вспышку благосклонной энергии. Оно лечит близких союзников на ${benevolentCurseHealing} и применяет Благосклонный всплеск, увеличивающий все получаемое лечение на ${healModifier}% на короткое время.
+        \n\n[Злобное проклятье]: Через ${curseDelay}, проклятье истекает, выпуская вспышку злобной энергии, наносящую ${baseDamageBenevolent} урона близким врагам.`,
+        cz: `[Přívětivá forma]: Prorok vystřelí v nepřítele světlem dobré energie, které způsobí ${baseDamage} poškození. Po zásahu se na nepřítele aplikuje dobré prokletí.
+        \n\n[Zlověstná forma]: Prorok zesílí světlo zlověstnou energií, které způsobí ${baseDamageBenevolent} poškození. Po zásahu se na nepřítele aplikuje zlověstné prokletí.
+        \n\n[Dobré prokletí]: Po ${curseDelay} se prokletí vyprázdní, vydává výbřez dobré energie. Léčí blízké spojence o ${benevolentCurseHealing} a aplikuje Dobré zesílení, které zvyšuje všechno získané léčení o ${healModifier}% na krátkou dobu.
+        \n\n[Zlověstné prokletí]: Po ${curseDelay} se prokletí vyprázdní, vydává výbřez zlověstné energie, který způsobí ${baseDamageBenevolent} poškození blízkým nepřátelům.`,
+        br: `[Forma Benevolente]: Seer lança um raio de energia benevolente que causa ${baseDamage} de dano aos inimigos. Ao acertar, aplica um Curse Benevolente.
+        \n\n[Forma Malevolente]: Seer enriquece o raio com energia malévola, causando ${baseDamageBenevolent} de dano mágico adicional. Ao acertar, também aplica um Curse Malevolente.
+        \n\n[Curse Benevolente]: Após ${curseDelay}, o curse expira, lançando uma explosão de energia benevolente. Ele cura aliados próximos em ${benevolentCurseHealing} e aplica Benevolent Flare, aumentando todo o cuidado recebido em ${healModifier}% por um curto período.
+        \n\n[Curse Malevolente]: Após ${curseDelay}, o curse expira, lançando uma explosão de energia malévola, causando ${baseDamageBenevolent} de dano mágico aos inimigos próximos.`,
+        zh: `[仁慈形态]: 先知发射一道仁慈能量射线，对敌人造成 ${baseDamage} 伤害。命中时，施加仁慈诅咒。
+        \n\n[邪恶形态]: 先知增强能量射线，造成额外 ${baseDamageBenevolent} 魔法伤害。命中时，也施加邪恶诅咒。
+        \n\n[仁慈诅咒]: 诅咒在 ${curseDelay} 后消失，释放一道仁慈能量爆发，治疗附近的盟友 ${benevolentCurseHealing} 并应用仁慈爆发，增加所有接收到的治疗 ${healModifier}% 的持续时间。
+        \n\n[邪恶诅咒]: 诅咒在 ${curseDelay} 后消失，释放一道邪恶能量爆发，对附近的敌人造成 ${baseDamageBenevolent} 魔法伤害。`,
+        fr: `[Forme Bienveillante]: Le Voyant tire un rayon d'énergie bienveillante qui inflige ${baseDamage} de dégâts aux ennemis. Au coup, il applique un maléfice bienveillant.
+        \n\n[Forme Malveillante]: Le Voyant renforce le rayon avec une énergie maléfique, infligeant ${baseDamageBenevolent} de dégâts magiques supplémentaires. Au coup, il applique également un maléfice maléfique.
+        \n\n[Maléfice Bienveillant]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie bienveillante. Il soigne les alliés proches de ${benevolentCurseHealing} et applique Benevolent Flare, augmentant tout soin reçu par ${healModifier}% pour une courte durée.
+        \n\n[Maléfice Maléfique]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie maléfique qui inflige ${baseDamageBenevolent} de dégâts magiques aux ennemis proches.`,
+        vi: `[Dạng Từ Bi]: Tiên tri bắn một tia năng lượng từ bi gây ${baseDamage} sát thương cho kẻ địch. Khi trúng, nó áp dụng một lời nguyền từ bi.
+        \n\n[Dạng Ác Độc]: Tiên tri tăng cường tia năng lượng với sức mạnh ác độc, gây ${baseDamageBenevolent} sát thương phép thêm. Khi trúng, nó cũng áp dụng một lời nguyền ác độc.
+        \n\n[Lời nguyền Từ Bi]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một bùng nổ năng lượng từ bi. Nó hồi máu cho đồng minh gần bên nó ${benevolentCurseHealing} và áp dụng Benevolent Flare, tăng tất cả sự hồi máu nhận được bởi ${healModifier}% trong một thời gian ngắn.
+        \n\n[Lời nguyền Ác Độc]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một bùng nổ năng lượng ác độc gây ${baseDamageBenevolent} sát thương phép cho kẻ địch gần bên nó.`,
+        id: `[Benevolent Form]: Seer membuat kilatan energi yang baik yang memberikan ${baseDamage} kerusakan kepada musuh. Saat menembak, ia menerapkan kutukan baik.
+        \n\n[Malevolent Form]: Seer memperkuat kilatan energi dengan kekuatan jahat, memberikan ${baseDamageBenevolent} kerusakan magis tambahan. Saat menembak, ia juga menerapkan kutukan jahat.
+        \n\n[Kutukan Baik]: Setelah ${curseDelay}, kutukan habis, melepaskan kilatan energi yang baik. Ia menyembuhkan sekutu di sekitarnya sebesar ${benevolentCurseHealing} dan menerapkan Benevolent Flare, meningkatkan semua perawatan yang diterima oleh ${healModifier}% untuk jangka waktu singkat.
+        \n\n[Kutukan Jahat]: Setelah ${curseDelay}, kutukan habis, melepaskan kilatan energi jahat yang memberikan ${baseDamageBenevolent} kerusakan magis kepada musuh di sekitarnya.`,
       }
     }
 
-    case SpellList.SEER_CHANGE_FORM: {
+    case SpellList.SEER_BENEVOLENT_EXPLOSION: {
+      const healing = getDamage(
+        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_MODIFIER * abilityPower,
+        Shared.DamageTypes.HEAL,
+        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE +
+          SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_PER_LEVEL * (level - 1)
+      )
+
+      const damage = getDamage(
+        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_MODIFIER * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE +
+          SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_PER_LEVEL * (level - 1)
+      )
+
+      const fearDuration = toSec(SeerAbilityData.MALEVOLENT_EXPLOSION_FEAR_DURATION)
+
       return {
-        en: `Seer changes its form between benevolent and malevolent form. In benevolent form, Seer heals allies and applies benevolent amplification. In malevolent form, Seer deals damage to enemies and applies malevolent curse.`,
-        ru: `Провидец меняет свою форму между благосклонной и зловещей. В благосклонной форме Провидец исцеляет союзников и накладывает Благоговение, а в зловещей форме Провидец наносит урон врагам и накладывает на них Упадок.`,
-        cz: `Prorok mění svou formu mezi přívětivou a zlověstnou. V přívětivé formě Prorok uzdravuje spojence a aplikuje přívětivé zesílení. V zlověstné formě Prorok způsobuje nepřátelům poškození a aplikuje zlověstné prokletí.`,
-        br: `Seer muda sua forma entre benevolente e malevolente. Na forma benevolente, Seer cura os aliados e aplica amplificação benevolente. Na forma malevolente, Seer causa dano aos inimigos e
-        aplica maldição malevolente.`,
-        zh: `先知在仁慈和邪恶之间改变形态。在仁慈形态下，先知治疗盟友并应用仁慈增幅。在邪恶形态下，先知对敌人造成伤害并施加邪恶诅咒。`,
-        fr: `Le Voyant change de forme entre bienveillante et malveillante. En forme bienveillante, le Voyant soigne les alliés et applique une amplification bienveillante. En forme malveillante, le Voyant inflige des dégâts aux ennemis et applique une malédiction malveillante.`,
-        vi: `Tiên tri thay đổi giữa hai dạng từ bi và ác độc. Ở dạng từ bi, Tiên tri hồi máu cho đồng minh và áp dụng khuếch đại từ bi. Ở dạng ác độc, Tiên tri gây sát thương lên kẻ địch và áp dụng lời nguyền ác độc.`,
-        id: `Seer mengubah bentuknya antara yang baik dan jahat. Dalam bentuk baik, Seer menyembuhkan sekutu dan menerapkan amplifikasi baik. Dalam bentuk jahat, Seer memberikan kerusakan kepada musuh dan menerapkan kutukan jahat.`,
+        en: `Seer creates sequential explosions in his facing direction. Each explosion releases a burst of energy, healing nearby allied units for ${healing} and damaging enemy units for ${damage}. Affected allies gain Benevolent Flare, while affected enemies are afflicted with both Benevolent Curse and Malevolent Curse.
+        \n\n[Malevolent Form]: Each explosion also applies Fear to enemies for ${fearDuration}.`,
+        ru: `Провидец создает последовательные взрывы в своем направлении. Каждый взрыв выпускает вспышку энергии, лечащие близких союзников на ${healing} и наносящие урон врагам на ${damage}. Пострадавшие союзники получают Благосклонный всплеск, а пострадавшие враги получают и Благосклонное, и Злобное проклятье.
+        \n\n[Зловещая форма]: Каждый взрыв также применяет Страх к врагам на ${fearDuration}.`,
+        cz: `Prorok vytváří sekvenciální exploze ve svém směru. Každá exploze vydává výbřez energie, léčící blízké spojence o ${healing} a poškozující nepřátele o ${damage}. Společníci, kterým je vlivná, získají Benevolent Flare, zatímco nepřátelé, kterým je vlivná, jsou postiženi jak Benevolent Curse, tak Malevolent Curse.
+        \n\n[Zlověstná forma]: Každá exploze také aplikuje Strach na nepřátele na ${fearDuration}.`,
+        br: `Seer cria explosões sequenciais em sua direção. Cada explosão libera uma explosão de energia, curando aliados próximos em ${healing} e causando ${damage} de dano aos inimigos. Aliados afetados ganham Benevolent Flare, enquanto inimigos afetados são afetados por Benevolent Curse e Malevolent Curse.
+        \n\n[Forma Malevolente]: Cada explosão também aplica Medo aos inimigos por ${fearDuration}.`,
+        zh: `先知在他的面前创造了一系列爆炸。每个爆炸释放出一股能量，治疗附近的盟友 ${healing} 并造成 ${damage} 伤害。受影响的盟友获得仁慈爆发，而受影响的敌人同时受到仁慈诅咒和邪恶诅咒。
+        \n\n[邪恶形态]: 每个爆炸也会对敌人施加恐惧 ${fearDuration}。`,
+        fr: `Le Voyant crée des explosions successives dans sa direction. Chaque explosion libère une explosion d'énergie, soignant les alliés proches de ${healing} et infligeant ${damage} de dégâts aux ennemis. Les alliés affectés gagnent Benevolent Flare, tandis que les ennemis affectés sont affectés par Benevolent Curse et Malevolent Curse.
+        \n\n[Forme Malveillante]: Chaque explosion applique également Peur aux ennemis pour ${fearDuration}.`,
+        vi: `Tiên tri tạo ra các vụ nổ liên tiếp trong hướng của mình. Mỗi vụ nổ giải phóng một lượng năng lượng, hồi máu cho đồng minh gần bên nó ${healing} và gây ${damage} sát thương cho kẻ địch. Đồng minh bị ảnh hưởng nhận được Benevolent Flare, trong khi kẻ địch bị ảnh hưởng nhận được cả Benevolent Curse và Malevolent Curse.
+        \n\n[Dạng Ác Độc]: Mỗi vụ nổ cũng áp dụng Sợ Hãi cho kẻ địch trong ${fearDuration}.`,
+        id: `Seer menciptakan ledakan berurutan di arahannya. Setiap ledakan melepaskan sebuah ledakan energi, menyembuhkan sekutu di sekitarnya sebesar ${healing} dan menimbulkan ${damage} kerusakan pada musuh. Sekutu yang terkena akan mendapatkan Benevolent Flare, sementara musuh yang terkena akan mendapatkan Benevolent Curse dan Malevolent Curse.
+        \n\n[Form Malevolent]: Setiap ledakan juga menerapkan Ketakutan pada musuh dalam ${fearDuration}.`,
+      }
+    }
+
+    case SpellList.SEER_MALEVOLENT_FORM: {
+      return {
+        en: 'Seer temporarily transforms into his Malevolent Form, becoming immune to crowd control effects and slows, and enhancing all of his abilities.',
+        ru: 'Провидец временно превращается в свою Зловещую Форму, становится невосприимчивым к эффектам контроля и замедления, и усиливает все свои способности.',
+        cz: 'Prorok se dočasně přemění do své Zlověstné Formy, stane se necitlivým na efekty kontroly a zpomalení a zesílí všechny své schopnosti.',
+        br: 'Seer se transforma temporariamente em sua Forma Malevolente, tornando-se imune a efeitos de controle e reduzindo, e aumentando todas as suas habilidades.',
+        zh: '先知暂时变成邪恶形态，免疫控制效果和减速，并增强所有技能。',
+        fr: 'Le Voyant se transforme temporairement en sa Forme Malveillante, devenant immunisé aux effets de contrôle et de ralentissement, et augmentant toutes ses capacités.',
+        vi: 'Tiên tri tạm thời biến thành Dạng Ác Độc, trở thành không chịu tác động của hiệu ứng kiểm soát và giảm tốc, và tăng tất cả các kỹ năng của mình.',
+        id: 'Seer bertukar menjadi Form Malevolent, menjadi tidak rentan terhadap efek kontrol dan perlambatan, dan memperkuat semua kemampuannya.',
       }
     }
 
@@ -1656,28 +1656,28 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Tarik Gravitasi',
       }
 
-    case SpellList.SEER_BENEVOLENT_FLARE:
+    case SpellList.SEER_BENEVOLENT_EXPLOSION:
       return {
-        en: 'Benevolent Flare / Malevolent Surge',
-        ru: 'Благосклонность / Неприязнь',
-        br: 'Clarão Benevolente / Surto Malevolente',
-        fr: 'Flamme bienveillante / Vague malveillante',
-        zh: '仁慈之光 / 邪惡之潮',
-        cz: 'Laskavý záblesk / Zlomyslný nápor',
-        vi: 'Ánh Sáng Nhân Hậu / Sóng Ác Ý',
-        id: 'Cahaya Baik / Gelombang Jahat',
+        en: 'Benevolent Explosion / Malevolent Explosion',
+        ru: 'Благосклонное взрыв / Неприязненное взрыв',
+        br: 'Explosão Benevolente / Explosão Malevolente',
+        fr: 'Explosion bienveillante / Explosion malveillante',
+        zh: '仁慈爆炸 / 邪恶爆炸',
+        cz: 'Výbuch laskavosti / Výbuch zlomyslnosti',
+        vi: 'Nổ Lửa Nhân Hậu / Nổ Lửa Ác Ý',
+        id: 'Ledakan Baik / Ledakan Jahat',
       }
 
-    case SpellList.SEER_CHANGE_FORM:
+    case SpellList.SEER_MALEVOLENT_FORM:
       return {
-        en: 'Transform',
-        ru: 'Смена формы',
-        br: 'Transformar',
-        fr: 'Transformer',
-        zh: '變形',
-        cz: 'Přeměna',
-        vi: 'Biến Hình',
-        id: 'Transformasi',
+        en: 'Malevolent Form',
+        ru: 'Неприязненная форма',
+        br: 'Forma Malevolente',
+        fr: 'Forme malveillante',
+        zh: '邪恶形态',
+        cz: 'Zlomyslná forma',
+        vi: 'Hình Dạng Ác Ý',
+        id: 'Bentuk Jahat',
       }
 
     /** Default */

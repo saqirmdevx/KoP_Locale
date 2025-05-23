@@ -318,15 +318,15 @@ const _getLocaleItemDescription = (
           id: 'Kalung Menawan',
         },
         desc: {
-          en:  getObserverWardDescription(),
-          ru:  getObserverWardDescription(),
-          br:  getObserverWardDescription(),
-          cz:  getObserverWardDescription(),
-          fr:  getObserverWardDescription(),
-          zh:  getObserverWardDescription(),
-          vi:  getObserverWardDescription(),
-          id:  getObserverWardDescription(),
-        }
+          en: getObserverWardDescription(),
+          ru: getObserverWardDescription(),
+          br: getObserverWardDescription(),
+          cz: getObserverWardDescription(),
+          fr: getObserverWardDescription(),
+          zh: getObserverWardDescription(),
+          vi: getObserverWardDescription(),
+          id: getObserverWardDescription(),
+        },
       }
     case ItemList.Plate_Armor:
       return {
@@ -1069,55 +1069,55 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodOrHarpoonDescription() },
       }
-      case ItemList.EnchantedSpear:
-    const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
-    return {
+    case ItemList.EnchantedSpear:
+      const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
+      return {
         name: {
-            en: 'Enchanted Spear',
-            ru: 'Зачарованное копьё',
-            br: 'Lança Encantada',
-            fr: 'Lance enchantée',
-            zh: '魔法矛',
-            cz: 'Okouzlené kopí',
-            vi: 'Thương Phép Thuật',
-            id: 'Tombak Ajaib',
+          en: 'Enchanted Spear',
+          ru: 'Зачарованное копьё',
+          br: 'Lança Encantada',
+          fr: 'Lance enchantée',
+          zh: '魔法矛',
+          cz: 'Okouzlené kopí',
+          vi: 'Thương Phép Thuật',
+          id: 'Tombak Ajaib',
         },
         desc: {
-            en: 
-                `If a target is at or below ${executionThreshold}% health, any Magic Damage will instantly execute it.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            ru: 
-                `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            br: 
-                `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            fr: 
-                `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            zh: 
-                `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            cz: 
-                `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            vi: 
-                `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
-            id: 
-                `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
-                '\n' +
-                getIronRodOrHarpoonDescription(),
+          en:
+            `If a target is at or below ${executionThreshold}% health, any Magic Damage will instantly execute it.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          ru:
+            `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          br:
+            `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          fr:
+            `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          zh:
+            `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          cz:
+            `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          vi:
+            `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          id:
+            `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
         },
-    }
-  
+      }
+
     case ItemList.Magic_Harpoon: {
       return {
         name: {
@@ -1649,7 +1649,7 @@ const _getLocaleItemDescription = (
       const duration = ItemAbilityData.FROST_ARMOR_DURATION // MILISECONDS
       const moveSpeedReduction = ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION
       const attackSpeedReduction = ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100
-    
+
       return {
         name: {
           en: 'Armor of the Frozen Emperor',
@@ -1705,14 +1705,14 @@ const _getLocaleItemDescription = (
       const duration = toSecRaw(ItemAbilityData.DIVINE_ARMOR_DURATION)
       return {
         name: {
-          en: "Divine Armor",
-          ru: "Божественная броня",
-          br: "Armadura Divina",
-          zh: "神聖鎧甲",
-          cz: "Božské brnění",
-          fr: "Armure Divine",
-          vi: "Giáp Thần Thánh",
-          id: "Baju Zirah Ilahi",
+          en: 'Divine Armor',
+          ru: 'Божественная броня',
+          br: 'Armadura Divina',
+          zh: '神聖鎧甲',
+          cz: 'Božské brnění',
+          fr: 'Armure Divine',
+          vi: 'Giáp Thần Thánh',
+          id: 'Baju Zirah Ilahi',
         },
         desc: {
           en: `Reduces all incoming damage to allies by ${ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100}% for ${duration} Seconds.`,
@@ -2078,11 +2078,11 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    
+
     case ItemList.Vampiric_Armor: {
       const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_ABSORPTION * 100, 1)
       const duration = toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)
-    
+
       return {
         name: {
           en: 'Vampiric Armor',
@@ -2106,10 +2106,9 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    
 
     case ItemList.MoltenShield: {
-      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2);
+      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2)
       return {
         name: {
           en: 'Molten Shield',
@@ -2138,7 +2137,7 @@ const _getLocaleItemDescription = (
       const hasteReductionPerStack = ItemAbilityData.CHRONOS_SHIELD_ABILITY_HASTE_REDUCTION
       const maxStacks = ItemAbilityData.CHRONOS_SHIELD_MAX_STACKS
       const duration = ItemAbilityData.CHRONOS_SHIELD_DURATION // MILLISECONDS
-    
+
       return {
         name: {
           en: 'Chronos Shield',
@@ -2162,24 +2161,23 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    
 
     case ItemList.VoidSword: {
-      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1);
-      const radius = ItemAbilityData.VOID_SWORD_RADIUS;
-      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED;
-      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED;
-    
+      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1)
+      const radius = ItemAbilityData.VOID_SWORD_RADIUS
+      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED
+      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED
+
       return {
         name: {
-          en: "Void Sword",
-          ru: "Меч Пустоты",
-          br: "Espada do Vazio",
-          cz: "Meč prázdnoty",
-          zh: "虚空之剑",
-          fr: "Épée du Néant",
-          vi: "Kiếm Hư Vô",
-          id: "Pedang Void",
+          en: 'Void Sword',
+          ru: 'Меч Пустоты',
+          br: 'Espada do Vazio',
+          cz: 'Meč prázdnoty',
+          zh: '虚空之剑',
+          fr: 'Épée du Néant',
+          vi: 'Kiếm Hư Vô',
+          id: 'Pedang Void',
         },
         desc: {
           en: `Channel the void with this sword to create an aura lasting ${duration} seconds in a radius of ${radius} units. Allies gain +${movespeed} movement speed and +${attackspeed} attack speed, while enemies suffer reductions in these stats.`,
@@ -2195,46 +2193,43 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosSword: {
-  return {
-    name: {
-      en: 'Chronos Sword',
-      ru: 'Меч Хроноса',
-      br: 'Espada Chronos',
-      cz: 'Chronosovské meče',
-      zh: '克洛诺之剑',
-      fr: 'Épée Chronos',
-      vi: 'Kiếm Chronos',
-      id: 'Pedang Chronos',
-    },
-    desc: {
-      en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} seconds. Doubles on critical hits.`,
-      ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} сек. Эффект удваивается при критическом ударе.`,
-      br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} segundos. O efeito é dobrado em acertos críticos.`,
-      fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} secondes. L'effet est doublé en cas de coup critique.`,
-      zh: `每次普通攻击命中减少技能冷却 ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} 秒，暴击时效果翻倍。`,
-      cz: `Každý základní útok zkracuje dobu přebíjení schopností o ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} sekund. Při kritickém zásahu se efekt zdvojnásobí.`,
-      vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} giây. Hiệu ứng được nhân đôi nếu chí mạng.`,
-      id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
-        ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
-      )} detik. Efek menjadi dua kali lipat saat serangan kritikal.`,
-    },
-  }
-}
-
+      return {
+        name: {
+          en: 'Chronos Sword',
+          ru: 'Меч Хроноса',
+          br: 'Espada Chronos',
+          cz: 'Chronosovské meče',
+          zh: '克洛诺之剑',
+          fr: 'Épée Chronos',
+          vi: 'Kiếm Chronos',
+          id: 'Pedang Chronos',
+        },
+        desc: {
+          en: `Every basic attack hit reduces all ability cooldowns by ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} seconds. Doubles on critical hits.`,
+          ru: `Каждая успешная атака сокращает перезарядку способностей на ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} сек. Эффект удваивается при критическом ударе.`,
+          br: `Cada ataque básico reduz o tempo de recarga das habilidades em ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} segundos. O efeito é dobrado em acertos críticos.`,
+          fr: `Chaque attaque de base réduit le temps de recharge des compétences de ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} secondes. L'effet est doublé en cas de coup critique.`,
+          zh: `每次普通攻击命中减少技能冷却 ${toSec(ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION)} 秒，暴击时效果翻倍。`,
+          cz: `Každý základní útok zkracuje dobu přebíjení schopností o ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} sekund. Při kritickém zásahu se efekt zdvojnásobí.`,
+          vi: `Mỗi đòn tấn công cơ bản giảm thời gian hồi chiêu ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} giây. Hiệu ứng được nhân đôi nếu chí mạng.`,
+          id: `Setiap serangan dasar mengurangi cooldown kemampuan sebesar ${toSec(
+            ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION
+          )} detik. Efek menjadi dua kali lipat saat serangan kritikal.`,
+        },
+      }
+    }
 
     default:
       return {
