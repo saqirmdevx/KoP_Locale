@@ -1238,22 +1238,22 @@ const _getSpellDescriptionLang = (
       const fearDuration = toSec(SeerAbilityData.MALEVOLENT_EXPLOSION_FEAR_DURATION)
 
       return {
-        en: `Seer creates sequential explosions in his facing direction. Each explosion releases a burst of energy, healing nearby allied units for ${healing} and damaging enemy units for ${damage}. Affected allies gain Benevolent Flare, while affected enemies are afflicted with both Benevolent Curse and Malevolent Curse.
-        \n\n[Malevolent Form]: Each explosion also applies Fear to enemies for ${fearDuration}.`,
-        ru: `Провидец создает последовательные взрывы в своем направлении. Каждый взрыв выпускает вспышку энергии, лечащие близких союзников на ${healing} и наносящие урон врагам на ${damage}. Пострадавшие союзники получают Благосклонный всплеск, а пострадавшие враги получают и Благосклонное, и Злобное проклятье.
-        \n\n[Зловещая форма]: Каждый взрыв также применяет Страх к врагам на ${fearDuration}.`,
-        cz: `Prorok vytváří sekvenciální exploze ve svém směru. Každá exploze vydává výbřez energie, léčící blízké spojence o ${healing} a poškozující nepřátele o ${damage}. Společníci, kterým je vlivná, získají Benevolent Flare, zatímco nepřátelé, kterým je vlivná, jsou postiženi jak Benevolent Curse, tak Malevolent Curse.
-        \n\n[Zlověstná forma]: Každá exploze také aplikuje Strach na nepřátele na ${fearDuration}.`,
-        br: `Seer cria explosões sequenciais em sua direção. Cada explosão libera uma explosão de energia, curando aliados próximos em ${healing} e causando ${damage} de dano aos inimigos. Aliados afetados ganham Benevolent Flare, enquanto inimigos afetados são afetados por Benevolent Curse e Malevolent Curse.
-        \n\n[Forma Malevolente]: Cada explosão também aplica Medo aos inimigos por ${fearDuration}.`,
-        zh: `先知在他的面前创造了一系列爆炸。每个爆炸释放出一股能量，治疗附近的盟友 ${healing} 并造成 ${damage} 伤害。受影响的盟友获得仁慈爆发，而受影响的敌人同时受到仁慈诅咒和邪恶诅咒。
-        \n\n[邪恶形态]: 每个爆炸也会对敌人施加恐惧 ${fearDuration}。`,
-        fr: `Le Voyant crée des explosions successives dans sa direction. Chaque explosion libère une explosion d'énergie, soignant les alliés proches de ${healing} et infligeant ${damage} de dégâts aux ennemis. Les alliés affectés gagnent Benevolent Flare, tandis que les ennemis affectés sont affectés par Benevolent Curse et Malevolent Curse.
-        \n\n[Forme Malveillante]: Chaque explosion applique également Peur aux ennemis pour ${fearDuration}.`,
-        vi: `Tiên tri tạo ra các vụ nổ liên tiếp trong hướng của mình. Mỗi vụ nổ giải phóng một lượng năng lượng, hồi máu cho đồng minh gần bên nó ${healing} và gây ${damage} sát thương cho kẻ địch. Đồng minh bị ảnh hưởng nhận được Benevolent Flare, trong khi kẻ địch bị ảnh hưởng nhận được cả Benevolent Curse và Malevolent Curse.
-        \n\n[Dạng Ác Độc]: Mỗi vụ nổ cũng áp dụng Sợ Hãi cho kẻ địch trong ${fearDuration}.`,
-        id: `Seer menciptakan ledakan berurutan di arahannya. Setiap ledakan melepaskan sebuah ledakan energi, menyembuhkan sekutu di sekitarnya sebesar ${healing} dan menimbulkan ${damage} kerusakan pada musuh. Sekutu yang terkena akan mendapatkan Benevolent Flare, sementara musuh yang terkena akan mendapatkan Benevolent Curse dan Malevolent Curse.
-        \n\n[Form Malevolent]: Setiap ledakan juga menerapkan Ketakutan pada musuh dalam ${fearDuration}.`,
+        en: `Seer creates sequential explosions in his facing direction. Each explosion releases a burst of energy, healing nearby allied units for ${healing} and damaging enemy units for ${damage}. Affected allies gain Benevolent Flare, while affected enemies are afflicted with Benevolent Curse.
+        \n\n[Malevolent Form]: Each explosion also applies Fear to enemies for ${fearDuration} and applies Malevolent Curse.`,
+        ru: `Провидец создает последовательные взрывы в своем направлении. Каждый взрыв выпускает вспышку энергии, лечащие близких союзников на ${healing} и наносящие урон врагам на ${damage}. Пострадавшие союзники получают Благосклонный всплеск, а пострадавшие враги получают Благосклонное проклятье.
+        \n\n[Зловещая форма]: Каждый взрыв также применяет Страх к врагам на ${fearDuration} и применяет Злобное проклятье.`,
+        cz: `Prorok vytváří sekvenciální exploze ve svém směru. Každá exploze vydává výbřez energie, léčící blízké spojence o ${healing} a poškozující nepřátele o ${damage}. Společníci, kterým je vlivná, získají Benevolent Flare, zatímco nepřátelé, kterým je vlivná, jsou postiženi Benevolent Curse.
+        \n\n[Zlověstná forma]: Každá exploze také aplikuje Strach na nepřátele na ${fearDuration} a aplikuje Malevolent Curse.`,
+        br: `Seer cria explosões sequenciais em sua direção. Cada explosão libera uma explosão de energia, curando aliados próximos em ${healing} e causando ${damage} de dano aos inimigos. Aliados afetados ganham Benevolent Flare, enquanto inimigos afetados são afetados por Benevolent Curse.
+        \n\n[Forma Malevolente]: Cada explosão também aplica Medo aos inimigos por ${fearDuration} e aplica Malevolent Curse.`,
+        zh: `先知在他的面前创造了一系列爆炸。每个爆炸释放出一股能量，治疗附近的盟友 ${healing} 并造成 ${damage} 伤害。受影响的盟友获得仁慈爆发，而受影响的敌人同时受到仁慈诅咒。
+        \n\n[邪恶形态]: 每个爆炸也会对敌人施加恐惧 ${fearDuration} 并施加邪恶诅咒。`,
+        fr: `Le Voyant crée des explosions successives dans sa direction. Chaque explosion libère une explosion d'énergie, soignant les alliés proches de ${healing} et infligeant ${damage} de dégâts aux ennemis. Les alliés affectés gagnent Benevolent Flare, tandis que les ennemis affectés sont affectés par Benevolent Curse.
+        \n\n[Forme Malveillante]: Chaque explosion applique également Peur aux ennemis pour ${fearDuration} et applique Malevolent Curse.`,
+        vi: `Tiên tri tạo ra các vụ nổ liên tiếp trong hướng của mình. Mỗi vụ nổ giải phóng một lượng năng lượng, hồi máu cho đồng minh gần bên nó ${healing} và gây ${damage} sát thương cho kẻ địch. Đồng minh bị ảnh hưởng nhận được Benevolent Flare, trong khi kẻ địch bị ảnh hưởng nhận được Benevolent Curse.
+        \n\n[Dạng Ác Độc]: Mỗi vụ nổ cũng áp dụng Sợ Hãi cho kẻ địch trong ${fearDuration} và áp dụng Malevolent Curse.`,
+        id: `Seer menciptakan ledakan berurutan di arahannya. Setiap ledakan melepaskan sebuah ledakan energi, menyembuhkan sekutu di sekitarnya sebesar ${healing} dan menimbulkan ${damage} kerusakan pada musuh. Sekutu yang terkena akan mendapatkan Benevolent Flare, sementara musuh yang terkena akan mendapatkan Benevolent Curse.
+        \n\n[Form Malevolent]: Setiap ledakan juga menerapkan Ketakutan pada musuh dalam ${fearDuration} dan menerapkan Malevolent Curse.`,
       }
     }
 
