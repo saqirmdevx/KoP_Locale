@@ -1330,6 +1330,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Perisai',
     vi: 'Giáp',
   },
+  [LOCALE.TENACITY]: {
+    en: 'Tenacity',
+    ru: 'Упорство',
+    br: 'Tenacidade',
+    cz: 'Houževnatost',
+    zh: '韌性',
+    fr: 'Ténacité',
+    id: 'Ketekunan',
+    vi: 'Sự kiên cường',
+  },
   [LOCALE.HEALTH]: {
     en: 'Health',
     ru: 'Здоровье',
@@ -3608,6 +3618,15 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Mode de jeu',
     id: 'Mode Permainan',
     vi: 'Chế độ trò chơi',
+  },
+  [LOCALE.LOBBY_MAX_DURATION_MINUTES]: {
+    br: 'Tempo Máximo (Minutos)',
+    cz: 'Maximalní doba (minut)',
+    en: 'Max Duration (Minutes)',
+    id: 'Durasi Maksimal (Menit)',
+    ru: 'Максимальная длительность (минуты)',
+    vi: 'Thời gian Cao Nhat (phút)',
+    zh: '最長時長(分鐘)',
   },
   [LOCALE.LOBBY_MAX_POINTS]: {
     en: 'Max Points',
