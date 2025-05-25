@@ -1282,6 +1282,34 @@ const _getLocaleItemDescription = (
       }
     }
 
+    case ItemList.DivineArmor: {
+      const duration = toSecRaw(ItemAbilityData.DIVINE_ARMOR_DURATION)
+      const damageReduction = ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100
+
+      return {
+        name: {
+          en: "Divine Armor",
+          ru: "Божественная броня",
+          br: "Armadura Divina",
+          zh: "神聖鎧甲",
+          cz: "Božské brnění",
+          fr: "Armure Divine",
+          vi: "Giáp Thần Thánh",
+          id: "Baju Zirah Ilahi",
+        },
+        desc: {
+          en: `Grants a holy shield to all nearby allies, reducing all incoming damage by ${damageReduction}% for ${duration} seconds.`,
+          ru: `Накладывает священный щит на всех ближайших союзников, снижая весь получаемый урон на ${damageReduction}% в течение ${duration} секунд.`,
+          br: `Concede um escudo sagrado a todos os aliados próximos, reduzindo todo o dano recebido em ${damageReduction}% por ${duration} segundos.`,
+          zh: `為所有附近的盟友賦予神聖護盾，使其所受所有傷害減少 ${damageReduction}%，持續 ${duration} 秒。`,
+          cz: `Uděluje svatý štít všem blízkým spojencům, který snižuje veškeré příchozí poškození o ${damageReduction}% po dobu ${duration} sekund.`,
+          fr: `Confère un bouclier sacré à tous les alliés proches, réduisant tous les dégâts reçus de ${damageReduction}% pendant ${duration} secondes.`,
+          vi: `Ban phát một lá chắn thánh lên tất cả đồng minh xung quanh, giảm ${damageReduction}% sát thương nhận vào trong ${duration} giây.`,
+          id: `Memberikan perisai suci kepada semua sekutu di sekitar, mengurangi semua kerusakan yang diterima sebesar ${damageReduction}% selama ${duration} detik.`,
+        },
+      }
+    }
+
     case ItemList.Divine_Shield:
       return {
         name: {
