@@ -1990,37 +1990,33 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `Every ${cooldown}, gain a stack of Garun's protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Grants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n` +
-            getObserverWardDescription(),
+            `Every ${cooldown}, gain a stack of Garun's protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Grants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n`,
           br:
-            `A cada ${cooldown}, ganhe uma pilha de Proteção de Garun, acumula até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} pilhas. Receber Dano normal remove uma pilha. Cada pilha aumenta sua Armadura em ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Concede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura para aliados próximos \n\n` +
-            getObserverWardDescription(),
+            `A cada ${cooldown}, ganhe uma pilha de Proteção de Garun, acumula até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} pilhas. Receber Dano normal remove uma pilha. Cada pilha aumenta sua Armadura em ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Concede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura para aliados próximos \n\n`,
           fr:
-            `Toutes les ${cooldown}, gagnez une pile de protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n` +
-            getObserverWardDescription(),
+            `Toutes les ${cooldown}, gagnez une pile de protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n`,
           zh:
-            `每 ${cooldown}，獲得一層加侖的守護，最多疊加到 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}層。受到普通傷害會移除一層。每層增加你的裝甲值 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}裝甲值 \n\n` +
-            getObserverWardDescription(),
+            `每 ${cooldown}，獲得一層加侖的守護，最多疊加到 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}層。受到普通傷害會移除一層。每層增加你的裝甲值 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}裝甲值 \n\n`,
           cz:
             `Každých ${cooldown} získáš stack Garunovy ochrany, až do maxima ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacků. Přijetí Normálního poškození odebere stack. Každý stack zvyšuje tvou Obranu o ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
-            \n\n[AURA]: Přidá ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Obrany všem spojencům v okolí \n\n` +
-            getObserverWardDescription(),
+            \n\n[AURA]: Přidá ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Obrany všem spojencům v okolí \n\n`,
           ru:
             `Каждые ${cooldown} получай стек Оберега Гаруна, до ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} стеков. Получение Обычного урона убирает стек. Каждый стек увеличивает твою Броню на ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
-            \n\n[AURA]: Предоставляет ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Брони ближайшим союзникам \n\n` +
-            getObserverWardDescription(),
+            \n\n[AURA]: Предоставляет ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Брони ближайшим союзникам \n\n`,
           vi:
             `Mỗi ${cooldown}, nhận một tấm bảo vệ của Garun, tối đa ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tấm. Nhận Sát Thương Thường xóa một tấm. Mỗi tấm tăng Giáp của bạn lên ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
-          \n\n[AURA]: Cung cấp ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Giáp cho đồng minh xung quanh \n\n` +
-            getObserverWardDescription(),
+          \n\n[AURA]: Cung cấp ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Giáp cho đồng minh xung quanh \n\n`,
           id:
             `Setiap ${cooldown}, dapatkan tumpukan perlindungan Garun, hingga ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tumpukan. Menerima Kerusakan Normal menghapus satu tumpukan. Setiap tumpukan meningkatkan Armor kamu sebesar ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
-          \n\n[AURA]: Memberikan ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor untuk sekutu di sekitar \n\n` +
-            getObserverWardDescription(),
+          \n\n[AURA]: Memberikan ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor untuk sekutu di sekitar \n\n`,
         },
       }
     }
-    case ItemList.Wizard_Charm:
+    case ItemList.Wizard_Charm: {
+      const duration = toSec(ItemAbilityData.WIZARD_CHARM_DURATION)
+      const cooldown = toSec(ItemAbilityData.WIZARD_CHARM_COOLDOWN)
+      const percDmg = fixed(ItemAbilityData.WIZARD_CHARM_PERC_DMG * 100, 1)
+    
       return {
         name: {
           en: 'Wizard Charm',
@@ -2033,32 +2029,17 @@ const _getLocaleItemDescription = (
           id: 'Pesona Penyihir',
         },
         desc: {
-          en:
-            `On ability hit, applies Wizard's Curse that prevents the enemy from receiving any healing or health regeneration and removes all positive effects. \n\n` +
-            getObserverWardDescription(),
-          br:
-            `Ao acertar uma habilidade, aplica a Maldição do Mago, que impede o inimigo de receber qualquer tipo de cura ou regeneração de vida e remove todos os efeitos positivos. \n\n` +
-            getObserverWardDescription(),
-          fr:
-            `Lorsqu'une compétence touche, applique la Malédiction du Sorcier, empêchant l'ennemi de recevoir toute forme de soin ou de régénération de santé et supprime tous les effets positifs. \n\n` +
-            getObserverWardDescription(),
-          zh:
-            `技能命中时，施加巫师的诅咒，使敌人无法获得任何治疗或生命恢复效果，并移除所有正面效果。 \n\n` +
-            getObserverWardDescription(),
-          cz:
-            `Při zásahu schopností aplikuje Kletbu Kouzelníka, která zabrání nepříteli získat jakékoli léčení nebo regeneraci zdraví a odstraní všechny pozitivní efekty. \n\n` +
-            getObserverWardDescription(),
-          ru:
-            `При попадании способностью накладывает Проклятие Волшебника, которое запрещает врагу получать любое исцеление или восстановление здоровья и снимает все положительные эффекты. \n\n` +
-            getObserverWardDescription(),
-          vi:
-            `Khi đánh trúng bằng kỹ năng, áp dụng Lời Nguyền Phù Thủy ngăn kẻ địch nhận bất kỳ hồi máu hoặc tái tạo sinh lực và loại bỏ tất cả các hiệu ứng có lợi. \n\n` +
-            getObserverWardDescription(),
-          id:
-            `Saat terkena kemampuan, menerapkan Kutukan Penyihir yang mencegah musuh menerima penyembuhan atau regenerasi kesehatan dalam bentuk apapun dan menghapus semua efek positif. \n\n` +
-            getObserverWardDescription(),
+          en: `On ability hit, deals ${percDmg}% of the enemy's Max Health as bonus magical damage. Also applies Wizard's Curse, preventing healing and regeneration, and removing all positive effects for ${duration}. Curse cooldown: ${cooldown}.`,
+          br: `Ao acertar uma habilidade, causa ${percDmg}% da Vida Máxima do inimigo como dano mágico bônus. Também aplica a Maldição do Mago, que impede qualquer cura ou regeneração e remove todos os efeitos positivos por ${duration}. Recarga da maldição: ${cooldown}.`,
+          fr: `Lorsqu'une compétence touche, inflige ${percDmg}% de la santé maximale de l'ennemi en dégâts magiques bonus. Applique également la Malédiction du Sorcier, empêchant les soins et la régénération, et supprimant tous les effets positifs pendant ${duration}. Temps de recharge: ${cooldown}.`,
+          zh: `技能命中时，造成敌人最大生命值的 ${percDmg}% 作为额外魔法伤害。同时施加巫师的诅咒，使其在 ${duration} 内无法获得治疗或生命恢复，并移除所有正面效果。冷却时间：${cooldown}。`,
+          cz: `Při zásahu schopností způsobí ${percDmg}% maximálního zdraví nepřítele jako bonusové magické poškození. Také aplikuje Kletbu Kouzelníka, která na ${duration} zabrání léčení, regeneraci a odstraní všechny pozitivní efekty. Obnovení: ${cooldown}.`,
+          ru: `При попадании способностью наносит ${percDmg}% от максимального здоровья врага в виде бонусного магического урона. Также накладывает Проклятие Волшебника на ${duration}, запрещающее лечение, регенерацию и снимающее положительные эффекты. Перезарядка: ${cooldown}.`,
+          vi: `Khi kỹ năng trúng địch, gây thêm sát thương phép bằng ${percDmg}% máu tối đa của kẻ địch. Đồng thời áp dụng Lời Nguyền Phù Thủy ngăn hồi máu, tái tạo và loại bỏ hiệu ứng có lợi trong ${duration}. Hồi chiêu lời nguyền: ${cooldown}.`,
+          id: `Saat terkena kemampuan, menyebabkan kerusakan magis tambahan sebesar ${percDmg}% dari kesehatan maksimum musuh. Juga menerapkan Kutukan Penyihir yang mencegah penyembuhan, regenerasi, dan menghapus semua efek positif selama ${duration}. Waktu pemulihan kutukan: ${cooldown}.`,
         },
       }
+    }
 
     case ItemList.Corrupted_Locket: {
       return {
@@ -2074,29 +2055,21 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n` +
-            getObserverWardDescription(),
+            `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n`,
           br:
-            `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n` +
-            getObserverWardDescription(),
+            `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n`,
           fr:
-            `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n` +
-            getObserverWardDescription(),
+            `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n`,
           zh:
-            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)}提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加2次。\n\n` +
-            getObserverWardDescription(),
+            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)}提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加2次。\n\n`,
           cz:
-            `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n` +
-            getObserverWardDescription(),
+            `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n`,
           ru:
-            `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n` +
-            getObserverWardDescription(),
+            `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n`,
           vi:
-            `Mỗi ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} cung cấp một tấm phúc lợi bị sứt, khiến cho đòn tấn công tiếp theo của bạn trở thành một đòn chí mạng. Hiệu ứng này có thể chồng lên đến 2 lần.\n\n` +
-            getObserverWardDescription(),
+            `Mỗi ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} cung cấp một tấm phúc lợi bị sứt, khiến cho đòn tấn công tiếp theo của bạn trở thành một đòn chí mạng. Hiệu ứng này có thể chồng lên đến 2 lần.\n\n`,
           id:
-            `Setiap ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} memberikan tumpukan berkat yang tercemar membuat serangan berikutnya Anda menjadi serangan kritis. Efek ini dapat menumpuk hingga 2 kali.\n\n` +
-            getObserverWardDescription(),
+            `Setiap ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} memberikan tumpukan berkat yang tercemar membuat serangan berikutnya Anda menjadi serangan kritis. Efek ini dapat menumpuk hingga 2 kali.\n\n`,
         },
       }
     }
