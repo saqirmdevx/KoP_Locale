@@ -1665,35 +1665,32 @@ const _getLocaleItemDescription = (
     }
     /** Armors */
     case ItemList.Frost_Armor: {
-      const stacks = ItemAbilityData.FROST_ARMOR_MAX_STACKS
-      const duration = ItemAbilityData.FROST_ARMOR_DURATION // MILISECONDS
-      const moveSpeedReduction = ItemAbilityData.FROST_ARMOR_MOVESPEED_REDUCTION
-      const attackSpeedReduction = ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100
-    
+      const reduction = fixed(ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION * 100, 1)
+      const attackSpeedReduction = fixed(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100, 1)
       return {
         name: {
           en: 'Armor of the Frozen Emperor',
           ru: 'Броня Ледяного Императора',
-          br: 'Armadura do Lorde Congelado',
+          br: 'Armadura do Lorde congelado',
           zh: '寒冰帝王之鎧甲',
-          cz: 'Brnění Zamrzlého Císaře',
+          cz: 'Brnění zamrzlého císaře',
           fr: "Armure de l'empereur gelé",
           vi: 'Bộ Giáp của Hoàng Đế Băng Giá',
           id: 'Baju Zirah Kaisar Beku',
         },
         desc: {
-          en: `Whenever you take physical damage, the attacker receives 1 stack of the Frozen Curse (up to ${stacks} stacks). Each stack reduces their movement speed by ${moveSpeedReduction} and attack speed by ${attackSpeedReduction}% for ${duration / 1000} seconds.`,
-          ru: `Каждый раз, когда вы получаете физический урон, атакующий получает 1 эффект Проклятия Холода (максимум ${stacks} эффектов). Каждый эффект снижает скорость передвижения на ${moveSpeedReduction} и скорость атаки на ${attackSpeedReduction}% в течение ${duration / 1000} секунд.`,
-          br: `Sempre que você sofre dano físico, o atacante recebe 1 acúmulo da Maldição Congelante (até ${stacks} acúmulos). Cada acúmulo reduz a velocidade de movimento em ${moveSpeedReduction} e a velocidade de ataque em ${attackSpeedReduction}% por ${duration / 1000} segundos.`,
-          zh: `每当你受到物理伤害时，攻击者将获得1层冰封诅咒（最多 ${stacks} 层）。每层会使其移动速度降低 ${moveSpeedReduction}，攻击速度降低 ${attackSpeedReduction}%，持续 ${duration / 1000} 秒。`,
-          cz: `Kdykoli utrpíš fyzické poškození, útočník získá 1 zásah Kletby mrazu (až ${stacks} zásahů). Každý zásah snižuje rychlost pohybu o ${moveSpeedReduction} a rychlost útoku o ${attackSpeedReduction}% po dobu ${duration / 1000} sekund.`,
-          fr: `Chaque fois que vous subissez des dégâts physiques, l’attaquant reçoit 1 charge de la Malédiction Gelée (jusqu’à ${stacks} charges). Chaque charge réduit sa vitesse de déplacement de ${moveSpeedReduction} et sa vitesse d’attaque de ${attackSpeedReduction}% pendant ${duration / 1000} secondes.`,
-          vi: `Mỗi khi nhận sát thương vật lý, kẻ tấn công sẽ nhận 1 cộng dồn Lời Nguyền Băng Giá (tối đa ${stacks} cộng dồn). Mỗi cộng dồn làm giảm tốc độ di chuyển ${moveSpeedReduction} và tốc độ đánh ${attackSpeedReduction}% trong ${duration / 1000} giây.`,
-          id: `Setiap kali terkena kerusakan fisik, penyerang akan menerima 1 tumpukan Kutukan Beku (maksimal ${stacks} tumpukan). Setiap tumpukan mengurangi kecepatan gerak sebesar ${moveSpeedReduction} dan kecepatan serangan sebesar ${attackSpeedReduction}% selama ${duration / 1000} detik.`,
+          en: `[AURA] Reduces attack speed by ${attackSpeedReduction}% and effect of all heals, regeneration, and lifesteal for nearby enemies by ${reduction}%.`,
+          ru: `[АУРА] Уменьшает скорость атаки на ${attackSpeedReduction}% и эффект всех исцелений, регенерации и высасывания жизни для ближайших врагов на ${reduction}%.`,
+          br: `[AURA] Reduz a velocidade de ataque em ${attackSpeedReduction}% e o efeito de todas as curas, regenerações e roubo de vida para inimigos próximos em ${reduction}%.`,
+          zh: `[光環] 減少附近敵人的攻擊速度 ${attackSpeedReduction}% 和所有治療、再生和生命偷取效果 ${reduction}%.`,
+          cz: `[AURA] Sníží rychlost útoku o ${attackSpeedReduction}% a efekt všech léčení, regenerace a životního odsávání pro blízké nepřátele o ${reduction}%.`,
+          fr: `[AURA] Réduit la vitesse d'attaque de ${attackSpeedReduction}% et l'effet de tous les soins, régénérations et vol de vie pour les ennemis proches de ${reduction}%.`,
+          vi: `[AURA] Giảm tốc độ tấn công ${attackSpeedReduction}% và hiệu ứng của tất cả các hồi máu, tái sinh và hút máu cho kẻ địch gần đó ${reduction}%.`,
+          id: `[AURA] Mengurangi kecepatan serangan sebesar ${attackSpeedReduction}% dan efek semua penyembuhan, regenerasi, dan lifesteal untuk musuh di sekitar sebesar ${reduction}%.`,
         },
       }
     }
-
+    
     case ItemList.Void_Armor: {
       const duration = toSecRaw(ItemAbilityData.VOID_ARMOR_DURATION)
 
