@@ -2149,6 +2149,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Bahasa',
     vi: 'Ngôn ngữ',
   },
+  [LOCALE.ST_FLUID_PLAYER_CAMERA]: {
+    en: 'Dynamic Camera',
+    cz: 'Dynamická kamera',
+    br: 'Câmera dinâmica',
+    ru: 'Динамическая камера',
+    zh: '動態鏡頭',
+    fr: 'Caméra dynamique',
+    id: 'Kamera Dinamis',
+    vi: 'Camera Động',
+  },
   [LOCALE.ST_FILTER_BAD_WORDS]: {
     en: 'Profanity Filter',
     cz: 'Filtr špatných slov',
