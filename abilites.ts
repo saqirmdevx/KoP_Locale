@@ -143,6 +143,8 @@ const _getSpellDescriptionLang = (
         ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
         : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
 
+      const dmg = getDamage(SparrowAbilityData.DEMONICWRATH_AP_RATIO * abilityPower, type, damage)
+
       const percDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? Math.floor(
             (SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG +
@@ -152,14 +154,14 @@ const _getSpellDescriptionLang = (
         : Math.floor(SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG * 100)
 
       return {
-        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${damage} (plus a bonus ${percDamage}% of target's missing health). `,
-        ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${damage} (плюс бонус ${percDamage}% от потерянного здоровья цели). `,
-        cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${damage} (plus bonus ${percDamage}% ztraceného zdraví cíle).`,
-        br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${damage} (mais um bônus de ${percDamage}% da vida perdida do alvo). `,
-        zh: `史佩羅釋放出惡魔的力量，從她的劍中發射出一道腐敗的波浪，造成 ${damage} (再加上目標失去生命值的 ${percDamage}%)。 `,
-        fr: `Sparrow libère la puissance des démons, lançant une vague corrompue de son épée, infligeant ${damage} (plus un bonus de ${percDamage}% de la vie manquante de la cible). `,
-        vi: `Sparrow giải phóng sức mạnh của quỷ dữ, tung ra một làn sóng tà ác từ thanh kiếm của cô ấy, gây ${damage} (cộng thêm ${percDamage}% lượng máu đã mất của mục tiêu). `,
-        id: `Sparrow melepaskan kekuatan iblis, meluncurkan gelombang korupsi dari pedangnya, memberikan ${damage} (ditambah bonus ${percDamage}% dari kesehatan yang hilang target).`,
+        en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${dmg} (plus a bonus ${percDamage}% of target's missing health). `,
+        ru: `Спарроу разрывает пространство, запуская волну порчи из своего меча, нанося ${dmg} (плюс бонус ${percDamage}% от потерянного здоровья цели). `,
+        cz: `Sparrow uvolní moc démonů, vypustí zkaženou vlnu ze svého meče, způsobí ${dmg} (plus bonus ${percDamage}% ztraceného zdraví cíle).`,
+        br: `Sparrow libera o poder dos demônios, lançando uma onda corrupta de sua espada, causando ${dmg} (mais um bônus de ${percDamage}% da vida perdida do alvo). `,
+        zh: `史佩羅釋放出惡魔的力量，從她的劍中發射出一道腐敗的波浪，造成 ${dmg} (再加上目標失去生命值的 ${percDamage}%)。 `,
+        fr: `Sparrow libère la puissance des démons, lançant une vague corrompue de son épée, infligeant ${dmg} (plus un bonus de ${percDamage}% de la vie manquante de la cible). `,
+        vi: `Sparrow giải phóng sức mạnh của quỷ dữ, tung ra một làn sóng tà ác từ thanh kiếm của cô ấy, gây ${dmg} (cộng thêm ${percDamage}% lượng máu đã mất của mục tiêu). `,
+        id: `Sparrow melepaskan kekuatan iblis, meluncurkan gelombang korupsi dari pedangnya, memberikan ${dmg} (ditambah bonus ${percDamage}% dari kesehatan yang hilang target).`,
       }
     }
 
@@ -1039,7 +1041,7 @@ const _getSpellDescriptionLang = (
       const hauntedDuration = toSec(MagdaleneAbilityData.HAUNTED_GHOST_DURATION)
 
       return {
-        en: `Magdalene sends a haunted ghost in the direction she is facing. If it hits an enemy, it will afflict the opponent with a haunted ghost, dealing ${damage} per second to an afflicted enemy. The ghost lasts for ${hauntedDuration}. 
+        en: `Magdalene sends a haunted ghost in the direction she is facing. If it hits an enemy, it will afflict the opponent with a haunted ghost, dealing ${damage} per second to an afflicted enemy. The ghost lasts for ${hauntedDuration}.
         \nWhen the haunted ghost debuff expires or is consumed by Scream of Pain, it returns back to Magdalene and resets the cooldown of Haunted Ghost.`,
         ru: `Магдалина посылает призрака вперёд. При столкновении с врагом он вселяется в него, накладывая эффект Одержимый призрак, наносящий ${damage} магического урона в секунду. Одержимый призрак длится ${hauntedDuration}.
         \n Когда время действия эффекта Одержимый призрак истекает или используется Загробный вопль, он возвращается к Магдалине, сбрасывая перезарядку этой способности.`,
@@ -1071,7 +1073,7 @@ const _getSpellDescriptionLang = (
         : PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR
 
       return {
-        en: `Prim throws 3 sharp pieces of iron that deal ${baseDamage} when an enemy unit is hit. 
+        en: `Prim throws 3 sharp pieces of iron that deal ${baseDamage} when an enemy unit is hit.
         \n\nPassive: When Prim's Ball is attached to Prim, she gains ${bonusMoveSpeed} bonus movement speed and ${bonusArmor} armor.`,
         ru: `Прим бросает 3 острых снаряда, которые наносят ${baseDamage} физического урона при попадании во врага.
         \n\n[ПАССИВНО]: Когда шар Прим прикреплён к ней, она получает ${bonusMoveSpeed} скорости передвижения и ${bonusArmor} брони.`,
@@ -1100,7 +1102,7 @@ const _getSpellDescriptionLang = (
       return {
         en: `Prim commands the Ball to move forward in Prim's direction. When stopped, it deals ${damage} to all nearby enemies and slows their movement and attack speed for a short duration.
           \nIf Prim's Ball is detached, she will command the Ball to return. The ball deals damage at the location where it is detached.
-          \nThe new cooldown starts when the Ball is returned to Prim unless she picks up the ball. 
+          \nThe new cooldown starts when the Ball is returned to Prim unless she picks up the ball.
           \nCan be re-casted to stop the Ball earlier in its trajectory.`,
         ru: `Прим приказывает шару двигаться вперёд в направлении Прим. При остановке наносит ${damage} всем близлежащим врагам, замедляя их скорость передвижения и атаки на короткое время.
           \nЕсли шар Прим откреплён, она прикажет шару вернуться. Шар наносит урон в месте открепления.
