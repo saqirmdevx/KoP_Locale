@@ -1973,7 +1973,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '學習',
     ru: 'УЧИТЬСЯ',
     fr: 'Apprendre',
-    br: 'Apprender',
+    br: 'Aprender',
     id: 'mempelajari',
     vi: 'Hoc Hoi',
   },
