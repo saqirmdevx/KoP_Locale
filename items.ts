@@ -1671,6 +1671,16 @@ const _getLocaleItemDescription = (
           vi: 'Nhẫn Sức Mạnh',
           id: 'Cincin Kekuatan',
         },
+        desc: {
+          en: `Apply a permanent aura to nearby allies, granting +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% Tenacity and +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} Movement Speed.`,
+          ru: `Накладывает постоянную ауру на ближайших союзников, дающую +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% к стойкости и +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} к скорости передвижения.`,
+          br: `Aplica uma aura permanente aos aliados próximos, concedendo +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% de tenacidade e +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} de velocidade de movimento.`,
+          zh: `对附近友军施加永久光环，使其获得+${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}%韧性和+${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED}%移动速度。`,
+          cz: `Aplikuje trvalou auru poblíž spojenců, která jim poskytuje +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% houževnatosti a +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} rychlosti pohybu.`,
+          fr: `Applique une aura permanente aux alliés à proximité, leur accordant +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% de ténacité et +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} de vitesse de déplacement.`,
+          vi: `Áp dụng hào quang vĩnh viễn cho đồng minh gần đó, cho họ +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% độ bền và +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} tốc độ di chuyển.`,
+          id: `Memberikan aura permanen kepada sekutu di dekatnya, memberikan +${(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100).toFixed(0)}% ketahanan dan +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} kecepatan gerak.`,
+        },
       }
     }
     /** Armors */
