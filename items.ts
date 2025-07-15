@@ -408,18 +408,18 @@ const _getLocaleItemDescription = (
         },
       }
     case ItemList.Kirins_Boots:
-        return {
-          name: {
-            en: 'Kirin\'s Boots',
-            ru: 'Ботинки Кирина',
-            br: 'Botas de Kirin',
-            cz: 'Svaté Sandále',
-            fr: 'Bottes de Kirin',
-            zh: '神龍之靴',
-            vi: 'Giày Kírinh',
-            id: 'Sepatu Kirin',
-          },
-        }
+      return {
+        name: {
+          en: "Kirin's Boots",
+          ru: 'Ботинки Кирина',
+          br: 'Botas de Kirin',
+          cz: 'Svaté Sandále',
+          fr: 'Bottes de Kirin',
+          zh: '神龍之靴',
+          vi: 'Giày Kírinh',
+          id: 'Sepatu Kirin',
+        },
+      }
     case ItemList.Traveling_Boots:
       return {
         name: {
@@ -1072,55 +1072,55 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodOrHarpoonDescription() },
       }
-      case ItemList.EnchantedSpear:
-        const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
-        return {
-            name: {
-                en: 'Enchanted Spear',
-                ru: 'Зачарованное копьё',
-                br: 'Lança Encantada',
-                fr: 'Lance enchantée',
-                zh: '魔法矛',
-                cz: 'Okouzlené kopí',
-                vi: 'Thương Phép Thuật',
-                id: 'Tombak Ajaib',
-            },
-            desc: {
-                en: 
-                    `Any magical spell hit will execute any enemy below ${executionThreshold}% health.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                ru: 
-                    `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                br: 
-                    `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                fr: 
-                    `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                zh: 
-                    `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                cz: 
-                    `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                vi: 
-                    `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-                id: 
-                    `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
-                    '\n' +
-                    getIronRodOrHarpoonDescription(),
-            },
-        }
-  
+    case ItemList.EnchantedSpear: {
+      const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
+      return {
+        name: {
+          en: 'Enchanted Spear',
+          ru: 'Зачарованное копьё',
+          br: 'Lança Encantada',
+          fr: 'Lance enchantée',
+          zh: '魔法矛',
+          cz: 'Okouzlené kopí',
+          vi: 'Thương Phép Thuật',
+          id: 'Tombak Ajaib',
+        },
+        desc: {
+          en:
+            `Any magical spell hit will execute any enemy below ${executionThreshold}% health.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          ru:
+            `Если у цели ${executionThreshold}% или меньше здоровья, любой магический урон мгновенно её уничтожит.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          br:
+            `Se um alvo estiver com ${executionThreshold}% ou menos de vida, qualquer Dano Mágico irá executá-lo instantaneamente.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          fr:
+            `Si une cible a ${executionThreshold}% de points de vie ou moins, tout Dégât Magique l'exécutera instantanément.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          zh:
+            `如果目标的生命值低于${executionThreshold}%，任何魔法伤害都会立即将其处决。` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          cz:
+            `Pokud má cíl ${executionThreshold}% nebo méně života, jakékoli magické poškození ho okamžitě popraví.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          vi:
+            `Nếu mục tiêu có ${executionThreshold}% máu hoặc ít hơn, bất kỳ sát thương phép thuật nào cũng sẽ hành quyết ngay lập tức.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+          id:
+            `Jika target memiliki ${executionThreshold}% kesehatan atau kurang, setiap Kerusakan Sihir akan langsung mengeksekusinya.` +
+            '\n' +
+            getIronRodOrHarpoonDescription(),
+        },
+      }
+    }
     case ItemList.Magic_Harpoon: {
       return {
         name: {
@@ -1288,14 +1288,14 @@ const _getLocaleItemDescription = (
 
       return {
         name: {
-          en: "Divine Armor",
-          ru: "Божественная броня",
-          br: "Armadura Divina",
-          zh: "神聖鎧甲",
-          cz: "Božské brnění",
-          fr: "Armure Divine",
-          vi: "Giáp Thần Thánh",
-          id: "Baju Zirah Ilahi",
+          en: 'Divine Armor',
+          ru: 'Божественная броня',
+          br: 'Armadura Divina',
+          zh: '神聖鎧甲',
+          cz: 'Božské brnění',
+          fr: 'Armure Divine',
+          vi: 'Giáp Thần Thánh',
+          id: 'Baju Zirah Ilahi',
         },
         desc: {
           en: `Grants a holy shield to all nearby allies, reducing all incoming damage by ${damageReduction}% for ${duration} seconds.`,
@@ -1700,7 +1700,7 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    
+
     case ItemList.Void_Armor: {
       const duration = toSecRaw(ItemAbilityData.VOID_ARMOR_DURATION)
 
@@ -1731,7 +1731,7 @@ const _getLocaleItemDescription = (
     case ItemList.Vampiric_Armor: {
       const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_ABSORPTION * 100, 1)
       const duration = toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)
-    
+
       return {
         name: {
           en: 'Vampiric Armor',
@@ -1754,7 +1754,7 @@ const _getLocaleItemDescription = (
           id: `Anda diselimuti oleh energi vampir selama ${duration} detik, membuat semua kerusakan yang Anda berikan menyembuhkan Anda sebesar ${value}%.`,
         },
       }
-    }    
+    }
 
     case ItemList.Titans_Armor: {
       const duration = toSecRaw(ItemAbilityData.TITAN_ARMOR_DURATION)
@@ -1996,25 +1996,17 @@ const _getLocaleItemDescription = (
           id: 'Pesona Garun',
         },
         desc: {
-          en:
-            `Every ${cooldown}, gain a stack of Garun's protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Grants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n`,
-          br:
-            `A cada ${cooldown}, ganhe uma pilha de Proteção de Garun, acumula até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} pilhas. Receber Dano normal remove uma pilha. Cada pilha aumenta sua Armadura em ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Concede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura para aliados próximos \n\n`,
-          fr:
-            `Toutes les ${cooldown}, gagnez une pile de protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n`,
-          zh:
-            `每 ${cooldown}，獲得一層加侖的守護，最多疊加到 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}層。受到普通傷害會移除一層。每層增加你的裝甲值 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}裝甲值 \n\n`,
-          cz:
-            `Každých ${cooldown} získáš stack Garunovy ochrany, až do maxima ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacků. Přijetí Normálního poškození odebere stack. Každý stack zvyšuje tvou Obranu o ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
+          en: `Every ${cooldown}, gain a stack of Garun's protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacks. Receiving Normal Damage removes a stack. Each stack increases your Armor by ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Grants ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor to nearby allies \n\n`,
+          br: `A cada ${cooldown}, ganhe uma pilha de Proteção de Garun, acumula até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} pilhas. Receber Dano normal remove uma pilha. Cada pilha aumenta sua Armadura em ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Concede ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura para aliados próximos \n\n`,
+          fr: `Toutes les ${cooldown}, gagnez une pile de protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} piles. Recevoir des dégâts normaux enlève une pile. Chaque pile augmente votre Armure de ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.\n\n[AURA]: Accorde ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armure aux alliés proches \n\n`,
+          zh: `每 ${cooldown}，獲得一層加侖的守護，最多疊加到 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}層。受到普通傷害會移除一層。每層增加你的裝甲值 ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}。\n\n[AURA]: 給予附近盟友 ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR}裝甲值 \n\n`,
+          cz: `Každých ${cooldown} získáš stack Garunovy ochrany, až do maxima ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} stacků. Přijetí Normálního poškození odebere stack. Každý stack zvyšuje tvou Obranu o ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
             \n\n[AURA]: Přidá ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Obrany všem spojencům v okolí \n\n`,
-          ru:
-            `Каждые ${cooldown} получай стек Оберега Гаруна, до ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} стеков. Получение Обычного урона убирает стек. Каждый стек увеличивает твою Броню на ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
+          ru: `Каждые ${cooldown} получай стек Оберега Гаруна, до ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} стеков. Получение Обычного урона убирает стек. Каждый стек увеличивает твою Броню на ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
             \n\n[AURA]: Предоставляет ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Брони ближайшим союзникам \n\n`,
-          vi:
-            `Mỗi ${cooldown}, nhận một tấm bảo vệ của Garun, tối đa ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tấm. Nhận Sát Thương Thường xóa một tấm. Mỗi tấm tăng Giáp của bạn lên ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
+          vi: `Mỗi ${cooldown}, nhận một tấm bảo vệ của Garun, tối đa ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tấm. Nhận Sát Thương Thường xóa một tấm. Mỗi tấm tăng Giáp của bạn lên ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
           \n\n[AURA]: Cung cấp ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Giáp cho đồng minh xung quanh \n\n`,
-          id:
-            `Setiap ${cooldown}, dapatkan tumpukan perlindungan Garun, hingga ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tumpukan. Menerima Kerusakan Normal menghapus satu tumpukan. Setiap tumpukan meningkatkan Armor kamu sebesar ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
+          id: `Setiap ${cooldown}, dapatkan tumpukan perlindungan Garun, hingga ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} tumpukan. Menerima Kerusakan Normal menghapus satu tumpukan. Setiap tumpukan meningkatkan Armor kamu sebesar ${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}.
           \n\n[AURA]: Memberikan ${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor untuk sekutu di sekitar \n\n`,
         },
       }
@@ -2023,7 +2015,7 @@ const _getLocaleItemDescription = (
       const duration = toSec(ItemAbilityData.WIZARD_CHARM_DURATION)
       const cooldown = toSec(ItemAbilityData.WIZARD_CHARM_COOLDOWN)
       const percDmg = fixed(ItemAbilityData.WIZARD_CHARM_PERC_DMG * 100, 1)
-    
+
       return {
         name: {
           en: 'Wizard Charm',
@@ -2061,56 +2053,20 @@ const _getLocaleItemDescription = (
           id: 'Locket Korup',
         },
         desc: {
-          en:
-            `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n`,
-          br:
-            `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n`,
-          fr:
-            `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n`,
-          zh:
-            `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)}提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加2次。\n\n`,
-          cz:
-            `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n`,
-          ru:
-            `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n`,
-          vi:
-            `Mỗi ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} cung cấp một tấm phúc lợi bị sứt, khiến cho đòn tấn công tiếp theo của bạn trở thành một đòn chí mạng. Hiệu ứng này có thể chồng lên đến 2 lần.\n\n`,
-          id:
-            `Setiap ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} memberikan tumpukan berkat yang tercemar membuat serangan berikutnya Anda menjadi serangan kritis. Efek ini dapat menumpuk hingga 2 kali.\n\n`,
-        },
-      }
-    }
-    
-    case ItemList.Vampiric_Armor: {
-      const value = fixed(ItemAbilityData.VAMPIRIC_ARMOR_ABSORPTION * 100, 1)
-      const duration = toSec(ItemAbilityData.VAMPIRIC_ARMOR_DURATION)
-    
-      return {
-        name: {
-          en: 'Vampiric Armor',
-          ru: 'Вампирическая броня',
-          br: 'Armadura Vampírica',
-          fr: 'Armure vampirique',
-          zh: '吸血護甲',
-          cz: 'Vampírní zbroj',
-          vi: 'Giáp Vampie',
-          id: 'Perisai Vampir',
-        },
-        desc: {
-          en: `For ${duration}s, all damage you deal heals you for ${value}% of the amount inflicted.`,
-          ru: `В течение ${duration} сек. весь нанесённый урон исцеляет вас на ${value}% от его величины.`,
-          br: `Por ${duration}s, todo o dano que você causar irá curá-lo em ${value}% do valor causado.`,
-          fr: `Pendant ${duration}s, tous les dégâts que vous infligez vous soignent à hauteur de ${value}%.`,
-          zh: `在持续 ${duration} 秒内，你造成的所有伤害将为你回复 ${value}% 的生命值。`,
-          cz: `Po dobu ${duration}s vás léčí ${value}% veškerého vámi způsobeného poškození.`,
-          vi: `Trong ${duration} giây, toàn bộ sát thương bạn gây ra sẽ hồi lại ${value}% máu cho bạn.`,
-          id: `Selama ${duration} detik, semua kerusakan yang Anda berikan akan menyembuhkan Anda sebesar ${value}% dari jumlahnya.`,
+          en: `Every ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} provide a stack of corrupted blessing making your next attack a critical hit. This effect can stacks up to 2 times.\n\n`,
+          br: `A cada ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fornece uma pilha de benção corrompida, fazendo seu próximo ataque um acerto crítico. Este efeito pode acumular até 2 vezes.\n\n`,
+          fr: `Toutes les ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} fournissent une pile de bénédiction corrompue, rendant votre prochaine attaque un coup critique. Cet effet peut s'accumuler jusqu'à 2 fois.\n\n`,
+          zh: `每 ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)}提供一層腐化祝福，使你的下一次攻擊爲暴擊。此效果最多可疊加2次。\n\n`,
+          cz: `Každých ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} poskytne stack zkaženého požehnání, který způsobí, že tvůj další útok bude kritický zásah. Tento efekt může být naskládán až 2krát.\n\n`,
+          ru: `Каждые ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} предоставляют стекло искажённого благословения, делая ваше следующее нападение критическим. Этот эффект может накапливаться до 2 раз.\n\n`,
+          vi: `Mỗi ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} cung cấp một tấm phúc lợi bị sứt, khiến cho đòn tấn công tiếp theo của bạn trở thành một đòn chí mạng. Hiệu ứng này có thể chồng lên đến 2 lần.\n\n`,
+          id: `Setiap ${toSec(ItemAbilityData.CORRUPTED_LOCKET_COOLDOWN)} memberikan tumpukan berkat yang tercemar membuat serangan berikutnya Anda menjadi serangan kritis. Efek ini dapat menumpuk hingga 2 kali.\n\n`,
         },
       }
     }
 
     case ItemList.MoltenShield: {
-      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2);
+      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2)
       return {
         name: {
           en: 'Molten Shield',
@@ -2136,7 +2092,7 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosShield: {
-      const cdReductionSeconds = ItemAbilityData.CHRONOS_SHIELD_CD_REDUCTION / 1000;
+      const cdReductionSeconds = ItemAbilityData.CHRONOS_SHIELD_CD_REDUCTION / 1000
 
       return {
         name: {
@@ -2161,23 +2117,23 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    
+
     case ItemList.VoidSword: {
-      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1);
-      const radius = ItemAbilityData.VOID_SWORD_RADIUS;
-      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED;
-      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED;
-    
+      const duration = (ItemAbilityData.VOID_SWORD_DURATION / 1000).toFixed(1)
+      const radius = ItemAbilityData.VOID_SWORD_RADIUS
+      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED
+      const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED
+
       return {
         name: {
-          en: "Void Sword",
-          ru: "Меч Пустоты",
-          br: "Espada do Vazio",
-          cz: "Meč prázdnoty",
-          zh: "虚空之剑",
-          fr: "Épée du Néant",
-          vi: "Kiếm Hư Vô",
-          id: "Pedang Void",
+          en: 'Void Sword',
+          ru: 'Меч Пустоты',
+          br: 'Espada do Vazio',
+          cz: 'Meč prázdnoty',
+          zh: '虚空之剑',
+          fr: 'Épée du Néant',
+          vi: 'Kiếm Hư Vô',
+          id: 'Pedang Void',
         },
         desc: {
           en: `Unleash the void’s power through this sword, creating a void domain for ${duration} seconds within a ${radius}-unit radius. Allies inside gain +${movespeed} movement speed and +${attackspeed} attack speed, while enemies have these same stats reduced.`,
@@ -2193,8 +2149,8 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.ChronosSword: {
-      const cdReduction = toSec(ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION);
-    
+      const cdReduction = toSec(ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION)
+
       return {
         name: {
           en: 'Chronos Sword',
@@ -2217,7 +2173,7 @@ const _getLocaleItemDescription = (
           id: `Serangan dasar memanipulasi waktu, mengurangi cooldown semua kemampuan sebesar ${cdReduction} detik.`,
         },
       }
-    }    
+    }
 
     default:
       return {
