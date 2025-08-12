@@ -139,11 +139,9 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.SPARROW_GROUND_SLAM: {
-      const damage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
+      const dmg = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
         : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
-
-      const dmg = getDamage(SparrowAbilityData.DEMONICWRATH_AP_RATIO * abilityPower, type, damage)
 
       const percDamage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? Math.floor(
