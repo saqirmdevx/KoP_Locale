@@ -2066,7 +2066,9 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.MoltenShield: {
-      const hpPercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_HPMAX * 100, 2)
+      const damageOverTimePercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_OVER_TIME_PERC * 100, 2)
+      const duration = toSec(ItemAbilityData.MOLTEN_SHIELD_DURATION)
+      const resistanceReduction = fixed(ItemAbilityData.MOLTEN_SHIELD_MAGIC_RESISTANCE_REDUCTION * 100, 2)
       const baseDamage = ItemAbilityData.MOLTEN_SHIELD_BASE_DAMAGE
       return {
         name: {
@@ -2080,14 +2082,14 @@ const _getLocaleItemDescription = (
           id: 'Perisai Meleleh',
         },
         desc: {
-          en: `You are surrounded by a Blazing Aura that scorches nearby enemies, dealing magic damage equal to ${baseDamage} + ${hpPercent}% of your maximum health per second.`,
-          ru: `Вы окружены Пылающей Аурой, которая обжигает ближайших врагов, нанося магический урон в размере ${baseDamage} + ${hpPercent}% от вашего максимального здоровья каждую секунду.`,
-          br: `Você é envolvido por uma Aura Incandescente que queima os inimigos próximos, causando dano mágico equivalente a ${baseDamage} + ${hpPercent}% da sua vida máxima por segundo.`,
-          cz: `Jsi obklopen Žhavou Aurou, která pálí nepřátele v okolí a způsobuje magické poškození ve výši ${baseDamage} + ${hpPercent}% tvého maximálního zdraví za sekundu.`,
-          zh: `你被炽热光环环绕，每秒对附近敌人造成相当于你最大生命值 ${baseDamage} + ${hpPercent}% 的魔法伤害。`,
-          fr: `Vous êtes entouré d'une Aura Enflammée qui brûle les ennemis proches, infligeant ${baseDamage} + ${hpPercent}% de votre vie maximale en dégâts magiques par seconde.`,
-          vi: `Bạn được bao quanh bởi một Hào Quang Nóng Bỏng, gây sát thương phép mỗi giây bằng ${baseDamage} + ${hpPercent}% máu tối đa của bạn lên kẻ địch xung quanh.`,
-          id: `Anda diselimuti oleh Aura Membara yang membakar musuh di sekitar, memberikan ${baseDamage} + ${hpPercent}% dari kesehatan maksimum Anda sebagai kerusakan sihir setiap detik.`,
+          en: `Releases a molten explosion, dealing ${baseDamage} + ${damageOverTimePercent}% of your maximum health as magical damage to nearby enemies over ${duration} seconds and reduces magic resistance by ${resistanceReduction}%.`,
+          ru: `Выпускает взрыв расплавленного металла, наносящий ${baseDamage} + ${damageOverTimePercent}% от вашего максимального здоровья в виде магического урона ближайшим врагам в течение ${duration} секунд и снижая магическую сопротивляемость на ${resistanceReduction}%.`,
+          br: `Libera uma explosão derretida, causando ${baseDamage} + ${damageOverTimePercent}% da sua vida máxima como dano mágico para inimigos próximos durante ${duration} segundos e reduzindo a resistência mágica em ${resistanceReduction}%.`,
+          cz: `Vyvolává explozi rozpáleného kovu, která způsobí ${baseDamage} + ${damageOverTimePercent}% maximálního zdraví jako magické poškození blízkým nepřátelům po ${duration} sekund a snižuje magickou odolnost o ${resistanceReduction}%.`,
+          zh: `释放熔岩爆炸，对附近敌人造成 ${baseDamage} + ${damageOverTimePercent}% 最大生命值的魔法伤害，持续 ${duration} 秒，并减少 ${resistanceReduction}% 魔法抗性。`,
+          fr: `Lance une explosion en fusion, inflige ${baseDamage} + ${damageOverTimePercent}% de votre santé maximale en dégâts magiques aux ennemis proches pendant ${duration} secondes et réduit la résistance magique de ${resistanceReduction}%.`,
+          vi: `Phát ra một vụ nổ nóng chảy, gây ${baseDamage} + ${damageOverTimePercent}% sức khỏe tối đa như sát thương phép cho kẻ địch gần đó trong ${duration} giây và giảm độ kháng phép ${resistanceReduction}%.`,
+          id: `Melepaskan ledakan fusi, memberikan ${baseDamage} + ${damageOverTimePercent}% dari kesehatan maksimum Anda sebagai kerusahan sihir ke musuh di sekitarnya selama ${duration} detik dan mengurangi resistansi sihir sebesar ${resistanceReduction}%.`,
         },
       }
     }
