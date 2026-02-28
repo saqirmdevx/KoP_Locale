@@ -60,7 +60,7 @@ const _getSpellDescriptionLang = (
         br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage} de dano normal.\n<b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} de dano mágico e encantando o inimigo por ${duration}.`,
         fr: `Kumihu tire 3 projectiles. Chaque projectile inflige ${basic_damage} \nPassif: Après avoir utilisé la Ruée Arcanique, l'attaque de base suivante de Kumihu inflige un bonus de ${enh_damage} et applique Charme à la cible pendant ${duration}.`,
         zh: `庫咪戶發射3顆彈丸，每顆彈丸造成 ${basic_damage} \n被動技：使用奧術衝刺後，庫咪戶的下一次基本攻擊造成 ${enh_damage}並在目標上施加魅惑 ${duration}`,
-        vi: `Kumihu bắn 3 viên đạn. Mỗi viên đạn gây ${basic_damage} \n<br/>Passive: Sau khi sử dụng Arcane Dash, đòn đánh cơ bản tiếp theo của Kumihu gây thêm ${enh_damage} và áp dụng Charm trên mục tiêu trong ${duration}.`,
+        vi: `Kumihu bắn 3 viên đạn. Mỗi viên đạn gây ${basic_damage} \n<br/>Passive: Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enh_damage} và áp dụng Quyến Rũ trên mục tiêu trong ${duration}.`,
         id: `Kumihu menembakkan 3 proyektil. Setiap proyektil memberikan ${basic_damage} \n<br/>Pasif: Setelah menggunakan Arcane Dash, Serangan Dasar berikutnya Kumihu memberikan bonus ${enh_damage} dan menerapkan Charm pada target selama ${duration}.`,
       }
     }
@@ -80,7 +80,7 @@ const _getSpellDescriptionLang = (
         br: `Kumihu lança uma esfera espiritual causando ${base_damage}. A esfera retorna para ela depois de atingir sua distância máxima, causando mais ${base_damage}. Se a esfera atingir o alvo duas vezes ela causará ${bonusDmage}% de dano bônus.`,
         zh: `庫咪戶投擲靈珠，造成 ${base_damage}。靈珠在達到最大距離後返回，造成另一個 ${base_damage}。如果靈珠擊中目標兩次，將造成 ${bonusDmage}%額外傷害。`,
         fr: `Kumihu lance une orbe spirituelle, infligeant ${base_damage}. L'orbe revient à elle après avoir atteint sa portée maximale, infligeant un autre ${base_damage}. Si l'Orbe spirituelle touche la cible deux fois, elle infligera ${bonusDmage}% de dégâts bonus.`,
-        vi: `Kumihu ném một quả cầu tinh thần, gây ${base_damage}. Quả cầu trở lại với cô sau khi đạt đến khoảng cách tối đa, gây thêm ${base_damage}. Nếu Quả cầu tinh thần trúng mục tiêu hai lần nó sẽ gây thêm ${bonusDmage}% sát thương bonus`,
+        vi: `Kumihu ném một Quả Cầu Ma Thuật, gây ${base_damage}. Quả cầu trở lại với cô sau khi đạt đến khoảng cách tối đa, gây thêm ${base_damage}. Nếu Quả cầu ma thuật trúng mục tiêu hai lần nó sẽ gây thêm ${bonusDmage}% sát thương`,
         id: `Kumihu melemparkan bola roh, memberikan ${base_damage}. Bola kembali kepadanya setelah mencapai jangkauan maksimum, memberikan ${base_damage} lagi. Jika bola roh mengenai target dua kali, maka akan memberikan ${bonusDmage}% bonus damage`,
       }
     }
@@ -101,7 +101,7 @@ const _getSpellDescriptionLang = (
         fr: `Kumihu se précipite en avant. Cela activera sa compétence passive pendant ${toSec(
           KumihuAbilityData.DASH_AURA_DURATION
         )}.`,
-        vi: `Kumihu lao về phía trước. Điều này sẽ kích hoạt kỹ năng bí mật của cô trong ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
+        vi: `Kumihu tốc biến về phía trước. Kích hoạt nội tại của cô trong ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
         id: `Kumihu meluncur ke depan. Ini akan mengaktifkan pasifnya selama ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
       }
 
@@ -118,7 +118,7 @@ const _getSpellDescriptionLang = (
         br: `Sparrow corta seus inimigos causando ${base_damage} por ataque.\n<b>[Passiva]: </b> Usar uma habilidade, faz com que a espada de Sparrow fique carregada. Seu próximo ataque básico stuna os inimigos por ${knockDuration} e da um bônus de ${enh_damage} de dano.`,
         zh: `史佩羅揮動她的劍，給予 ${base_damage}。 \n被動技：使用一個技能使史佩羅的劍產生劍氣。她的下一個基本攻擊變為衝擊波，擊昇敵方暈眩 ${knockDuration}並給予 ${enh_damage}。`,
         fr: `Sparrow brandit son épée, infligeant ${base_damage}. \nPassif: L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une attaque d'onde de choc, projetant les ennemis en l'air pendant ${knockDuration} et infligeant ${enh_damage}.`,
-        vi: `Sparrow vung kiếm, gây ${base_damage}. \nPassive: Sử dụng một kỹ năng sẽ nạp kiếm của Sparrow. Đòn đánh cơ bản tiếp theo của cô sẽ được thay thế bằng một đòn tấn công sóng chấn, đánh bật kẻ địch trong ${knockDuration} và gây ${enh_damage}.`,
+        vi: `Sparrow vung kiếm, gây ${base_damage}. \nNội tại: Sử dụng một kỹ năng sẽ kích hoạt kiếm của Sparrow. Đòn đánh thường tiếp theo của cô sẽ được thay thế bằng sóng kiếm, đánh bật kẻ địch trong ${knockDuration} và gây ${enh_damage}.`,
         id: `Sparrow mengayunkan pedangnya, memberikan ${base_damage}. \nPasif: Menggunakan kemampuan mengisi pedang Sparrow. Serangan dasar berikutnya digantikan dengan serangan gelombang kejut, menyerang musuh selama ${knockDuration} dan memberikan ${enh_damage}.`,
       }
     }
@@ -133,7 +133,7 @@ const _getSpellDescriptionLang = (
         br: `Sparrow avança na direção que está olhando,  atordoando os inimigos acertados por ${stunduration} e dando ${dashDamage} de dano.`,
         zh: `史佩羅迅速向前衝刺，駕馭風暴，給予敵方英雄 ${dashDamage}並使他們暈眩 ${stunduration}。`,
         fr: `Sparrow se précipite rapidement en avant, utilisant le vent pour infliger ${dashDamage} et étourdir les ennemis touchés pendant ${stunduration}.`,
-        vi: `Sparrow nhanh chóng lao về phía trước, tận dụng gió, gây ${dashDamage} và choáng người địch cô đánh trong ${stunduration}.`,
+        vi: `Sparrow nhanh chóng lao về phía trước, tạo ra gió, gây ${dashDamage} và gây choáng người địch cô đánh trong ${stunduration}.`,
         id: `Sparrow dengan cepat bergerak ke depan, memukul musuh dengan ${dashDamage} dan membiarkan mereka terpukul selama ${stunduration}.`,
       }
     }
@@ -240,9 +240,9 @@ const _getSpellDescriptionLang = (
           `Les ennemis se tenant sur la traînée de glace reçoivent ${base_damage} par seconde et voient leur vitesse de déplacement réduite pour une courte durée.<br/>` +
           `<b>Deuxième utilisation: </b>I'ceat arrête de glisser, retrouvant sa vitesse de déplacement normale et arrêtant de laisser derrière lui une traînée de glace.`,
         vi:
-          `<b>Lần đầu: </b>I'ceat trượt trên mặt đất, tăng tốc độ di chuyển của mình lên ${bonusSpeed} trong ${duration} và để lại một dấu vết băng.` +
+          `<b>Dùng chiêu lần đầu: </b>I'ceat trượt trên mặt đất, tăng tốc độ di chuyển của mình lên ${bonusSpeed} trong ${duration} và để lại một dấu vết băng.` +
           `Kẻ địch đứng trên dấu vết băng sẽ nhận ${base_damage} mỗi giây và bị giảm tốc độ di chuyển trong một thời gian ngắn.<br/>` +
-          `<b>Lần thứ hai: </b>I'ceat dừng lại, trở lại tốc độ di chuyển bình thường và ngừng để lại dấu vết băng.`,
+          `<b>Dùng chiêu lần hai: </b>I'ceat dừng lại, trở lại tốc độ di chuyển bình thường và ngừng để lại dấu vết băng.`,
         id:
           `<b>First cast: </b>I'ceat meluncur di tanah, meningkatkan Kecepatan Geraknya sebesar ${bonusSpeed} selama ${duration} dan meninggalkan jejak es.` +
           `Musuh yang berdiri di atas jejak es menerima ${base_damage} per detik dan memiliki Kecepatan Gerak mereka berkurang untuk waktu yang singkat.<br/>` +
@@ -260,7 +260,7 @@ const _getSpellDescriptionLang = (
         br: `Belle atira uma flor explosiva de sua varinha causando ${baseDamage} de dano em área.`,
         zh: `蓓蕾從她的法棍發射一顆爆炸荊棘，給予小範圍全體 ${baseDamage}。`,
         fr: `Belle tire une épine explosive de sa baguette, infligeant ${baseDamage} dans une petite zone.`,
-        vi: `Belle bắn một gai nổ từ cây gậy của mình, gây ${baseDamage} trong một khu vực nhỏ.`,
+        vi: `Belle bắn ra một hoa gai nổ từ cây gậy của mình, gây ${baseDamage} trong một khu vực nhỏ.`,
         id: `Belle menembakkan duri ledakan dari tongkatnya, memberikan ${baseDamage} di area kecil.`,
       }
     }
@@ -297,8 +297,8 @@ const _getSpellDescriptionLang = (
           `Belle lance une vigne perçante, infligeant ${damage} aux ennemis touchés. Si la vigne entre en contact avec un héros ennemi, elle se fixe à ce héros. Les vignes attachées peuvent être brisées si le héros ennemi s'éloigne suffisamment de Belle.` +
           `\nAprès un court laps de temps, si la vigne est toujours attachée, elle s'entortille autour de l'ennemi, infligeant ${damage} et étourdissant pendant ${stunDuration}.`,
         vi:
-          `Belle ném một dây leo xuyên thấu, gây ${damage} cho kẻ địch bị trúng. Nếu dây leo tiếp xúc với một anh hùng địch, nó sẽ gắn vào anh hùng đó. Dây leo gắn có thể bị phá vỡ nếu kẻ địch di chuyển đủ xa khỏi Belle.` +
-          `\nSau một thời gian ngắn, nếu dây leo vẫn gắn, dây leo sẽ bao quanh kẻ địch, gây ${damage} và choáng kẻ địch trong ${stunDuration}.`,
+          `Belle ném một dây leo xuyên thấu, gây ${damage} lên kẻ địch bị trúng. Nếu dây leo tiếp xúc với kẻ địch, nó sẽ gắn vào kẻ địch đó. Dây leo gắn vào có thể bị phá vỡ nếu kẻ địch di chuyển đủ xa khỏi Belle.` +
+          `\nSau một thời gian ngắn, nếu dây leo vẫn gắn, dây leo sẽ bao quanh kẻ địch, gây ${damage} và gây choáng kẻ địch trong ${stunDuration}.`,
         id:
           `Belle melemparkan duri yang menembus, memberikan ${damage} pada musuh yang terkena. Jika duri bersentuhan dengan pahlawan musuh, itu melekat pada pahlawan itu. Duri yang melekat dapat dipecahkan jika pahlawan musuh bergerak cukup jauh dari Belle.` +
           `\nSetelah waktu singkat, jika duri masih melekat, duri membelit musuh, memberikan ${damage} dan mematikan selama ${stunDuration}.`,
@@ -350,7 +350,7 @@ const _getSpellDescriptionLang = (
         br: `Thomas faz um corte com espada e causa ${baseDamage} de dano.`,
         zh: `湯瑪士用他的武士刀劈砍，造成 ${baseDamage}。`,
         fr: `Thomas frappe avec son katana, infligeant ${baseDamage}.`,
-        vi: `Thomas đánh với thanh kiếm của mình, gây ${baseDamage}.`,
+        vi: `Thomas chém thanh kiếm của mình, gây ${baseDamage}.`,
         id: `Thomas memotong dengan katana-nya, memberikan ${baseDamage}.`,
       }
     }
@@ -369,7 +369,7 @@ const _getSpellDescriptionLang = (
         br: `Thomas lança com sua espada demoníaca, três shurikens que causam ${base_damage} de dano a todos inimigos no caminho. Elas voltam para ele depois de um curto período de tempo causando ${base_damage} de dano a todos inimigos no caminho.`,
         zh: `湯瑪士丟出三枚手裏劍，每發手裏劍造成 ${base_damage}。手裏劍短時間內收回他手上，造成另一個 ${base_damage}。`,
         fr: `Thomas lance trois shurikens, chacun infligeant ${base_damage}. Ils reviennent à lui après un court laps de temps, infligeant à nouveau ${base_damage}.`,
-        vi: `Thomas ném ba quả shuriken, mỗi quả gây ${base_damage}. Chúng quay trở lại với anh sau một thời gian ngắn, gây thêm ${base_damage}.`,
+        vi: `Thomas ném ra ba shuriken, mỗi shuriken gây ${base_damage}. Chúng quay trở lại với anh sau một thời gian ngắn, gây thêm ${base_damage}.`,
         id: `Thomas melemparkan tiga shuriken, masing-masing shuriken memberikan ${base_damage}. Mereka kembali kepadanya setelah waktu singkat, memberikan ${base_damage} lagi.`,
       }
     }
@@ -402,8 +402,8 @@ const _getSpellDescriptionLang = (
           `<b>Première utilisation: </b>Thomas lance une carotte qui s'attache aux ennemis. Il peut se téléporter vers la carotte après ${carrotDuration}. \n\n` +
           `<b>Deuxième utilisation: </b>Se téléporte à la carotte. Si elle est attachée à un héros ennemi, réduit la vitesse de déplacement de ce héros pendant ${slowDuration} et inflige ${base_damage}.`,
         vi:
-          `<b>Lần đầu: </b>Thomas ném một củ cà rốt, nó sẽ gắn vào kẻ địch. Anh có thể dịch chuyển đến cà rốt sau ${carrotDuration}. \n\n` +
-          `<b>Lần thứ hai: </b>Di chuyển đến cà rốt. Nếu cà rốt gắn vào một anh hùng địch, giảm tốc độ di chuyển của anh hùng đó trong ${slowDuration} và gây ${base_damage}.`,
+          `<b>Lần đầu: </b>Thomas ném một củ cà rốt, nó sẽ gắn vào kẻ địch. Anh có thể dịch chuyển đến cà rốt trong ${carrotDuration}. \n\n` +
+          `<b>Lần thứ hai: </b>Tốc biến đến củ cà rốt. Nếu cà rốt gắn vào kẻ địch, giảm tốc độ di chuyển của kẻ địch đó trong ${slowDuration} và gây ${base_damage}.`,
         id:
           `<b>First cast: </b>Thomas melemparkan wortel bayangan. Dia bisa teleportasi ke wortel itu dalam ${carrotDuration} setelah pertama kali digunakan. \n\n` +
           `<b>Second cast: </b>Teleportasi ke wortel. Jika terpasang pada pahlawan musuh, Thomas akan memperlambat pahlawan itu selama ${slowDuration} dan memberikan ${base_damage}.`,
@@ -428,7 +428,7 @@ const _getSpellDescriptionLang = (
         br: `Veil corta com suas espadas demoníacas causando ${base_damage} de dano.\n<b>[Maldição dos caídos]:</b> Veil invoca o poder do demônio selado em suas espadas para causar ${enhanced_dmg} de dano.\n(Consume o estado Maldição dos caídos.)`,
         zh: `維爾劈砍她的武器，造成 ${base_damage}。\n強化後：維爾利用她的星光魂魄造成額外的 ${enhanced_dmg}，移除她的強化狀態。`,
         fr: `Veil frappe avec ses armes, infligeant ${base_damage}. \n<br/>Amélioré: Veil utilise son esprit astral pour infliger un bonus de ${enhanced_dmg}, supprimant son état amélioré.`,
-        vi: `Veil đánh với vũ khí của mình, gây ${base_damage}. \n<br/>Tăng cường: Veil sử dụng linh hồn thiên thần của mình để gây thêm ${enhanced_dmg}, loại bỏ trạng thái tăng cường.`,
+        vi: `Veil chém với vũ khí của mình, gây ${base_damage}. \n<br/>Thức tỉnh: Veil sử dụng linh hồn thần bí của mình để gây thêm ${enhanced_dmg}, loại bỏ trạng thái thức tỉnh.`,
         id: `Veil memotong dengan senjata-senjatanya, memberikan ${base_damage}. \n<br/>Ditingkatkan: Veil menggunakan roh astralnya untuk memberikan bonus ${enhanced_dmg}, menghapuskan keadaan ditingkatkan.`,
       }
     }
@@ -447,7 +447,7 @@ const _getSpellDescriptionLang = (
         br: `Veil salta e atira suas lâminas astrais para baixo em um ângulo de 45 ° causando ${base_damage} de dano.\nSe a habilidade atingir um personagem inimigo, ela ativa a [Maldição dos caídos].`,
         zh: `維爾跳躍並向斜前方45°角丟出星光刀刃落下，造成 ${base_damage}。如果技能擊中敵方英雄，維爾會進入強化狀態。`,
         fr: `Veil saute et lance ses lames astrales vers le bas à un angle de 45°, infligeant ${base_damage}. Si les lames touchent un héros ennemi, Veil entre dans son état amélioré.`,
-        vi: `Veil nhảy và ném thanh kiếm thiên thần của mình xuống dưới 45°, gây ${base_damage}. Nếu thanh kiếm trúng một anh hùng địch, Veil sẽ bước vào trạng thái tăng cường.`,
+        vi: `Veil nhảy và ném thanh kiếm thần bí của mình xuống dưới tạo một góc 45°, gây ${base_damage}. Nếu thanh kiếm trúng một kẻ địch, Veil sẽ bước vào trạng thái thức tỉnh`,
         id: `Veil melompat dan melemparkan pedang astralnya ke bawah pada sudut 45°, memberikan ${base_damage}. Jika pedang mengenai pahlawan musuh, Veil akan memasuki keadaan ditingkatkan.`,
       }
     }
@@ -484,8 +484,8 @@ const _getSpellDescriptionLang = (
           `Veil fonce vers l'avant à grande vitesse, infligeant ${base_damage} aux héros ennemis.\n\n` +
           `Amélioré: Veil entre dans le royaume astral, infligeant un bonus de ${enh_dmg} et ralentissant le héros ennemi, supprimant son état amélioré. <b>Toucher un ennemi réinitialise le temps de recharge de cette capacité. </b>`,
         vi:
-          `Veil lao với tốc độ cao về phía trước, gây ${base_damage} cho anh hùng địch.\n\n` +
-          `Tăng cường: Veil bước vào vùng thiên thần, gây thêm ${enh_dmg} và làm chậm anh hùng địch, loại bỏ trạng thái tăng cường. <b>Đánh trúng sẽ reset cooldown! </b>`,
+          `Veil lao với tốc độ âm thanh về phía trước, gây ${base_damage} cho kẻ địch.\n\n` +
+          `Thức tỉnh: Veil bước vào cảnh giới thần bí, gây thêm ${enh_dmg} và làm chậm anh hùng địch, loại bỏ trạng thái thức tỉnh. <b>Đánh trúng sẽ hồi lại chiêu! </b>`,
         id:
           `Veil bergerak maju dengan kecepatan tinggi, memberikan ${base_damage} pada pahlawan musuh.\n\n` +
           `Ditingkatkan: Veil memasuki alam astral, memberikan bonus ${enh_dmg} dan memperlambat pahlawan musuh, menghapuskan keadaan ditingkatkan. <b>Hit yang berhasil akan mereset cooldown! </b>`,
@@ -504,7 +504,7 @@ const _getSpellDescriptionLang = (
         cz: `Flin vystřelí šíp a způsobí ${basic_damage} normálního poškození \nAk je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage} normálního poškození`,
         zh: `弗林發射一支弓箭，造成 ${basic_damage}。\n如果精通箭術發動中，弗林的弓造成 ${enh_damage}並貫穿所有敵方單位。`,
         fr: `Flin tire une flèche, infligeant ${basic_damage}. \nSi la Maîtrise du tir est active, la flèche de Flin inflige ${enh_damage} et traverse les ennemis.`,
-        vi: `Flin bắn một mũi tên, gây ${basic_damage}. \nNếu kỹ năng (Chuyên nghiệp bắn) được kích hoạt, mũi tên của Flin gây ${enh_damage} và xuyên qua kẻ địch.`,
+        vi: `Flin bắn một mũi tên, gây ${basic_damage}. \nNếu kỹ năng Xạ Thủ Lão Luyện được kích hoạt, mũi tên của Flin gây ${enh_damage} và xuyên qua kẻ địch.`,
         id: `Flin melepaskan anak panah, memberikan ${basic_damage}. \nJika Marksmanship aktif, anak panah Flin memberikan ${enh_damage} dan menembus musuh.`,
       }
     }
@@ -527,7 +527,7 @@ const _getSpellDescriptionLang = (
         cz: `Flin vystřelí precízni strelu, kterí způsobí ${base_damage} a odkopne nepřítele dál od tebe. \nAk střelecké umění je aktívni, precízna strela proleti skrz nepřátelske jednotky.`,
         zh: `弗林向前方發射精準射擊，如果弓箭擊中目標對象，造成 ${base_damage}並將敵方單位擊退。\n如果精通箭術發動中，精準射擊將會貫穿所有敵方單位。`,
         fr: `Flin tire une flèche puissante de son arc, infligeant ${base_damage} et repoussant les ennemis touchés. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
-        vi: `Flin bắn một mũi tên mạnh từ cung của mình, gây ${base_damage} và đẩy lùi kẻ địch. \nNếu kỹ năng (Chuyên nghiệp bắn) được kích hoạt, Chính xác bắn xuyên qua kẻ địch.`,
+        vi: `Flin bắn một mũi tên hùng mạnh từ cung của mình, gây ${base_damage} và đẩy lùi kẻ địch. \nNếu Xạ Thủ Lão Luyện được kích hoạt, Chuẩn Xác Xạ bắn xuyên qua kẻ địch.`,
         id: `Flin melepaskan anak panah yang kuat dari busurnya, memberikan ${base_damage} dan mendorong musuh yang terkena. \nJika Marksmanship aktif, Precise Shot menembus musuh.`,
       }
     }
@@ -544,7 +544,7 @@ const _getSpellDescriptionLang = (
         cz: `Flin zvyšuje svůj záměr na ${marksmanshipDuration}. Během záměru získá bonus ${colorize(`${bonusAttackSpeed}% rychlosti útoku`)}, a jeho další ${FlinAbilityData.MARKSMANSHIP_STACKS} šípy způsobí dodatečné poškození a prorazí nepřátelské jednotky. Každá jednotka zasažená Flinovými průstřelnými šípy sníží poškození šípu o ${marksmanshipDamageReduction}%.`,
         zh: `弗林提高他的专注力 ${marksmanshipDuration}。在专注时，弗林获得额外 ${colorize(`${bonusAttackSpeed}% 攻击速度`)}, 他的接下来的 ${FlinAbilityData.MARKSMANSHIP_STACKS} 箭矢将造成额外伤害并穿透敌方单位。每个被弗林穿透的单位会减少箭矢的伤害 ${marksmanshipDamageReduction}%.`,
         fr: `Flin augmente sa concentration pendant ${marksmanshipDuration}. Pendant cette période, Flin gagne ${colorize(`${bonusAttackSpeed}% de vitesse d'attaque`)}, et ses ${FlinAbilityData.MARKSMANSHIP_STACKS} flèches suivantes infligeront des dégâts supplémentaires et perceront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${marksmanshipDamageReduction}%.`,
-        vi: `Flin tăng cường tập trung trong ${marksmanshipDuration}. Trong thời gian tập trung, Flin nhận được thêm ${colorize(`${bonusAttackSpeed}% tốc độ tấn công`)}, và ${FlinAbilityData.MARKSMANSHIP_STACKS} mũi tên tiếp theo của anh ấy sẽ gây thêm sát thương và xuyên qua các đơn vị địch. Mỗi đơn vị bị trúng tên xuyên của Flin sẽ giảm sát thương của mũi tên đi ${marksmanshipDamageReduction}%.`,
+        vi: `Flin tăng cường sự tập trung trong ${marksmanshipDuration}. Trong thời gian tập trung, Flin nhận được thêm ${colorize(`${bonusAttackSpeed}% tốc độ đánh`)}, và ${FlinAbilityData.MARKSMANSHIP_STACKS} mũi tên tiếp theo của anh ấy sẽ gây thêm sát thương và xuyên qua các đơn vị địch. Mỗi đơn vị bị trúng tên xuyên của Flin sẽ giảm sát thương của mũi tên đi ${marksmanshipDamageReduction}%.`,
         id: `Flin meningkatkan fokusnya selama ${marksmanshipDuration}. Saat fokus, Flin mendapatkan bonus ${colorize(`${bonusAttackSpeed}% kecepatan serangan`)}, dan ${FlinAbilityData.MARKSMANSHIP_STACKS} panah berikutnya akan memberikan kerusakan tambahan dan menembus unit musuh. Setiap unit yang terkena panah menembus Flin akan mengurangi kerusakan panah sebesar ${marksmanshipDamageReduction}%.`,
       }
     }
@@ -573,8 +573,8 @@ const _getSpellDescriptionLang = (
           \n<b>[強化後]：(閃電衝擊)</b> 奇菈向最近的英雄施放閃電。如果閃電擊中盟友，將會恢復 ${enh_damage_heal}點生命，增加他們的攻擊速度 ${bonusAttackSpeed}%，並在短時間內增加移動速度 ${KiraAbilityData.ENHATTACK_MOVE_SPEED}。`,
         fr: `Kira tire une étincelle, infligeant ${basic_damage}. \n
           \n<b>Amélioré: (Choc électrique)</b> De plus, Kira lance un éclair sur le héros le plus proche. Si le Choc électrique touche un allié, il restaure ${enh_damage_heal} points de vie, augmente leur vitesse d'attaque de ${bonusAttackSpeed}%, et augmente la vitesse de déplacement de ${KiraAbilityData.ENHATTACK_MOVE_SPEED} pendant une courte durée.`,
-        vi: `Kira bắn một tia lửa, gây ${basic_damage}. \n
-          \n<b>Tăng cường: (Sét)</b> Ngoài ra, Kira phóng một tia sét vào anh hùng gần nhất. Nếu Sét trúng một đồng minh, nó sẽ hồi ${enh_damage_heal} máu, tăng Tốc độ Tấn công của họ ${bonusAttackSpeed}%, và tăng Tốc độ Di chuyển ${KiraAbilityData.ENHATTACK_MOVE_SPEED} trong một thời gian ngắn.`,
+        vi: `Kira bắn ra một tia lửa điện, gây ${basic_damage}. \n
+          \n<b>Thức tỉnh: (Sét)</b> Ngoài ra, Kira phóng một tia sét vào anh hùng gần nhất. Nếu Sét trúng một đồng minh, nó sẽ hồi ${enh_damage_heal} máu, tăng Tốc độ đánh của họ ${bonusAttackSpeed}%, và tăng Tốc độ Di chuyển ${KiraAbilityData.ENHATTACK_MOVE_SPEED} trong một thời gian ngắn.`,
         id: `Kira melepaskan percikan, memberikan ${basic_damage}. \n
           \n<b>Ditingkatkan: (Sengatan Petir)</b> Selain itu, Kira melemparkan petir ke pahlawan terdekat. Jika Sengatan Petir mengenai sekutu, itu akan mengembalikan ${enh_damage_heal} kesehatan, meningkatkan Kecepatan Serangan mereka ${bonusAttackSpeed}%, dan meningkatkan Kecepatan Gerak ${KiraAbilityData.ENHATTACK_MOVE_SPEED} untuk jangka waktu singkat.`,
       }
@@ -604,7 +604,7 @@ const _getSpellDescriptionLang = (
                 \n<b>[強化後]：(暴風閃電) 奇菈召喚總共 ${count * 2}束雷電飛彈。`,
         fr: `Kira invoque ${count} missiles électriques qui tombent du ciel, chacun infligeant ${damage} et traversant les ennemis.
                 \n<br/><b>Amélioré: (Éclair torrentiel)</b> Kira invoque un total de ${count * 2} missiles électriques.`,
-        vi: `Kira triệu hồi ${count} tên lửa điện từ trên trời, mỗi tên lửa xuyên qua kẻ địch và gây ${damage} sát thương.
+        vi: `Kira triệu hồi ${count} tia lửa điện từ trên trời, mỗi tia lửa điện qua kẻ địch và gây ${damage} sát thương.
                 \n<br/><b>Tăng cường: (Sấm Sét)</b> Kira triệu hồi tổng cộng ${count * 2} tên lửa điện.`,
         id: `Kira memanggil ${count} peluru listrik dari langit, setiap peluru menembus musuh dan memberikan ${damage} kerusakan.
                 \n<br/><b>Ditingkatkan: (Petir Hujan)</b> Kira memanggil total ${count * 2} peluru listrik.`,
@@ -634,8 +634,8 @@ const _getSpellDescriptionLang = (
                 \n<b>[強化後]：(動態殘影) 奇菈沒有回歸殘影處，取而代之的是殘影跟隨她並沿路穿透敵方，造成 ${damage}並沉默敵方 ${voidPhantasmSilenceDuration}。`,
         fr: `Kira fonce en avant, laissant derrière elle une image déformée d'elle-même. Après ${voidPhantasmDuration}, elle retourne à la position de son image.
                 \n<br/><b>Amélioré: (Image dynamique)</b> Au lieu de retourner à la position de l'image, elle retourne à la position de Kira. L'image traverse les ennemis, infligeant ${damage} et les réduisant au silence pendant ${voidPhantasmSilenceDuration}.`,
-        vi: `Kira lao về phía trước, để lại một hình ảnh sau của chính mình. Sau ${voidPhantasmDuration}, cô quay trở lại vị trí của hình ảnh sau của mình.
-                \n<br/><b>Tăng cường: (Hình ảnh động)</b> Thay vì quay trở lại vị trí của hình ảnh sau, nó quay trở lại vị trí của Kira. Hình ảnh đi qua kẻ địch, gây ${damage} và câm lặng trong ${voidPhantasmSilenceDuration}.`,
+        vi: `Kira tốc biến về phía trước, để lại một Ảo ảnh sau của chính mình. Sau ${voidPhantasmDuration}, cô quay trở lại vị trí của Ảo ảnh của mình.
+                \n<br/><b>Thức tỉnh: (Ảo ảnh Ma)</b> Thay vì quay trở lại vị trí của Ảo ảnh, Ảo ảnh quay trở lại vị trí của Kira. Ảo ảnh đi qua kẻ địch, gây ${damage} và làm câm lặng trong ${voidPhantasmSilenceDuration}.`,
         id: `Kira berlari ke depan, meninggalkan bayangan setelah dirinya sendiri. Setelah ${voidPhantasmDuration}, dia kembali ke posisi bayangannya.
                 \n<br/><b>Ditingkatkan: (Bayangan Dinamis)</b> Alih-alih kembali ke posisi bayangan, dia kembali ke posisi Kira. Bayangan melewati musuh, memberikan ${damage} dan membisu selama ${voidPhantasmSilenceDuration}.`,
       }
@@ -652,7 +652,7 @@ const _getSpellDescriptionLang = (
         cz: `Hazel udre kladivem a způsobí ${baseDamage} normální poškození`,
         zh: `哈傑爾用她的鐵鎚打擊敵人，造成 ${baseDamage}。`,
         fr: `Hazel frappe avec son marteau, infligeant ${baseDamage}.`,
-        vi: `Hazel đánh với búa của mình, gây ${baseDamage}.`,
+        vi: `Hazel đập với búa của mình, gây ${baseDamage}.`,
         id: `Hazel memukul dengan palu, memberikan ${baseDamage}.`,
       }
     }
@@ -708,7 +708,7 @@ const _getSpellDescriptionLang = (
         zh: `哈傑爾釋放正義之怒向上揮起鐵鎚，造成 ${normalDamage}並擊昇敵方使其暈眩 ${duration}。`,
         cz: `Hazel zamává svým kladivem nahoru, uvolňuje hněv spravedlnosti, způsobuje ${normalDamage} a odhazuje nepřátele nahoru a omráčí na ${duration}.`,
         fr: `Hazel balance son marteau vers le haut, libérant la colère de la justice, infligeant ${normalDamage}, projetant les ennemis vers le haut et les étourdissant pendant ${duration}.`,
-        vi: `Hazel đánh búa của mình lên trên, phóng ra cơn thịnh nộ của công lý, gây ${normalDamage}, đẩy lên kẻ địch và choáng trong ${duration}.`,
+        vi: `Hazel vung búa của mình lên trời, thức tỉnh cơn thịnh nộ của công lý, gây ${normalDamage}, đẩy lên kẻ địch và gây choáng trong ${duration}.`,
         id: `Hazel mengayunkan palunya ke atas, melepaskan kemarahan keadilan, memberikan ${normalDamage}, mendorong musuh ke atas, dan membius selama ${duration}.`,
       }
     }
@@ -734,7 +734,7 @@ const _getSpellDescriptionLang = (
         fr: `Arel tire une balle de son pistolet, infligeant ${baseDamage}. \n
                 \nPassif: Chaque fois qu'Arel utilise une compétence, il charge une autre balle dans son pistolet. Sa prochaine attaque de base tire cette balle supplémentaire, infligeant un bonus de ${enhDamage}.`,
         vi: `Arel bắn một viên đạn từ súng của mình, gây ${baseDamage}. \n
-                \nPassive: Mỗi khi Arel sử dụng một kỹ năng, anh sẽ nạp một viên đạn khác vào súng của mình. Đòn tấn công cơ bản tiếp theo của anh sẽ bắn viên đạn bổ sung đó, gây thêm ${enhDamage}.`,
+                \nNội tại: Mỗi khi Arel sử dụng một kỹ năng, anh sẽ nạp một viên đạn khác vào súng của mình. Đòn đánh thường tiếp theo của anh sẽ bắn thêm viên đạn đó, gây thêm ${enhDamage}.`,
         id: `Arel menembakkan peluru dari senjatanya, memberikan ${baseDamage}. \n
                 \nPassive: Setiap kali Arel menggunakan kemampuan, ia akan memuat peluru lain di senjatanya. Serangan Dasar berikutnya menembakkan peluru tambahan itu, memberikan bonus ${enhDamage}.`,
       }
@@ -748,7 +748,7 @@ const _getSpellDescriptionLang = (
         cz: 'Arel se převalí dopředu',
         zh: '艾瑞爾短距離向前翻滾。',
         fr: "Arel roule vers l'avant.",
-        vi: 'Arel lăn về phía trước.',
+        vi: 'Arel nhào lộn về phía trước.',
         id: 'Arel berguling ke depan.',
       }
     }
@@ -792,8 +792,8 @@ const _getSpellDescriptionLang = (
                 \n射擊附著於敵方身上炸彈三發子彈時，炸彈會提早爆炸，造成 ${triggerDamage}並減緩他們速度 ${slowDuration}，然後使其暈眩 ${slowDuration}。`,
         fr: `Arel lance une bombe à retardement, qui se fixe aux ennemis qui s'en approchent. Après ${bombDuration}, la bombe explose, infligeant ${baseDamage} dans une zone.
                 \nTirer sur une bombe attachée avec 3 balles déclenche la bombe prématurément, infligeant ${triggerDamage}, réduisant leur Vitesse de déplacement pendant ${slowDuration}, et les étourdissant pendant ${triggerStun}.`,
-        vi: `Arel ném một quả bom đếm ngược, gắn vào kẻ địch tiếp cận. Sau ${bombDuration}, quả bom phát nổ, gây ${baseDamage} trong một khu vực.
-                \nBắn vào quả bom đã gắn với 3 viên đạn kích hoạt quả bom sớm, gây ${triggerDamage}, giảm Tốc độ Di chuyển của họ trong ${slowDuration} và choáng trong ${triggerStun}.`,
+        vi: `Arel ném một quả bom hẹn giờ, gắn vào kẻ địch tiếp cận. Sau ${bombDuration}, quả bom phát nổ, gây ${baseDamage} trong một khu vực.
+                \nBắn vào quả bom đã gắn với 3 viên đạn kích hoạt quả bom nổ sớm, gây ${triggerDamage}, giảm Tốc độ Di chuyển của kẻ địch trong ${slowDuration} và gây choáng trong ${triggerStun}.`,
         id: `Arel melontarkan bom berdetak, menempel pada musuh yang mendekat. Setelah ${bombDuration}, bom meledak, memberikan ${baseDamage} dalam area.
                 \nMenembak bom yang menempel dengan 3 peluru meledakkan bom lebih awal, memberikan ${triggerDamage}, mengurangi Kecepatan Gerak mereka selama ${slowDuration}, dan membius selama ${triggerStun}.`,
       }
@@ -825,8 +825,8 @@ const _getSpellDescriptionLang = (
                 \n被動：阿爾瓦的基本攻擊會給敵方英雄疊加神聖衝擊，持續時間為 ${duration}。第三次疊加時，敵方產生神聖印記，造成 ${markDamage}。`,
         fr: `Alvar attaque avec un coup de poing, infligeant ${baseDamage}. \n
                 \nPassif: Les attaques de base d'Alvar appliquent une pile d'impact divin sur les héros ennemis, qui dure ${duration}. À trois piles, l'ennemi reçoit une Marque divine, infligeant ${markDamage}.`,
-        vi: `Alvar tấn công với một cú đấm, gây ${baseDamage}. \n
-                \nPassive: Các đòn tấn công cơ bản của Alvar áp dụng một stack tác động thần thánh lên các anh hùng địch, kéo dài trong ${duration}. Tại ba stack, kẻ địch nhận một dấu Chân Thần, gây ${markDamage}.`,
+        vi: `Alvar dùng tay đấm, gây ${baseDamage}. \n
+                \nNội tại: Các đòn đánh thường của Alvar cộng dồn Thần Kích lên các kẻ địch, kéo dài trong ${duration}. Tại lần thứ ba cộng dồn, kẻ địch bị nhận Thần Ấn, gây ${markDamage}.`,
         id: `Alvar menyerang dengan pukulan, memberikan ${baseDamage}. \n
                 \nPassive: Serangan Dasar Alvar memberikan tumpukan dampak ilahi pada pahlawan musuh, yang berlangsung selama ${duration}. Pada tiga tumpukan, musuh menerima Tanda Ilahi, memberikan ${markDamage}.`,
       }
@@ -858,9 +858,9 @@ const _getSpellDescriptionLang = (
         fr: `Alvar lance les ennemis en arrière avec un puissant coup de pied, infligeant ${baseDamage} et étourdissant pendant ${duration}. \n\n
             Applique une pile d'impact divin sur tous les héros ennemis touchés par Furious Kick.\n
             De plus, Alvar accorde à lui-même et à tous ses alliés proches ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} de vitesse de mouvement bonus pendant ${buffDuration}`,
-        vi: `Alvar đá kẻ địch lùi với một cú đá mạnh mẽ, gây ${baseDamage} và choáng trong ${duration}. \n\n
-            Áp dụng một stack tác động thần thánh trên tất cả anh hùng địch bị đá mạnh.\n
-            Ngoài ra, Alvar ban tặng bản thân và tất cả đồng minh gần đây ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} tốc độ di chuyển bonus trong ${buffDuration}`,
+        vi: `Alvar làm kẻ địch bay ngược với một cú đá mạnh mẽ, gây ${baseDamage} và gây choáng trong ${duration}. \n\n
+            Áp dụng một đòn cộng dồn Thần Kích trên tất cả anh hùng địch bị đá mạnh.\n
+            Ngoài ra, Alvar ban tặng bản thân và tất cả đồng minh ở gần ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} tốc độ di chuyển trong ${buffDuration}`,
         id: `Alvar meluncurkan musuh ke belakang dengan tendangan kuat, memberikan ${baseDamage} dan membius selama ${duration}. \n\n
             Mengaplikasikan tumpukan dampak ilahi pada semua pahlawan musuh yang terkena Furious Kick.\n
             Selain itu Alvar memberikan dirinya dan semua sekutu terdekatnya ${AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED} bonus kecepatan gerak selama ${buffDuration}`,
@@ -878,7 +878,7 @@ const _getSpellDescriptionLang = (
         cz: `Alvar se teleportuje k nejbližšímu nepřátelskému hrdinovi s Božskou značkou, způsobí ${baseDamage}, odstraní Božskou značku a sníží rychlost pohybu nepřátelského hrdiny na ${slowDuration}. Pokud není v dosahu žádný nepřítel s Božskou značkou, tato schopnost nemůže být použita.`,
         zh: `阿爾瓦瞬移到最接近的有神聖印記敵方英雄，造成 ${baseDamage}，移除神聖標記，並降低敵方英雄移動速度 ${slowDuration}。如果附近沒有神聖印記的敵人，此技能無法被使用。`,
         fr: `Alvar se téléporte vers le héros ennemi le plus proche avec Divine Mark, infligeant ${baseDamage}, supprimant Divine Mark, et réduisant la Vitesse de déplacement du héros ennemi pendant ${slowDuration}. S'il n'y a pas d'ennemi avec Divine Mark à proximité, cette capacité ne peut pas être utilisée.`,
-        vi: `Alvar di chuyển đến anh hùng địch gần nhất với Divine Mark, gây ${baseDamage}, loại bỏ Divine Mark, và giảm Tốc độ Di chuyển của anh hùng địch trong ${slowDuration}. Nếu không có kẻ địch nào có Divine Mark gần đây, khả năng này không thể sử dụng.`,
+        vi: `Alvar tốc biến đến anh hùng địch gần nhất với Thần Ấn, gây ${baseDamage}, loại bỏ Thần Ấn, và giảm Tốc độ Di chuyển của anh hùng địch trong ${slowDuration}. Nếu không có kẻ địch nào có Thần Ấn gần đây, khả năng này không thể sử dụng.`,
         id: `Alvar teleports ke pahlawan musuh terdekat dengan Divine Mark, memberikan ${baseDamage}, menghapus Divine Mark, dan mengurangi Kecepatan Gerak pahlawan musuh selama ${slowDuration}. Jika tidak ada musuh dengan Divine Mark di dekatnya, kemampuan ini tidak dapat digunakan.`,
       }
     }
@@ -913,7 +913,7 @@ const _getSpellDescriptionLang = (
         br: `Foxy canaliza sua arma, diminuindo sua velocidade de movimento e disparando rapidamente uma rajada de balas. Cada bala causa ${baseDamage}. <br/> <i> A taxa de ataque de Fogo Rápido escala com a Velocidade de Ataque. </i>`,
         zh: `弗克西開通他的武器，降低他的移動速度並快速地發射一連串子彈。每發子彈造成 ${baseDamage}。 <br/> <i> 極速射擊的射擊速率與攻擊速度相關。 </i>`,
         fr: `Foxy canalise son arme, réduisant sa vitesse de déplacement et tirant rapidement une rafale de balles. Chaque balle inflige ${baseDamage}. <br/> <i> Le taux de tir de Feu Rapide évolue avec la Vitesse d'Attaque. </i>`,
-        vi: `Foxy kênh vũ khí của mình, giảm tốc độ di chuyển và nhanh chóng bắn một loạt đạn. Mỗi viên đạn gây ${baseDamage}. <br/> <i> Tốc độ bắn của Bắn Nhanh tăng với Tốc độ Đánh. </i>`,
+        vi: `Foxy nạp đạn, giảm tốc độ di chuyển và bắn liên thanh. Mỗi viên đạn gây ${baseDamage}. <br/> <i> Tốc độ bắn của bắn tỉ lệ thuận với Tốc độ Đánh. </i>`,
         id: `Foxy mengarahkan senjatanya, menurunkan kecepatan geraknya dan dengan cepat menembakkan serangkaian peluru. Setiap peluru memberikan ${baseDamage}. <br/> <i> Laju tembakan Rapid Fire berkembang dengan Kecepatan Serangan. </i>`,
       }
     }
@@ -998,8 +998,8 @@ const _getSpellDescriptionLang = (
         fr: `Magdalene envoie une explosion d'énergie de sa faux sombre, infligeant ${baseDamage}.
         \n\nPassif: Magdalene vole une âme ennemie après avoir tué un héros ennemi ou un sbire. Magdalene peut stocker jusqu'à ${maxSouls} âmes. Chaque âme augmente sa Puissance des compétences de 1.
         \nLorsque Magdalene meurt, elle libère toutes les âmes dans une petite zone et inflige ${soulDamage} par âme à tous les ennemis et les effraie pendant une courte durée.`,
-        vi: `Magdalene gửi một cú nổ năng lượng từ cây liềm tối của mình, gây ${baseDamage}.
-        \n\nPassive: Magdalene đánh cắp linh hồn của một kẻ địch sau khi giết một anh hùng hoặc lính địch. Magdalene có thể lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn tăng Sức mạnh Kỹ năng của cô 1.
+        vi: `Magdalene giải phóng một luồng năng lượng từ cây liềm hắc ám của mình, gây ${baseDamage}.
+        \n\nNội tại: Magdalene đánh cắp linh hồn sau khi giết một kẻ địch hoặc lính địch. Magdalene có thể lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn tăng Sức mạnh Phép Thuật của cô lên 1.
         \nKhi Magdalene chết, cô sẽ phóng tất cả các linh hồn trong một khu vực nhỏ và gây ${soulDamage} cho tất cả kẻ địch và làm họ sợ hãi trong một thời gian ngắn.`,
         id: `Magdalene mengirim ledakan energi dari sabit gelapnya, memberikan ${baseDamage}.
         \n\nPasif: Magdalene mencuri jiwa musuh setelah membunuh pahlawan musuh atau minion. Magdalene dapat menyimpan hingga ${maxSouls} jiwa. Setiap jiwa meningkatkan Kemampuan Sihirnya sebesar 1.
@@ -1024,7 +1024,7 @@ const _getSpellDescriptionLang = (
         fr: `Magdalene lance un cri déchirant, infligeant ${damage} de dégâts magiques aux ennemis devant elle, les repoussant et les réduisant au silence pendant ${silenceDuration}. \nConsomme les Fantômes hantés si la cible est affectée, inflige des dégâts supplémentaires et effraie la cible pendant ${pushbackDuration}.`,
         zh: `瑪格達琳娜發出刺耳的尖叫，對前方敵人造成 ${damage}，將他們擊退，並使其沉默 ${silenceDuration}。 \n如果目標受到影魂影響，則消耗作祟幽魂，造成額外傷害並使目標恐懼 ${pushbackDuration}。`,
         cz: `Magdalena vysílá pronikavý křik, způsobující ${damage} magického poškození nepřátelům před sebou, odhazujíc je zpět a němě je na ${silenceDuration}. \nPokud je cíl postižen strašidelným duchem, Magdalena ho pohltí, způsobí dodatečné poškození a vyděsí ho na ${pushbackDuration}.`,
-        vi: `Magdalene phát ra một tiếng la hét chói tai, gây ${damage} sát thương phép cho kẻ địch phía trước, đẩy họ lùi và làm im lặng họ trong ${silenceDuration}. \nTiêu thụ Hồn Ma nếu mục tiêu bị ảnh hưởng, gây thêm sát thương và làm kinh hãi mục tiêu trong ${pushbackDuration}.`,
+        vi: `Magdalene phát ra một tiếng la hét chói tai, gây ${damage} sát thương phép cho kẻ địch phía trước, đẩy họ lùi và làm câm lặng họ trong ${silenceDuration}. \nTiêu thụ U Hồn Ám Ảnh nếu mục tiêu bị ảnh hưởng, gây thêm sát thương và làm sợ mục tiêu trong ${pushbackDuration}.`,
         id: `Magdalene mengirimkan teriakan yang menusuk telinga, memberikan ${damage} kerusakan magis kepada musuh di depannya, mendorong mereka ke belakang, dan membuat mereka diam selama ${silenceDuration}. \nMengonsumsi Hantu Tertindas jika target terpengaruh, memberikan kerusakan tambahan dan membuat target takut selama ${pushbackDuration}.`,
       }
     }
@@ -1051,8 +1051,8 @@ const _getSpellDescriptionLang = (
         \n 當鬼魂消失或被痛苦尖叫消耗時，它會返回到瑪格達琳身上並重置鬼魂冷卻時間。`,
         cz: `Magdalena pošle v dána směru strašidlo, které když zasáhne nepřítele, způsobí mu strašidelného ducha, který způsobuje ${damage} magického poškození za sekundu. Duch trvá ${hauntedDuration}.
         \n Když debuff strašidelného ducha vyprší nebo je spotřebován Křikem bolesti, vrátí se zpět k Magdalene a resetuje dobu do nového použití.`,
-        vi: `Magdalene gửi một hồn ma ma quái theo một hướng, khi nó đánh trúng kẻ địch, nó sẽ gây một hồn ma ma quái, gây ${damage} sát thương phép mỗi giây cho một kẻ địch bị ảnh hưởng. Hồn ma kéo dài trong ${hauntedDuration}.
-        \n Khi debuff của hồn ma ma quái hết hạn hoặc bị tiêu thụ bởi Tiếng la hét, nó sẽ trở lại với Magdalene và đặt lại thời gian hồn ma ma quái.`,
+        vi: `Magdalene gửi một U Hồn Ám Ảnh theo hướng của cô, khi nó trúng kẻ địch, nó sẽ nhập vào kẻ địch, gây ${damage} sát thương phép mỗi giây cho kẻ địch bị ma nhập. Hồn ma kéo dài trong ${hauntedDuration}.
+        \n Khi hiệu lực ủa U Hồn Ám Ảnh hết hoặc tiêu thụ bởi Khổ Thống Chi Khiếu, nó sẽ trở lại với Magdalene và đặt lại thời gian U Hồn Ám Ảnh.`,
         id: `Magdalene mengirimkan hantu yang ditakuti ke arah, ketika mengenai musuh, itu akan memberikan hantu yang ditakuti, memberikan ${damage} kerusakan magis per detik ke musuh yang terkena. Hantu berlangsung selama ${hauntedDuration}.
         \n Ketika debuff hantu yang ditakuti berakhir atau dikonsumsi oleh Teriakan Sakit, itu kembali ke Magdalene dan mereset waktu dingin Hantu Tertindas.`,
       }
@@ -1083,8 +1083,8 @@ const _getSpellDescriptionLang = (
         \n\n被動：當普琳姆的球附著在她身上時，她獲得 ${bonusMoveSpeed} 的移動速度和 ${bonusArmor} 的護甲。`,
         fr: `Prim lance 3 morceaux de fer tranchants qui infligent ${baseDamage} de dégâts normaux lorsqu'ils touchent une unité ennemie.
         \n\nPassif: Lorsque la balle de Prim est attachée à Prim, elle gagne ${bonusMoveSpeed} de vitesse de déplacement et ${bonusArmor} d'armure.`,
-        vi: `Prim ném 3 mảnh sắt sắc nhọn gây ${baseDamage} sát thương bình thường khi đánh trúng đơn vị địch.
-        \n\nPassive: Khi Bóng của Prim được gắn vào Prim, cô ấy nhận được ${bonusMoveSpeed} tốc độ di chuyển và ${bonusArmor} giáp.`,
+        vi: `Prim ném 3 mảnh sắt nhọn gây ${baseDamage} sát thương thường khi đánh trúng đơn vị địch.
+        \n\nNội tại: Khi Cầu của Prim được gắn vào cô, cô sẽ nhận được ${bonusMoveSpeed} tốc độ di chuyển và ${bonusArmor} giáp.`,
         id: `Prim melemparkan 3 potongan besi tajam yang memberikan ${baseDamage} kerusakan normal ketika mengenai unit musuh.
         \n\nPasif: Ketika Bola Prim terpasang pada Prim, dia mendapatkan ${bonusMoveSpeed} kecepatan bergerak dan ${bonusArmor} armor.`,
       }
@@ -1122,10 +1122,10 @@ const _getSpellDescriptionLang = (
           \nSi la Balle de Prim est détachée, elle commandera à la Balle de revenir. La balle inflige des dégâts à son emplacement de détachement.
           \nLe nouveau temps de recharge commence lorsque la Balle est retournée à un Prim, sauf si elle ramasse la balle.
           \nPeut être re-cast pour arrêter la Balle plus tôt.`,
-        vi: `Prim ra lệnh cho Bóng di chuyển về phía trước theo hướng của Prim. Khi dừng lại, gây ${damage} cho tất cả kẻ địch gần và làm chậm tốc độ di chuyển và tốc độ tấn công của họ trong một thời gian ngắn.
-          \nNếu Bóng của Prim bị tách ra, cô ấy sẽ ra lệnh cho Bóng quay trở lại. Bóng gây sát thương tại vị trí tách ra.
-          \nThời gian hồi mới bắt đầu khi Bóng được trả lại cho Prim, trừ khi cô ấy nhặt bóng.
-          \nCó thể được cast lại để dừng Bóng sớm hơn.`,
+        vi: `Prim lệnh cho Cầu di chuyển về phía trước theo hướng của cô. Khi đến nơi, gây ${damage} cho tất cả kẻ địch gần và làm chậm tốc độ di chuyển và tốc độ đánh của họ trong một thời gian ngắn.
+          \nNếu Cầu của Prim không ở với cô, cô ấy sẽ ra lệnh cho Cầu quay trở lại. Cầu gây sát thương tại vị trí rời.
+          \nThời gian hồi mới bắt đầu khi Cầu được quay trở lại với Prim, trừ khi cô ấy nhặt lại Cầu.
+          \nCó thể dùng chiêu lại để dừng Cầu sớm hơn.`,
         id: `Prim memerintahkan Bola untuk bergerak maju ke arah Prim. Ketika berhenti, memberikan ${damage} kepada semua musuh di dekatnya dan memperlambat gerakan dan kecepatan serangan mereka untuk waktu yang singkat.
           \nJika Bola Prim terlepas, dia akan memerintahkan Bola untuk kembali. Bola memberikan kerusakan di lokasi pelepasan.
           \nWaktu jeda baru dimulai ketika Bola dikembalikan ke Prim kecuali jika dia mengambil bola.
@@ -1154,7 +1154,7 @@ const _getSpellDescriptionLang = (
         br: `Prim comanda a Bola para puxar todos os inimigos próximos para perto dela, causando ${damage} de dano mágico e atordoando-os por ${stunDuration} segundos.`,
         zh: `普琳姆命令球將所有附近的敵人拉向它，造成 ${damage}並使他們暈眩 ${stunDuration}。`,
         fr: `Prim commande à la Balle de tirer tous les ennemis à proximité vers elle, infligeant ${damage} de dégâts magiques et les étourdissant pendant ${stunDuration} secondes.`,
-        vi: `Prim ra lệnh cho Bóng kéo tất cả kẻ địch gần về phía nó, gây ${damage} sát thương phép và làm cho họ bị choáng trong ${stunDuration} giây.`,
+        vi: `Prim ra lệnh cho Cầu kéo tất cả kẻ địch gần về phía nó, gây ${damage} sát thương phép và gây choáng trong ${stunDuration} giây.`,
         id: `Prim memerintahkan Bola untuk menarik semua musuh di sekitarnya ke arahnya, memberikan ${damage} kerusakan magis dan membiarkan mereka terdiam selama ${stunDuration} detik.`,
       }
     }
@@ -1209,10 +1209,10 @@ const _getSpellDescriptionLang = (
         \n\n[Forme Malveillante]: Le Voyant renforce le rayon avec une énergie maléfique, infligeant ${baseDamageBenevolent} de dégâts magiques supplémentaires. Au coup, il applique également un maléfice maléfique.
         \n\n[Maléfice Bienveillant]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie bienveillante. Il soigne les alliés proches de ${benevolentCurseHealing} et applique Benevolent Flare, augmentant tout soin reçu par ${healModifier}% pour une courte durée.
         \n\n[Maléfice Maléfique]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie maléfique qui inflige ${baseDamageBenevolent} de dégâts magiques aux ennemis proches.`,
-        vi: `[Dạng Từ Bi]: Tiên tri bắn một tia năng lượng từ bi gây ${baseDamage} sát thương cho kẻ địch. Khi trúng, nó áp dụng một lời nguyền từ bi.
-        \n\n[Dạng Ác Độc]: Tiên tri tăng cường tia năng lượng với sức mạnh ác độc, gây ${baseDamageBenevolent} sát thương phép thêm. Khi trúng, nó cũng áp dụng một lời nguyền ác độc.
-        \n\n[Lời nguyền Từ Bi]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một bùng nổ năng lượng từ bi. Nó hồi máu cho đồng minh gần bên nó ${benevolentCurseHealing} và áp dụng Benevolent Flare, tăng tất cả sự hồi máu nhận được bởi ${healModifier}% trong một thời gian ngắn.
-        \n\n[Lời nguyền Ác Độc]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một bùng nổ năng lượng ác độc gây ${baseDamageBenevolent} sát thương phép cho kẻ địch gần bên nó.`,
+        vi: `[Trạng thái Từ Bi]: Seer bắn một tia năng lượng từ bi gây ${baseDamage} sát thương cho kẻ địch. Khi trúng, nó áp dụng một lời nguyền từ bi.
+        \n\n[Trạng thái Ác Độc]: Seer thức tỉnh tia năng lượng với sức mạnh ác độc, gây thêm ${baseDamageBenevolent} sát thương phép. Khi trúng, nó cũng áp dụng Lời Nguyền Ác Độc.
+        \n\n[Lời nguyền Từ Bi]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một luồng năng lượng từ bi. Nó hồi máu cho đồng minh gần bên nó ${benevolentCurseHealing} và áp dụng Ánh Lửa Từ Bi, tăng toàn bộ hồi máu nhận được bởi ${healModifier}% trong một thời gian ngắn.
+        \n\n[Lời nguyền Ác Độc]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một luồng năng lượng Ác Độc gây ${baseDamageBenevolent} sát thương phép cho kẻ địch gần bên nó.`,
         id: `[Benevolent Form]: Seer membuat kilatan energi yang baik yang memberikan ${baseDamage} kerusakan kepada musuh. Saat menembak, ia menerapkan kutukan baik.
         \n\n[Malevolent Form]: Seer memperkuat kilatan energi dengan kekuatan jahat, memberikan ${baseDamageBenevolent} kerusakan magis tambahan. Saat menembak, ia juga menerapkan kutukan jahat.
         \n\n[Kutukan Baik]: Setelah ${curseDelay}, kutukan habis, melepaskan kilatan energi yang baik. Ia menyembuhkan sekutu di sekitarnya sebesar ${benevolentCurseHealing} dan menerapkan Benevolent Flare, meningkatkan semua perawatan yang diterima oleh ${healModifier}% untuk jangka waktu singkat.
@@ -1250,8 +1250,8 @@ const _getSpellDescriptionLang = (
         \n\n[邪恶形态]: 每个爆炸也会对敌人施加恐惧 ${fearDuration} 并施加邪恶诅咒。`,
         fr: `Le Voyant crée des explosions successives dans sa direction. Chaque explosion libère une explosion d'énergie, soignant les alliés proches de ${healing} et infligeant ${damage} de dégâts aux ennemis. Les alliés affectés gagnent Benevolent Flare, tandis que les ennemis affectés sont affectés par Benevolent Curse.
         \n\n[Forme Malveillante]: Chaque explosion applique également Peur aux ennemis pour ${fearDuration} et applique Malevolent Curse.`,
-        vi: `Tiên tri tạo ra các vụ nổ liên tiếp trong hướng của mình. Mỗi vụ nổ giải phóng một lượng năng lượng, hồi máu cho đồng minh gần bên nó ${healing} và gây ${damage} sát thương cho kẻ địch. Đồng minh bị ảnh hưởng nhận được Benevolent Flare, trong khi kẻ địch bị ảnh hưởng nhận được Benevolent Curse.
-        \n\n[Dạng Ác Độc]: Mỗi vụ nổ cũng áp dụng Sợ Hãi cho kẻ địch trong ${fearDuration} và áp dụng Malevolent Curse.`,
+        vi: `Seer tạo ra các luồng năng lượng liên tiếp theo hướng của mình. Mỗi vụ nổ giải phóng luồng năng lượng, hồi máu cho đồng minh ở gần ${healing} và gây ${damage} sát thương phép cho kẻ địch. Đồng minh được nhận Ánh Lửa Từ Bi, trong khi kẻ địch bị ảnh hưởng bởi Lời nguyền Ác Độc.
+        \n\n[Trạng thái Ác Độc]: Mỗi luồng năng lượng cũng làm sợ kẻ địch trong ${fearDuration} và bị ảnh hưởng bởi Lời nguyền Ác Độc.`,
         id: `Seer menciptakan ledakan berurutan di arahannya. Setiap ledakan melepaskan sebuah ledakan energi, menyembuhkan sekutu di sekitarnya sebesar ${healing} dan menimbulkan ${damage} kerusakan pada musuh. Sekutu yang terkena akan mendapatkan Benevolent Flare, sementara musuh yang terkena akan mendapatkan Benevolent Curse.
         \n\n[Form Malevolent]: Setiap ledakan juga menerapkan Ketakutan pada musuh dalam ${fearDuration} dan menerapkan Malevolent Curse.`,
       }
@@ -1265,7 +1265,7 @@ const _getSpellDescriptionLang = (
         br: 'Seer se transforma temporariamente em sua Forma Malevolente, tornando-se imune a efeitos de controle e reduzindo, e aumentando todas as suas habilidades.',
         zh: '先知暂时变成邪恶形态，免疫控制效果和减速，并增强所有技能。',
         fr: 'Le Voyant se transforme temporairement en sa Forme Malveillante, devenant immunisé aux effets de contrôle et de ralentissement, et augmentant toutes ses capacités.',
-        vi: 'Tiên tri tạm thời biến thành Dạng Ác Độc, trở thành không chịu tác động của hiệu ứng kiểm soát và giảm tốc, và tăng tất cả các kỹ năng của mình.',
+        vi: 'Seer tạm thời chuyển sang Trạng thái Ác Độc, kháng mọi loại choáng và giảm tốc độ di chuyển, và thức tỉnh tất cả các kỹ năng của mình.',
         id: 'Seer bertukar menjadi Form Malevolent, menjadi tidak rentan terhadap efek kontrol dan perlambatan, dan memperkuat semua kemampuannya.',
       }
     }
@@ -1279,7 +1279,7 @@ const _getSpellDescriptionLang = (
         br: 'Teleporte-se de volta para Base após 5 segundos. Durante isso você não pode se mover ou atacar, será interrompido se você receber qualquer tipo de dano.',
         zh: '5秒後傳送回陣營。在發動期間，你不能採取任何動作跟攻擊，且遭受攻擊後施展將被打斷。',
         fr: 'Téléportez-vous à la base après 5 secondes. Pendant le téléport, vous ne pouvez pas bouger ou attaquer, et tout dommage reçu interrompt le téléport.',
-        vi: 'Di chuyển ngược trở lại cứ điểm sau 5 giây. Trong khi di chuyển, bạn không thể di chuyển hoặc tấn công, và bị tấn công sẽ ngắt quá trình di chuyển.',
+        vi: 'Biến về nhà sau 5 giây. Trong khi biến về, bạn không thể di chuyển hoặc tấn công, và bị tấn công sẽ ngừng quá trình biến về.',
         id: 'Teleport kembali ke markas setelah 5 detik. Selama proses teleport, Anda tidak dapat bergerak atau menyerang, dan menerima kerusakan akan menghentikan proses.',
       }
 
@@ -1313,7 +1313,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Ataque básico',
         zh: '攻擊',
         fr: 'Attaque de base',
-        vi: 'Đòn tấn công cơ bản',
+        vi: 'Đòn đánh Vật lí',
         id: 'Serangan Dasar',
       }
 
@@ -1336,7 +1336,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Possessão Demoníaca',
         zh: '奧術衝刺',
         fr: 'Charge arcanique',
-        vi: 'Chạy nhanh',
+        vi: 'Phi Thân Ma Pháp',
         id: 'Lari Cepat',
       }
 
@@ -1349,7 +1349,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Cai dentro',
         zh: '腐壞之風',
         fr: 'Charge',
-        vi: 'Chạy nhanh',
+        vi: 'Tà Phong',
         id: 'Lari Cepat',
       }
 
@@ -1361,7 +1361,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'poder demoníaco',
         zh: '惡魔之怒',
         fr: 'Frappe au sol',
-        vi: 'Cú Đánh Mạnh',
+        vi: 'Quỷ Nộ',
         id: 'Pukulan Tanah',
       }
 
@@ -1375,7 +1375,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Estilhaço de gelo',
         zh: '寒冰飛箭',
         fr: 'Carreau de glace',
-        vi: 'Mũi Tên Băng',
+        vi: 'Băng Tiễn',
         id: 'Bolt Es',
       }
 
@@ -1387,7 +1387,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Abraço do inverno',
         zh: '冰冷懷抱',
         fr: 'Étreinte froide',
-        vi: 'Ôm Lạnh',
+        vi: 'Hàn Ủng',
         id: 'Pelukan Dingin',
       }
 
@@ -1401,7 +1401,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Videira espinhosa',
         zh: '荊棘藤蔓',
         fr: 'Vigne épineuse',
-        vi: 'Cây Dây Gai',
+        vi: 'Cức Đằng',
         id: 'Ranting Berduri',
       }
 
@@ -1413,7 +1413,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Emboscada floral',
         zh: '鮮花伏擊',
         fr: 'Embuscade florale',
-        vi: 'Bẫy Hoa',
+        vi: 'Hoa Phục Kích',
         id: 'Perangkap Bunga',
       }
 
@@ -1427,7 +1427,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Shuriken Demoníaca',
         zh: '手裏劍投擲',
         fr: 'Lancer de shuriken',
-        vi: 'Ném Phi Tiêu',
+        vi: 'Shuriken',
         id: 'Lempar Shuriken',
       }
 
@@ -1439,7 +1439,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Contrato',
         zh: '闇影蘿蔔',
         fr: "Carotte d'ombre",
-        vi: 'Cà Rốt Bóng Đêm',
+        vi: 'Hắc Dạ Hồ La Bạc',
         id: 'Wortel Bayangan',
       }
 
@@ -1452,7 +1452,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Lâminas astrais',
         zh: '星光刀刃',
         fr: 'Lames astrales',
-        vi: 'Lưỡi Kiếm Ánh Sáng',
+        vi: 'Tinh Kiếm',
         id: 'Pedang Astral',
       }
 
@@ -1464,7 +1464,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Regente do mal',
         zh: '星光飛躍',
         fr: 'Pas astral',
-        vi: 'Bước Ánh Sáng',
+        vi: 'Tinh Bộ',
         id: 'Langkah Astral',
       }
 
@@ -1476,7 +1476,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Tiro preciso',
         zh: '精準射擊',
         fr: 'Tir précis',
-        vi: 'Đòn Bắn Chính Xác',
+        vi: 'Tên Chuẩn Xác',
         id: 'Tembakan Presisi',
       }
 
@@ -1488,7 +1488,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Pontaria perfeita',
         zh: '精通箭術',
         fr: 'Tir de précision',
-        vi: 'Bắn Chính Xác',
+        vi: 'Xạ Thủ Lão Luyện',
         id: 'Kemahiran Menembak',
       }
 
@@ -1500,7 +1500,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         zh: '電光雷雨',
         fr: "Pluie d'étincelles",
         cz: 'Déšť jisker',
-        vi: 'Mưa Lửa',
+        vi: 'Điện Hỏa Vũ',
         id: 'Hujan Bunga Api',
       }
 
@@ -1512,7 +1512,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Fantasma do Abismo',
         zh: '虛空幻象',
         fr: 'Fantôme statique',
-        vi: 'Hồn Ma Tĩnh',
+        vi: 'Tĩnh Điện Huyễn Ảnh',
         id: 'Hantu Hampa',
       }
 
@@ -1524,7 +1524,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Hněv spravedlnosti',
         zh: '正義之怒',
         fr: 'Courroux de la justice',
-        vi: 'Cơn Thịnh Nộ Của Công Lý',
+        vi: 'Sức Mạnh Công Lý',
         id: 'Kemarahan Keadilan',
       }
 
@@ -1536,7 +1536,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Triumfálne prevraty',
         zh: '勝利的動盪',
         fr: 'Séisme triomphant',
-        vi: 'Sóng Sốc Thắng Lợi',
+        vi: 'Khải Hoàn Chấn Động',
         id: 'Gempa Kemenangan',
       }
 
@@ -1548,7 +1548,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Kotrmelec',
         zh: '翻跟斗',
         fr: 'Roulade',
-        vi: 'Lăn',
+        vi: 'Nhào lộn',
         id: 'Tumbuk',
       }
 
@@ -1560,7 +1560,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Tikající bomba',
         zh: '定時炸彈',
         fr: 'Bombe à retardement',
-        vi: 'Quả Bom',
+        vi: 'Bom hẹn giờ',
         id: 'Bom Waktu',
       }
 
@@ -1572,7 +1572,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Zúrivý kopanec',
         zh: '憤怒之踢',
         fr: 'Coup furieux',
-        vi: 'Đá Tức Giận',
+        vi: 'Nộ Cước',
         id: 'Tendangan Marah',
       }
 
@@ -1584,7 +1584,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         cz: 'Nebeský kop',
         zh: '天堂之踢',
         fr: 'Coup céleste',
-        vi: 'Đá Thiên Thần',
+        vi: 'Thiên Cước',
         id: 'Tendangan Surgawi',
       }
 
@@ -1596,7 +1596,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Granada explosiva',
         zh: '手榴爆彈',
         fr: 'Grenade explosive',
-        vi: 'Lựu Đạn Nổ',
+        vi: 'Lựu Đạn',
         id: 'Granat Ledakan',
       }
 
@@ -1608,7 +1608,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Fogo Rápido',
         zh: '極速射擊',
         fr: 'Tir rapide',
-        vi: 'Bắn Nhanh',
+        vi: 'Tốc Xạ',
         id: 'Temabakan Cepat',
       }
     case SpellList.MAGDALENE_SCREAM_OF_PAIN:
@@ -1619,7 +1619,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Cri de Douleur',
         zh: '痛苦尖叫',
         cz: 'Křik bolesti',
-        vi: 'Tiếng Kêu Đau Đớn',
+        vi: 'Khổ Thống Chi Khiếu',
         id: 'Jeritan Sakit',
       }
     case SpellList.MAGDALENE_HAUNTED_GHOST:
@@ -1630,7 +1630,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Fantôme hanté',
         zh: '作祟幽魂',
         cz: 'Strašidelný duch',
-        vi: 'Hồn Ma',
+        vi: 'U Hồn Ám Ảnh',
         id: 'Hantu',
       }
     case SpellList.PRIM_COMMAND_ATTACK:
@@ -1652,7 +1652,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Attraction gravitationnelle',
         zh: '重力牽引',
         cz: 'Gravitační tah',
-        vi: 'Hút Hấp',
+        vi: 'Lực hấp dẫn',
         id: 'Tarik Gravitasi',
       }
 
@@ -1664,7 +1664,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Explosion bienveillante / Explosion malveillante',
         zh: '仁慈爆炸 / 邪恶爆炸',
         cz: 'Výbuch laskavosti / Výbuch zlomyslnosti',
-        vi: 'Nổ Lửa Nhân Hậu / Nổ Lửa Ác Ý',
+        vi: 'Năng lượng Từ Bi / Năng lượng Ác Độc',
         id: 'Ledakan Baik / Ledakan Jahat',
       }
 
@@ -1676,7 +1676,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Forme malveillante',
         zh: '邪恶形态',
         cz: 'Zlomyslná forma',
-        vi: 'Hình Dạng Ác Ý',
+        vi: 'Trạng thái Ác Độc',
         id: 'Bentuk Jahat',
       }
 
@@ -1689,7 +1689,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Teleporte para a base',
         zh: '傳送至基地',
         fr: 'Téléportation à la base',
-        vi: 'Về nhà',
+        vi: 'Đang biến về',
         id: 'Teleport ke Base',
       }
     default:
