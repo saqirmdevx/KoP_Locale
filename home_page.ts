@@ -11,7 +11,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '以訪客身份登入',
     fr: "Se connecter en tant qu'invité",
     br: 'Entrar como convidado',
-    vi: 'Đăng nhập dưới dạng khách',
+    vi: 'Đăng nhập tài khoản khách',
     id: 'Masuk sebagai Tamu',
   },
   [LOCALE.LOGIN_LINK_CODE]: {
@@ -41,7 +41,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '用戶名',
     fr: "Nom d'utilisateur",
     br: 'Nome de usuário',
-    vi: 'Tên người dùng',
+    vi: 'Tên tài khoản',
     id: 'Nama Pengguna',
   },
   [LOCALE.LINK_CODE]: {
@@ -121,7 +121,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '社交',
     fr: 'Social',
     br: 'Social',
-    vi: 'Xã hội',
+    vi: 'Mạng Xã hội',
     id: 'Sosial',
   },
   [LOCALE.INFORMATIONS]: {
@@ -161,7 +161,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: '名稱必須介於3到12個字母之間，且不能包含禁用文字。',
     fr: 'Le nom doit comporter entre 3 et 12 lettres et ne peut pas contenir de lettres interdites.',
     br: 'O nome deve ter entre 3 e 12 letras e não pode conter letras proibidas.',
-    vi: 'Tên phải từ 3 đến 12 chữ cái và không được chứa chữ cái bị cấm.',
+    vi: 'Tên phải từ 3 đến 12 chữ cái và không được chứa chữ cái kì lạ.',
     id: 'Nama harus terdiri dari 3 hingga 12 huruf dan tidak boleh mengandung huruf yang dilarang.',
   },
   [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
@@ -221,7 +221,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: ' - 在5分鐘内得15分獲勝\n - 擊殺：1分，黃金符文：3分，城池：6分\n - 减少 50% 的經驗值和金幣',
     fr: " - Marquez 15 points en moins de 5 minutes pour gagner\n - Tués: 1 point, Rune d'or: 3 points, Tour: 6 points\n - 50% d'expérience et de pièces en moins",
     br: ' - Ao fazer 15 pontos em menos de 5 minutos, sua equipe vence\n - Abates: 1 ponto, Runa de Ouro: 3 pontos e Torre: 6 pontos\n - 50% menos experiência e moedas',
-    vi: ' - Đạt 15 điểm trong vòng dưới 5 phút để chiến thắng\n - Hạ gục: 1 điểm, Runa Vàng: 3 điểm, Tháp: 6 điểm\n - 50% ít kinh nghiệm và xu',
+    vi: ' - Đạt 15 điểm trong vòng dưới 5 phút để chiến thắng\n - Hạ gục: 1 điểm, Runa Vàng: 3 điểm, Trụ: 6 điểm\n - 50% kinh nghiệm và xu ít hơn',
     id: ' - Kumpulkan 15 poin dalam waktu kurang dari 5 menit untuk menang\n - Membunuh: 1 poin, Rune Emas: 3 poin, Menara: 6 poin\n - 50% kurang pengalaman dan koin',
   },
   [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
@@ -231,7 +231,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     zh: ' - 獎勵：經驗值和金幣\n - 减少 25% 的經驗值和金幣',
     fr: " - Récompense : expérience et pièces\n - 25% d'expérience et de pièces en moins",
     br: ' - Recompensa: experiência e moedas\n - 25% menos experiência e moedas',
-    vi: ' - Phần thưởng: kinh nghiệm và xu\n - 25% ít kinh nghiệm và xu',
+    vi: ' - Phần thưởng: kinh nghiệm và xu\n - 25% kinh nghiệm và xu it hơn',
     id: ' - Hadiah: pengalaman dan koin\n - 25% kurang pengalaman dan koin',
   },
   [LOCALE.POPUP_GENERATE_NAME]: {
@@ -271,7 +271,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Partie non classée',
     ru: 'Не ранговая игра',
     br: 'Partida sem classificação',
-    vi: 'Trò chơi không xếp hạng',
+    vi: 'Đánh thường',
     id: 'Permainan Tidak Berperingkat',
   },
   [LOCALE.PLAY_PAGE_PLAY_A_GAME]: {
@@ -281,7 +281,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Hrát hru!',
     zh: '開始遊戲！',
     fr: 'Jouer une partie!',
-    vi: 'Chơi game!',
+    vi: 'Chơi một ván!',
     id: 'Mainkan game!',
   },
   [LOCALE.CASUAL_MATCH]: {
@@ -291,7 +291,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Volný',
     zh: '隨意遊玩',
     fr: 'Décontracté',
-    vi: 'Thường',
+    vi: 'Đánh Thường',
     id: 'Santai',
   },
   [LOCALE.BLITZ_MATCH]: {
@@ -301,7 +301,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Blitz',
     zh: '閃電',
     fr: 'Blitz',
-    vi: 'Blitz',
+    vi: 'Ván Nhanh',
     id: 'Blitz',
   },
   [LOCALE.AI_MATCH]: {
@@ -311,7 +311,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Zápasy proti AI (PvAI):',
     zh: 'AI 對戰 (人對電腦)：',
     fr: "Matchs contre l'IA (PvIA):",
-    vi: 'Trận đấu AI (PvAI):',
+    vi: 'Trận đấu với AI (PvAI):',
     id: 'Pertandingan AI (PvAI):',
   },
   [LOCALE.BLITZ_PLAYERS_AND_TIME]: {
@@ -361,7 +361,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Aktivovat položku',
     zh: '啟用物品',
     fr: "Activer l'objet",
-    vi: 'Kích hoạt mục',
+    vi: 'Kích hoạt đồ',
     id: 'Aktifkan Item',
   },
   [LOCALE.ACTIVE_ITEM]: {
@@ -371,7 +371,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     cz: 'Položka aktivní',
     zh: '物品啟用中',
     fr: 'Objet actif',
-    vi: 'Mục hoạt động',
+    vi: 'Kích hoạt đồ',
     id: 'Item Aktif',
   },
   [LOCALE.CURRENT_SEASON]: {
