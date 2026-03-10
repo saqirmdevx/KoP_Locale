@@ -101,13 +101,13 @@ const _getLocaleItemDescription = (
     case ItemList.Light_Slayer:
       return {
         name: {
-          en: 'Kiếm Sắt',
+          en: 'Light Slayer',
           ru: 'Губитель света',
           br: 'Espada Corta luz',
           cz: 'Kosič Světla',
           fr: 'Tueur de Lumière',
           zh: '輕量殺手',
-          vi: 'Kẻ Sát Ánh Sáng',
+          vi: 'Kiếm Sắt',
           id: 'Pembunuh Cahaya',
         },
       }
@@ -491,7 +491,7 @@ const _getLocaleItemDescription = (
           cz: `Vyčistí všechny negativní efekty, zaručí imunitu proti všem zpomalením, omráčením a jiným efektům kontroly davu a poskytne bonusové ${bonusMR} odolnosti proti magii po dobu ${duration}.`,
           fr: `Nettoie tous les effets négatifs, vous rend immunisé contre tous les ralentissements, étourdissements et autres effets de contrôle de foule et fournit un bonus de ${bonusMR} de résistance magique pendant ${duration}.`,
           zh: `清除所有負面效果，使您免疫所有減速、暈眩和其他控制效果，並在 ${duration} 內提供額外 ${bonusMR} 魔法抗性。`,
-          vi: `loại bỏ tất cả các hiệu ứng tiêu cực, khiến bạn miễn dịch với tất cả hiệu ứng làm chậm, choáng và các hiệu ứng khống chế khác và cung cấp ${bonusMR} kháng phép trong ${duration}.`,
+          vi: `Loại bỏ tất cả các hiệu ứng tiêu cực, khiến bạn miễn dịch với tất cả hiệu ứng làm chậm, choáng và các hiệu ứng khống chế khác và cung cấp ${bonusMR} kháng phép trong ${duration}.`,
           id: `Membersihkan semua efek negatif, membuat Anda kebal terhadap semua perlambatan, kejut, dan efek kontrol kerumunan lainnya dan memberikan bonus ${bonusMR} resistensi sihir selama ${duration}.`,
         },
       }
@@ -655,7 +655,7 @@ const _getLocaleItemDescription = (
           } bodů poškození útoku blízkým spojencům.`,
           vi: `Cung cấp ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Hút Máu và ${
             ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
-          } Sát Thương Tấn Công cho đồng minh gần.`,
+          } Sát Thương Vật Lý cho đồng minh gần.`,
           id: `Memberikan ${(ItemAbilityData.CORRUPTED_LIGHT_SLAYER_LIFESTEAL * 100).toFixed(1)}% Lifesteal dan ${
             ItemAbilityData.CORRUPTED_LIGHT_SLAYER_DAMAGE
           } Serangan kepada sekutu di dekatnya.`,
@@ -693,7 +693,7 @@ const _getLocaleItemDescription = (
           zh: `每當你的基本攻擊擊中敵方，疊加一層狂暴，最多可疊加 ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} 層。每層疊加增加 ${(
             ItemAbilityData.BERSERKER_BOW_DURATION / 1000
           ).toFixed(1)}秒你的攻擊速度 ${Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)}%`,
-          vi: `Mỗi khi Đòn đánh Vật lý của bạn trúng kẻ địch, tăng Tốc độ đánh của bạn lên ${Math.floor(
+          vi: `Mỗi Đòn đánh Vật lý trúng kẻ địch cộng dồn tối đa ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} lần, mỗi lần cộng dồn tăng Tốc độ đánh của bạn lên ${Math.floor(
             ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100
           )}% trong ${(ItemAbilityData.BERSERKER_BOW_DURATION / 1000).toFixed(1)} giây.`,
           id: `Setiap Serangan Dasar yang mengenai musuh, mendapatkan tumpukan gila, hingga maksimal ${ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS} tumpukan. Setiap tumpukan meningkatkan Kecepatan Serangan Anda sebesar ${Math.floor(
