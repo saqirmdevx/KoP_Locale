@@ -3701,14 +3701,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Gây {} sát thương vật lý lên tướng',
   },
   [LOCALE.QUEST_DEAL_MAGICAL]: {
-    en: 'Deal {} magical damage to heroes (incl. pure)',
-    ru: 'Нанесите {} магического урона героям (вкл. чистый)',
-    cz: 'Způsobte {} magického poškození hrdinům (vč. čistého)',
+    en: 'Deal {} magical damage to heroes',
+    ru: 'Нанесите {} магического урона героям',
+    cz: 'Způsobte {} magického poškození hrdinům',
     zh: '對英雄造成 {} 點魔法傷害（含純粹）',
-    fr: 'Infligez {} dégâts magiques aux héros (pur inclus)',
-    br: 'Cause {} de dano mágico a heróis (incl. puro)',
-    id: 'Berikan {} damage magis ke hero (termasuk pure)',
-    vi: 'Gây {} sát thương phép lên tướng (gồm pure)',
+    fr: 'Infligez {} dégâts magiques aux héros',
+    br: 'Cause {} de dano mágico a heróis',
+    id: 'Berikan {} damage magis ke hero',
+    vi: 'Gây {} sát thương phép lên tướng',
   },
   [LOCALE.QUEST_HEALING]: {
     en: 'Heal {} HP',
@@ -3899,6 +3899,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     br: 'Missão diária',
     id: 'Misi Harian',
     vi: 'Nhiệm vụ hàng ngày',
+  },
+  [LOCALE.QUEST_DAILY_RESET_NOTE]: {
+    en: 'New daily quests in {} (UTC — same moment for all regions).',
+    ru: 'Новые ежедневные задания через {} (UTC — одно время для всех регионов).',
+    cz: 'Nové denní úkoly za {} (UTC — stejný okamžik pro všechny regiony).',
+    zh: '每日任務將於 {} 後刷新（UTC，全球同一時刻）。',
+    fr: 'Nouvelles quêtes quotidiennes dans {} (UTC — même instant partout).',
+    br: 'Novas missões diárias em {} (UTC — mesmo horário em todas as regiões).',
+    id: 'Misi harian baru dalam {} (UTC — waktu sama di semua wilayah).',
+    vi: 'Nhiệm vụ hàng ngày mới sau {} (UTC — cùng thời điểm mọi khu vực).',
   },
 }
 export default locale_data

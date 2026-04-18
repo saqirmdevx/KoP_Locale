@@ -2152,7 +2152,7 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Kirins_Sword: {
-      const duration = toSec(ItemAbilityData.KIRINS_SWORD_TIME)
+      const duration = toSec(ItemAbilityData.KIRINS_SWORD_DURATION)
       const attackSpeed = fixed(ItemAbilityData.KIRINS_SWORD_ATTACK_SPEED * 100, 1)
       const moveSpeed = ItemAbilityData.KIRINS_SWORD_MOVE_SPEED
 
@@ -2168,14 +2168,14 @@ const _getLocaleItemDescription = (
           id: 'Pedang Kirin',
         },
         desc: {
-          en: `Unleash the power of Kirin, dashes your forward and increases your Attack Speed by ${attackSpeed}% and movement speed by ${moveSpeed} for ${duration} seconds.`,
-          ru: `Освободите силу Киры, берётся вперёд и увеличивает Скорость атаки на ${attackSpeed}% и Скорость передвижения на ${moveSpeed} в течение ${duration} секунд.`,
-          br: `Libere o poder de Kirin, dasha para frente e aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed} por ${duration} segundos.`,
-          cz: `Uvolte sílu Kirin, dashuje vpřed a zvýšíte Rychlost útoku o ${attackSpeed}% a Rychlost pohybu o ${moveSpeed} po ${duration} sekund.`,
+          en: `Unleash the power of Kirin, dashes your forward and increases your Attack Speed by ${attackSpeed}% and movement speed by ${moveSpeed} for ${duration}.`,
+          ru: `Освободите силу Киры, берётся вперёд и увеличивает Скорость атаки на ${attackSpeed}% и Скорость передвижения на ${moveSpeed} в течение ${duration}.`,
+          br: `Libere o poder de Kirin, dasha para frente e aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed} por ${duration}.`,
+          cz: `Uvolte sílu Kirin, dashuje vpřed a zvýšíte Rychlost útoku o ${attackSpeed}% a Rychlost pohybu o ${moveSpeed} po ${duration}.`,
           zh: `释放基尔的力量，向前冲刺并增加攻击速度 ${attackSpeed}% 和移动速度 ${moveSpeed} 持续 ${duration} 秒。`,
-          fr: `Libérez le pouvoir de Kirin, dasha vers l'avant et augmentez votre Vitesse d'attaque de ${attackSpeed}% et votre Vitesse de déplacement de ${moveSpeed} pendant ${duration} secondes.`,
-          vi: `Giải phóng sức mạnh của Kirin, dash về phía trước và tăng Tốc độ đánh lên ${attackSpeed}% và Tốc độ di chuyển lên ${moveSpeed} trong ${duration} giây.`,
-          id: `Lepaskan kekuatan Kirin, dash ke depan dan meningkatkan Kecepatan Serang sebesar ${attackSpeed}% dan Kecepatan Gerak sebesar ${moveSpeed} selama ${duration} detik.`,
+          fr: `Libérez le pouvoir de Kirin, dasha vers l'avant et augmentez votre Vitesse d'attaque de ${attackSpeed}% et votre Vitesse de déplacement de ${moveSpeed} pour ${duration}.`,
+          vi: `Giải phóng sức mạnh của Kirin, dash về phía trước và tăng Tốc độ đánh lên ${attackSpeed}% và Tốc độ di chuyển lên ${moveSpeed} trong ${duration}.`,
+          id: `Lepaskan kekuatan Kirin, dash ke depan dan meningkatkan Kecepatan Serang sebesar ${attackSpeed}% dan Kecepatan Gerak sebesar ${moveSpeed} selama ${duration}.`,
         },
       }
     }
