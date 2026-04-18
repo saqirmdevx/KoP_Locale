@@ -495,7 +495,7 @@ const _getLocaleItemDescription = (
           id: `Membersihkan semua efek negatif, membuat Anda kebal terhadap semua perlambatan, kejut, dan efek kontrol kerumunan lainnya dan memberikan bonus ${bonusMR} resistensi sihir selama ${duration}.`,
         },
       }
-    } 
+    }
     case ItemList.Divine_Katana:
       return {
         name: {
@@ -905,9 +905,9 @@ const _getLocaleItemDescription = (
           vi: `Kỹ năng của bạn làm cháy kẻ địch, gây ${fixed(
             ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100,
             1
-          )}% máu tối đa của họ dưới dạng Sát Thương Phép trong ${(
-            ItemAbilityData.BURNING_ROD_DURATION / 1000
-          ).toFixed(1)} Giây.`,
+          )}% máu tối đa của họ dưới dạng Sát Thương Phép trong ${(ItemAbilityData.BURNING_ROD_DURATION / 1000).toFixed(
+            1
+          )} Giây.`,
           id: `Kemampuan Anda membuat pahlawan musuh terbakar, memberikan ${fixed(
             ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100,
             1
@@ -1254,28 +1254,28 @@ const _getLocaleItemDescription = (
           id: 'Perisai Vampir',
         },
         desc: {
-          en: `Upon taking player-based damage and falling below ${threshold}% Health, cleanses all negative effects and increases Health Regeneration by ${
+          en: `Upon taking player-based damage and falling below ${threshold}% Health, increases Health Regeneration by ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } for ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. During the effect, the owner is immune to all slow effects.`,
-          ru: `Получив урон от игроков и упав ниже ${threshold}% здоровья, очищает все негативные эффекты и увеличивает Регенерацию здоровья на ${
+          ru: `Получив урон от игроков и упав ниже ${threshold}% здоровья, увеличивает Регенерацию здоровья на ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } на ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Во время действия эффекта владелец невосприимчив к всем замедляющим эффектам.`,
-          br: `Ao receber dano de jogadores e cair abaixo de ${threshold}% de Vida, limpa todos os efeitos negativos e aumenta a Regeneração de Vida em ${
+          br: `Ao receber dano de jogadores e cair abaixo de ${threshold}% de Vida, aumenta a Regeneração de Vida em ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } por ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Durante o efeito, o dono é imune a todos os efeitos de lentidão.`,
-          fr: `Après avoir subi des dégâts de joueur et être tombé en dessous de ${threshold}% de Santé, nettoie tous les effets négatifs et augmente la Régénération de Santé de ${
+          fr: `Après avoir subi des dégâts de joueur et être tombé en dessous de ${threshold}% de Santé, augmente la Régénération de Santé de ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } pour ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Pendant l'effet, le propriétaire est immunisé contre tous les effets de ralentissement.`,
-          zh: `在承受玩家傷害並掉到 ${threshold}%以下的生命值時，清除所有負面效果並增加 ${
+          zh: `在承受玩家傷害並掉到 ${threshold}%以下的生命值時，增加 ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           }回血速度，持續 ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}。在效果期間內，擁有者免疫所有減速效果。`,
-          cz: `Po obdržení hráčského poškození a poklesu pod ${threshold}% zdraví, očistí všechny negativní účinky a zvýší Regeneraci zdraví o ${
+          cz: `Po obdržení hráčského poškození a poklesu pod ${threshold}% zdraví, zvýší Regeneraci zdraví o ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } na ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Během efektu je majitel imunní vůči všem zpomalujícím efektům.`,
-          vi: `Khi nhận sát thương từ người chơi và dưới ${threshold}% Máu, làm sạch tất cả các hiệu ứng tiêu cực và tăng Hồi Máu lên ${
+          vi: `Khi nhận sát thương từ người chơi và rơi dưới ${threshold}% Máu, tăng Hồi Máu lên ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
-          } trong ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Trong khi thi triển, chủ sở hữu miễn dịch với tất cả các hiệu ứng làm chậm.`,
-          id: `Setelah menerima kerusakan dari pemain dan jatuh di bawah ${threshold}% Kesehatan, membersihkan semua efek negatif dan meningkatkan Regenerasi Kesehatan sebesar ${
+          } trong ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Trong khi hiệu ứng, chủ sở hữu miễn dịch với tất cả các hiệu ứng làm chậm.`,
+          id: `Setelah menerima kerusakan dari pemain dan jatuh di bawah ${threshold}% Kesehatan, meningkatkan Regenerasi Kesehatan sebesar ${
             ItemAbilityData.VAMPIRIC_SHIELD_HEALTH_REGEN
           } selama ${toSec(ItemAbilityData.VAMPIRIC_SHIELD_DURATION)}. Selama efek, pemilik kebal terhadap semua efek perlambatan.`,
         },
@@ -1744,14 +1744,14 @@ const _getLocaleItemDescription = (
           id: 'Perisai Vampir',
         },
         desc: {
-          en: `You are shrouded in vampiric energy for ${duration} seconds, causing all damage you deal to heal you for ${value}%.`,
-          ru: `Вы окутаны вампирической энергией на ${duration} секунд, и весь наносимый урон исцеляет вас на ${value}%.`,
-          br: `Você é envolvido por uma energia vampírica por ${duration} segundos, fazendo com que todo o dano que causar o cure em ${value}%.`,
-          fr: `Vous êtes enveloppé d’une énergie vampirique pendant ${duration} secondes : tous les dégâts infligés vous soignent à hauteur de ${value}%.`,
-          zh: `你被吸血能量包裹，持续 ${duration} 秒，造成的所有伤害会治疗你 ${value}%。`,
-          cz: `Jsi zahalen vampýrní energií na ${duration} sekund a veškeré způsobené poškození tě léčí o ${value}%.`,
-          vi: `Bạn được bao phủ bởi năng lượng ma cà rồng trong ${duration} giây, mọi sát thương gây ra sẽ hồi lại ${value}% máu.`,
-          id: `Anda diselimuti oleh energi vampir selama ${duration} detik, membuat semua kerusakan yang Anda berikan menyembuhkan Anda sebesar ${value}%.`,
+          en: `You are shrouded in vampiric energy for ${duration} seconds, remove all negative effects and causing all damage you deal to heal you for ${value}%.`,
+          ru: `Вы окутаны вампирической энергией на ${duration} секунд, очищает все негативные эффекты и весь наносимый урон исцеляет вас на ${value}%.`,
+          br: `Você é envolvido por uma energia vampírica por ${duration} segundos, remove todos os efeitos negativos e faz com que todo o dano que causar o cure em ${value}%.`,
+          fr: `Vous êtes enveloppé d’une énergie vampirique pendant ${duration} secondes, nettoie tous les effets négatifs et fait en sorte que tout le dano que vous infligez vous soigne à hauteur de ${value}%.`,
+          zh: `你被吸血能量包裹，持续 ${duration} 秒，清除所有负面效果，造成的所有伤害会治疗你 ${value}%。`,
+          cz: `Jsi zahalen vampýrní energií na ${duration} sekund, odstraní všechny negativní efekty a veškeré způsobené poškození tě léčí o ${value}%.`,
+          vi: `Bạn được bao phủ bởi năng lượng ma cà rồng trong ${duration} giây, loại bỏ tất cả các hiệu ứng tiêu cực và gây ra tất cả sát thương để hồi lại ${value}% máu.`,
+          id: `Anda diselimuti oleh energi vampir selama ${duration} detik, membersihkan semua efek negatif dan membuat semua kerusakan yang Anda berikan menyembuhkan Anda sebesar ${value}%.`,
         },
       }
     }
@@ -2094,7 +2094,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.ChronosShield: {
+    case ItemList.Kirins_Shield: {
       const cdReductionSeconds = ItemAbilityData.CHRONOS_SHIELD_CD_REDUCTION / 1000
 
       return {
@@ -2151,29 +2151,31 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.ChronosSword: {
-      const cdReduction = toSec(ItemAbilityData.CHRONOS_SWORD_CD_REDUCTION)
+    case ItemList.Kirins_Sword: {
+      const duration = toSec(ItemAbilityData.KIRINS_SWORD_TIME)
+      const attackSpeed = fixed(ItemAbilityData.KIRINS_SWORD_ATTACK_SPEED * 100, 1)
+      const moveSpeed = ItemAbilityData.KIRINS_SWORD_MOVE_SPEED
 
       return {
         name: {
-          en: 'Chronos Sword',
-          ru: 'Меч Хроноса',
-          br: 'Espada de Chronos',
-          cz: 'Meč Chrona',
-          zh: '克洛诺之剑',
-          fr: 'Épée de Chronos',
-          vi: 'Kiếm Thời Gian',
-          id: 'Pedang Chronos',
+          en: 'Kirins Sword',
+          ru: 'Меч Киры',
+          br: 'Espada de Kirin',
+          cz: 'Meč Kirin',
+          zh: '基尔之剑',
+          fr: 'Épée de Kirin',
+          vi: 'Kiếm Kirin',
+          id: 'Pedang Kirin',
         },
         desc: {
-          en: `Basic attacks warp time itself, reducing all ability cooldowns by ${cdReduction} seconds.`,
-          ru: `Обычные атаки искажают время, сокращая перезарядку всех способностей на ${cdReduction} секунд.`,
-          br: `Ataques básicos distorcem o tempo, reduzindo o tempo de recarga de todas as habilidades em ${cdReduction} segundos.`,
-          fr: `Les attaques de base manipulent le temps, réduisant le délai de récupération de toutes les compétences de ${cdReduction} secondes.`,
-          zh: `普通攻击扭曲时间，使所有技能冷却减少 ${cdReduction} 秒。`,
-          cz: `Základní útoky ohýbají čas a snižují cooldown všech schopností o ${cdReduction} sekund.`,
-          vi: `Đòn đánh vật lí bẻ cong thời gian, giảm thời gian hồi chiêu của tất cả kỹ năng đi ${cdReduction} giây.`,
-          id: `Serangan dasar memanipulasi waktu, mengurangi cooldown semua kemampuan sebesar ${cdReduction} detik.`,
+          en: `Unleash the power of Kirin, dashes your forward and increases your Attack Speed by ${attackSpeed}% and movement speed by ${moveSpeed} for ${duration} seconds.`,
+          ru: `Освободите силу Киры, берётся вперёд и увеличивает Скорость атаки на ${attackSpeed}% и Скорость передвижения на ${moveSpeed} в течение ${duration} секунд.`,
+          br: `Libere o poder de Kirin, dasha para frente e aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed} por ${duration} segundos.`,
+          cz: `Uvolte sílu Kirin, dashuje vpřed a zvýšíte Rychlost útoku o ${attackSpeed}% a Rychlost pohybu o ${moveSpeed} po ${duration} sekund.`,
+          zh: `释放基尔的力量，向前冲刺并增加攻击速度 ${attackSpeed}% 和移动速度 ${moveSpeed} 持续 ${duration} 秒。`,
+          fr: `Libérez le pouvoir de Kirin, dasha vers l'avant et augmentez votre Vitesse d'attaque de ${attackSpeed}% et votre Vitesse de déplacement de ${moveSpeed} pendant ${duration} secondes.`,
+          vi: `Giải phóng sức mạnh của Kirin, dash về phía trước và tăng Tốc độ đánh lên ${attackSpeed}% và Tốc độ di chuyển lên ${moveSpeed} trong ${duration} giây.`,
+          id: `Lepaskan kekuatan Kirin, dash ke depan dan meningkatkan Kecepatan Serang sebesar ${attackSpeed}% dan Kecepatan Gerak sebesar ${moveSpeed} selama ${duration} detik.`,
         },
       }
     }
