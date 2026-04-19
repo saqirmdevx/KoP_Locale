@@ -2233,14 +2233,14 @@ const getFrigidCurseDescription = () => {
   const duration = toSec(ItemAbilityData.FRIGID_CURSE_DURATION)
 
   const text: { [key: string]: string } = {
-    en: `Reduces Movement Speed by ${ItemAbilityData.FRIGID_CURSE_SLOW} and reduces all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
-    ru: `Уменьшает Скорость передвижения цели на ${ItemAbilityData.FRIGID_CURSE_SLOW} и всё входящее исцеление, а также эффекты регенерации ${healingReduction}% в течение ${duration}`,
-    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGID_CURSE_SLOW} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}`,
-    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGID_CURSE_SLOW} et tous les effets de soins et de régénération de ${healingReduction}% pour ${duration}`,
-    zh: `降低移動速度 ${ItemAbilityData.FRIGID_CURSE_SLOW}和所有治癒和回血效果 ${healingReduction}% 持續${duration}。`,
-    cz: `Snížení rychlosti pohybu o ${ItemAbilityData.FRIGID_CURSE_SLOW} a všech léčebných a regeneračních efektů o ${healingReduction}% během ${duration}`,
-    vi: `Giảm Tốc Độ Di Chuyển bởi ${ItemAbilityData.FRIGID_CURSE_SLOW} và giảm tất cả hiệu ứng hồi máu và hồi máu theo giây bởi ${healingReduction}% trong ${duration}`,
-    id: `Mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.FRIGID_CURSE_SLOW} dan mengurangi semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}`,
+    en: `Reduces movement speed by ${ItemAbilityData.FRIGID_CURSE_SLOW}, attack speed by ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION}, and all healing and regeneration effects by ${healingReduction}% for ${duration}.`,
+    ru: `Снижает скорость передвижения на ${ItemAbilityData.FRIGID_CURSE_SLOW}, скорость атаки на ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION}, а также эффективность лечения и регенерации на ${healingReduction}% на ${duration}.`,
+    br: `Reduz a velocidade de movimento em ${ItemAbilityData.FRIGID_CURSE_SLOW}, a velocidade de ataque em ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION} e todos os efeitos de cura e regeneração em ${healingReduction}% por ${duration}.`,
+    fr: `Réduit la vitesse de déplacement de ${ItemAbilityData.FRIGID_CURSE_SLOW}, la vitesse d'attaque de ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION}, ainsi que tous les effets de soins et de régénération de ${healingReduction}% pendant ${duration}.`,
+    zh: `降低移动速度 ${ItemAbilityData.FRIGID_CURSE_SLOW}、攻击速度 ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION}，并使所有治疗和生命恢复效果降低 ${healingReduction}%，持续 ${duration}。`,
+    cz: `Snižuje rychlost pohybu o ${ItemAbilityData.FRIGID_CURSE_SLOW}, rychlost útoku o ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION} a všechny léčivé a regenerační efekty o ${healingReduction}% po dobu ${duration}.`,
+    vi: `Giảm tốc độ di chuyển ${ItemAbilityData.FRIGID_CURSE_SLOW}, tốc độ đánh ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION} và hiệu quả hồi máu cùng hồi phục theo thời gian ${healingReduction}% trong ${duration}.`,
+    id: `Mengurangi kecepatan gerak sebesar ${ItemAbilityData.FRIGID_CURSE_SLOW}, kecepatan serangan sebesar ${ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION}, serta semua efek penyembuhan dan regenerasi sebesar ${healingReduction}% selama ${duration}.`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
