@@ -264,6 +264,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: 'Xếp hạng',
     id: 'Peringkat',
   },
+  [LOCALE.RANKED_QUEUE_BANNED_FOR]: {
+    en: 'Banned for {}',
+    ru: 'Блокировка на {}',
+    br: 'Bloqueado por {}',
+    cz: 'Zablokováno na {}',
+    zh: '禁止排隊 {}',
+    fr: 'Bloqué pendant {}',
+    vi: 'Bị cấm trong {}',
+    id: 'Diblokir selama {}',
+  },
   [LOCALE.NORMAL_MATCH]: {
     en: 'Unranked Game',
     cz: 'Nehodnocená hra',
