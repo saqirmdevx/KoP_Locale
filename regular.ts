@@ -1158,6 +1158,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Trụ đang nhắm vào bạn. Di chuyển sang trái để ra khỏi tầm đánh.',
   },
 
+  [LOCALE.TUTORIAL_HINT_BASE_DANGER]: {
+    en: 'Move away from enemy base. Enemy base will kill you if you get close.',
+    ru: 'Держитесь подальше от вражеской базы. Она убьёт вас, если подойдёте слишком близко.',
+    br: 'Afaste-se da base inimiga. Ela vai te matar se você chegar perto.',
+    cz: 'Drž se dál od nepřátelské základny. Zabije tě, pokud se přiblížíš.',
+    zh: '远离敌方基地。如果你靠近，它会杀死你。',
+    fr: 'Éloignez-vous de la base ennemie. Elle vous tuera si vous vous approchez.',
+    id: 'Jauhi markas musuh. Markas musuh akan membunuhmu jika kamu mendekat.',
+    vi: 'Tránh xa căn cứ địch. Nó sẽ giết bạn nếu bạn đến quá gần.',
+  },
+
   [LOCALE.TUTORIAL_HINT_LOW_HP_RECALL]: {
     en: 'You are low. Move back and press {} when safe.',
     ru: 'У вас мало здоровья. Отойдите назад и нажмите {}, когда безопасно.',
@@ -1170,14 +1181,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
 
   [LOCALE.TUTORIAL_HINT_RETURN_TO_BASE]: {
-    en: 'Recall to base and buy new items before the enemy hero wakes up.',
-    ru: 'Вражеский герой активен. Возвращайтесь на базу и купите новые предметы.',
-    br: 'O herói inimigo está ativo. Volte à base e compre novos itens.',
-    cz: 'Nepřátelský hrdina je aktivní. Vrať se na základnu a kup nové předměty.',
-    zh: '敌方英雄已出现。回城并购买新装备。',
-    fr: 'Le héros ennemi est actif. Rappelez-vous à la base et achetez de nouveaux objets.',
-    id: 'Hero musuh sudah aktif. Recall ke base dan beli item baru.',
-    vi: 'Tướng địch đã xuất hiện. Biến về và mua trang bị mới.',
+    en: 'Move to safety, then press {} to recall. Recall teleports you back to base',
+    ru: 'Двигайтесь в безопасное место, затем нажмите {}, чтобы вернуться. Возврат телепортирует вас на базу.',
+    br: 'Mova-se para um local seguro e pressione {} para retornar. O retorno teleporta você de volta à base.',
+    cz: 'Pohni se do bezpečí a stiskni {} pro návrat. Návrat tě teleportuje zpět na základnu.',
+    zh: '移动到安全位置，然后按 {} 回城。回城会将你传送回基地。',
+    fr: 'Déplacez-vous en lieu sûr, puis appuyez sur {} pour vous rappeler. Le rappel vous téléporte à la base.',
+    id: 'Bergerak ke tempat aman, lalu tekan {} untuk recall. Recall akan memindahkanmu kembali ke markas.',
+    vi: 'Di chuyển đến nơi an toàn, rồi nhấn {} để biến về. Biến về sẽ đưa bạn trở lại căn cứ.',
   },
 
   [LOCALE.TUTORIAL_HINT_FINISH_GAME]: {
