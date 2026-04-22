@@ -4208,6 +4208,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Pelacak misi dalam pertandingan (saat mati / hotkey)',
     vi: 'Theo dõi nhiệm vụ trong trận (khi chết hoặc phím tắt)',
   },
+  [LOCALE.ST_SHOW_RECOMMENDED_ITEMS]: {
+    en: 'Show recommended items',
+    ru: 'Показывать рекомендуемые предметы',
+    cz: 'Zobrazovat doporučené předměty',
+    zh: '顯示推薦物品',
+    fr: 'Afficher les objets recommandés',
+    br: 'Mostrar itens recomendados',
+    id: 'Tampilkan item rekomendasi',
+    vi: 'Hiển thị vật phẩm đề xuất',
+  },
   [LOCALE.ST_KEYBIND_TOGGLE_IN_GAME_QUESTS]: {
     en: 'Toggle quest tracker (in game)',
     ru: 'Показать трекер заданий (в бою)',
