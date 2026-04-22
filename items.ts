@@ -174,7 +174,6 @@ const _getLocaleItemDescription = (
         },
       }
     case ItemList.Sentinel_longbow: {
-      const speed = fixed(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100, 1)
       return {
         name: {
           en: 'Nimble Longbow',
@@ -1212,7 +1211,6 @@ const _getLocaleItemDescription = (
         },
       }
     case ItemList.Divine_Staff_T2: {
-      const radius = ItemAbilityData.ACTIVE_EFFECT_RADIUS
       const duration = fixed(ItemAbilityData.DIVINE_STAFF_DURATION / 1000, 1)
       const heal = ItemAbilityData.DIVINE_STAFF_HEAL_T2
       const speed = ItemAbilityData.DIVINE_STAFF_BONUS_SPEED

@@ -20,7 +20,6 @@ import {
   SpellList,
   PrimAbilityData,
   SeerAbilityData,
-  ItemAbilityData,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
