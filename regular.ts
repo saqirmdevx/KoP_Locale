@@ -167,6 +167,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Seer',
     vi: 'Seer',
   },
+  [LOCALE.KARITH_NAME]: {
+    en: 'Karith',
+    ru: 'Карит',
+    cz: 'Karith',
+    zh: '卡里斯',
+    fr: 'Karith',
+    br: 'Karith',
+    id: 'Karith',
+    vi: 'Karith',
+  },
   [LOCALE.UNK_DESCRIPTION]: {
     en: 'Will be added soon!',
     ru: 'Скоро будет добавлено!',
@@ -354,6 +364,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Temps de recharge',
     id: 'Waktu Tunggu',
     vi: 'Thời gian hồi chiêu',
+  },
+  [LOCALE.DURATION]: {
+    en: 'Duration',
+    ru: 'Длительность',
+    br: 'Duração',
+    cz: 'Trvání',
+    zh: '持續時間',
+    fr: 'Durée',
+    id: 'Durasi',
+    vi: 'Thời lượng',
   },
   [LOCALE.LEVEL]: {
     en: 'Level',

@@ -17,6 +17,7 @@ import {
   MagdaleneAbilityData,
   PrimAbilityData,
   SeerAbilityData,
+  KarithAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -1062,6 +1063,93 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
       }
     }
+
+    case Shared.HEROES.KARITH: {
+      const seedOfLifeThreshold = fixed(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_TRIGGER_THRESHOLD * 100, 0)
+      const seedOfLifeHeal = fixed(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_HEAL_MOD * 100, 0)
+      const seedOfLifeDuration = toSecRaw(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
+      const seedOfLifeCooldown = toSecRaw(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
+
+      const brambleSnapStacks = KarithAbilityData.TALENT_T1_RIGHT_BRAMBLE_SNAP_STACKS
+      const verdantMarkRootBonus = toSecRaw(KarithAbilityData.TALENT_T2_LEFT_VERDANT_MARK_ROOT_DURATION_PER_STACK)
+      const additionalWrathDelay = toSecRaw(KarithAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
+      const additionalWrathMod = fixed(KarithAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
+
+      return {
+        tier1_left: {
+          title: {
+            en: 'Seed of Life',
+            ru: 'Семя жизни',
+            cz: 'Semeno života',
+            br: 'Semente da Vida',
+            zh: '生命之种',
+            fr: 'Graine de Vie',
+            vi: 'Hạt Giống Sự Sống',
+            id: 'Benih Kehidupan',
+          },
+          description: {
+            en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
+            ru: `Получение урона больше ${seedOfLifeThreshold}% от текущего здоровья сажает исцеляющее семя, восстанавливающее ${seedOfLifeHeal}% полученного урона за ${seedOfLifeDuration}с. Перезарядка: ${seedOfLifeCooldown}с.`,
+            cz: `Obdržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které obnoví ${seedOfLifeHeal}% obdrženého poškození během ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
+            br: `Receber dano maior que ${seedOfLifeThreshold}% da Vida atual planta uma semente curativa, restaurando ${seedOfLifeHeal}% do dano recebido ao longo de ${seedOfLifeDuration}s. Recarga: ${seedOfLifeCooldown}s.`,
+            zh: `受到超过当前生命值 ${seedOfLifeThreshold}% 的伤害时，会种下一颗治疗种子，在 ${seedOfLifeDuration} 秒内恢复所受伤害的 ${seedOfLifeHeal}%。冷却时间：${seedOfLifeCooldown}秒。`,
+            fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s. Temps de recharge : ${seedOfLifeCooldown}s.`,
+            vi: `Nhận sát thương lớn hơn ${seedOfLifeThreshold}% Máu hiện tại sẽ gieo một hạt giống hồi phục, hồi lại ${seedOfLifeHeal}% sát thương đã nhận trong ${seedOfLifeDuration}s. Hồi chiêu: ${seedOfLifeCooldown}s.`,
+            id: `Menerima damage lebih dari ${seedOfLifeThreshold}% Health saat ini akan menanam benih penyembuh, memulihkan ${seedOfLifeHeal}% dari damage yang diterima selama ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
+          },
+        },
+
+        tier1_right: {
+          title: {
+            en: `Bramble Snap +${brambleSnapStacks} Verdant Mark stack`,
+            ru: `Bramble Snap +${brambleSnapStacks} заряд Verdant Mark`,
+            cz: `Bramble Snap +${brambleSnapStacks} stack Verdant Mark`,
+            br: `Bramble Snap +${brambleSnapStacks} acúmulo de Verdant Mark`,
+            zh: `Bramble Snap +${brambleSnapStacks} 层 Verdant Mark`,
+            fr: `Bramble Snap +${brambleSnapStacks} cumul de Verdant Mark`,
+            vi: `Bramble Snap +${brambleSnapStacks} cộng dồn Verdant Mark`,
+            id: `Bramble Snap +${brambleSnapStacks} stack Verdant Mark`,
+          },
+        },
+
+        tier2_left: {
+          title: {
+            en: `Verdant Mark: +${verdantMarkRootBonus}s Root/stack`,
+            ru: `Verdant Mark: +${verdantMarkRootBonus}с обездвиживания/заряд`,
+            cz: `Verdant Mark: +${verdantMarkRootBonus}s zakořenění/stack`,
+            br: `Verdant Mark: +${verdantMarkRootBonus}s de enraizamento/acúmulo`,
+            zh: `Verdant Mark：每层 +${verdantMarkRootBonus}秒禁锢`,
+            fr: `Verdant Mark : +${verdantMarkRootBonus}s enracinement/cumul`,
+            vi: `Verdant Mark: +${verdantMarkRootBonus}s trói/cộng dồn`,
+            id: `Verdant Mark: +${verdantMarkRootBonus}s root/stack`,
+          },
+        },
+
+        tier2_right: {
+          title: {
+            en: 'Second Grove',
+            ru: 'Вторая чаща',
+            cz: 'Druhý háj',
+            br: 'Segundo Bosque',
+            zh: '第二林地',
+            fr: 'Second Bosquet',
+            vi: 'Khu Rừng Thứ Hai',
+            id: 'Rimba Kedua',
+          },
+          description: {
+            en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}s. The second eruption deals ${additionalWrathMod}% damage and stun effect.`,
+            ru: `Wrath of the Grove призывает второе семя через ${additionalWrathDelay}с. Второй взрыв наносит ${additionalWrathMod}% урона и оглушения.`,
+            cz: `Wrath of the Grove vyvolá druhé semeno po ${additionalWrathDelay}s. Druhá exploze způsobí ${additionalWrathMod}% poškození a omráčení.`,
+            br: `Wrath of the Grove conjura uma segunda semente após ${additionalWrathDelay}s. A segunda explosão causa ${additionalWrathMod}% de dano e atordoamento.`,
+            zh: `Wrath of the Grove 在 ${additionalWrathDelay} 秒后召唤第二颗种子。第二次爆发造成 ${additionalWrathMod}% 伤害和眩晕效果。`,
+            fr: `Wrath of the Grove invoque une seconde graine après ${additionalWrathDelay}s. La seconde explosion inflige ${additionalWrathMod}% dégâts et étourdissement.`,
+            vi: `Wrath of the Grove triệu hồi hạt giống thứ hai sau ${additionalWrathDelay}s. Lần bùng nổ thứ hai gây ${additionalWrathMod}% sát thương và hiệu ứng choáng.`,
+            id: `Wrath of the Grove memanggil benih kedua setelah ${additionalWrathDelay}s. Ledakan kedua memberikan ${additionalWrathMod}% damage dan efek stun.`,
+          },
+        },
+      }
+    }
+
     default:
       return {
         tier1_left: {
