@@ -176,7 +176,7 @@ const _getLocaleItemDescription = (
           id: 'Busur Panjang Ceroboh',
         },
       }
-    case ItemList.Sentinel_longbow: {
+    case ItemList.Nimble_Longbow: {
       return {
         name: {
           en: 'Nimble Longbow',
@@ -216,7 +216,7 @@ const _getLocaleItemDescription = (
           id: 'Buckler Para Pejuang Besi',
         },
       }
-    case ItemList.Magical_Shield:
+    case ItemList.Enchanted_Shield:
       return {
         name: {
           en: 'Enchanted Shield',
@@ -430,7 +430,7 @@ const _getLocaleItemDescription = (
           id: `Tenacity mengurangi durasi efek crowd control (stun, slow, root, silence).`,
         },
       }
-    case ItemList.Traveling_Boots:
+    case ItemList.Swift_Boots:
       return {
         name: {
           en: 'Swift Boots',
@@ -518,7 +518,7 @@ const _getLocaleItemDescription = (
           id: `Melemparkan katana ke tanah. Musuh di sekitar diperlambat dan dibungkam. Mengungkap unit tak terlihat.`,
         },
       }
-    case ItemList.Iron_Basher: {
+    case ItemList.Spiked_Mace: {
       const threshold = (ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)
       return {
         name: {
@@ -900,7 +900,7 @@ const _getLocaleItemDescription = (
         },
         desc: { en: getIronRodDescription() },
       }
-    case ItemList.EnchantedSpear: {
+    case ItemList.Enchanted_Spear: {
       const executionThreshold = (ItemAbilityData.ENCHANTED_SPEAR_THRESHOLD * 100).toFixed(0) // Converte para porcentagem inteira
       return {
         name: {
@@ -1081,7 +1081,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.DivineArmor: {
+    case ItemList.Divine_Armor: {
       const damageReduction = fixed(ItemAbilityData.DIVINE_ARMOR_DAMAGE_REDUCTION * 100, 1)
 
       return {
@@ -1180,7 +1180,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.GarunsDefender: {
+    case ItemList.Garuns_Defender: {
       return {
         name: {
           en: "Garun's Defender",
@@ -1605,7 +1605,7 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.ChestOfMalevolence: {
+    case ItemList.Chest_Of_Malevolence: {
       const apReduction = fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)
 
       return {
@@ -1657,7 +1657,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.VileFlask: {
+    case ItemList.Vile_Flask: {
       const duration = toSecRaw(ItemAbilityData.VILE_FLASK_DURATION)
       return {
         name: {
@@ -1888,7 +1888,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.MoltenShield: {
+    case ItemList.Molten_Shield: {
       const damageOverTimePercent = fixed(ItemAbilityData.MOLTEN_SHIELD_DAMAGE_OVER_TIME_PERC * 100, 2)
       const resistanceReduction = fixed(ItemAbilityData.MOLTEN_SHIELD_MAGIC_RESISTANCE_REDUCTION * 100, 2)
       const baseDamage = ItemAbilityData.MOLTEN_SHIELD_BASE_DAMAGE
@@ -1943,7 +1943,7 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.VoidSword: {
+    case ItemList.Void_Sword: {
       const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED
       const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED
 

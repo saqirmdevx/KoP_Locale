@@ -85,7 +85,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.KUMIHU_DASH:
+    case SpellList.KUMIHU_ARCANE_DASH:
       return {
         en: `Kumihu dashes forward. This will activate her Passive for ${toSec(KumihuAbilityData.DASH_AURA_DURATION)}.`,
         ru: `Кумиху совершает рывок на короткую дистанцию. Это активирует её пассивную способность на ${toSec(
@@ -123,7 +123,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.SPARROW_DASH: {
+    case SpellList.SPARROW_CORRUPTED_WIND: {
       const dashDamage = getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)
       const stunduration = toSec(SparrowAbilityData.DASH_STUN_DURATION)
       return {
@@ -138,7 +138,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.SPARROW_GROUND_SLAM: {
+    case SpellList.SPARROW_DEMONIC_WRATH: {
       const dmg = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
         ? SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE + SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE
         : SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE
@@ -611,7 +611,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.KIRA_VOID_PHANTASM: {
+    case SpellList.KIRA_STATIC_PHANTASM: {
       const damage = getDamage(
         KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower,
         abilityData.damageType,
@@ -657,7 +657,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.HAZEL_SHOCKWAVE: {
+    case SpellList.HAZEL_TRIUMPHANT_UPHEAVAL: {
       const damage = getDamage(
         HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health,
         abilityData.damageType,
@@ -684,7 +684,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.HAZEL_HEROIC_SLASH: {
+    case SpellList.HAZEL_JUSTICES_WRATH: {
       const baseDamage = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
         ? HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE
         : HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE
@@ -918,7 +918,7 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.FOXY_GRANADE: {
+    case SpellList.FOXY_EXPLOSIVE_GRENADE: {
       const baseDamage = getDamage(
         FoxyAbilityData.GRANADE_DAMAGE_MODIFIER * damage,
         Shared.DamageTypes.NORMAL,
@@ -1390,7 +1390,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         vi: 'Quả Cầu Phép Thuật',
         id: 'Orb Magis',
       }
-    case SpellList.KUMIHU_DASH:
+    case SpellList.KUMIHU_ARCANE_DASH:
       return {
         en: 'Arcane Dash',
         ru: 'Мистический рывок',
@@ -1403,7 +1403,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
       }
 
     /** Sparrow */
-    case SpellList.SPARROW_DASH:
+    case SpellList.SPARROW_CORRUPTED_WIND:
       return {
         en: 'Corrupted Wind',
         ru: 'Проклятый ветер',
@@ -1415,7 +1415,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Lari Cepat',
       }
 
-    case SpellList.SPARROW_GROUND_SLAM:
+    case SpellList.SPARROW_DEMONIC_WRATH:
       return {
         en: 'Demonic Wrath',
         ru: 'Демонический гнев',
@@ -1566,7 +1566,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Hujan Bunga Api',
       }
 
-    case SpellList.KIRA_VOID_PHANTASM:
+    case SpellList.KIRA_STATIC_PHANTASM:
       return {
         en: 'Static Phantasm',
         ru: 'Статический фантазм',
@@ -1578,7 +1578,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Hantu Hampa',
       }
 
-    case SpellList.HAZEL_HEROIC_SLASH:
+    case SpellList.HAZEL_JUSTICES_WRATH:
       return {
         en: "Justice's Wrath",
         br: 'Portadora da verdade',
@@ -1590,7 +1590,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Kemarahan Keadilan',
       }
 
-    case SpellList.HAZEL_SHOCKWAVE:
+    case SpellList.HAZEL_TRIUMPHANT_UPHEAVAL:
       return {
         en: 'Triumphant Upheaval',
         ru: 'Триумфальный переворот',
@@ -1650,7 +1650,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Tendangan Surgawi',
       }
 
-    case SpellList.FOXY_GRANADE:
+    case SpellList.FOXY_EXPLOSIVE_GRENADE:
       return {
         en: 'Explosive Grenade',
         ru: 'Взрывная граната',
