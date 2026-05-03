@@ -20,7 +20,7 @@ import {
   SpellList,
   PrimAbilityData,
   SeerAbilityData,
-  KarithAbilityData,
+  KarickAbilityData,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
@@ -1270,36 +1270,36 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.KARITH_ATTACK: {
-      const baseDamage = getDamage(KarithAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
+    case SpellList.KARICK_ATTACK: {
+      const baseDamage = getDamage(KarickAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
       const rootDuration = toSec(
-        KarithAbilityData.VERDANT_MARK_ROOT_DURATION_PER_STACK * KarithAbilityData.VERDANT_MARK_MAX_STACKS
+        KarickAbilityData.VERDANT_MARK_ROOT_DURATION_PER_STACK * KarickAbilityData.VERDANT_MARK_MAX_STACKS
       )
       const rootDamage = getDamage(
-        KarithAbilityData.VERDANT_MARK_DAMAGE_MOD * abilityPower,
+        KarickAbilityData.VERDANT_MARK_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KarithAbilityData.VERDANT_MARK_BASE_DAMAGE_PER_SEC +
-          KarithAbilityData.VERDANT_MARK_DAMAGE_PER_LEVEL * (level - 1)
+        KarickAbilityData.VERDANT_MARK_BASE_DAMAGE_PER_SEC +
+          KarickAbilityData.VERDANT_MARK_DAMAGE_PER_LEVEL * (level - 1)
       )
 
       return {
-        en: `Karith launches a spirit-bound projectile, dealing ${baseDamage} damage. Hero hits apply 1 Verdant Mark stack.\n\n[PASSIVE Verdant Mark]: Your attacks plant a stack of Verdant Mark, up to ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} stacks. When Verdant Mark is triggered, the target is rooted for ${rootDuration} and suffers ${rootDamage} damage.`,
-        ru: `Карит выпускает снаряд, связанный с духами, нанося ${baseDamage} урона. Попадания по героям накладывают 1 заряд Verdant Mark.\n\n[ПАССИВНО Verdant Mark]: Ваши атаки накладывают заряд Verdant Mark, до ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} зарядов. При срабатывании Verdant Mark цель обездвиживается на ${rootDuration} и получает ${rootDamage} урона.`,
-        cz: `Karith vystřelí projektil spoutaný duchy, který způsobí ${baseDamage} poškození. Zásahy hrdinů aplikují 1 stack Verdant Mark.\n\n[PASIVNÍ Verdant Mark]: Tvé útoky zasazují stack Verdant Mark, až do ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} stacků. Když se Verdant Mark aktivuje, cíl je zakořeněn na ${rootDuration} a utrpí ${rootDamage} poškození.`,
-        br: `Karith lança um projétil ligado aos espíritos, causando ${baseDamage} de dano. Acertos em heróis aplicam 1 acúmulo de Verdant Mark.\n\n[PASSIVO Verdant Mark]: Seus ataques plantam um acúmulo de Verdant Mark, até ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} acúmulos. Quando Verdant Mark é ativada, o alvo fica enraizado por ${rootDuration} e sofre ${rootDamage} de dano.`,
-        zh: `Karith 发射一枚由灵魂束缚的投射物，造成 ${baseDamage} 点伤害。命中英雄会施加 1 层 Verdant Mark。\n\n[被动 Verdant Mark]：你的攻击会种下一层 Verdant Mark，最多 ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} 层。当 Verdant Mark 被触发时，目标会被缠绕 ${rootDuration}，并受到 ${rootDamage} 点伤害。`,
-        fr: `Karith lance un projectile lié aux esprits, infligeant ${baseDamage} dégâts. Les coups portés aux héros appliquent 1 cumul de Verdant Mark.\n\n[PASSIF Verdant Mark] : Vos attaques plantent un cumul de Verdant Mark, jusqu’à ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} cumuls. Lorsque Verdant Mark est déclenchée, la cible est enracinée pendant ${rootDuration} et subit ${rootDamage} dégâts.`,
-        vi: `Karith phóng ra một viên đạn được ràng buộc bởi linh hồn, gây ${baseDamage} sát thương. Đòn đánh trúng tướng áp dụng 1 cộng dồn Verdant Mark.\n\n[NỘI TẠI Verdant Mark]: Đòn đánh của bạn gieo 1 cộng dồn Verdant Mark, tối đa ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} cộng dồn. Khi Verdant Mark được kích hoạt, mục tiêu bị trói chân trong ${rootDuration} và chịu ${rootDamage} sát thương.`,
-        id: `Karith melontarkan proyektil yang terikat roh, memberikan ${baseDamage} damage. Serangan yang mengenai hero menerapkan 1 stack Verdant Mark.\n\n[PASIF Verdant Mark]: Seranganmu menanam 1 stack Verdant Mark, hingga ${KarithAbilityData.VERDANT_MARK_MAX_STACKS} stack. Saat Verdant Mark terpicu, target terkena root selama ${rootDuration} dan menerima ${rootDamage} damage.`,
+        en: `Karith launches a spirit-bound projectile, dealing ${baseDamage} damage. Hero hits apply 1 Verdant Mark stack.\n\n[PASSIVE Verdant Mark]: Your attacks plant a stack of Verdant Mark, up to ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} stacks. When Verdant Mark is triggered, the target is rooted for ${rootDuration} and suffers ${rootDamage} damage per second.`,
+        ru: `Карик выпускает снаряд, связанный с духами, нанося ${baseDamage} урона. Попадания по героям накладывают 1 заряд Verdant Mark.\n\n[ПАССИВНО Verdant Mark]: Ваши атаки накладывают заряд Verdant Mark, до ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} зарядов. При срабатывании Verdant Mark цель обездвиживается на ${rootDuration} и получает ${rootDamage} урона в секунду.`,
+        cz: `Karith vystřelí projektil spoutaný duchy, který způsobí ${baseDamage} poškození. Zásahy hrdinů aplikují 1 stack Verdant Mark.\n\n[PASIVNÍ Verdant Mark]: Tvé útoky zasazují stack Verdant Mark, až do ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} stacků. Když se Verdant Mark aktivuje, cíl je zakořeněn na ${rootDuration} a utrpí ${rootDamage} poškození za sekundu.`,
+        br: `Karith lança um projétil ligado aos espíritos, causando ${baseDamage} de dano. Acertos em heróis aplicam 1 acúmulo de Verdant Mark.\n\n[PASSIVO Verdant Mark]: Seus ataques plantam um acúmulo de Verdant Mark, até ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} acúmulos. Quando Verdant Mark é ativada, o alvo fica enraizado por ${rootDuration} e sofre ${rootDamage} de dano por segundo.`,
+        zh: `Karith 发射一枚由灵魂束缚的投射物，造成 ${baseDamage} 点伤害。命中英雄会施加 1 层 Verdant Mark。\n\n[被动 Verdant Mark]：你的攻击会种下一层 Verdant Mark，最多 ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} 层。当 Verdant Mark 被触发时，目标会被缠绕 ${rootDuration}，并每秒受到 ${rootDamage} 点伤害。`,
+        fr: `Karith lance un projectile lié aux esprits, infligeant ${baseDamage} dégâts. Les coups portés aux héros appliquent 1 cumul de Verdant Mark.\n\n[PASSIF Verdant Mark] : Vos attaques plantent un cumul de Verdant Mark, jusqu’à ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} cumuls. Lorsque Verdant Mark est déclenchée, la cible est enracinée pendant ${rootDuration} et subit ${rootDamage} dégâts par seconde.`,
+        vi: `Karith phóng ra một viên đạn được ràng buộc bởi linh hồn, gây ${baseDamage} sát thương. Đòn đánh trúng tướng áp dụng 1 cộng dồn Verdant Mark.\n\n[NỘI TẠI Verdant Mark]: Đòn đánh của bạn gieo 1 cộng dồn Verdant Mark, tối đa ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} cộng dồn. Khi Verdant Mark được kích hoạt, mục tiêu bị trói chân trong ${rootDuration} và chịu ${rootDamage} sát thương mỗi giây.`,
+        id: `Karith melontarkan proyektil yang terikat roh, memberikan ${baseDamage} damage. Serangan yang mengenai hero menerapkan 1 stack Verdant Mark.\n\n[PASIF Verdant Mark]: Seranganmu menanam 1 stack Verdant Mark, hingga ${KarickAbilityData.VERDANT_MARK_MAX_STACKS} stack. Saat Verdant Mark terpicu, target terkena root selama ${rootDuration} dan menerima ${rootDamage} damage per detik.`,
       }
     }
 
-    case SpellList.KARITH_BRAMBLE_SNAP: {
-      const baseDamage = getDamage(KarithAbilityData.BRAMBLE_SNAP_DAMAGE_MOD * damage)
+    case SpellList.KARICK_BRAMBLE_SNAP: {
+      const baseDamage = getDamage(KarickAbilityData.BRAMBLE_SNAP_DAMAGE_MOD * damage)
 
       return {
         en: `Karith lashes out with a thornbound strike, dealing ${baseDamage} damage in melee range. Applies 1 Verdant Mark stack and instantly triggers Verdant Mark based on current stacks.`,
-        ru: `Карит наносит удар, связанный с шипами, нанося ${baseDamage} урона в ближнем бою. Накладывает 1 заряд Verdant Mark и мгновенно активирует его в зависимости от текущих зарядов.`,
+        ru: `Карик наносит удар, связанный с шипами, нанося ${baseDamage} урона в ближнем бою. Накладывает 1 заряд Verdant Mark и мгновенно активирует его в зависимости от текущих зарядов.`,
         cz: `Karith udeří trnitým výpadem, který způsobí ${baseDamage} poškození na blízko. Aplikuje 1 stack Verdant Mark a okamžitě jej aktivuje podle aktuálního počtu stacků.`,
         br: `Karith desfere um golpe envolto em espinhos, causando ${baseDamage} de dano em combate corpo a corpo. Aplica 1 acúmulo de Verdant Mark e o ativa imediatamente com base nos acúmulos atuais.`,
         zh: `Karith 释放一次荆棘缠绕的近战打击，造成 ${baseDamage} 点伤害。施加 1 层 Verdant Mark，并根据当前层数立即触发效果。`,
@@ -1309,19 +1309,19 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.KARITH_WRATH_OF_THE_GROVE: {
+    case SpellList.KARICK_WRATH_OF_THE_GROVE: {
       const magicalDamage = getDamage(
-        KarithAbilityData.WRATH_OF_THE_GROVE_DAMAGE_MOD * abilityPower,
+        KarickAbilityData.WRATH_OF_THE_GROVE_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KarithAbilityData.WRATH_OF_THE_GROVE_DAMAGE +
-          KarithAbilityData.WRATH_OF_THE_GROVE_DAMAGE_PER_LEVEL * (level - 1)
+        KarickAbilityData.WRATH_OF_THE_GROVE_DAMAGE +
+          KarickAbilityData.WRATH_OF_THE_GROVE_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const stunDuration = toSec(KarithAbilityData.WRATH_OF_THE_GROVE_STUN_DURATION)
+      const stunDuration = toSec(KarickAbilityData.WRATH_OF_THE_GROVE_STUN_DURATION)
 
       return {
         en: `Karith casts a living seed before him. After a brief delay, it erupts into towering briars, dealing ${magicalDamage} damage and stunning enemies for ${stunDuration}.`,
-        ru: `Карит призывает живое семя перед собой. После короткой задержки оно взрывается, порождая шипы, нанося ${magicalDamage} урона и оглушая врагов на ${stunDuration}.`,
+        ru: `Карик призывает живое семя перед собой. После короткой задержки оно взрывается, порождая шипы, нанося ${magicalDamage} урона и оглушая врагов на ${stunDuration}.`,
         cz: `Karith sesílá živé semeno před sebe. Po krátkém zpoždění vyrazí v mohutné trny, které způsobí ${magicalDamage} poškození a omráčí nepřátele na ${stunDuration}.`,
         br: `Karith conjura uma semente viva à sua frente. Após um breve atraso, ela irrompe em espinhos gigantes, causando ${magicalDamage} de dano e atordoando inimigos por ${stunDuration}.`,
         zh: `Karith 在前方施放一颗活体种子。短暂延迟后，种子爆发成巨大的荆棘，造成 ${magicalDamage} 点伤害并使敌人眩晕 ${stunDuration}。`,
@@ -1367,7 +1367,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
     case SpellList.MAGDALENE_ATTACK:
     case SpellList.PRIM_ATTACK:
     case SpellList.SEER_ATTACK:
-    case SpellList.KARITH_ATTACK:
+    case SpellList.KARICK_ATTACK:
       return {
         en: 'Basic Attack',
         ru: 'Атака',
@@ -1742,7 +1742,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Bentuk Jahat',
       }
 
-    case SpellList.KARITH_BRAMBLE_SNAP:
+    case SpellList.KARICK_BRAMBLE_SNAP:
       return {
         en: 'Bramble Snap',
         ru: 'Хлёст шипов',
@@ -1754,7 +1754,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Hentakan Duri',
       }
 
-    case SpellList.KARITH_WRATH_OF_THE_GROVE:
+    case SpellList.KARICK_WRATH_OF_THE_GROVE:
       return {
         en: 'Wrath of the Grove',
         ru: 'Гнев чащи',

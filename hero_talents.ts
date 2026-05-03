@@ -17,7 +17,7 @@ import {
   MagdaleneAbilityData,
   PrimAbilityData,
   SeerAbilityData,
-  KarithAbilityData,
+  KarickAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -1064,16 +1064,16 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
 
-    case Shared.HEROES.KARITH: {
-      const seedOfLifeThreshold = fixed(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_TRIGGER_THRESHOLD * 100, 0)
-      const seedOfLifeHeal = fixed(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_HEAL_MOD * 100, 0)
-      const seedOfLifeDuration = toSecRaw(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
-      const seedOfLifeCooldown = toSecRaw(KarithAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
+    case Shared.HEROES.KARICK: {
+      const seedOfLifeThreshold = fixed(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_TRIGGER_THRESHOLD * 100, 0)
+      const seedOfLifeHeal = fixed(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_HEAL_MOD * 100, 0)
+      const seedOfLifeDuration = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
+      const seedOfLifeCooldown = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
 
-      const brambleSnapStacks = KarithAbilityData.TALENT_T1_RIGHT_BRAMBLE_SNAP_STACKS
-      const verdantMarkRootBonus = toSecRaw(KarithAbilityData.TALENT_T2_LEFT_VERDANT_MARK_ROOT_DURATION_PER_STACK)
-      const additionalWrathDelay = toSecRaw(KarithAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
-      const additionalWrathMod = fixed(KarithAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
+      const wrathOfTheGroveStacks = KarickAbilityData.TALENT_T1_RIGHT_WRATH_OF_THE_GROVE_VERDANT_MARK_STACKS
+      const verdantMarkRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_VERDANT_MARK_ROOT_DURATION_PER_STACK)
+      const additionalWrathDelay = toSecRaw(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
+      const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
 
       return {
         tier1_left: {
@@ -1088,27 +1088,37 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Benih Kehidupan',
           },
           description: {
-            en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
-            ru: `Получение урона больше ${seedOfLifeThreshold}% от текущего здоровья сажает исцеляющее семя, восстанавливающее ${seedOfLifeHeal}% полученного урона за ${seedOfLifeDuration}с. Перезарядка: ${seedOfLifeCooldown}с.`,
-            cz: `Obdržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které obnoví ${seedOfLifeHeal}% obdrženého poškození během ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
-            br: `Receber dano maior que ${seedOfLifeThreshold}% da Vida atual planta uma semente curativa, restaurando ${seedOfLifeHeal}% do dano recebido ao longo de ${seedOfLifeDuration}s. Recarga: ${seedOfLifeCooldown}s.`,
-            zh: `受到超过当前生命值 ${seedOfLifeThreshold}% 的伤害时，会种下一颗治疗种子，在 ${seedOfLifeDuration} 秒内恢复所受伤害的 ${seedOfLifeHeal}%。冷却时间：${seedOfLifeCooldown}秒。`,
-            fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s. Temps de recharge : ${seedOfLifeCooldown}s.`,
-            vi: `Nhận sát thương lớn hơn ${seedOfLifeThreshold}% Máu hiện tại sẽ gieo một hạt giống hồi phục, hồi lại ${seedOfLifeHeal}% sát thương đã nhận trong ${seedOfLifeDuration}s. Hồi chiêu: ${seedOfLifeCooldown}s.`,
-            id: `Menerima damage lebih dari ${seedOfLifeThreshold}% Health saat ini akan menanam benih penyembuh, memulihkan ${seedOfLifeHeal}% dari damage yang diterima selama ${seedOfLifeDuration}s. Cooldown: ${seedOfLifeCooldown}s.`,
+            en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s and dispelling all negative effects. Cooldown: ${seedOfLifeCooldown}s.`,
+            ru: `Получение урона более ${seedOfLifeThreshold}% от текущего здоровья сажает исцеляющее семя, восстанавливающее ${seedOfLifeHeal}% полученного урона в течение ${seedOfLifeDuration}с и снимающее все отрицательные эффекты. Перезарядка: ${seedOfLifeCooldown}с.`,
+            cz: `Utržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které během ${seedOfLifeDuration}s obnoví ${seedOfLifeHeal}% utrženého poškození a odstraní všechny negativní efekty. Cooldown: ${seedOfLifeCooldown}s.`,
+            br: `Receber dano maior que ${seedOfLifeThreshold}% da Vida atual planta uma semente curativa, restaurando ${seedOfLifeHeal}% do dano recebido ao longo de ${seedOfLifeDuration}s e removendo todos os efeitos negativos. Recarga: ${seedOfLifeCooldown}s.`,
+            zh: `受到超过当前生命值 ${seedOfLifeThreshold}% 的伤害时，会种下一颗治疗种子，在 ${seedOfLifeDuration} 秒内恢复所受伤害的 ${seedOfLifeHeal}% 并清除所有负面效果。冷却时间：${seedOfLifeCooldown}秒。`,
+            fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s et dissipant tous les effets négatifs. Temps de recharge : ${seedOfLifeCooldown}s.`,
+            vi: `Nhận sát thương lớn hơn ${seedOfLifeThreshold}% Máu hiện tại sẽ gieo một hạt giống hồi phục, hồi lại ${seedOfLifeHeal}% sát thương đã nhận trong ${seedOfLifeDuration}s và loại bỏ mọi hiệu ứng bất lợi. Hồi chiêu: ${seedOfLifeCooldown}s.`,
+            id: `Menerima damage lebih dari ${seedOfLifeThreshold}% Health saat ini akan menanam benih penyembuh, memulihkan ${seedOfLifeHeal}% dari damage yang diterima selama ${seedOfLifeDuration}s serta menghapus semua efek negatif. Cooldown: ${seedOfLifeCooldown}s.`,
           },
         },
 
         tier1_right: {
           title: {
-            en: `Bramble Snap +${brambleSnapStacks} Verdant Mark stack`,
-            ru: `Bramble Snap +${brambleSnapStacks} заряд Verdant Mark`,
-            cz: `Bramble Snap +${brambleSnapStacks} stack Verdant Mark`,
-            br: `Bramble Snap +${brambleSnapStacks} acúmulo de Verdant Mark`,
-            zh: `Bramble Snap +${brambleSnapStacks} 层 Verdant Mark`,
-            fr: `Bramble Snap +${brambleSnapStacks} cumul de Verdant Mark`,
-            vi: `Bramble Snap +${brambleSnapStacks} cộng dồn Verdant Mark`,
-            id: `Bramble Snap +${brambleSnapStacks} stack Verdant Mark`,
+            en: 'Grove Mark',
+            ru: 'Метка рощи',
+            cz: 'Znamení háje',
+            br: 'Marca do Bosque',
+            zh: '林地印记',
+            fr: 'Marque du Bosquet',
+            vi: 'Dấu Ấn Khu Rừng',
+            id: 'Tanda Rimba',
+          },
+          description: {
+            en: `Wrath of the Grove applies ${wrathOfTheGroveStacks} Verdant Mark stacks.`,
+            ru: `Wrath of the Grove накладывает ${wrathOfTheGroveStacks} заряда Verdant Mark.`,
+            cz: `Wrath of the Grove aplikuje ${wrathOfTheGroveStacks} stacky Verdant Mark.`,
+            br: `Wrath of the Grove aplica ${wrathOfTheGroveStacks} acúmulos de Verdant Mark.`,
+            zh: `Wrath of the Grove 会施加 ${wrathOfTheGroveStacks} 层 Verdant Mark。`,
+            fr: `Wrath of the Grove applique ${wrathOfTheGroveStacks} cumuls de Verdant Mark.`,
+            vi: `Wrath of the Grove áp dụng ${wrathOfTheGroveStacks} cộng dồn Verdant Mark.`,
+            id: `Wrath of the Grove menerapkan ${wrathOfTheGroveStacks} stack Verdant Mark.`,
           },
         },
 

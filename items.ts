@@ -763,7 +763,8 @@ const _getLocaleItemDescription = (
         },
       }
     /** Nowice staff */
-    case ItemList.Burning_Rod:
+    case ItemList.Burning_Rod: {
+      const damageOverTime = fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)
       return {
         name: {
           en: 'Burning Rod',
@@ -776,16 +777,17 @@ const _getLocaleItemDescription = (
           id: 'Tongkat Terbakar',
         },
         desc: {
-          en: `Abilities apply burn that deals ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% of max health as magical damage.`,
-          ru: `Способности накладывают горение, наносящее ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% от максимального здоровья в виде магического урона.`,
-          br: `Suas habilidades aplicam queimadura que causa ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% da vida máxima como dano mágico.`,
-          fr: `Les compétences appliquent une brûlure infligeant ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% des points de vie maximum en dégâts magiques.`,
-          zh: `你的技能會施加燃燒效果，造成相當於最大生命值 ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% 的魔法傷害。`,
-          cz: `Schopnosti aplikují hoření, které způsobuje ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)} % maximálního zdraví jako magické poškození.`,
-          vi: `Kỹ năng gây hiệu ứng thiêu đốt, gây ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% máu tối đa dưới dạng sát thương phép.`,
-          id: `Kemampuan memberikan efek terbakar yang menyebabkan ${fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)}% dari Health maksimum sebagai damage sihir.`,
+          en: `Abilities apply burn that deals ${damageOverTime}% of max health as magical damage per second.`,
+          ru: `Способности накладывают горение, наносящее ${damageOverTime}% от максимального здоровья в виде магического урона в секунду.`,
+          br: `Suas habilidades aplicam queimadura que causa ${damageOverTime}% da vida máxima como dano mágico por segundo.`,
+          fr: `Les compétences appliquent une brûlure infligeant ${damageOverTime}% des points de vie maximum en dégâts magiques par seconde.`,
+          zh: `你的技能會施加燃燒效果，每秒造成相當於最大生命值 ${damageOverTime}% 的魔法傷害。`,
+          cz: `Schopnosti aplikují hoření, které způsobuje ${damageOverTime} % maximálního zdraví jako magické poškození za sekundu.`,
+          vi: `Kỹ năng gây hiệu ứng thiêu đốt, gây ${damageOverTime}% máu tối đa dưới dạng sát thương phép mỗi giây.`,
+          id: `Kemampuan memberikan efek terbakar yang menyebabkan ${damageOverTime}% dari Health maksimum sebagai damage sihir per detik.`,
         },
       }
+    }
     case ItemList.Vampiric_Rod: {
       const leechValue = ItemAbilityData.VAMPIRIC_ROD_LEECH_BASE
       const leechMod = fixed(ItemAbilityData.VAMPIRIC_ROD_MODIFIER * 100, 1)
@@ -1658,7 +1660,6 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Vile_Flask: {
-      const duration = toSecRaw(ItemAbilityData.VILE_FLASK_DURATION)
       return {
         name: {
           en: 'Vile Flask',

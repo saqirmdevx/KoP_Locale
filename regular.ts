@@ -167,7 +167,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Seer',
     vi: 'Seer',
   },
-  [LOCALE.KARITH_NAME]: {
+  [LOCALE.KARICK_NAME]: {
     en: 'Karith',
     ru: 'Карит',
     cz: 'Karith',
@@ -1038,6 +1038,26 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Choisissez votre nom !',
     id: 'Pilih nama Anda!',
     vi: 'Chọn tên của bạn!',
+  },
+  [LOCALE.FORCE_RENAME_DESCRIPTION]: {
+    en: 'Choose name for your hero profile. This is how other players will know you in battle.',
+    ru: 'Выберите имя для своего профиля героя. Именно так вас будут видеть другие игроки в бою.',
+    br: 'Escolha um nome para o perfil do seu herói. É assim que outros jogadores vão te reconhecer em batalha.',
+    cz: 'Vyberte jméno pro svůj profil hrdiny. Takto vás ostatní hráči poznají v bitvě.',
+    zh: '为你的英雄档案选择一个名字。其他玩家将在战斗中通过这个名字认识你。',
+    fr: 'Choisissez un nom pour votre profil de héros. C’est ainsi que les autres joueurs vous reconnaîtront en bataille.',
+    id: 'Pilih nama untuk profil hero kamu. Dengan nama inilah pemain lain akan mengenalmu di pertempuran.',
+    vi: 'Hãy chọn tên cho hồ sơ anh hùng của bạn. Đây là cách người chơi khác nhận ra bạn trong trận chiến.',
+  },
+  [LOCALE.FORCE_RENAME_NAME_HINT]: {
+    en: '3-12 letters. No forbidden symbols.',
+    ru: 'От 3 до 12 букв. Без запрещенных символов.',
+    br: 'De 3 a 12 letras. Sem símbolos proibidos.',
+    cz: '3 až 12 písmen. Žádné zakázané symboly.',
+    zh: '3 到 12 个字母。不能包含禁用符号。',
+    fr: '3 à 12 lettres. Aucun symbole interdit.',
+    id: '3-12 huruf. Tanpa simbol terlarang.',
+    vi: 'Từ 3 đến 12 ký tự chữ cái. Không dùng ký hiệu bị cấm.',
   },
   [LOCALE.POPUP_BATTLE_END]: {
     en: 'Battle Ended',
