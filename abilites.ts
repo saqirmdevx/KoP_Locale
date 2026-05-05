@@ -622,22 +622,37 @@ const _getSpellDescriptionLang = (
       const voidPhantasmSilenceDuration = toSec(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)
 
       return {
-        en: `Kira dashes forward, leaving behind a distorted afterimage of herself. After ${voidPhantasmDuration}, she returns to the position of her afterimage.
-                \n<br/><b>[Enhanced]: (Dynamic Afterimage)</b> Instead of returing to the afterimage's position, it returns to Kira's position. The afterimage phases through enemies, dealing ${damage} and silencing for ${voidPhantasmSilenceDuration}.`,
-        br: `Kira cria uma imagem distorcida de si mesma enganando seus inimigos, para a qual ela retorna depois de ${voidPhantasmDuration}.
-                \n<b>[Passiva] (Distorcendo o Abismo):</b> A imagem distorcida de Kira a segue e atravessa os inimigos, causando ${damage} de dano mágico e silenciando-os por ${voidPhantasmSilenceDuration}.`,
-        ru: `Кира совершает рывок вперёд, оставляя позади себя свою искажённую копию и возвращаясь к ней через ${voidPhantasmDuration}
-                \n<b>[Усиленная]: (Беспорядочный клон)</b> Вместо возвращения к копии, она следует за Кирой и проходит через врагов на своём пути, нанося им ${damage} магического урона и накладывая немоту на ${voidPhantasmSilenceDuration}.`,
-        cz: `Kira oklame své nepřátele a zanechá za sebou zkreslený obraz, ke kterému se vrátí po ${voidPhantasmDuration}
-                \n<b>[Enhanced]: (Chaotic Afterimage)</b> Kirin afterimage ji pronásleduje a prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je za ${voidPhantasmSilenceDuration}.`,
-        zh: `奇菈用滯留的扭曲殘影欺騙敵方，${voidPhantasmDuration}後她會回歸殘影處。\n
-                \n<b>[強化後]：(動態殘影) 奇菈沒有回歸殘影處，取而代之的是殘影跟隨她並沿路穿透敵方，造成 ${damage}並沉默敵方 ${voidPhantasmSilenceDuration}。`,
-        fr: `Kira fonce en avant, laissant derrière elle une image déformée d'elle-même. Après ${voidPhantasmDuration}, elle retourne à la position de son image.
-                \n<br/><b>Amélioré: (Image dynamique)</b> Au lieu de retourner à la position de l'image, elle retourne à la position de Kira. L'image traverse les ennemis, infligeant ${damage} et les réduisant au silence pendant ${voidPhantasmSilenceDuration}.`,
-        vi: `Kira tốc biến về phía trước, để lại một Ảo ảnh sau của chính mình. Sau ${voidPhantasmDuration}, cô quay trở lại vị trí của Ảo ảnh của mình.
-                \n<br/><b>Thức tỉnh: (Ảo ảnh Ma)</b> Thay vì quay trở lại vị trí của Ảo ảnh, Ảo ảnh quay trở lại vị trí của Kira. Ảo ảnh đi qua kẻ địch, gây ${damage} và làm câm lặng trong ${voidPhantasmSilenceDuration}.`,
-        id: `Kira berlari ke depan, meninggalkan bayangan setelah dirinya sendiri. Setelah ${voidPhantasmDuration}, dia kembali ke posisi bayangannya.
-                \n<br/><b>Ditingkatkan: (Bayangan Dinamis)</b> Alih-alih kembali ke posisi bayangan, dia kembali ke posisi Kira. Bayangan melewati musuh, memberikan ${damage} dan membisu selama ${voidPhantasmSilenceDuration}.`,
+        en:
+          `Kira dashes forward, leaving behind a distorted afterimage. For ${voidPhantasmDuration}, she gains a burst of movement speed. After the duration, she returns to the afterimage's position.` +
+          `\n<br/><b>[Enhanced]: (Dynamic Afterimage)</b> Instead of returning to the afterimage, it returns to Kira. The afterimage phases through enemies, dealing ${damage} and silencing them for ${voidPhantasmSilenceDuration}.`,
+
+        br:
+          `Kira avança rapidamente, deixando para trás uma imagem distorcida. Por ${voidPhantasmDuration}, ela recebe um aumento de velocidade de movimento. Após a duração, retorna à posição da imagem.` +
+          `\n<br/><b>[Aprimorado]: (Imagem Dinâmica)</b> Em vez de retornar à imagem, ela retorna até Kira. A imagem atravessa inimigos, causando ${damage} de dano mágico e silenciando-os por ${voidPhantasmSilenceDuration}.`,
+
+        ru:
+          `Кира совершает рывок вперёд, оставляя позади искажённую копию. На ${voidPhantasmDuration} она получает прирост скорости передвижения. По истечении времени возвращается к копии.` +
+          `\n<br/><b>[Усиленная]: (Динамический фантом)</b> Вместо возврата к копии, копия возвращается к Кире. Проходя через врагов, она наносит ${damage} магического урона и накладывает немоту на ${voidPhantasmSilenceDuration}.`,
+
+        cz:
+          `Kira se vrhne vpřed a zanechá za sebou zkreslený obraz. Po dobu ${voidPhantasmDuration} získá bonus k rychlosti pohybu. Po uplynutí doby se vrátí na pozici obrazu.` +
+          `\n<br/><b>[Enhanced]: (Dynamický obraz)</b> Místo návratu k obrazu se obraz vrátí ke Kiře. Prochází nepřáteli, uděluje ${damage} magické poškození a umlčuje je na ${voidPhantasmSilenceDuration}.`,
+
+        zh:
+          `奇菈向前衝刺，留下扭曲殘影。在 ${voidPhantasmDuration} 期間，她獲得移動速度提升。時間結束後，她會回到殘影位置。` +
+          `\n<br/><b>[強化]：(動態殘影)</b> 殘影不再讓奇菈返回，而是回到奇菈身邊。殘影會穿過敵人，造成 ${damage} 並使其沉默 ${voidPhantasmSilenceDuration}。`,
+
+        fr:
+          `Kira fonce en avant en laissant derrière elle une image déformée. Pendant ${voidPhantasmDuration}, elle gagne un bonus de vitesse de déplacement. À la fin, elle revient à la position de l'image.` +
+          `\n<br/><b>Amélioré : (Image dynamique)</b> Au lieu de revenir à l'image, celle-ci revient vers Kira. L'image traverse les ennemis, inflige ${damage} et les réduit au silence pendant ${voidPhantasmSilenceDuration}.`,
+
+        vi:
+          `Kira lao về phía trước, để lại một ảo ảnh phía sau. Trong ${voidPhantasmDuration}, cô nhận thêm tốc độ di chuyển. Sau đó, cô quay lại vị trí của ảo ảnh.` +
+          `\n<br/><b>Thức tỉnh: (Ảo ảnh động)</b> Thay vì Kira quay lại, ảo ảnh sẽ quay về vị trí của Kira. Ảo ảnh đi xuyên qua kẻ địch, gây ${damage} và làm câm lặng trong ${voidPhantasmSilenceDuration}.`,
+
+        id:
+          `Kira melesat ke depan, meninggalkan bayangan terdistorsi. Selama ${voidPhantasmDuration}, dia mendapatkan peningkatan kecepatan gerak. Setelah durasi berakhir, dia kembali ke posisi bayangan.` +
+          `\n<br/><b>Ditingkatkan: (Bayangan Dinamis)</b> Alih-alih Kira kembali, bayangan kembali ke posisi Kira. Bayangan menembus musuh, memberikan ${damage} dan membisukan selama ${voidPhantasmSilenceDuration}.`,
       }
     }
 
