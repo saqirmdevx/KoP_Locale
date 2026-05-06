@@ -21,6 +21,8 @@ import {
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
+// @ts-ignore
+import { colorizeTooltipKeywords, getBonusKeyword, getSlowKeyword, getStunKeyword } from '../abilityLangData'
 
 interface ITalentProps {
   title: { [key in string]: string }
@@ -34,10 +36,45 @@ interface ILocaleHeroTalent {
   tier2_right: ITalentProps
 }
 
+const getControlValue = (value: string | number): string => `<span class='control-d'>${value}</span>`
+
+const colorizeTalentKeywordsDeep = (value: ILocaleHeroTalent): ILocaleHeroTalent => {
+  const colorizeMap = (entries: { [key in string]: string }) => {
+    const coloredEntries: { [key in string]: string } = {}
+
+    for (const key in entries) {
+      coloredEntries[key] = entries[key].includes("<span class='")
+        ? entries[key]
+        : colorizeTooltipKeywords(entries[key])
+    }
+
+    return coloredEntries
+  }
+
+  return {
+    tier1_left: {
+      title: value.tier1_left.title,
+      description: value.tier1_left.description ? colorizeMap(value.tier1_left.description) : undefined,
+    },
+    tier1_right: {
+      title: value.tier1_right.title,
+      description: value.tier1_right.description ? colorizeMap(value.tier1_right.description) : undefined,
+    },
+    tier2_left: {
+      title: value.tier2_left.title,
+      description: value.tier2_left.description ? colorizeMap(value.tier2_left.description) : undefined,
+    },
+    tier2_right: {
+      title: value.tier2_right.title,
+      description: value.tier2_right.description ? colorizeMap(value.tier2_right.description) : undefined,
+    },
+  }
+}
+
 const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
   switch (hero) {
     case Shared.HEROES.KUMIHU: {
-      const blindDuration = toSecRaw(KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION)
+      const blindDuration = getControlValue(toSecRaw(KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION))
       const magicalOrbCd = toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)
       const charmCooldown = toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)
       return {
@@ -55,7 +92,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Charm cooldown  ${charmCooldown}s`,
+            en: `Charm cooldown ${charmCooldown}s`,
             ru: `${charmCooldown} сек. перезарядки Мистического рывка`,
             cz: `Očarování obnovení ${charmCooldown}s`,
             zh: `魅惑冷却 ${charmCooldown}秒`,
@@ -89,14 +126,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: `Bola ajaib buta`,
           },
           description: {
-            en: `If magical orb hit same hero twice it will reduce his vision by 66% for ${blindDuration}s`,
-            ru: `Если Волшебная сфера попадает в одного и того же героя дважды, то его обзор снижается на 66% на ${blindDuration} сек.`,
-            cz: `Pokud kouzelná koule zasáhne stejného hrdinu dvakrát, sníží jeho vidění o 66% po dobu ${blindDuration}s`,
-            zh: `如果魔幻寶珠擊中同個英雄兩次，其視野將在${blindDuration}秒内減少66%`,
-            fr: `Si l'orbe magique touche le même héros deux fois, sa vision sera réduite de 66% pendant ${blindDuration}s`,
-            br: `Se o orbe mágico atingir o mesmo herói duas vezes, sua visão será reduzida em 66% por ${blindDuration}s`,
-            vi: `Nếu Quả Cầu Phép Thuật đánh trúng một kẻ địch hai lần thì tầm nhìn của anh ta sẽ giảm 66% trong ${blindDuration}s`,
-            id: `Jika bola ajaib mengenai pahlawan yang sama dua kali, maka visinya akan berkurang 66% selama ${blindDuration}s`,
+            en: `Magical orb blinds enemy heroes it passes through. Blinded heroes have reduced vision and do not share vision with their team for ${blindDuration}s`,
+            ru: `Волшебная сфера ослепляет вражеских героев, через которых проходит. Ослеплённые герои имеют уменьшенный обзор и не передают обзор своей команде в течение ${blindDuration} сек.`,
+            cz: `Magická koule oslepí nepřátelské hrdiny, kterými projde. Oslepení hrdinové mají snížené vidění a nesdílí vidění se svým týmem po dobu ${blindDuration}s`,
+            zh: `魔法寶珠會致盲其穿過的敵方英雄。被致盲的英雄將降低視野，並且在${blindDuration}秒內無法與隊友共享視野`,
+            fr: `L'orbe magique aveugle les héros ennemis qu'il traverse. Les héros aveuglés ont une vision réduite et ne partagent plus leur vision avec leur équipe pendant ${blindDuration}s`,
+            br: `O orbe mágico cega os heróis inimigos pelos quais passa. Heróis cegados têm visão reduzida e não compartilham visão com sua equipe por ${blindDuration}s`,
+            vi: `Quả Cầu Phép Thuật sẽ làm mù những tướng địch mà nó bay xuyên qua. Tướng bị làm mù sẽ bị giảm tầm nhìn và không chia sẻ tầm nhìn với đồng đội trong ${blindDuration}s`,
+            id: `Bola ajaib membutakan hero musuh yang dilewatinya. Hero yang dibutakan memiliki penglihatan berkurang dan tidak membagikan vision kepada timnya selama ${blindDuration}s`,
           },
         },
       }
@@ -132,7 +169,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         tier2_left: {
           title: {
             en: `Demonic Wrath Pure / +${groundSlamDamage}%`,
-            ru: `+${groundSlamDamage}% от недостающего здоровья Демонического гнева/урон становится чистым`,
+            ru: `Демонический гнев чистый / +${groundSlamDamage}%`,
             cz: `Démonický hněv čistý / +${groundSlamDamage}%`,
             zh: `惡魔之怒純傷害 / +${groundSlamDamage}%`,
             fr: `Colère démoniaque pure / +${groundSlamDamage}%`,
@@ -168,6 +205,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.ICEAT: {
       const attackSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100, 1)
+      const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)
       return {
         tier1_left: {
           title: {
@@ -180,7 +218,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             vi: 'Cầu tuyết băng giá',
           },
           description: {
-            en: `Your Basic Attacks reduce enemy Movement Speed by <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> and reduce enemy Attack Speed by <b>${attackSpeedSlow}%</b>`,
+            en: `Your Basic Attacks reduce enemy ${getSlowKeyword('Movement Speed')} by <b>${getControlValue(
+              ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
+            )}</b> and reduce enemy ${getSlowKeyword('Attack Speed')} by <b>${getControlValue(attackSpeedSlow + '%')}</b>`,
             ru: `Ваши атаки будут уменьшать скорость передвижения целей на <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> и их скорость атаки на <b>${attackSpeedSlow}%</b>`,
             cz: `Vaše základní útoky sníží rychlost pohybu nepřátel o <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> a sníží rychlost útoku nepřátel o <b>${attackSpeedSlow}%</b>`,
             zh: `你的基礎攻擊減少敵人移動速度 <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> 並減少敵人攻擊速度 <b>${attackSpeedSlow}%</b>`,
@@ -204,14 +244,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Icicle Bolt freeze +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
-            ru: `+${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)} сек. к обездвиживанию Сосулек`,
-            cz: `Icicle Bolt zmrazení +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
-            zh: `寒冰飛箭凍結 +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}秒`,
-            fr: `Gel de glace +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
-            br: `Gelo do Pico +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
-            vi: `Mảnh Băng Tiễn +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
-            id: `Icicle Bolt membekukan +${toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)}s`,
+            en: `Icicle Bolt freeze +${icicleFreezeDuration}s`,
+            ru: `+${icicleFreezeDuration} сек. к обездвиживанию Сосулек`,
+            cz: `Icicle Bolt zmrazení +${icicleFreezeDuration}s`,
+            zh: `寒冰飛箭凍結 +${icicleFreezeDuration}秒`,
+            fr: `Gel de glace +${icicleFreezeDuration}s`,
+            br: `Gelo do Pico +${icicleFreezeDuration}s`,
+            vi: `Mảnh Băng Tiễn +${icicleFreezeDuration}s`,
+            id: `Icicle Bolt membekukan +${icicleFreezeDuration}s`,
           },
         },
         tier2_right: {
@@ -317,18 +357,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.BELLE: {
       const floralAmbushHeal = fixed(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100)
+      const pricklyVineStunBonus = toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
       const pricklyAttachDuration = toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)
       return {
         tier1_left: {
           title: {
-            en: `Prickly Vine Duration +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
-            ru: `+${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)} сек. оглушения от Колючей лозы`,
-            cz: `Trnitý vinný trn trvání +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
-            zh: `荊棘藤蔓持續時間 +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}秒`,
-            fr: `Durée de la vigne épineuse +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
-            br: `Duração da Videira Espinhosa +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
-            vi: `Thời lượng choáng của Cức Đằng +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
-            id: `Durasi Ranting Berduri +${toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)}s`,
+            en: `Prickly Vine Duration +${pricklyVineStunBonus}s`,
+            ru: `+${pricklyVineStunBonus} сек. оглушения от Колючей лозы`,
+            cz: `Trnitý vinný trn trvání +${pricklyVineStunBonus}s`,
+            zh: `荊棘藤蔓持續時間 +${pricklyVineStunBonus}秒`,
+            fr: `Durée de la vigne épineuse +${pricklyVineStunBonus}s`,
+            br: `Duração da Videira Espinhosa +${pricklyVineStunBonus}s`,
+            vi: `Thời lượng choáng của Cức Đằng +${pricklyVineStunBonus}s`,
+            id: `Durasi Ranting Berduri +${pricklyVineStunBonus}s`,
           },
         },
         tier1_right: {
@@ -380,7 +421,18 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.FLIN: {
-      const splitDamage = getDamage(FlinAbilityData.ATTACK_SPLIT_DAMAGE * 100)
+      const preciseShotExecuteMin = getDamage(
+        FlinAbilityData.TALENT_T2_RIGHT_PRECISESHOT_EXECUTE_MIN * 100,
+        Shared.DamageTypes.NORMAL,
+        0,
+        true
+      )
+      const preciseShotExecuteMax = getDamage(
+        FlinAbilityData.TALENT_T2_RIGHT_PRECISESHOT_EXECUTE_MAX * 100,
+        Shared.DamageTypes.NORMAL,
+        0,
+        true
+      )
       const preciseShotDamage = fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100, 1)
       return {
         tier1_left: {
@@ -421,24 +473,24 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: 'Marksman - Multishot',
-            ru: 'Меткая стрельба получает эффект Залпа',
-            cz: 'Míření - Vícestřel',
-            zh: '神射手 - 多重射擊',
-            fr: 'Tir de précision - Tir multiple',
-            br: 'Atirador - Tiro Múltiplo',
-            vi: 'Tay Cung Lão Luyện - Mưa Tên',
-            id: 'Marksman - Multishot',
+            en: 'Precise Shot - Execution',
+            ru: 'Меткий выстрел - Казнь',
+            cz: 'Přesná střela - Poprava',
+            zh: '精准射击 - 處決',
+            fr: 'Tir précis - Exécution',
+            br: 'Tiro Preciso - Execução',
+            vi: 'Phát Bắn Chính Xác - Kết Liễu',
+            id: 'Precise Shot - Execution',
           },
           description: {
-            en: `Flin fires an additional 2 arrows, angled at 30°, dealing ${splitDamage}% Normal Damage per extra arrow.`,
-            ru: `Залп: Флин выпускает дополнительно 2 стрелы под углом 30 градусов при каждой атаке, каждая из которых наносит ${splitDamage}% физического урона.`,
-            cz: `Vícestřel: Flin vystřelí další 2 šípy pod úhlem 30°, každý z nich způsobí ${splitDamage}% normálního poškození.`,
-            zh: `弗林發射2隻額外的弓箭，角度為30°，每支額外弓箭造成 ${splitDamage}%一般傷害。`,
-            fr: `Tir multiple : Flin tire 2 flèches supplémentaires, inclinées à 30°, infligeant ${splitDamage}% de dégâts normaux par flèche supplémentaire.`,
-            br: `Tiro Múltiplo: Flin dispara 2 flechas adicionais, inclinadas a 30°, causando ${splitDamage}% de Dano Normal por flecha extra.`,
-            vi: `Mưa Tên: Flin bắn thêm 2 mũi tên, góc 30°, gây ${splitDamage}% Sát thương Thường cho mỗi mũi tên bổ sung.`,
-            id: `Marksman - Multishot: Flin menembakkan 2 anak panah tambahan, miring 30°, memberikan ${splitDamage}% Kerusakan Normal per anak panah tambahan.`,
+            en: `Precise Shot executes enemies below ${preciseShotExecuteMin} to ${preciseShotExecuteMax} Health, based on the distance between Flin and the target.`,
+            ru: `Точный выстрел мгновенно добивает врагов, если их здоровье ниже ${preciseShotExecuteMin}–${preciseShotExecuteMax}, в зависимости от расстояния между Флином и целью.`,
+            cz: `Přesná střela okamžitě popraví nepřátele pod ${preciseShotExecuteMin} až ${preciseShotExecuteMax} zdraví v závislosti na vzdálenosti mezi Flinem a cílem.`,
+            zh: `精準射擊會直接處決生命值低於${preciseShotExecuteMin}至${preciseShotExecuteMax}的敵人，數值取決於弗林與目標之間的距離。`,
+            fr: `Tir de précision exécute les ennemis ayant moins de ${preciseShotExecuteMin} à ${preciseShotExecuteMax} de points de vie, selon la distance entre Flin et la cible.`,
+            br: `Disparo Preciso executa inimigos abaixo de ${preciseShotExecuteMin} a ${preciseShotExecuteMax} de Vida, dependendo da distância entre Flin e o alvo.`,
+            vi: `Phát Bắn Chính Xác kết liễu kẻ địch dưới ${preciseShotExecuteMin} đến ${preciseShotExecuteMax} Máu, tùy thuộc vào khoảng cách giữa Flin và mục tiêu.`,
+            id: `Precise Shot mengeksekusi musuh dengan Health di bawah ${preciseShotExecuteMin} hingga ${preciseShotExecuteMax}, tergantung jarak antara Flin dan target.`,
           },
         },
       }
@@ -446,7 +498,12 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.THOMAS: {
       const carrotStun = toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)
-      const bleedDamage = getDamage(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100)
+      const bleedDamage = getDamage(
+        ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100,
+        Shared.DamageTypes.NORMAL,
+        0,
+        true
+      )
       const bleedDuration = toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)
       const bleedCooldown = toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)
       const shurrikenTossCooldown = toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)
@@ -475,22 +532,22 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Serangan Berdarah',
           },
           description: {
-            en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${bleedDamage}% of his Attack Damage over ${bleedDuration}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
+            en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${bleedDamage} of his Attack Damage over ${bleedDuration}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
             \nThis effect can occur once every ${bleedCooldown}s.`,
-            ru: `Атаки Томаса накладывают эффект Кровотечения на врага, наносящий ${bleedDamage}% от его силы атаки в течение ${bleedDuration} сек. и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            ru: `Атаки Томаса накладывают эффект Кровотечения на врага, наносящий ${bleedDamage} от его силы атаки в течение ${bleedDuration} сек. и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nЭтот эффект может происходить один раз в ${bleedCooldown} секунд.`,
-            cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí ${bleedDamage}% jeho útoku po
+            cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí ${bleedDamage} jeho útoku po
             dobu ${bleedDuration}s a sníží obranu o ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nTento efekt může nastat jednou za ${bleedCooldown}s.`,
-            zh: `湯瑪士的基本攻擊造成流血效果，持續 ${bleedDuration}秒，造成 ${bleedDamage}%攻擊傷害，減少 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}裝甲值。
+            zh: `湯瑪士的基本攻擊造成流血效果，持續 ${bleedDuration}秒，造成 ${bleedDamage}攻擊傷害，減少 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}裝甲值。
             \n此效果每${bleedCooldown}秒可發動一次。`,
-            fr: `Les attaques de base de Thomas appliquent un effet de saignement, infligeant ${bleedDamage}% de ses dégâts d'attaque sur ${bleedDuration}s et réduisant l'armure de ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            fr: `Les attaques de base de Thomas appliquent un effet de saignement, infligeant ${bleedDamage} de ses dégâts d'attaque sur ${bleedDuration}s et réduisant l'armure de ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nCet effet peut se produire une fois toutes les ${bleedCooldown}s.`,
-            br: `Os Ataques Básicos de Thomas aplicam um efeito de Sangramento, causando ${bleedDamage}% de seu Dano de Ataque ao longo de ${bleedDuration}s e reduzindo a armadura em ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            br: `Os Ataques Básicos de Thomas aplicam um efeito de Sangramento, causando ${bleedDamage} de seu Dano de Ataque ao longo de ${bleedDuration}s e reduzindo a armadura em ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nEste efeito pode ocorrer uma vez a cada ${bleedCooldown}s.`,
-            vi: `Các đòn đánh thường của Thomas áp dụng hiệu ứng Chảy máu, gây ${bleedDamage}% Sát thương Tấn công của anh ta trong ${bleedDuration}s và giảm giáp bởi ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            vi: `Các đòn đánh thường của Thomas áp dụng hiệu ứng Chảy máu, gây ${bleedDamage} Sát thương Tấn công của anh ta trong ${bleedDuration}s và giảm giáp bởi ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nHiệu ứng này có thể xảy ra mỗi ${bleedCooldown}s.`,
-            id: `Serangan Dasar Thomas menerapkan efek Pendarahan, menangani ${bleedDamage}% Kerusakan Serangannya selama ${bleedDuration}s dan mengurangi pertahanan sebesar ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
+            id: `Serangan Dasar Thomas menerapkan efek Pendarahan, menangani ${bleedDamage} Kerusakan Serangannya selama ${bleedDuration}s dan mengurangi pertahanan sebesar ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nEfek ini dapat terjadi sekali setiap ${bleedCooldown}s.`,
           },
         },
@@ -587,7 +644,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     case Shared.HEROES.AREL: {
       const tickingBombDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)
       const freezingTrapDuration = toSec(ArelAbilityData.FREEZING_TRAP_DURATION)
-      const freezingTrapFreezeDuration = toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)
+      const freezingTrapFreezeDuration = getControlValue(toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION))
       return {
         tier1_left: {
           title: {
@@ -615,14 +672,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Ticking Bomb Stun +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            ru: `+${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN} сек. к оглушению Часовой бомбы`,
-            cz: `Ticking Bomb omráčení +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            zh: `定時炸彈暈眩 +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}毫秒`,
-            fr: `Ticking Bomb Étourdissement +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            br: `Ticking Bomb Atordoamento +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            vi: `Choáng của Bom Hẹn Giờ +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
-            id: `Ticking Bomb Stun +${ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN}ms`,
+            en: `Ticking Bomb Stun +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            ru: `+${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)} сек. к оглушению Часовой бомбы`,
+            cz: `Ticking Bomb omráčení +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            zh: `定時炸彈暈眩 +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}秒`,
+            fr: `Ticking Bomb Étourdissement +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            br: `Ticking Bomb Atordoamento +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            vi: `Choáng của Bom Hẹn Giờ +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            id: `Ticking Bomb Stun +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
           },
         },
         tier2_right: {
@@ -726,7 +783,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Kekebalan Triumphant Upheaval',
           },
           description: {
-            en: 'Hazel is immune to all damage and crowd control effects while charing Triumphant Upheaval.',
+            en: 'Hazel is immune to all damage and crowd control effects while charging Triumphant Upheaval.',
             ru: 'Хейзел получает иммунитет к любому урону и эффектам контроля во время подготовки Триумфального переворота.',
             cz: 'Hazel je imunní vůči veškerému poškození a efektům kontroly davu během nabíjení Triumfálního povstání.',
             br: 'Hazel é imune a todo dano e efeitos de controle de multidão enquanto carrega o Levante Triunfante.',
@@ -754,14 +811,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Rain of Spark ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms slow`,
-            ru: `Дождь искр замедляет на ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}мс`,
-            cz: `Déšť jisker zpomaluje o ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
-            zh: `電光雷雨減速 ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}毫秒`,
-            fr: `Pluie d'étincelles ralentit de ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
-            br: `Relâmpago do Abismo reduz em ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
-            vi: `Điện Hỏa Vũ gây chậm ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms`,
-            id: `Hujan Spark ${KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK}ms lambat`,
+            en: `Rain of Spark ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s slow`,
+            ru: `Дождь искр замедляет на ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)} сек.`,
+            cz: `Déšť jisker zpomaluje o ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
+            zh: `電光雷雨減速 ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}秒`,
+            fr: `Pluie d'étincelles ralentit de ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
+            br: `Relâmpago do Abismo reduz em ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
+            vi: `Điện Hỏa Vũ gây chậm ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
+            id: `Hujan Spark ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s lambat`,
           },
         },
         tier2_left: {
@@ -804,7 +861,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.FOXY: {
       const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)
-      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)
+      const freezingGrenadeDuration = getControlValue(toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION))
       return {
         tier1_left: {
           title: {
@@ -953,7 +1010,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Proteksi Bola Ditingkatkan',
           },
           description: {
-            en: `Enhanced Ball protection provide additional ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} movement speed and ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} armor, when the ball is attached to a hero.`,
+            en: `Enhanced Ball protection provides additional ${getControlValue(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED
+            )} ${getBonusKeyword('Bonus Movement Speed')} and ${getControlValue(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
+            )} ${getBonusKeyword('Bonus Armor')} while the Ball is attached to a hero.`,
             ru: `Улучшенная защита мяча предоставляет дополнительную скорость передвижения ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} и броню ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, когда мяч прикреплен к герою.`,
             cz: `Vylepšená ochrana míče poskytuje dodatečnou rychlost pohybu ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} a brnění ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, když je míč připojen k hrdinovi.`,
             zh: `當球附著在英雄身上時，強化球的守護提供英雄 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} 額外移動速度和 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}裝甲值。`,
@@ -987,7 +1048,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Tarik Gravitasi Ditingkatkan',
           },
           description: {
-            en: `Increase Gravitational Pull damage and stun duration by ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            en: `Increase Gravitational Pull damage and ${getStunKeyword('Stun Duration')} by ${fixed(
+              PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
+              1
+            )}%`,
             ru: `Увеличивает урон и длительность оглушения Гравитационного притяжения на ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             cz: `Zvyšuje poškození a dobu omráčení Gravitačního tahání o ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             zh: `增加重力牽引的傷害和暈眩持續時間 ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
@@ -1072,6 +1136,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
       const wrathOfTheGroveStacks = KarickAbilityData.TALENT_T1_RIGHT_WRATH_OF_THE_GROVE_VERDANT_MARK_STACKS
       const verdantMarkRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_VERDANT_MARK_ROOT_DURATION_PER_STACK)
+
       const additionalWrathDelay = toSecRaw(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
       const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
 
@@ -1147,7 +1212,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Rimba Kedua',
           },
           description: {
-            en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}s. The second eruption deals ${additionalWrathMod}% damage and stun effect.`,
+            en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}s. The second eruption deals ${additionalWrathMod}% damage and applies the same ${getStunKeyword(
+              'Stun'
+            )}.`,
             ru: `Wrath of the Grove призывает второе семя через ${additionalWrathDelay}с. Второй взрыв наносит ${additionalWrathMod}% урона и оглушения.`,
             cz: `Wrath of the Grove vyvolá druhé semeno po ${additionalWrathDelay}s. Druhá exploze způsobí ${additionalWrathMod}% poškození a omráčení.`,
             br: `Wrath of the Grove conjura uma segunda semente após ${additionalWrathDelay}s. A segunda explosão causa ${additionalWrathMod}% de dano e atordoamento.`,
@@ -1189,15 +1256,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 export const getDamage = (
   damage: number,
   type: Shared.DamageTypes = Shared.DamageTypes.NORMAL,
-  baseDamage = 0
+  baseDamage = 0,
+  isPercentage = false
 ): string => {
   damage = Math.floor(damage)
   baseDamage = fixed(baseDamage, 1)
+  const valueSuffix = isPercentage ? '%' : ''
 
-  /** dont show % in game */
   return `<span class=${
     type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'
-  }>${baseDamage > 0 ? baseDamage + (damage > 0 ? '(+' + damage + ')' : '') : damage > 0 ? damage : ''}</span>`
+  }>${baseDamage > 0 ? baseDamage + (damage > 0 ? '(+' + damage + valueSuffix + ')' : '') : damage > 0 ? damage + valueSuffix : ''}</span>`
 }
 
-export default getHeroTalents
+const getColorizedHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent =>
+  colorizeTalentKeywordsDeep(getHeroTalents(hero))
+
+export default getColorizedHeroTalents
