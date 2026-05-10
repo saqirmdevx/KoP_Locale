@@ -9,5 +9,5 @@ export const fixed = (num: number, count = 2): number => {
   return Math.round(num * multiplier) / multiplier
 }
 
-export const toSec = (timeInMs: number): string => fixed(timeInMs / 1000, 1) + ' ' + getLocale(LOCALE.SECOND)
+export const toSec = (timeInMs: number): string => fixed(timeInMs / 1000, 2) + ' ' + getLocale(LOCALE.SECOND)
 export const toSecRaw = (timeInMs: number): string => String(fixed(timeInMs / 1000, 2))

@@ -811,14 +811,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Rain of Spark ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s slow`,
-            ru: `Дождь искр замедляет на ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)} сек.`,
-            cz: `Déšť jisker zpomaluje o ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
-            zh: `電光雷雨減速 ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}秒`,
-            fr: `Pluie d'étincelles ralentit de ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
-            br: `Relâmpago do Abismo reduz em ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
-            vi: `Điện Hỏa Vũ gây chậm ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s`,
-            id: `Hujan Spark ${toSecRaw(KiraAbilityData.TALENT_T1_RIGHT_RAIN_OF_SPARKS_SLOW_PER_STACK)}s lambat`,
+            en: `Rain of Spark applies slow`,
+            ru: `Дождь искр замедляет`,
+            cz: `Déšť jisker zpomaluje`,
+            zh: `電光雷雨減速`,
+            fr: `Pluie d'étincelles ralentit`,
+            br: `Relâmpago do Abismo reduz`,
+            vi: `Điện Hỏa Vũ gây chậm`,
+            id: `Hujan Spark lambat`,
           },
         },
         tier2_left: {
