@@ -1044,6 +1044,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Kerusakan Pahlawan',
     vi: 'Sát thương lên tướng địch',
   },
+  [LOCALE.POST_DAMAGE_TAKEN]: {
+    en: 'Damage Taken',
+    ru: 'Полученный урон',
+    br: 'Dano Recebido',
+    cz: 'Utržené poškození',
+    zh: '承受傷害',
+    fr: 'Dégâts subis',
+    id: 'Damage Diterima',
+    vi: 'Sát thương nhận vào',
+  },
   [LOCALE.POST_TOWER_DAMAGE]: {
     en: 'Tower Damage',
     ru: 'Урон по башне',
@@ -1499,6 +1509,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Déplacez-vous en lieu sûr, puis appuyez sur {} pour vous rappeler. Le rappel vous téléporte à la base.',
     id: 'Bergerak ke tempat aman, lalu tekan {} untuk recall. Recall akan memindahkanmu kembali ke markas.',
     vi: 'Di chuyển đến nơi an toàn, rồi nhấn {} để biến về. Biến về sẽ đưa bạn trở lại căn cứ.',
+  },
+
+  [LOCALE.TUTORIAL_HINT_LEARN_TALENT]: {
+    en: 'Spend your new talent point in the hero panel to continue.',
+    ru: 'Потратьте новое очко таланта на панели героя, чтобы продолжить.',
+    br: 'Gaste seu novo ponto de talento no painel do herói para continuar.',
+    cz: 'Pokračuj utracením nového bodu talentu na panelu hrdiny.',
+    zh: '在英雄面板中花费你的新天赋点以继续。',
+    fr: 'Dépensez votre nouveau point de talent dans le panneau du héros pour continuer.',
+    id: 'Habiskan poin talent baru di panel hero untuk melanjutkan.',
+    vi: 'Hãy dùng điểm tài năng mới trong bảng tướng để tiếp tục.',
   },
 
   [LOCALE.TUTORIAL_HINT_FINISH_GAME]: {
