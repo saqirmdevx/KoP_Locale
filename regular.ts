@@ -5031,14 +5031,14 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Trạng thái',
   },
   [LOCALE.PARTY_GROUP_REWARD_NOTE]: {
-    en: 'Match rewards in party are reduced by 15%, including MMR gains.',
-    ru: 'Награды в группе снижены на 15%, включая прирост MMR.',
-    cz: 'Odměny v partě jsou sníženy o 15 %, včetně zisku MMR.',
-    zh: '组队时奖励减少15%，包括MMR获取。',
-    fr: 'Les récompenses en groupe sont réduites de 15 %, y compris les gains de MMR.',
-    br: 'As recompensas em grupo são reduzidas em 15%, incluindo ganhos de MMR.',
-    id: 'Hadiah dalam party berkurang 15%, termasuk perolehan MMR.',
-    vi: 'Phần thưởng khi chơi tổ đội giảm 15%, bao gồm cả MMR nhận được.',
+    en: 'Party ranked queues can match only against other parties.',
+    ru: 'Рейтинговая очередь для группы может попасть только против другой группы.',
+    cz: 'Ranked fronta pro partu může narazit pouze na jinou partu.',
+    zh: '组队排位只会匹配其他组队玩家。',
+    fr: "La file classée en groupe n'affronte que d'autres groupes.",
+    br: 'A fila ranqueada em grupo enfrenta apenas outros grupos.',
+    id: 'Queue ranked party hanya akan bertemu party lain.',
+    vi: 'Xếp hạng tổ đội chỉ ghép với các tổ đội khác.',
   },
 
   [LOCALE.PARTY_ONLY_LEADER_QUEUE_NOTE]: {
