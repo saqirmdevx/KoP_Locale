@@ -1918,7 +1918,8 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Kirins_Shield: {
-      const healthThreshold = fixed(ItemAbilityData.KIRINS_SHIELD_DAMAGE_TREHSHOLD * 100, 2)
+      const healthThreshold = fixed(ItemAbilityData.KIRINS_SHIELD_HEALTH_THRESHOLD * 100, 0)
+      const duration = toSecRaw(ItemAbilityData.KIRINS_SHIELD_DURATION)
 
       return {
         name: {
@@ -1932,14 +1933,14 @@ const _getLocaleItemDescription = (
           id: 'Perisai Kirin',
         },
         desc: {
-          en: `Damage from an enemy hero that exceeds ${healthThreshold}% of your current Health is negated.`,
-          ru: `Урон от вражеского героя, превышающий ${healthThreshold}% от текущего здоровья, полностью блокируется.`,
-          br: `Dano de um herói inimigo que excede ${healthThreshold}% da sua Vida atual é totalmente negado.`,
-          fr: `Les dégâts d’un héros ennemi dépassant ${healthThreshold}% de votre santé actuelle sont entièrement annulés.`,
-          zh: `來自敵方英雄且超過當前生命值 ${healthThreshold}% 的傷害會被完全抵消。`,
-          cz: `Poškození od nepřátelského hrdiny, které přesáhne ${healthThreshold}% tvého aktuálního zdraví, je zcela zrušeno.`,
-          vi: `Sát thương từ tướng địch vượt quá ${healthThreshold}% Máu hiện tại sẽ bị chặn hoàn toàn.`,
-          id: `Kerusakan dari hero musuh yang melebihi ${healthThreshold}% dari Health saat ini akan sepenuhnya dinegasikan.`,
+          en: `Damage from an enemy hero that would reduce your Health below ${healthThreshold}% is negated. You become immune to all damage for ${duration} seconds, but are unable to attack or cast abilities during the immunity.`,
+          ru: `Урон от вражеского героя, который опустил бы ваше здоровье ниже ${healthThreshold}%, блокируется. Вы получаете иммунитет ко всему урону на ${duration} сек., но на время иммунитета не можете атаковать и применять способности.`,
+          br: `Dano de um herói inimigo que reduziria sua Vida abaixo de ${healthThreshold}% é negado. Você fica imune a todo dano por ${duration}s, mas não pode atacar nem conjurar habilidades durante a imunidade.`,
+          fr: `Les dégâts d’un héros ennemi qui feraient passer votre santé sous ${healthThreshold}% sont annulés. Vous devenez immunisé contre tous les dégâts pendant ${duration} s, mais ne pouvez ni attaquer ni lancer de compétences pendant l’immunité.`,
+          zh: `敵方英雄造成、會使你的生命值降至 ${healthThreshold}% 以下的傷害會被抵消。你獲得 ${duration} 秒全傷害免疫，但免疫期間無法攻擊或施放技能。`,
+          cz: `Poškození od nepřátelského hrdiny, které by snížilo tvé zdraví pod ${healthThreshold}%, je zrušeno. Na ${duration} s získáš imunitu vůči veškerému poškození, ale během ní nemůžeš útočit ani používat schopnosti.`,
+          vi: `Sát thương từ tướng địch khiến Máu của bạn giảm xuống dưới ${healthThreshold}% sẽ bị chặn. Bạn miễn nhiễm toàn bộ sát thương trong ${duration} giây, nhưng không thể tấn công hoặc dùng kỹ năng trong thời gian này.`,
+          id: `Damage dari hero musuh yang akan menurunkan Health kamu di bawah ${healthThreshold}% akan dinegasikan. Kamu menjadi kebal terhadap semua damage selama ${duration} detik, tetapi tidak dapat menyerang atau menggunakan ability selama kebal.`,
         },
       }
     }
