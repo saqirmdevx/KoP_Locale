@@ -4288,6 +4288,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Saya memiliki {gold} emas.',
     vi: 'Tôi có {gold} vàng.',
   },
+  [LOCALE.QUICKCHAT_NICE]: {
+    en: 'Nice!',
+    ru: 'Nice!',
+    cz: 'Nice!',
+    zh: 'Nice!',
+    fr: 'Nice!',
+    br: 'Nice!',
+    id: 'Nice!',
+    vi: 'Nice!',
+  },
   [LOCALE.QUICKCHAT_SPELL_K_CD]: {
     en: 'My K has {SPELL_K_CD} seconds left on cooldown.',
     ru: 'У меня {SPELL_K_CD} секунд осталось до перезарядки К.',
