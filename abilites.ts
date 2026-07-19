@@ -1218,14 +1218,14 @@ const _getSpellDescriptionLang = (
       const silenceDuration = getControlDuration(SeerAbilityData.MALEVOLENT_SHIFT_SILENCE_DURATION)
 
       return {
-        en: `Seer instantly shifts ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} distance in his facing direction (stopping short of any wall), then unleashes a nova around himself, silencing and dealing ${shiftDamage} to all units within ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} radius for ${silenceDuration}. No cast or animation time.`,
-        ru: `Провидец мгновенно смещается на ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} в направлении взгляда (останавливаясь перед стеной), затем создает вспышку вокруг себя, накладывая молчание и нанося ${shiftDamage} всем юнитам в радиусе ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} на ${silenceDuration}. Без времени применения или анимации.`,
-        cz: `Prorok se okamžitě přesune o ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} ve směru pohledu (zastaví se před zdí), poté kolem sebe vypustí explozi, umlčí a způsobí ${shiftDamage} poškození všem jednotkám v okruhu ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} na ${silenceDuration}. Bez doby seslání či animace.`,
-        br: `Seer se desloca instantaneamente ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} de distância em sua direção (parando antes de qualquer parede), depois libera uma explosão ao seu redor, silenciando e causando ${shiftDamage} a todas as unidades em um raio de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} por ${silenceDuration}. Sem tempo de conjuração ou animação.`,
-        zh: `先知瞬间朝面向方向偏移 ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} 距离（遇墙提前停下），然后在自身周围释放冲击波，使 ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} 半径内的所有单位沉默并造成 ${shiftDamage} 伤害，持续 ${silenceDuration}。无施法或动画时间。`,
-        fr: `Le Voyant se déplace instantanément de ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} dans sa direction (s'arrêtant avant un mur), puis déclenche une onde autour de lui, réduisant au silence et infligeant ${shiftDamage} à toutes les unités dans un rayon de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} pendant ${silenceDuration}. Aucun temps d'incantation ni d'animation.`,
-        vi: `Seer ngay lập tức dịch chuyển ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} theo hướng nhìn (dừng lại trước tường), sau đó tạo một luồng năng lượng quanh mình, gây câm lặng và ${shiftDamage} cho mọi đơn vị trong bán kính ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} trong ${silenceDuration}. Không có thời gian tung chiêu hay hoạt ảnh.`,
-        id: `Seer langsung berpindah sejauh ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} ke arah hadapnya (berhenti sebelum menembus dinding), lalu melepaskan ledakan di sekelilingnya, membungkam dan memberikan ${shiftDamage} kepada semua unit dalam radius ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} selama ${silenceDuration}. Tanpa waktu cast atau animasi.`,
+        en: `Seer instantly teleports in his facing direction, then unleashes a nova around himself, silencing and dealing ${shiftDamage} to all units within ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} radius for ${silenceDuration}.`,
+        ru: `Провидец мгновенно телепортируется в направлении взгляда, затем выпускает вокруг себя вспышку, накладывая молчание и нанося ${shiftDamage} всем юнитам в радиусе ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} на ${silenceDuration}.`,
+        cz: `Prorok se okamžitě teleportuje ve směru pohledu, poté kolem sebe vypustí novu, umlčí a způsobí ${shiftDamage} všem jednotkám v okruhu ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} na ${silenceDuration}.`,
+        br: `Seer se teleporta instantaneamente na direção em que está olhando, depois libera uma nova ao redor de si, silenciando e causando ${shiftDamage} a todos os units em um raio de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} por ${silenceDuration}.`,
+        zh: `先知立即朝面向方向传送，随后在自身周围释放新星，使 ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} 半径内的所有单位沉默并造成 ${shiftDamage}，持续 ${silenceDuration}。`,
+        fr: `Le Voyant se téléporte instantanément dans la direction vers laquelle il fait face, puis déclenche une nova autour de lui, réduisant au silence et infligeant ${shiftDamage} à toutes les unités dans un rayon de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} pendant ${silenceDuration}.`,
+        vi: `Seer dịch chuyển tức thì theo hướng đang nhìn, sau đó phóng ra một vụ nổ quanh bản thân, gây câm lặng và ${shiftDamage} cho mọi đơn vị trong bán kính ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} trong ${silenceDuration}.`,
+        id: `Seer langsung teleport ke arah hadapnya, lalu melepaskan ledakan nova di sekelilingnya, membungkam dan memberikan ${shiftDamage} kepada semua unit dalam radius ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} selama ${silenceDuration}.`,
       }
     }
 
@@ -1348,8 +1348,12 @@ const _getSpellDescriptionLang = (
       }
     }
 
-    case SpellList.PUPPETEER_MARIONETTES_BIND: {
-      const initialDamage = getDamage(PuppeteerAbilityData.BINDING_THREAD_INITIAL_DAMAGE_MOD * damage)
+    case SpellList.PUPPETEER_BINDING_THREAD: {
+      const initialDamage = getDamage(
+        PuppeteerAbilityData.BINDING_THREAD_INITIAL_DAMAGE_MOD * damage,
+        Shared.DamageTypes.NORMAL,
+        PuppeteerAbilityData.BINDING_THREAD_INITIAL_BASE_DAMAGE
+      )
       const triggerDamage = getDamage(PuppeteerAbilityData.BINDING_THREAD_TRIGGER_DAMAGE_MOD * damage)
       const staticDuration = getDuration(PuppeteerAbilityData.BINDING_THREAD_STATIC_DURATION)
       const triggerStun = getStunDuration(PuppeteerAbilityData.BINDING_THREAD_STUN_DURATION)
@@ -1825,7 +1829,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Terjang Boneka',
       }
 
-    case SpellList.PUPPETEER_MARIONETTES_BIND:
+    case SpellList.PUPPETEER_BINDING_THREAD:
       return {
         en: 'Binding Thread',
         ru: 'Связующая нить',
