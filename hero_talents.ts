@@ -18,6 +18,7 @@ import {
   PrimAbilityData,
   SeerAbilityData,
   KarickAbilityData,
+  PuppeteerAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
@@ -1075,54 +1076,90 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
       }
     case Shared.HEROES.SEER: {
+      const curseDelay = toSecRaw(SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY)
+      const curseDamage = SeerAbilityData.MALEVOLENT_CURSE_BASE_DAMAGE
+      const curseApPercent = fixed(SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_MODIFIER * 100, 0)
+      const shiftCdReduction = toSecRaw(-SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_SHIFT_COOLDOWN_REDUCTION)
+      const recastDelay = toSecRaw(SeerAbilityData.DARK_CLONE_RECAST_EXPLODE_DELAY)
+      const clawsRoot = toSecRaw(SeerAbilityData.TALENT_T2_RIGHT_MALEVOLENT_CLAWS_ROOT_DURATION)
+
       return {
         tier1_left: {
           title: {
-            // Name for a debuff that destroy armor
-            en: `Activating Form fears nearby players`,
-            ru: `Активация формы пугает врагов поблизости`,
-            cz: `Aktivace formy obává hráče poblíž`,
-            zh: `激活形态惊吓附近的玩家`,
-            fr: `L'activation de la forme effraie les joueurs proches`,
-            br: `A ativação da forma assusta os jogadores próximos`,
-            vi: `Chuyển sang Trạng Thái Ác Độc làm sợ kẻ địch ở gần`,
-            id: `Aktivasi Form menakutkan pemain di sekitar`,
+            en: 'Malevolent Curse',
+            ru: 'Злобное проклятье',
+            cz: 'Zlomyslné prokletí',
+            zh: '邪恶诅咒',
+            fr: 'Malédiction maléfique',
+            br: 'Maldição Malévola',
+            vi: 'Lời Nguyền Ác Độc',
+            id: 'Kutukan Jahat',
+          },
+          description: {
+            en: `Attack applies a curse that explodes after ${curseDelay}s, dealing ${curseDamage} + ${curseApPercent}% Ability Power damage. Attacking a cursed target again does not reapply or trigger it early.`,
+            ru: `Атака накладывает проклятье, которое взрывается через ${curseDelay} сек., нанося ${curseDamage} + ${curseApPercent}% силы способностей урона. Повторная атака по проклятой цели не обновляет и не ускоряет взрыв.`,
+            cz: `Útok aplikuje prokletí, které vybuchne po ${curseDelay}s a způsobí ${curseDamage} + ${curseApPercent}% síly schopností poškození. Opětovný útok na prokletý cíl jej neobnoví ani nespustí dříve.`,
+            zh: `攻击施加一个诅咒，在 ${curseDelay} 秒后爆炸，造成 ${curseDamage} + ${curseApPercent}% 法术强度伤害。再次攻击被诅咒的目标不会重新施加或提前触发。`,
+            fr: `L'attaque applique une malédiction qui explose après ${curseDelay}s, infligeant ${curseDamage} + ${curseApPercent}% de la puissance des sorts en dégâts. Attaquer à nouveau une cible maudite ne la réapplique pas et ne la déclenche pas plus tôt.`,
+            br: `O Ataque aplica uma maldição que explode após ${curseDelay}s, causando ${curseDamage} + ${curseApPercent}% de Poder de Habilidade em dano. Atacar novamente um alvo amaldiçoado não reaplica nem antecipa a explosão.`,
+            vi: `Đòn đánh áp dụng lời nguyền, phát nổ sau ${curseDelay}s, gây ${curseDamage} + ${curseApPercent}% Sức mạnh Phép thuật. Đánh lại mục tiêu đã bị nguyền không làm mới hay kích hoạt sớm hơn.`,
+            id: `Serangan menerapkan kutukan yang meledak setelah ${curseDelay}s, memberikan ${curseDamage} + ${curseApPercent}% Ability Power kerusakan. Menyerang lagi target yang terkutuk tidak akan menerapkan ulang atau memicunya lebih awal.`,
           },
         },
         tier1_right: {
           title: {
-            en: `Benevolent Flare +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% movement speed`,
-            ru: `Благосклонность +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% к скорости передвижения`,
-            cz: `Dobro +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% rychlost pohybu`,
-            zh: `善意耀斑 +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% 移动速度`,
-            fr: `Lueur bienveillante +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% de vitesse de déplacement`,
-            br: `Chama Benevolente +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% de velocidade de movimento`,
-            vi: `Ánh Lửa Từ Bi +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% tốc độ di chuyển`,
-            id: `Sinar Kebaikan +${SeerAbilityData.TALENT_T1_RIGHT_BENEVOLENT_FLARE_MOVEMENT_SPEED}% kecepatan gerak`,
+            en: `Malevolent Shift Cooldown ${shiftCdReduction}s`,
+            ru: `${shiftCdReduction} сек. перезарядки Злобного сдвига`,
+            cz: `Malevolent Shift obnovení ${shiftCdReduction}s`,
+            zh: `邪恶偏移冷却 ${shiftCdReduction}秒`,
+            fr: `Malevolent Shift recharge ${shiftCdReduction}s`,
+            br: `Malevolent Shift recarga ${shiftCdReduction}s`,
+            vi: `Hồi chiêu Malevolent Shift ${shiftCdReduction}s`,
+            id: `Cooldown Malevolent Shift ${shiftCdReduction}s`,
           },
         },
         tier2_left: {
           title: {
-            en: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)} malevolent form duration`,
-            ru: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)} сек. длительности злобного форма`,
-            cz: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)}s doba trvání zlobivé formy`,
-            zh: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)} 秒的恶意形态持续时间`,
-            fr: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)}s de durée de la forme maléfique`,
-            br: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)}s de duração da forma malévola`,
-            vi: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)}s thời gian của Trạng Thái Ác Độc`,
-            id: `+${toSec(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_FORM_DURATION)}s durasi form malevolent`,
+            en: 'Malevolent Mirror',
+            ru: 'Злобное отражение',
+            cz: 'Zlomyslné zrcadlo',
+            zh: '邪恶之镜',
+            fr: 'Miroir maléfique',
+            br: 'Espelho Malévolo',
+            vi: 'Gương Ác Độc',
+            id: 'Cermin Jahat',
+          },
+          description: {
+            en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
+            ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay} сек.`,
+            cz: `Malevolent Shift zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Dark Clone). Opětovným sesláním Malevolent Shift si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
+            zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay} 秒后引爆它。`,
+            fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay}s plus tard.`,
+            br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
+            vi: `Malevolent Shift để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Dark Clone). Dùng lại Malevolent Shift để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
+            id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
           },
         },
         tier2_right: {
           title: {
-            en: `Malevolent/Benevolent Curse AOE +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            ru: `АOE злобного/доброго проклятия +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            cz: `AOE zlobivého/dobrého kletby +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            zh: `恶意/善意诅咒范围 +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            fr: `AOE maléfique/bienveillant +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            br: `AOE malévolo/benevolente +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            vi: `Sát Thương Vùng của Các Lời Nguyền +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
-            id: `AOE malevolent/benevolent curse +${SeerAbilityData.TALENT_T2_RIGHT_CURSE_BONUS_RADIUS}`,
+            en: 'Malevolent Claws',
+            ru: 'Злобные когти',
+            cz: 'Zlomyslné drápy',
+            zh: '邪恶之爪',
+            fr: 'Griffes maléfiques',
+            br: 'Garras Malévolas',
+            vi: 'Móng Vuốt Ác Độc',
+            id: 'Cakar Jahat',
+          },
+          description: {
+            en: `Malevolent Shift also roots all enemy heroes hit for ${clawsRoot}s.`,
+            ru: `Злобный сдвиг также обездвиживает всех задетых героев противника на ${clawsRoot} сек.`,
+            cz: `Malevolent Shift také zakoření všechny zasažené nepřátelské hrdiny na ${clawsRoot}s.`,
+            zh: `邪恶偏移还会将击中的所有敌方英雄禁锢 ${clawsRoot} 秒。`,
+            fr: `Malevolent Shift enracine aussi tous les héros ennemis touchés pendant ${clawsRoot}s.`,
+            br: `Malevolent Shift também enraíza todos os heróis inimigos atingidos por ${clawsRoot}s.`,
+            vi: `Malevolent Shift còn trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}s.`,
+            id: `Malevolent Shift juga me-root semua hero musuh yang terkena selama ${clawsRoot}s.`,
           },
         },
       }
@@ -1222,6 +1259,84 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Wrath of the Grove invoque une seconde graine après ${additionalWrathDelay}s. La seconde explosion inflige ${additionalWrathMod}% dégâts et étourdissement.`,
             vi: `Wrath of the Grove triệu hồi hạt giống thứ hai sau ${additionalWrathDelay}s. Lần bùng nổ thứ hai gây ${additionalWrathMod}% sát thương và hiệu ứng choáng.`,
             id: `Wrath of the Grove memanggil benih kedua setelah ${additionalWrathDelay}s. Ledakan kedua memberikan ${additionalWrathMod}% damage dan efek stun.`,
+          },
+        },
+      }
+    }
+
+    case Shared.HEROES.PUPPETEER: {
+      const dashSlowBonus = toSecRaw(PuppeteerAbilityData.TALENT_T1_LEFT_PUPPET_DASH_SLOW_DURATION)
+      const shredderArmor = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_ARMOR_REDUCTION
+      const shredderDuration = toSecRaw(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
+      const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_FIXATE_DURATION_BONUS)
+
+      return {
+        tier1_left: {
+          title: {
+            en: `Puppet Dash Slow +${dashSlowBonus}s`,
+            ru: `Рывок Куклы: замедление +${dashSlowBonus}с`,
+            cz: `Výpad Loutky: zpomalení +${dashSlowBonus}s`,
+            zh: `木偶衝刺 減速 +${dashSlowBonus}秒`,
+            fr: `Ruée de la Marionnette : ralentissement +${dashSlowBonus}s`,
+            br: `Investida da Marionete: lentidão +${dashSlowBonus}s`,
+            vi: `Con Rối Lao Tới: làm chậm +${dashSlowBonus}s`,
+            id: `Puppet Dash: perlambatan +${dashSlowBonus}s`,
+          },
+        },
+        tier1_right: {
+          title: {
+            en: 'Shredder',
+            ru: 'Разрушитель',
+            cz: 'Drtič',
+            zh: '碎甲者',
+            fr: 'Déchiqueteur',
+            br: 'Destruidor',
+            vi: 'Kẻ Hủy Giáp',
+            id: 'Perobek',
+          },
+          description: {
+            en: `Command Strike reduces the target's armor by ${shredderArmor} for ${shredderDuration}s (max 1 stack).`,
+            ru: `Командный удар снижает броню цели на ${shredderArmor} на ${shredderDuration} сек. (максимум 1 стак).`,
+            cz: `Command Strike sníží obranu cíle o ${shredderArmor} na ${shredderDuration}s (max. 1 stack).`,
+            zh: `指揮打擊使目標護甲降低 ${shredderArmor}，持續 ${shredderDuration}秒（最多疊加 1 層）。`,
+            fr: `Frappe de Commandement réduit l'armure de la cible de ${shredderArmor} pendant ${shredderDuration}s (1 charge max).`,
+            br: `Golpe de Comando reduz a armadura do alvo em ${shredderArmor} por ${shredderDuration}s (máx. 1 stack).`,
+            vi: `Command Strike giảm ${shredderArmor} giáp của mục tiêu trong ${shredderDuration}s (tối đa 1 lớp).`,
+            id: `Command Strike mengurangi armor target sebesar ${shredderArmor} selama ${shredderDuration}s (maks. 1 stack).`,
+          },
+        },
+        tier2_left: {
+          title: {
+            en: `Fixation Duration +${fixateBonus}s`,
+            ru: `Длительность фиксации +${fixateBonus}с`,
+            cz: `Délka fixace +${fixateBonus}s`,
+            zh: `固定持續時間 +${fixateBonus}秒`,
+            fr: `Durée de fixation +${fixateBonus}s`,
+            br: `Duração da Fixação +${fixateBonus}s`,
+            vi: `Thời gian Cố định +${fixateBonus}s`,
+            id: `Durasi Fiksasi +${fixateBonus}s`,
+          },
+        },
+        tier2_right: {
+          title: {
+            en: 'Piercing Thread',
+            ru: 'Пронзающая нить',
+            cz: 'Prořezávající vlákno',
+            zh: '穿刺絲線',
+            fr: 'Fil perforant',
+            br: 'Fio Perfurante',
+            vi: 'Sợi Chỉ Xuyên Thấu',
+            id: 'Benang Menembus',
+          },
+          description: {
+            en: 'Binding Thread no longer breaks on hitting a hero and can bind multiple targets.',
+            ru: 'Связующая нить больше не разрушается при попадании в героя и может связать несколько целей.',
+            cz: 'Binding Thread se již nezničí při zásahu hrdiny a může svázat více cílů.',
+            zh: '束縛絲線命中英雄時不再消失，可以束縛多個目標。',
+            fr: 'Le Fil Liant ne se brise plus en touchant un héros et peut lier plusieurs cibles.',
+            br: 'Fio Amarrador não se rompe mais ao atingir um herói e pode amarrar múltiplos alvos.',
+            vi: 'Binding Thread không còn vỡ khi trúng tướng và có thể trói nhiều mục tiêu.',
+            id: 'Binding Thread tidak lagi hancur saat mengenai hero dan dapat mengikat banyak target.',
           },
         },
       }

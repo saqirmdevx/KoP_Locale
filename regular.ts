@@ -295,6 +295,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Magdalene pernah menjadi pendeta terhormat di alam terlupakan, menjaga keseimbangan antara hidup dan mati. Ia membimbing jiwa dengan belas kasih dan kebijaksanaan. Ketika pasukan pertapa menyerbu tanahnya dan memperbudak jiwa orang mati, Magdalene melakukan ritual terlarang, menyatukan dirinya dengan sabit gelap kuno. Ia menjadi Penuai Jiwa, kuat tetapi selamanya diubah oleh korupsi.',
     vi: 'Magdalene từng là một nữ tu sĩ được tôn kính ở một vương quốc bị lãng quên, tận tụy giữ cân bằng giữa sự sống và cái chết. Cô dẫn dắt linh hồn bằng lòng trắc ẩn và trí tuệ. Khi các ẩn sĩ xâm lược quê hương và nô dịch linh hồn người chết, Magdalene thực hiện nghi lễ cấm, hòa bản thể với một lưỡi hái hắc ám cổ xưa. Cô trở thành Kẻ Gặt Linh Hồn, mạnh mẽ nhưng mãi mãi bị thay đổi.',
   },
+  [LOCALE.PUPPETEER_DESCRIPTION]: {
+    en: 'A wandering marionettist who never travels alone. Bound to the wooden puppet he carved and gave life to through a forbidden craft, the Puppeteer commands it from a distance, pulling on unseen threads to strike, drag, and bind his enemies. Some say the puppet has a will of its own now, straining against its master whenever no one is looking.',
+    ru: 'Странствующий кукловод, который никогда не путешествует один. Связанный с деревянной куклой, которую он вырезал и оживил запретным ремеслом, Кукловод управляет ею на расстоянии, дёргая за невидимые нити, чтобы бить, тащить и связывать врагов. Некоторые говорят, что у куклы теперь есть собственная воля, и она сопротивляется хозяину, когда никто не смотрит.',
+    cz: 'Potulný loutkář, který nikdy necestuje sám. Spojen s dřevěnou loutkou, kterou vyřezal a oživil zakázaným řemeslem, ovládá ji na dálku a tahá za neviditelné nitě, aby udeřil, táhl a svázal své nepřátele. Někteří říkají, že loutka má nyní vlastní vůli.',
+    zh: '一位從不獨自旅行的流浪操偶師。他與親手雕刻並以禁忌技藝賦予生命的木偶羈絆相連，從遠處操控著它，拉動看不見的絲線來打擊、拖拽並束縛敵人。有人說，這具木偶如今已有了自己的意志，總在無人注意時對抗著它的主人。',
+    fr: "Un marionnettiste errant qui ne voyage jamais seul. Lié à la marionnette de bois qu'il a sculptée et animée grâce à un art interdit, le Marionnettiste la commande à distance, tirant des fils invisibles pour frapper, traîner et entraver ses ennemis. Certains disent que la marionnette a désormais sa propre volonté.",
+    br: 'Um marionetista errante que nunca viaja sozinho. Ligado à marionete de madeira que esculpiu e deu vida através de um ofício proibido, o Marionetista a comanda à distância, puxando fios invisíveis para atacar, arrastar e prender seus inimigos. Alguns dizem que a marionete agora tem vontade própria.',
+    id: 'Seorang dalang pengembara yang tak pernah bepergian sendirian. Terikat pada boneka kayu yang ia ukir dan hidupkan lewat keahlian terlarang, Sang Dalang mengendalikannya dari kejauhan, menarik benang tak kasat mata untuk menyerang, menyeret, dan mengikat musuh-musuhnya.',
+    vi: 'Một người điều khiển rối lang thang không bao giờ đi một mình. Gắn liền với con rối gỗ mà anh đã khắc và thổi hồn bằng một thuật nghệ bị cấm, Bậc Thầy Rối điều khiển nó từ xa, kéo những sợi dây vô hình để tấn công, kéo lê và trói buộc kẻ thù.',
+  },
   [LOCALE.DAMAGE_TYPE_NORMAL]: {
     en: 'Normal',
     ru: 'Физический',

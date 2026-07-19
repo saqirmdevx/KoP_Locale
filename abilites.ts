@@ -21,6 +21,7 @@ import {
   PrimAbilityData,
   SeerAbilityData,
   KarickAbilityData,
+  PuppeteerAbilityData,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
@@ -1194,115 +1195,62 @@ const _getSpellDescriptionLang = (
 
     case SpellList.SEER_ATTACK: {
       const baseDamage = getDamage(SeerAbilityData.ATTACK_DAMAGE_MOD * damage)
-      const baseDamageBenevolent = getDamage(
-        SeerAbilityData.ATTACK_DAMAGE_MOD_BENEVOLENT_AP * abilityPower,
-        Shared.DamageTypes.MAGICAL,
-        0,
-        'AbilityPower'
-      )
-
-      const benevolentCurseHealing = getDamage(
-        SeerAbilityData.BENEVOLENT_CURSE_HEAL_MODIFIER * abilityPower,
-        Shared.DamageTypes.HEAL,
-        SeerAbilityData.BENEVOLENT_CURSE_BASE_HEAL + SeerAbilityData.BENEVOLENT_CURSE_HEAL_PER_LEVEL * (level - 1)
-      )
-
-      const malevolentCurseDamage = getDamage(
-        SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_MODIFIER * abilityPower,
-        Shared.DamageTypes.MAGICAL,
-        SeerAbilityData.MALEVOLENT_CURSE_BASE_DAMAGE + SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_PER_LEVEL * (level - 1),
-        'AbilityPower'
-      )
-
-      const curseDelay = getDuration(SeerAbilityData.CURSE_DELAY_AND_DURATION)
-      const healModifier = colorize(
-        `${fixed(SeerAbilityData.BENEVOLENT_FLARE_HEAL_MODIFIER * 100)}%`,
-        Shared.DamageTypes.BUFF
-      )
 
       return {
-        en: `[Benevolent Form]: Seer fires a bolt of benevolent energy that deals ${baseDamage} to enemies. On hit, it applies a Benevolent Curse.
-        \n\n[Malevolent Form]: Seer empowers the energy bolt with malevolent force, dealing an additional ${baseDamageBenevolent} magic damage. On hit, it also applies a Malevolent Curse.
-        \n\n[Benevolent Curse]: After ${curseDelay}, the curse expires, releasing a burst of benevolent energy. It heals nearby allies for ${benevolentCurseHealing} and applies Benevolent Flare, increasing all healing received by ${healModifier} for a short duration.
-        \n\n[Malevolent Curse]: After ${curseDelay}, the curse expires, releasing a burst of malevolent energy that deals ${malevolentCurseDamage} magic damage to nearby enemies.`,
-        ru: `[Благосклонная форма]: Провидец стреляет в противника лучом благосклонной энергии, наносящий ${baseDamage} урона. По попаданию, он накладывает Благосклонный проклятье.
-        \n\n[Зловещая форма]: Провидец усиливает луч злобной энергией, нанося дополнительные ${baseDamageBenevolent} урона. По попаданию, он также накладывает Злобное проклятье.
-        \n\n[Благосклонное проклятье]: Через ${curseDelay}, проклятье истекает, выпуская вспышку благосклонной энергии. Оно лечит близких союзников на ${benevolentCurseHealing} и применяет Благосклонный всплеск, увеличивающий все получаемое лечение на ${healModifier} на короткое время.
-        \n\n[Злобное проклятье]: Через ${curseDelay}, проклятье истекает, выпуская вспышку злобной энергии, наносящую ${baseDamageBenevolent} урона близким врагам.`,
-        cz: `[Přívětivá forma]: Prorok vystřelí v nepřítele světlem dobré energie, které způsobí ${baseDamage} poškození. Po zásahu se na nepřítele aplikuje dobré prokletí.
-        \n\n[Zlověstná forma]: Prorok zesílí světlo zlověstnou energií, které způsobí ${baseDamageBenevolent} poškození. Po zásahu se na nepřítele aplikuje zlověstné prokletí.
-        \n\n[Dobré prokletí]: Po ${curseDelay} se prokletí vyprázdní, vydává výbřez dobré energie. Léčí blízké spojence o ${benevolentCurseHealing} a aplikuje Dobré zesílení, které zvyšuje všechno získané léčení o ${healModifier} na krátkou dobu.
-        \n\n[Zlověstné prokletí]: Po ${curseDelay} se prokletí vyprázdní, vydává výbřez zlověstné energie, který způsobí ${baseDamageBenevolent} poškození blízkým nepřátelům.`,
-        br: `[Forma Benevolente]: Seer lança um raio de energia benevolente que causa ${baseDamage} aos inimigos. Ao acertar, aplica um Curse Benevolente.
-        \n\n[Forma Malevolente]: Seer enriquece o raio com energia malévola, causando ${baseDamageBenevolent} adicional. Ao acertar, também aplica um Curse Malevolente.
-        \n\n[Curse Benevolente]: Após ${curseDelay}, o curse expira, lançando uma explosão de energia benevolente. Ele cura aliados próximos em ${benevolentCurseHealing} e aplica Benevolent Flare, aumentando todo o cuidado recebido em ${healModifier} por um curto período.
-        \n\n[Curse Malevolente]: Após ${curseDelay}, o curse expira, lançando uma explosão de energia malévola, causando ${baseDamageBenevolent} aos inimigos próximos.`,
-        zh: `[仁慈形态]: 先知发射一道仁慈能量射线，对敌人造成 ${baseDamage} 伤害。命中时，施加仁慈诅咒。
-        \n\n[邪恶形态]: 先知增强能量射线，造成额外 ${baseDamageBenevolent} 魔法伤害。命中时，也施加邪恶诅咒。
-        \n\n[仁慈诅咒]: 诅咒在 ${curseDelay} 后消失，释放一道仁慈能量爆发，治疗附近的盟友 ${benevolentCurseHealing} 并应用仁慈爆发，增加所有接收到的治疗 ${healModifier} 的持续时间。
-        \n\n[邪恶诅咒]: 诅咒在 ${curseDelay} 后消失，释放一道邪恶能量爆发，对附近的敌人造成 ${baseDamageBenevolent} 魔法伤害。`,
-        fr: `[Forme Bienveillante]: Le Voyant tire un rayon d'énergie bienveillante qui inflige ${baseDamage} aux ennemis. Au coup, il applique un maléfice bienveillant.
-        \n\n[Forme Malveillante]: Le Voyant renforce le rayon avec une énergie maléfique, infligeant ${baseDamageBenevolent} supplémentaires. Au coup, il applique également un maléfice maléfique.
-        \n\n[Maléfice Bienveillant]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie bienveillante. Il soigne les alliés proches de ${benevolentCurseHealing} et applique Benevolent Flare, augmentant tout soin reçu par ${healModifier} pour une courte durée.
-        \n\n[Maléfice Maléfique]: Après ${curseDelay}, le maléfice expire, libérant une explosion d'énergie maléfique qui inflige ${baseDamageBenevolent} aux ennemis proches.`,
-        vi: `[Trạng thái Từ Bi]: Seer bắn một tia năng lượng từ bi gây ${baseDamage} cho kẻ địch. Khi trúng, nó áp dụng một lời nguyền từ bi.
-        \n\n[Trạng thái Ác Độc]: Seer thức tỉnh tia năng lượng với sức mạnh ác độc, gây thêm ${baseDamageBenevolent}. Khi trúng, nó cũng áp dụng Lời Nguyền Ác Độc.
-        \n\n[Lời nguyền Từ Bi]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một luồng năng lượng từ bi. Nó hồi máu cho đồng minh gần bên nó ${benevolentCurseHealing} và áp dụng Ánh Lửa Từ Bi, tăng toàn bộ hồi máu nhận được bởi ${healModifier} trong một thời gian ngắn.
-        \n\n[Lời nguyền Ác Độc]: Sau ${curseDelay}, lời nguyền hết hạn, phát ra một luồng năng lượng Ác Độc gây ${baseDamageBenevolent} cho kẻ địch gần bên nó.`,
-        id: `[Benevolent Form]: Seer membuat kilatan energi yang baik yang memberikan ${baseDamage} kerusakan kepada musuh. Saat menembak, ia menerapkan kutukan baik.
-        \n\n[Malevolent Form]: Seer memperkuat kilatan energi dengan kekuatan jahat, memberikan ${baseDamageBenevolent} kerusakan magis tambahan. Saat menembak, ia juga menerapkan kutukan jahat.
-        \n\n[Kutukan Baik]: Setelah ${curseDelay}, kutukan habis, melepaskan kilatan energi yang baik. Ia menyembuhkan sekutu di sekitarnya sebesar ${benevolentCurseHealing} dan menerapkan Benevolent Flare, meningkatkan semua perawatan yang diterima oleh ${healModifier} untuk jangka waktu singkat.
-        \n\n[Kutukan Jahat]: Setelah ${curseDelay}, kutukan habis, melepaskan kilatan energi jahat yang memberikan ${baseDamageBenevolent} kerusakan magis kepada musuh di sekitarnya.`,
+        en: `Seer fires a bolt of energy that deals ${baseDamage} to the first enemy hit.`,
+        ru: `Провидец выпускает сгусток энергии, наносящий ${baseDamage} урона первому попавшему врагу.`,
+        cz: `Prorok vystřelí energetický výboj, který způsobí ${baseDamage} poškození prvnímu zasaženému nepříteli.`,
+        br: `Seer dispara um raio de energia que causa ${baseDamage} ao primeiro inimigo atingido.`,
+        zh: `先知发射一道能量射线，对第一个被击中的敌人造成 ${baseDamage} 伤害。`,
+        fr: `Le Voyant tire un rayon d'énergie qui inflige ${baseDamage} au premier ennemi touché.`,
+        vi: `Seer bắn một tia năng lượng gây ${baseDamage} cho kẻ địch đầu tiên bị trúng.`,
+        id: `Seer menembakkan kilatan energi yang memberikan ${baseDamage} kepada musuh pertama yang terkena.`,
       }
     }
 
-    case SpellList.SEER_BENEVOLENT_EXPLOSION: {
-      const healing = getDamage(
-        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_MODIFIER * abilityPower,
-        Shared.DamageTypes.HEAL,
-        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE +
-          SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_PER_LEVEL * (level - 1)
-      )
-
-      const damage = getDamage(
-        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_MODIFIER * abilityPower,
+    case SpellList.SEER_MALEVOLENT_SHIFT: {
+      const shiftDamage = getDamage(
+        SeerAbilityData.MALEVOLENT_SHIFT_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE +
-          SeerAbilityData.BENEVOLENT_EXPLOSION_DAMAGE_PER_LEVEL * (level - 1)
+        SeerAbilityData.MALEVOLENT_SHIFT_BASE_DAMAGE + SeerAbilityData.MALEVOLENT_SHIFT_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const fearDuration = getControlDuration(SeerAbilityData.MALEVOLENT_EXPLOSION_FEAR_DURATION)
+      const silenceDuration = getControlDuration(SeerAbilityData.MALEVOLENT_SHIFT_SILENCE_DURATION)
 
       return {
-        en: `Seer creates sequential explosions in his facing direction. Each explosion releases a burst of energy, healing nearby allied units for ${healing} and damaging enemy units for ${damage}. Affected allies gain Benevolent Flare, while affected enemies are afflicted with Benevolent Curse.
-        \n\n[Malevolent Form]: Each explosion also applies Fear to enemies for ${fearDuration} and applies Malevolent Curse.`,
-        ru: `Провидец создает последовательные взрывы в своем направлении. Каждый взрыв выпускает вспышку энергии, лечащие близких союзников на ${healing} и наносящие урон врагам на ${damage}. Пострадавшие союзники получают Благосклонный всплеск, а пострадавшие враги получают Благосклонное проклятье.
-        \n\n[Зловещая форма]: Каждый взрыв также применяет Страх к врагам на ${fearDuration} и применяет Злобное проклятье.`,
-        cz: `Prorok vytváří sekvenciální exploze ve svém směru. Každá exploze vydává výbřez energie, léčící blízké spojence o ${healing} a poškozující nepřátele o ${damage}. Společníci, kterým je vlivná, získají Benevolent Flare, zatímco nepřátelé, kterým je vlivná, jsou postiženi Benevolent Curse.
-        \n\n[Zlověstná forma]: Každá exploze také aplikuje Strach na nepřátele na ${fearDuration} a aplikuje Malevolent Curse.`,
-        br: `Seer cria explosões sequenciais em sua direção. Cada explosão libera uma explosão de energia, curando aliados próximos em ${healing} e causando ${damage} aos inimigos. Aliados afetados ganham Benevolent Flare, enquanto inimigos afetados são afetados por Benevolent Curse.
-        \n\n[Forma Malevolente]: Cada explosão também aplica Medo aos inimigos por ${fearDuration} e aplica Malevolent Curse.`,
-        zh: `先知在他的面前创造了一系列爆炸。每个爆炸释放出一股能量，治疗附近的盟友 ${healing} 并造成 ${damage} 伤害。受影响的盟友获得仁慈爆发，而受影响的敌人同时受到仁慈诅咒。
-        \n\n[邪恶形态]: 每个爆炸也会对敌人施加恐惧 ${fearDuration} 并施加邪恶诅咒。`,
-        fr: `Le Voyant crée des explosions successives dans sa direction. Chaque explosion libère une explosion d'énergie, soignant les alliés proches de ${healing} et infligeant ${damage} aux ennemis. Les alliés affectés gagnent Benevolent Flare, tandis que les ennemis affectés sont affectés par Benevolent Curse.
-        \n\n[Forme Malveillante]: Chaque explosion applique également Peur aux ennemis pour ${fearDuration} et applique Malevolent Curse.`,
-        vi: `Seer tạo ra các luồng năng lượng liên tiếp theo hướng của mình. Mỗi vụ nổ giải phóng luồng năng lượng, hồi máu cho đồng minh ở gần ${healing} và gây ${damage} cho kẻ địch. Đồng minh được nhận Ánh Lửa Từ Bi, trong khi kẻ địch bị ảnh hưởng bởi Lời nguyền Ác Độc.
-        \n\n[Trạng thái Ác Độc]: Mỗi luồng năng lượng cũng làm sợ kẻ địch trong ${fearDuration} và bị ảnh hưởng bởi Lời nguyền Ác Độc.`,
-        id: `Seer menciptakan ledakan berurutan di arahannya. Setiap ledakan melepaskan sebuah ledakan energi, menyembuhkan sekutu di sekitarnya sebesar ${healing} dan menimbulkan ${damage} kerusakan pada musuh. Sekutu yang terkena akan mendapatkan Benevolent Flare, sementara musuh yang terkena akan mendapatkan Benevolent Curse.
-        \n\n[Form Malevolent]: Setiap ledakan juga menerapkan Ketakutan pada musuh dalam ${fearDuration} dan menerapkan Malevolent Curse.`,
+        en: `Seer instantly shifts ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} distance in his facing direction (stopping short of any wall), then unleashes a nova around himself, silencing and dealing ${shiftDamage} to all units within ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} radius for ${silenceDuration}. No cast or animation time.`,
+        ru: `Провидец мгновенно смещается на ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} в направлении взгляда (останавливаясь перед стеной), затем создает вспышку вокруг себя, накладывая молчание и нанося ${shiftDamage} всем юнитам в радиусе ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} на ${silenceDuration}. Без времени применения или анимации.`,
+        cz: `Prorok se okamžitě přesune o ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} ve směru pohledu (zastaví se před zdí), poté kolem sebe vypustí explozi, umlčí a způsobí ${shiftDamage} poškození všem jednotkám v okruhu ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} na ${silenceDuration}. Bez doby seslání či animace.`,
+        br: `Seer se desloca instantaneamente ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} de distância em sua direção (parando antes de qualquer parede), depois libera uma explosão ao seu redor, silenciando e causando ${shiftDamage} a todas as unidades em um raio de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} por ${silenceDuration}. Sem tempo de conjuração ou animação.`,
+        zh: `先知瞬间朝面向方向偏移 ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} 距离（遇墙提前停下），然后在自身周围释放冲击波，使 ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} 半径内的所有单位沉默并造成 ${shiftDamage} 伤害，持续 ${silenceDuration}。无施法或动画时间。`,
+        fr: `Le Voyant se déplace instantanément de ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} dans sa direction (s'arrêtant avant un mur), puis déclenche une onde autour de lui, réduisant au silence et infligeant ${shiftDamage} à toutes les unités dans un rayon de ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} pendant ${silenceDuration}. Aucun temps d'incantation ni d'animation.`,
+        vi: `Seer ngay lập tức dịch chuyển ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} theo hướng nhìn (dừng lại trước tường), sau đó tạo một luồng năng lượng quanh mình, gây câm lặng và ${shiftDamage} cho mọi đơn vị trong bán kính ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} trong ${silenceDuration}. Không có thời gian tung chiêu hay hoạt ảnh.`,
+        id: `Seer langsung berpindah sejauh ${SeerAbilityData.MALEVOLENT_SHIFT_DISTANCE} ke arah hadapnya (berhenti sebelum menembus dinding), lalu melepaskan ledakan di sekelilingnya, membungkam dan memberikan ${shiftDamage} kepada semua unit dalam radius ${SeerAbilityData.MALEVOLENT_SHIFT_AOE_RADIUS} selama ${silenceDuration}. Tanpa waktu cast atau animasi.`,
       }
     }
 
-    case SpellList.SEER_MALEVOLENT_FORM: {
+    case SpellList.SEER_DARK_CLONE: {
+      const cloneDamage = getDamage(
+        SeerAbilityData.DARK_CLONE_DAMAGE_MOD * abilityPower,
+        Shared.DamageTypes.MAGICAL,
+        SeerAbilityData.DARK_CLONE_BASE_DAMAGE + SeerAbilityData.DARK_CLONE_DAMAGE_PER_LEVEL * (level - 1)
+      )
+
+      const searchDelay = toSec(SeerAbilityData.DARK_CLONE_SEARCH_DELAY)
+      const walkDuration = toSec(SeerAbilityData.DARK_CLONE_WALK_DURATION)
+      const idleLifetime = toSec(SeerAbilityData.DARK_CLONE_IDLE_LIFETIME)
+      const slowValue = getMovementSpeedValue(SeerAbilityData.DARK_CLONE_SLOW_VALUE)
+      const slowDuration = getMovementSpeedDuration(SeerAbilityData.DARK_CLONE_SLOW_DURATION)
+
       return {
-        en: 'Seer temporarily transforms into his Malevolent Form, becoming immune to crowd control effects and slow effects, and enhancing all of his abilities.',
-        ru: 'Провидец временно превращается в свою Зловещую Форму, становится невосприимчивым к эффектам контроля и замедления, и усиливает все свои способности.',
-        cz: 'Prorok se dočasně přemění do své Zlověstné Formy, stane se necitlivým na efekty kontroly a zpomalení a zesílí všechny své schopnosti.',
-        br: 'Seer se transforma temporariamente em sua Forma Malevolente, tornando-se imune a efeitos de controle e reduzindo, e aumentando todas as suas habilidades.',
-        zh: '先知暂时变成邪恶形态，免疫控制效果和减速，并增强所有技能。',
-        fr: 'Le Voyant se transforme temporairement en sa Forme Malveillante, devenant immunisé aux effets de contrôle et de ralentissement, et augmentant toutes ses capacités.',
-        vi: 'Seer tạm thời chuyển sang Trạng thái Ác Độc, kháng mọi loại choáng và giảm tốc độ di chuyển, và thức tỉnh tất cả các kỹ năng của mình.',
-        id: 'Seer bertukar menjadi Form Malevolent, menjadi tidak rentan terhadap efek kontrol dan perlambatan, dan memperkuat semua kemampuannya.',
+        en: `Seer creates a Dark Clone in front of him that walks forward for ${walkDuration}, up to ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE} distance. After ${searchDelay} it starts searching for nearby enemies - if one is found, or if it sits still for ${idleLifetime} without finding one, it explodes, dealing ${cloneDamage} and slowing enemies around it by ${slowValue} for ${slowDuration}. Cast again to swap places with the clone, detonating it shortly after.`,
+        ru: `Провидец создает Тёмного двойника перед собой, который идет вперед ${walkDuration}, до ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE} расстояния. Через ${searchDelay} он начинает искать врагов поблизости - если найден враг, или если он простоит на месте ${idleLifetime} не найдя никого, он взрывается, нанося ${cloneDamage} и замедляя врагов вокруг на ${slowValue} на ${slowDuration}. Повторное применение меняет вас местами с двойником, подрывая его вскоре после этого.`,
+        cz: `Prorok vytvoří před sebou Temného klona, který ${walkDuration} kráčí vpřed, až na vzdálenost ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE}. Po ${searchDelay} začne hledat nepřátele poblíž - pokud je nalezen, nebo pokud klon stojí na místě ${idleLifetime} bez nalezení nepřítele, vybuchne, způsobí ${cloneDamage} poškození a zpomalí nepřátele okolo o ${slowValue} na ${slowDuration}. Opětovným sesláním si s klonem vyměníte místa a krátce poté ho odpálíte.`,
+        br: `Seer cria um Clone Sombrio à sua frente que caminha para frente por ${walkDuration}, até ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE} de distância. Após ${searchDelay} ele começa a procurar inimigos próximos - se um for encontrado, ou se ficar parado por ${idleLifetime} sem encontrar nenhum, ele explode, causando ${cloneDamage} e reduzindo a velocidade dos inimigos ao redor em ${slowValue} por ${slowDuration}. Use novamente para trocar de lugar com o clone, detonando-o logo em seguida.`,
+        zh: `先知在自己前方创造一个暗影分身，向前行走 ${walkDuration}，最远 ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE} 距离。${searchDelay} 后它开始搜索附近的敌人——如果找到敌人，或者静止 ${idleLifetime} 仍未找到敌人，它就会爆炸，造成 ${cloneDamage} 伤害并使周围敌人减速 ${slowValue}，持续 ${slowDuration}。再次施放可与分身交换位置，随后不久将其引爆。`,
+        fr: `Le Voyant crée un Clone Sombre devant lui qui avance pendant ${walkDuration}, jusqu'à ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE} de distance. Après ${searchDelay}, il commence à chercher des ennemis proches - si l'un est trouvé, ou s'il reste immobile pendant ${idleLifetime} sans en trouver, il explose, infligeant ${cloneDamage} et ralentissant les ennemis autour de lui de ${slowValue} pendant ${slowDuration}. Relancez pour échanger votre place avec le clone, qui détone peu après.`,
+        vi: `Seer tạo một Bản Sao Bóng Tối phía trước, đi bộ về phía trước trong ${walkDuration}, xa tối đa ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE}. Sau ${searchDelay} nó bắt đầu tìm kiếm kẻ địch gần đó - nếu tìm thấy, hoặc nếu đứng yên ${idleLifetime} mà không tìm thấy, nó sẽ phát nổ, gây ${cloneDamage} và làm chậm kẻ địch xung quanh ${slowValue} trong ${slowDuration}. Dùng lại để hoán đổi vị trí với bản sao, kích nổ nó ngay sau đó.`,
+        id: `Seer menciptakan Dark Clone di depannya yang berjalan maju selama ${walkDuration}, hingga jarak ${SeerAbilityData.DARK_CLONE_WALK_DISTANCE}. Setelah ${searchDelay} ia mulai mencari musuh di sekitar - jika ditemukan, atau jika diam selama ${idleLifetime} tanpa menemukan musuh, ia akan meledak, memberikan ${cloneDamage} dan memperlambat musuh di sekitarnya sebesar ${slowValue} selama ${slowDuration}. Gunakan lagi untuk bertukar posisi dengan klon, meledakkannya tak lama kemudian.`,
       }
     }
     case SpellList.KARICK_ATTACK: {
@@ -1364,6 +1312,57 @@ const _getSpellDescriptionLang = (
         fr: `Karick invoque une graine vivante devant lui. Après un court délai, elle éclate en ronces géantes, infligeant ${magicalDamage} dégâts et étourdissant les ennemis pendant ${stunDuration}.`,
         vi: `Karick triệu hồi một hạt giống sống trước mặt. Sau một khoảng trễ ngắn, nó bùng nổ thành những bụi gai khổng lồ, gây ${magicalDamage} và làm choáng kẻ địch trong ${stunDuration}.`,
         id: `Karick memanggil benih hidup di depannya. Setelah jeda singkat, benih itu meledak menjadi duri raksasa, memberikan ${magicalDamage} dan membuat musuh terkena stun selama ${stunDuration}.`,
+      }
+    }
+
+    case SpellList.PUPPETEER_COMMAND_STRIKE: {
+      const baseDamage = getDamage(PuppeteerAbilityData.COMMAND_STRIKE_DAMAGE_MOD * damage)
+
+      return {
+        en: `The Puppet strikes all enemies around its current position, dealing ${baseDamage}.`,
+        ru: `Кукла атакует всех врагов вокруг своей текущей позиции, нанося ${baseDamage} урона.`,
+        cz: `Loutka udeří na všechny nepřátele kolem své aktuální pozice a způsobí ${baseDamage} poškození.`,
+        br: `A Marionete golpeia todos os inimigos ao redor de sua posição atual, causando ${baseDamage}.`,
+        zh: `木偶對其當前位置周圍的所有敵人發動攻擊，造成 ${baseDamage} 點傷害。`,
+        fr: `La Marionnette frappe tous les ennemis autour de sa position actuelle, infligeant ${baseDamage} dégâts.`,
+        vi: `Con Rối tấn công tất cả kẻ địch quanh vị trí hiện tại của nó, gây ${baseDamage}.`,
+        id: `Boneka menyerang semua musuh di sekitar posisinya saat ini, memberikan ${baseDamage}.`,
+      }
+    }
+
+    case SpellList.PUPPETEER_PUPPET_DASH: {
+      const baseDamage = getDamage(PuppeteerAbilityData.PUPPET_DASH_DAMAGE_MOD * damage)
+      const slowValue = getMovementSpeedValue(PuppeteerAbilityData.PUPPET_DASH_SLOW_VALUE)
+      const slowDuration = getMovementSpeedDuration(PuppeteerAbilityData.PUPPET_DASH_SLOW_DURATION)
+      const fixateDuration = getDuration(PuppeteerAbilityData.PUPPET_DASH_FIXATE_DURATION)
+
+      return {
+        en: `Dashes the Puppet forward, up to ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} distance. It stops on the first unit hit, dealing ${baseDamage} and slowing by ${slowValue} for ${slowDuration}, then fixates on the target for ${fixateDuration} (or until it strays too far).`,
+        ru: `Отправляет Куклу рывком вперёд на расстояние до ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Она останавливается при первом попадании, нанося ${baseDamage} урона и замедляя на ${slowValue} на ${slowDuration}, затем фиксируется на цели на ${fixateDuration} (или пока не отдалится слишком сильно).`,
+        cz: `Vyšle Loutku vpřed až na vzdálenost ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Zastaví se při prvním zásahu, způsobí ${baseDamage} poškození a zpomalí o ${slowValue} na ${slowDuration}, poté se fixuje na cíl na ${fixateDuration} (nebo dokud se příliš nevzdálí).`,
+        br: `Avança a Marionete para frente, até ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} de distância. Ela para na primeira unidade atingida, causando ${baseDamage} e reduzindo a velocidade em ${slowValue} por ${slowDuration}, depois fica fixada no alvo por ${fixateDuration} (ou até se afastar demais).`,
+        zh: `令木偶向前衝刺，最遠 ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} 距離。命中第一個單位後停止，造成 ${baseDamage} 點傷害並減速 ${slowValue}，持續 ${slowDuration}，隨後固定於目標 ${fixateDuration}（或直到距離過遠）。`,
+        fr: `Envoie la Marionnette en avant, jusqu'à ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} de distance. Elle s'arrête sur la première unité touchée, infligeant ${baseDamage} dégâts et ralentissant de ${slowValue} pendant ${slowDuration}, puis se fixe sur la cible pendant ${fixateDuration} (ou jusqu'à s'éloigner trop).`,
+        vi: `Lao Con Rối về phía trước, xa tối đa ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Nó dừng lại khi trúng mục tiêu đầu tiên, gây ${baseDamage} và làm chậm ${slowValue} trong ${slowDuration}, sau đó cố định vào mục tiêu trong ${fixateDuration} (hoặc đến khi đi quá xa).`,
+        id: `Melesatkan Boneka ke depan, hingga jarak ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Ia berhenti pada unit pertama yang terkena, memberikan ${baseDamage} dan memperlambat ${slowValue} selama ${slowDuration}, lalu terpaku pada target selama ${fixateDuration} (atau sampai menjauh terlalu jauh).`,
+      }
+    }
+
+    case SpellList.PUPPETEER_MARIONETTES_BIND: {
+      const initialDamage = getDamage(PuppeteerAbilityData.BINDING_THREAD_INITIAL_DAMAGE_MOD * damage)
+      const triggerDamage = getDamage(PuppeteerAbilityData.BINDING_THREAD_TRIGGER_DAMAGE_MOD * damage)
+      const staticDuration = getDuration(PuppeteerAbilityData.BINDING_THREAD_STATIC_DURATION)
+      const triggerStun = getStunDuration(PuppeteerAbilityData.BINDING_THREAD_STUN_DURATION)
+
+      return {
+        en: `Fires a thread that only hits enemy heroes, dealing ${initialDamage} and binding them in place for ${staticDuration}. If the target moves ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} distance away from the bind point, they are pulled back, stunned for ${triggerStun}, and take ${triggerDamage}.`,
+        ru: `Выпускает нить, поражающую только вражеских героев, нанося ${initialDamage} урона и связывая их на месте на ${staticDuration}. Если цель отдаляется от точки привязки на ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE}, её притягивает обратно, оглушает на ${triggerStun} и наносит ${triggerDamage} урона.`,
+        cz: `Vystřelí vlákno, které zasáhne pouze nepřátelské hrdiny, způsobí ${initialDamage} poškození a spoutá je na místě na ${staticDuration}. Pokud se cíl vzdálí ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} od bodu spoutání, je stažena zpět, omráčena na ${triggerStun} a utrpí ${triggerDamage} poškození.`,
+        br: `Dispara um fio que atinge apenas heróis inimigos, causando ${initialDamage} e prendendo-os no lugar por ${staticDuration}. Se o alvo se afastar ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} do ponto de ligação, é puxado de volta, atordoado por ${triggerStun} e sofre ${triggerDamage}.`,
+        zh: `射出僅能命中敵方英雄的絲線，造成 ${initialDamage} 點傷害並將其束縛在原地 ${staticDuration}。若目標移動超過 ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} 距離，將被拉回、暈眩 ${triggerStun} 並受到 ${triggerDamage} 點傷害。`,
+        fr: `Tire un fil qui ne touche que les héros ennemis, infligeant ${initialDamage} dégâts et les liant sur place pendant ${staticDuration}. Si la cible s'éloigne de ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} du point d'attache, elle est ramenée en arrière, étourdie pendant ${triggerStun}, et subit ${triggerDamage} dégâts.`,
+        vi: `Bắn ra một sợi chỉ chỉ trúng tướng địch, gây ${initialDamage} và trói họ tại chỗ trong ${staticDuration}. Nếu mục tiêu di chuyển xa ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} khỏi điểm buộc, họ bị kéo về, choáng trong ${triggerStun} và chịu ${triggerDamage}.`,
+        id: `Menembakkan benang yang hanya mengenai hero musuh, memberikan ${initialDamage} dan mengikat mereka di tempat selama ${staticDuration}. Jika target bergerak ${PuppeteerAbilityData.BINDING_THREAD_BREAK_DISTANCE} menjauh dari titik ikat, mereka akan ditarik kembali, terkena stun selama ${triggerStun}, dan menerima ${triggerDamage}.`,
       }
     }
 
@@ -1754,28 +1753,28 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         id: 'Tarik Gravitasi',
       }
 
-    case SpellList.SEER_BENEVOLENT_EXPLOSION:
+    case SpellList.SEER_MALEVOLENT_SHIFT:
       return {
-        en: 'Benevolent Explosion / Malevolent Explosion',
-        ru: 'Благосклонное взрыв / Неприязненное взрыв',
-        br: 'Explosão Benevolente / Explosão Malevolente',
-        fr: 'Explosion bienveillante / Explosion malveillante',
-        zh: '仁慈爆炸 / 邪恶爆炸',
-        cz: 'Výbuch laskavosti / Výbuch zlomyslnosti',
-        vi: 'Năng lượng Từ Bi / Năng lượng Ác Độc',
-        id: 'Ledakan Baik / Ledakan Jahat',
+        en: 'Malevolent Shift',
+        ru: 'Злобный сдвиг',
+        br: 'Mudança Malévola',
+        fr: 'Décalage maléfique',
+        zh: '邪恶偏移',
+        cz: 'Zlomyslný přesun',
+        vi: 'Malevolent Shift',
+        id: 'Malevolent Shift',
       }
 
-    case SpellList.SEER_MALEVOLENT_FORM:
+    case SpellList.SEER_DARK_CLONE:
       return {
-        en: 'Malevolent Form',
-        ru: 'Неприязненная форма',
-        br: 'Forma Malevolente',
-        fr: 'Forme malveillante',
-        zh: '邪恶形态',
-        cz: 'Zlomyslná forma',
-        vi: 'Trạng thái Ác Độc',
-        id: 'Bentuk Jahat',
+        en: 'Dark Clone',
+        ru: 'Тёмный двойник',
+        br: 'Clone Sombrio',
+        fr: 'Clone Sombre',
+        zh: '暗影分身',
+        cz: 'Dark Clone',
+        vi: 'Bản Sao Bóng Tối',
+        id: 'Dark Clone',
       }
 
     case SpellList.KARICK_BRAMBLE_SNAP:
@@ -1800,6 +1799,42 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Colère du Bosquet',
         vi: 'Thịnh Nộ Rừng Thiêng',
         id: 'Amarah Rimba',
+      }
+
+    case SpellList.PUPPETEER_COMMAND_STRIKE:
+      return {
+        en: 'Command Strike',
+        ru: 'Приказ: Удар',
+        cz: 'Příkaz: Úder',
+        br: 'Golpe de Comando',
+        zh: '命令打擊',
+        fr: 'Frappe Ordonnée',
+        vi: 'Mệnh Lệnh Tấn Công',
+        id: 'Serangan Perintah',
+      }
+
+    case SpellList.PUPPETEER_PUPPET_DASH:
+      return {
+        en: 'Puppet Dash',
+        ru: 'Рывок куклы',
+        cz: 'Výpad loutky',
+        br: 'Investida da Marionete',
+        zh: '木偶衝刺',
+        fr: 'Ruée de la Marionnette',
+        vi: 'Con Rối Lao Tới',
+        id: 'Terjang Boneka',
+      }
+
+    case SpellList.PUPPETEER_MARIONETTES_BIND:
+      return {
+        en: 'Binding Thread',
+        ru: 'Связующая нить',
+        cz: 'Poutací vlákno',
+        br: 'Fio de Ligação',
+        zh: '束縛之線',
+        fr: 'Fil du Lien',
+        vi: 'Sợi Chỉ Trói Buộc',
+        id: 'Benang Pengikat',
       }
 
     /** Default */
