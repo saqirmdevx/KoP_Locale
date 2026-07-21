@@ -1851,14 +1851,14 @@ const _getLocaleItemDescription = (
           id: 'Pesona Penyihir',
         },
         desc: {
-          en: `Abilities deal ${percDmg}% of the enemy's Max Health as bonus Magic Damage.\n\nApply Wizard's Curse, preventing healing and regeneration.`,
-          br: `Habilidades causam ${percDmg}% da Vida Máxima do inimigo como dano mágico bônus.\n\nAplicam Maldição do Mago, impedindo cura e regeneração.`,
-          fr: `Les compétences infligent ${percDmg}% de la santé maximale de l'ennemi en dégâts magiques bonus.\n\nAppliquent Malédiction du Sorcier, empêchant les soins et la régénération.`,
-          zh: `技能造成敵人最大生命值的 ${percDmg}% 額外魔法傷害。\n\n施加巫師詛咒，阻止治療與生命恢復。`,
-          cz: `Schopnosti způsobují ${percDmg}% maximálního zdraví nepřítele jako bonusové magické poškození.\n\nAplikují Kletbu Kouzelníka, která zabrání léčení a regeneraci.`,
-          ru: `Способности наносят ${percDmg}% от максимального здоровья врага в виде дополнительного магического урона.\n\nНакладывают Проклятие Волшебника, запрещающее лечение и регенерацию.`,
-          vi: `Kỹ năng gây ${percDmg}% máu tối đa của kẻ địch dưới dạng sát thương phép bổ sung.\n\nÁp dụng Lời Nguyền Phù Thủy, ngăn hồi máu và hồi phục.`,
-          id: `Kemampuan memberikan ${percDmg}% dari Health maksimum musuh sebagai bonus Magic Damage.\n\nMenerapkan Kutukan Penyihir, mencegah penyembuhan dan regenerasi.`,
+          en: `Abilities deal ${percDmg}% of the enemy's Max Health as bonus Magic Damage.\n\nWizard's Curse: Prevents healing and deals pure damage based on the enemy's Health Regeneration.`,
+          br: `Habilidades causam ${percDmg}% da Vida Máxima do inimigo como dano mágico bônus.\n\nMaldição do Mago: Impede cura e causa dano puro baseado na regeneração de vida do inimigo.`,
+          fr: `Les compétences infligent ${percDmg}% de la santé maximale de l'ennemi en dégâts magiques bonus.\n\nMalédiction du Sorcier : Empêche les soins et inflige des dégâts purs en fonction de la régénération de vie de l'ennemi.`,
+          zh: `技能造成敵人最大生命值的 ${percDmg}% 額外魔法傷害。\n\n巫師詛咒：阻止治療，並根據敵人的生命恢復造成純粹傷害。`,
+          cz: `Schopnosti způsobují ${percDmg}% maximálního zdraví nepřítele jako bonusové magické poškození.\n\nKletba Kouzelníka: Zabraňuje léčení a způsobuje čisté poškození podle regenerace zdraví nepřítele.`,
+          ru: `Способности наносят ${percDmg}% от максимального здоровья врага в виде дополнительного магического урона.\n\nПроклятие Волшебника: Блокирует лечение и наносит чистый урон в зависимости от регенерации здоровья врага.`,
+          vi: `Kỹ năng gây ${percDmg}% máu tối đa của kẻ địch dưới dạng sát thương phép bổ sung.\n\nLời Nguyền Phù Thủy: Ngăn hồi máu và gây sát thương chuẩn dựa trên hồi phục của kẻ địch.`,
+          id: `Kemampuan memberikan ${percDmg}% dari Health maksimum musuh sebagai bonus Magic Damage.\n\nKutukan Penyihir: Mencegah penyembuhan dan memberikan damage murni berdasarkan regenerasi Health musuh.`,
         },
       }
     }
