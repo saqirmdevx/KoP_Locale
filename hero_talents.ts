@@ -1266,9 +1266,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.PUPPETEER: {
       const dashSlowBonus = toSecRaw(PuppeteerAbilityData.TALENT_T1_LEFT_PUPPET_DASH_SLOW_DURATION)
-      const shredderArmor = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_ARMOR_REDUCTION
+      const shredderArmorPerStack = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_ARMOR_REDUCTION_PER_STACK
+      const shredderMaxStacks = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_MAX_STACKS
+      const shredderMaxArmor = fixed(shredderArmorPerStack * shredderMaxStacks)
       const shredderDuration = toSecRaw(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
       const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_FIXATE_DURATION_BONUS)
+      const staticDurationBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STATIC_DURATION_BONUS)
+      const stunDurationBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STUN_DURATION_BONUS)
 
       return {
         tier1_left: {
@@ -1295,14 +1299,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Perobek',
           },
           description: {
-            en: `Command Strike reduces the target's armor by ${shredderArmor} for ${shredderDuration}s (max 1 stack).`,
-            ru: `Командный удар снижает броню цели на ${shredderArmor} на ${shredderDuration} сек. (максимум 1 стак).`,
-            cz: `Command Strike sníží obranu cíle o ${shredderArmor} na ${shredderDuration}s (max. 1 stack).`,
-            zh: `指揮打擊使目標護甲降低 ${shredderArmor}，持續 ${shredderDuration}秒（最多疊加 1 層）。`,
-            fr: `Frappe de Commandement réduit l'armure de la cible de ${shredderArmor} pendant ${shredderDuration}s (1 charge max).`,
-            br: `Golpe de Comando reduz a armadura do alvo em ${shredderArmor} por ${shredderDuration}s (máx. 1 stack).`,
-            vi: `Command Strike giảm ${shredderArmor} giáp của mục tiêu trong ${shredderDuration}s (tối đa 1 lớp).`,
-            id: `Command Strike mengurangi armor target sebesar ${shredderArmor} selama ${shredderDuration}s (maks. 1 stack).`,
+            en: `Command Strike reduces the target's armor by ${shredderArmorPerStack} per stack (up to ${shredderMaxStacks} stacks, ${shredderMaxArmor} max) for ${shredderDuration}s.`,
+            ru: `Командный удар снижает броню цели на ${shredderArmorPerStack} за стак (до ${shredderMaxStacks} стаков, максимум ${shredderMaxArmor}) на ${shredderDuration} сек.`,
+            cz: `Command Strike sníží obranu cíle o ${shredderArmorPerStack} za stack (max. ${shredderMaxStacks} stacků, max. ${shredderMaxArmor}) na ${shredderDuration}s.`,
+            zh: `指揮打擊使目標護甲降低 ${shredderArmorPerStack}（每層），最多疊加 ${shredderMaxStacks} 層（最多降低 ${shredderMaxArmor}），持續 ${shredderDuration}秒。`,
+            fr: `Frappe de Commandement réduit l'armure de la cible de ${shredderArmorPerStack} par charge (jusqu'à ${shredderMaxStacks} charges, ${shredderMaxArmor} max) pendant ${shredderDuration}s.`,
+            br: `Golpe de Comando reduz a armadura do alvo em ${shredderArmorPerStack} por stack (até ${shredderMaxStacks} stacks, ${shredderMaxArmor} no máximo) por ${shredderDuration}s.`,
+            vi: `Command Strike giảm ${shredderArmorPerStack} giáp mục tiêu mỗi lớp (tối đa ${shredderMaxStacks} lớp, ${shredderMaxArmor} tối đa) trong ${shredderDuration}s.`,
+            id: `Command Strike mengurangi armor target sebesar ${shredderArmorPerStack} per stack (maks. ${shredderMaxStacks} stack, ${shredderMaxArmor} maks.) selama ${shredderDuration}s.`,
           },
         },
         tier2_left: {
@@ -1319,24 +1323,24 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: 'Piercing Thread',
-            ru: 'Пронзающая нить',
-            cz: 'Prořezávající vlákno',
-            zh: '穿刺絲線',
-            fr: 'Fil perforant',
-            br: 'Fio Perfurante',
-            vi: 'Sợi Chỉ Xuyên Thấu',
-            id: 'Benang Menembus',
+            en: 'Reinforced Thread',
+            ru: 'Усиленная нить',
+            cz: 'Zesílené vlákno',
+            zh: '強化絲線',
+            fr: 'Fil renforcé',
+            br: 'Fio Reforçado',
+            vi: 'Sợi Chỉ Gia Cố',
+            id: 'Benang Diperkuat',
           },
           description: {
-            en: 'Binding Thread no longer breaks on hitting a hero and can bind multiple targets.',
-            ru: 'Связующая нить больше не разрушается при попадании в героя и может связать несколько целей.',
-            cz: 'Binding Thread se již nezničí při zásahu hrdiny a může svázat více cílů.',
-            zh: '束縛絲線命中英雄時不再消失，可以束縛多個目標。',
-            fr: 'Le Fil Liant ne se brise plus en touchant un héros et peut lier plusieurs cibles.',
-            br: 'Fio Amarrador não se rompe mais ao atingir um herói e pode amarrar múltiplos alvos.',
-            vi: 'Binding Thread không còn vỡ khi trúng tướng và có thể trói nhiều mục tiêu.',
-            id: 'Binding Thread tidak lagi hancur saat mengenai hero dan dapat mengikat banyak target.',
+            en: `Binding Thread's tether lasts ${staticDurationBonus}s longer and its stun is ${stunDurationBonus}s longer.`,
+            ru: `Длительность привязи Связующей нити увеличена на ${staticDurationBonus} сек., а её оглушение — на ${stunDurationBonus} сек.`,
+            cz: `Uvázání Binding Thread trvá o ${staticDurationBonus}s déle a jeho omráčení o ${stunDurationBonus}s déle.`,
+            zh: `束縛絲線的束縛持續時間增加 ${staticDurationBonus}秒，暈眩時間增加 ${stunDurationBonus}秒。`,
+            fr: `L'attache du Fil Liant dure ${staticDurationBonus}s de plus et son étourdissement dure ${stunDurationBonus}s de plus.`,
+            br: `A amarração do Fio Amarrador dura ${staticDurationBonus}s a mais e seu atordoamento dura ${stunDurationBonus}s a mais.`,
+            vi: `Sợi dây trói của Binding Thread kéo dài thêm ${staticDurationBonus}s và choáng thêm ${stunDurationBonus}s.`,
+            id: `Ikatan Binding Thread bertahan ${staticDurationBonus}s lebih lama dan stun-nya ${stunDurationBonus}s lebih lama.`,
           },
         },
       }
