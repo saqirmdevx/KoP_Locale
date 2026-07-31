@@ -1082,6 +1082,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const shiftCdReduction = toSecRaw(-SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_SHIFT_COOLDOWN_REDUCTION)
       const recastDelay = toSecRaw(SeerAbilityData.DARK_CLONE_RECAST_EXPLODE_DELAY)
       const clawsRoot = toSecRaw(SeerAbilityData.TALENT_T2_RIGHT_MALEVOLENT_CLAWS_ROOT_DURATION)
+      const mirrorDamageReduction = fixed(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_MIRROR_DAMAGE_REDUCTION * 100, 0)
 
       return {
         tier1_left: {
@@ -1130,14 +1131,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Cermin Jahat',
           },
           description: {
-            en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
-            ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay} сек.`,
-            cz: `Malevolent Shift zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Dark Clone). Opětovným sesláním Malevolent Shift si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
-            zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay} 秒后引爆它。`,
-            fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay}s plus tard.`,
-            br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
-            vi: `Malevolent Shift để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Dark Clone). Dùng lại Malevolent Shift để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
-            id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
+            en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability, but dealing ${mirrorDamageReduction}% less damage). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
+            ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник, но нанося на ${mirrorDamageReduction}% меньше урона). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay} сек.`,
+            cz: `Malevolent Shift zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Dark Clone, ale se způsobí o ${mirrorDamageReduction}% méně poškození). Opětovným sesláním Malevolent Shift si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
+            zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同，但造成的伤害减少 ${mirrorDamageReduction}%）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay} 秒后引爆它。`,
+            fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone, mais infligeant ${mirrorDamageReduction}% de dégâts en moins). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay}s plus tard.`,
+            br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone, mas causando ${mirrorDamageReduction}% menos dano). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
+            vi: `Malevolent Shift để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Dark Clone, nhưng gây ít hơn ${mirrorDamageReduction}% sát thương). Dùng lại Malevolent Shift để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
+            id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone, tetapi memberikan kerusakan ${mirrorDamageReduction}% lebih sedikit). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
           },
         },
         tier2_right: {
@@ -1171,8 +1172,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const seedOfLifeDuration = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
       const seedOfLifeCooldown = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
 
-      const wrathOfTheGroveStacks = KarickAbilityData.TALENT_T1_RIGHT_WRATH_OF_THE_GROVE_VERDANT_MARK_STACKS
-      const verdantMarkRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_VERDANT_MARK_ROOT_DURATION_PER_STACK)
+      const groveMarkStacks = KarickAbilityData.TALENT_T1_RIGHT_GROVE_MARK_STACKS
+      const brambleSnapRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_BRAMBLE_SNAP_ROOT_BONUS)
 
       const additionalWrathDelay = toSecRaw(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
       const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
@@ -1213,27 +1214,27 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id: 'Tanda Rimba',
           },
           description: {
-            en: `Wrath of the Grove applies ${wrathOfTheGroveStacks} Verdant Mark stacks.`,
-            ru: `Wrath of the Grove накладывает ${wrathOfTheGroveStacks} заряда Verdant Mark.`,
-            cz: `Wrath of the Grove aplikuje ${wrathOfTheGroveStacks} stacky Verdant Mark.`,
-            br: `Wrath of the Grove aplica ${wrathOfTheGroveStacks} acúmulos de Verdant Mark.`,
-            zh: `Wrath of the Grove 会施加 ${wrathOfTheGroveStacks} 层 Verdant Mark。`,
-            fr: `Wrath of the Grove applique ${wrathOfTheGroveStacks} cumuls de Verdant Mark.`,
-            vi: `Wrath of the Grove áp dụng ${wrathOfTheGroveStacks} cộng dồn Verdant Mark.`,
-            id: `Wrath of the Grove menerapkan ${wrathOfTheGroveStacks} stack Verdant Mark.`,
+            en: `Bramble Snap and Wrath of the Grove also apply ${groveMarkStacks} Verdant Mark stack.`,
+            ru: `Bramble Snap и Wrath of the Grove также накладывают ${groveMarkStacks} заряд Verdant Mark.`,
+            cz: `Bramble Snap a Wrath of the Grove nyní také aplikují ${groveMarkStacks} stack Verdant Mark.`,
+            br: `Bramble Snap e Wrath of the Grove também aplicam ${groveMarkStacks} acúmulo de Verdant Mark.`,
+            zh: `Bramble Snap 与 Wrath of the Grove 现在也会施加 ${groveMarkStacks} 层 Verdant Mark。`,
+            fr: `Bramble Snap et Wrath of the Grove appliquent aussi ${groveMarkStacks} cumul de Verdant Mark.`,
+            vi: `Bramble Snap và Wrath of the Grove giờ cũng áp dụng ${groveMarkStacks} cộng dồn Verdant Mark.`,
+            id: `Bramble Snap dan Wrath of the Grove kini juga menerapkan ${groveMarkStacks} stack Verdant Mark.`,
           },
         },
 
         tier2_left: {
           title: {
-            en: `Verdant Mark: +${verdantMarkRootBonus}s Root/stack`,
-            ru: `Verdant Mark: +${verdantMarkRootBonus}с обездвиживания/заряд`,
-            cz: `Verdant Mark: +${verdantMarkRootBonus}s zakořenění/stack`,
-            br: `Verdant Mark: +${verdantMarkRootBonus}s de enraizamento/acúmulo`,
-            zh: `Verdant Mark：每层 +${verdantMarkRootBonus}秒禁锢`,
-            fr: `Verdant Mark : +${verdantMarkRootBonus}s enracinement/cumul`,
-            vi: `Verdant Mark: +${verdantMarkRootBonus}s trói/cộng dồn`,
-            id: `Verdant Mark: +${verdantMarkRootBonus}s root/stack`,
+            en: `Bramble Snap Root +${brambleSnapRootBonus}s`,
+            ru: `Bramble Snap: обездвиживание +${brambleSnapRootBonus}с`,
+            cz: `Bramble Snap: zakořenění +${brambleSnapRootBonus}s`,
+            br: `Bramble Snap: enraizamento +${brambleSnapRootBonus}s`,
+            zh: `Bramble Snap 禁锢 +${brambleSnapRootBonus}秒`,
+            fr: `Bramble Snap : enracinement +${brambleSnapRootBonus}s`,
+            vi: `Bramble Snap: trói +${brambleSnapRootBonus}s`,
+            id: `Bramble Snap: root +${brambleSnapRootBonus}s`,
           },
         },
 
