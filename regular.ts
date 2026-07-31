@@ -4965,6 +4965,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Durasi',
     vi: 'Thời lượng',
   },
+  [LOCALE.PLAYED_AT]: {
+    en: 'Played',
+    ru: 'Сыграно',
+    cz: 'Odehráno',
+    zh: '遊玩時間',
+    fr: 'Joué',
+    br: 'Jogado',
+    id: 'Dimainkan',
+    vi: 'Đã chơi',
+  },
   [LOCALE.NOT_FOUND_RANKED_MATCHES]: {
     en: 'No ranked matches found yet.',
   },
