@@ -5220,16 +5220,6 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Terselesaikan',
     vi: 'Đã giải quyết',
   },
-  [LOCALE.GM_REPORTS_FILTER_CLOSED]: {
-    en: 'Closed',
-    ru: 'Закрытые',
-    br: 'Fechadas',
-    cz: 'Uzavreté',
-    zh: '已關閉',
-    fr: 'Fermés',
-    id: 'Ditutup',
-    vi: 'Đã đóng',
-  },
   [LOCALE.GM_REPORTS_RESOLVE]: {
     en: 'Resolve',
     ru: 'Решить',
