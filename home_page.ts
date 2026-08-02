@@ -254,16 +254,6 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: 'Phát triển',
     id: 'Pengembangan',
   },
-  [LOCALE.LANDING_REGION_EUROPE]: {
-    en: 'Europe',
-    ru: 'Европа',
-    cz: 'Evropa',
-    zh: '欧洲',
-    fr: 'Europe',
-    br: 'Europa',
-    vi: 'Châu Âu',
-    id: 'Eropa',
-  },
   [LOCALE.LANDING_REGION_US]: {
     en: 'United States (Texas)',
     ru: 'США (Техас)',
