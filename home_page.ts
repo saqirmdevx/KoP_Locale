@@ -704,6 +704,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: 'Bị cấm trong {}',
     id: 'Diblokir selama {}',
   },
+  [LOCALE.LOW_PRIORITY_QUEUE_MESSAGE]: {
+    en: 'Banned from Ranked queue. Win {} casual games to play Ranked again.',
+    ru: 'Вы заблокированы в рейтинговой очереди. Выиграйте {} обычных игр, чтобы снова играть в рейтинговом режиме.',
+    br: 'Banido da fila Ranqueada. Vença {} partidas casuais para jogar Ranqueada novamente.',
+    cz: 'Zablokováno v žebříčkové frontě. Vyhrajte {} neřazených her, abyste mohli znovu hrát žebříčkové zápasy.',
+    zh: '已被禁止排位賽。贏得 {} 場休閒對戰後即可再次遊玩排位賽。',
+    fr: 'Bloqué de la file Classée. Gagnez {} parties normales pour rejouer en Classé.',
+    vi: 'Bị cấm xếp hạng. Thắng {} trận thường để chơi xếp hạng trở lại.',
+    id: 'Diblokir dari antrean Ranked. Menangkan {} game casual untuk bermain Ranked lagi.',
+  },
   [LOCALE.NORMAL_MATCH]: {
     en: 'Unranked Game',
     cz: 'Nehodnocená hra',
