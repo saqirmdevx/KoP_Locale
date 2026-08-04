@@ -274,6 +274,16 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     vi: 'Đông Nam Á',
     id: 'Asia Tenggara',
   },
+  [LOCALE.LANDING_REGION_PTR]: {
+    en: 'Private Testing Server',
+    ru: 'Private Testing Server',
+    cz: 'Private Testing Server',
+    zh: 'Private Testing Server',
+    fr: 'Private Testing Server',
+    br: 'Private Testing Server',
+    vi: 'Private Testing Server',
+    id: 'Private Testing Server',
+  },
   [LOCALE.LANDING_ABOUT_TITLE]: {
     en: 'Kingdom of Pixels',
     ru: 'Kingdom of Pixels',

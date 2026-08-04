@@ -1382,14 +1382,14 @@ const _getLocaleItemDescription = (
           id: 'Cincin Ratu Beku',
         },
         desc: {
-          en: `Release a freezing wave, dealing ${ItemAbilityData.FROST_RING_DAMAGE} Magic Damage.\n\nApplies Frigid Curse if the target is not affected.\nFreezes the target if already affected.`,
-          ru: `Выпускает ледяную волну, наносящую ${ItemAbilityData.FROST_RING_DAMAGE} магического урона.\n\nНакладывает Морозное проклятие, если цель не под эффектом.\nЗамораживает цель, если эффект уже есть.`,
-          br: `Libera uma onda congelante, causando ${ItemAbilityData.FROST_RING_DAMAGE} de dano mágico.\n\nAplica Maldição do Gelo se o alvo não estiver afetado.\nCongela o alvo se já estiver afetado.`,
-          fr: `Libère une onde glaciale, inflige ${ItemAbilityData.FROST_RING_DAMAGE} dégâts magiques.\n\nApplique Malédiction glaciale si la cible n'est pas affectée.\nGèle la cible si elle est déjà affectée.`,
-          zh: `釋放寒冰波動，造成 ${ItemAbilityData.FROST_RING_DAMAGE} 魔法傷害。\n\n若目標未受寒冷詛咒影響，則施加詛咒。\n若已受影響，則凍結目標。`,
-          cz: `Uvolní mrazivou vlnu, která způsobí ${ItemAbilityData.FROST_RING_DAMAGE} magického poškození.\n\nAplikuje Zmrzlou kletbu, pokud cíl není ovlivněn.\nZmrazí cíl, pokud již ovlivněn je.`,
-          vi: `Phóng sóng băng giá, gây ${ItemAbilityData.FROST_RING_DAMAGE} sát thương phép.\n\nÁp dụng Lời Nguyền Lạnh Giá nếu mục tiêu chưa bị ảnh hưởng.\nĐóng băng mục tiêu nếu đã bị ảnh hưởng.`,
-          id: `Melepaskan gelombang beku, memberikan ${ItemAbilityData.FROST_RING_DAMAGE} Magic Damage.\n\nMemberikan Frigid Curse jika target belum terkena.\nMembekukan target jika sudah terkena.`,
+          en: `Release a freezing wave, dealing ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} Magic Damage.\n\nApplies Frigid Curse if the target is not affected.\nFreezes the target if already affected.`,
+          ru: `Выпускает ледяную волну, наносящую ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} магического урона.\n\nНакладывает Морозное проклятие, если цель не под эффектом.\nЗамораживает цель, если эффект уже есть.`,
+          br: `Libera uma onda congelante, causando ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} de dano mágico.\n\nAplica Maldição do Gelo se o alvo não estiver afetado.\nCongela o alvo se já estiver afetado.`,
+          fr: `Libère une onde glaciale, inflige ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} dégâts magiques.\n\nApplique Malédiction glaciale si la cible n'est pas affectée.\nGèle la cible si elle est déjà affectée.`,
+          zh: `釋放寒冰波動，造成 ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} 魔法傷害。\n\n若目標未受寒冷詛咒影響，則施加詛咒。\n若已受影響，則凍結目標。`,
+          cz: `Uvolní mrazivou vlnu, která způsobí ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} magického poškození.\n\nAplikuje Zmrzlou kletbu, pokud cíl není ovlivněn.\nZmrazí cíl, pokud již ovlivněn je.`,
+          vi: `Phóng sóng băng giá, gây ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} sát thương phép.\n\nÁp dụng Lời Nguyền Lạnh Giá nếu mục tiêu chưa bị ảnh hưởng.\nĐóng băng mục tiêu nếu đã bị ảnh hưởng.`,
+          id: `Melepaskan gelombang beku, memberikan ${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} Magic Damage.\n\nMemberikan Frigid Curse jika target belum terkena.\nMembekukan target jika sudah terkena.`,
         },
       }
     }
@@ -1475,8 +1475,8 @@ const _getLocaleItemDescription = (
     }
     /** Armors */
     case ItemList.Frost_Armor: {
-      const reduction = fixed(ItemAbilityData.FROST_ARMOR_HEALING_REDUCTION * 100, 1)
-      const attackSpeedReduction = fixed(ItemAbilityData.FROST_ARMOR_ATTACK_SPEED_REDUCTION * 100, 1)
+      const reduction = fixed(ItemAbilityData.ARMOR_OF_THE_FROZEN_EMPEROR_HEALING_REDUCTION * 100, 1)
+      const attackSpeedReduction = fixed(ItemAbilityData.ARMOR_OF_THE_FROZEN_EMPEROR_ATTACK_SPEED_REDUCTION * 100, 1)
       return {
         name: {
           en: 'Armor of the Frozen Emperor',
@@ -2081,17 +2081,17 @@ const getObserverWardDescription = () => {
 }
 
 const getNimbleBowDescription = () => {
-  const speed = fixed(ItemAbilityData.RESILIENT_BOW_BULLET_SPEED * 100, 1)
+  const speed = fixed(ItemAbilityData.NIMBLE_LONGBOW_BULLET_SPEED * 100, 1)
 
   return {
-    en: `Increases projectile range and area radius by ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px and projectile speed by ${speed}%.`,
-    ru: `Увеличивает дальность снаряда и радиус области на ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} пикселей, а также скорость снаряда на ${speed}%.`,
-    br: `Aumenta o alcance do projétil e o raio da área em ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px, e a velocidade do projétil em ${speed}%.`,
-    zh: `提高射程和範圍半徑 ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} 像素，並提高射彈速度 ${speed}%。`,
-    cz: `Zvyšuje dosah střely a poloměr oblasti o ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} px a rychlost střely o ${speed}%.`,
-    fr: `Augmente la portée du projectile et le rayon de zone de ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} px, ainsi que la vitesse du projectile de ${speed}%.`,
-    vi: `Tăng tầm bắn và bán kính vùng ảnh hưởng thêm ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE} px, và tăng tốc độ đạn ${speed}%.`,
-    id: `Meningkatkan jangkauan proyektil dan radius area sebesar ${ItemAbilityData.RESILIENT_BOW_BULLET_RANGE}px, serta kecepatan proyektil sebesar ${speed}%.`,
+    en: `Increases projectile range and area radius by ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE}px and projectile speed by ${speed}%.`,
+    ru: `Увеличивает дальность снаряда и радиус области на ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE} пикселей, а также скорость снаряда на ${speed}%.`,
+    br: `Aumenta o alcance do projétil e o raio da área em ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE}px, e a velocidade do projétil em ${speed}%.`,
+    zh: `提高射程和範圍半徑 ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE} 像素，並提高射彈速度 ${speed}%。`,
+    cz: `Zvyšuje dosah střely a poloměr oblasti o ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE} px a rychlost střely o ${speed}%.`,
+    fr: `Augmente la portée du projectile et le rayon de zone de ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE} px, ainsi que la vitesse du projectile de ${speed}%.`,
+    vi: `Tăng tầm bắn và bán kính vùng ảnh hưởng thêm ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE} px, và tăng tốc độ đạn ${speed}%.`,
+    id: `Meningkatkan jangkauan proyektil dan radius area sebesar ${ItemAbilityData.NIMBLE_LONGBOW_BULLET_RANGE}px, serta kecepatan proyektil sebesar ${speed}%.`,
   }
 }
 
