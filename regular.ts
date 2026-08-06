@@ -4813,6 +4813,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Tampilkan hanya item yang direkomendasikan',
     vi: 'Chỉ hiển thị vật phẩm được đề xuất',
   },
+  [LOCALE.ST_ENABLE_TIPS]: {
+    en: 'Enable Tips',
+    ru: 'Включить подсказки',
+    cz: 'Povolit tipy',
+    zh: '啟用提示',
+    fr: 'Activer les astuces',
+    br: 'Ativar dicas',
+    id: 'Aktifkan Tips',
+    vi: 'Bật mẹo',
+  },
   [LOCALE.RECOMMENDED_ITEMS_FILTER_HINT]: {
     en: "Only recommended items are shown. Turn off 'Show only recommended items' in Settings to see everything.",
     ru: 'Показаны только рекомендуемые предметы. Отключите параметр Показывать только рекомендуемые предметы в настройках, чтобы увидеть все.',
