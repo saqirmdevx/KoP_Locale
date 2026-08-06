@@ -4924,11 +4924,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Vật phẩm có thể được kích hoạt bằng phím tắt hiển thị phía trên chúng.',
   },
   [LOCALE.DEATH_TIP_POWER_RUNE]: {
-    en: 'A Power Rune spawns on the top platform at 1:00 and then every minute. It provides a powerful temporary enhancement.',
+    en: 'Power Rune spawns on the top platform at 1:00 and then every minute. It provides a powerful temporary enhancement.',
     ru: 'Руна силы появляется на верхней платформе в 1:00, а затем каждую минуту. Она даёт мощное временное усиление.',
     cz: 'Runa síly se objeví na horní plošině v čase 1:00 a poté každou minutu. Poskytuje silné dočasné vylepšení.',
     zh: '力量符文會在1:00於上方平台刷新，之後每分鐘刷新一次。它會提供強大的暫時性增益效果。',
-    fr: "Une Rune de Pouvoir apparaît sur la plateforme du haut à 1:00 puis toutes les minutes. Elle offre une puissante amélioration temporaire.",
+    fr: 'Une Rune de Pouvoir apparaît sur la plateforme du haut à 1:00 puis toutes les minutes. Elle offre une puissante amélioration temporaire.',
     br: 'Uma Runa de Poder surge na plataforma superior em 1:00 e depois a cada minuto. Ela concede um poderoso aprimoramento temporário.',
     id: 'Rune Kekuatan muncul di platform atas pada 1:00 dan kemudian setiap menit. Rune ini memberikan peningkatan sementara yang kuat.',
     vi: 'Rune Sức Mạnh xuất hiện trên nền tảng phía trên lúc 1:00 và sau đó mỗi phút. Nó mang lại một sự tăng cường tạm thời mạnh mẽ.',
