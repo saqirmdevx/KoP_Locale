@@ -422,30 +422,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.FLIN: {
-      const preciseShotExecuteMin = getDamage(
-        FlinAbilityData.TALENT_T2_RIGHT_PRECISESHOT_EXECUTE_MIN * 100,
-        Shared.DamageTypes.NORMAL,
-        0,
-        true
-      )
-      const preciseShotExecuteMax = getDamage(
-        FlinAbilityData.TALENT_T2_RIGHT_PRECISESHOT_EXECUTE_MAX * 100,
-        Shared.DamageTypes.NORMAL,
-        0,
-        true
-      )
+      const preciseShotCooldown = toSecRaw(FlinAbilityData.TALENT_T1_LEFT_PRECISESHOT_COOLDOWN)
       const preciseShotDamage = fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100, 1)
       return {
         tier1_left: {
           title: {
-            en: `Attack Range +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
-            ru: `+${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE} дальности атаки`,
-            cz: `Dosah útoku +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
-            zh: `攻擊射程 +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}像素`,
-            fr: `Portée d'attaque +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
-            br: `Alcance do Ataque +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
-            vi: `Tầm đánh +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
-            id: `Jangkauan Serangan +${FlinAbilityData.TALENT_T1_LEFT_ATTACK_RANGE}px`,
+            en: `Precise Shot Cooldown ${preciseShotCooldown}s`,
+            ru: `Перезарядка Меткого выстрела ${preciseShotCooldown} сек.`,
+            cz: `Přesná střela obnovení ${preciseShotCooldown}s`,
+            zh: `精準射擊冷卻 ${preciseShotCooldown}秒`,
+            fr: `Recharge de Tir de précision ${preciseShotCooldown}s`,
+            br: `Recarga do Tiro Preciso ${preciseShotCooldown}s`,
+            vi: `Hồi chiêu Phát Bắn Chính Xác ${preciseShotCooldown}s`,
+            id: `Cooldown Precise Shot ${preciseShotCooldown}s`,
           },
         },
         tier1_right: {
@@ -468,30 +457,20 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             zh: `精準射擊 +${preciseShotDamage}% 傷害和射程`,
             fr: `Tir précis +${preciseShotDamage}% de dégâts et de portée`,
             br: `Tiro Preciso +${preciseShotDamage}% de Dano e Alcance`,
-            vi: `Tên Chuẩn Xác +${preciseShotDamage}% Sát thương & Tầm bấn`,
+            vi: `Phát Bắn Chính Xác +${preciseShotDamage}% Sát thương & Tầm bắn`,
             id: `Tembakan Tepat +${preciseShotDamage}% Kerusakan & Jangkauan`,
           },
         },
         tier2_right: {
           title: {
-            en: 'Precise Shot - Execution',
-            ru: 'Меткий выстрел - Казнь',
-            cz: 'Přesná střela - Poprava',
-            zh: '精准射击 - 處決',
-            fr: 'Tir précis - Exécution',
-            br: 'Tiro Preciso - Execução',
-            vi: 'Phát Bắn Chính Xác - Kết Liễu',
-            id: 'Precise Shot - Execution',
-          },
-          description: {
-            en: `Precise Shot executes enemies below ${preciseShotExecuteMin} to ${preciseShotExecuteMax} Health, based on the distance between Flin and the target.`,
-            ru: `Точный выстрел мгновенно добивает врагов, если их здоровье ниже ${preciseShotExecuteMin}–${preciseShotExecuteMax}, в зависимости от расстояния между Флином и целью.`,
-            cz: `Přesná střela okamžitě popraví nepřátele pod ${preciseShotExecuteMin} až ${preciseShotExecuteMax} zdraví v závislosti na vzdálenosti mezi Flinem a cílem.`,
-            zh: `精準射擊會直接處決生命值低於${preciseShotExecuteMin}至${preciseShotExecuteMax}的敵人，數值取決於弗林與目標之間的距離。`,
-            fr: `Tir de précision exécute les ennemis ayant moins de ${preciseShotExecuteMin} à ${preciseShotExecuteMax} de points de vie, selon la distance entre Flin et la cible.`,
-            br: `Disparo Preciso executa inimigos abaixo de ${preciseShotExecuteMin} a ${preciseShotExecuteMax} de Vida, dependendo da distância entre Flin e o alvo.`,
-            vi: `Phát Bắn Chính Xác kết liễu kẻ địch dưới ${preciseShotExecuteMin} đến ${preciseShotExecuteMax} Máu, tùy thuộc vào khoảng cách giữa Flin và mục tiêu.`,
-            id: `Precise Shot mengeksekusi musuh dengan Health di bawah ${preciseShotExecuteMin} hingga ${preciseShotExecuteMax}, tergantung jarak antara Flin dan target.`,
+            en: `Attack Range +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            ru: `+${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE} дальности атаки`,
+            cz: `Dosah útoku +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            zh: `攻擊射程 +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}像素`,
+            fr: `Portée d'attaque +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            br: `Alcance do Ataque +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            vi: `Tầm đánh +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            id: `Jangkauan Serangan +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
           },
         },
       }
@@ -1111,11 +1090,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           title: {
             en: `Malevolent Shift Cooldown ${shiftCdReduction}s`,
             ru: `${shiftCdReduction} сек. перезарядки Злобного сдвига`,
-            cz: `Malevolent Shift obnovení ${shiftCdReduction}s`,
+            cz: `Zlomyslný přesun obnovení ${shiftCdReduction}s`,
             zh: `邪恶偏移冷却 ${shiftCdReduction}秒`,
             fr: `Malevolent Shift recharge ${shiftCdReduction}s`,
             br: `Malevolent Shift recarga ${shiftCdReduction}s`,
-            vi: `Hồi chiêu Malevolent Shift ${shiftCdReduction}s`,
+            vi: `Hồi chiêu Dịch Chuyển Ác Ý ${shiftCdReduction}s`,
             id: `Cooldown Malevolent Shift ${shiftCdReduction}s`,
           },
         },
@@ -1133,11 +1112,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           description: {
             en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability, but dealing ${mirrorDamageReduction}% less damage). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
             ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник, но нанося на ${mirrorDamageReduction}% меньше урона). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay} сек.`,
-            cz: `Malevolent Shift zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Dark Clone, ale se způsobí o ${mirrorDamageReduction}% méně poškození). Opětovným sesláním Malevolent Shift si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
+            cz: `Zlomyslný přesun zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Temný klon, ale způsobí o ${mirrorDamageReduction}% méně poškození). Opětovným sesláním Zlomyslného přesunu si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
             zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同，但造成的伤害减少 ${mirrorDamageReduction}%）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay} 秒后引爆它。`,
             fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone, mais infligeant ${mirrorDamageReduction}% de dégâts en moins). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay}s plus tard.`,
             br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone, mas causando ${mirrorDamageReduction}% menos dano). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
-            vi: `Malevolent Shift để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Dark Clone, nhưng gây ít hơn ${mirrorDamageReduction}% sát thương). Dùng lại Malevolent Shift để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
+            vi: `Dịch Chuyển Ác Ý để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Bản Sao Bóng Tối, nhưng gây ít hơn ${mirrorDamageReduction}% sát thương). Dùng lại Dịch Chuyển Ác Ý để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
             id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone, tetapi memberikan kerusakan ${mirrorDamageReduction}% lebih sedikit). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
           },
         },
@@ -1155,11 +1134,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           description: {
             en: `Malevolent Shift also roots all enemy heroes hit for ${clawsRoot}s.`,
             ru: `Злобный сдвиг также обездвиживает всех задетых героев противника на ${clawsRoot} сек.`,
-            cz: `Malevolent Shift také zakoření všechny zasažené nepřátelské hrdiny na ${clawsRoot}s.`,
+            cz: `Zlomyslný přesun také zakoření všechny zasažené nepřátelské hrdiny na ${clawsRoot}s.`,
             zh: `邪恶偏移还会将击中的所有敌方英雄禁锢 ${clawsRoot} 秒。`,
             fr: `Malevolent Shift enracine aussi tous les héros ennemis touchés pendant ${clawsRoot}s.`,
             br: `Malevolent Shift também enraíza todos os heróis inimigos atingidos por ${clawsRoot}s.`,
-            vi: `Malevolent Shift còn trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}s.`,
+            vi: `Dịch Chuyển Ác Ý còn trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}s.`,
             id: `Malevolent Shift juga me-root semua hero musuh yang terkena selama ${clawsRoot}s.`,
           },
         },
@@ -1193,7 +1172,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           description: {
             en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s and dispelling all negative effects. Cooldown: ${seedOfLifeCooldown}s.`,
             ru: `Получение урона более ${seedOfLifeThreshold}% от текущего здоровья сажает исцеляющее семя, восстанавливающее ${seedOfLifeHeal}% полученного урона в течение ${seedOfLifeDuration}с и снимающее все отрицательные эффекты. Перезарядка: ${seedOfLifeCooldown}с.`,
-            cz: `Utržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které během ${seedOfLifeDuration}s obnoví ${seedOfLifeHeal}% utrženého poškození a odstraní všechny negativní efekty. Cooldown: ${seedOfLifeCooldown}s.`,
+            cz: `Utržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které během ${seedOfLifeDuration}s obnoví ${seedOfLifeHeal}% utrženého poškození a odstraní všechny negativní efekty. Obnovení: ${seedOfLifeCooldown}s.`,
             br: `Receber dano maior que ${seedOfLifeThreshold}% da Vida atual planta uma semente curativa, restaurando ${seedOfLifeHeal}% do dano recebido ao longo de ${seedOfLifeDuration}s e removendo todos os efeitos negativos. Recarga: ${seedOfLifeCooldown}s.`,
             zh: `受到超过当前生命值 ${seedOfLifeThreshold}% 的伤害时，会种下一颗治疗种子，在 ${seedOfLifeDuration} 秒内恢复所受伤害的 ${seedOfLifeHeal}% 并清除所有负面效果。冷却时间：${seedOfLifeCooldown}秒。`,
             fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s et dissipant tous les effets négatifs. Temps de recharge : ${seedOfLifeCooldown}s.`,

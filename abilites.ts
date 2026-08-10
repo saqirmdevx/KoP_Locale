@@ -70,7 +70,7 @@ const _getSpellDescriptionLang = (
         br: `Kumihu dispara 3 rajadas de vento cada uma dando ${basic_damage}.\n<b>[Passiva]: </b> Usar Dash dá a ela um bônus no próximo ataque básico, dando ${enh_damage} e encantando o inimigo por ${duration}.`,
         fr: `Kumihu tire 3 projectiles. Chaque projectile inflige ${basic_damage} \nPassif: Après avoir utilisé la Ruée Arcanique, l'attaque de base suivante de Kumihu inflige un bonus de ${enh_damage} et applique Charme à la cible pendant ${duration}.`,
         zh: `庫咪戶發射3顆彈丸，每顆彈丸造成 ${basic_damage} \n被動技：使用奧術衝刺後，庫咪戶的下一次基本攻擊造成 ${enh_damage}並在目標上施加魅惑 ${duration}`,
-        vi: `Kumihu bắn 3 viên đạn. Mỗi viên đạn gây ${basic_damage} \n<br/>Passive: Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enh_damage} và áp dụng Quyến Rũ trên mục tiêu trong ${duration}.`,
+        vi: `Kumihu bắn 3 viên đạn. Mỗi viên đạn gây ${basic_damage} \n<br/>Nội tại: Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enh_damage} và áp dụng Quyến Rũ lên mục tiêu trong ${duration}.`,
         id: `Kumihu menembakkan 3 proyektil. Setiap proyektil memberikan ${basic_damage} \n<br/>Pasif: Setelah menggunakan Arcane Dash, Serangan Dasar berikutnya Kumihu memberikan bonus ${enh_damage} dan menerapkan Charm pada target selama ${duration}.`,
       }
     }
@@ -530,7 +530,7 @@ const _getSpellDescriptionLang = (
         en: `Flin fires an arrow, dealing ${basic_damage}. \nIf Marksmanship is active, Flin's arrow deals ${enh_damage} and pierces through enemies.`,
         br: `Flin dispara uma flecha que da ${basic_damage}. \nSe sua habilidade (Pontaria perfeita) estiver ativa, o flin dá ${enh_damage} e suas flechas perfuram todas as unidades inimigas.`,
         ru: `Флин выпускает стрелу, наносящую ${basic_damage}. \nЕсли активна Меткая стрельба, выпущенная стрела наносит ${enh_damage} и пронзает все вражеские цели на своём пути.`,
-        cz: `Flin vystřelí šíp a způsobí ${basic_damage} \nAk je marksmanship aura aktivovaná, šípy budu prolétat skrz nepřátelske jednotky a způsobí ${enh_damage}`,
+        cz: `Flin vystřelí šíp a způsobí ${basic_damage}. \nPokud je Míření aktivní, Flinův šíp způsobí ${enh_damage} a prorazí nepřátele.`,
         zh: `弗林發射一支弓箭，造成 ${basic_damage}。\n如果精通箭術發動中，弗林的弓造成 ${enh_damage}並貫穿所有敵方單位。`,
         fr: `Flin tire une flèche, infligeant ${basic_damage}. \nSi la Maîtrise du tir est active, la flèche de Flin inflige ${enh_damage} et traverse les ennemis.`,
         vi: `Flin bắn một mũi tên, gây ${basic_damage}. \nNếu kỹ năng Xạ Thủ Lão Luyện được kích hoạt, mũi tên của Flin gây ${enh_damage} và xuyên qua kẻ địch.`,
@@ -553,10 +553,10 @@ const _getSpellDescriptionLang = (
         en: `Flin fires a powerful arrow from his bow, dealing ${base_damage} and causing knockback to enemies hit. \nIf Marksmanship is active, Precise Shot pierces through enemies.`,
         br: `Flin dispara uma poderosa flecha de seu arco, causando ${base_damage} e causando empurrão nos inimigos atingidos. \nSe Pontaria Perfeita estiver ativa, Tiro Preciso atravessa os inimigos.`,
         ru: `Флин выпускает мощную стрелу из своего лука, нанося ${base_damage} и вызывая отбрасывание поражённых врагов. \nЕсли Меткая стрельба активна, Точный выстрел пронзает врагов.`,
-        cz: `Flin vystřelí silný šíp ze svého luku, který způsobí ${base_damage} a způsobí odhození zasažených nepřátel. \nPokud je Střelecké umění aktivní, Přesný výstřel prolétne skrz nepřátele.`,
+        cz: `Flin vystřelí ze svého luku silný šíp, který způsobí ${base_damage} a odhodí zasažené nepřátele. \nPokud je Míření aktivní, Přesná střela prorazí nepřátele.`,
         zh: `弗林從弓中射出一支強力箭矢，造成 ${base_damage}並擊退命中的敵人。\n如果箭術精通啟動中，精準射擊將貫穿敵人。`,
         fr: `Flin tire une puissante flèche de son arc, infligeant ${base_damage} et provoquant un repoussement des ennemis touchés. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
-        vi: `Flin bắn ra một mũi tên mạnh mẽ từ cây cung của mình, gây ${base_damage} và đánh bật kẻ địch trúng phải. \nNếu Thiện Xạ được kích hoạt, Phát Bắn Chính Xác sẽ xuyên qua kẻ địch.`,
+        vi: `Flin bắn ra một mũi tên mạnh mẽ từ cây cung của mình, gây ${base_damage} và đánh bật kẻ địch trúng phải. \nNếu Xạ Thủ Lão Luyện được kích hoạt, Phát Bắn Chính Xác sẽ xuyên qua kẻ địch.`,
         id: `Flin menembakkan panah kuat dari busurnya, memberikan ${base_damage} dan menyebabkan knockback kepada musuh yang terkena. \nJika Marksmanship aktif, Precise Shot menembus musuh.`,
       }
     }
@@ -576,7 +576,7 @@ const _getSpellDescriptionLang = (
         en: `Flin increases his focus for ${marksmanshipDuration}. While focused, Flin gains bonus ${colorize(`${bonusAttackSpeed}% attack speed`)}, and his next ${FlinAbilityData.MARKSMANSHIP_STACKS} arrows will deal additional damage and pierce enemy units. Every unit hit by Flin's piercing arrows reduces the arrow's damage by ${marksmanshipDamageReduction}.`,
         br: `Flin aumenta seu foco por ${marksmanshipDuration}. Enquanto focado, Flin ganha ${colorize(`${bonusAttackSpeed}% de velocidade de ataque`)}, e suas próximas ${FlinAbilityData.MARKSMANSHIP_STACKS} flechas causarão dano adicional e perfurarão unidades inimigas. Cada unidade atingida pelas flechas de Flin reduz o dano da flecha em ${marksmanshipDamageReduction}.`,
         ru: `Флин увеличивает свою концентрацию на ${marksmanshipDuration}. Пока он сосредоточен, Флин получает бонус ${colorize(`${bonusAttackSpeed}% к скорости атаки`)}, и его следующие ${FlinAbilityData.MARKSMANSHIP_STACKS} стрелы наносят дополнительный урон и пронзают вражеские юниты. Каждая юнита, пораженная стрелами Флина, уменьшает урон стрел на ${marksmanshipDamageReduction}.`,
-        cz: `Flin zvyšuje svůj záměr na ${marksmanshipDuration}. Během záměru získá bonus ${colorize(`${bonusAttackSpeed}% rychlosti útoku`)}, a jeho další ${FlinAbilityData.MARKSMANSHIP_STACKS} šípy způsobí dodatečné poškození a prorazí nepřátelské jednotky. Každá jednotka zasažená Flinovými průstřelnými šípy sníží poškození šípu o ${marksmanshipDamageReduction}.`,
+        cz: `Flin se na ${marksmanshipDuration} soustředí. Během Míření získá bonus ${colorize(`${bonusAttackSpeed}% rychlosti útoku`)}, a jeho další ${FlinAbilityData.MARKSMANSHIP_STACKS} šípy způsobí dodatečné poškození a prorazí nepřátelské jednotky. Každá jednotka zasažená Flinovými průraznými šípy sníží poškození šípu o ${marksmanshipDamageReduction}.`,
         zh: `弗林提高他的专注力 ${marksmanshipDuration}。在专注时，弗林获得额外 ${colorize(`${bonusAttackSpeed}% 攻击速度`)}, 他的接下来的 ${FlinAbilityData.MARKSMANSHIP_STACKS} 箭矢将造成额外伤害并穿透敌方单位。每个被弗林穿透的单位会减少箭矢的伤害 ${marksmanshipDamageReduction}。`,
         fr: `Flin augmente sa concentration pendant ${marksmanshipDuration}. Pendant cette période, Flin gagne ${colorize(`${bonusAttackSpeed}% de vitesse d'attaque`)}, et ses ${FlinAbilityData.MARKSMANSHIP_STACKS} flèches suivantes infligeront des dégâts supplémentaires et perceront les unités ennemies. Chaque unité touchée par les flèches de Flin réduit les dégâts de la flèche de ${marksmanshipDamageReduction}.`,
         vi: `Flin tăng cường sự tập trung trong ${marksmanshipDuration}. Trong thời gian tập trung, Flin nhận được thêm ${colorize(`${bonusAttackSpeed}% tốc độ đánh`)}, và ${FlinAbilityData.MARKSMANSHIP_STACKS} mũi tên tiếp theo của anh ấy sẽ gây thêm sát thương và xuyên qua các đơn vị địch. Mỗi đơn vị bị trúng tên xuyên của Flin sẽ giảm sát thương của mũi tên đi ${marksmanshipDamageReduction}.`,
@@ -1564,7 +1564,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         en: 'Astral Step',
         ru: 'Астральный шаг',
         cz: 'Astrální Krok',
-        br: 'Regente do mal',
+        br: 'Passo astral',
         zh: '星光飛躍',
         fr: 'Pas astral',
         vi: 'Tinh Bộ',
@@ -1579,7 +1579,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Tiro preciso',
         zh: '精準射擊',
         fr: 'Tir précis',
-        vi: 'Tên Chuẩn Xác',
+        vi: 'Phát Bắn Chính Xác',
         id: 'Tembakan Presisi',
       }
 
@@ -1587,7 +1587,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
       return {
         en: 'Marksmanship',
         ru: 'Меткая стрельба',
-        cz: 'Strelecké umenie',
+        cz: 'Míření',
         br: 'Pontaria perfeita',
         zh: '精通箭術',
         fr: 'Tir de précision',
@@ -1767,7 +1767,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         fr: 'Décalage maléfique',
         zh: '邪恶偏移',
         cz: 'Zlomyslný přesun',
-        vi: 'Malevolent Shift',
+        vi: 'Dịch Chuyển Ác Ý',
         id: 'Malevolent Shift',
       }
 
@@ -1778,7 +1778,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Clone Sombrio',
         fr: 'Clone Sombre',
         zh: '暗影分身',
-        cz: 'Dark Clone',
+        cz: 'Temný klon',
         vi: 'Bản Sao Bóng Tối',
         id: 'Dark Clone',
       }
