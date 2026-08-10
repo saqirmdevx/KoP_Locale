@@ -548,16 +548,20 @@ const _getSpellDescriptionLang = (
         abilityData.damageType,
         (FlinAbilityData.PRECISE_SHOT_BASE_DAMAGE + FlinAbilityData.PRECISE_SHOT_DAMAGE_PER_LEVEL * (level - 1)) * mod
       )
+      const min_damage_percent = fixed(FlinAbilityData.PRECISE_SHOT_DAMAGE_SCALE_MIN * 100)
+      const max_damage_percent = fixed(FlinAbilityData.PRECISE_SHOT_DAMAGE_SCALE_MAX * 100)
+      const min_distance = FlinAbilityData.PRECISE_SHOT_DAMAGE_SCALE_MIN_DISTANCE
+      const max_distance = FlinAbilityData.PRECISE_SHOT_DAMAGE_SCALE_MAX_DISTANCE
 
       return {
-        en: `Flin fires a powerful arrow from his bow, dealing ${base_damage} and causing knockback to enemies hit. \nIf Marksmanship is active, Precise Shot pierces through enemies.`,
-        br: `Flin dispara uma poderosa flecha de seu arco, causando ${base_damage} e causando empurrão nos inimigos atingidos. \nSe Pontaria Perfeita estiver ativa, Tiro Preciso atravessa os inimigos.`,
-        ru: `Флин выпускает мощную стрелу из своего лука, нанося ${base_damage} и вызывая отбрасывание поражённых врагов. \nЕсли Меткая стрельба активна, Точный выстрел пронзает врагов.`,
-        cz: `Flin vystřelí ze svého luku silný šíp, který způsobí ${base_damage} a odhodí zasažené nepřátele. \nPokud je Míření aktivní, Přesná střela prorazí nepřátele.`,
-        zh: `弗林從弓中射出一支強力箭矢，造成 ${base_damage}並擊退命中的敵人。\n如果箭術精通啟動中，精準射擊將貫穿敵人。`,
-        fr: `Flin tire une puissante flèche de son arc, infligeant ${base_damage} et provoquant un repoussement des ennemis touchés. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
-        vi: `Flin bắn ra một mũi tên mạnh mẽ từ cây cung của mình, gây ${base_damage} và đánh bật kẻ địch trúng phải. \nNếu Xạ Thủ Lão Luyện được kích hoạt, Phát Bắn Chính Xác sẽ xuyên qua kẻ địch.`,
-        id: `Flin menembakkan panah kuat dari busurnya, memberikan ${base_damage} dan menyebabkan knockback kepada musuh yang terkena. \nJika Marksmanship aktif, Precise Shot menembus musuh.`,
+        en: `Flin fires a powerful arrow from his bow, dealing ${min_damage_percent}% to ${max_damage_percent}% of ${base_damage} depending on distance to the target (minimum within ${min_distance} distance, maximum at ${max_distance} distance or farther), and causing knockback to enemies hit - the closer the target, the stronger the knockback. \nIf Marksmanship is active, Precise Shot pierces through enemies.`,
+        br: `Flin dispara uma poderosa flecha de seu arco, causando entre ${min_damage_percent}% e ${max_damage_percent}% de ${base_damage} dependendo da distância até o alvo (mínimo dentro de ${min_distance} de distância, máximo a partir de ${max_distance} de distância), e causando empurrão nos inimigos atingidos - quanto mais próximo o alvo, mais forte o empurrão. \nSe Pontaria Perfeita estiver ativa, Tiro Preciso atravessa os inimigos.`,
+        ru: `Флин выпускает мощную стрелу из своего лука, нанося от ${min_damage_percent}% до ${max_damage_percent}% от ${base_damage} в зависимости от расстояния до цели (минимум на расстоянии до ${min_distance}, максимум на расстоянии ${max_distance} и более), и вызывая отбрасывание поражённых врагов - чем ближе цель, тем сильнее отбрасывание. \nЕсли Меткая стрельба активна, Точный выстрел пронзает врагов.`,
+        cz: `Flin vystřelí ze svého luku silný šíp, který způsobí ${min_damage_percent}% až ${max_damage_percent}% z ${base_damage} v závislosti na vzdálenosti k cíli (minimum do vzdálenosti ${min_distance}, maximum od vzdálenosti ${max_distance}), a odhodí zasažené nepřátele - čím blíže je cíl, tím silnější odhození. \nPokud je Míření aktivní, Přesná střela prorazí nepřátele.`,
+        zh: `弗林從弓中射出一支強力箭矢，根據與目標的距離造成${base_damage}的${min_damage_percent}%至${max_damage_percent}%傷害（在${min_distance}距離內為最低傷害，達到${max_distance}距離或更遠時為最高傷害），並擊退命中的敵人——目標越近，擊退效果越強。\n如果箭術精通啟動中，精準射擊將貫穿敵人。`,
+        fr: `Flin tire une puissante flèche de son arc, infligeant entre ${min_damage_percent}% et ${max_damage_percent}% de ${base_damage} selon la distance à la cible (minimum à moins de ${min_distance} de distance, maximum à ${max_distance} de distance ou plus), et provoquant un repoussement des ennemis touchés - plus la cible est proche, plus le repoussement est fort. \nSi la Maîtrise du tir est active, le Tir précis traverse les ennemis.`,
+        vi: `Flin bắn ra một mũi tên mạnh mẽ từ cây cung của mình, gây từ ${min_damage_percent}% đến ${max_damage_percent}% của ${base_damage} tùy theo khoảng cách đến mục tiêu (tối thiểu trong khoảng cách ${min_distance}, tối đa ở khoảng cách ${max_distance} hoặc xa hơn), và đánh bật kẻ địch trúng phải - mục tiêu càng gần, hiệu ứng đánh bật càng mạnh. \nNếu Xạ Thủ Lão Luyện được kích hoạt, Phát Bắn Chính Xác sẽ xuyên qua kẻ địch.`,
+        id: `Flin menembakkan panah kuat dari busurnya, memberikan ${min_damage_percent}% hingga ${max_damage_percent}% dari ${base_damage} tergantung jarak ke target (minimum dalam jarak ${min_distance}, maksimum pada jarak ${max_distance} atau lebih), dan menyebabkan knockback kepada musuh yang terkena - semakin dekat target, semakin kuat knockback-nya. \nJika Marksmanship aktif, Precise Shot menembus musuh.`,
       }
     }
 
