@@ -89,6 +89,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Orbe mágico recarga ${magicalOrbCd}s`,
             vi: `Hồi chiêu Quả Cầu Phép Thuật ${magicalOrbCd}s`,
             id: `Cooldown bola ajaib ${magicalOrbCd}s`,
+            kr: `마법 구슬 재사용 대기시간 ${magicalOrbCd}초`,
           },
         },
         tier1_right: {
@@ -101,6 +102,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Encanto recarga ${charmCooldown}s`,
             vi: `Hồi chiêu Quyến Rũ ${charmCooldown}s`,
             id: `Cooldown Pesona ${charmCooldown}s`,
+            kr: `매혹 재사용 대기시간 ${charmCooldown}초`,
           },
         },
         tier2_left: {
@@ -113,6 +115,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Ataque aprimorado atravessa unidades`,
             vi: `Quyến Rũ xuyên qua đơn vị`,
             id: `Serangan ditingkatkan menembus unit`,
+            kr: `강화 공격 유닛 관통`,
           },
         },
         tier2_right: {
@@ -125,6 +128,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Orbe mágico cega`,
             vi: `Cầu Phép Mù`,
             id: `Bola ajaib buta`,
+            kr: `마법 구슬 실명`,
           },
           description: {
             en: `Magical orb blinds enemy heroes it passes through. Blinded heroes have reduced vision and do not share vision with their team for ${blindDuration}s`,
@@ -135,6 +139,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `O orbe mágico cega os heróis inimigos pelos quais passa. Heróis cegados têm visão reduzida e não compartilham visão com sua equipe por ${blindDuration}s`,
             vi: `Quả Cầu Phép Thuật sẽ làm mù những tướng địch mà nó bay xuyên qua. Tướng bị làm mù sẽ bị giảm tầm nhìn và không chia sẻ tầm nhìn với đồng đội trong ${blindDuration}s`,
             id: `Bola ajaib membutakan hero musuh yang dilewatinya. Hero yang dibutakan memiliki penglihatan berkurang dan tidak membagikan vision kepada timnya selama ${blindDuration}s`,
+            kr: `마법 구슬이 통과하는 적 영웅을 실명시킵니다. 실명된 영웅은 시야가 감소하며 ${blindDuration}초 동안 팀과 시야를 공유하지 않습니다.`,
           },
         },
       }
@@ -153,6 +158,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Dano da Ira Demoníaca +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
             vi: `Sức mạnh của Quỷ Nộ +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
             id: `Kerusakan Kemarahan Iblis +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
+            kr: `악마의 분노 피해 +${SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_DAMAGE}`,
           },
         },
         tier1_right: {
@@ -165,6 +171,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Alcance do Vento Corrompido +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
             vi: `Tầm của Tà Phong +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
             id: `Jarak Angin Tercemar +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
+            kr: `타락한 바람 사거리 +${SparrowAbilityData.TALENT_T1_RIGHT_DASH_DISTANCE}px`,
           },
         },
         tier2_left: {
@@ -177,6 +184,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Ira Demoníaca Pura / +${groundSlamDamage}%`,
             vi: `Quỷ Nộ xuyên giáp / +${groundSlamDamage}%`,
             id: `Kemarahan Iblis Murni / +${groundSlamDamage}%`,
+            kr: `악마의 분노 고정 피해 / +${groundSlamDamage}%`,
           },
           description: {
             en: `Demonic Wrath deals pure damage, bypassing both Armor and Magic Resistance, and deals ${groundSlamDamage}% bonus damage.`,
@@ -187,6 +195,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Ira Demoníaca causa dano puro, ignorando tanto a Armadura quanto a Resistência Mágica, e causa ${groundSlamDamage}% de dano bônus.`,
             vi: `Qủy Nộ gây sát thương, bỏ qua giáp và kháng phép, và gây thêm ${groundSlamDamage}% sát thương.`,
             id: `Kemarahan Iblis memberikan kerusakan murni, melewati kedua Armor dan Magic Resistance, dan memberikan ${groundSlamDamage}% kerusakan bonus.`,
+            kr: `악마의 분노가 방어력과 마법 저항력을 모두 무시하는 고정 피해를 입히며, ${groundSlamDamage}%의 추가 피해를 입힙니다.`,
           },
         },
         tier2_right: {
@@ -199,6 +208,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Recarga do Vento Corrompido ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
             vi: `Hồi chiêu Tà Phong ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
             id: `Cooldown Angin Tercemar ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            kr: `타락한 바람 재사용 대기시간 ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
           },
         },
       }
@@ -217,6 +227,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Ralentissement des attaques de base',
             br: 'Ataque Básico Lento',
             vi: 'Cầu tuyết băng giá',
+            kr: `기본 공격 둔화`,
           },
           description: {
             en: `Your Basic Attacks reduce enemy ${getSlowKeyword('Movement Speed')} by <b>${getControlValue(
@@ -229,6 +240,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Seus ataques básicas reduzem a Velocidade de Movimento do inimigo em <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> e reduzem a Velocidade de Ataque do inimigo em <b>${attackSpeedSlow}%</b>`,
             vi: `Các đòn đánh thường của bạn giảm Tốc độ Di chuyển của kẻ địch <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> và giảm Tốc độ Tấn công của kẻ địch <b>${attackSpeedSlow}%</b>`,
             id: `Serangan Dasar Anda mengurangi Kecepatan Gerakan musuh sebesar <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> dan mengurangi Kecepatan Serangan musuh sebesar <b>${attackSpeedSlow}%</b>`,
+            kr: `당신의 기본 공격은 적의 ${getSlowKeyword('Movement Speed')}를 <b>${getControlValue(
+              ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
+            )}</b>만큼 감소시키고, 적의 ${getSlowKeyword('Attack Speed')}를 <b>${getControlValue(attackSpeedSlow + '%')}</b>만큼 감소시킵니다`,
           },
         },
         tier1_right: {
@@ -241,6 +255,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Velocidade de Movimento do Abraço Frio +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
             vi: `Tốc độ di chuyển của Hàn Ủng +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
             id: `Kecepatan Gerakan Pelukan Dingin +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
+            kr: `차가운 포옹 이동 속도 +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
           },
         },
         tier2_left: {
@@ -253,6 +268,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Gelo do Pico +${icicleFreezeDuration}s`,
             vi: `Mảnh Băng Tiễn +${icicleFreezeDuration}s`,
             id: `Icicle Bolt membekukan +${icicleFreezeDuration}s`,
+            kr: `고드름 화살 빙결 +${icicleFreezeDuration}초`,
           },
         },
         tier2_right: {
@@ -267,6 +283,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Duração do Abraço Frio +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
             vi: `Thời gian Hàn Ủng +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
             id: `Durasi Pelukan Dingin +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}s`,
+            kr: `차가운 포옹 지속시간 +${toSecRaw(ICeatAbilityData.TALENT_T2_RIGHT_COLD_EMBRACE_DURATION)}초`,
           },
         },
       }
@@ -286,6 +303,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Duração da desaceleração do Passo Astral +${astralstepSlow}s`,
             vi: `Thời gian làm chậm của Tinh Bộ +${astralstepSlow}s`,
             id: `Durasi Pelambatan Langkah Astral +${astralstepSlow}s`,
+            kr: `성계의 발걸음 둔화 지속시간 +${astralstepSlow}초`,
           },
         },
         tier1_right: {
@@ -300,6 +318,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Recarga das Lâminas Astrais ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
             vi: `Hồi chiêu Tinh Kiếm ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
             id: `Cooldown Astral Blades ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
+            kr: `성계의 칼날 재사용 대기시간 ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}초`,
           },
         },
         tier2_left: {
@@ -315,6 +334,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Dano Aprimorado +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
             vi: `Sức mạnh Thức Tỉnh +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
             id: `Kerusakan Ditingkatkan +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            kr: `강화된 피해 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
           },
         },
         tier2_right: {
@@ -327,6 +347,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Passo Astral Fundido',
             vi: 'Tinh Bộ Hợp Nhất',
             id: 'Langkah Astral Digabungkan',
+            kr: `융합된 성계의 발걸음`,
           },
           description: {
             en:
@@ -351,6 +372,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id:
               `Mengurangi cooldown Langkah Astral sebesar ${astralStepCooldown}s \n` +
               'Langkah Astral yang Ditingkatkan mengatur ulang cooldown-nya bahkan jika tidak ada musuh yang terkena.',
+            kr:
+              `성계의 발걸음의 재사용 대기시간을 ${astralStepCooldown}초 감소시킵니다. 
+` + `강화된 성계의 발걸음은 적을 명중시키지 못해도 재사용 대기시간이 초기화됩니다.`,
           },
         },
       }
@@ -371,6 +395,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Duração da Videira Espinhosa +${pricklyVineStunBonus}s`,
             vi: `Thời lượng choáng của Cức Đằng +${pricklyVineStunBonus}s`,
             id: `Durasi Ranting Berduri +${pricklyVineStunBonus}s`,
+            kr: `가시 덩굴 지속시간 +${pricklyVineStunBonus}초`,
           },
         },
         tier1_right: {
@@ -383,6 +408,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Emboscada Floral -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Velocidade de Movimento`,
             vi: `Hoa Phục Kích -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Tốc độ Di chuyển`,
             id: `Emboscada Floral -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Kecepatan Gerakan`,
+            kr: `꽃의 매복 -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} 이동 속도`,
           },
         },
         tier2_left: {
@@ -395,6 +421,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Rejuvenescimento Floral',
             vi: 'Thiên Nhiên Tái Sinh',
             id: 'Pemulihan Floral',
+            kr: `꽃의 회복`,
           },
           description: {
             en: `Explosion of Floral Ambush heals all nearby allies for ${floralAmbushHeal}% of the damage.`,
@@ -405,6 +432,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `A explosão da Emboscada Floral cura todos os aliados próximos em ${floralAmbushHeal}% do dano`,
             vi: `Vụ nổ của Hoa Phục Kích hồi máu tất cả đồng minh gần đó ${floralAmbushHeal}% sát thương`,
             id: `Ledakan Emboscada Floral menyembuhkan semua sekutu terdekat sebesar ${floralAmbushHeal}% dari kerusakan`,
+            kr: `꽃의 매복 폭발이 주변 모든 아군을 피해량의 ${floralAmbushHeal}%만큼 회복시킵니다.`,
           },
         },
         tier2_right: {
@@ -417,6 +445,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Atraso de fixação da Videira Espinhosa -${pricklyAttachDuration}s`,
             vi: `Độ trễ của Cức Đằng -${pricklyAttachDuration}s`,
             id: `Keterlambatan pemasangan Ranting Berduri -${pricklyAttachDuration}s`,
+            kr: `가시 덩굴 결속 지연 -${pricklyAttachDuration}초`,
           },
         },
       }
@@ -435,6 +464,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Recarga do Tiro Preciso ${preciseShotCooldown}s`,
             vi: `Hồi chiêu Phát Bắn Chính Xác ${preciseShotCooldown}s`,
             id: `Cooldown Precise Shot ${preciseShotCooldown}s`,
+            kr: `정밀 사격 재사용 대기시간 ${preciseShotCooldown}초`,
           },
         },
         tier1_right: {
@@ -447,6 +477,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Precisão +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} cargas`,
             vi: `Xạ Thủ Lão Luyện +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} lần`,
             id: `Menembak +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS} tumpukan`,
+            kr: `명사수 +${FlinAbilityData.TALENT_T1_RIGHT_MM_STACKS}중첩`,
           },
         },
         tier2_left: {
@@ -459,6 +490,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Tiro Preciso +${preciseShotDamage}% de Dano e Alcance`,
             vi: `Phát Bắn Chính Xác +${preciseShotDamage}% Sát thương & Tầm bắn`,
             id: `Tembakan Tepat +${preciseShotDamage}% Kerusakan & Jangkauan`,
+            kr: `정밀 사격 +${preciseShotDamage}% 피해 및 사거리`,
           },
         },
         tier2_right: {
@@ -471,6 +503,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Alcance do Ataque +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
             vi: `Tầm đánh +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
             id: `Jangkauan Serangan +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
+            kr: `공격 사거리 +${FlinAbilityData.TALENT_T2_RIGHT_ATTACK_RANGE}px`,
           },
         },
       }
@@ -498,6 +531,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Cenoura Sombria +${ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE} de Dano`,
             vi: `Hắc Dạ Hồ La Bặc +${ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE} Sát thương`,
             id: `Wortel Bayangan +${ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE} Kerusakan`,
+            kr: `그림자 당근 +${ThomasAbilityData.TALENT_T1_LEFT_SHADOW_CARROT_DAMAGE} 피해`,
           },
         },
         tier2_left: {
@@ -510,6 +544,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Ataque Sangrento',
             vi: 'Đòn đánh thường cộng dồn',
             id: 'Serangan Berdarah',
+            kr: `출혈 공격`,
           },
           description: {
             en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${bleedDamage} of his Attack Damage over ${bleedDuration}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
@@ -529,6 +564,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             \nHiệu ứng này có thể xảy ra mỗi ${bleedCooldown}s.`,
             id: `Serangan Dasar Thomas menerapkan efek Pendarahan, menangani ${bleedDamage} Kerusakan Serangannya selama ${bleedDuration}s dan mengurangi pertahanan sebesar ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
             \nEfek ini dapat terjadi sekali setiap ${bleedCooldown}s.`,
+            kr: `토마스의 기본 공격은 출혈 효과를 적용하여 ${bleedDuration}초에 걸쳐 공격력의 ${bleedDamage}만큼 피해를 입히고, 방어력을 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}만큼 감소시킵니다. 
+            \n이 효과는 ${bleedCooldown}초마다 한 번씩 발생할 수 있습니다.`,
           },
         },
         tier1_right: {
@@ -541,6 +578,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Recarga do Arremesso de Shuriken ${shurrikenTossCooldown}`,
             vi: `Hồi chiêu Shuriken ${shurrikenTossCooldown}`,
             id: `Cooldown Shuriken Toss ${shurrikenTossCooldown}`,
+            kr: `표창 던지기 재사용 대기시간 ${shurrikenTossCooldown}`,
           },
         },
         tier2_right: {
@@ -553,6 +591,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Cenoura Sombria Atordoamento ${carrotStun}s`,
             vi: `Hắc Dạ Hồ La Bặc Choáng ${carrotStun}s`,
             id: `Wortel Bayangan Stun ${carrotStun}s`,
+            kr: `그림자 당근 기절 ${carrotStun}초`,
           },
         },
       }
@@ -571,6 +610,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Dano da Marca Divina +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
             vi: `Sát thương của Thần Ấn +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
             id: `Kerusakan Tanda Ilahi +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
+            kr: `신성한 표식 피해 +${AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE}`,
           },
         },
         tier1_right: {
@@ -583,6 +623,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Furious Kick +${furiousKickLifesteal}% Roubo de Vida`,
             vi: `Nộ Cước +${furiousKickLifesteal}% hút máu`,
             id: `Furious Kick +${furiousKickLifesteal}% lifesteal`,
+            kr: `분노의 발차기 +${furiousKickLifesteal}% 흡혈`,
           },
           description: {
             en: `Furious Kick bonus in addition also increase lifesteal by ${furiousKickLifesteal}%`,
@@ -593,6 +634,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `O bônus do Furious Kick também aumenta o roubo de vida em ${furiousKickLifesteal}%`,
             vi: `Nộ Cước tăng hút máu thêm ${furiousKickLifesteal}%`,
             id: `Bonus Furious Kick juga meningkatkan lifesteal sebesar ${furiousKickLifesteal}%`,
+            kr: `분노의 발차기의 추가 효과가 흡혈량도 ${furiousKickLifesteal}%만큼 증가시킵니다.`,
           },
         },
         tier2_left: {
@@ -605,6 +647,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Furious Kick Atordoamento +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
             vi: `Nộ Cước Choáng +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
             id: `Furious Kick Stun +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}s`,
+            kr: `분노의 발차기 기절 +${toSecRaw(AlvarAbilityData.TALENT_T2_LEFT_FURIOUS_KICK_DURATION)}초`,
           },
         },
         tier2_right: {
@@ -617,6 +660,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Recarga do Chute Celestial ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
             vi: `Thiên Cước giảm hồi chiêu ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
             id: `Cooldown Heavenly Kick ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
+            kr: `천상의 발차기 재사용 대기시간 ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}초`,
           },
         },
       }
@@ -636,6 +680,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Ticking Bomb +${tickingBombDamage}% Dano de Gatilho`,
             vi: `Bom hẹn giờ +${tickingBombDamage}% Sát thương Kích hoạt`,
             id: `Ticking Bomb +${tickingBombDamage}% Pemicu Kerusakan`,
+            kr: `시한폭탄 +${tickingBombDamage}% 발동 피해`,
           },
         },
         tier1_right: {
@@ -648,6 +693,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Alcance do Ataque Básico +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}px`,
             vi: `Tầm Đánh Thường +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}px`,
             id: `Jarak Serangan Dasar +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}px`,
+            kr: `기본 공격 사거리 +${ArelAbilityData.TALENT_T1_RIGHT_ATTACK_DISTANCE}px`,
           },
         },
         tier2_left: {
@@ -660,6 +706,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Ticking Bomb Atordoamento +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
             vi: `Choáng của Bom Hẹn Giờ +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
             id: `Ticking Bomb Stun +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}s`,
+            kr: `시한폭탄 기절 +${toSecRaw(ArelAbilityData.TALENT_T2_LEFT_TICKING_BOMB_STUN)}초`,
           },
         },
         tier2_right: {
@@ -672,6 +719,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Tumble - Armadilha Congelante',
             vi: 'Nhào Lộn - Bẫy Đóng Băng',
             id: 'Tumble - Perangkap Pembekuan',
+            kr: `구르기 - 결빙 함정`,
           },
           description: {
             en:
@@ -698,6 +746,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             id:
               `Tumble membuat perangkap pembekuan di posisi Arel. Ketika unit musuh melangkah di perangkap, mereka akan membeku selama ${freezingTrapFreezeDuration}, mencegah semua bentuk pergerakan.` +
               `<br/> Perangkap bertahan selama ${freezingTrapDuration} dan memberikan visi dalam radius kecil.`,
+            kr:
+              `구르기가 아렐의 위치에 결빙 함정을 생성합니다. 적 유닛이 함정을 밟으면 ${freezingTrapFreezeDuration} 동안 얼어붙어 모든 형태의 이동이 불가능해집니다.` +
+              `<br/> 함정은 ${freezingTrapDuration} 동안 유지되며 작은 반경의 시야를 제공합니다.`,
           },
         },
       }
@@ -715,6 +766,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Régénération triomphante`,
             vi: `Khải Hoàn Tái Sinh`,
             id: `Regenerasi Triumphant`,
+            kr: `승리의 재생`,
           },
           description: {
             en: `Triumphant Upheaval heals Hazel for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% of the damage dealt.`,
@@ -725,6 +777,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `O Levante Triunfante cura Hazel em ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% do dano causado.`,
             vi: `Triumphant Upheaval hồi phục cho Hazel ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% sát thương gây ra.`,
             id: `Triumphant Upheaval menyembuhkan Hazel sebesar ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}% dari kerusakan yang diterima.`,
+            kr: `승리의 격변이 입힌 피해량의 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_HEALING * 100}%만큼 헤이즐을 회복시킵니다.`,
           },
         },
         tier1_right: {
@@ -737,6 +790,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             zh: `正義之怒 +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} 傷害`,
             vi: `Sức Mạnh Công Lý +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Sát thương`,
             id: `Kemarahan Keadilan +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} Kerusakan`,
+            kr: `정의의 분노 +${HazelAbilityData.TALENT_T1_RIGHT_HAMMER_BASE_DAMAGE} 피해`,
           },
         },
         tier2_left: {
@@ -749,6 +803,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Colère de la Justice Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
             vi: `Sức Mạnh Công Lý Choáng +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
             id: `Kemarahan Keadilan Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
+            kr: `정의의 분노 기절 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}초`,
           },
         },
         tier2_right: {
@@ -761,6 +816,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             ru: 'Иммунитет при Триумфальном перевороте',
             vi: 'Khải Hoàn Chấn Động miễn Choáng',
             id: 'Kekebalan Triumphant Upheaval',
+            kr: `승리의 격변 면역`,
           },
           description: {
             en: 'Hazel is immune to all damage and crowd control effects while charging Triumphant Upheaval.',
@@ -771,6 +827,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Hazel est immunisé contre tous les dégâts et les effets de contrôle de foule pendant la charge du Soulèvement triomphant.',
             vi: 'Hazel miễn dịch với tất cả sát thương và hiệu ứng kiểm soát đám đông trong khi dùng Khải Hoàn Chấn Động',
             id: 'Hazel kebal terhadap semua kerusakan dan efek kontrol kerumunan saat mengisi Triumphant Upheaval.',
+            kr: `헤이즐은 승리의 격변을 준비하는 동안 모든 피해와 군중 제어 효과에 면역이 됩니다.`,
           },
         },
       }
@@ -787,6 +844,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Duração do Choque de Raios +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
             vi: `Thời lượng Choáng Sét +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
             id: `Durasi Pukulan Petir +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
+            kr: `번개 충격 지속시간 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}초`,
           },
         },
         tier1_right: {
@@ -799,6 +857,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Relâmpago do Abismo reduz`,
             vi: `Điện Hỏa Vũ gây chậm`,
             id: `Hujan Spark lambat`,
+            kr: `스파크의 비 둔화 적용`,
           },
         },
         tier2_left: {
@@ -812,6 +871,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Relâmpago do Abismo +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} faísca`,
             vi: `Điện Hỏa Vũ +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} tia lửa điện`,
             id: `Hujan Spark +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT} percikan`,
+            kr: `스파크의 비 +${KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT}개`,
           },
         },
         tier2_right: {
@@ -824,6 +884,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Raio em Cadeia`,
             vi: `Liên Hoàn Sét`,
             id: `Rantai petir`,
+            kr: `연쇄 번개`,
           },
           description: {
             en: `Lightning shock now chain to closest unit, can be enemy or friendly and apply the Lightning Shock effect with 25% less effect per chain.`,
@@ -835,6 +896,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `O Choque de Raios agora encadeia para a unidade mais próxima, podendo ser inimiga ou aliada, e aplica o efeito de Choque de Raios com 25% menos efeito por encadeamento.`,
             vi: `Sét giờ có thể chuỗi đến đơn vị gần nhất, có thể là địch hoặc đồng minh và áp dụng hiệu ứng Sét với hiệu ứng giảm 25% mỗi lần.`,
             id: `Petir sekarang berantai ke unit terdekat, bisa musuh atau teman dan menerapkan efek Petir dengan efek 25% lebih sedikit per rantai.`,
+            kr: `이제 번개 충격이 가장 가까운 유닛(아군 또는 적군)에게 연쇄되며, 연쇄될 때마다 효과가 25%씩 감소한 번개 충격 효과를 적용합니다.`,
           },
         },
       }
@@ -853,6 +915,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Granada Incendiária',
             vi: 'Lựu Đạn Lửa',
             id: 'Granat Penyala',
+            kr: `소이 수류탄`,
           },
           description: {
             en: `Explosive Grenade ignites enemies, dealing ${incendiaryGrenadeDamage}% of target's max health as bonus Magic Damage per second for a short duration.`,
@@ -863,6 +926,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Granada Explosiva inflama inimigos, causando ${incendiaryGrenadeDamage}% da vida máxima do alvo como Dano Mágico bônus por segundo por um curto período.`,
             vi: `Lựu Đạn châm ngòi kẻ thù, gây ${incendiaryGrenadeDamage}% máu tối đa của mục tiêu dưới dạng Sát thương Phép mỗi giây trong một thời gian ngắn.`,
             id: `Granat Peledak menyulut musuh, menangani ${incendiaryGrenadeDamage}% dari maksimal kesehatan target sebagai Bonus Kerusakan Sihir per detik untuk jangka waktu singkat.`,
+            kr: `폭발 수류탄이 적을 발화시켜 짧은 시간 동안 매초 대상 최대 체력의 ${incendiaryGrenadeDamage}%만큼 추가 마법 피해를 입힙니다.`,
           },
         },
         tier1_right: {
@@ -875,6 +939,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Granada Congelante',
             vi: 'Lựu Đạn Băng',
             id: 'Granat Pembeku',
+            kr: `냉동 수류탄`,
           },
           description: {
             en: `Explosive Grenade freezes enemies for up to ${freezingGrenadeDuration}, preventing all forms of movement`,
@@ -885,6 +950,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Granada Explosiva congela inimigos por até ${freezingGrenadeDuration}, impedindo qualquer forma de movimento`,
             vi: `Lựu Đạn đóng băng kẻ thù lên đến ${freezingGrenadeDuration}, ngăn mọi hình thức di chuyển`,
             id: `Granat Peledak membekukan musuh hingga ${freezingGrenadeDuration}, mencegah semua bentuk pergerakan`,
+            kr: `폭발 수류탄이 적을 최대 ${freezingGrenadeDuration} 동안 얼려 모든 형태의 이동을 막습니다`,
           },
         },
         tier2_left: {
@@ -897,6 +963,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Raio da granada +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
             vi: `Bán kính lựu đạn +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
             id: `Radius Granat +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
+            kr: `수류탄 반경 +${fixed(FoxyAbilityData.TALENT_T2_LEFT_GRENADE_BONUS_RADIUS * 100)}%`,
           },
         },
         tier2_right: {
@@ -909,6 +976,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Dano do Rapid Fire +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
             vi: `Sát Thương Tốc Xạ +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
             id: `Kerusakan Rapid Fire +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
+            kr: `속사 피해 +${fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_DAMAGE * 100)}%`,
           },
         },
       }
@@ -927,6 +995,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Cura dos Fantasmas Assombrados`,
             vi: `U Hồn Ám Ảnh hồi máu`,
             id: `Hantu Menyembuhkan`,
+            kr: `홀린 유령 회복`,
           },
           description: {
             en: `Haunted Ghosts returns to the owner and heals for ${hauntedGhostsHealing}% of the damage dealt.`,
@@ -937,6 +1006,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Os Fantasmas Assombrados retornam ao dono e curam ${hauntedGhostsHealing}% do dano causado.`,
             vi: `Hồn Ma trở lại chủ nhân và hồi phục ${hauntedGhostsHealing}% sát thương gây ra.`,
             id: `Hantu kembali ke pemilik dan menyembuhkan ${hauntedGhostsHealing}% dari kerusakan yang diterima.`,
+            kr: `홀린 유령이 주인에게 돌아오면 입힌 피해량의 ${hauntedGhostsHealing}%만큼 회복시킵니다.`,
           },
         },
         tier1_right: {
@@ -949,6 +1019,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} almas roubadas máx`,
             vi: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} linh hồn tối đa bị đánh cắp`,
             id: `+${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS} jumlah maksimum jiwa yang dicuri`,
+            kr: `최대 훔친 영혼 +${MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS}개`,
           },
         },
         tier2_left: {
@@ -960,6 +1031,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Les Fantômes hantés pénètrent ${MagdaleneAbilityData.TALENT_T2_LEFT_HAUNTED_GHOST_PIERCE_TARGETS} cibles`,
             br: `Os Fantasmas Assombrados perfuram ${MagdaleneAbilityData.TALENT_T2_LEFT_HAUNTED_GHOST_PIERCE_TARGETS} alvos`,
             vi: `Hồn Ma xuyên ${MagdaleneAbilityData.TALENT_T2_LEFT_HAUNTED_GHOST_PIERCE_TARGETS} mục tiêu`,
+            kr: `홀린 유령 관통 대상 ${MagdaleneAbilityData.TALENT_T2_LEFT_HAUNTED_GHOST_PIERCE_TARGETS}개`,
           },
         },
         tier2_right: {
@@ -971,6 +1043,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% de vitesse de déplacement par stack`,
             br: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% de velocidade de movimento por stack`,
             vi: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% tốc độ di chuyển cho mỗi linh hồn`,
+            kr: `중첩당 이동 속도 +${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}%`,
           },
         },
       }
@@ -988,6 +1061,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Proteção aprimorada da bola',
             vi: 'Cầu Bảo Vệ Thức Tỉnh',
             id: 'Proteksi Bola Ditingkatkan',
+            kr: `강화된 공 보호`,
           },
           description: {
             en: `Enhanced Ball protection provides additional ${getControlValue(
@@ -1002,6 +1076,11 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `A Proteção aprimorada da bola fornece velocidade de movimento adicional de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} e armadura de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, quando a bola está anexada a um herói.`,
             vi: `Cầu Thức Tỉnh cung cấp thêm ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} tốc độ di chuyển và ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} giáp, khi cầu ở gần Prim.`,
             id: `Proteksi Bola Ditingkatkan memberikan kecepatan tambahan ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} dan armor ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, ketika bola terpasang pada pahlawan.`,
+            kr: `강화된 공 보호는 공이 영웅에게 부착되어 있는 동안 추가로 ${getControlValue(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED
+            )} ${getBonusKeyword('Bonus Movement Speed')}와 ${getControlValue(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
+            )} ${getBonusKeyword('Bonus Armor')}를 제공합니다.`,
           },
         },
         tier1_right: {
@@ -1014,6 +1093,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Alcance máximo da bola +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
             vi: `Khoảng cách tối đa của Cầu +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
             id: `Jarak maksimum bola +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            kr: `공 최대 사거리 +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
           },
         },
         tier2_right: {
@@ -1026,6 +1106,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Puxão Gravitacional aprimorado',
             vi: 'Lực Hấp Dẫn Thức Tỉnh',
             id: 'Tarik Gravitasi Ditingkatkan',
+            kr: `강화된 중력 견인`,
           },
           description: {
             en: `Increase Gravitational Pull damage and ${getStunKeyword('Stun Duration')} by ${fixed(
@@ -1039,6 +1120,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Aumenta o dano e a duração do atordoamento do Puxão Gravitacional em ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             vi: `Tăng Sát thương và thời gian Choáng của Lực Hấp Dẫn lên ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
             id: `Meningkatkan kerusakan dan durasi stun Gravitasi Tarik sebesar ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
+            kr: `중력 견인의 피해량과 ${getStunKeyword('Stun Duration')}을 ${fixed(
+              PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
+              1
+            )}%만큼 증가시킵니다`,
           },
         },
         tier2_left: {
@@ -1051,6 +1136,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Raio do Puxão Gravitacional + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
             vi: `Bán kính của Lực Hấp Dẫn + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
             id: `Radius Tarik Gravitasi + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
+            kr: `중력 견인 반경 + ${PrimAbilityData.TALENT_T2_LEFT_GRAVITATIONAL_PULL_RADIUS}px`,
           },
         },
       }
@@ -1074,6 +1160,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Maldição Malévola',
             vi: 'Lời Nguyền Ác Độc',
             id: 'Kutukan Jahat',
+            kr: `악의의 저주`,
           },
           description: {
             en: `Attack applies a curse that explodes after ${curseDelay}s, dealing ${curseDamage} + ${curseApPercent}% Ability Power damage. Attacking a cursed target again does not reapply or trigger it early.`,
@@ -1084,6 +1171,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `O Ataque aplica uma maldição que explode após ${curseDelay}s, causando ${curseDamage} + ${curseApPercent}% de Poder de Habilidade em dano. Atacar novamente um alvo amaldiçoado não reaplica nem antecipa a explosão.`,
             vi: `Đòn đánh áp dụng lời nguyền, phát nổ sau ${curseDelay}s, gây ${curseDamage} + ${curseApPercent}% Sức mạnh Phép thuật. Đánh lại mục tiêu đã bị nguyền không làm mới hay kích hoạt sớm hơn.`,
             id: `Serangan menerapkan kutukan yang meledak setelah ${curseDelay}s, memberikan ${curseDamage} + ${curseApPercent}% Ability Power kerusakan. Menyerang lagi target yang terkutuk tidak akan menerapkan ulang atau memicunya lebih awal.`,
+            kr: `공격 시 저주를 걸며, ${curseDelay}초 후 폭발하여 ${curseDamage} + 주문력의 ${curseApPercent}%만큼 피해를 입힙니다. 저주에 걸린 대상을 다시 공격해도 저주가 재적용되거나 조기에 발동되지 않습니다.`,
           },
         },
         tier1_right: {
@@ -1096,6 +1184,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Malevolent Shift recarga ${shiftCdReduction}s`,
             vi: `Hồi chiêu Dịch Chuyển Ác Ý ${shiftCdReduction}s`,
             id: `Cooldown Malevolent Shift ${shiftCdReduction}s`,
+            kr: `악의의 이동 재사용 대기시간 ${shiftCdReduction}초`,
           },
         },
         tier2_left: {
@@ -1108,6 +1197,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Espelho Malévolo',
             vi: 'Gương Ác Độc',
             id: 'Cermin Jahat',
+            kr: `악의의 거울`,
           },
           description: {
             en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability, but dealing ${mirrorDamageReduction}% less damage). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
@@ -1118,6 +1208,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone, mas causando ${mirrorDamageReduction}% menos dano). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
             vi: `Dịch Chuyển Ác Ý để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Bản Sao Bóng Tối, nhưng gây ít hơn ${mirrorDamageReduction}% sát thương). Dùng lại Dịch Chuyển Ác Ý để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
             id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone, tetapi memberikan kerusakan ${mirrorDamageReduction}% lebih sedikit). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
+            kr: `악의의 이동이 이전 위치에 어둠의 분신을 남깁니다 (어둠의 분신 스킬과 동일하지만 피해량이 ${mirrorDamageReduction}%만큼 감소합니다). 악의의 이동을 다시 시전하면 분신과 위치를 교환하며, ${recastDelay}초 후 분신이 폭발합니다.`,
           },
         },
         tier2_right: {
@@ -1130,6 +1221,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Garras Malévolas',
             vi: 'Móng Vuốt Ác Độc',
             id: 'Cakar Jahat',
+            kr: `악의의 발톱`,
           },
           description: {
             en: `Malevolent Shift also roots all enemy heroes hit for ${clawsRoot}s.`,
@@ -1140,6 +1232,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Malevolent Shift também enraíza todos os heróis inimigos atingidos por ${clawsRoot}s.`,
             vi: `Dịch Chuyển Ác Ý còn trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}s.`,
             id: `Malevolent Shift juga me-root semua hero musuh yang terkena selama ${clawsRoot}s.`,
+            kr: `악의의 이동이 적중한 모든 적 영웅을 ${clawsRoot}초 동안 속박시킵니다.`,
           },
         },
       }
@@ -1168,6 +1261,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Graine de Vie',
             vi: 'Hạt Giống Sự Sống',
             id: 'Benih Kehidupan',
+            kr: `생명의 씨앗`,
           },
           description: {
             en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s and dispelling all negative effects. Cooldown: ${seedOfLifeCooldown}s.`,
@@ -1178,6 +1272,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s et dissipant tous les effets négatifs. Temps de recharge : ${seedOfLifeCooldown}s.`,
             vi: `Nhận sát thương lớn hơn ${seedOfLifeThreshold}% Máu hiện tại sẽ gieo một hạt giống hồi phục, hồi lại ${seedOfLifeHeal}% sát thương đã nhận trong ${seedOfLifeDuration}s và loại bỏ mọi hiệu ứng bất lợi. Hồi chiêu: ${seedOfLifeCooldown}s.`,
             id: `Menerima damage lebih dari ${seedOfLifeThreshold}% Health saat ini akan menanam benih penyembuh, memulihkan ${seedOfLifeHeal}% dari damage yang diterima selama ${seedOfLifeDuration}s serta menghapus semua efek negatif. Cooldown: ${seedOfLifeCooldown}s.`,
+            kr: `현재 체력의 ${seedOfLifeThreshold}%를 초과하는 피해를 받으면 회복의 씨앗이 심어져, ${seedOfLifeDuration}초에 걸쳐 받은 피해량의 ${seedOfLifeHeal}%를 회복시키고 모든 부정적 효과를 해제합니다. 재사용 대기시간: ${seedOfLifeCooldown}초.`,
           },
         },
 
@@ -1191,6 +1286,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Marque du Bosquet',
             vi: 'Dấu Ấn Khu Rừng',
             id: 'Tanda Rimba',
+            kr: `숲의 표식`,
           },
           description: {
             en: `Bramble Snap and Wrath of the Grove also apply ${groveMarkStacks} Verdant Mark stack.`,
@@ -1201,6 +1297,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Bramble Snap et Wrath of the Grove appliquent aussi ${groveMarkStacks} cumul de Verdant Mark.`,
             vi: `Bramble Snap và Wrath of the Grove giờ cũng áp dụng ${groveMarkStacks} cộng dồn Verdant Mark.`,
             id: `Bramble Snap dan Wrath of the Grove kini juga menerapkan ${groveMarkStacks} stack Verdant Mark.`,
+            kr: `가시덩굴 올가미와 숲의 분노는 ${groveMarkStacks}중첩의 숲의 표식도 적용합니다.`,
           },
         },
 
@@ -1214,6 +1311,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Bramble Snap : enracinement +${brambleSnapRootBonus}s`,
             vi: `Bramble Snap: trói +${brambleSnapRootBonus}s`,
             id: `Bramble Snap: root +${brambleSnapRootBonus}s`,
+            kr: `가시덩굴 올가미 속박 +${brambleSnapRootBonus}초`,
           },
         },
 
@@ -1227,6 +1325,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Second Bosquet',
             vi: 'Khu Rừng Thứ Hai',
             id: 'Rimba Kedua',
+            kr: `두 번째 숲`,
           },
           description: {
             en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}s. The second eruption deals ${additionalWrathMod}% damage and applies the same ${getStunKeyword(
@@ -1239,6 +1338,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: `Wrath of the Grove invoque une seconde graine après ${additionalWrathDelay}s. La seconde explosion inflige ${additionalWrathMod}% dégâts et étourdissement.`,
             vi: `Wrath of the Grove triệu hồi hạt giống thứ hai sau ${additionalWrathDelay}s. Lần bùng nổ thứ hai gây ${additionalWrathMod}% sát thương và hiệu ứng choáng.`,
             id: `Wrath of the Grove memanggil benih kedua setelah ${additionalWrathDelay}s. Ledakan kedua memberikan ${additionalWrathMod}% damage dan efek stun.`,
+            kr: `숲의 분노가 ${additionalWrathDelay}초 후 두 번째 씨앗을 소환합니다. 두 번째 폭발은 ${additionalWrathMod}%의 피해를 입히며 동일한 ${getStunKeyword(
+              'Stun'
+            )}을 적용합니다.`,
           },
         },
       }
@@ -1265,6 +1367,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Investida da Marionete: lentidão +${dashSlowBonus}s`,
             vi: `Con Rối Lao Tới: làm chậm +${dashSlowBonus}s`,
             id: `Puppet Dash: perlambatan +${dashSlowBonus}s`,
+            kr: `꼭두각시 돌진 둔화 +${dashSlowBonus}초`,
           },
         },
         tier1_right: {
@@ -1277,6 +1380,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Destruidor',
             vi: 'Kẻ Hủy Giáp',
             id: 'Perobek',
+            kr: `파쇄자`,
           },
           description: {
             en: `Command Strike reduces the target's armor by ${shredderArmorPerStack} per stack (up to ${shredderMaxStacks} stacks, ${shredderMaxArmor} max) for ${shredderDuration}s.`,
@@ -1287,6 +1391,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Golpe de Comando reduz a armadura do alvo em ${shredderArmorPerStack} por stack (até ${shredderMaxStacks} stacks, ${shredderMaxArmor} no máximo) por ${shredderDuration}s.`,
             vi: `Command Strike giảm ${shredderArmorPerStack} giáp mục tiêu mỗi lớp (tối đa ${shredderMaxStacks} lớp, ${shredderMaxArmor} tối đa) trong ${shredderDuration}s.`,
             id: `Command Strike mengurangi armor target sebesar ${shredderArmorPerStack} per stack (maks. ${shredderMaxStacks} stack, ${shredderMaxArmor} maks.) selama ${shredderDuration}s.`,
+            kr: `명령 타격이 대상의 방어력을 중첩당 ${shredderArmorPerStack}만큼 감소시키며(최대 ${shredderMaxStacks}중첩, 최대 ${shredderMaxArmor}), 효과는 ${shredderDuration}초 동안 지속됩니다.`,
           },
         },
         tier2_left: {
@@ -1299,6 +1404,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `Duração da Fixação +${fixateBonus}s`,
             vi: `Thời gian Cố định +${fixateBonus}s`,
             id: `Durasi Fiksasi +${fixateBonus}s`,
+            kr: `고정 지속시간 +${fixateBonus}초`,
           },
         },
         tier2_right: {
@@ -1311,6 +1417,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: 'Fio Reforçado',
             vi: 'Sợi Chỉ Gia Cố',
             id: 'Benang Diperkuat',
+            kr: `강화된 실`,
           },
           description: {
             en: `Binding Thread's tether lasts ${staticDurationBonus}s longer and its stun is ${stunDurationBonus}s longer.`,
@@ -1321,6 +1428,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             br: `A amarração do Fio Amarrador dura ${staticDurationBonus}s a mais e seu atordoamento dura ${stunDurationBonus}s a mais.`,
             vi: `Sợi dây trói của Binding Thread kéo dài thêm ${staticDurationBonus}s và choáng thêm ${stunDurationBonus}s.`,
             id: `Ikatan Binding Thread bertahan ${staticDurationBonus}s lebih lama dan stun-nya ${stunDurationBonus}s lebih lama.`,
+            kr: `결속의 실의 결속 지속시간이 ${staticDurationBonus}초 늘어나고, 기절 지속시간이 ${stunDurationBonus}초 늘어납니다.`,
           },
         },
       }

@@ -13,6 +13,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar como convidado',
     vi: 'Đăng nhập tài khoản khách',
     id: 'Masuk sebagai Tamu',
+    kr: `게스트로 로그인`,
   },
   [LOCALE.LOGIN_LINK_CODE]: {
     en: 'Login with Link Code',
@@ -23,6 +24,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar com código de link',
     vi: 'Đăng nhập bằng mã liên kết',
     id: 'Masuk dengan Kode Tautan',
+    kr: `연동 코드로 로그인`,
   },
   [LOCALE.LOGIN_OTHER_METHODS]: {
     en: 'Login with Other Methods',
@@ -33,6 +35,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar com outros métodos',
     vi: 'Đăng nhập bằng các phương pháp khác',
     id: 'Masuk dengan Metode Lainnya',
+    kr: `다른 방법으로 로그인`,
   },
   [LOCALE.USERNAME]: {
     en: 'Username',
@@ -43,6 +46,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Nome de usuário',
     vi: 'Tên tài khoản',
     id: 'Nama Pengguna',
+    kr: `사용자 이름`,
   },
   [LOCALE.LINK_CODE]: {
     en: 'Link Code',
@@ -53,6 +57,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Código de link',
     vi: 'Mã liên kết',
     id: 'Kode Tautan',
+    kr: `연동 코드`,
   },
   [LOCALE.SELECT_REGION]: {
     en: 'Select Region',
@@ -63,6 +68,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Selecione a região',
     vi: 'Chọn Khu vực',
     id: 'Pilih Wilayah',
+    kr: `지역 선택`,
   },
   [LOCALE.SERVER]: {
     en: 'Server',
@@ -73,16 +79,19 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Servidor',
     vi: 'Máy chủ',
     id: 'Server',
+    kr: `서버`,
   },
   [LOCALE.PING]: {
     en: 'Ping',
     ru: 'Пинг',
     zh: '延遲',
+    kr: `핑`,
   },
   [LOCALE.DISCORD]: {
     en: 'Discord',
     // Discord in Russian
     ru: 'Дискорд',
+    kr: `디스코드`,
   },
   [LOCALE.TERMS_OF_SERVICES]: {
     en: 'Terms of Service',
@@ -93,6 +102,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Termos de serviço',
     vi: 'Điều khoản Dịch vụ',
     id: 'Syarat Layanan',
+    kr: `이용약관`,
   },
   [LOCALE.PRIVACY_POLICY]: {
     en: 'Privacy Policy',
@@ -103,6 +113,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Política de privacidade',
     vi: 'Chính sách Bảo mật',
     id: 'Kebijakan Privasi',
+    kr: `개인정보처리방침`,
   },
   [LOCALE.PARTNERS]: {
     en: 'Partners',
@@ -113,6 +124,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Parceiros',
     vi: 'Đối tác',
     id: 'Mitra',
+    kr: `파트너`,
   },
   [LOCALE.SOCIAL]: {
     en: 'Social',
@@ -123,6 +135,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Social',
     vi: 'Mạng Xã hội',
     id: 'Sosial',
+    kr: `소셜`,
   },
   [LOCALE.INFORMATIONS]: {
     en: 'Information',
@@ -133,6 +146,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Informações',
     vi: 'Thông tin',
     id: 'Informasi',
+    kr: `정보`,
   },
   [LOCALE.LOGIN_AS]: {
     en: 'Login as',
@@ -143,6 +157,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar como',
     vi: 'Đăng nhập như',
     id: 'Masuk sebagai',
+    kr: `다음 계정으로 로그인`,
   },
   [LOCALE.MAINTENANCE_MODE_TITLE]: {
     en: 'Maintenance Mode',
@@ -153,6 +168,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Modo de manutenção',
     vi: 'Chế độ bảo trì',
     id: 'Mode pemeliharaan',
+    kr: `점검 모드`,
   },
   [LOCALE.MAINTENANCE_MODE_DESCRIPTION]: {
     en: 'We are currently under maintenance. Game will be available soon. Stay tuned and check our Discord for more information.',
@@ -163,6 +179,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Estamos em manutenção no momento. O jogo estará disponível em breve. Fique ligado e confira nosso Discord para mais informações.',
     vi: 'Chúng tôi hiện đang bảo trì. Trò chơi sẽ sớm khả dụng trở lại. Hãy theo dõi và vào Discord của chúng tôi để biết thêm thông tin.',
     id: 'Kami sedang dalam masa pemeliharaan. Game akan segera tersedia kembali. Tetap pantau dan cek Discord kami untuk informasi lebih lanjut.',
+    kr: `현재 서버 점검이 진행 중입니다. 게임은 곧 다시 이용하실 수 있습니다. 계속 지켜봐 주시고, 자세한 내용은 디스코드에서 확인해 주세요.`,
   },
   [LOCALE.MAINTENANCE_MODE_DISCORD]: {
     en: 'Discord Link',
@@ -173,6 +190,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Link do Discord',
     vi: 'Liên kết Discord',
     id: 'Tautan Discord',
+    kr: `디스코드 링크`,
   },
   [LOCALE.MAINTENANCE_MODE_PATCH_NOTES]: {
     en: 'Update Log',
@@ -183,6 +201,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Registro de atualizações',
     vi: 'Nhật ký cập nhật',
     id: 'Log pembaruan',
+    kr: `업데이트 로그`,
   },
   [LOCALE.LANDING_SCROLL]: {
     en: 'Scroll',
@@ -193,6 +212,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Rolar',
     vi: 'Cuộn',
     id: 'Gulir',
+    kr: `스크롤`,
   },
   [LOCALE.LANDING_CONTINUE_AS]: {
     en: 'Continue as',
@@ -203,6 +223,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Continuar como',
     vi: 'Tiếp tục với vai trò',
     id: 'Lanjutkan sebagai',
+    kr: `다음 계정으로 계속하기`,
   },
   [LOCALE.LANDING_LOGIN_WITH_ARMOR_GAMES]: {
     en: 'Login with Armor Games',
@@ -213,6 +234,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entrar com Armor Games',
     vi: 'Đăng nhập bằng Armor Games',
     id: 'Masuk dengan Armor Games',
+    kr: `Armor Games로 로그인`,
   },
   [LOCALE.LANDING_SERVER_STATUS]: {
     en: 'Server Status',
@@ -223,6 +245,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Status do servidor',
     vi: 'Trạng thái máy chủ',
     id: 'Status server',
+    kr: `서버 상태`,
   },
   [LOCALE.LANDING_STATUS_ONLINE]: {
     en: 'Online',
@@ -233,6 +256,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Online',
     vi: 'Trực tuyến',
     id: 'Online',
+    kr: `온라인`,
   },
   [LOCALE.LANDING_STATUS_OFFLINE]: {
     en: 'Offline',
@@ -243,6 +267,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Offline',
     vi: 'Ngoại tuyến',
     id: 'Offline',
+    kr: `오프라인`,
   },
   [LOCALE.LANDING_REGION_DEVELOPMENT]: {
     en: 'Development',
@@ -253,6 +278,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Desenvolvimento',
     vi: 'Phát triển',
     id: 'Pengembangan',
+    kr: `개발`,
   },
   [LOCALE.LANDING_REGION_US]: {
     en: 'United States (New York)',
@@ -263,6 +289,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Estados Unidos (Nova York)',
     vi: 'Hoa Kỳ (New York)',
     id: 'Amerika Serikat (New York)',
+    kr: `미국 (뉴욕)`,
   },
   [LOCALE.LANDING_REGION_SEA]: {
     en: 'South East Asia',
@@ -273,6 +300,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Sudeste Asiático',
     vi: 'Đông Nam Á',
     id: 'Asia Tenggara',
+    kr: `동남아시아`,
   },
   [LOCALE.LANDING_REGION_PTR]: {
     en: 'Private Testing Server',
@@ -283,6 +311,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Private Testing Server',
     vi: 'Private Testing Server',
     id: 'Private Testing Server',
+    kr: `Private Testing Server`,
   },
   [LOCALE.LANDING_ABOUT_TITLE]: {
     en: 'Kingdom of Pixels',
@@ -293,6 +322,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Kingdom of Pixels',
     vi: 'Kingdom of Pixels',
     id: 'Kingdom of Pixels',
+    kr: `Kingdom of Pixels`,
   },
   [LOCALE.LANDING_ABOUT_TEXT]: {
     en: 'Kingdom of Pixels is a 2D online multiplayer side-scrolling MOBA platformer where players choose unique heroes, fight in fast-paced matches, and outplay opponents through skill, teamwork, and strategy.',
@@ -303,6 +333,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Kingdom of Pixels é um MOBA platformer 2D online side-scrolling, onde os jogadores escolhem heróis únicos, lutam em partidas rápidas e superam os oponentes com habilidade, trabalho em equipe e estratégia.',
     vi: 'Kingdom of Pixels là game MOBA platformer cuộn cảnh ngang 2D nhiều người chơi trực tuyến, nơi người chơi chọn các vị tướng độc đáo, chiến đấu trong những trận đấu nhịp độ nhanh và vượt qua đối thủ bằng kỹ năng, phối hợp và chiến thuật.',
     id: 'Kingdom of Pixels adalah game MOBA platformer side-scrolling 2D multiplayer online, tempat pemain memilih hero unik, bertarung dalam match cepat, dan mengungguli lawan lewat skill, kerja sama tim, dan strategi.',
+    kr: `Kingdom of Pixels는 플레이어가 개성 있는 영웅을 선택하고, 빠른 템포의 매치에서 전투를 벌이며, 실력과 팀워크, 전략으로 상대를 압도하는 2D 온라인 멀티플레이어 사이드 스크롤링 MOBA 플랫포머입니다.`,
   },
   [LOCALE.LANDING_ABOUT_IMAGE_ALT]: {
     en: 'Kingdom of Pixels logo',
@@ -313,6 +344,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Logo do Kingdom of Pixels',
     vi: 'Logo Kingdom of Pixels',
     id: 'Logo Kingdom of Pixels',
+    kr: `Kingdom of Pixels 로고`,
   },
   [LOCALE.LANDING_MULTIPLAYER_TITLE]: {
     en: 'True Multiplayer Experience',
@@ -323,6 +355,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Verdadeira experiência multiplayer',
     vi: 'Trải nghiệm multiplayer thực thụ',
     id: 'Pengalaman multiplayer sejati',
+    kr: `진정한 멀티플레이어 경험`,
   },
   [LOCALE.LANDING_MULTIPLAYER_TEXT]: {
     en: 'Enter a high-intensity online battle arena where every second matters. Queue with friends, pick your main, and dominate through pure skill. No shortcuts, just fast gameplay, sharp mechanics, and real competition in Kingdom of Pixels.',
@@ -333,6 +366,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Entre em uma arena de batalha online intensa onde cada segundo importa. Entre na fila com amigos, escolha seu main e domine com pura habilidade. Sem atalhos, apenas gameplay rápido, mecânicas afiadas e competição de verdade em Kingdom of Pixels.',
     vi: 'Bước vào đấu trường chiến đấu trực tuyến cường độ cao, nơi từng giây đều quan trọng. Xếp hàng cùng bạn bè, chọn vị tướng tủ và thống trị bằng kỹ năng thuần túy. Không có lối tắt, chỉ có gameplay nhanh, cơ chế sắc bén và cạnh tranh thực sự trong Kingdom of Pixels.',
     id: 'Masuk ke arena pertempuran online intens tempat setiap detik berarti. Queue bersama teman, pilih hero andalanmu, dan kuasai pertandingan dengan skill murni. Tanpa jalan pintas, hanya gameplay cepat, mekanik tajam, dan kompetisi nyata di Kingdom of Pixels.',
+    kr: `매 순간이 중요한 강렬한 온라인 전투 아레나에 뛰어드세요. 친구들과 함께 대기열에 참여하고, 주력 영웅을 선택해 오직 실력만으로 승리를 거머쥐세요. 지름길은 없습니다. Kingdom of Pixels에서는 빠른 게임플레이와 정교한 메커니즘, 그리고 진짜 경쟁만이 기다리고 있습니다.`,
   },
   [LOCALE.LANDING_MULTIPLAYER_IMAGE_ALT]: {
     en: 'Kingdom of Pixels multiplayer battle',
@@ -343,6 +377,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Batalha multiplayer de Kingdom of Pixels',
     vi: 'Trận chiến multiplayer Kingdom of Pixels',
     id: 'Pertempuran multiplayer Kingdom of Pixels',
+    kr: `Kingdom of Pixels 멀티플레이어 전투`,
   },
   [LOCALE.LANDING_TUTORIAL_TITLE]: {
     en: 'Learn Through Interactive Tutorial',
@@ -353,6 +388,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Aprenda com um tutorial interativo',
     vi: 'Học thông qua hướng dẫn tương tác',
     id: 'Belajar melalui tutorial interaktif',
+    kr: `인터랙티브 튜토리얼로 배우기`,
   },
   [LOCALE.LANDING_TUTORIAL_TEXT]: {
     en: 'Get hands-on with the core mechanics through a guided interactive tutorial. Learn movement, combat, and game fundamentals step by step, so you are ready to compete from your very first match.',
@@ -363,6 +399,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Aprenda na prática as mecânicas principais por meio de um tutorial interativo guiado. Domine movimento, combate e os fundamentos do jogo passo a passo para estar pronto para competir desde a sua primeira partida.',
     vi: 'Trải nghiệm trực tiếp các cơ chế cốt lõi thông qua hướng dẫn tương tác có chỉ dẫn. Học di chuyển, chiến đấu và các nền tảng của trò chơi từng bước một để sẵn sàng thi đấu ngay từ trận đầu tiên.',
     id: 'Pelajari langsung mekanik inti melalui tutorial interaktif terpandu. Pelajari pergerakan, pertarungan, dan dasar-dasar game langkah demi langkah agar kamu siap bertanding sejak match pertamamu.',
+    kr: `안내형 인터랙티브 튜토리얼을 통해 핵심 메커니즘을 직접 체험해 보세요. 이동, 전투, 게임의 기본기를 단계별로 익혀 첫 매치부터 자신 있게 경쟁할 수 있습니다.`,
   },
   [LOCALE.LANDING_TUTORIAL_IMAGE_ALT]: {
     en: 'Kingdom of Pixels tutorial gameplay',
@@ -373,6 +410,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Gameplay do tutorial de Kingdom of Pixels',
     vi: 'Lối chơi hướng dẫn của Kingdom of Pixels',
     id: 'Gameplay tutorial Kingdom of Pixels',
+    kr: `Kingdom of Pixels 튜토리얼 플레이 화면`,
   },
   [LOCALE.LANDING_OBJECTIVES_TITLE]: {
     en: 'Game Objectives',
@@ -383,6 +421,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Objetivos do jogo',
     vi: 'Mục tiêu trò chơi',
     id: 'Tujuan permainan',
+    kr: `게임 목표`,
   },
   [LOCALE.LANDING_OBJECTIVES_TEXT]: {
     en: 'Adapt to every match through heroes, items, and map objectives that constantly change how the game is played. Smart decisions, timing, and strategy matter just as much as mechanics, giving every battle a different flow.',
@@ -393,6 +432,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Adapte-se a cada partida por meio de heróis, itens e objetivos do mapa que mudam constantemente a forma como o jogo é jogado. Decisões inteligentes, timing e estratégia importam tanto quanto mecânicas, dando a cada batalha um ritmo diferente.',
     vi: 'Thích nghi với từng trận đấu thông qua tướng, trang bị và các mục tiêu bản đồ luôn thay đổi cách trận đấu diễn ra. Quyết định thông minh, thời điểm và chiến thuật quan trọng không kém kỹ năng cơ học, khiến mỗi cuộc chiến có nhịp độ khác nhau.',
     id: 'Beradaptasilah di setiap match melalui hero, item, dan objektif map yang terus mengubah cara permainan berlangsung. Keputusan cerdas, timing, dan strategi sama pentingnya dengan mekanik, membuat setiap pertempuran punya alur yang berbeda.',
+    kr: `영웅과 아이템, 그리고 게임 방식을 끊임없이 바꾸는 맵 목표물에 맞춰 매 경기마다 전략을 조정해 보세요. 현명한 판단과 타이밍, 전략은 조작 실력 못지않게 중요하며, 이는 매 전투마다 서로 다른 흐름을 만들어냅니다.`,
   },
   [LOCALE.LANDING_OBJECTIVES_IMAGE_ALT]: {
     en: 'Kingdom of Pixels gold rune objective',
@@ -403,6 +443,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Objetivo da runa dourada em Kingdom of Pixels',
     vi: 'Mục tiêu ngọc vàng trong Kingdom of Pixels',
     id: 'Objektif rune emas Kingdom of Pixels',
+    kr: `Kingdom of Pixels 골드 룬 목표물`,
   },
   [LOCALE.LANDING_HERO_CAROUSEL_TITLE]: {
     en: 'Play Your Own Way',
@@ -413,6 +454,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Jogue do seu jeito',
     vi: 'Chơi theo cách của bạn',
     id: 'Main dengan gayamu sendiri',
+    kr: `나만의 방식으로 플레이하기`,
   },
   [LOCALE.LANDING_HERO_CAROUSEL_TEXT]: {
     en: 'Mix different heroes, items, and objectives to create your own playstyle. Every match brings new situations, keeping the gameplay fresh and engaging from start to finish.',
@@ -423,6 +465,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Misture diferentes heróis, itens e objetivos para criar seu próprio estilo de jogo. Cada partida traz novas situações, mantendo a jogabilidade sempre renovada e envolvente do começo ao fim.',
     vi: 'Kết hợp các vị tướng, trang bị và mục tiêu khác nhau để tạo nên lối chơi của riêng bạn. Mỗi trận đấu đều mang đến những tình huống mới, giúp gameplay luôn mới mẻ và cuốn hút từ đầu đến cuối.',
     id: 'Padukan hero, item, dan objektif yang berbeda untuk menciptakan gaya bermainmu sendiri. Setiap match menghadirkan situasi baru, membuat gameplay tetap segar dan menarik dari awal hingga akhir.',
+    kr: `다양한 영웅과 아이템, 목표를 조합해 나만의 플레이 스타일을 만들어 보세요. 매 경기마다 새로운 상황이 펼쳐져 처음부터 끝까지 신선하고 몰입감 있는 게임플레이를 즐길 수 있습니다.`,
   },
   [LOCALE.LANDING_HERO_CAROUSEL_ARIA_LABEL]: {
     en: 'Kingdom of Pixels heroes',
@@ -433,6 +476,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Heróis de Kingdom of Pixels',
     vi: 'Các tướng trong Kingdom of Pixels',
     id: 'Hero Kingdom of Pixels',
+    kr: `Kingdom of Pixels 영웅`,
   },
   [LOCALE.LANDING_FAQ_TITLE]: {
     en: 'Frequently Asked Questions',
@@ -443,6 +487,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Perguntas frequentes',
     vi: 'Câu hỏi thường gặp',
     id: 'Pertanyaan yang sering diajukan',
+    kr: `자주 묻는 질문`,
   },
   [LOCALE.LANDING_FAQ_GAME_QUESTION]: {
     en: 'What kind of game is Kingdom of Pixels?',
@@ -453,6 +498,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Que tipo de jogo é Kingdom of Pixels?',
     vi: 'Kingdom of Pixels là thể loại game gì?',
     id: 'Game seperti apa Kingdom of Pixels itu?',
+    kr: `Kingdom of Pixels는 어떤 게임인가요?`,
   },
   [LOCALE.LANDING_FAQ_GAME_ANSWER]: {
     en: 'A 2D online multiplayer side-scrolling MOBA platformer focused on skill-based combat.',
@@ -463,6 +509,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Um MOBA platformer 2D online side-scrolling focado em combate baseado em habilidade.',
     vi: 'Một game MOBA platformer cuộn cảnh ngang 2D nhiều người chơi trực tuyến tập trung vào chiến đấu dựa trên kỹ năng.',
     id: 'Game MOBA platformer side-scrolling 2D multiplayer online yang berfokus pada pertarungan berbasis skill.',
+    kr: `실력 기반 전투에 중점을 둔 2D 온라인 멀티플레이어 사이드 스크롤링 MOBA 플랫포머입니다.`,
   },
   [LOCALE.LANDING_FAQ_MULTIPLAYER_QUESTION]: {
     en: 'Is Kingdom of Pixels multiplayer?',
@@ -473,6 +520,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Kingdom of Pixels é multiplayer?',
     vi: 'Kingdom of Pixels có phải game multiplayer không?',
     id: 'Apakah Kingdom of Pixels multiplayer?',
+    kr: `Kingdom of Pixels는 멀티플레이어 게임인가요?`,
   },
   [LOCALE.LANDING_FAQ_MULTIPLAYER_ANSWER]: {
     en: 'Yes, it is an online multiplayer game where players compete in real-time matches.',
@@ -483,6 +531,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Sim, é um jogo multiplayer online em que os jogadores competem em partidas em tempo real.',
     vi: 'Có, đây là game multiplayer trực tuyến nơi người chơi cạnh tranh trong các trận đấu thời gian thực.',
     id: 'Ya, ini adalah game multiplayer online tempat pemain bertanding dalam match real-time.',
+    kr: `네, 플레이어들이 실시간 매치에서 경쟁하는 온라인 멀티플레이어 게임입니다.`,
   },
   [LOCALE.LANDING_FAQ_FRIENDS_QUESTION]: {
     en: 'Can I play with friends?',
@@ -493,6 +542,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Posso jogar com amigos?',
     vi: 'Tôi có thể chơi cùng bạn bè không?',
     id: 'Bisakah saya bermain dengan teman?',
+    kr: `친구와 함께 플레이할 수 있나요?`,
   },
   [LOCALE.LANDING_FAQ_FRIENDS_ANSWER]: {
     en: 'Yes, you can create custom lobby to play with friends. You can also queue for ranked matches.',
@@ -503,6 +553,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Sim, você pode criar uma sala personalizada para jogar com amigos. Também é possível entrar na fila para partidas ranqueadas.',
     vi: 'Có, bạn có thể tạo phòng tùy chỉnh để chơi cùng bạn bè. Bạn cũng có thể xếp hàng cho các trận đấu xếp hạng.',
     id: 'Ya, kamu bisa membuat custom lobby untuk bermain bersama teman. Kamu juga bisa queue untuk match ranked.',
+    kr: `네, 커스텀 로비를 만들어 친구와 함께 플레이할 수 있습니다. 랭크 매치 대기열에 참여할 수도 있습니다.`,
   },
   [LOCALE.LANDING_FAQ_COMMUNITY_QUESTION]: {
     en: 'Is there a community server?',
@@ -513,6 +564,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Existe um servidor da comunidade?',
     vi: 'Có máy chủ cộng đồng không?',
     id: 'Apakah ada server komunitas?',
+    kr: `커뮤니티 서버가 있나요?`,
   },
   [LOCALE.LANDING_FAQ_COMMUNITY_ANSWER_PREFIX]: {
     en: 'Yes, we have a community discord where you can talk to players or developers of the game. ',
@@ -523,6 +575,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Sim, temos um Discord da comunidade onde você pode conversar com jogadores e desenvolvedores do jogo. ',
     vi: 'Có, chúng tôi có một Discord cộng đồng nơi bạn có thể trò chuyện với người chơi hoặc nhà phát triển của trò chơi. ',
     id: 'Ya, kami memiliki Discord komunitas tempat kamu bisa berbicara dengan pemain maupun pengembang game. ',
+    kr: `네, 게임의 플레이어나 개발자와 대화할 수 있는 커뮤니티 디스코드가 있습니다. `,
   },
   [LOCALE.LANDING_FAQ_COMMUNITY_LINK]: {
     en: 'Discord Link',
@@ -533,6 +586,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Link do Discord',
     vi: 'Liên kết Discord',
     id: 'Tautan Discord',
+    kr: `디스코드 링크`,
   },
   [LOCALE.LANDING_FAQ_MOBILE_QUESTION]: {
     en: 'Is the game playable on mobile?',
@@ -543,6 +597,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'O jogo pode ser jogado no celular?',
     vi: 'Game có chơi được trên di động không?',
     id: 'Apakah game ini bisa dimainkan di ponsel?',
+    kr: `모바일에서도 플레이할 수 있나요?`,
   },
   [LOCALE.LANDING_FAQ_MOBILE_ANSWER]: {
     en: 'No, the game is currently only playable on desktop.',
@@ -553,6 +608,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Não, no momento o jogo só pode ser jogado no desktop.',
     vi: 'Không, hiện tại trò chơi chỉ có thể chơi trên máy tính.',
     id: 'Tidak, saat ini game hanya bisa dimainkan di desktop.',
+    kr: `아니요, 현재 게임은 데스크톱에서만 플레이할 수 있습니다.`,
   },
   [LOCALE.LANDING_FAQ_SIGNIN_QUESTION]: {
     en: 'How to Sign In?',
@@ -563,6 +619,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Como fazer login?',
     vi: 'Đăng nhập như thế nào?',
     id: 'Bagaimana cara masuk?',
+    kr: `로그인은 어떻게 하나요?`,
   },
   [LOCALE.LANDING_FAQ_SIGNIN_ANSWER_PREFIX]: {
     en: 'For persistent account, you can sign in with your Google account. You can also play game on ',
@@ -573,6 +630,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Para uma conta permanente, você pode entrar com sua conta Google. Você também pode jogar em ',
     vi: 'Để có tài khoản lâu dài, bạn có thể đăng nhập bằng tài khoản Google. Bạn cũng có thể chơi game trên ',
     id: 'Untuk akun permanen, kamu bisa masuk dengan akun Google. Kamu juga bisa memainkan game di ',
+    kr: `영구 계정을 원하신다면 Google 계정으로 로그인할 수 있습니다. 게임은 `,
   },
   [LOCALE.RENAME_ERROR_ALREADY_EXISTS]: {
     en: 'Name is already taken. Select another one!',
@@ -583,6 +641,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Nome já está em uso. Selecione outro!',
     vi: 'Tên đã được sử dụng. Chọn một cái khác!',
     id: 'Nama sudah digunakan. Pilih yang lain!',
+    kr: `이미 사용 중인 이름입니다. 다른 이름을 선택해 주세요!`,
   },
   [LOCALE.RENAME_ERROR_INCORRECT_NAME]: {
     en: 'The name must be between 3 and 12 letters long and cannot contain forbidden letters.',
@@ -593,6 +652,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'O nome deve ter entre 3 e 12 letras e não pode conter letras proibidas.',
     vi: 'Tên phải từ 3 đến 12 chữ cái và không được chứa chữ cái kì lạ.',
     id: 'Nama harus terdiri dari 3 hingga 12 huruf dan tidak boleh mengandung huruf yang dilarang.',
+    kr: `이름은 3자에서 12자 사이여야 하며, 금지된 문자를 포함할 수 없습니다.`,
   },
   [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
     en: "Can't connect with server",
@@ -603,6 +663,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Não é possível conectar-se ao servidor',
     vi: 'Không thể kết nối với máy chủ',
     id: 'Tidak dapat terhubung dengan server',
+    kr: `서버에 연결할 수 없습니다`,
   },
   [LOCALE.LOADING]: {
     en: 'Loading...',
@@ -613,6 +674,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Carregando...',
     vi: 'Đang tải...',
     id: 'Memuat...',
+    kr: `로딩 중...`,
   },
   [LOCALE.CONGRATULATION]: {
     en: 'Congratulations',
@@ -623,6 +685,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Parabéns',
     vi: 'Chúc mừng',
     id: 'Selamat',
+    kr: `축하합니다`,
   },
   [LOCALE.PLAY_PAGE_RANKED_DESCRIPTION]: {
     en: ' - Reward: experience, coins and ELO\n - Solo ranked plays only vs solo\n - Party ranked plays only vs party',
@@ -633,6 +696,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: ' - Recompensa: experiência, moedas e ELO\n - Ranked solo joga apenas contra solo\n - Ranked em grupo joga apenas contra grupos',
     vi: ' - Phần thưởng: kinh nghiệm, xu và ELO\n - Xếp hạng solo chỉ gặp solo\n - Xếp hạng tổ đội chỉ gặp tổ đội',
     id: ' - Hadiah: pengalaman, koin, dan ELO\n - Ranked solo hanya melawan solo\n - Ranked party hanya melawan party',
+    kr: ` - 보상: 경험치, 코인, ELO\n - 솔로 랭크: 솔로끼리만 매칭\n - 파티 랭크: 파티끼리만 매칭`,
   },
   [LOCALE.PLAY_PAGE_UNRANKED_DESCRIPTION]: {
     en: ' - Reward: experience and coins',
@@ -643,6 +707,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: ' - Recompensa: experiência e moedas',
     vi: ' - Phần thưởng: kinh nghiệm và xu',
     id: ' - Hadiah: pengalaman dan koin',
+    kr: ` - 보상: 경험치, 코인`,
   },
   [LOCALE.PLAY_PAGE_BLITZ_DESCRIPTION]: {
     en: ' - Score 15 points in under 5 minutes to win\n - Kills: 1 point, Gold Rune: 3 points, Tower: 6 points\n - 50% less experience and coins',
@@ -653,6 +718,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: ' - Ao fazer 15 pontos em menos de 5 minutos, sua equipe vence\n - Abates: 1 ponto, Runa de Ouro: 3 pontos e Torre: 6 pontos\n - 50% menos experiência e moedas',
     vi: ' - Đạt 15 điểm trong vòng dưới 5 phút để chiến thắng\n - Hạ gục: 1 điểm, Runa Vàng: 3 điểm, Trụ: 6 điểm\n - 50% kinh nghiệm và xu ít hơn',
     id: ' - Kumpulkan 15 poin dalam waktu kurang dari 5 menit untuk menang\n - Membunuh: 1 poin, Rune Emas: 3 poin, Menara: 6 poin\n - 50% kurang pengalaman dan koin',
+    kr: ` - 5분 이내에 15점을 획득하면 승리\n - 킬: 1점, 골드 룬: 3점, 포탑: 6점\n - 경험치와 코인 50% 감소`,
   },
   [LOCALE.PLAY_PAGE_2VAI_DESCRIPTION]: {
     en: ' - Reward: experience and coins\n - 25% less experience and coins',
@@ -663,6 +729,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: ' - Recompensa: experiência e moedas\n - 25% menos experiência e moedas',
     vi: ' - Phần thưởng: kinh nghiệm và xu\n - 25% kinh nghiệm và xu it hơn',
     id: ' - Hadiah: pengalaman dan koin\n - 25% kurang pengalaman dan koin',
+    kr: ` - 보상: 경험치, 코인\n - 경험치와 코인 25% 감소`,
   },
   [LOCALE.POPUP_GENERATE_NAME]: {
     en: 'Generate Name',
@@ -673,6 +740,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Gerar Nome',
     vi: 'Tạo Tên',
     id: 'Buat Nama',
+    kr: `이름 생성`,
   },
   [LOCALE.LOGIN_ALREADY_LOGGED_IN]: {
     en: 'You are already logged in',
@@ -683,6 +751,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Você já está logado',
     vi: 'Bạn đã đăng nhập',
     id: 'Anda sudah masuk',
+    kr: `이미 로그인되어 있습니다`,
   },
   [LOCALE.RANKED_MATCH]: {
     en: 'Ranked',
@@ -693,6 +762,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Classé',
     vi: 'Xếp hạng',
     id: 'Peringkat',
+    kr: `랭크`,
   },
   [LOCALE.RANKED_QUEUE_BANNED_FOR]: {
     en: 'Banned for {}',
@@ -703,6 +773,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Bloqué pendant {}',
     vi: 'Bị cấm trong {}',
     id: 'Diblokir selama {}',
+    kr: `{} 동안 정지`,
   },
   [LOCALE.LOW_PRIORITY_QUEUE_MESSAGE]: {
     en: 'Banned from Ranked queue. Win {} casual games to play Ranked again.',
@@ -713,6 +784,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Bloqué de la file Classée. Gagnez {} parties normales pour rejouer en Classé.',
     vi: 'Bị cấm xếp hạng. Thắng {} trận thường để chơi xếp hạng trở lại.',
     id: 'Diblokir dari antrean Ranked. Menangkan {} game casual untuk bermain Ranked lagi.',
+    kr: `랭크 대기열 이용이 정지되었습니다. 캐주얼 게임을 {}회 승리하면 다시 랭크를 플레이할 수 있습니다.`,
   },
   [LOCALE.NORMAL_MATCH]: {
     en: 'Unranked Game',
@@ -723,6 +795,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     br: 'Partida sem classificação',
     vi: 'Đánh thường',
     id: 'Permainan Tidak Berperingkat',
+    kr: `언랭크 게임`,
   },
   [LOCALE.PLAY_PAGE_PLAY_A_GAME]: {
     en: 'Play a Game!',
@@ -733,6 +806,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Jouer une partie!',
     vi: 'Chơi một ván!',
     id: 'Mainkan game!',
+    kr: `게임 플레이하기!`,
   },
   [LOCALE.CASUAL_MATCH]: {
     en: 'Casual',
@@ -743,6 +817,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Décontracté',
     vi: 'Đánh Thường',
     id: 'Santai',
+    kr: `캐주얼`,
   },
   [LOCALE.BLITZ_MATCH]: {
     en: 'Blitz',
@@ -753,6 +828,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Blitz',
     vi: 'Ván Nhanh',
     id: 'Blitz',
+    kr: `블리츠`,
   },
   [LOCALE.AI_MATCH]: {
     en: 'AI Matches (PvAI):',
@@ -763,6 +839,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: "Matchs contre l'IA (PvIA):",
     vi: 'Trận đấu với AI (PvAI):',
     id: 'Pertandingan AI (PvAI):',
+    kr: `AI 매치 (PvAI):`,
   },
   [LOCALE.BLITZ_PLAYERS_AND_TIME]: {
     en: '5min - 2V2',
@@ -773,6 +850,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: '5min - 2v2',
     vi: '5 phút - 2v2',
     id: '5 menit - 2v2',
+    kr: `5분 - 2v2`,
   },
   [LOCALE.RANKED_PLAYERS_AND_TIME]: {
     en: '10min - Solo / Party 2V2',
@@ -783,6 +861,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: '10min - Solo / Groupe 2v2',
     vi: '10 phút - Solo / Tổ đội 2v2',
     id: '10 menit - Solo / Party 2v2',
+    kr: `10분 - 솔로 / 파티 2v2`,
   },
   [LOCALE.CASUAL_PLAYERS_AND_TIME]: {
     en: '8/10min - 1V1/2V2',
@@ -793,6 +872,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: '8/10min - 1V1/2V2',
     vi: '8/10phút - 1V1/2V2',
     id: '8/10menit - 1V1/2V2',
+    kr: `8/10분 - 1v1/2v2`,
   },
   [LOCALE.COOP_PLAYERS_AND_TIME]: {
     en: '10min - 2V2AI',
@@ -803,6 +883,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: '10min - 2V2IA',
     vi: '10 phút - 2V2AI',
     id: '10menit - 2V2AI',
+    kr: `10분 - 2v2AI`,
   },
   [LOCALE.ACTIVATE_ITEM]: {
     en: 'Activate Item',
@@ -813,6 +894,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: "Activer l'objet",
     vi: 'Kích hoạt đồ',
     id: 'Aktifkan Item',
+    kr: `아이템 활성화`,
   },
   [LOCALE.ACTIVE_ITEM]: {
     en: 'Item Active',
@@ -823,6 +905,7 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'Objet actif',
     vi: 'Kích hoạt đồ',
     id: 'Item Aktif',
+    kr: `아이템 활성화됨`,
   },
   [LOCALE.CURRENT_SEASON]: {
     en: 'Ongoing Season {} ends in ',
@@ -833,5 +916,6 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     fr: 'La saison en cours {} se termine dans ',
     vi: 'Mùa hiện tại {} kết thúc trong ',
     id: 'Musim {} berakhir dalam ',
+    kr: `진행 중인 시즌 {} 종료까지 `,
   },
 }
