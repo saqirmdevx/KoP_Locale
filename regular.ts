@@ -7207,6 +7207,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Chưa xác định',
     kr: `미정`,
   },
+  [LOCALE.TOURNAMENT_MATCH_BYE]: {
+    en: 'BYE',
+    ru: 'Пропуск раунда',
+    br: 'Bye (avanço automático)',
+    cz: 'Volný los',
+    zh: '輪空',
+    fr: 'Bye (qualification directe)',
+    id: 'Bye (lolos otomatis)',
+    vi: 'Miễn đấu (Bye)',
+    kr: '부전승',
+  },
   [LOCALE.TOURNAMENT_GROUP_LABEL]: {
     en: 'Group {}',
     ru: 'Группа {}',
