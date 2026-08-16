@@ -216,6 +216,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.ICEAT: {
       const attackSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100, 1)
+      const movementSpeedSlow = fixed(Math.abs(ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED) * 100, 1)
       const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)
       return {
         tier1_left: {
@@ -231,31 +232,43 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Your Basic Attacks reduce enemy ${getSlowKeyword('Movement Speed')} by <b>${getControlValue(
-              ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
+              movementSpeedSlow + '%'
             )}</b> and reduce enemy ${getSlowKeyword('Attack Speed')} by <b>${getControlValue(attackSpeedSlow + '%')}</b>`,
-            ru: `Ваши атаки будут уменьшать скорость передвижения целей на <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> и их скорость атаки на <b>${attackSpeedSlow}%</b>`,
-            cz: `Vaše základní útoky sníží rychlost pohybu nepřátel o <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> a sníží rychlost útoku nepřátel o <b>${attackSpeedSlow}%</b>`,
-            zh: `你的基礎攻擊減少敵人移動速度 <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> 並減少敵人攻擊速度 <b>${attackSpeedSlow}%</b>`,
-            fr: `Vos attaques de base réduisent la vitesse de déplacement des ennemis de <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> et réduisent la vitesse d'attaque des ennemis de <b>${attackSpeedSlow}%</b>`,
-            br: `Seus ataques básicas reduzem a Velocidade de Movimento do inimigo em <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> e reduzem a Velocidade de Ataque do inimigo em <b>${attackSpeedSlow}%</b>`,
-            vi: `Các đòn đánh thường của bạn giảm Tốc độ Di chuyển của kẻ địch <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> và giảm Tốc độ Tấn công của kẻ địch <b>${attackSpeedSlow}%</b>`,
-            id: `Serangan Dasar Anda mengurangi Kecepatan Gerakan musuh sebesar <b>${ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED}</b> dan mengurangi Kecepatan Serangan musuh sebesar <b>${attackSpeedSlow}%</b>`,
+            ru: `Ваши атаки будут уменьшать скорость передвижения целей на <b>${movementSpeedSlow}%</b> и их скорость атаки на <b>${attackSpeedSlow}%</b>`,
+            cz: `Vaše základní útoky sníží rychlost pohybu nepřátel o <b>${movementSpeedSlow}%</b> a sníží rychlost útoku nepřátel o <b>${attackSpeedSlow}%</b>`,
+            zh: `你的基礎攻擊減少敵人移動速度 <b>${movementSpeedSlow}%</b> 並減少敵人攻擊速度 <b>${attackSpeedSlow}%</b>`,
+            fr: `Vos attaques de base réduisent la vitesse de déplacement des ennemis de <b>${movementSpeedSlow}%</b> et réduisent la vitesse d'attaque des ennemis de <b>${attackSpeedSlow}%</b>`,
+            br: `Seus ataques básicas reduzem a Velocidade de Movimento do inimigo em <b>${movementSpeedSlow}%</b> e reduzem a Velocidade de Ataque do inimigo em <b>${attackSpeedSlow}%</b>`,
+            vi: `Các đòn đánh thường của bạn giảm Tốc độ Di chuyển của kẻ địch <b>${movementSpeedSlow}%</b> và giảm Tốc độ Tấn công của kẻ địch <b>${attackSpeedSlow}%</b>`,
+            id: `Serangan Dasar Anda mengurangi Kecepatan Gerakan musuh sebesar <b>${movementSpeedSlow}%</b> dan mengurangi Kecepatan Serangan musuh sebesar <b>${attackSpeedSlow}%</b>`,
             kr: `당신의 기본 공격은 적의 ${getSlowKeyword('Movement Speed')}를 <b>${getControlValue(
-              ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED
+              movementSpeedSlow + '%'
             )}</b>만큼 감소시키고, 적의 ${getSlowKeyword('Attack Speed')}를 <b>${getControlValue(attackSpeedSlow + '%')}</b>만큼 감소시킵니다`,
           },
         },
         tier1_right: {
           title: {
-            en: `Cold Embrace Movement Speed +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            ru: `+${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS} к скорости передвижения во время действия Объятий холода`,
-            cz: `Zimní objetí rychlost pohybu +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            zh: `冰冷懷抱移動速度 +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            fr: `Vitesse de déplacement de l'étreinte froide +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            br: `Velocidade de Movimento do Abraço Frio +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            vi: `Tốc độ di chuyển của Hàn Ủng +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            id: `Kecepatan Gerakan Pelukan Dingin +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
-            kr: `차가운 포옹 이동 속도 +${ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS}`,
+            en: `Cold Embrace Movement Speed +${fixed(ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100, 1)}%`,
+            ru: `+${fixed(
+              ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100,
+              1
+            )}% к скорости передвижения во время действия Объятий холода`,
+            cz: `Zimní objetí rychlost pohybu +${fixed(ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100, 1)}%`,
+            zh: `冰冷懷抱移動速度 +${fixed(ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100, 1)}%`,
+            fr: `Vitesse de déplacement de l'étreinte froide +${fixed(
+              ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100,
+              1
+            )}%`,
+            br: `Velocidade de Movimento do Abraço Frio +${fixed(
+              ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100,
+              1
+            )}%`,
+            vi: `Tốc độ di chuyển của Hàn Ủng +${fixed(ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100, 1)}%`,
+            id: `Kecepatan Gerakan Pelukan Dingin +${fixed(
+              ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100,
+              1
+            )}%`,
+            kr: `차가운 포옹 이동 속도 +${fixed(ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS * 100, 1)}%`,
           },
         },
         tier2_left: {
@@ -384,6 +397,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const floralAmbushHeal = fixed(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100)
       const pricklyVineStunBonus = toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
       const pricklyAttachDuration = toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)
+      const floralAmbushSlow = fixed(BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW * 100, 1)
       return {
         tier1_left: {
           title: {
@@ -400,15 +414,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Floral Ambush -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Movement Speed`,
-            ru: `Цветочная ловушка снижает скорость передвижения врагов на -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW}`,
-            cz: `Květinový útok -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} rychlost pohybu`,
-            zh: `鮮花伏擊 -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} 移動速度`,
-            fr: `Embûche florale -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Vitesse de déplacement`,
-            br: `Emboscada Floral -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Velocidade de Movimento`,
-            vi: `Hoa Phục Kích -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Tốc độ Di chuyển`,
-            id: `Emboscada Floral -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} Kecepatan Gerakan`,
-            kr: `꽃의 매복 -${BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW} 이동 속도`,
+            en: `Floral Ambush ${floralAmbushSlow}% Movement Speed`,
+            ru: `Цветочная ловушка снижает скорость передвижения врагов на ${floralAmbushSlow}%`,
+            cz: `Květinový útok ${floralAmbushSlow}% rychlost pohybu`,
+            zh: `鮮花伏擊 ${floralAmbushSlow}% 移動速度`,
+            fr: `Embûche florale ${floralAmbushSlow}% Vitesse de déplacement`,
+            br: `Emboscada Floral ${floralAmbushSlow}% Velocidade de Movimento`,
+            vi: `Hoa Phục Kích ${floralAmbushSlow}% Tốc độ Di chuyển`,
+            id: `Emboscada Floral ${floralAmbushSlow}% Kecepatan Gerakan`,
+            kr: `꽃의 매복 ${floralAmbushSlow}% 이동 속도`,
           },
         },
         tier2_left: {
@@ -1036,14 +1050,26 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% movement speed per stack`,
-            ru: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% к скорости передвижения за каждый заряд`,
-            cz: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% rychlost pohybu za každý stack`,
-            zh: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% 每層移動速度`,
-            fr: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% de vitesse de déplacement par stack`,
-            br: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% de velocidade de movimento por stack`,
-            vi: `+${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}% tốc độ di chuyển cho mỗi linh hồn`,
-            kr: `중첩당 이동 속도 +${MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK}%`,
+            en: `+${fixed(MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100, 1)}% movement speed per stack`,
+            ru: `+${fixed(
+              MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100,
+              1
+            )}% к скорости передвижения за каждый заряд`,
+            cz: `+${fixed(MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100, 1)}% rychlost pohybu za každý stack`,
+            zh: `+${fixed(MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100, 1)}% 每層移動速度`,
+            fr: `+${fixed(
+              MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100,
+              1
+            )}% de vitesse de déplacement par stack`,
+            br: `+${fixed(
+              MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100,
+              1
+            )}% de velocidade de movimento por stack`,
+            vi: `+${fixed(
+              MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100,
+              1
+            )}% tốc độ di chuyển cho mỗi linh hồn`,
+            kr: `중첩당 이동 속도 +${fixed(MagdaleneAbilityData.TALENT_T2_RIGHT_MOVEMENT_SPEED_PER_STACK * 100, 1)}%`,
           },
         },
       }
@@ -1065,19 +1091,40 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en: `Enhanced Ball protection provides additional ${getControlValue(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED
+              `${fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)}%`
             )} ${getBonusKeyword('Bonus Movement Speed')} and ${getControlValue(
               PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
             )} ${getBonusKeyword('Bonus Armor')} while the Ball is attached to a hero.`,
-            ru: `Улучшенная защита мяча предоставляет дополнительную скорость передвижения ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} и броню ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, когда мяч прикреплен к герою.`,
-            cz: `Vylepšená ochrana míče poskytuje dodatečnou rychlost pohybu ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} a brnění ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, když je míč připojen k hrdinovi.`,
-            zh: `當球附著在英雄身上時，強化球的守護提供英雄 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} 額外移動速度和 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}裝甲值。`,
-            fr: `La protection améliorée de la balle fournit une vitesse de déplacement supplémentaire de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} et une armure de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, lorsque la balle est attachée à un héros.`,
-            br: `A Proteção aprimorada da bola fornece velocidade de movimento adicional de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} e armadura de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, quando a bola está anexada a um herói.`,
-            vi: `Cầu Thức Tỉnh cung cấp thêm ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} tốc độ di chuyển và ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} giáp, khi cầu ở gần Prim.`,
-            id: `Proteksi Bola Ditingkatkan memberikan kecepatan tambahan ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED} dan armor ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, ketika bola terpasang pada pahlawan.`,
+            ru: `Улучшенная защита мяча предоставляет дополнительную скорость передвижения ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% и броню ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, когда мяч прикреплен к герою.`,
+            cz: `Vylepšená ochrana míče poskytuje dodatečnou rychlost pohybu ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% a brnění ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, když je míč připojen k hrdinovi.`,
+            zh: `當球附著在英雄身上時，強化球的守護提供英雄 ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% 額外移動速度和 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}裝甲值。`,
+            fr: `La protection améliorée de la balle fournit une vitesse de déplacement supplémentaire de ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% et une armure de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, lorsque la balle est attachée à un héros.`,
+            br: `A Proteção aprimorada da bola fornece velocidade de movimento adicional de ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% e armadura de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, quando a bola está anexada a um herói.`,
+            vi: `Cầu Thức Tỉnh cung cấp thêm ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% tốc độ di chuyển và ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} giáp, khi cầu ở gần Prim.`,
+            id: `Proteksi Bola Ditingkatkan memberikan kecepatan tambahan ${fixed(
+              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
+              1
+            )}% dan armor ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, ketika bola terpasang pada pahlawan.`,
             kr: `강화된 공 보호는 공이 영웅에게 부착되어 있는 동안 추가로 ${getControlValue(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED
+              `${fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)}%`
             )} ${getBonusKeyword('Bonus Movement Speed')}와 ${getControlValue(
               PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
             )} ${getBonusKeyword('Bonus Armor')}를 제공합니다.`,

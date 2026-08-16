@@ -203,7 +203,7 @@ const _getSpellDescriptionLang = (
         ICeatAbilityData.ICICLE_BOLT_BASE_DAMAGE + ICeatAbilityData.ICICLE_BOLT_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const movementSpeedSlow = getMovementSpeedValue(-ICeatAbilityData.ICICLE_SLOW_PER_STACK)
+      const movementSpeedSlow = getMovementSpeedValue(`${fixed(-ICeatAbilityData.ICICLE_SLOW_PER_STACK * 100, 1)}%`)
       const rootDuration = getControlDuration(
         hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
           ? ICeatAbilityData.ICICLE_ROOT_DURATION + ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION
@@ -236,7 +236,7 @@ const _getSpellDescriptionLang = (
       const bonusSpeed = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
         ? ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED + ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS
         : ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED
-      const bonusMovementSpeed = getBuffValue(bonusSpeed)
+      const bonusMovementSpeed = getBuffValue(`${fixed(bonusSpeed * 100, 1)}%`)
 
       return {
         en:
@@ -620,7 +620,7 @@ const _getSpellDescriptionLang = (
       )
       const bonusAttackSpeed = fixed(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100, 1)
       const bonusAttackSpeedValue = getBuffValue(`${bonusAttackSpeed}%`)
-      const bonusMovementSpeed = getBuffValue(KiraAbilityData.ENHATTACK_MOVE_SPEED)
+      const bonusMovementSpeed = getBuffValue(`${fixed(KiraAbilityData.ENHATTACK_MOVE_SPEED * 100, 1)}%`)
 
       return {
         en: `Kira fires a spark, dealing ${basic_damage}. \n\n<b>Enhanced: (Lightning Shock)</b> Kira also casts a lightning bolt at the nearest hero. If Lightning Shock hits an ally, it restores ${enh_damage_heal} health and grants ${bonusAttackSpeedValue} bonus attack speed and ${bonusMovementSpeed} bonus movement speed for a short duration.`,
@@ -912,7 +912,7 @@ const _getSpellDescriptionLang = (
           : AlvarAbilityData.FURIOUS_KICK_STUN_DURATION
       )
       const buffDuration = getDuration(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)
-      const bonusMovementSpeed = getBuffValue(AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED)
+      const bonusMovementSpeed = getBuffValue(`${fixed(AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED * 100, 1)}%`)
 
       return {
         en: `Alvar launches enemies backward with a powerful kick, dealing ${baseDamage} and stunning for ${duration}. \n\nApplies a stack of Divine Impact to all enemy heroes hit by Furious Kick.\n\nIn addition, Alvar grants himself and all nearby allies ${bonusMovementSpeed} bonus Movement Speed for ${buffDuration}`,
@@ -1152,7 +1152,7 @@ const _getSpellDescriptionLang = (
       const bonusArmor = hasUpgradedPassive
         ? PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR + PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
         : PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR
-      const bonusMovementSpeed = getBuffValue(bonusMoveSpeed)
+      const bonusMovementSpeed = getBuffValue(`${fixed(bonusMoveSpeed * 100, 1)}%`)
       const bonusArmorValue = getBuffValue(bonusArmor)
 
       return {
@@ -1287,7 +1287,7 @@ const _getSpellDescriptionLang = (
       const searchDelay = toSec(SeerAbilityData.DARK_CLONE_SEARCH_DELAY)
       const walkDuration = toSec(SeerAbilityData.DARK_CLONE_WALK_DURATION)
       const idleLifetime = toSec(SeerAbilityData.DARK_CLONE_IDLE_LIFETIME)
-      const slowValue = getMovementSpeedValue(SeerAbilityData.DARK_CLONE_SLOW_VALUE)
+      const slowValue = getMovementSpeedValue(`${fixed(Math.abs(SeerAbilityData.DARK_CLONE_SLOW_VALUE) * 100, 1)}%`)
       const slowDuration = getMovementSpeedDuration(SeerAbilityData.DARK_CLONE_SLOW_DURATION)
 
       return {
@@ -1387,7 +1387,9 @@ const _getSpellDescriptionLang = (
 
     case SpellList.PUPPETEER_PUPPET_DASH: {
       const baseDamage = getDamage(PuppeteerAbilityData.PUPPET_DASH_DAMAGE_MOD * damage)
-      const slowValue = getMovementSpeedValue(PuppeteerAbilityData.PUPPET_DASH_SLOW_VALUE)
+      const slowValue = getMovementSpeedValue(
+        `${fixed(Math.abs(PuppeteerAbilityData.PUPPET_DASH_SLOW_VALUE) * 100, 1)}%`
+      )
       const slowDuration = getMovementSpeedDuration(PuppeteerAbilityData.PUPPET_DASH_SLOW_DURATION)
       const fixateDuration = getDuration(PuppeteerAbilityData.PUPPET_DASH_FIXATE_DURATION)
 

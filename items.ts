@@ -533,7 +533,9 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Divine_Katana:
+    case ItemList.Divine_Katana: {
+      const slow = fixed(Math.abs(ItemAbilityData.DIVINE_KATANA_SLOW) * 100, 1)
+
       return {
         name: {
           en: 'Divine Katana',
@@ -547,17 +549,18 @@ const _getLocaleItemDescription = (
           kr: `신성한 카타나`,
         },
         desc: {
-          en: `Throws a katana on the ground. Nearby enemies are slowed and silenced. Reveals invisible units.`,
-          ru: `Бросает катану на землю. Ближайшие враги замедляются и получают немоту. Раскрывает невидимые цели.`,
-          br: `Lança uma katana no chão. Inimigos próximos são desacelerados e silenciados. Revela unidades invisíveis.`,
-          zh: `將武士刀投擲到地面。附近敵人被減速並沉默。揭露隱形單位。`,
-          cz: `Hodí katanu na zem. Blízcí nepřátelé jsou zpomaleni a umlčeni. Odhaluje neviditelné jednotky.`,
-          fr: `Lance une katana au sol. Les ennemis proches sont ralentis et réduits au silence. Révèle les unités invisibles.`,
-          vi: `Ném katana xuống đất. Kẻ địch gần đó bị làm chậm và câm lặng. Phát hiện đơn vị tàng hình.`,
-          id: `Melemparkan katana ke tanah. Musuh di sekitar diperlambat dan dibungkam. Mengungkap unit tak terlihat.`,
-          kr: `땅에 카타나를 던집니다. 주변 적은 둔화되고 침묵에 걸립니다. 보이지 않는 유닛을 드러냅니다.`,
+          en: `Throws a katana on the ground. Nearby enemies are slowed by ${slow}% and silenced. Reveals invisible units.`,
+          ru: `Бросает катану на землю. Ближайшие враги замедляются на ${slow}% и получают немоту. Раскрывает невидимые цели.`,
+          br: `Lança uma katana no chão. Inimigos próximos são desacelerados em ${slow}% e silenciados. Revela unidades invisíveis.`,
+          zh: `將武士刀投擲到地面。附近敵人被減速 ${slow}% 並沉默。揭露隱形單位。`,
+          cz: `Hodí katanu na zem. Blízcí nepřátelé jsou zpomaleni o ${slow}% a umlčeni. Odhaluje neviditelné jednotky.`,
+          fr: `Lance une katana au sol. Les ennemis proches sont ralentis de ${slow}% et réduits au silence. Révèle les unités invisibles.`,
+          vi: `Ném katana xuống đất. Kẻ địch gần đó bị làm chậm ${slow}% và câm lặng. Phát hiện đơn vị tàng hình.`,
+          id: `Melemparkan katana ke tanah. Musuh di sekitar diperlambat sebesar ${slow}% dan dibungkam. Mengungkap unit tak terlihat.`,
+          kr: `땅에 카타나를 던집니다. 주변 적은 ${slow}%만큼 둔화되고 침묵에 걸립니다. 보이지 않는 유닛을 드러냅니다.`,
         },
       }
+    }
     case ItemList.Spiked_Mace: {
       const threshold = (ItemAbilityData.SPIKED_MACE_THRESHOLD * 100).toFixed(1)
       return {
@@ -696,7 +699,9 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Magical_Bow:
+    case ItemList.Magical_Bow: {
+      const moveSpeed = fixed(ItemAbilityData.MAGICAL_BOW_BONUS_SPEED * 100, 1)
+
       return {
         name: {
           en: 'Magical Bow',
@@ -711,28 +716,32 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            'Dealing magical damage grants 10 Movement Speed and applies Poison.\n\n' + getPoisonBowDescription(false),
+            `Dealing magical damage grants ${moveSpeed}% Movement Speed and applies Poison.\n\n` +
+            getPoisonBowDescription(false),
           ru:
-            'Нанесение магического урона даёт 10 скорости передвижения и накладывает Яд.\n\n' +
+            `Нанесение магического урона даёт ${moveSpeed}% скорости передвижения и накладывает Яд.\n\n` +
             getPoisonBowDescription(false),
           br:
-            'Causar dano mágico concede 10 de Velocidade de Movimento e aplica Veneno.\n\n' +
+            `Causar dano mágico concede ${moveSpeed}% de Velocidade de Movimento e aplica Veneno.\n\n` +
             getPoisonBowDescription(false),
           fr:
-            'Infliger des dégâts magiques confère 10 de vitesse de déplacement et applique Poison.\n\n' +
+            `Infliger des dégâts magiques confère ${moveSpeed}% de vitesse de déplacement et applique Poison.\n\n` +
             getPoisonBowDescription(false),
-          zh: '造成魔法傷害會獲得 10 移動速度並施加中毒效果。\n\n' + getPoisonBowDescription(false),
+          zh: `造成魔法傷害會獲得 ${moveSpeed}% 移動速度並施加中毒效果。\n\n` + getPoisonBowDescription(false),
           cz:
-            'Způsobení magického poškození poskytuje 10 rychlosti pohybu a aplikuje Jed.\n\n' +
+            `Způsobení magického poškození poskytuje ${moveSpeed}% rychlosti pohybu a aplikuje Jed.\n\n` +
             getPoisonBowDescription(false),
           vi:
-            'Gây sát thương phép sẽ nhận 10 tốc độ di chuyển và gây hiệu ứng Độc.\n\n' + getPoisonBowDescription(false),
-          id:
-            'Memberikan damage sihir memberi 10 Movement Speed dan memberikan Racun.\n\n' +
+            `Gây sát thương phép sẽ nhận ${moveSpeed}% tốc độ di chuyển và gây hiệu ứng Độc.\n\n` +
             getPoisonBowDescription(false),
-          kr: `마법 피해를 입히면 이동 속도 10을 얻고 중독을 적용합니다.\n\n` + getPoisonBowDescription(false),
+          id:
+            `Memberikan damage sihir memberi ${moveSpeed}% Movement Speed dan memberikan Racun.\n\n` +
+            getPoisonBowDescription(false),
+          kr:
+            `마법 피해를 입히면 이동 속도 ${moveSpeed}%을 얻고 중독을 적용합니다.\n\n` + getPoisonBowDescription(false),
         },
       }
+    }
     case ItemList.Poison_Bow:
       return {
         name: {
@@ -753,6 +762,7 @@ const _getLocaleItemDescription = (
 
     case ItemList.Corrupted_Longbow: {
       const attackSpeed = fixed(ItemAbilityData.CORRUPTED_LONGBOW_BONUS_ATTACK_SPEED * 100, 1)
+      const moveSpeed = fixed(ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED * 100, 1)
       return {
         name: {
           en: 'Corrupted Longbow',
@@ -767,36 +777,37 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `Enhance carrier: Gain ${attackSpeed}% Attack Speed and ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} Movement Speed. Prevents casting abilities.\n\n` +
+            `Enhance carrier: Gain ${attackSpeed}% Attack Speed and ${moveSpeed}% Movement Speed. Prevents casting abilities.\n\n` +
             getPoisonBowDescription(true),
           ru:
-            `Усиливает носителя: увеличивает скорость атаки на ${attackSpeed}% и скорость передвижения на ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}. Запрещает использовать способности.\n\n` +
+            `Усиливает носителя: увеличивает скорость атаки на ${attackSpeed}% и скорость передвижения на ${moveSpeed}%. Запрещает использовать способности.\n\n` +
             getPoisonBowDescription(true),
           br:
-            `Aprimora o portador: aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}. Impede o uso de habilidades.\n\n` +
+            `Aprimora o portador: aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed}%. Impede o uso de habilidades.\n\n` +
             getPoisonBowDescription(true),
           fr:
-            `Améliore le porteur : augmente la vitesse d'attaque de ${attackSpeed}% et la vitesse de déplacement de ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}. Empêche d'utiliser des compétences.\n\n` +
+            `Améliore le porteur : augmente la vitesse d'attaque de ${attackSpeed}% et la vitesse de déplacement de ${moveSpeed}%. Empêche d'utiliser des compétences.\n\n` +
             getPoisonBowDescription(true),
           zh:
-            `強化持有者：提高 ${attackSpeed}% 攻擊速度和 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} 移動速度。無法施放技能。\n\n` +
+            `強化持有者：提高 ${attackSpeed}% 攻擊速度和 ${moveSpeed}% 移動速度。無法施放技能。\n\n` +
             getPoisonBowDescription(true),
           cz:
-            `Posiluje nositele: zvyšuje rychlost útoku o ${attackSpeed}% a rychlost pohybu o ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}. Znemožňuje používat schopnosti.\n\n` +
+            `Posiluje nositele: zvyšuje rychlost útoku o ${attackSpeed}% a rychlost pohybu o ${moveSpeed}%. Znemožňuje používat schopnosti.\n\n` +
             getPoisonBowDescription(true),
           vi:
-            `Cường hóa bản thân: tăng ${attackSpeed}% tốc độ đánh và ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED} tốc độ di chuyển. Không thể sử dụng kỹ năng.\n\n` +
+            `Cường hóa bản thân: tăng ${attackSpeed}% tốc độ đánh và ${moveSpeed}% tốc độ di chuyển. Không thể sử dụng kỹ năng.\n\n` +
             getPoisonBowDescription(true),
           id:
-            `Memperkuat pengguna: meningkatkan Attack Speed sebesar ${attackSpeed}% dan Movement Speed sebesar ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}. Tidak dapat menggunakan kemampuan.\n\n` +
+            `Memperkuat pengguna: meningkatkan Attack Speed sebesar ${attackSpeed}% dan Movement Speed sebesar ${moveSpeed}%. Tidak dapat menggunakan kemampuan.\n\n` +
             getPoisonBowDescription(true),
           kr:
-            `착용자 강화: 공격 속도 ${attackSpeed}%와 이동 속도 ${ItemAbilityData.CORRUPTED_LONGBOW_BONUS_MOVESPEED}을 얻습니다. 스킬을 사용할 수 없습니다.\n\n` +
+            `착용자 강화: 공격 속도 ${attackSpeed}%와 이동 속도 ${moveSpeed}%을 얻습니다. 스킬을 사용할 수 없습니다.\n\n` +
             getPoisonBowDescription(true),
         },
       }
     }
-    case ItemList.Hunters_Longbow:
+    case ItemList.Hunters_Longbow: {
+      const moveSpeed = fixed(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS * 100, 1)
       return {
         name: {
           en: "Hunter's Longbow",
@@ -810,17 +821,18 @@ const _getLocaleItemDescription = (
           kr: `사냥꾼의 장궁`,
         },
         desc: {
-          en: `Attacks grant Hunter's Focus. Gain ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} Movement Speed and immunity to slow effects.`,
-          ru: `Атаки дают эффект Охотничьего фокуса. Увеличивает скорость передвижения на ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} и даёт иммунитет к замедлениям.`,
-          br: `Ataques concedem Foco do Caçador. Aumenta a Velocidade de Movimento em ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} e concede imunidade a lentidão.`,
-          fr: `Les attaques confèrent Focus du chasseur. Augmente la vitesse de déplacement de ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} et accorde une immunité aux ralentissements.`,
-          zh: `攻擊會獲得獵人專注。提高 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} 移動速度並免疫減速效果。`,
-          cz: `Útoky dávají Lovecké soustředění. Zvyšuje rychlost pohybu o ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} a poskytuje imunitu vůči zpomalení.`,
-          vi: `Đòn đánh cho hiệu ứng Tập Trung Thợ Săn. Tăng ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} tốc độ di chuyển và miễn nhiễm làm chậm.`,
-          id: `Serangan memberikan Fokus Pemburu. Meningkatkan Movement Speed sebesar ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS} dan memberikan kekebalan terhadap efek slow.`,
-          kr: `공격 시 사냥꾼의 집중을 얻습니다. 이동 속도 ${ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS}을 얻고 둔화 효과에 면역이 됩니다.`,
+          en: `Attacks grant Hunter's Focus. Gain ${moveSpeed}% Movement Speed and immunity to slow effects.`,
+          ru: `Атаки дают эффект Охотничьего фокуса. Увеличивает скорость передвижения на ${moveSpeed}% и даёт иммунитет к замедлениям.`,
+          br: `Ataques concedem Foco do Caçador. Aumenta a Velocidade de Movimento em ${moveSpeed}% e concede imunidade a lentidão.`,
+          fr: `Les attaques confèrent Focus du chasseur. Augmente la vitesse de déplacement de ${moveSpeed}% et accorde une immunité aux ralentissements.`,
+          zh: `攻擊會獲得獵人專注。提高 ${moveSpeed}% 移動速度並免疫減速效果。`,
+          cz: `Útoky dávají Lovecké soustředění. Zvyšuje rychlost pohybu o ${moveSpeed}% a poskytuje imunitu vůči zpomalení.`,
+          vi: `Đòn đánh cho hiệu ứng Tập Trung Thợ Săn. Tăng ${moveSpeed}% tốc độ di chuyển và miễn nhiễm làm chậm.`,
+          id: `Serangan memberikan Fokus Pemburu. Meningkatkan Movement Speed sebesar ${moveSpeed}% dan memberikan kekebalan terhadap efek slow.`,
+          kr: `공격 시 사냥꾼의 집중을 얻습니다. 이동 속도 ${moveSpeed}%을 얻고 둔화 효과에 면역이 됩니다.`,
         },
       }
+    }
     /** Nowice staff */
     case ItemList.Burning_Rod: {
       const damageOverTime = fixed(ItemAbilityData.BURNING_ROD_DAMAGE_OVER_TIME_PERC * 100, 1)
@@ -1016,7 +1028,7 @@ const _getLocaleItemDescription = (
       }
     }
     case ItemList.Magic_Harpoon: {
-      const movementSpeedSlow = ItemAbilityData.MAGICAL_HARPOON_SLOW
+      const movementSpeedSlow = fixed(Math.abs(ItemAbilityData.MAGICAL_HARPOON_SLOW) * 100, 1)
       const attackSpeedSlow = fixed(ItemAbilityData.MAGICAL_HARPOON_ATTACK_SPEED * 100, 1)
 
       return {
@@ -1033,31 +1045,31 @@ const _getLocaleItemDescription = (
         },
         desc: {
           en:
-            `Attacks while Enhanced apply ${movementSpeedSlow} Movement Speed slow and ${attackSpeedSlow}% Attack Speed reduction.\n\n` +
+            `Attacks while Enhanced apply ${movementSpeedSlow}% Movement Speed slow and ${attackSpeedSlow}% Attack Speed reduction.\n\n` +
             getIronRodDescription(),
           ru:
-            `Атаки во время усиления накладывают замедление скорости передвижения (${movementSpeedSlow}) и снижают скорость атаки на ${attackSpeedSlow}%.\n\n` +
+            `Атаки во время усиления накладывают замедление скорости передвижения (${movementSpeedSlow}%) и снижают скорость атаки на ${attackSpeedSlow}%.\n\n` +
             getIronRodDescription(),
           br:
-            `Ataques enquanto aprimorado aplicam redução de Velocidade de Movimento (${movementSpeedSlow}) e reduzem a Velocidade de Ataque em ${attackSpeedSlow}%.\n\n` +
+            `Ataques enquanto aprimorado aplicam redução de Velocidade de Movimento (${movementSpeedSlow}%) e reduzem a Velocidade de Ataque em ${attackSpeedSlow}%.\n\n` +
             getIronRodDescription(),
           fr:
-            `Les attaques pendant l'effet amélioré appliquent un ralentissement de vitesse de déplacement (${movementSpeedSlow}) et réduisent la vitesse d'attaque de ${attackSpeedSlow}%.\n\n` +
+            `Les attaques pendant l'effet amélioré appliquent un ralentissement de vitesse de déplacement (${movementSpeedSlow}%) et réduisent la vitesse d'attaque de ${attackSpeedSlow}%.\n\n` +
             getIronRodDescription(),
           zh:
-            `強化期間的攻擊會降低 ${movementSpeedSlow} 移動速度並降低 ${attackSpeedSlow}% 攻擊速度。\n\n` +
+            `強化期間的攻擊會降低 ${movementSpeedSlow}% 移動速度並降低 ${attackSpeedSlow}% 攻擊速度。\n\n` +
             getIronRodDescription(),
           cz:
-            `Útoky během posílení snižují rychlost pohybu (${movementSpeedSlow}) a rychlost útoku o ${attackSpeedSlow}%.\n\n` +
+            `Útoky během posílení snižují rychlost pohybu (${movementSpeedSlow}%) a rychlost útoku o ${attackSpeedSlow}%.\n\n` +
             getIronRodDescription(),
           vi:
-            `Đòn đánh khi được cường hóa sẽ giảm ${movementSpeedSlow} tốc độ di chuyển và giảm ${attackSpeedSlow}% tốc độ đánh.\n\n` +
+            `Đòn đánh khi được cường hóa sẽ giảm ${movementSpeedSlow}% tốc độ di chuyển và giảm ${attackSpeedSlow}% tốc độ đánh.\n\n` +
             getIronRodDescription(),
           id:
-            `Serangan saat diperkuat memberikan perlambatan ${movementSpeedSlow} Movement Speed dan pengurangan ${attackSpeedSlow}% Attack Speed.\n\n` +
+            `Serangan saat diperkuat memberikan perlambatan ${movementSpeedSlow}% Movement Speed dan pengurangan ${attackSpeedSlow}% Attack Speed.\n\n` +
             getIronRodDescription(),
           kr:
-            `강화 상태일 때 공격은 이동 속도 ${movementSpeedSlow} 둔화와 공격 속도 ${attackSpeedSlow}% 감소를 적용합니다.\n\n` +
+            `강화 상태일 때 공격은 이동 속도 ${movementSpeedSlow}% 둔화와 공격 속도 ${attackSpeedSlow}% 감소를 적용합니다.\n\n` +
             getIronRodDescription(),
         },
       }
@@ -1119,7 +1131,7 @@ const _getLocaleItemDescription = (
     }
     case ItemList.Divine_Staff_T2: {
       const heal = ItemAbilityData.DIVINE_STAFF_HEAL_T2
-      const speed = ItemAbilityData.DIVINE_STAFF_BONUS_SPEED
+      const speed = fixed(ItemAbilityData.DIVINE_STAFF_BONUS_SPEED * 100, 1)
 
       return {
         name: {
@@ -1134,15 +1146,15 @@ const _getLocaleItemDescription = (
           kr: `신성한 지팡이`,
         },
         desc: {
-          en: `Heals ${heal} Health and grants ${speed} Movement Speed to the carrier and nearby allies.`,
-          ru: `Лечит на ${heal} здоровья и даёт ${speed} скорости передвижения владельцу и ближайшим союзникам.`,
-          br: `Cura ${heal} de Vida e concede ${speed} de Velocidade de Movimento ao portador e aliados próximos.`,
-          fr: `Soigne ${heal} Santé et accorde ${speed} Vitesse de déplacement au porteur et aux alliés proches.`,
-          zh: `治療 ${heal} 生命值並為持有者和附近盟友提供 ${speed} 移動速度。`,
-          cz: `Léčí ${heal} zdraví a poskytuje ${speed} rychlosti pohybu nositeli a blízkým spojencům.`,
-          vi: `Hồi ${heal} máu và tăng ${speed} Tốc Độ Di Chuyển cho bản thân và đồng minh gần.`,
-          id: `Memulihkan ${heal} Health dan memberikan ${speed} Movement Speed kepada pengguna dan sekutu di dekatnya.`,
-          kr: `소지자와 주변 아군의 체력을 ${heal}만큼 회복시키고 이동 속도를 ${speed}만큼 증가시킵니다.`,
+          en: `Heals ${heal} Health and grants ${speed}% Movement Speed to the carrier and nearby allies.`,
+          ru: `Лечит на ${heal} здоровья и даёт ${speed}% скорости передвижения владельцу и ближайшим союзникам.`,
+          br: `Cura ${heal} de Vida e concede ${speed}% de Velocidade de Movimento ao portador e aliados próximos.`,
+          fr: `Soigne ${heal} Santé et accorde ${speed}% Vitesse de déplacement au porteur et aux alliés proches.`,
+          zh: `治療 ${heal} 生命值並為持有者和附近盟友提供 ${speed}% 移動速度。`,
+          cz: `Léčí ${heal} zdraví a poskytuje ${speed}% rychlosti pohybu nositeli a blízkým spojencům.`,
+          vi: `Hồi ${heal} máu và tăng ${speed}% Tốc Độ Di Chuyển cho bản thân và đồng minh gần.`,
+          id: `Memulihkan ${heal} Health dan memberikan ${speed}% Movement Speed kepada pengguna dan sekutu di dekatnya.`,
+          kr: `소지자와 주변 아군의 체력을 ${heal}만큼 회복시키고 이동 속도를 ${speed}%만큼 증가시킵니다.`,
         },
       }
     }
@@ -1310,6 +1322,8 @@ const _getLocaleItemDescription = (
       }
     }
     case ItemList.Plate_Shield: {
+      const moveSpeedSlow = fixed(Math.abs(ItemAbilityData.PLATE_SHIELD_SLOW_AOE) * 100, 1)
+      const attackSpeedSlow = fixed(ItemAbilityData.PLATE_SHIELD_ATTACK_SPEED_REDUCTION * 100, 1)
       return {
         name: {
           en: 'Plate Shield',
@@ -1323,15 +1337,15 @@ const _getLocaleItemDescription = (
           kr: `판금 방패`,
         },
         desc: {
-          en: `Release a shockwave that reveals enemies, deals ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Physical Damage, and reduces Movement Speed and Attack Speed by ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          ru: `Выпускает ударную волну, которая раскрывает врагов, наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} физического урона и снижает скорость передвижения и атаки на ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          br: `Libera uma onda de choque que revela inimigos, causa ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} de dano físico e reduz a Velocidade de Movimento e de Ataque em ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          fr: `Libère une onde de choc qui révèle les ennemis, inflige ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} dégâts physiques et réduit la vitesse de déplacement et d'attaque de ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          zh: `釋放衝擊波，揭露敵人，造成 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} 物理傷害，並降低 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}% 移動速度和攻擊速度。`,
-          cz: `Uvolní šokovou vlnu, která odhalí nepřátele, způsobí ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} fyzického poškození a sníží rychlost pohybu a útoku o ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          vi: `Phóng sóng xung kích, phát hiện kẻ địch, gây ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} sát thương vật lý và giảm ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}% tốc độ di chuyển và tốc độ đánh.`,
-          id: `Melepaskan gelombang kejut yang mengungkap musuh, memberikan ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Physical Damage dan mengurangi Movement Speed serta Attack Speed sebesar ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%.`,
-          kr: `충격파를 발생시켜 적을 드러내고, 물리 피해 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}를 입히며, 이동 속도와 공격 속도를 ${ItemAbilityData.PLATE_SHIELD_SLOW_AOE}%만큼 감소시킵니다.`,
+          en: `Release a shockwave that reveals enemies, deals ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Physical Damage, and reduces Movement Speed by ${moveSpeedSlow}% and Attack Speed by ${attackSpeedSlow}%.`,
+          ru: `Выпускает ударную волну, которая раскрывает врагов, наносит ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} физического урона и снижает скорость передвижения на ${moveSpeedSlow}% и скорость атаки на ${attackSpeedSlow}%.`,
+          br: `Libera uma onda de choque que revela inimigos, causa ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} de dano físico e reduz a Velocidade de Movimento em ${moveSpeedSlow}% e a Velocidade de Ataque em ${attackSpeedSlow}%.`,
+          fr: `Libère une onde de choc qui révèle les ennemis, inflige ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} dégâts physiques et réduit la vitesse de déplacement de ${moveSpeedSlow}% et la vitesse d'attaque de ${attackSpeedSlow}%.`,
+          zh: `釋放衝擊波，揭露敵人，造成 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} 物理傷害，並降低 ${moveSpeedSlow}% 移動速度和 ${attackSpeedSlow}% 攻擊速度。`,
+          cz: `Uvolní šokovou vlnu, která odhalí nepřátele, způsobí ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} fyzického poškození a sníží rychlost pohybu o ${moveSpeedSlow}% a rychlost útoku o ${attackSpeedSlow}%.`,
+          vi: `Phóng sóng xung kích, phát hiện kẻ địch, gây ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} sát thương vật lý, giảm ${moveSpeedSlow}% tốc độ di chuyển và ${attackSpeedSlow}% tốc độ đánh.`,
+          id: `Melepaskan gelombang kejut yang mengungkap musuh, memberikan ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE} Physical Damage, mengurangi Movement Speed sebesar ${moveSpeedSlow}% dan Attack Speed sebesar ${attackSpeedSlow}%.`,
+          kr: `충격파를 발생시켜 적을 드러내고, 물리 피해 ${ItemAbilityData.PLATE_SHIELD_DAMAGE_AOE}를 입히며, 이동 속도를 ${moveSpeedSlow}%, 공격 속도를 ${attackSpeedSlow}%만큼 감소시킵니다.`,
         },
       }
     }
@@ -1574,6 +1588,7 @@ const _getLocaleItemDescription = (
     }
     case ItemList.Tenacity_Ring: {
       const tenacity = fixed(ItemAbilityData.TENACITY_RING_BONUS_TENACITY * 100, 0)
+      const moveSpeed = fixed(ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED * 100, 1)
       return {
         name: {
           en: 'Tenacity Ring',
@@ -1587,15 +1602,15 @@ const _getLocaleItemDescription = (
           kr: `강인함의 반지`,
         },
         desc: {
-          en: `Aura: Grants +${tenacity}% Tenacity and +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} Movement Speed to the carrier and nearby allies.`,
-          ru: `Аура: даёт +${tenacity}% стойкости и +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} скорости передвижения владельцу и ближайшим союзникам.`,
-          br: `Aura: Concede +${tenacity}% de Tenacidade e +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} de Velocidade de Movimento ao portador e aliados próximos.`,
-          zh: `光環：為持有者和附近盟友提供 +${tenacity}% 韌性和 +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} 移動速度。`,
-          cz: `Aura: Poskytuje +${tenacity}% houževnatosti a +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} rychlosti pohybu nositeli a blízkým spojencům.`,
-          fr: `Aura : Accorde +${tenacity}% de ténacité et +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} de vitesse de déplacement au porteur et aux alliés proches.`,
-          vi: `Hào quang: Cung cấp +${tenacity}% kháng khống chế và +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} tốc độ di chuyển cho bản thân và đồng minh gần.`,
-          id: `Aura: Memberikan +${tenacity}% Tenacity dan +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED} Movement Speed kepada pengguna dan sekutu di dekatnya.`,
-          kr: `오라: 소지자와 주변 아군에게 강인함 +${tenacity}%와 이동 속도 +${ItemAbilityData.TENACITY_RING_BONUS_MOVESPEED}를 부여합니다.`,
+          en: `Aura: Grants +${tenacity}% Tenacity and +${moveSpeed}% Movement Speed to the carrier and nearby allies.`,
+          ru: `Аура: даёт +${tenacity}% стойкости и +${moveSpeed}% скорости передвижения владельцу и ближайшим союзникам.`,
+          br: `Aura: Concede +${tenacity}% de Tenacidade e +${moveSpeed}% de Velocidade de Movimento ao portador e aliados próximos.`,
+          zh: `光環：為持有者和附近盟友提供 +${tenacity}% 韌性和 +${moveSpeed}% 移動速度。`,
+          cz: `Aura: Poskytuje +${tenacity}% houževnatosti a +${moveSpeed}% rychlosti pohybu nositeli a blízkým spojencům.`,
+          fr: `Aura : Accorde +${tenacity}% de ténacité et +${moveSpeed}% de vitesse de déplacement au porteur et aux alliés proches.`,
+          vi: `Hào quang: Cung cấp +${tenacity}% kháng khống chế và +${moveSpeed}% tốc độ di chuyển cho bản thân và đồng minh gần.`,
+          id: `Aura: Memberikan +${tenacity}% Tenacity dan +${moveSpeed}% Movement Speed kepada pengguna dan sekutu di dekatnya.`,
+          kr: `오라: 소지자와 주변 아군에게 강인함 +${tenacity}%와 이동 속도 +${moveSpeed}%를 부여합니다.`,
         },
       }
     }
@@ -1630,6 +1645,8 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Void_Armor: {
+      const moveSpeed = fixed(ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS * 100, 1)
+
       return {
         name: {
           en: 'Void Armor',
@@ -1643,15 +1660,15 @@ const _getLocaleItemDescription = (
           kr: `공허의 갑옷`,
         },
         desc: {
-          en: `Grants invisibility and +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Movement Speed.\n\nCasting an Ability or attacking breaks invisibility and removes the Movement Speed bonus, granting +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Attack Damage.`,
-          ru: `Даёт невидимость и +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} к скорости передвижения.\n\nПрименение способности или атака снимает невидимость и бонус скорости передвижения, давая +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} силы атаки.`,
-          br: `Concede invisibilidade e +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} de Velocidade de Movimento.\n\nUsar habilidades ou atacar remove a invisibilidade e o bônus de velocidade, concedendo +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} de Dano de Ataque.`,
-          fr: `Confère l'invisibilité et +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} de vitesse de déplacement.\n\nLancer une capacité ou attaquer supprime l'invisibilité et le bonus de vitesse, accordant +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} de dégâts d'attaque.`,
-          zh: `獲得隱身並提高 ${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} 移動速度。\n\n施放技能或攻擊會解除隱身並移除移動速度加成，並獲得 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} 攻擊力。`,
-          cz: `Získáš neviditelnost a +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} rychlosti pohybu.\n\nPoužití schopnosti nebo útok zruší neviditelnost a bonus rychlosti pohybu a poskytne +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} poškození útoku.`,
-          vi: `Nhận trạng thái tàng hình và +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Tốc Độ Di Chuyển.\n\nDùng kỹ năng hoặc tấn công sẽ hủy tàng hình và tốc độ di chuyển, đồng thời nhận +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Sát Thương Vật Lý.`,
-          id: `Memberikan invisibilitas dan +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS} Kecepatan Gerak.\n\nMenggunakan kemampuan atau menyerang akan menghilangkan invisibilitas dan bonus kecepatan, serta memberikan +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Damage.`,
-          kr: `은신 상태가 되며 이동 속도 +${ItemAbilityData.VOID_ARMOR_MOVESPEED_BONUS}를 얻습니다.\n\n스킬을 시전하거나 공격하면 은신이 해제되고 이동 속도 증가 효과가 사라지며, 공격력 +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE}를 얻습니다.`,
+          en: `Grants invisibility and +${moveSpeed}% Movement Speed.\n\nCasting an Ability or attacking breaks invisibility and grants an additional +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Attack Damage, while the Movement Speed bonus is maintained.`,
+          ru: `Даёт невидимость и +${moveSpeed}% к скорости передвижения.\n\nПрименение способности или атака снимает невидимость и даёт дополнительно +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} силы атаки, при этом бонус скорости передвижения сохраняется.`,
+          br: `Concede invisibilidade e +${moveSpeed}% de Velocidade de Movimento.\n\nUsar habilidades ou atacar remove a invisibilidade e concede adicionalmente +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} de Dano de Ataque, mantendo o bônus de Velocidade de Movimento.`,
+          fr: `Confère l'invisibilité et +${moveSpeed}% de vitesse de déplacement.\n\nLancer une capacité ou attaquer supprime l'invisibilité et accorde en plus +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} de dégâts d'attaque, tandis que le bonus de vitesse de déplacement est conservé.`,
+          zh: `獲得隱身並提高 ${moveSpeed}% 移動速度。\n\n施放技能或攻擊會解除隱身，並額外獲得 ${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} 攻擊力，移動速度加成則會保留。`,
+          cz: `Získáš neviditelnost a +${moveSpeed}% rychlosti pohybu.\n\nPoužití schopnosti nebo útok zruší neviditelnost a navíc poskytne +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} poškození útoku, zatímco bonus rychlosti pohybu zůstává zachován.`,
+          vi: `Nhận trạng thái tàng hình và +${moveSpeed}% Tốc Độ Di Chuyển.\n\nDùng kỹ năng hoặc tấn công sẽ hủy tàng hình và nhận thêm +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Sát Thương Vật Lý, trong khi bonus Tốc Độ Di Chuyển vẫn được duy trì.`,
+          id: `Memberikan invisibilitas dan +${moveSpeed}% Kecepatan Gerak.\n\nMenggunakan kemampuan atau menyerang akan menghilangkan invisibilitas dan memberikan tambahan +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE} Damage, sementara bonus Kecepatan Gerak tetap bertahan.`,
+          kr: `은신 상태가 되며 이동 속도 +${moveSpeed}%를 얻습니다.\n\n스킬을 시전하거나 공격하면 은신이 해제되고 추가로 공격력 +${ItemAbilityData.VOID_ARMOR_BONUS_DAMAGE}를 얻으며, 이동 속도 증가 효과는 유지됩니다.`,
         },
       }
     }
@@ -1746,6 +1763,7 @@ const _getLocaleItemDescription = (
     }
     case ItemList.Chest_Of_Malevolence: {
       const apReduction = fixed(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_AP * 100, 1)
+      const msReduction = fixed(Math.abs(ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS) * 100, 1)
 
       return {
         name: {
@@ -1760,15 +1778,15 @@ const _getLocaleItemDescription = (
           kr: `악의의 흉갑`,
         },
         desc: {
-          en: `Taking Magic Damage applies a stack of Magic Curse to the enemy, up to ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nEach stack reduces Movement Speed by ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} and Ability Power by ${apReduction}%.`,
-          ru: `Получение магического урона накладывает заряд Магического проклятия на врага, до ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nКаждый заряд снижает скорость передвижения на ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} и силу умений на ${apReduction}%.`,
-          br: `Receber Dano Mágico aplica um acúmulo de Maldição Mágica ao inimigo, até ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nCada acúmulo reduz a Velocidade de Movimento em ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} e o Poder de Habilidade em ${apReduction}%.`,
-          fr: `Subir des dégâts magiques applique une charge de Malédiction magique à l'ennemi, jusqu'à ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nChaque charge réduit la vitesse de déplacement de ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} et la puissance des compétences de ${apReduction}%.`,
-          zh: `受到魔法傷害時，對敵人施加一層魔法詛咒，最多 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} 層。\n每層降低移動速度 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} 並降低技能威力 ${apReduction}%。`,
-          cz: `Přijetí magického poškození aplikuje vrstvu Magické kletby na nepřítele, až do ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nKaždá vrstva snižuje rychlost pohybu o ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} a sílu schopností o ${apReduction}%.`,
-          vi: `Nhận Sát Thương Phép sẽ áp dụng một cộng dồn Lời Nguyền Ma Thuật lên kẻ địch, tối đa ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nMỗi cộng dồn giảm Tốc Độ Di Chuyển ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} và Sức Mạnh Kỹ Năng ${apReduction}%.`,
-          id: `Menerima Kerusakan Sihir memberikan satu tumpukan Kutukan Sihir kepada musuh, hingga ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nSetiap tumpukan mengurangi Kecepatan Gerak sebesar ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS} dan Ability Power sebesar ${apReduction}%.`,
-          kr: `마법 피해를 받으면 적에게 마법의 저주 중첩을 적용하며, 최대 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}까지 중첩됩니다.\n중첩당 이동 속도를 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_REDUCE_MS}만큼, 주문력을 ${apReduction}%만큼 감소시킵니다.`,
+          en: `Taking Magic Damage applies a stack of Magic Curse to the enemy, up to ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nEach stack reduces Movement Speed by ${msReduction}% and Ability Power by ${apReduction}%.`,
+          ru: `Получение магического урона накладывает заряд Магического проклятия на врага, до ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nКаждый заряд снижает скорость передвижения на ${msReduction}% и силу умений на ${apReduction}%.`,
+          br: `Receber Dano Mágico aplica um acúmulo de Maldição Mágica ao inimigo, até ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nCada acúmulo reduz a Velocidade de Movimento em ${msReduction}% e o Poder de Habilidade em ${apReduction}%.`,
+          fr: `Subir des dégâts magiques applique une charge de Malédiction magique à l'ennemi, jusqu'à ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nChaque charge réduit la vitesse de déplacement de ${msReduction}% et la puissance des compétences de ${apReduction}%.`,
+          zh: `受到魔法傷害時，對敵人施加一層魔法詛咒，最多 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS} 層。\n每層降低移動速度 ${msReduction}% 並降低技能威力 ${apReduction}%。`,
+          cz: `Přijetí magického poškození aplikuje vrstvu Magické kletby na nepřítele, až do ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nKaždá vrstva snižuje rychlost pohybu o ${msReduction}% a sílu schopností o ${apReduction}%.`,
+          vi: `Nhận Sát Thương Phép sẽ áp dụng một cộng dồn Lời Nguyền Ma Thuật lên kẻ địch, tối đa ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nMỗi cộng dồn giảm Tốc Độ Di Chuyển ${msReduction}% và Sức Mạnh Kỹ Năng ${apReduction}%.`,
+          id: `Menerima Kerusakan Sihir memberikan satu tumpukan Kutukan Sihir kepada musuh, hingga ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}.\nSetiap tumpukan mengurangi Kecepatan Gerak sebesar ${msReduction}% dan Ability Power sebesar ${apReduction}%.`,
+          kr: `마법 피해를 받으면 적에게 마법의 저주 중첩을 적용하며, 최대 ${ItemAbilityData.CHEST_OF_MALEVOLENCE_MAX_STACKS}까지 중첩됩니다.\n중첩당 이동 속도를 ${msReduction}%만큼, 주문력을 ${apReduction}%만큼 감소시킵니다.`,
         },
       }
     }
@@ -1801,6 +1819,8 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Vile_Flask: {
+      const slow = fixed(Math.abs(ItemAbilityData.VILE_FLASK_SLOW) * 100, 1)
+
       return {
         name: {
           en: 'Vile Flask',
@@ -1814,15 +1834,15 @@ const _getLocaleItemDescription = (
           kr: `맹독 플라스크`,
         },
         desc: {
-          en: `Throw a Vile Flask that explodes on impact. Affected enemies are slowed by ${ItemAbilityData.VILE_FLASK_SLOW} and take ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per second.`,
-          ru: `Бросает мерзкую склянку, которая взрывается при падении. Задетые враги замедляются на ${ItemAbilityData.VILE_FLASK_SLOW} и получают ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} урона в секунду.`,
-          br: `Arremessa um Frasco Vile que explode ao atingir o chão. Inimigos afetados são desacelerados em ${ItemAbilityData.VILE_FLASK_SLOW} e recebem ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} de dano por segundo.`,
-          zh: `投擲惡毒瓶，落地時爆炸。受影響的敵人被減速 ${ItemAbilityData.VILE_FLASK_SLOW}，並每秒受到 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} 傷害。`,
-          cz: `Hodí Ohavnou láhev, která exploduje při dopadu. Zasažení nepřátelé jsou zpomaleni o ${ItemAbilityData.VILE_FLASK_SLOW} a utrpí ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} poškození za sekundu.`,
-          fr: `Lance une flasque vile qui explose à l'impact. Les ennemis affectés sont ralentis de ${ItemAbilityData.VILE_FLASK_SLOW} et subissent ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} dégâts par seconde.`,
-          vi: `Ném Bình Độc phát nổ khi chạm đất. Kẻ địch bị ảnh hưởng bị giảm ${ItemAbilityData.VILE_FLASK_SLOW} tốc độ di chuyển và nhận ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} sát thương mỗi giây.`,
-          id: `Melempar Botol Beracun yang meledak saat menyentuh tanah. Musuh yang terkena diperlambat sebesar ${ItemAbilityData.VILE_FLASK_SLOW} dan menerima ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per detik.`,
-          kr: `맹독 플라스크를 던져 명중 시 폭발시킵니다. 영향을 받은 적은 ${ItemAbilityData.VILE_FLASK_SLOW}만큼 둔화되며 초당 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC}의 피해를 입습니다.`,
+          en: `Throw a Vile Flask that explodes on impact. Affected enemies are slowed by ${slow}% and take ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per second.`,
+          ru: `Бросает мерзкую склянку, которая взрывается при падении. Задетые враги замедляются на ${slow}% и получают ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} урона в секунду.`,
+          br: `Arremessa um Frasco Vile que explode ao atingir o chão. Inimigos afetados são desacelerados em ${slow}% e recebem ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} de dano por segundo.`,
+          zh: `投擲惡毒瓶，落地時爆炸。受影響的敵人被減速 ${slow}%，並每秒受到 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} 傷害。`,
+          cz: `Hodí Ohavnou láhev, která exploduje při dopadu. Zasažení nepřátelé jsou zpomaleni o ${slow}% a utrpí ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} poškození za sekundu.`,
+          fr: `Lance une flasque vile qui explose à l'impact. Les ennemis affectés sont ralentis de ${slow}% et subissent ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} dégâts par seconde.`,
+          vi: `Ném Bình Độc phát nổ khi chạm đất. Kẻ địch bị ảnh hưởng bị giảm ${slow}% tốc độ di chuyển và nhận ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} sát thương mỗi giây.`,
+          id: `Melempar Botol Beracun yang meledak saat menyentuh tanah. Musuh yang terkena diperlambat sebesar ${slow}% dan menerima ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC} damage per detik.`,
+          kr: `맹독 플라스크를 던져 명중 시 폭발시킵니다. 영향을 받은 적은 ${slow}%만큼 둔화되며 초당 ${ItemAbilityData.VILE_FLASK_DAMAGE_PER_SEC}의 피해를 입습니다.`,
         },
       }
     }
@@ -2110,7 +2130,7 @@ const _getLocaleItemDescription = (
     }
 
     case ItemList.Void_Sword: {
-      const movespeed = ItemAbilityData.VOID_SWORD_MOVESPEED
+      const movespeed = fixed(ItemAbilityData.VOID_SWORD_MOVESPEED * 100, 1)
       const attackspeed = ItemAbilityData.VOID_SWORD_ATTACKSPEED
 
       return {
@@ -2126,22 +2146,22 @@ const _getLocaleItemDescription = (
           kr: `공허의 검`,
         },
         desc: {
-          en: `Drops a sword that follows the carrier. Nearby allies gain +${movespeed} Movement Speed and +${attackspeed} Attack Speed. Nearby enemies lose the same stats.`,
-          ru: `Бросает меч, который следует за носителем. Ближайшие союзники получают +${movespeed} к скорости передвижения и +${attackspeed} к скорости атаки. Ближайшие враги теряют эти же характеристики.`,
-          br: `Solta uma espada que segue o portador. Aliados próximos recebem +${movespeed} de Velocidade de Movimento e +${attackspeed} de Velocidade de Ataque. Inimigos próximos perdem os mesmos atributos.`,
-          cz: `Položí meč, který následuje nositele. Blízcí spojenci získají +${movespeed} k rychlosti pohybu a +${attackspeed} k rychlosti útoku. Blízcí nepřátelé ztratí stejné hodnoty.`,
-          zh: `放下一把會跟隨持有者的劍。附近盟友獲得 +${movespeed} 移動速度和 +${attackspeed} 攻擊速度。附近敵人失去相同屬性。`,
-          fr: `Dépose une épée qui suit le porteur. Les alliés proches gagnent +${movespeed} en vitesse de déplacement et +${attackspeed} en vitesse d'attaque. Les ennemis proches perdent ces mêmes stats.`,
-          vi: `Thả một thanh kiếm đi theo người mang. Đồng minh gần đó nhận +${movespeed} tốc độ di chuyển và +${attackspeed} tốc độ đánh. Kẻ địch gần đó bị giảm các chỉ số tương tự.`,
-          id: `Menjatuhkan pedang yang mengikuti pembawa. Sekutu di sekitar mendapatkan +${movespeed} Movement Speed dan +${attackspeed} Attack Speed. Musuh di sekitar kehilangan stat yang sama.`,
-          kr: `소지자를 따라다니는 검을 소환합니다. 주변 아군은 이동 속도 +${movespeed}와 공격 속도 +${attackspeed}를 얻습니다. 주변 적은 동일한 수치만큼 감소합니다.`,
+          en: `Drops a sword that follows the carrier. Nearby allies gain +${movespeed}% Movement Speed and +${attackspeed} Attack Speed. Nearby enemies lose the same stats.`,
+          ru: `Бросает меч, который следует за носителем. Ближайшие союзники получают +${movespeed}% к скорости передвижения и +${attackspeed} к скорости атаки. Ближайшие враги теряют эти же характеристики.`,
+          br: `Solta uma espada que segue o portador. Aliados próximos recebem +${movespeed}% de Velocidade de Movimento e +${attackspeed} de Velocidade de Ataque. Inimigos próximos perdem os mesmos atributos.`,
+          cz: `Položí meč, který následuje nositele. Blízcí spojenci získají +${movespeed}% k rychlosti pohybu a +${attackspeed} k rychlosti útoku. Blízcí nepřátelé ztratí stejné hodnoty.`,
+          zh: `放下一把會跟隨持有者的劍。附近盟友獲得 +${movespeed}% 移動速度和 +${attackspeed} 攻擊速度。附近敵人失去相同屬性。`,
+          fr: `Dépose une épée qui suit le porteur. Les alliés proches gagnent +${movespeed}% en vitesse de déplacement et +${attackspeed} en vitesse d'attaque. Les ennemis proches perdent ces mêmes stats.`,
+          vi: `Thả một thanh kiếm đi theo người mang. Đồng minh gần đó nhận +${movespeed}% tốc độ di chuyển và +${attackspeed} tốc độ đánh. Kẻ địch gần đó bị giảm các chỉ số tương tự.`,
+          id: `Menjatuhkan pedang yang mengikuti pembawa. Sekutu di sekitar mendapatkan +${movespeed}% Movement Speed dan +${attackspeed} Attack Speed. Musuh di sekitar kehilangan stat yang sama.`,
+          kr: `소지자를 따라다니는 검을 소환합니다. 주변 아군은 이동 속도 +${movespeed}%와 공격 속도 +${attackspeed}를 얻습니다. 주변 적은 동일한 수치만큼 감소합니다.`,
         },
       }
     }
 
     case ItemList.Kirins_Sword: {
       const attackSpeed = fixed(ItemAbilityData.KIRINS_SWORD_ATTACK_SPEED * 100, 1)
-      const moveSpeed = ItemAbilityData.KIRINS_SWORD_MOVE_SPEED
+      const moveSpeed = fixed(ItemAbilityData.KIRINS_SWORD_MOVE_SPEED * 100, 1)
 
       return {
         name: {
@@ -2156,15 +2176,15 @@ const _getLocaleItemDescription = (
           kr: `기린의 검`,
         },
         desc: {
-          en: `Dash forward. Gain ${attackSpeed}% Attack Speed and ${moveSpeed} Movement Speed.`,
-          ru: `Рывок вперёд. Увеличивает скорость атаки на ${attackSpeed}% и скорость передвижения на ${moveSpeed}.`,
-          br: `Avança para frente. Aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed}.`,
-          cz: `Vyrazí vpřed. Zvyšuje rychlost útoku o ${attackSpeed}% a rychlost pohybu o ${moveSpeed}.`,
-          fr: `Fonce vers l'avant. Augmente la vitesse d'attaque de ${attackSpeed}% et la vitesse de déplacement de ${moveSpeed}.`,
-          zh: `向前衝刺。提高 ${attackSpeed}% 攻擊速度和 ${moveSpeed} 移動速度。`,
-          vi: `Lướt về phía trước. Tăng ${attackSpeed}% tốc độ đánh và ${moveSpeed} tốc độ di chuyển.`,
-          id: `Dash ke depan. Meningkatkan Attack Speed sebesar ${attackSpeed}% dan Movement Speed sebesar ${moveSpeed}.`,
-          kr: `앞으로 돌진합니다. 공격 속도 ${attackSpeed}%와 이동 속도 ${moveSpeed}를 얻습니다.`,
+          en: `Dash forward. Gain ${attackSpeed}% Attack Speed and ${moveSpeed}% Movement Speed.`,
+          ru: `Рывок вперёд. Увеличивает скорость атаки на ${attackSpeed}% и скорость передвижения на ${moveSpeed}%.`,
+          br: `Avança para frente. Aumenta a Velocidade de Ataque em ${attackSpeed}% e a Velocidade de Movimento em ${moveSpeed}%.`,
+          cz: `Vyrazí vpřed. Zvyšuje rychlost útoku o ${attackSpeed}% a rychlost pohybu o ${moveSpeed}%.`,
+          fr: `Fonce vers l'avant. Augmente la vitesse d'attaque de ${attackSpeed}% et la vitesse de déplacement de ${moveSpeed}%.`,
+          zh: `向前衝刺。提高 ${attackSpeed}% 攻擊速度和 ${moveSpeed}% 移動速度。`,
+          vi: `Lướt về phía trước. Tăng ${attackSpeed}% tốc độ đánh và ${moveSpeed}% tốc độ di chuyển.`,
+          id: `Dash ke depan. Meningkatkan Attack Speed sebesar ${attackSpeed}% dan Movement Speed sebesar ${moveSpeed}%.`,
+          kr: `앞으로 돌진합니다. 공격 속도 ${attackSpeed}%와 이동 속도 ${moveSpeed}%를 얻습니다.`,
         },
       }
     }
@@ -2181,17 +2201,18 @@ const getPoisonBowDescription = (isUpgraded: boolean) => {
   const damageOverTime = isUpgraded
     ? ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME_2
     : ItemAbilityData.POISON_BOW_DAMAGE_OVER_TIME
+  const slow = fixed(Math.abs(ItemAbilityData.POISON_BOW_SLOW) * 100, 1)
 
   const text: { [key: string]: string } = {
-    en: `Attacks apply non-lethal Poison (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} stacks). Each stack reduces Movement Speed by ${ItemAbilityData.POISON_BOW_SLOW} and deals ${damageOverTime} magical damage per second.`,
-    ru: `Атаки накладывают несмертельный Яд (макс. ${ItemAbilityData.POISON_BOW_MAX_STACKS} стаков). Каждый эффект снижает скорость передвижения на ${ItemAbilityData.POISON_BOW_SLOW} и наносит ${damageOverTime} магического урона в секунду.`,
-    br: `Ataques aplicam Veneno não letal (máx. ${ItemAbilityData.POISON_BOW_MAX_STACKS} acúmulos). Cada acúmulo reduz a Velocidade de Movimento em ${ItemAbilityData.POISON_BOW_SLOW} e causa ${damageOverTime} de dano mágico por segundo.`,
-    fr: `Les attaques appliquent Poison non létal (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} cumuls). Chaque cumul réduit la vitesse de déplacement de ${ItemAbilityData.POISON_BOW_SLOW} et inflige ${damageOverTime} dégâts magiques par seconde.`,
-    zh: `攻擊會施加無法致死的中毒效果（最多 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 層）。每層降低 ${ItemAbilityData.POISON_BOW_SLOW} 移動速度，並每秒造成 ${damageOverTime} 點魔法傷害。`,
-    cz: `Útoky aplikují nesmrtící Jed (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} vrstev). Každá vrstva snižuje rychlost pohybu o ${ItemAbilityData.POISON_BOW_SLOW} a způsobuje ${damageOverTime} magického poškození za sekundu.`,
-    vi: `Đòn đánh gây hiệu ứng Độc không gây kết liễu (tối đa ${ItemAbilityData.POISON_BOW_MAX_STACKS} cộng dồn). Mỗi cộng dồn giảm ${ItemAbilityData.POISON_BOW_SLOW} tốc độ di chuyển và gây ${damageOverTime} sát thương phép mỗi giây.`,
-    id: `Serangan memberikan Racun tidak mematikan (maks ${ItemAbilityData.POISON_BOW_MAX_STACKS} tumpukan). Setiap tumpukan mengurangi Movement Speed sebesar ${ItemAbilityData.POISON_BOW_SLOW} dan memberikan ${damageOverTime} damage sihir per detik.`,
-    kr: `공격 시 죽음에 이르지 않는 독을 적용합니다 (최대 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 중첩). 중첩당 이동 속도를 ${ItemAbilityData.POISON_BOW_SLOW}만큼 감소시키고 초당 ${damageOverTime}의 마법 피해를 입힙니다.`,
+    en: `Attacks apply non-lethal Poison (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} stacks). Each stack reduces Movement Speed by ${slow}% and deals ${damageOverTime} magical damage per second.`,
+    ru: `Атаки накладывают несмертельный Яд (макс. ${ItemAbilityData.POISON_BOW_MAX_STACKS} стаков). Каждый эффект снижает скорость передвижения на ${slow}% и наносит ${damageOverTime} магического урона в секунду.`,
+    br: `Ataques aplicam Veneno não letal (máx. ${ItemAbilityData.POISON_BOW_MAX_STACKS} acúmulos). Cada acúmulo reduz a Velocidade de Movimento em ${slow}% e causa ${damageOverTime} de dano mágico por segundo.`,
+    fr: `Les attaques appliquent Poison non létal (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} cumuls). Chaque cumul réduit la vitesse de déplacement de ${slow}% et inflige ${damageOverTime} dégâts magiques par seconde.`,
+    zh: `攻擊會施加無法致死的中毒效果（最多 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 層）。每層降低 ${slow}% 移動速度，並每秒造成 ${damageOverTime} 點魔法傷害。`,
+    cz: `Útoky aplikují nesmrtící Jed (max ${ItemAbilityData.POISON_BOW_MAX_STACKS} vrstev). Každá vrstva snižuje rychlost pohybu o ${slow}% a způsobuje ${damageOverTime} magického poškození za sekundu.`,
+    vi: `Đòn đánh gây hiệu ứng Độc không gây kết liễu (tối đa ${ItemAbilityData.POISON_BOW_MAX_STACKS} cộng dồn). Mỗi cộng dồn giảm ${slow}% tốc độ di chuyển và gây ${damageOverTime} sát thương phép mỗi giây.`,
+    id: `Serangan memberikan Racun tidak mematikan (maks ${ItemAbilityData.POISON_BOW_MAX_STACKS} tumpukan). Setiap tumpukan mengurangi Movement Speed sebesar ${slow}% dan memberikan ${damageOverTime} damage sihir per detik.`,
+    kr: `공격 시 죽음에 이르지 않는 독을 적용합니다 (최대 ${ItemAbilityData.POISON_BOW_MAX_STACKS} 중첩). 중첩당 이동 속도를 ${slow}%만큼 감소시키고 초당 ${damageOverTime}의 마법 피해를 입힙니다.`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
@@ -2217,20 +2238,20 @@ const getIronRodDescription = () => {
 }
 
 const getFrigidCurseDescription = () => {
-  const slow = ItemAbilityData.FRIGID_CURSE_SLOW
+  const slow = fixed(Math.abs(ItemAbilityData.FRIGID_CURSE_SLOW) * 100, 1)
   const attackSpeed = fixed(ItemAbilityData.FRIGID_CURSE_ATTACK_SPEED_REDUCTION * 100, 1)
   const healingReduction = fixed(ItemAbilityData.FRIGID_CURSE_HEALING_REDUCTION * 100, 1)
 
   const text: { [key: string]: string } = {
-    en: `Frigid Curse: reduces Movement Speed by ${slow}, Attack Speed by ${attackSpeed}%, and healing by ${healingReduction}%`,
-    ru: `Морозное проклятие: снижает скорость передвижения на ${slow}, скорость атаки на ${attackSpeed}% и лечение на ${healingReduction}%`,
-    br: `Maldição Gélida: reduz a Velocidade de Movimento em ${slow}, a Velocidade de Ataque em ${attackSpeed}% e a cura em ${healingReduction}%`,
-    fr: `Malédiction glaciale : réduit la vitesse de déplacement de ${slow}, la vitesse d'attaque de ${attackSpeed}% et les soins de ${healingReduction}%`,
-    zh: `寒冷詛咒：降低移動速度 ${slow}、攻擊速度 ${attackSpeed}%，並降低 ${healingReduction}% 治療效果`,
-    cz: `Zmrzlá kletba: snižuje rychlost pohybu o ${slow}, rychlost útoku o ${attackSpeed}% a léčení o ${healingReduction}%`,
-    vi: `Lời Nguyền Lạnh Giá: giảm tốc độ di chuyển ${slow}, tốc độ đánh ${attackSpeed}% và hồi máu ${healingReduction}%`,
-    id: `Kutukan Dingin: mengurangi Movement Speed sebesar ${slow}, Attack Speed sebesar ${attackSpeed}%, dan penyembuhan sebesar ${healingReduction}%`,
-    kr: `혹한의 저주: 이동 속도를 ${slow}만큼, 공격 속도를 ${attackSpeed}%만큼, 회복 효과를 ${healingReduction}%만큼 감소시킵니다`,
+    en: `Frigid Curse: reduces Movement Speed by ${slow}%, Attack Speed by ${attackSpeed}%, and healing by ${healingReduction}%`,
+    ru: `Морозное проклятие: снижает скорость передвижения на ${slow}%, скорость атаки на ${attackSpeed}% и лечение на ${healingReduction}%`,
+    br: `Maldição Gélida: reduz a Velocidade de Movimento em ${slow}%, a Velocidade de Ataque em ${attackSpeed}% e a cura em ${healingReduction}%`,
+    fr: `Malédiction glaciale : réduit la vitesse de déplacement de ${slow}%, la vitesse d'attaque de ${attackSpeed}% et les soins de ${healingReduction}%`,
+    zh: `寒冷詛咒：降低移動速度 ${slow}%、攻擊速度 ${attackSpeed}%，並降低 ${healingReduction}% 治療效果`,
+    cz: `Zmrzlá kletba: snižuje rychlost pohybu o ${slow}%, rychlost útoku o ${attackSpeed}% a léčení o ${healingReduction}%`,
+    vi: `Lời Nguyền Lạnh Giá: giảm tốc độ di chuyển ${slow}%, tốc độ đánh ${attackSpeed}% và hồi máu ${healingReduction}%`,
+    id: `Kutukan Dingin: mengurangi Movement Speed sebesar ${slow}%, Attack Speed sebesar ${attackSpeed}%, dan penyembuhan sebesar ${healingReduction}%`,
+    kr: `혹한의 저주: 이동 속도를 ${slow}%만큼, 공격 속도를 ${attackSpeed}%만큼, 회복 효과를 ${healingReduction}%만큼 감소시킵니다`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
