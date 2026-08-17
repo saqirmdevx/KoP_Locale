@@ -1050,7 +1050,8 @@ const _getSpellDescriptionLang = (
       const baseDamage = getDamage(MagdaleneAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
       const maxSouls =
         MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS +
-        MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level
+        MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level +
+        (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0) ? MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS : 0)
       const maxSoulsValue = getBuffValue(maxSouls)
       const bonusAbilityPowerPerSoul = getBuffValue(1)
       const soulDamage = getDamage(
