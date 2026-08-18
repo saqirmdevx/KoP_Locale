@@ -2189,6 +2189,11 @@ const _getLocaleItemDescription = (
       }
     }
 
+    case ItemList.Consumable_Placeholder:
+      return {
+        name: { en: 'Consumables' },
+      }
+
     default:
       return {
         name: { en: '' },

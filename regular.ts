@@ -8099,5 +8099,16 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Mô tả',
     kr: `설명`,
   },
+  [LOCALE.GM_REPORTS_RESPONSE_LABEL]: {
+    en: 'Response',
+    ru: 'Ответ',
+    br: 'Resposta',
+    cz: 'Odpověď',
+    zh: '回覆',
+    fr: 'Réponse',
+    id: 'Tanggapan',
+    vi: 'Phản hồi',
+    kr: `답변`,
+  },
 }
 export default locale_data

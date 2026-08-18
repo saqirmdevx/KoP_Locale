@@ -873,34 +873,26 @@ const _getSpellDescriptionLang = (
     /** Alvar  */
     case SpellList.ALVAR_ATTACK: {
       const baseDamage = getDamage(AlvarAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
-      const markDamage = getDamage(
-        0,
-        0,
-        hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-          ? AlvarAbilityData.MARK_DAMAGE + AlvarAbilityData.TALENT_T1_LEFT_MARK_DAMAGE
-          : AlvarAbilityData.MARK_DAMAGE
-      )
-
       const duration = getDuration(AlvarAbilityData.MARK_DURATION)
 
       return {
         en: `Alvar attacks with a punch, dealing ${baseDamage}. \n
-                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which last for ${duration}. At three stacks, the enemy receives a Divine Mark, dealing ${markDamage}.`,
+                \nPassive: Alvar's Basic Attacks apply a stack of divine impact on enemy heroes, which last for ${duration}. At three stacks, the enemy receives a Divine Mark.`,
         br: `Alvar acerta com seu punho todos os alvos à sua frente causando ${baseDamage}. \n
-                \n<b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${duration}.\n O terceiro ataque de debuff aplicará uma marca que causa ${markDamage}.`,
+                \n<b>[Passiva] (Punhos do detentor):</b> Cada ataque de Alvar aplica no personagem inimigo um debuff que dura ${duration}.\n O terceiro ataque de debuff aplicará uma Marca Divina.`,
         ru: `Алвар бьёт кулаками перед собой, нанося ${baseDamage}. \n
-                \n[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противника ослабление на ${duration}. Третий заряд ослабления активирует на цели метку, наносящую ${markDamage}.`,
+                \n[ПАССИВНО]: Каждое успешное попадание атакой накладывает на противника ослабление на ${duration}. Третий заряд ослабления накладывает на цель Божественную метку.`,
         cz: `Alvar zasáhne pěstí všechny cíle před sebou a způsobí ${baseDamage}. \n
-                \n[PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${duration}. Třetí stack applikuje značku, která způsobí ${markDamage} normální poškození.`,
+                \n[PASIVNÍ]: Každý úspěšný zásah Alvara aplikuje debuff na cíl po dobu ${duration}. Třetí stack aplikuje Božskou značku.`,
         zh: `阿爾瓦用他的拳頭攻擊，造成 ${baseDamage}。\n
-                \n被動：阿爾瓦的基本攻擊會給敵方英雄疊加神聖衝擊，持續時間為 ${duration}。第三次疊加時，敵方產生神聖印記，造成 ${markDamage}。`,
+                \n被動：阿爾瓦的基本攻擊會給敵方英雄疊加神聖衝擊，持續時間為 ${duration}。第三次疊加時，敵方產生神聖印記。`,
         fr: `Alvar attaque avec un coup de poing, infligeant ${baseDamage}. \n
-                \nPassif: Les attaques de base d'Alvar appliquent une pile d'impact divin sur les héros ennemis, qui dure ${duration}. À trois piles, l'ennemi reçoit une Marque divine, infligeant ${markDamage}.`,
+                \nPassif: Les attaques de base d'Alvar appliquent une pile d'impact divin sur les héros ennemis, qui dure ${duration}. À trois piles, l'ennemi reçoit une Marque divine.`,
         vi: `Alvar dùng tay đấm, gây ${baseDamage}. \n
-                \nNội tại: Các đòn đánh thường của Alvar cộng dồn Thần Kích lên các kẻ địch, kéo dài trong ${duration}. Tại lần thứ ba cộng dồn, kẻ địch bị nhận Thần Ấn, gây ${markDamage}.`,
+                \nNội tại: Các đòn đánh thường của Alvar cộng dồn Thần Kích lên các kẻ địch, kéo dài trong ${duration}. Tại lần thứ ba cộng dồn, kẻ địch bị nhận Thần Ấn.`,
         id: `Alvar menyerang dengan pukulan, memberikan ${baseDamage}. \n
-                \nPassive: Serangan Dasar Alvar memberikan tumpukan dampak ilahi pada pahlawan musuh, yang berlangsung selama ${duration}. Pada tiga tumpukan, musuh menerima Tanda Ilahi, memberikan ${markDamage}.`,
-        kr: `알바르가 주먹으로 공격하여 ${baseDamage}의 피해를 입힙니다. \n패시브: 알바르의 기본 공격은 적 영웅에게 신성 충격 중첩을 적용하며, ${duration} 동안 지속됩니다. 3중첩이 되면 적은 신성의 인장을 받아 ${markDamage}의 피해를 입습니다.`,
+                \nPassive: Serangan Dasar Alvar memberikan tumpukan dampak ilahi pada pahlawan musuh, yang berlangsung selama ${duration}. Pada tiga tumpukan, musuh menerima Tanda Ilahi.`,
+        kr: `알바르가 주먹으로 공격하여 ${baseDamage}의 피해를 입힙니다. \n패시브: 알바르의 기본 공격은 적 영웅에게 신성 충격 중첩을 적용하며, ${duration} 동안 지속됩니다. 3중첩이 되면 적은 신성의 인장을 받습니다.`,
       }
     }
 
@@ -942,7 +934,9 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.ALVAR_HEAVENLY_KICK: {
-      const baseDamage = getDamage(AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(
+        AlvarAbilityData.HEAVENLY_KICK_DAMAGE + AlvarAbilityData.HEAVENLY_KICK_DAMAGE_MOD * damage
+      )
       const slowDuration = getMovementSpeedDuration(AlvarAbilityData.HEAVENLY_KICK_SLOW_DURATION)
 
       return {
