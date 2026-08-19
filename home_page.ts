@@ -84,14 +84,24 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
   [LOCALE.PING]: {
     en: 'Ping',
     ru: 'Пинг',
-    zh: '延遲',
-    kr: `핑`,
+    br: 'Ping',
+    zh: '延迟',
+    cz: 'Ping',
+    fr: 'Ping',
+    id: 'Ping',
+    vi: 'Ping',
+    kr: '핑',
   },
   [LOCALE.DISCORD]: {
     en: 'Discord',
-    // Discord in Russian
     ru: 'Дискорд',
-    kr: `디스코드`,
+    br: 'Discord',
+    zh: 'Discord',
+    cz: 'Discord',
+    fr: 'Discord',
+    id: 'Discord',
+    vi: 'Discord',
+    kr: '디스코드',
   },
   [LOCALE.TERMS_OF_SERVICES]: {
     en: 'Terms of Service',
