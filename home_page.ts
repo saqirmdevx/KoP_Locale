@@ -664,6 +664,17 @@ export const home_page: { [key in LOCALE]?: { [key in string]: string } } = {
     id: 'Nama harus terdiri dari 3 hingga 12 huruf dan tidak boleh mengandung huruf yang dilarang.',
     kr: `이름은 3자에서 12자 사이여야 하며, 금지된 문자를 포함할 수 없습니다.`,
   },
+  [LOCALE.RENAME_ERROR_PROFANITY]: {
+    en: 'This name is not allowed. Please choose a different name.',
+    ru: 'Это имя запрещено. Пожалуйста, выберите другое имя.',
+    cz: 'Toto jméno není povoleno. Vyberte prosím jiné jméno.',
+    zh: '此名稱不被允許，請選擇其他名稱。',
+    fr: "Ce nom n'est pas autorisé. Veuillez choisir un autre nom.",
+    br: 'Este nome não é permitido. Por favor, escolha outro nome.',
+    vi: 'Tên này không được phép sử dụng. Vui lòng chọn tên khác.',
+    id: 'Nama ini tidak diperbolehkan. Silakan pilih nama lain.',
+    kr: `이 이름은 사용할 수 없습니다. 다른 이름을 선택해 주세요.`,
+  },
   [LOCALE.RENAME_ERROR_NO_CONNECTION]: {
     en: "Can't connect with server",
     ru: 'Нет соединения с сервером',
