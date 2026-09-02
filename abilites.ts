@@ -724,8 +724,12 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.HAZEL_TRIUMPHANT_UPHEAVAL: {
+      const healthDamageMod = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
+        ? HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP + HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP
+        : HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP
+
       const damage = getDamage(
-        HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP * health,
+        healthDamageMod * health,
         abilityData.damageType,
         HazelAbilityData.SHOCKWAVE_BASE_DAMAGE,
         'Health'
