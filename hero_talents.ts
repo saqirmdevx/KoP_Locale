@@ -1473,6 +1473,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100 * lastJudgementMaxStacks,
         1
       )
+      const lastJudgementStun = toSec(PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_STUN_DURATION)
 
       return {
         tier1_left: {
@@ -1563,15 +1564,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `최후의 심판`,
           },
           description: {
-            en: `Targets hit by Divine Reckoning with the maximum ${lastJudgementMaxStacks} stacks take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total).`,
-            ru: `Цели, поражённые Divine Reckoning с максимальными ${lastJudgementMaxStacks} зарядами, получают от каждого меча ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%).`,
-            cz: `Cíle zasažené Divine Reckoning s maximálními ${lastJudgementMaxStacks} stacky utrpí od každého meče ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%).`,
-            br: `Alvos atingidos por Divine Reckoning com o máximo de ${lastJudgementMaxStacks} acúmulos sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada (${lastJudgementTotalMaxHealthDamage}% no total).`,
-            zh: `被神聖清算擊中且擁有最大 ${lastJudgementMaxStacks} 層的目標，每把劍都會造成<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。`,
-            fr: `Les cibles touchées par Jugement Divin avec le maximum de ${lastJudgementMaxStacks} cumuls subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée (${lastJudgementTotalMaxHealthDamage}% au total).`,
-            vi: `Mục tiêu trúng Thiên Phán với tối đa ${lastJudgementMaxStacks} cộng dồn chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm (tổng ${lastJudgementTotalMaxHealthDamage}%).`,
-            id: `Target yang terkena Divine Reckoning dengan stack maksimal ${lastJudgementMaxStacks} menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang (total ${lastJudgementTotalMaxHealthDamage}%).`,
-            kr: `신성한 심판에 최대 ${lastJudgementMaxStacks}중첩으로 명중한 대상은 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%).`,
+            en: `Every sword of Divine Reckoning <c:stun>stuns for ${lastJudgementStun}</c:stun>, and targets hit with the maximum ${lastJudgementMaxStacks} stacks take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total).`,
+            ru: `Каждый меч Divine Reckoning <c:stun>оглушает на ${lastJudgementStun}</c:stun>, а цели, поражённые с максимальными ${lastJudgementMaxStacks} зарядами, получают от каждого меча ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%).`,
+            cz: `Každý meč Divine Reckoning <c:stun>omráčí na ${lastJudgementStun}</c:stun> a cíle zasažené s maximálními ${lastJudgementMaxStacks} stacky utrpí od každého meče ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%).`,
+            br: `Cada espada de Divine Reckoning <c:stun>atordoa por ${lastJudgementStun}</c:stun>, e alvos atingidos com o máximo de ${lastJudgementMaxStacks} acúmulos sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada (${lastJudgementTotalMaxHealthDamage}% no total).`,
+            zh: `神聖清算的每把劍都會<c:stun>暈眩 ${lastJudgementStun}</c:stun>，且擁有最大 ${lastJudgementMaxStacks} 層的目標每把劍還會受到<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。`,
+            fr: `Chaque épée de Jugement Divin <c:stun>étourdit pendant ${lastJudgementStun}</c:stun>, et les cibles touchées avec le maximum de ${lastJudgementMaxStacks} cumuls subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée (${lastJudgementTotalMaxHealthDamage}% au total).`,
+            vi: `Mỗi thanh kiếm của Thiên Phán <c:stun>choáng ${lastJudgementStun}</c:stun>, và mục tiêu trúng đòn với tối đa ${lastJudgementMaxStacks} cộng dồn còn chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm (tổng ${lastJudgementTotalMaxHealthDamage}%).`,
+            id: `Setiap pedang Divine Reckoning <c:stun>membuat stun selama ${lastJudgementStun}</c:stun>, dan target yang terkena dengan stack maksimal ${lastJudgementMaxStacks} juga menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang (total ${lastJudgementTotalMaxHealthDamage}%).`,
+            kr: `신성한 심판의 검은 검마다 <c:stun>${lastJudgementStun} 동안 기절</c:stun>시키고, 최대 ${lastJudgementMaxStacks}중첩으로 명중한 대상은 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%).`,
           },
         },
       }
