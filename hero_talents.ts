@@ -19,11 +19,12 @@ import {
   SeerAbilityData,
   KarickAbilityData,
   PuppeteerAbilityData,
+  PatroklosAbilityData,
   //@ts-ignore
 } from 'shared'
 import { toSecRaw, toSec, fixed } from './misc'
 // @ts-ignore
-import { colorizeTooltipKeywords, getBonusKeyword, getSlowKeyword, getStunKeyword } from '../abilityLangData'
+import { colorizeTooltipKeywords } from '../abilityLangData'
 
 interface ITalentProps {
   title: { [key in string]: string }
@@ -37,16 +38,12 @@ interface ILocaleHeroTalent {
   tier2_right: ITalentProps
 }
 
-const getControlValue = (value: string | number): string => `<span class='control-d'>${value}</span>`
-
 const colorizeTalentKeywordsDeep = (value: ILocaleHeroTalent): ILocaleHeroTalent => {
   const colorizeMap = (entries: { [key in string]: string }) => {
     const coloredEntries: { [key in string]: string } = {}
 
     for (const key in entries) {
-      coloredEntries[key] = entries[key].includes("<span class='")
-        ? entries[key]
-        : colorizeTooltipKeywords(entries[key])
+      coloredEntries[key] = colorizeTooltipKeywords(entries[key])
     }
 
     return coloredEntries
@@ -75,9 +72,9 @@ const colorizeTalentKeywordsDeep = (value: ILocaleHeroTalent): ILocaleHeroTalent
 const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
   switch (hero) {
     case Shared.HEROES.KUMIHU: {
-      const blindDuration = getControlValue(toSecRaw(KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION))
-      const magicalOrbCd = toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)
-      const charmCooldown = toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)
+      const blindDuration = toSec(KumihuAbilityData.TALENT_T2_RIGHT_BLIND_DURATION)
+      const magicalOrbCd = '-' + toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)
+      const charmCooldown = '-' + toSecRaw(KumihuAbilityData.TALENT_T1_RIGHT_CHARM_CD)
       return {
         tier1_left: {
           title: {
@@ -131,15 +128,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `마법 구슬 실명`,
           },
           description: {
-            en: `Magical orb blinds enemy heroes it passes through. Blinded heroes have reduced vision and do not share vision with their team for ${blindDuration}s`,
-            ru: `Волшебная сфера ослепляет вражеских героев, через которых проходит. Ослеплённые герои имеют уменьшенный обзор и не передают обзор своей команде в течение ${blindDuration} сек.`,
-            cz: `Magická koule oslepí nepřátelské hrdiny, kterými projde. Oslepení hrdinové mají snížené vidění a nesdílí vidění se svým týmem po dobu ${blindDuration}s`,
-            zh: `魔法寶珠會致盲其穿過的敵方英雄。被致盲的英雄將降低視野，並且在${blindDuration}秒內無法與隊友共享視野`,
-            fr: `L'orbe magique aveugle les héros ennemis qu'il traverse. Les héros aveuglés ont une vision réduite et ne partagent plus leur vision avec leur équipe pendant ${blindDuration}s`,
-            br: `O orbe mágico cega os heróis inimigos pelos quais passa. Heróis cegados têm visão reduzida e não compartilham visão com sua equipe por ${blindDuration}s`,
-            vi: `Quả Cầu Phép Thuật sẽ làm mù những tướng địch mà nó bay xuyên qua. Tướng bị làm mù sẽ bị giảm tầm nhìn và không chia sẻ tầm nhìn với đồng đội trong ${blindDuration}s`,
-            id: `Bola ajaib membutakan hero musuh yang dilewatinya. Hero yang dibutakan memiliki penglihatan berkurang dan tidak membagikan vision kepada timnya selama ${blindDuration}s`,
-            kr: `마법 구슬이 통과하는 적 영웅을 실명시킵니다. 실명된 영웅은 시야가 감소하며 ${blindDuration}초 동안 팀과 시야를 공유하지 않습니다.`,
+            en: `Magical orb blinds enemy heroes it passes through. Blinded heroes have reduced <c:vision>vision</c:vision> and do not share <c:vision>vision</c:vision> with their team for <c:control>${blindDuration}</c:control>`,
+            ru: `Волшебная сфера ослепляет вражеских героев, через которых проходит. Ослеплённые герои имеют уменьшенный <c:vision>обзор</c:vision> и не передают <c:vision>обзор</c:vision> своей команде в течение <c:control>${blindDuration}</c:control>`,
+            cz: `Magická koule oslepí nepřátelské hrdiny, kterými projde. Oslepení hrdinové mají snížené <c:vision>vidění</c:vision> a nesdílí <c:vision>vidění</c:vision> se svým týmem po dobu <c:control>${blindDuration}</c:control>`,
+            zh: `魔法寶珠會致盲其穿過的敵方英雄。被致盲的英雄將降低<c:vision>視野</c:vision>，並且在<c:control>${blindDuration}</c:control>內無法與隊友共享<c:vision>視野</c:vision>`,
+            fr: `L'orbe magique aveugle les héros ennemis qu'il traverse. Les héros aveuglés ont une <c:vision>vision</c:vision> réduite et ne partagent plus leur <c:vision>vision</c:vision> avec leur équipe pendant <c:control>${blindDuration}</c:control>`,
+            br: `O orbe mágico cega os heróis inimigos pelos quais passa. Heróis cegados têm <c:vision>visão</c:vision> reduzida e não compartilham <c:vision>visão</c:vision> com sua equipe por <c:control>${blindDuration}</c:control>`,
+            vi: `Quả Cầu Phép Thuật sẽ làm mù những tướng địch mà nó bay xuyên qua. Tướng bị làm mù sẽ bị <c:vision>giảm tầm nhìn</c:vision> và không chia sẻ <c:vision>tầm nhìn</c:vision> với đồng đội trong <c:control>${blindDuration}</c:control>`,
+            id: `Bola ajaib membutakan hero musuh yang dilewatinya. Hero yang dibutakan memiliki <c:vision>penglihatan</c:vision> berkurang dan tidak membagikan <c:vision>vision</c:vision> kepada timnya selama <c:control>${blindDuration}</c:control>`,
+            kr: `마법 구슬이 통과하는 적 영웅을 실명시킵니다. 실명된 영웅은 <c:vision>시야</c:vision>가 감소하며 <c:control>${blindDuration}</c:control> 동안 팀과 <c:vision>시야</c:vision>를 공유하지 않습니다.`,
           },
         },
       }
@@ -147,6 +144,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.SPARROW: {
       const groundSlamDamage = fixed(SparrowAbilityData.TALENT_T2_LEFT_GROUND_SLAM_DAMAGE * 100, 1)
+      const dashCooldown = '-' + toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)
       return {
         tier1_left: {
           title: {
@@ -187,28 +185,28 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `악마의 분노 고정 피해 / +${groundSlamDamage}%`,
           },
           description: {
-            en: `Demonic Wrath deals pure damage, bypassing both Armor and Magic Resistance, and deals ${groundSlamDamage}% bonus damage.`,
-            ru: `Демонический гнев будет наносить чистый урон, а процентный урон от недостающего здоровья цели увеличится на ${groundSlamDamage}%`,
-            cz: `Démonický hněv nyní způsobuje čisté poškození, které obchází jak obranu, tak magický odpor, a způsobuje ${groundSlamDamage}% bonusového poškození.`,
-            zh: `惡魔之怒造成純傷害，無視裝甲值和魔法抗性，造成 ${groundSlamDamage}% 額外傷害。`,
-            fr: `La colère démoniaque inflige des dégâts purs, contournant à la fois l'armure et la résistance magique, et inflige ${groundSlamDamage}% de dégâts bonus.`,
-            br: `Ira Demoníaca causa dano puro, ignorando tanto a Armadura quanto a Resistência Mágica, e causa ${groundSlamDamage}% de dano bônus.`,
-            vi: `Qủy Nộ gây sát thương, bỏ qua giáp và kháng phép, và gây thêm ${groundSlamDamage}% sát thương.`,
-            id: `Kemarahan Iblis memberikan kerusakan murni, melewati kedua Armor dan Magic Resistance, dan memberikan ${groundSlamDamage}% kerusakan bonus.`,
-            kr: `악마의 분노가 방어력과 마법 저항력을 모두 무시하는 고정 피해를 입히며, ${groundSlamDamage}%의 추가 피해를 입힙니다.`,
+            en: `Demonic Wrath deals <c:pure>pure damage</c:pure>, bypassing both Armor and Magic Resistance, and deals <c:bonus>${groundSlamDamage}% bonus damage</c:bonus>.`,
+            ru: `Демонический гнев будет наносить <c:pure>чистый урон</c:pure>, а процентный урон от недостающего здоровья цели <c:bonus>увеличится на ${groundSlamDamage}%</c:bonus>`,
+            cz: `Démonický hněv nyní způsobuje <c:pure>čisté poškození</c:pure>, které obchází jak obranu, tak magický odpor, a způsobuje <c:bonus>${groundSlamDamage}% bonusového poškození</c:bonus>.`,
+            zh: `惡魔之怒造成<c:pure>純傷害</c:pure>，無視裝甲值和魔法抗性，造成 <c:bonus>${groundSlamDamage}% 額外傷害</c:bonus>。`,
+            fr: `La colère démoniaque inflige des <c:pure>dégâts purs</c:pure>, contournant à la fois l'armure et la résistance magique, et inflige <c:bonus>${groundSlamDamage}% de dégâts bonus</c:bonus>.`,
+            br: `Ira Demoníaca causa <c:pure>dano puro</c:pure>, ignorando tanto a Armadura quanto a Resistência Mágica, e causa <c:bonus>${groundSlamDamage}% de dano bônus</c:bonus>.`,
+            vi: `Qủy Nộ gây <c:pure>sát thương thuần</c:pure>, bỏ qua giáp và kháng phép, và gây thêm <c:bonus>${groundSlamDamage}% sát thương</c:bonus>.`,
+            id: `Kemarahan Iblis memberikan <c:pure>kerusakan murni</c:pure>, melewati kedua Armor dan Magic Resistance, dan memberikan <c:bonus>${groundSlamDamage}% kerusakan bonus</c:bonus>.`,
+            kr: `악마의 분노가 방어력과 마법 저항력을 모두 무시하는 <c:pure>고정 피해</c:pure>를 입히며, <c:bonus>${groundSlamDamage}%의 추가 피해</c:bonus>를 입힙니다.`,
           },
         },
         tier2_right: {
           title: {
-            en: `Corrupted Wind Cooldown ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            ru: `${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)} сек. перезарядки Проклятого ветра`,
-            cz: `Zkažený vítr obnovení ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            zh: `腐壞之風冷卻 ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            fr: `Recharge du vent corrompu ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            br: `Recarga do Vento Corrompido ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            vi: `Hồi chiêu Tà Phong ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            id: `Cooldown Angin Tercemar ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
-            kr: `타락한 바람 재사용 대기시간 ${toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_DASH_COOLDOWN)}`,
+            en: `Corrupted Wind Cooldown ${dashCooldown}`,
+            ru: `${dashCooldown} сек. перезарядки Проклятого ветра`,
+            cz: `Zkažený vítr obnovení ${dashCooldown}`,
+            zh: `腐壞之風冷卻 ${dashCooldown}`,
+            fr: `Recharge du vent corrompu ${dashCooldown}`,
+            br: `Recarga do Vento Corrompido ${dashCooldown}`,
+            vi: `Hồi chiêu Tà Phong ${dashCooldown}`,
+            id: `Cooldown Angin Tercemar ${dashCooldown}`,
+            kr: `타락한 바람 재사용 대기시간 ${dashCooldown}`,
           },
         },
       }
@@ -216,7 +214,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.ICEAT: {
       const attackSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100, 1)
-      const movementSpeedSlow = fixed(Math.abs(ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED) * 100, 1)
+      const movementSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED * 100, 1)
       const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T2_LEFT_ICICLE_FREEZE_DURATION)
       return {
         tier1_left: {
@@ -228,22 +226,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             fr: 'Ralentissement des attaques de base',
             br: 'Ataque Básico Lento',
             vi: 'Cầu tuyết băng giá',
+            id: 'Perlambatan Serangan Dasar',
             kr: `기본 공격 둔화`,
           },
           description: {
-            en: `Your Basic Attacks reduce enemy ${getSlowKeyword('Movement Speed')} by <b>${getControlValue(
-              movementSpeedSlow + '%'
-            )}</b> and reduce enemy ${getSlowKeyword('Attack Speed')} by <b>${getControlValue(attackSpeedSlow + '%')}</b>`,
-            ru: `Ваши атаки будут уменьшать скорость передвижения целей на <b>${movementSpeedSlow}%</b> и их скорость атаки на <b>${attackSpeedSlow}%</b>`,
-            cz: `Vaše základní útoky sníží rychlost pohybu nepřátel o <b>${movementSpeedSlow}%</b> a sníží rychlost útoku nepřátel o <b>${attackSpeedSlow}%</b>`,
-            zh: `你的基礎攻擊減少敵人移動速度 <b>${movementSpeedSlow}%</b> 並減少敵人攻擊速度 <b>${attackSpeedSlow}%</b>`,
-            fr: `Vos attaques de base réduisent la vitesse de déplacement des ennemis de <b>${movementSpeedSlow}%</b> et réduisent la vitesse d'attaque des ennemis de <b>${attackSpeedSlow}%</b>`,
-            br: `Seus ataques básicas reduzem a Velocidade de Movimento do inimigo em <b>${movementSpeedSlow}%</b> e reduzem a Velocidade de Ataque do inimigo em <b>${attackSpeedSlow}%</b>`,
-            vi: `Các đòn đánh thường của bạn giảm Tốc độ Di chuyển của kẻ địch <b>${movementSpeedSlow}%</b> và giảm Tốc độ Tấn công của kẻ địch <b>${attackSpeedSlow}%</b>`,
-            id: `Serangan Dasar Anda mengurangi Kecepatan Gerakan musuh sebesar <b>${movementSpeedSlow}%</b> dan mengurangi Kecepatan Serangan musuh sebesar <b>${attackSpeedSlow}%</b>`,
-            kr: `당신의 기본 공격은 적의 ${getSlowKeyword('Movement Speed')}를 <b>${getControlValue(
-              movementSpeedSlow + '%'
-            )}</b>만큼 감소시키고, 적의 ${getSlowKeyword('Attack Speed')}를 <b>${getControlValue(attackSpeedSlow + '%')}</b>만큼 감소시킵니다`,
+            en: `Your Basic Attacks <c:slow>reduce enemy Movement Speed by ${movementSpeedSlow}%</c:slow> and <c:slow>enemy Attack Speed by ${attackSpeedSlow}%</c:slow>`,
+            ru: `Ваши атаки <c:slow>снижают скорость передвижения целей на ${movementSpeedSlow}%</c:slow> и <c:slow>их скорость атаки на ${attackSpeedSlow}%</c:slow>`,
+            cz: `Vaše základní útoky <c:slow>sníží rychlost pohybu nepřátel o ${movementSpeedSlow}%</c:slow> a <c:slow>rychlost útoku o ${attackSpeedSlow}%</c:slow>`,
+            zh: `你的基礎攻擊<c:slow>降低敵人移動速度 ${movementSpeedSlow}%</c:slow>並<c:slow>降低敵人攻擊速度 ${attackSpeedSlow}%</c:slow>`,
+            fr: `Vos attaques de base <c:slow>réduisent la vitesse de déplacement des ennemis de ${movementSpeedSlow}%</c:slow> et <c:slow>leur vitesse d'attaque de ${attackSpeedSlow}%</c:slow>`,
+            br: `Seus ataques básicos <c:slow>reduzem a Velocidade de Movimento do inimigo em ${movementSpeedSlow}%</c:slow> e <c:slow>a Velocidade de Ataque em ${attackSpeedSlow}%</c:slow>`,
+            vi: `Các đòn đánh thường của bạn <c:slow>giảm ${movementSpeedSlow}% Tốc độ Di chuyển</c:slow> và <c:slow>giảm ${attackSpeedSlow}% Tốc độ Tấn công</c:slow> của kẻ địch`,
+            id: `Serangan Dasar Anda <c:slow>mengurangi Kecepatan Gerakan musuh sebesar ${movementSpeedSlow}%</c:slow> dan <c:slow>Kecepatan Serangan sebesar ${attackSpeedSlow}%</c:slow>`,
+            kr: `당신의 기본 공격은 <c:slow>적의 이동 속도를 ${movementSpeedSlow}%</c:slow>, <c:slow>공격 속도를 ${attackSpeedSlow}%</c:slow>만큼 감소시킵니다`,
           },
         },
         tier1_right: {
@@ -303,8 +298,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.VEIL: {
-      const astralStepCooldown = toSecRaw(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)
+      const astralStepCooldown = toSec(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)
       const astralstepSlow = toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)
+      const astralBladesCooldown = '-' + toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)
       return {
         tier1_left: {
           title: {
@@ -321,17 +317,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Astral Blades Cooldown ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            ru: `${toSecRaw(
-              VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN
-            )} сек. перезарядки Астральных клинков`,
-            cz: `Astral Blades obnovení ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            zh: `星光刀刃冷卻 ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}秒`,
-            fr: `Recharge des lames astrales ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            br: `Recarga das Lâminas Astrais ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            vi: `Hồi chiêu Tinh Kiếm ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            id: `Cooldown Astral Blades ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}s`,
-            kr: `성계의 칼날 재사용 대기시간 ${toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)}초`,
+            en: `Astral Blades Cooldown ${astralBladesCooldown}s`,
+            ru: `${astralBladesCooldown} сек. перезарядки Астральных клинков`,
+            cz: `Astral Blades obnovení ${astralBladesCooldown}s`,
+            zh: `星光刀刃冷卻 ${astralBladesCooldown}秒`,
+            fr: `Recharge des lames astrales ${astralBladesCooldown}s`,
+            br: `Recarga das Lâminas Astrais ${astralBladesCooldown}s`,
+            vi: `Hồi chiêu Tinh Kiếm ${astralBladesCooldown}s`,
+            id: `Cooldown Astral Blades ${astralBladesCooldown}s`,
+            kr: `성계의 칼날 재사용 대기시간 ${astralBladesCooldown}초`,
           },
         },
         tier2_left: {
@@ -364,29 +358,29 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en:
-              `Reduces the cooldown of Astral Step by ${astralStepCooldown}s \n` +
+              `Reduces the cooldown of Astral Step by ${astralStepCooldown} \n` +
               'Enhanced Astral Step resets its cooldown even if no enemy is hit.',
             ru:
-              `Перезарядка Астрального шага снижается на ${astralStepCooldown} сек. \n` +
+              `Перезарядка Астрального шага снижается на ${astralStepCooldown} \n` +
               'Больше нет необходимости попадать по врагу усиленным Астральным шагом, чтобы сбросить его перезарядку',
             cz:
-              `Sníží obnovení Astrálního kroku o ${astralStepCooldown}s \n` +
+              `Sníží obnovení Astrálního kroku o ${astralStepCooldown} \n` +
               'Zlepšený Astrální krok resetuje své obnovení i když nezasáhne žádného nepřítele.',
-            zh: `減少星光飛躍冷卻時間 ${astralStepCooldown}秒 \n` + '即使沒擊中敵人也會重置強化後星光飛躍的冷卻時間。',
+            zh: `減少星光飛躍冷卻時間 ${astralStepCooldown} \n` + '即使沒擊中敵人也會重置強化後星光飛躍的冷卻時間。',
             fr:
-              `Réduit le temps de recharge du Pas astral de ${astralStepCooldown}s \n` +
+              `Réduit le temps de recharge du Pas astral de ${astralStepCooldown} \n` +
               "Le Pas astral amélioré réinitialise son temps de recharge même si aucun ennemi n'est touché.",
             br:
-              `Reduz o tempo de recarga do Passo Astral em ${astralStepCooldown}s \n` +
+              `Reduz o tempo de recarga do Passo Astral em ${astralStepCooldown} \n` +
               'O Passo Astral aprimorado reseta seu tempo de recarga mesmo que nenhum inimigo seja atingido.',
             vi:
-              `Giảm thời gian hồi chiêu của Tinh Bộ bởi ${astralStepCooldown}s \n` +
+              `Giảm thời gian hồi chiêu của Tinh Bộ bởi ${astralStepCooldown} \n` +
               'Tinh Bộ hợp nhất sẽ đặt lại thời gian hồi chiêu ngay cả khi không đánh trúng kẻ địch nào.',
             id:
-              `Mengurangi cooldown Langkah Astral sebesar ${astralStepCooldown}s \n` +
+              `Mengurangi cooldown Langkah Astral sebesar ${astralStepCooldown} \n` +
               'Langkah Astral yang Ditingkatkan mengatur ulang cooldown-nya bahkan jika tidak ada musuh yang terkena.',
             kr:
-              `성계의 발걸음의 재사용 대기시간을 ${astralStepCooldown}초 감소시킵니다. 
+              `성계의 발걸음의 재사용 대기시간을 ${astralStepCooldown} 감소시킵니다. 
 ` + `강화된 성계의 발걸음은 적을 명중시키지 못해도 재사용 대기시간이 초기화됩니다.`,
           },
         },
@@ -397,7 +391,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const floralAmbushHeal = fixed(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_HEAL * 100)
       const pricklyVineStunBonus = toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
       const pricklyAttachDuration = toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)
-      const floralAmbushSlow = fixed(BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW * 100, 1)
+      const floralAmbushSlow = '-' + fixed(BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_SLOW * 100, 1)
       return {
         tier1_left: {
           title: {
@@ -438,15 +432,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `꽃의 회복`,
           },
           description: {
-            en: `Explosion of Floral Ambush heals all nearby allies for ${floralAmbushHeal}% of the damage.`,
-            ru: `Взрыв Цветочной ловушки лечит всех ближайших союзников на ${floralAmbushHeal}% от нанесённого урона`,
-            cz: `Exploze Květinového útoku léčí všechny nedaleké spojence za ${floralAmbushHeal}% poškození`,
-            zh: `鮮花伏擊的爆炸為所有附近盟友治癒 ${floralAmbushHeal}% 傷害`,
-            fr: `L'explosion de l'embuscade florale soigne tous les alliés proches pour ${floralAmbushHeal}% des dégâts`,
-            br: `A explosão da Emboscada Floral cura todos os aliados próximos em ${floralAmbushHeal}% do dano`,
-            vi: `Vụ nổ của Hoa Phục Kích hồi máu tất cả đồng minh gần đó ${floralAmbushHeal}% sát thương`,
-            id: `Ledakan Emboscada Floral menyembuhkan semua sekutu terdekat sebesar ${floralAmbushHeal}% dari kerusakan`,
-            kr: `꽃의 매복 폭발이 주변 모든 아군을 피해량의 ${floralAmbushHeal}%만큼 회복시킵니다.`,
+            en: `Explosion of Floral Ambush <c:heal>heals all nearby allies for ${floralAmbushHeal}% of the damage</c:heal>.`,
+            ru: `Взрыв Цветочной ловушки <c:heal>лечит всех ближайших союзников на ${floralAmbushHeal}% от нанесённого урона</c:heal>`,
+            cz: `Exploze Květinového útoku <c:heal>léčí všechny nedaleké spojence za ${floralAmbushHeal}% poškození</c:heal>`,
+            zh: `鮮花伏擊的爆炸<c:heal>為所有附近盟友治癒 ${floralAmbushHeal}% 傷害</c:heal>`,
+            fr: `L'explosion de l'embuscade florale <c:heal>soigne tous les alliés proches pour ${floralAmbushHeal}% des dégâts</c:heal>`,
+            br: `A explosão da Emboscada Floral <c:heal>cura todos os aliados próximos em ${floralAmbushHeal}% do dano</c:heal>`,
+            vi: `Vụ nổ của Hoa Phục Kích <c:heal>hồi máu tất cả đồng minh gần đó ${floralAmbushHeal}% sát thương</c:heal>`,
+            id: `Ledakan Emboscada Floral <c:heal>menyembuhkan semua sekutu terdekat sebesar ${floralAmbushHeal}% dari kerusakan</c:heal>`,
+            kr: `꽃의 매복 폭발이 <c:heal>주변 모든 아군을 피해량의 ${floralAmbushHeal}%만큼 회복</c:heal>시킵니다.`,
           },
         },
         tier2_right: {
@@ -465,7 +459,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.FLIN: {
-      const preciseShotCooldown = toSecRaw(FlinAbilityData.TALENT_T1_LEFT_PRECISESHOT_COOLDOWN)
+      const preciseShotCooldown = '-' + toSecRaw(FlinAbilityData.TALENT_T1_LEFT_PRECISESHOT_COOLDOWN)
       const preciseShotDamage = fixed(FlinAbilityData.TALENT_T2_LEFT_PRECISESHOT_DAMAGE * 100, 1)
       return {
         tier1_left: {
@@ -525,15 +519,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.THOMAS: {
       const carrotStun = toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)
-      const bleedDamage = getDamage(
-        ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100,
-        Shared.DamageTypes.NORMAL,
-        0,
-        true
-      )
-      const bleedDuration = toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)
-      const bleedCooldown = toSecRaw(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)
-      const shurrikenTossCooldown = toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)
+      const bleedDamage = fixed(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE * 100, 1) + '%'
+      const bleedDuration = toSec(ThomasAbilityData.TALENT_T2_LEFT_BLEED_DAMAGE_DURATION)
+      const bleedCooldown = toSec(ThomasAbilityData.TALENT_T2_LEFT_BLEED_COOLDOWN)
+      const shurrikenTossCooldown = '-' + toSecRaw(ThomasAbilityData.TALENT_T1_RIGHT_SHURRIKEN_TOSS_COOLDOWN)
       return {
         tier1_left: {
           title: {
@@ -561,25 +550,25 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `출혈 공격`,
           },
           description: {
-            en: `Thomas' Basic Attacks apply a Bleed effect, dealing ${bleedDamage} of his Attack Damage over ${bleedDuration}s and reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}. 
-            \nThis effect can occur once every ${bleedCooldown}s.`,
-            ru: `Атаки Томаса накладывают эффект Кровотечения на врага, наносящий ${bleedDamage} от его силы атаки в течение ${bleedDuration} сек. и снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nЭтот эффект может происходить один раз в ${bleedCooldown} секунд.`,
-            cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí ${bleedDamage} jeho útoku po
-            dobu ${bleedDuration}s a sníží obranu o ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nTento efekt může nastat jednou za ${bleedCooldown}s.`,
-            zh: `湯瑪士的基本攻擊造成流血效果，持續 ${bleedDuration}秒，造成 ${bleedDamage}攻擊傷害，減少 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}裝甲值。
-            \n此效果每${bleedCooldown}秒可發動一次。`,
-            fr: `Les attaques de base de Thomas appliquent un effet de saignement, infligeant ${bleedDamage} de ses dégâts d'attaque sur ${bleedDuration}s et réduisant l'armure de ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nCet effet peut se produire une fois toutes les ${bleedCooldown}s.`,
-            br: `Os Ataques Básicos de Thomas aplicam um efeito de Sangramento, causando ${bleedDamage} de seu Dano de Ataque ao longo de ${bleedDuration}s e reduzindo a armadura em ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nEste efeito pode ocorrer uma vez a cada ${bleedCooldown}s.`,
-            vi: `Các đòn đánh thường của Thomas áp dụng hiệu ứng Chảy máu, gây ${bleedDamage} Sát thương Tấn công của anh ta trong ${bleedDuration}s và giảm giáp bởi ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nHiệu ứng này có thể xảy ra mỗi ${bleedCooldown}s.`,
-            id: `Serangan Dasar Thomas menerapkan efek Pendarahan, menangani ${bleedDamage} Kerusakan Serangannya selama ${bleedDuration}s dan mengurangi pertahanan sebesar ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}.
-            \nEfek ini dapat terjadi sekali setiap ${bleedCooldown}s.`,
-            kr: `토마스의 기본 공격은 출혈 효과를 적용하여 ${bleedDuration}초에 걸쳐 공격력의 ${bleedDamage}만큼 피해를 입히고, 방어력을 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}만큼 감소시킵니다. 
-            \n이 효과는 ${bleedCooldown}초마다 한 번씩 발생할 수 있습니다.`,
+            en: `Thomas' Basic Attacks apply a Bleed effect, dealing <c:physical>${bleedDamage} of his Attack Damage</c:physical> over ${bleedDuration} and <c:physical>reduce armor by ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>. 
+            \nThis effect can occur once every ${bleedCooldown}.`,
+            ru: `Атаки Томаса накладывают эффект Кровотечения на врага, наносящий <c:physical>${bleedDamage} от его силы атаки</c:physical> в течение ${bleedDuration} и <c:physical>снижающий броню на ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>.
+            \nЭтот эффект может происходить один раз в ${bleedCooldown}`,
+            cz: `Základní útoky Thomase aplikují efekt Krvácení, který způsobí <c:physical>${bleedDamage} jeho útoku</c:physical> po
+            dobu ${bleedDuration} a <c:physical>sníží obranu o ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>.
+            \nTento efekt může nastat jednou za ${bleedCooldown}.`,
+            zh: `湯瑪士的基本攻擊造成流血效果，持續 ${bleedDuration}，造成 <c:physical>${bleedDamage}攻擊傷害</c:physical>，<c:physical>減少 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION} 裝甲值</c:physical>。
+            \n此效果每${bleedCooldown}可發動一次。`,
+            fr: `Les attaques de base de Thomas appliquent un effet de saignement, infligeant <c:physical>${bleedDamage} de ses dégâts d'attaque</c:physical> sur ${bleedDuration} et <c:physical>réduisant l'armure de ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>.
+            \nCet effet peut se produire une fois toutes les ${bleedCooldown}.`,
+            br: `Os Ataques Básicos de Thomas aplicam um efeito de Sangramento, causando <c:physical>${bleedDamage} de seu Dano de Ataque</c:physical> ao longo de ${bleedDuration} e <c:physical>reduzindo a armadura em ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>.
+            \nEste efeito pode ocorrer uma vez a cada ${bleedCooldown}.`,
+            vi: `Các đòn đánh thường của Thomas áp dụng hiệu ứng Chảy máu, gây <c:physical>${bleedDamage} Sát thương Tấn công</c:physical> trong ${bleedDuration} và <c:physical>giảm ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION} giáp</c:physical>.
+            \nHiệu ứng này có thể xảy ra mỗi ${bleedCooldown}.`,
+            id: `Serangan Dasar Thomas menerapkan efek Pendarahan, memberikan <c:physical>${bleedDamage} Kerusakan Serangannya</c:physical> selama ${bleedDuration} dan <c:physical>mengurangi armor sebesar ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}</c:physical>.
+            \nEfek ini dapat terjadi sekali setiap ${bleedCooldown}.`,
+            kr: `토마스의 기본 공격은 출혈 효과를 적용하여 ${bleedDuration}에 걸쳐 <c:physical>공격력의 ${bleedDamage}만큼 피해</c:physical>를 입히고, <c:physical>방어력을 ${ThomasAbilityData.TALENT_T2_LEFT_BLEED_ARMOR_REDUCTION}만큼 감소</c:physical>시킵니다. 
+            \n이 효과는 ${bleedCooldown}마다 한 번씩 발생할 수 있습니다.`,
           },
         },
         tier1_right: {
@@ -613,6 +602,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.ALVAR: {
       const furiousKickLifesteal = fixed(AlvarAbilityData.TALENT_T1_FURIOUS_KICK_BONUS_LIFESTEAL * 100, 1)
+      const heavenlyKickCooldown = '-' + toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)
       return {
         tier1_left: {
           title: {
@@ -627,15 +617,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `분노의 발차기 +${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE} 피해량`,
           },
           description: {
-            en: `Furious Kick bonus in addition also increases damage by ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            ru: `Усиление от Яростного удара также даёт +${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE} урона`,
-            cz: `Furious Kick bonus navíc zvyšuje poškození o ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            zh: `憤怒之踢額外增加傷害獎勵 ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            fr: `Le bonus de Furious Kick augmente également les dégâts de ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            br: `O bônus do Furious Kick também aumenta o dano em ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            vi: `Nộ Cước tăng sát thương thêm ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            id: `Bonus Furious Kick juga meningkatkan damage sebesar ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}`,
-            kr: `분노의 발차기의 추가 효과가 피해량도 ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}만큼 증가시킵니다.`,
+            en: `Furious Kick bonus in addition also <c:physical>increases attack damage by ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            ru: `Усиление от Яростного удара также даёт <c:physical>+${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE} урона</c:physical>`,
+            cz: `Furious Kick bonus navíc <c:physical>zvyšuje poškození o ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            zh: `憤怒之踢額外<c:physical>增加傷害 ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            fr: `Le bonus de Furious Kick augmente également les <c:physical>dégâts de ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            br: `O bônus do Furious Kick também <c:physical>aumenta o dano em ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            vi: `Nộ Cước <c:physical>tăng sát thương thêm ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            id: `Bonus Furious Kick juga <c:physical>meningkatkan damage sebesar ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}</c:physical>`,
+            kr: `분노의 발차기의 추가 효과가 <c:physical>피해량도 ${AlvarAbilityData.TALENT_T1_LEFT_FURIOUS_KICK_BONUS_DAMAGE}만큼 증가</c:physical>시킵니다.`,
           },
         },
         tier1_right: {
@@ -651,15 +641,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `분노의 발차기 +${furiousKickLifesteal}% 흡혈`,
           },
           description: {
-            en: `Furious Kick bonus in addition also increase lifesteal by ${furiousKickLifesteal}%`,
-            ru: `Усиление от Яростного удара также даёт +${furiousKickLifesteal}% Кражи здоровья`,
-            cz: `Furious Kick bonus navíc zvyšuje životy o ${furiousKickLifesteal}%`,
-            zh: `憤怒之踢額外增加生命偷取獎勵 ${furiousKickLifesteal}%`,
-            fr: `Le bonus de Furious Kick augmente également le vol de vie de ${furiousKickLifesteal}%`,
-            br: `O bônus do Furious Kick também aumenta o roubo de vida em ${furiousKickLifesteal}%`,
-            vi: `Nộ Cước tăng hút máu thêm ${furiousKickLifesteal}%`,
-            id: `Bonus Furious Kick juga meningkatkan lifesteal sebesar ${furiousKickLifesteal}%`,
-            kr: `분노의 발차기의 추가 효과가 흡혈량도 ${furiousKickLifesteal}%만큼 증가시킵니다.`,
+            en: `Furious Kick bonus in addition also <c:lifesteal>increase lifesteal by ${furiousKickLifesteal}%</c:lifesteal>`,
+            ru: `Усиление от Яростного удара также даёт <c:lifesteal>+${furiousKickLifesteal}% Кражи здоровья</c:lifesteal>`,
+            cz: `Furious Kick bonus navíc <c:lifesteal>zvyšuje vysávání života o ${furiousKickLifesteal}%</c:lifesteal>`,
+            zh: `憤怒之踢額外<c:lifesteal>增加生命偷取 ${furiousKickLifesteal}%</c:lifesteal>`,
+            fr: `Le bonus de Furious Kick augmente également le <c:lifesteal>vol de vie de ${furiousKickLifesteal}%</c:lifesteal>`,
+            br: `O bônus do Furious Kick também <c:lifesteal>aumenta o roubo de vida em ${furiousKickLifesteal}%</c:lifesteal>`,
+            vi: `Nộ Cước <c:lifesteal>tăng hút máu thêm ${furiousKickLifesteal}%</c:lifesteal>`,
+            id: `Bonus Furious Kick juga <c:lifesteal>meningkatkan lifesteal sebesar ${furiousKickLifesteal}%</c:lifesteal>`,
+            kr: `분노의 발차기의 추가 효과가 <c:lifesteal>흡혈량도 ${furiousKickLifesteal}%만큼 증가</c:lifesteal>시킵니다.`,
           },
         },
         tier2_left: {
@@ -677,15 +667,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_right: {
           title: {
-            en: `Heavenly Kick Cooldown ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            ru: `${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)} сек. перезарядки Небесного удара`,
-            cz: `Heavenly Kick obnovení ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            zh: `天堂之踢冷卻 ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}秒`,
-            fr: `Recharge de Heavenly Kick ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            br: `Recarga do Chute Celestial ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            vi: `Thiên Cước giảm hồi chiêu ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            id: `Cooldown Heavenly Kick ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}s`,
-            kr: `천상의 발차기 재사용 대기시간 ${toSecRaw(AlvarAbilityData.TALENT_T2_RIGHT_HEAVENLY_KICK_COOLDOWN)}초`,
+            en: `Heavenly Kick Cooldown ${heavenlyKickCooldown}s`,
+            ru: `${heavenlyKickCooldown} сек. перезарядки Небесного удара`,
+            cz: `Heavenly Kick obnovení ${heavenlyKickCooldown}s`,
+            zh: `天堂之踢冷卻 ${heavenlyKickCooldown}秒`,
+            fr: `Recharge de Heavenly Kick ${heavenlyKickCooldown}s`,
+            br: `Recarga do Chute Celestial ${heavenlyKickCooldown}s`,
+            vi: `Thiên Cước giảm hồi chiêu ${heavenlyKickCooldown}s`,
+            id: `Cooldown Heavenly Kick ${heavenlyKickCooldown}s`,
+            kr: `천상의 발차기 재사용 대기시간 ${heavenlyKickCooldown}초`,
           },
         },
       }
@@ -693,7 +683,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     case Shared.HEROES.AREL: {
       const tickingBombDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_TICKING_BOMB_BONUS * 100)
       const freezingTrapDuration = toSec(ArelAbilityData.FREEZING_TRAP_DURATION)
-      const freezingTrapFreezeDuration = getControlValue(toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION))
+      const freezingTrapFreezeDuration = toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)
       return {
         tier1_left: {
           title: {
@@ -748,32 +738,32 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
           description: {
             en:
-              `Tumble creates a freezing trap at Arel's position. When an enemy unit steps on the trap, they will be frozen for ${freezingTrapFreezeDuration}, preventing all forms of movement.` +
-              `<br/> The trap lasts for ${freezingTrapDuration} and provides vision in a small radius.`,
+              `Tumble creates a freezing trap at Arel's position. When an enemy unit steps on the trap, they will be <c:control>frozen for ${freezingTrapFreezeDuration}</c:control>, preventing all forms of movement.` +
+              `<br/> The trap lasts for ${freezingTrapDuration} and <c:vision>provides vision</c:vision> in a small radius.`,
             ru:
-              `Кувырок  создаст Замораживающую ловушку на позиции Арела, которая обездвижит наступившего в неё врага на ${freezingTrapFreezeDuration}` +
-              `<br/> Замораживающая ловушка существует ${freezingTrapDuration} и даёт небольшой обзор вокруг себя`,
+              `Кувырок  создаст Замораживающую ловушку на позиции Арела, которая <c:control>обездвижит</c:control> наступившего в неё врага на <c:control>${freezingTrapFreezeDuration}</c:control>` +
+              `<br/> Замораживающая ловушка существует ${freezingTrapDuration} и <c:vision>даёт небольшой обзор</c:vision> вокруг себя`,
             cz:
-              `Tumble vytvoří zmrazující past na pozici Arela. Když na past vstoupí nepřátelská jednotka, bude zmrazena po dobu ${freezingTrapFreezeDuration}, což zamezí veškerému pohybu.` +
-              `<br/> Past trvá ${freezingTrapDuration} a poskytuje viditelnost v malém poloměru.`,
+              `Tumble vytvoří <c:control>zmrazující</c:control> past na pozici Arela. Když na past vstoupí nepřátelská jednotka, bude <c:control>zmrazena po dobu ${freezingTrapFreezeDuration}</c:control>, což zamezí veškerému pohybu.` +
+              `<br/> Past trvá ${freezingTrapDuration} a <c:vision>poskytuje viditelnost</c:vision> v malém poloměru.`,
             zh:
-              `艾瑞爾在翻跟斗處設置一個凍結陷阱。當敵方單位踩到陷阱時，他們將被凍結 ${freezingTrapFreezeDuration}，阻止所有形式的移動。` +
-              `<br/> 陷阱持續 ${freezingTrapDuration} 並在小範圍內提供視野。`,
+              `艾瑞爾在翻跟斗處設置一個凍結陷阱。當敵方單位踩到陷阱時，他們將被<c:control>凍結 ${freezingTrapFreezeDuration}</c:control>，阻止所有形式的移動。` +
+              `<br/> 陷阱持續 ${freezingTrapDuration} 並在小範圍內<c:vision>提供視野</c:vision>。`,
             fr:
-              `Tumble crée un piège de glace à la position d'Arel. Lorsqu'une unité ennemie marche sur le piège, elle est gelée pendant ${freezingTrapFreezeDuration}, empêchant tout mouvement.` +
-              `<br/> Le piège dure ${freezingTrapDuration} et fournit une vision dans un petit rayon.`,
+              `Tumble crée un piège de glace à la position d'Arel. Lorsqu'une unité ennemie marche sur le piège, elle est <c:control>gelée pendant ${freezingTrapFreezeDuration}</c:control>, empêchant tout mouvement.` +
+              `<br/> Le piège dure ${freezingTrapDuration} et <c:vision>fournit une vision</c:vision> dans un petit rayon.`,
             br:
-              `Tumble cria uma armadilha congelante na posição de Arel. Quando uma unidade inimiga pisa na armadilha, ela é congelada por ${freezingTrapFreezeDuration}, impedindo qualquer forma de movimento.` +
-              `<br/> A armadilha dura ${freezingTrapDuration} e fornece visão em um pequeno raio.`,
+              `Tumble cria uma armadilha <c:control>congelante</c:control> na posição de Arel. Quando uma unidade inimiga pisa na armadilha, ela é <c:control>congelada por ${freezingTrapFreezeDuration}</c:control>, impedindo qualquer forma de movimento.` +
+              `<br/> A armadilha dura ${freezingTrapDuration} e <c:vision>fornece visão</c:vision> em um pequeno raio.`,
             vi:
-              `Nhào Lộn đặt ra một bẫy đóng băng tại vị trí của Arel. Khi một đơn vị địch bước vào bẫy, họ sẽ bị đóng băng trong ${freezingTrapFreezeDuration}, ngăn mọi hình thức di chuyển.` +
-              `<br/> Bẫy tồn tại trong ${freezingTrapDuration} và cung cấp tầm nhìn trong bán kính nhỏ.`,
+              `Nhào Lộn đặt ra một bẫy <c:control>đóng băng</c:control> tại vị trí của Arel. Khi một đơn vị địch bước vào bẫy, họ sẽ bị <c:control>đóng băng trong ${freezingTrapFreezeDuration}</c:control>, ngăn mọi hình thức di chuyển.` +
+              `<br/> Bẫy tồn tại trong ${freezingTrapDuration} và <c:vision>cung cấp tầm nhìn</c:vision> trong bán kính nhỏ.`,
             id:
-              `Tumble membuat perangkap pembekuan di posisi Arel. Ketika unit musuh melangkah di perangkap, mereka akan membeku selama ${freezingTrapFreezeDuration}, mencegah semua bentuk pergerakan.` +
-              `<br/> Perangkap bertahan selama ${freezingTrapDuration} dan memberikan visi dalam radius kecil.`,
+              `Tumble membuat perangkap pembekuan di posisi Arel. Ketika unit musuh melangkah di perangkap, mereka akan <c:control>membeku selama ${freezingTrapFreezeDuration}</c:control>, mencegah semua bentuk pergerakan.` +
+              `<br/> Perangkap bertahan selama ${freezingTrapDuration} dan <c:vision>memberikan visi</c:vision> dalam radius kecil.`,
             kr:
-              `구르기가 아렐의 위치에 결빙 함정을 생성합니다. 적 유닛이 함정을 밟으면 ${freezingTrapFreezeDuration} 동안 얼어붙어 모든 형태의 이동이 불가능해집니다.` +
-              `<br/> 함정은 ${freezingTrapDuration} 동안 유지되며 작은 반경의 시야를 제공합니다.`,
+              `구르기가 아렐의 위치에 결빙 함정을 생성합니다. 적 유닛이 함정을 밟으면 <c:control>${freezingTrapFreezeDuration} 동안 얼어붙어</c:control> 모든 형태의 이동이 불가능해집니다.` +
+              `<br/> 함정은 ${freezingTrapDuration} 동안 유지되며 작은 반경의 <c:vision>시야를 제공</c:vision>합니다.`,
           },
         },
       }
@@ -794,15 +784,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `승리의 방패`,
           },
           description: {
-            en: `Triumphant Upheaval grants Hazel a shield for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% of the damage dealt, lasting ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            ru: `Триумфальный переворот даёт Хейзел щит на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% от нанесённого урона длительностью ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)} сек.`,
-            cz: `Triumfální Povstání dá Hazel štít o ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% způsobeného poškození na ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            zh: `勝利的動盪為哈傑爾提供相當於造成傷害 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% 的護盾，持續 ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)} 秒。`,
-            fr: `Le Soulèvement triomphant accorde à Hazel un bouclier pour ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% des dégâts infligés, pendant ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            br: `O Levante Triunfante concede a Hazel um escudo de ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% do dano causado, durando ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            vi: `Triumphant Upheaval cấp cho Hazel một lá chắn bằng ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% sát thương gây ra, kéo dài ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            id: `Triumphant Upheaval memberikan Hazel perisai sebesar ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% dari kerusakan yang diberikan, bertahan selama ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}s.`,
-            kr: `승리의 격변이 입힌 피해량의 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}%에 해당하는 보호막을 ${toSecRaw(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}초 동안 부여합니다.`,
+            en: `Triumphant Upheaval grants Hazel a <c:heal>shield for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% of the damage dealt</c:heal>, lasting ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            ru: `Триумфальный переворот даёт Хейзел <c:heal>щит на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% от нанесённого урона</c:heal> длительностью ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}`,
+            cz: `Triumfální Povstání dá Hazel <c:heal>štít o ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% způsobeného poškození</c:heal> na ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            zh: `勝利的動盪為哈傑爾提供<c:heal>相當於造成傷害 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% 的護盾</c:heal>，持續 ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}。`,
+            fr: `Le Soulèvement triomphant accorde à Hazel un <c:heal>bouclier pour ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% des dégâts infligés</c:heal>, pendant ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            br: `O Levante Triunfante concede a Hazel um <c:heal>escudo de ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% do dano causado</c:heal>, durando ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            vi: `Triumphant Upheaval cấp cho Hazel một <c:heal>lá chắn bằng ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% sát thương gây ra</c:heal>, kéo dài ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            id: `Triumphant Upheaval memberikan Hazel <c:heal>perisai sebesar ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% dari kerusakan yang diberikan</c:heal>, bertahan selama ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
+            kr: `승리의 격변이 <c:heal>입힌 피해량의 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}%에 해당하는 보호막</c:heal>을 ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)} 동안 부여합니다.`,
           },
         },
         tier1_right: {
@@ -844,15 +834,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `강화된 승리의 격변`,
           },
           description: {
-            en: `Triumphant Upheaval deals an additional ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% of Hazel's max Health as damage.`,
-            ru: `Триумфальный переворот наносит дополнительный урон, равный ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% от максимального здоровья Хейзел.`,
-            cz: `Triumfální Povstání způsobí dodatečné poškození ve výši ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% max. zdraví Hazel.`,
-            br: `O Levante Triunfante causa dano adicional igual a ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% da Vida máxima de Hazel.`,
-            zh: `勝利的動盪額外造成相當於哈傑爾最大生命值 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% 的傷害。`,
-            fr: `Le Soulèvement triomphant inflige des dégâts supplémentaires égaux à ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% de la santé max de Hazel.`,
-            vi: `Khải Hoàn Chấn Động gây thêm sát thương bằng ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% Máu tối đa của Hazel.`,
-            id: `Triumphant Upheaval memberikan kerusakan tambahan sebesar ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% dari Health maksimum Hazel.`,
-            kr: `승리의 격변이 헤이즐 최대 체력의 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}%에 해당하는 추가 피해를 입힙니다.`,
+            en: `Triumphant Upheaval deals an additional <c:physical>${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% of Hazel's max Health as damage</c:physical>.`,
+            ru: `Триумфальный переворот наносит <c:physical>дополнительный урон, равный ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% от максимального здоровья Хейзел</c:physical>.`,
+            cz: `Triumfální Povstání způsobí <c:physical>dodatečné poškození ve výši ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% max. zdraví Hazel</c:physical>.`,
+            br: `O Levante Triunfante causa <c:physical>dano adicional igual a ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% da Vida máxima de Hazel</c:physical>.`,
+            zh: `勝利的動盪額外造成<c:physical>相當於哈傑爾最大生命值 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% 的傷害</c:physical>。`,
+            fr: `Le Soulèvement triomphant inflige des <c:physical>dégâts supplémentaires égaux à ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% de la santé max de Hazel</c:physical>.`,
+            vi: `Khải Hoàn Chấn Động gây <c:physical>thêm sát thương bằng ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% Máu tối đa của Hazel</c:physical>.`,
+            id: `Triumphant Upheaval memberikan <c:physical>kerusakan tambahan sebesar ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% dari Health maksimum Hazel</c:physical>.`,
+            kr: `승리의 격변이 <c:physical>헤이즐 최대 체력의 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}%에 해당하는 추가 피해</c:physical>를 입힙니다.`,
           },
         },
       }
@@ -912,23 +902,23 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `연쇄 번개`,
           },
           description: {
-            en: `Lightning shock now chain to closest unit, can be enemy or friendly and apply the Lightning Shock effect with 25% less effect per chain.`,
-            ru: `Удар молнии теперь перепрыгивает на ближайшую цель, которая может быть врагом или союзником, и накладывает эффект Удара молнии с уменьшением эффекта на 25% за каждое перепрыгивание.`,
+            en: `Lightning shock now chain to closest unit, can be enemy or friendly and apply the Lightning Shock effect with <c:bonus>25% less effect per chain</c:bonus>.`,
+            ru: `Удар молнии теперь перепрыгивает на ближайшую цель, которая может быть врагом или союзником, и накладывает эффект Удара молнии с <c:bonus>уменьшением эффекта на 25%</c:bonus> за каждое перепрыгивание.`,
             cz: `Úder blesku se nyní řetí k nejbližší jednotce, může to být nepřítel nebo spojenec a aplikuje efekt Úder
-            blesku s 25% menším efektem za řetěz.`,
-            zh: `閃電衝擊現在連鎖到最近的單位，可以是敵人或友軍，每次連鎖減少 25% 的效果。`,
-            fr: `L'impact de foudre se chaîne désormais à l'unité la plus proche, qu'il s'agisse d'un ennemi ou d'un allié, et applique l'effet de choc de foudre avec 25% d'effet en moins par chaîne.`,
-            br: `O Choque de Raios agora encadeia para a unidade mais próxima, podendo ser inimiga ou aliada, e aplica o efeito de Choque de Raios com 25% menos efeito por encadeamento.`,
-            vi: `Sét giờ có thể chuỗi đến đơn vị gần nhất, có thể là địch hoặc đồng minh và áp dụng hiệu ứng Sét với hiệu ứng giảm 25% mỗi lần.`,
-            id: `Petir sekarang berantai ke unit terdekat, bisa musuh atau teman dan menerapkan efek Petir dengan efek 25% lebih sedikit per rantai.`,
-            kr: `이제 번개 충격이 가장 가까운 유닛(아군 또는 적군)에게 연쇄되며, 연쇄될 때마다 효과가 25%씩 감소한 번개 충격 효과를 적용합니다.`,
+            blesku s <c:bonus>25% menším efektem</c:bonus> za řetěz.`,
+            zh: `閃電衝擊現在連鎖到最近的單位，可以是敵人或友軍，每次連鎖<c:bonus>減少 25% 的效果</c:bonus>。`,
+            fr: `L'impact de foudre se chaîne désormais à l'unité la plus proche, qu'il s'agisse d'un ennemi ou d'un allié, et applique l'effet de choc de foudre avec <c:bonus>25% d'effet en moins</c:bonus> par chaîne.`,
+            br: `O Choque de Raios agora encadeia para a unidade mais próxima, podendo ser inimiga ou aliada, e aplica o efeito de Choque de Raios com <c:bonus>25% menos efeito</c:bonus> por encadeamento.`,
+            vi: `Sét giờ có thể chuỗi đến đơn vị gần nhất, có thể là địch hoặc đồng minh và áp dụng hiệu ứng Sét với <c:bonus>hiệu ứng giảm 25%</c:bonus> mỗi lần.`,
+            id: `Petir sekarang berantai ke unit terdekat, bisa musuh atau teman dan menerapkan efek Petir dengan <c:bonus>efek 25% lebih sedikit</c:bonus> per rantai.`,
+            kr: `이제 번개 충격이 가장 가까운 유닛(아군 또는 적군)에게 연쇄되며, 연쇄될 때마다 <c:bonus>효과가 25%씩 감소</c:bonus>한 번개 충격 효과를 적용합니다.`,
           },
         },
       }
 
     case Shared.HEROES.FOXY: {
       const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)
-      const freezingGrenadeDuration = getControlValue(toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION))
+      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)
       return {
         tier1_left: {
           title: {
@@ -943,15 +933,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `소이 수류탄`,
           },
           description: {
-            en: `Explosive Grenade ignites enemies, dealing ${incendiaryGrenadeDamage}% of target's max health as bonus Magic Damage per second for a short duration.`,
-            ru: `Взрывная граната поджигает задетых врагов, нанося дополнительно ${incendiaryGrenadeDamage}% от макс. Здоровья цели в секунду.`,
-            cz: `Explozivní granát zapaluje nepřátele, způsobuje ${incendiaryGrenadeDamage}% maximálního života cíle jako bonusové kouzlo za sekundu po krátkou dobu.`,
-            zh: `手榴彈爆炸後點燃敵人，短時間造成每秒目標最大生命值的額外魔法傷害 ${incendiaryGrenadeDamage}%。`,
-            fr: `La grenade explosive enflamme les ennemis, infligeant ${incendiaryGrenadeDamage}% des PV max de la cible en dégâts magiques bonus par seconde pendant une courte durée.`,
-            br: `Granada Explosiva inflama inimigos, causando ${incendiaryGrenadeDamage}% da vida máxima do alvo como Dano Mágico bônus por segundo por um curto período.`,
-            vi: `Lựu Đạn châm ngòi kẻ thù, gây ${incendiaryGrenadeDamage}% máu tối đa của mục tiêu dưới dạng Sát thương Phép mỗi giây trong một thời gian ngắn.`,
-            id: `Granat Peledak menyulut musuh, menangani ${incendiaryGrenadeDamage}% dari maksimal kesehatan target sebagai Bonus Kerusakan Sihir per detik untuk jangka waktu singkat.`,
-            kr: `폭발 수류탄이 적을 발화시켜 짧은 시간 동안 매초 대상 최대 체력의 ${incendiaryGrenadeDamage}%만큼 추가 마법 피해를 입힙니다.`,
+            en: `Explosive Grenade ignites enemies, dealing <c:magical>${incendiaryGrenadeDamage}% of target's max health as bonus Magic Damage</c:magical> per second for a short duration.`,
+            ru: `Взрывная граната поджигает задетых врагов, нанося <c:magical>${incendiaryGrenadeDamage}% от макс. здоровья цели дополнительным магическим уроном</c:magical> в секунду.`,
+            cz: `Explozivní granát zapaluje nepřátele, způsobuje <c:magical>${incendiaryGrenadeDamage}% maximálního zdraví cíle jako bonusové magické poškození</c:magical> za sekundu po krátkou dobu.`,
+            zh: `手榴彈爆炸後點燃敵人，短時間造成每秒目標最大生命值的額外<c:magical>魔法傷害</c:magical> ${incendiaryGrenadeDamage}%。`,
+            fr: `La grenade explosive enflamme les ennemis, infligeant <c:magical>${incendiaryGrenadeDamage}% des PV max de la cible en dégâts magiques</c:magical> bonus par seconde pendant une courte durée.`,
+            br: `Granada Explosiva inflama inimigos, causando <c:magical>${incendiaryGrenadeDamage}% da vida máxima do alvo como Dano Mágico</c:magical> bônus por segundo por um curto período.`,
+            vi: `Lựu Đạn châm ngòi kẻ thù, gây <c:magical>${incendiaryGrenadeDamage}% máu tối đa của mục tiêu dưới dạng Sát thương Phép</c:magical> mỗi giây trong một thời gian ngắn.`,
+            id: `Granat Peledak menyulut musuh, memberikan <c:magical>${incendiaryGrenadeDamage}% dari Health maksimum target sebagai Damage Sihir bonus</c:magical> per detik untuk jangka waktu singkat.`,
+            kr: `폭발 수류탄이 적을 발화시켜 짧은 시간 동안 매초 대상 최대 체력의 <c:magical>${incendiaryGrenadeDamage}%만큼 추가 마법 피해</c:magical>를 입힙니다.`,
           },
         },
         tier1_right: {
@@ -967,15 +957,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `냉동 수류탄`,
           },
           description: {
-            en: `Explosive Grenade freezes enemies for up to ${freezingGrenadeDuration}, preventing all forms of movement`,
-            ru: `Взрывная граната замораживает задетых врагов на ${freezingGrenadeDuration} сек.`,
-            cz: `Explozivní granát zmrazuje nepřátele až na ${freezingGrenadeDuration}, což zabraňuje veškerému pohybu`,
-            zh: `手榴彈爆炸後凍結敵人最多 ${freezingGrenadeDuration}，阻止所有形式的移動`,
-            fr: `La grenade explosive gèle les ennemis pendant ${freezingGrenadeDuration}, empêchant tout mouvement`,
-            br: `Granada Explosiva congela inimigos por até ${freezingGrenadeDuration}, impedindo qualquer forma de movimento`,
-            vi: `Lựu Đạn đóng băng kẻ thù lên đến ${freezingGrenadeDuration}, ngăn mọi hình thức di chuyển`,
-            id: `Granat Peledak membekukan musuh hingga ${freezingGrenadeDuration}, mencegah semua bentuk pergerakan`,
-            kr: `폭발 수류탄이 적을 최대 ${freezingGrenadeDuration} 동안 얼려 모든 형태의 이동을 막습니다`,
+            en: `Explosive Grenade <c:control>freezes enemies for up to ${freezingGrenadeDuration}</c:control>, preventing all forms of movement`,
+            ru: `Взрывная граната <c:control>замораживает задетых врагов на ${freezingGrenadeDuration}</c:control>`,
+            cz: `Explozivní granát <c:control>zmrazuje nepřátele až na ${freezingGrenadeDuration}</c:control>, což zabraňuje veškerému pohybu`,
+            zh: `手榴彈爆炸後<c:control>凍結敵人最多 ${freezingGrenadeDuration}</c:control>，阻止所有形式的移動`,
+            fr: `La grenade explosive <c:control>gèle les ennemis pendant ${freezingGrenadeDuration}</c:control>, empêchant tout mouvement`,
+            br: `Granada Explosiva <c:control>congela inimigos por até ${freezingGrenadeDuration}</c:control>, impedindo qualquer forma de movimento`,
+            vi: `Lựu Đạn <c:control>đóng băng kẻ thù lên đến ${freezingGrenadeDuration}</c:control>, ngăn mọi hình thức di chuyển`,
+            id: `Granat Peledak <c:control>membekukan musuh hingga ${freezingGrenadeDuration}</c:control>, mencegah semua bentuk pergerakan`,
+            kr: `폭발 수류탄이 <c:control>적을 최대 ${freezingGrenadeDuration} 동안 얼려</c:control> 모든 형태의 이동을 막습니다`,
           },
         },
         tier2_left: {
@@ -1023,15 +1013,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `홀린 유령 회복`,
           },
           description: {
-            en: `Haunted Ghosts returns to the owner and heals for ${hauntedGhostsHealing}% of the damage dealt.`,
-            ru: `По возвращению Одержимого призрака к Магдалине, она восстанавливает себе здоровье в размере ${hauntedGhostsHealing}% от нанесенного урона.`,
-            cz: `Strašidelné duchy se vrátí majiteli a vyléčí za ${hauntedGhostsHealing}% způsobeného poškození.`,
-            zh: `幽靈返回主人時治癒 ${hauntedGhostsHealing}% 造成的傷害。`,
-            fr: `Les Fantômes hantés retournent au propriétaire et soignent pour ${hauntedGhostsHealing}% des dégâts infligés.`,
-            br: `Os Fantasmas Assombrados retornam ao dono e curam ${hauntedGhostsHealing}% do dano causado.`,
-            vi: `Hồn Ma trở lại chủ nhân và hồi phục ${hauntedGhostsHealing}% sát thương gây ra.`,
-            id: `Hantu kembali ke pemilik dan menyembuhkan ${hauntedGhostsHealing}% dari kerusakan yang diterima.`,
-            kr: `홀린 유령이 주인에게 돌아오면 입힌 피해량의 ${hauntedGhostsHealing}%만큼 회복시킵니다.`,
+            en: `Haunted Ghosts returns to the owner and <c:heal>heals for ${hauntedGhostsHealing}% of the damage dealt</c:heal>.`,
+            ru: `По возвращению Одержимого призрака к Магдалине, она <c:heal>восстанавливает себе здоровье в размере ${hauntedGhostsHealing}% от нанесенного урона</c:heal>.`,
+            cz: `Strašidelné duchy se vrátí majiteli a <c:heal>vyléčí za ${hauntedGhostsHealing}% způsobeného poškození</c:heal>.`,
+            zh: `幽靈返回主人時<c:heal>治癒造成傷害的 ${hauntedGhostsHealing}%</c:heal>。`,
+            fr: `Les Fantômes hantés retournent au propriétaire et <c:heal>soignent pour ${hauntedGhostsHealing}% des dégâts infligés</c:heal>.`,
+            br: `Os Fantasmas Assombrados retornam ao dono e <c:heal>curam ${hauntedGhostsHealing}% do dano causado</c:heal>.`,
+            vi: `Hồn Ma trở lại chủ nhân và <c:heal>hồi phục ${hauntedGhostsHealing}% sát thương gây ra</c:heal>.`,
+            id: `Hantu kembali ke pemilik dan <c:heal>menyembuhkan ${hauntedGhostsHealing}% dari kerusakan yang diberikan</c:heal>.`,
+            kr: `홀린 유령이 주인에게 돌아오면 <c:heal>입힌 피해량의 ${hauntedGhostsHealing}%만큼 회복</c:heal>시킵니다.`,
           },
         },
         tier1_right: {
@@ -1086,7 +1076,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
 
-    case Shared.HEROES.PRIM:
+    case Shared.HEROES.PRIM: {
+      const primBonusMovementSpeed = fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)
+      const primBonusArmor = PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
+      const gravitationalPullBonus = fixed(
+        PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
+        1
+      )
       return {
         tier1_left: {
           title: {
@@ -1101,44 +1097,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `강화된 공 보호`,
           },
           description: {
-            en: `Enhanced Ball protection provides additional ${getControlValue(
-              `${fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)}%`
-            )} ${getBonusKeyword('Bonus Movement Speed')} and ${getControlValue(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
-            )} ${getBonusKeyword('Bonus Armor')} while the Ball is attached to a hero.`,
-            ru: `Улучшенная защита мяча предоставляет дополнительную скорость передвижения ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% и броню ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, когда мяч прикреплен к герою.`,
-            cz: `Vylepšená ochrana míče poskytuje dodatečnou rychlost pohybu ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% a brnění ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, když je míč připojen k hrdinovi.`,
-            zh: `當球附著在英雄身上時，強化球的守護提供英雄 ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% 額外移動速度和 ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}裝甲值。`,
-            fr: `La protection améliorée de la balle fournit une vitesse de déplacement supplémentaire de ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% et une armure de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, lorsque la balle est attachée à un héros.`,
-            br: `A Proteção aprimorada da bola fornece velocidade de movimento adicional de ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% e armadura de ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, quando a bola está anexada a um herói.`,
-            vi: `Cầu Thức Tỉnh cung cấp thêm ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% tốc độ di chuyển và ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR} giáp, khi cầu ở gần Prim.`,
-            id: `Proteksi Bola Ditingkatkan memberikan kecepatan tambahan ${fixed(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100,
-              1
-            )}% dan armor ${PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR}, ketika bola terpasang pada pahlawan.`,
-            kr: `강화된 공 보호는 공이 영웅에게 부착되어 있는 동안 추가로 ${getControlValue(
-              `${fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)}%`
-            )} ${getBonusKeyword('Bonus Movement Speed')}와 ${getControlValue(
-              PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
-            )} ${getBonusKeyword('Bonus Armor')}를 제공합니다.`,
+            en: `Enhanced Ball protection provides an additional <c:bonus>${primBonusMovementSpeed}% Movement Speed</c:bonus> and <c:bonus>${primBonusArmor} Armor</c:bonus> while the Ball is attached to a hero.`,
+            ru: `Улучшенная защита мяча даёт дополнительно <c:bonus>${primBonusMovementSpeed}% скорости передвижения</c:bonus> и <c:bonus>${primBonusArmor} брони</c:bonus>, когда мяч прикреплён к герою.`,
+            cz: `Vylepšená ochrana míče poskytuje navíc <c:bonus>${primBonusMovementSpeed}% rychlosti pohybu</c:bonus> a <c:bonus>${primBonusArmor} brnění</c:bonus>, když je míč připojen k hrdinovi.`,
+            zh: `當球附著在英雄身上時，強化球的守護提供英雄 <c:bonus>${primBonusMovementSpeed}% 額外移動速度</c:bonus>和<c:bonus>${primBonusArmor} 裝甲值</c:bonus>。`,
+            fr: `La protection améliorée de la balle fournit <c:bonus>${primBonusMovementSpeed}% de vitesse de déplacement</c:bonus> et <c:bonus>${primBonusArmor} d'armure</c:bonus> supplémentaires, lorsque la balle est attachée à un héros.`,
+            br: `A proteção aprimorada da bola fornece <c:bonus>${primBonusMovementSpeed}% de Velocidade de Movimento</c:bonus> e <c:bonus>${primBonusArmor} de Armadura</c:bonus> adicionais, quando a bola está anexada a um herói.`,
+            vi: `Cầu Thức Tỉnh cung cấp thêm <c:bonus>${primBonusMovementSpeed}% tốc độ di chuyển</c:bonus> và <c:bonus>${primBonusArmor} giáp</c:bonus>, khi cầu ở gần Prim.`,
+            id: `Proteksi Bola yang Ditingkatkan memberikan tambahan <c:bonus>${primBonusMovementSpeed}% Kecepatan Gerak</c:bonus> dan <c:bonus>${primBonusArmor} Armor</c:bonus>, ketika bola terpasang pada pahlawan.`,
+            kr: `강화된 공 보호는 공이 영웅에게 부착되어 있는 동안 추가로 <c:bonus>이동 속도 ${primBonusMovementSpeed}%</c:bonus>와 <c:bonus>방어력 ${primBonusArmor}</c:bonus>을 제공합니다.`,
           },
         },
         tier1_right: {
@@ -1167,21 +1134,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `강화된 중력 견인`,
           },
           description: {
-            en: `Increase Gravitational Pull damage and ${getStunKeyword('Stun Duration')} by ${fixed(
-              PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
-              1
-            )}%`,
-            ru: `Увеличивает урон и длительность оглушения Гравитационного притяжения на ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            cz: `Zvyšuje poškození a dobu omráčení Gravitačního tahání o ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            zh: `增加重力牽引的傷害和暈眩持續時間 ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            fr: `Augmente les dégâts et la durée d'étourdissement de la traction gravitationnelle de ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            br: `Aumenta o dano e a duração do atordoamento do Puxão Gravitacional em ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            vi: `Tăng Sát thương và thời gian Choáng của Lực Hấp Dẫn lên ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            id: `Meningkatkan kerusakan dan durasi stun Gravitasi Tarik sebesar ${fixed(PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100, 1)}%`,
-            kr: `중력 견인의 피해량과 ${getStunKeyword('Stun Duration')}을 ${fixed(
-              PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
-              1
-            )}%만큼 증가시킵니다`,
+            en: `Increase Gravitational Pull <c:magical>damage</c:magical> and <c:stun>Stun Duration</c:stun> by <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            ru: `Увеличивает <c:magical>урон</c:magical> и <c:stun>длительность оглушения</c:stun> Гравитационного притяжения на <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            cz: `Zvyšuje <c:magical>poškození</c:magical> a <c:stun>dobu omráčení</c:stun> Gravitačního tahání o <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            zh: `增加重力牽引的<c:magical>傷害</c:magical>和<c:stun>暈眩持續時間</c:stun> <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            fr: `Augmente les <c:magical>dégâts</c:magical> et la <c:stun>durée d'étourdissement</c:stun> de la traction gravitationnelle de <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            br: `Aumenta o <c:magical>dano</c:magical> e a <c:stun>duração do atordoamento</c:stun> do Puxão Gravitacional em <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            vi: `Tăng <c:magical>Sát thương</c:magical> và <c:stun>thời gian Choáng</c:stun> của Lực Hấp Dẫn lên <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            id: `Meningkatkan <c:magical>kerusakan</c:magical> dan <c:stun>durasi stun</c:stun> Gravitasi Tarik sebesar <c:bonus>${gravitationalPullBonus}%</c:bonus>`,
+            kr: `중력 견인의 <c:magical>피해량</c:magical>과 <c:stun>기절 지속시간</c:stun>을 <c:bonus>${gravitationalPullBonus}%</c:bonus>만큼 증가시킵니다`,
           },
         },
         tier2_left: {
@@ -1198,13 +1159,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
           },
         },
       }
+    }
     case Shared.HEROES.SEER: {
-      const curseDelay = toSecRaw(SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY)
+      const curseDelay = toSec(SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY)
       const curseDamage = SeerAbilityData.MALEVOLENT_CURSE_BASE_DAMAGE
       const curseApPercent = fixed(SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_MODIFIER * 100, 0)
       const shiftCdReduction = toSecRaw(-SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_SHIFT_COOLDOWN_REDUCTION)
-      const recastDelay = toSecRaw(SeerAbilityData.DARK_CLONE_RECAST_EXPLODE_DELAY)
-      const clawsRoot = toSecRaw(SeerAbilityData.TALENT_T2_RIGHT_MALEVOLENT_CLAWS_ROOT_DURATION)
+      const recastDelay = toSec(SeerAbilityData.DARK_CLONE_RECAST_EXPLODE_DELAY)
+      const clawsRoot = toSec(SeerAbilityData.TALENT_T2_RIGHT_MALEVOLENT_CLAWS_ROOT_DURATION)
       const mirrorDamageReduction = fixed(SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_MIRROR_DAMAGE_REDUCTION * 100, 0)
 
       return {
@@ -1221,15 +1183,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `악의의 저주`,
           },
           description: {
-            en: `Attack applies a curse that explodes after ${curseDelay}s, dealing ${curseDamage} + ${curseApPercent}% Ability Power damage. Attacking a cursed target again does not reapply or trigger it early.`,
-            ru: `Атака накладывает проклятье, которое взрывается через ${curseDelay} сек., нанося ${curseDamage} + ${curseApPercent}% силы способностей урона. Повторная атака по проклятой цели не обновляет и не ускоряет взрыв.`,
-            cz: `Útok aplikuje prokletí, které vybuchne po ${curseDelay}s a způsobí ${curseDamage} + ${curseApPercent}% síly schopností poškození. Opětovný útok na prokletý cíl jej neobnoví ani nespustí dříve.`,
-            zh: `攻击施加一个诅咒，在 ${curseDelay} 秒后爆炸，造成 ${curseDamage} + ${curseApPercent}% 法术强度伤害。再次攻击被诅咒的目标不会重新施加或提前触发。`,
-            fr: `L'attaque applique une malédiction qui explose après ${curseDelay}s, infligeant ${curseDamage} + ${curseApPercent}% de la puissance des sorts en dégâts. Attaquer à nouveau une cible maudite ne la réapplique pas et ne la déclenche pas plus tôt.`,
-            br: `O Ataque aplica uma maldição que explode após ${curseDelay}s, causando ${curseDamage} + ${curseApPercent}% de Poder de Habilidade em dano. Atacar novamente um alvo amaldiçoado não reaplica nem antecipa a explosão.`,
-            vi: `Đòn đánh áp dụng lời nguyền, phát nổ sau ${curseDelay}s, gây ${curseDamage} + ${curseApPercent}% Sức mạnh Phép thuật. Đánh lại mục tiêu đã bị nguyền không làm mới hay kích hoạt sớm hơn.`,
-            id: `Serangan menerapkan kutukan yang meledak setelah ${curseDelay}s, memberikan ${curseDamage} + ${curseApPercent}% Ability Power kerusakan. Menyerang lagi target yang terkutuk tidak akan menerapkan ulang atau memicunya lebih awal.`,
-            kr: `공격 시 저주를 걸며, ${curseDelay}초 후 폭발하여 ${curseDamage} + 주문력의 ${curseApPercent}%만큼 피해를 입힙니다. 저주에 걸린 대상을 다시 공격해도 저주가 재적용되거나 조기에 발동되지 않습니다.`,
+            en: `Attack applies a curse that explodes after ${curseDelay}, dealing <c:magical>${curseDamage} + ${curseApPercent}% Ability Power damage</c:magical>. Attacking a cursed target again does not reapply or trigger it early.`,
+            ru: `Атака накладывает проклятье, которое взрывается через ${curseDelay}, нанося <c:magical>${curseDamage} + ${curseApPercent}% силы способностей урона</c:magical>. Повторная атака по проклятой цели не обновляет и не ускоряет взрыв.`,
+            cz: `Útok aplikuje prokletí, které vybuchne po ${curseDelay} a způsobí <c:magical>${curseDamage} + ${curseApPercent}% síly schopností poškození</c:magical>. Opětovný útok na prokletý cíl jej neobnoví ani nespustí dříve.`,
+            zh: `攻击施加一个诅咒，在 ${curseDelay}后爆炸，造成 <c:magical>${curseDamage} + ${curseApPercent}% 法術強度傷害</c:magical>。再次攻击被诅咒的目标不会重新施加或提前触发。`,
+            fr: `L'attaque applique une malédiction qui explose après ${curseDelay}, infligeant <c:magical>${curseDamage} + ${curseApPercent}% de la puissance des sorts en dégâts</c:magical>. Attaquer à nouveau une cible maudite ne la réapplique pas et ne la déclenche pas plus tôt.`,
+            br: `O Ataque aplica uma maldição que explode após ${curseDelay}, causando <c:magical>${curseDamage} + ${curseApPercent}% de Poder de Habilidade em dano</c:magical>. Atacar novamente um alvo amaldiçoado não reaplica nem antecipa a explosão.`,
+            vi: `Đòn đánh áp dụng lời nguyền, phát nổ sau ${curseDelay}, gây <c:magical>${curseDamage} + ${curseApPercent}% Sức mạnh Phép thuật</c:magical>. Đánh lại mục tiêu đã bị nguyền không làm mới hay kích hoạt sớm hơn.`,
+            id: `Serangan menerapkan kutukan yang meledak setelah ${curseDelay}, memberikan <c:magical>${curseDamage} + ${curseApPercent}% Ability Power kerusakan</c:magical>. Menyerang lagi target yang terkutuk tidak akan menerapkan ulang atau memicunya lebih awal.`,
+            kr: `공격 시 저주를 걸며, ${curseDelay} 후 폭발하여 <c:magical>${curseDamage} + 주문력의 ${curseApPercent}%만큼 피해</c:magical>를 입힙니다. 저주에 걸린 대상을 다시 공격해도 저주가 재적용되거나 조기에 발동되지 않습니다.`,
           },
         },
         tier1_right: {
@@ -1258,15 +1220,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `악의의 거울`,
           },
           description: {
-            en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability, but dealing ${mirrorDamageReduction}% less damage). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay}s later.`,
-            ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник, но нанося на ${mirrorDamageReduction}% меньше урона). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay} сек.`,
-            cz: `Zlomyslný přesun zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Temný klon, ale způsobí o ${mirrorDamageReduction}% méně poškození). Opětovným sesláním Zlomyslného přesunu si s klonem vyměníte místa a ten po ${recastDelay}s vybuchne.`,
-            zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同，但造成的伤害减少 ${mirrorDamageReduction}%）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay} 秒后引爆它。`,
-            fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone, mais infligeant ${mirrorDamageReduction}% de dégâts en moins). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay}s plus tard.`,
-            br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone, mas causando ${mirrorDamageReduction}% menos dano). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay}s depois.`,
-            vi: `Dịch Chuyển Ác Ý để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Bản Sao Bóng Tối, nhưng gây ít hơn ${mirrorDamageReduction}% sát thương). Dùng lại Dịch Chuyển Ác Ý để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}s.`,
-            id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone, tetapi memberikan kerusakan ${mirrorDamageReduction}% lebih sedikit). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay}s kemudian.`,
-            kr: `악의의 이동이 이전 위치에 어둠의 분신을 남깁니다 (어둠의 분신 스킬과 동일하지만 피해량이 ${mirrorDamageReduction}%만큼 감소합니다). 악의의 이동을 다시 시전하면 분신과 위치를 교환하며, ${recastDelay}초 후 분신이 폭발합니다.`,
+            en: `Malevolent Shift leaves a Dark Clone at your previous position (as the Dark Clone ability, but dealing <c:bonus>${mirrorDamageReduction}% less damage</c:bonus>). Recast Malevolent Shift to swap places with it, detonating it ${recastDelay} later.`,
+            ru: `Злобный сдвиг оставляет Тёмного двойника на вашей прежней позиции (как способность Тёмный двойник, но нанося <c:bonus>на ${mirrorDamageReduction}% меньше урона</c:bonus>). Повторное применение Злобного сдвига меняет вас местами с двойником, подрывая его через ${recastDelay}`,
+            cz: `Zlomyslný přesun zanechá Temného klona na vaší předchozí pozici (stejně jako schopnost Temný klon, ale způsobí <c:bonus>o ${mirrorDamageReduction}% méně poškození</c:bonus>). Opětovným sesláním Zlomyslného přesunu si s klonem vyměníte místa a ten po ${recastDelay} vybuchne.`,
+            zh: `邪恶偏移会在你原来的位置留下一个暗影分身（效果与暗影分身技能相同，但<c:bonus>造成的伤害减少 ${mirrorDamageReduction}%</c:bonus>）。再次施放邪恶偏移可与分身交换位置，并在 ${recastDelay}后引爆它。`,
+            fr: `Malevolent Shift laisse un Clone Sombre à votre position précédente (comme la compétence Dark Clone, mais infligeant <c:bonus>${mirrorDamageReduction}% de dégâts en moins</c:bonus>). Relancez Malevolent Shift pour échanger votre place avec lui, qui détone ${recastDelay} plus tard.`,
+            br: `Malevolent Shift deixa um Clone Sombrio em sua posição anterior (como a habilidade Dark Clone, mas causando <c:bonus>${mirrorDamageReduction}% menos dano</c:bonus>). Reative Malevolent Shift para trocar de lugar com ele, detonando-o ${recastDelay} depois.`,
+            vi: `Dịch Chuyển Ác Ý để lại một Bản Sao Bóng Tối tại vị trí cũ của bạn (giống kỹ năng Bản Sao Bóng Tối, nhưng gây <c:bonus>ít hơn ${mirrorDamageReduction}% sát thương</c:bonus>). Dùng lại Dịch Chuyển Ác Ý để hoán đổi vị trí với nó, kích nổ sau ${recastDelay}.`,
+            id: `Malevolent Shift meninggalkan Dark Clone di posisi sebelumnya (seperti kemampuan Dark Clone, tetapi memberikan <c:bonus>kerusakan ${mirrorDamageReduction}% lebih sedikit</c:bonus>). Gunakan lagi Malevolent Shift untuk bertukar posisi dengannya, meledakkannya ${recastDelay} kemudian.`,
+            kr: `악의의 이동이 이전 위치에 어둠의 분신을 남깁니다 (어둠의 분신 스킬과 동일하지만 <c:bonus>피해량이 ${mirrorDamageReduction}%만큼 감소</c:bonus>합니다). 악의의 이동을 다시 시전하면 분신과 위치를 교환하며, ${recastDelay} 후 분신이 폭발합니다.`,
           },
         },
         tier2_right: {
@@ -1282,15 +1244,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `악의의 발톱`,
           },
           description: {
-            en: `Malevolent Shift also roots all enemy heroes hit for ${clawsRoot}s.`,
-            ru: `Злобный сдвиг также обездвиживает всех задетых героев противника на ${clawsRoot} сек.`,
-            cz: `Zlomyslný přesun také zakoření všechny zasažené nepřátelské hrdiny na ${clawsRoot}s.`,
-            zh: `邪恶偏移还会将击中的所有敌方英雄禁锢 ${clawsRoot} 秒。`,
-            fr: `Malevolent Shift enracine aussi tous les héros ennemis touchés pendant ${clawsRoot}s.`,
-            br: `Malevolent Shift também enraíza todos os heróis inimigos atingidos por ${clawsRoot}s.`,
-            vi: `Dịch Chuyển Ác Ý còn trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}s.`,
-            id: `Malevolent Shift juga me-root semua hero musuh yang terkena selama ${clawsRoot}s.`,
-            kr: `악의의 이동이 적중한 모든 적 영웅을 ${clawsRoot}초 동안 속박시킵니다.`,
+            en: `Malevolent Shift also <c:control>roots all enemy heroes hit for ${clawsRoot}</c:control>.`,
+            ru: `Злобный сдвиг также <c:control>обездвиживает всех задетых героев противника на ${clawsRoot}</c:control>`,
+            cz: `Zlomyslný přesun také <c:control>zakoření všechny zasažené nepřátelské hrdiny na ${clawsRoot}</c:control>.`,
+            zh: `邪恶偏移还会<c:control>将击中的所有敌方英雄禁锢 ${clawsRoot}</c:control>。`,
+            fr: `Malevolent Shift <c:control>enracine aussi tous les héros ennemis touchés pendant ${clawsRoot}</c:control>.`,
+            br: `Malevolent Shift também <c:control>enraíza todos os heróis inimigos atingidos por ${clawsRoot}</c:control>.`,
+            vi: `Dịch Chuyển Ác Ý còn <c:control>trói chân tất cả tướng địch trúng đòn trong ${clawsRoot}</c:control>.`,
+            id: `Malevolent Shift juga <c:control>me-root semua hero musuh yang terkena selama ${clawsRoot}</c:control>.`,
+            kr: `악의의 이동이 <c:control>적중한 모든 적 영웅을 ${clawsRoot} 동안 속박</c:control>시킵니다.`,
           },
         },
       }
@@ -1299,13 +1261,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     case Shared.HEROES.KARICK: {
       const seedOfLifeThreshold = fixed(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_TRIGGER_THRESHOLD * 100, 0)
       const seedOfLifeHeal = fixed(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_HEAL_MOD * 100, 0)
-      const seedOfLifeDuration = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
-      const seedOfLifeCooldown = toSecRaw(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
+      const seedOfLifeDuration = toSec(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_DURATION)
+      const seedOfLifeCooldown = toSec(KarickAbilityData.TALENT_T1_LEFT_SEED_OF_LIFE_COOLDOWN)
 
       const groveMarkStacks = KarickAbilityData.TALENT_T1_RIGHT_GROVE_MARK_STACKS
       const brambleSnapRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_BRAMBLE_SNAP_ROOT_BONUS)
 
-      const additionalWrathDelay = toSecRaw(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
+      const additionalWrathDelay = toSec(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
       const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
 
       return {
@@ -1322,15 +1284,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `생명의 씨앗`,
           },
           description: {
-            en: `Taking damage greater than ${seedOfLifeThreshold}% of current Health plants a healing seed, restoring ${seedOfLifeHeal}% of the damage taken over ${seedOfLifeDuration}s and dispelling all negative effects. Cooldown: ${seedOfLifeCooldown}s.`,
-            ru: `Получение урона более ${seedOfLifeThreshold}% от текущего здоровья сажает исцеляющее семя, восстанавливающее ${seedOfLifeHeal}% полученного урона в течение ${seedOfLifeDuration}с и снимающее все отрицательные эффекты. Перезарядка: ${seedOfLifeCooldown}с.`,
-            cz: `Utržení poškození vyššího než ${seedOfLifeThreshold}% aktuálního zdraví zasadí léčivé semeno, které během ${seedOfLifeDuration}s obnoví ${seedOfLifeHeal}% utrženého poškození a odstraní všechny negativní efekty. Obnovení: ${seedOfLifeCooldown}s.`,
-            br: `Receber dano maior que ${seedOfLifeThreshold}% da Vida atual planta uma semente curativa, restaurando ${seedOfLifeHeal}% do dano recebido ao longo de ${seedOfLifeDuration}s e removendo todos os efeitos negativos. Recarga: ${seedOfLifeCooldown}s.`,
-            zh: `受到超过当前生命值 ${seedOfLifeThreshold}% 的伤害时，会种下一颗治疗种子，在 ${seedOfLifeDuration} 秒内恢复所受伤害的 ${seedOfLifeHeal}% 并清除所有负面效果。冷却时间：${seedOfLifeCooldown}秒。`,
-            fr: `Subir des dégâts supérieurs à ${seedOfLifeThreshold}% de la santé actuelle plante une graine curative, restaurant ${seedOfLifeHeal}% des dégâts subis en ${seedOfLifeDuration}s et dissipant tous les effets négatifs. Temps de recharge : ${seedOfLifeCooldown}s.`,
-            vi: `Nhận sát thương lớn hơn ${seedOfLifeThreshold}% Máu hiện tại sẽ gieo một hạt giống hồi phục, hồi lại ${seedOfLifeHeal}% sát thương đã nhận trong ${seedOfLifeDuration}s và loại bỏ mọi hiệu ứng bất lợi. Hồi chiêu: ${seedOfLifeCooldown}s.`,
-            id: `Menerima damage lebih dari ${seedOfLifeThreshold}% Health saat ini akan menanam benih penyembuh, memulihkan ${seedOfLifeHeal}% dari damage yang diterima selama ${seedOfLifeDuration}s serta menghapus semua efek negatif. Cooldown: ${seedOfLifeCooldown}s.`,
-            kr: `현재 체력의 ${seedOfLifeThreshold}%를 초과하는 피해를 받으면 회복의 씨앗이 심어져, ${seedOfLifeDuration}초에 걸쳐 받은 피해량의 ${seedOfLifeHeal}%를 회복시키고 모든 부정적 효과를 해제합니다. 재사용 대기시간: ${seedOfLifeCooldown}초.`,
+            en: `Taking damage greater than <c:health>${seedOfLifeThreshold}% of current Health</c:health> plants a healing seed, <c:heal>restoring ${seedOfLifeHeal}% of the damage taken</c:heal> over ${seedOfLifeDuration} and <c:dispel>dispelling</c:dispel> all negative effects. Cooldown: ${seedOfLifeCooldown}.`,
+            ru: `Получение урона более <c:health>${seedOfLifeThreshold}% от текущего здоровья</c:health> сажает исцеляющее семя, <c:heal>восстанавливающее ${seedOfLifeHeal}% полученного урона</c:heal> в течение ${seedOfLifeDuration} и <c:dispel>снимающее все отрицательные эффекты</c:dispel>. Перезарядка: ${seedOfLifeCooldown}`,
+            cz: `Utržení poškození vyššího než <c:health>${seedOfLifeThreshold}% aktuálního zdraví</c:health> zasadí léčivé semeno, které během ${seedOfLifeDuration} <c:heal>obnoví ${seedOfLifeHeal}% utrženého poškození</c:heal> a <c:dispel>odstraní všechny negativní efekty</c:dispel>. Obnovení: ${seedOfLifeCooldown}.`,
+            br: `Receber dano maior que <c:health>${seedOfLifeThreshold}% da Vida atual</c:health> planta uma semente curativa, <c:heal>restaurando ${seedOfLifeHeal}% do dano recebido</c:heal> ao longo de ${seedOfLifeDuration} e <c:dispel>removendo todos os efeitos negativos</c:dispel>. Recarga: ${seedOfLifeCooldown}.`,
+            zh: `受到超過<c:health>當前生命值 ${seedOfLifeThreshold}%</c:health> 的傷害時，会种下一颗治疗种子，在 ${seedOfLifeDuration}內<c:heal>恢復所受傷害的 ${seedOfLifeHeal}%</c:heal>並<c:dispel>清除所有负面效果</c:dispel>。冷却时间：${seedOfLifeCooldown}。`,
+            fr: `Subir des dégâts supérieurs à <c:health>${seedOfLifeThreshold}% de la santé actuelle</c:health> plante une graine curative, <c:heal>restaurant ${seedOfLifeHeal}% des dégâts subis</c:heal> en ${seedOfLifeDuration} et <c:dispel>dissipant</c:dispel> tous les effets négatifs. Temps de recharge : ${seedOfLifeCooldown}.`,
+            vi: `Nhận sát thương lớn hơn <c:health>${seedOfLifeThreshold}% Máu hiện tại</c:health> sẽ gieo một hạt giống hồi phục, <c:heal>hồi lại ${seedOfLifeHeal}% sát thương đã nhận</c:heal> trong ${seedOfLifeDuration} và <c:dispel>loại bỏ mọi hiệu ứng bất lợi</c:dispel>. Hồi chiêu: ${seedOfLifeCooldown}.`,
+            id: `Menerima damage lebih dari <c:health>${seedOfLifeThreshold}% Health saat ini</c:health> akan menanam benih penyembuh, <c:heal>memulihkan ${seedOfLifeHeal}% dari damage yang diterima</c:heal> selama ${seedOfLifeDuration} serta <c:dispel>menghapus semua efek negatif</c:dispel>. Cooldown: ${seedOfLifeCooldown}.`,
+            kr: `<c:health>현재 체력의 ${seedOfLifeThreshold}%</c:health>를 초과하는 피해를 받으면 회복의 씨앗이 심어져, ${seedOfLifeDuration}에 걸쳐 <c:heal>받은 피해량의 ${seedOfLifeHeal}%를 회복</c:heal>시키고 <c:dispel>모든 부정적 효과를 해제</c:dispel>합니다. 재사용 대기시간: ${seedOfLifeCooldown}.`,
           },
         },
 
@@ -1386,19 +1348,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `두 번째 숲`,
           },
           description: {
-            en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}s. The second eruption deals ${additionalWrathMod}% damage and applies the same ${getStunKeyword(
-              'Stun'
-            )}.`,
-            ru: `Wrath of the Grove призывает второе семя через ${additionalWrathDelay}с. Второй взрыв наносит ${additionalWrathMod}% урона и оглушения.`,
-            cz: `Wrath of the Grove vyvolá druhé semeno po ${additionalWrathDelay}s. Druhá exploze způsobí ${additionalWrathMod}% poškození a omráčení.`,
-            br: `Wrath of the Grove conjura uma segunda semente após ${additionalWrathDelay}s. A segunda explosão causa ${additionalWrathMod}% de dano e atordoamento.`,
-            zh: `Wrath of the Grove 在 ${additionalWrathDelay} 秒后召唤第二颗种子。第二次爆发造成 ${additionalWrathMod}% 伤害和眩晕效果。`,
-            fr: `Wrath of the Grove invoque une seconde graine après ${additionalWrathDelay}s. La seconde explosion inflige ${additionalWrathMod}% dégâts et étourdissement.`,
-            vi: `Wrath of the Grove triệu hồi hạt giống thứ hai sau ${additionalWrathDelay}s. Lần bùng nổ thứ hai gây ${additionalWrathMod}% sát thương và hiệu ứng choáng.`,
-            id: `Wrath of the Grove memanggil benih kedua setelah ${additionalWrathDelay}s. Ledakan kedua memberikan ${additionalWrathMod}% damage dan efek stun.`,
-            kr: `숲의 분노가 ${additionalWrathDelay}초 후 두 번째 씨앗을 소환합니다. 두 번째 폭발은 ${additionalWrathMod}%의 피해를 입히며 동일한 ${getStunKeyword(
-              'Stun'
-            )}을 적용합니다.`,
+            en: `Wrath of the Grove summons a second seed after ${additionalWrathDelay}. The second eruption deals <c:magical>${additionalWrathMod}% damage</c:magical> and applies the same <c:stun>Stun</c:stun>.`,
+            ru: `Wrath of the Grove призывает второе семя через ${additionalWrathDelay} Второй взрыв наносит <c:magical>${additionalWrathMod}% урона</c:magical> и накладывает то же <c:stun>оглушение</c:stun>.`,
+            cz: `Wrath of the Grove vyvolá druhé semeno po ${additionalWrathDelay}. Druhá exploze způsobí <c:magical>${additionalWrathMod}% poškození</c:magical> a stejné <c:stun>omráčení</c:stun>.`,
+            br: `Wrath of the Grove conjura uma segunda semente após ${additionalWrathDelay}. A segunda explosão causa <c:magical>${additionalWrathMod}% de dano</c:magical> e o mesmo <c:stun>atordoamento</c:stun>.`,
+            zh: `Wrath of the Grove 在 ${additionalWrathDelay}后召唤第二颗种子。第二次爆發造成 <c:magical>${additionalWrathMod}% 傷害</c:magical>和相同的<c:stun>暈眩</c:stun>效果。`,
+            fr: `Wrath of the Grove invoque une seconde graine après ${additionalWrathDelay}. La seconde explosion inflige <c:magical>${additionalWrathMod}% de dégâts</c:magical> et le même <c:stun>étourdissement</c:stun>.`,
+            vi: `Wrath of the Grove triệu hồi hạt giống thứ hai sau ${additionalWrathDelay}. Lần bùng nổ thứ hai gây <c:magical>${additionalWrathMod}% sát thương</c:magical> và cùng hiệu ứng <c:stun>choáng</c:stun>.`,
+            id: `Wrath of the Grove memanggil benih kedua setelah ${additionalWrathDelay}. Ledakan kedua memberikan <c:magical>${additionalWrathMod}% damage</c:magical> dan efek <c:stun>stun</c:stun> yang sama.`,
+            kr: `숲의 분노가 ${additionalWrathDelay} 후 두 번째 씨앗을 소환합니다. 두 번째 폭발은 <c:magical>${additionalWrathMod}%의 피해</c:magical>를 입히며 동일한 <c:stun>기절</c:stun>을 적용합니다.`,
           },
         },
       }
@@ -1409,10 +1367,10 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const shredderArmorPerStack = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_ARMOR_REDUCTION_PER_STACK
       const shredderMaxStacks = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_MAX_STACKS
       const shredderMaxArmor = fixed(shredderArmorPerStack * shredderMaxStacks)
-      const shredderDuration = toSecRaw(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
+      const shredderDuration = toSec(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
       const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_FIXATE_DURATION_BONUS)
-      const staticDurationBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STATIC_DURATION_BONUS)
-      const stunDurationBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STUN_DURATION_BONUS)
+      const staticDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STATIC_DURATION_BONUS)
+      const stunDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STUN_DURATION_BONUS)
 
       return {
         tier1_left: {
@@ -1441,15 +1399,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `파쇄자`,
           },
           description: {
-            en: `Command Strike reduces the target's armor by ${shredderArmorPerStack} per stack (up to ${shredderMaxStacks} stacks, ${shredderMaxArmor} max) for ${shredderDuration}s.`,
-            ru: `Командный удар снижает броню цели на ${shredderArmorPerStack} за стак (до ${shredderMaxStacks} стаков, максимум ${shredderMaxArmor}) на ${shredderDuration} сек.`,
-            cz: `Command Strike sníží obranu cíle o ${shredderArmorPerStack} za stack (max. ${shredderMaxStacks} stacků, max. ${shredderMaxArmor}) na ${shredderDuration}s.`,
-            zh: `指揮打擊使目標護甲降低 ${shredderArmorPerStack}（每層），最多疊加 ${shredderMaxStacks} 層（最多降低 ${shredderMaxArmor}），持續 ${shredderDuration}秒。`,
-            fr: `Frappe de Commandement réduit l'armure de la cible de ${shredderArmorPerStack} par charge (jusqu'à ${shredderMaxStacks} charges, ${shredderMaxArmor} max) pendant ${shredderDuration}s.`,
-            br: `Golpe de Comando reduz a armadura do alvo em ${shredderArmorPerStack} por stack (até ${shredderMaxStacks} stacks, ${shredderMaxArmor} no máximo) por ${shredderDuration}s.`,
-            vi: `Command Strike giảm ${shredderArmorPerStack} giáp mục tiêu mỗi lớp (tối đa ${shredderMaxStacks} lớp, ${shredderMaxArmor} tối đa) trong ${shredderDuration}s.`,
-            id: `Command Strike mengurangi armor target sebesar ${shredderArmorPerStack} per stack (maks. ${shredderMaxStacks} stack, ${shredderMaxArmor} maks.) selama ${shredderDuration}s.`,
-            kr: `명령 타격이 대상의 방어력을 중첩당 ${shredderArmorPerStack}만큼 감소시키며(최대 ${shredderMaxStacks}중첩, 최대 ${shredderMaxArmor}), 효과는 ${shredderDuration}초 동안 지속됩니다.`,
+            en: `Command Strike <c:physical>reduces the target's armor by ${shredderArmorPerStack} per stack</c:physical> (up to ${shredderMaxStacks} stacks, ${shredderMaxArmor} max) for ${shredderDuration}.`,
+            ru: `Командный удар <c:physical>снижает броню цели на ${shredderArmorPerStack} за стак</c:physical> (до ${shredderMaxStacks} стаков, максимум ${shredderMaxArmor}) на ${shredderDuration}`,
+            cz: `Command Strike <c:physical>sníží obranu cíle o ${shredderArmorPerStack} za stack</c:physical> (max. ${shredderMaxStacks} stacků, max. ${shredderMaxArmor}) na ${shredderDuration}.`,
+            zh: `指揮打擊<c:physical>使目標護甲降低 ${shredderArmorPerStack}（每層）</c:physical>，最多疊加 ${shredderMaxStacks} 層（最多降低 ${shredderMaxArmor}），持續 ${shredderDuration}。`,
+            fr: `Frappe de Commandement <c:physical>réduit l'armure de la cible de ${shredderArmorPerStack} par charge</c:physical> (jusqu'à ${shredderMaxStacks} charges, ${shredderMaxArmor} max) pendant ${shredderDuration}.`,
+            br: `Golpe de Comando <c:physical>reduz a armadura do alvo em ${shredderArmorPerStack} por stack</c:physical> (até ${shredderMaxStacks} stacks, ${shredderMaxArmor} no máximo) por ${shredderDuration}.`,
+            vi: `Command Strike <c:physical>giảm ${shredderArmorPerStack} giáp mục tiêu mỗi lớp</c:physical> (tối đa ${shredderMaxStacks} lớp, ${shredderMaxArmor} tối đa) trong ${shredderDuration}.`,
+            id: `Command Strike <c:physical>mengurangi armor target sebesar ${shredderArmorPerStack} per stack</c:physical> (maks. ${shredderMaxStacks} stack, ${shredderMaxArmor} maks.) selama ${shredderDuration}.`,
+            kr: `명령 타격이 <c:physical>대상의 방어력을 중첩당 ${shredderArmorPerStack}만큼 감소</c:physical>시키며(최대 ${shredderMaxStacks}중첩, 최대 ${shredderMaxArmor}), 효과는 ${shredderDuration} 동안 지속됩니다.`,
           },
         },
         tier2_left: {
@@ -1478,15 +1436,142 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `강화된 실`,
           },
           description: {
-            en: `Binding Thread's tether lasts ${staticDurationBonus}s longer and its stun is ${stunDurationBonus}s longer.`,
-            ru: `Длительность привязи Связующей нити увеличена на ${staticDurationBonus} сек., а её оглушение — на ${stunDurationBonus} сек.`,
-            cz: `Uvázání Binding Thread trvá o ${staticDurationBonus}s déle a jeho omráčení o ${stunDurationBonus}s déle.`,
-            zh: `束縛絲線的束縛持續時間增加 ${staticDurationBonus}秒，暈眩時間增加 ${stunDurationBonus}秒。`,
-            fr: `L'attache du Fil Liant dure ${staticDurationBonus}s de plus et son étourdissement dure ${stunDurationBonus}s de plus.`,
-            br: `A amarração do Fio Amarrador dura ${staticDurationBonus}s a mais e seu atordoamento dura ${stunDurationBonus}s a mais.`,
-            vi: `Sợi dây trói của Binding Thread kéo dài thêm ${staticDurationBonus}s và choáng thêm ${stunDurationBonus}s.`,
-            id: `Ikatan Binding Thread bertahan ${staticDurationBonus}s lebih lama dan stun-nya ${stunDurationBonus}s lebih lama.`,
-            kr: `결속의 실의 결속 지속시간이 ${staticDurationBonus}초 늘어나고, 기절 지속시간이 ${stunDurationBonus}초 늘어납니다.`,
+            en: `Binding Thread's tether lasts ${staticDurationBonus} longer and its <c:stun>stun is ${stunDurationBonus} longer</c:stun>.`,
+            ru: `Длительность привязи Связующей нити увеличена на ${staticDurationBonus}, а её <c:stun>оглушение — на ${stunDurationBonus}</c:stun>`,
+            cz: `Uvázání Binding Thread trvá o ${staticDurationBonus} déle a jeho <c:stun>omráčení o ${stunDurationBonus} déle</c:stun>.`,
+            zh: `束縛絲線的束縛持續時間增加 ${staticDurationBonus}，<c:stun>暈眩時間增加 ${stunDurationBonus}</c:stun>。`,
+            fr: `L'attache du Fil Liant dure ${staticDurationBonus} de plus et son <c:stun>étourdissement dure ${stunDurationBonus} de plus</c:stun>.`,
+            br: `A amarração do Fio Amarrador dura ${staticDurationBonus} a mais e seu <c:stun>atordoamento dura ${stunDurationBonus} a mais</c:stun>.`,
+            vi: `Sợi dây <c:control>trói</c:control> của Binding Thread kéo dài thêm ${staticDurationBonus} và <c:stun>choáng thêm ${stunDurationBonus}</c:stun>.`,
+            id: `Ikatan Binding Thread bertahan ${staticDurationBonus} lebih lama dan <c:stun>stun-nya ${stunDurationBonus} lebih lama</c:stun>.`,
+            kr: `결속의 실의 결속 지속시간이 ${staticDurationBonus} 늘어나고, <c:stun>기절 지속시간이 ${stunDurationBonus}</c:stun> 늘어납니다.`,
+          },
+        },
+      }
+    }
+
+    case Shared.HEROES.PATROKLOS: {
+      const crushingAdvanceSlow = fixed(PatroklosAbilityData.TALENT_T1_LEFT_CRUSHING_ADVANCE_SLOW_MOD * 100, 0)
+      const crushingAdvanceDuration = toSec(PatroklosAbilityData.VANGUARD_SHIELD_DURATION)
+      const crushingAdvanceBonusStacks = PatroklosAbilityData.TALENT_T1_LEFT_CRUSHING_ADVANCE_BONUS_STACKS
+
+      const vanguardShieldBonus = fixed(PatroklosAbilityData.TALENT_T1_RIGHT_VANGUARD_SHIELD_BONUS * 100, 0)
+      const vanguardAllySpeed = fixed(PatroklosAbilityData.TALENT_T1_RIGHT_VANGUARD_ALLY_SPEED_MOD * 100, 0)
+      const vanguardAllyAttackSpeed = fixed(
+        PatroklosAbilityData.TALENT_T1_RIGHT_VANGUARD_ALLY_ATTACK_SPEED_MOD * 100,
+        0
+      )
+      const vanguardAllyDuration = toSec(PatroklosAbilityData.VANGUARD_SHIELD_DURATION)
+
+      const lastJudgementMaxStacks = PatroklosAbilityData.HEAVENS_FALL_MAX_STACKS
+      const lastJudgementBonusStun = toSec(PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_BONUS_STUN)
+      const lastJudgementTotalStun = toSec(
+        PatroklosAbilityData.DIVINE_RECKONING_STUN_PER_STACK * lastJudgementMaxStacks +
+          PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_BONUS_STUN
+      )
+      const lastJudgementMaxHealthDamage = fixed(
+        PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100,
+        0
+      )
+
+      return {
+        tier1_left: {
+          title: {
+            en: 'Crushing Advance',
+            ru: 'Сокрушающий натиск',
+            cz: 'Drtivý postup',
+            br: 'Avanço Esmagador',
+            zh: '碾壓推進',
+            fr: 'Avancée Écrasante',
+            vi: 'Tiến Công Nghiền Nát',
+            id: 'Crushing Advance',
+            kr: `분쇄의 진격`,
+          },
+          description: {
+            en: `Vanguard also <c:slow>reduces the Movement Speed and Attack Speed of enemies hit by ${crushingAdvanceSlow}%</c:slow> for ${crushingAdvanceDuration}, and applies ${crushingAdvanceBonusStacks} additional stack of Heavens Fall.`,
+            ru: `Vanguard также <c:slow>снижает скорость передвижения и атаки задетых врагов на ${crushingAdvanceSlow}%</c:slow> на ${crushingAdvanceDuration} и накладывает ${crushingAdvanceBonusStacks} дополнительный заряд Падения Небес.`,
+            cz: `Vanguard nyní také <c:slow>sníží rychlost pohybu a útoku zasažených nepřátel o ${crushingAdvanceSlow}%</c:slow> na ${crushingAdvanceDuration} a aplikuje ${crushingAdvanceBonusStacks} další stack Pádu nebes.`,
+            br: `Vanguard também <c:slow>reduz a Velocidade de Movimento e de Ataque dos inimigos atingidos em ${crushingAdvanceSlow}%</c:slow> por ${crushingAdvanceDuration}, e aplica ${crushingAdvanceBonusStacks} acúmulo adicional de Queda dos Céus.`,
+            zh: `先鋒現在也會<c:slow>使被擊中的敵人移動速度與攻擊速度降低 ${crushingAdvanceSlow}%</c:slow>，持續 ${crushingAdvanceDuration}，並額外施加 ${crushingAdvanceBonusStacks} 層天罰。`,
+            fr: `Avant-garde <c:slow>réduit aussi la vitesse de déplacement et d'attaque des ennemis touchés de ${crushingAdvanceSlow}%</c:slow> pendant ${crushingAdvanceDuration}, et applique ${crushingAdvanceBonusStacks} cumul supplémentaire de Chute des Cieux.`,
+            vi: `Tiên Phong giờ cũng <c:slow>giảm ${crushingAdvanceSlow}% tốc độ di chuyển và tốc độ đánh của kẻ địch trúng đòn</c:slow> trong ${crushingAdvanceDuration}, và áp dụng thêm ${crushingAdvanceBonusStacks} cộng dồn Thiên Phạt.`,
+            id: `Vanguard kini juga <c:slow>mengurangi Kecepatan Gerak dan Kecepatan Serang musuh yang terkena sebesar ${crushingAdvanceSlow}%</c:slow> selama ${crushingAdvanceDuration}, serta menerapkan ${crushingAdvanceBonusStacks} stack tambahan Heavens Fall.`,
+            kr: `선봉은 ${crushingAdvanceDuration} 동안 <c:slow>명중한 적의 이동 속도와 공격 속도를 ${crushingAdvanceSlow}% 감소</c:slow>시키고, 천벌 중첩을 ${crushingAdvanceBonusStacks}회 추가로 적용합니다.`,
+          },
+        },
+
+        tier1_right: {
+          title: {
+            en: 'Divine Vanguard',
+            ru: 'Божественный авангард',
+            cz: 'Božský předvoj',
+            br: 'Vanguarda Divina',
+            zh: '神聖先鋒',
+            fr: 'Avant-garde Divine',
+            vi: 'Tiên Phong Thần Thánh',
+            id: 'Divine Vanguard',
+            kr: `신성한 선봉`,
+          },
+          description: {
+            en: `Vanguard's <c:heal>shield is ${vanguardShieldBonus}% stronger</c:heal>, and grants allies passed through (including Patroklos himself) <c:bonus>${vanguardAllySpeed}% Movement Speed</c:bonus> and <c:bonus>${vanguardAllyAttackSpeed}% Attack Speed</c:bonus> for ${vanguardAllyDuration}.`,
+            ru: `Щит Vanguard <c:heal>становится сильнее на ${vanguardShieldBonus}%</c:heal>, а союзники, через которых он проходит (включая самого Патрокла), получают <c:bonus>${vanguardAllySpeed}% скорости передвижения</c:bonus> и <c:bonus>${vanguardAllyAttackSpeed}% скорости атаки</c:bonus> на ${vanguardAllyDuration}`,
+            cz: `Štít Vanguard je <c:heal>o ${vanguardShieldBonus}% silnější</c:heal> a spojenci, kterými proletí (včetně samotného Patrokla), získají <c:bonus>${vanguardAllySpeed}% rychlosti pohybu</c:bonus> a <c:bonus>${vanguardAllyAttackSpeed}% rychlosti útoku</c:bonus> na ${vanguardAllyDuration}.`,
+            br: `O escudo de Vanguard fica <c:heal>${vanguardShieldBonus}% mais forte</c:heal>, e concede aos aliados atravessados (incluindo o próprio Patroklos) <c:bonus>${vanguardAllySpeed}% de Velocidade de Movimento</c:bonus> e <c:bonus>${vanguardAllyAttackSpeed}% de Velocidade de Ataque</c:bonus> por ${vanguardAllyDuration}.`,
+            zh: `先鋒的<c:heal>護盾強度提升 ${vanguardShieldBonus}%</c:heal>，並為被穿過的友軍（包含 Patroklos 自己）提供 <c:bonus>${vanguardAllySpeed}% 移動速度</c:bonus>與<c:bonus>${vanguardAllyAttackSpeed}% 攻擊速度</c:bonus>，持續 ${vanguardAllyDuration}。`,
+            fr: `Le bouclier d'Avant-garde est <c:heal>${vanguardShieldBonus}% plus puissant</c:heal>, et accorde aux alliés traversés (y compris Patroklos lui-même) <c:bonus>${vanguardAllySpeed}% de vitesse de déplacement</c:bonus> et <c:bonus>${vanguardAllyAttackSpeed}% de vitesse d'attaque</c:bonus> pendant ${vanguardAllyDuration}.`,
+            vi: `Khiên của Tiên Phong <c:heal>mạnh hơn ${vanguardShieldBonus}%</c:heal>, và ban cho đồng minh bị xuyên qua (kể cả bản thân Patroklos) <c:bonus>${vanguardAllySpeed}% tốc độ di chuyển</c:bonus> và <c:bonus>${vanguardAllyAttackSpeed}% tốc độ đánh</c:bonus> trong ${vanguardAllyDuration}.`,
+            id: `Perisai Vanguard menjadi <c:heal>${vanguardShieldBonus}% lebih kuat</c:heal>, serta memberikan sekutu yang dilewati (termasuk Patroklos sendiri) <c:bonus>${vanguardAllySpeed}% Kecepatan Gerak</c:bonus> dan <c:bonus>${vanguardAllyAttackSpeed}% Kecepatan Serang</c:bonus> selama ${vanguardAllyDuration}.`,
+            kr: `선봉의 <c:heal>보호막이 ${vanguardShieldBonus}% 더 강해지며</c:heal>, 통과한 아군(파트로클로스 자신 포함)에게 ${vanguardAllyDuration} 동안 <c:bonus>이동 속도 ${vanguardAllySpeed}%</c:bonus>와 <c:bonus>공격 속도 ${vanguardAllyAttackSpeed}%</c:bonus>를 부여합니다.`,
+          },
+        },
+
+        tier2_left: {
+          title: {
+            en: 'Reinforcement',
+            ru: 'Подкрепление',
+            cz: 'Posílení',
+            br: 'Reforço',
+            zh: '增援',
+            fr: 'Renforcement',
+            vi: 'Tiếp Viện',
+            id: 'Reinforcement',
+            kr: `증원`,
+          },
+          description: {
+            en: `Divine Reckoning resets the cooldown of Vanguard.`,
+            ru: `Divine Reckoning сбрасывает перезарядку Vanguard.`,
+            cz: `Divine Reckoning obnoví dobu obnovení Vanguard.`,
+            br: `Divine Reckoning reinicia a recarga de Vanguard.`,
+            zh: `神聖清算會重置先鋒的冷卻時間。`,
+            fr: `Jugement Divin réinitialise le temps de recharge d'Avant-garde.`,
+            vi: `Thiên Phán đặt lại thời gian hồi chiêu của Tiên Phong.`,
+            id: `Divine Reckoning mereset cooldown Vanguard.`,
+            kr: `신성한 심판은 선봉의 재사용 대기시간을 초기화합니다.`,
+          },
+        },
+
+        tier2_right: {
+          title: {
+            en: 'Last Judgement',
+            ru: 'Последний суд',
+            cz: 'Poslední soud',
+            br: 'Julgamento Final',
+            zh: '最終審判',
+            fr: 'Jugement Dernier',
+            vi: 'Phán Quyết Cuối Cùng',
+            id: 'Last Judgement',
+            kr: `최후의 심판`,
+          },
+          description: {
+            en: `Targets hit by Divine Reckoning with the maximum ${lastJudgementMaxStacks} stacks are <c:stun>stunned for ${lastJudgementBonusStun} longer</c:stun> (${lastJudgementTotalStun} total) and take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage</c:pure>.`,
+            ru: `Цели, поражённые Divine Reckoning с максимальными ${lastJudgementMaxStacks} зарядами, <c:stun>оглушаются</c:stun> на ${lastJudgementBonusStun} дольше (всего ${lastJudgementTotalStun}) и получают ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure>.`,
+            cz: `Cíle zasažené Divine Reckoning s maximálními ${lastJudgementMaxStacks} stacky jsou <c:stun>omráčeny</c:stun> o ${lastJudgementBonusStun} déle (celkem ${lastJudgementTotalStun}) a utrpí ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure>.`,
+            br: `Alvos atingidos por Divine Reckoning com o máximo de ${lastJudgementMaxStacks} acúmulos ficam <c:stun>atordoados</c:stun> por ${lastJudgementBonusStun} a mais (${lastJudgementTotalStun} no total) e sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional.`,
+            zh: `被神聖清算擊中且擁有最大 ${lastJudgementMaxStacks} 層的目標將<c:stun>額外暈眩 ${lastJudgementBonusStun}</c:stun>（總計 ${lastJudgementTotalStun}），並受到<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>。`,
+            fr: `Les cibles touchées par Jugement Divin avec le maximum de ${lastJudgementMaxStacks} cumuls sont <c:stun>étourdies</c:stun> ${lastJudgementBonusStun} de plus (${lastJudgementTotalStun} au total) et subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus.`,
+            vi: `Mục tiêu trúng Thiên Phán với tối đa ${lastJudgementMaxStacks} cộng dồn bị <c:stun>choáng</c:stun> lâu hơn ${lastJudgementBonusStun} (tổng ${lastJudgementTotalStun}) và chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure>.`,
+            id: `Target yang terkena Divine Reckoning dengan stack maksimal ${lastJudgementMaxStacks} akan <c:stun>stun</c:stun> ${lastJudgementBonusStun} lebih lama (total ${lastJudgementTotalStun}) dan menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure>.`,
+            kr: `신성한 심판에 최대 ${lastJudgementMaxStacks}중첩으로 명중한 대상은 <c:stun>${lastJudgementBonusStun} 더 길게 기절</c:stun>하며(총 ${lastJudgementTotalStun}), 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다.`,
           },
         },
       }
@@ -1520,7 +1605,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
 export const getDamage = (
   damage: number,
-  type: Shared.DamageTypes = Shared.DamageTypes.NORMAL,
+  type: Shared.DamageTypes = Shared.DamageTypes.PHYSICAL,
   baseDamage = 0,
   isPercentage = false
 ): string => {
@@ -1529,7 +1614,7 @@ export const getDamage = (
   const valueSuffix = isPercentage ? '%' : ''
 
   return `<span class=${
-    type === Shared.DamageTypes.NORMAL ? 'normal-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'
+    type === Shared.DamageTypes.PHYSICAL ? 'physical-d' : type === Shared.DamageTypes.PURE ? 'pure-d' : 'ability-d'
   }>${baseDamage > 0 ? baseDamage + (damage > 0 ? '(+' + damage + valueSuffix + ')' : '') : damage > 0 ? damage + valueSuffix : ''}</span>`
 }
 
