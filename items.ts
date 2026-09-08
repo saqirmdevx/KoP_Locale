@@ -713,6 +713,7 @@ const _getLocaleItemDescription = (
       const attackSpeed = Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)
       const maxStacks = ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS
       const maxAttackSpeed = fixed(attackSpeed * maxStacks, 0)
+      const maxStacksLifesteal = Math.floor(ItemAbilityData.BERSERKER_BOW_MAX_STACKS_LIFESTEAL * 100)
 
       return {
         name: {
@@ -727,15 +728,15 @@ const _getLocaleItemDescription = (
           kr: `광전사의 활`,
         },
         descPassive: {
-          en: `Grants Berserk, stacking up to ${maxStacks} times. Each stack <c:bonus>increases Attack Speed by ${attackSpeed}%</c:bonus> <c:bonus>(max ${maxAttackSpeed}% Attack Speed)</c:bonus>.`,
-          ru: `Даёт эффект Берсерка, суммируется до ${maxStacks} раз. Каждый эффект <c:bonus>увеличивает скорость атаки на ${attackSpeed}%</c:bonus> <c:bonus>(макс. ${maxAttackSpeed}% скорости атаки)</c:bonus>.`,
-          br: `Concede Berserk, acumulando até ${maxStacks} vezes. Cada acúmulo <c:bonus>aumenta a Velocidade de Ataque em ${attackSpeed}%</c:bonus> <c:bonus>(máx. ${maxAttackSpeed}% de Velocidade de Ataque)</c:bonus>.`,
-          cz: `Uděluje Běsnění, které se může vrstvit až ${maxStacks}×. Každá vrstva <c:bonus>zvyšuje rychlost útoku o ${attackSpeed}%</c:bonus> <c:bonus>(max. ${maxAttackSpeed}% rychlosti útoku)</c:bonus>.`,
-          fr: `Applique Berserk, cumulable jusqu'à ${maxStacks} fois. Chaque cumul <c:bonus>augmente la vitesse d'attaque de ${attackSpeed}%</c:bonus> <c:bonus>(max. ${maxAttackSpeed}% de vitesse d'attaque)</c:bonus>.`,
-          zh: `獲得狂暴效果，最多可疊加 ${maxStacks} 層。每層<c:bonus>提高 ${attackSpeed}% 攻擊速度</c:bonus><c:bonus>（最多 ${maxAttackSpeed}% 攻擊速度）</c:bonus>。`,
-          vi: `Cho hiệu ứng Cuồng Nộ, cộng dồn tối đa ${maxStacks} lần. Mỗi cộng dồn <c:bonus>tăng ${attackSpeed}% tốc độ đánh</c:bonus> <c:bonus>(tối đa ${maxAttackSpeed}% tốc độ đánh)</c:bonus>.`,
-          id: `Memberikan efek Berserk, dapat ditumpuk hingga ${maxStacks} kali. Setiap tumpukan <c:bonus>meningkatkan Attack Speed sebesar ${attackSpeed}%</c:bonus> <c:bonus>(maks. ${maxAttackSpeed}% Attack Speed)</c:bonus>.`,
-          kr: `광폭화를 얻으며, 최대 ${maxStacks}회까지 중첩됩니다. 중첩당 <c:bonus>공격 속도가 ${attackSpeed}% 증가</c:bonus>합니다 <c:bonus>(최대 공격 속도 ${maxAttackSpeed}%)</c:bonus>.`,
+          en: `Grants Berserk, stacking up to ${maxStacks} times. Each stack <c:bonus>increases Attack Speed by ${attackSpeed}%</c:bonus> <c:bonus>(max ${maxAttackSpeed}% Attack Speed)</c:bonus>. At ${maxStacks} stacks it also grants <c:bonus>${maxStacksLifesteal}% Lifesteal</c:bonus>.`,
+          ru: `Даёт эффект Берсерка, суммируется до ${maxStacks} раз. Каждый эффект <c:bonus>увеличивает скорость атаки на ${attackSpeed}%</c:bonus> <c:bonus>(макс. ${maxAttackSpeed}% скорости атаки)</c:bonus>. При ${maxStacks} зарядах также даёт <c:bonus>${maxStacksLifesteal}% вампиризма</c:bonus>.`,
+          br: `Concede Berserk, acumulando até ${maxStacks} vezes. Cada acúmulo <c:bonus>aumenta a Velocidade de Ataque em ${attackSpeed}%</c:bonus> <c:bonus>(máx. ${maxAttackSpeed}% de Velocidade de Ataque)</c:bonus>. Com ${maxStacks} acúmulos também concede <c:bonus>${maxStacksLifesteal}% de Roubo de Vida</c:bonus>.`,
+          cz: `Uděluje Běsnění, které se může vrstvit až ${maxStacks}×. Každá vrstva <c:bonus>zvyšuje rychlost útoku o ${attackSpeed}%</c:bonus> <c:bonus>(max. ${maxAttackSpeed}% rychlosti útoku)</c:bonus>. Při ${maxStacks} vrstvách navíc uděluje <c:bonus>${maxStacksLifesteal}% vysávání života</c:bonus>.`,
+          fr: `Applique Berserk, cumulable jusqu'à ${maxStacks} fois. Chaque cumul <c:bonus>augmente la vitesse d'attaque de ${attackSpeed}%</c:bonus> <c:bonus>(max. ${maxAttackSpeed}% de vitesse d'attaque)</c:bonus>. À ${maxStacks} cumuls, accorde aussi <c:bonus>${maxStacksLifesteal}% de vol de vie</c:bonus>.`,
+          zh: `獲得狂暴效果，最多可疊加 ${maxStacks} 層。每層<c:bonus>提高 ${attackSpeed}% 攻擊速度</c:bonus><c:bonus>（最多 ${maxAttackSpeed}% 攻擊速度）</c:bonus>。達到 ${maxStacks} 層時額外獲得<c:bonus>${maxStacksLifesteal}% 生命偷取</c:bonus>。`,
+          vi: `Cho hiệu ứng Cuồng Nộ, cộng dồn tối đa ${maxStacks} lần. Mỗi cộng dồn <c:bonus>tăng ${attackSpeed}% tốc độ đánh</c:bonus> <c:bonus>(tối đa ${maxAttackSpeed}% tốc độ đánh)</c:bonus>. Ở ${maxStacks} cộng dồn còn cho <c:bonus>${maxStacksLifesteal}% hút máu</c:bonus>.`,
+          id: `Memberikan efek Berserk, dapat ditumpuk hingga ${maxStacks} kali. Setiap tumpukan <c:bonus>meningkatkan Attack Speed sebesar ${attackSpeed}%</c:bonus> <c:bonus>(maks. ${maxAttackSpeed}% Attack Speed)</c:bonus>. Pada ${maxStacks} tumpukan juga memberikan <c:bonus>${maxStacksLifesteal}% Lifesteal</c:bonus>.`,
+          kr: `광폭화를 얻으며, 최대 ${maxStacks}회까지 중첩됩니다. 중첩당 <c:bonus>공격 속도가 ${attackSpeed}% 증가</c:bonus>합니다 <c:bonus>(최대 공격 속도 ${maxAttackSpeed}%)</c:bonus>. ${maxStacks}중첩에서는 <c:bonus>흡혈 ${maxStacksLifesteal}%</c:bonus>도 함께 얻습니다.`,
         },
       }
     }

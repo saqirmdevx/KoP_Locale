@@ -1465,25 +1465,25 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.PATROKLOS_DIVINE_RECKONING: {
-      const perStackDamage = getDamage(
+      const perSwordDamage = getDamage(
         PatroklosAbilityData.DIVINE_RECKONING_DAMAGE_MOD * damage,
         Shared.DamageTypes.PURE,
         PatroklosAbilityData.DIVINE_RECKONING_BASE_DAMAGE,
         'AttackDamage'
       )
-      const stunPerStack = getStunDuration(PatroklosAbilityData.DIVINE_RECKONING_STUN_PER_STACK)
+      const swordStun = getStunDuration(PatroklosAbilityData.DIVINE_RECKONING_SWORD_STUN_DURATION)
       const healMod = getBuffValue(`${fixed(PatroklosAbilityData.DIVINE_RECKONING_HEAL_MOD * 100, 0)}%`)
 
       return {
-        en: `Patroklos consumes all Heavens Fall stacks from every enemy hero on the map. A sword strikes each affected hero, dealing ${perStackDamage} per stack, <c:stun>stunning</c:stun> for ${stunPerStack} per stack, and healing Patroklos for ${healMod} of the damage dealt.`,
-        ru: `Патрокл поглощает все заряды Падения Небес со всех вражеских героев на карте. По каждому поражённому герою наносит удар меч, нанося ${perStackDamage} за заряд, <c:stun>оглушая</c:stun> на ${stunPerStack} за заряд, и исцеляя Патрокла на ${healMod} от нанесённого урона.`,
-        cz: `Patroklos pohltí všechny stacky Pádu nebes ze všech nepřátelských hrdinů na mapě. Meč udeří do každého zasaženého hrdiny, způsobí ${perStackDamage} za stack, <c:stun>omráčí</c:stun> na ${stunPerStack} za stack a vyléčí Patrokla o ${healMod} způsobeného poškození.`,
-        br: `Patroklos consome todos os acúmulos de Queda dos Céus de todos os heróis inimigos no mapa. Uma espada atinge cada herói afetado, causando ${perStackDamage} por acúmulo, <c:stun>atordoando</c:stun> por ${stunPerStack} por acúmulo, e curando Patroklos em ${healMod} do dano causado.`,
-        zh: `Patroklos 吸收地圖上所有敵方英雄的天罰層數。一把劍將擊中每個受影響的英雄，每層造成 ${perStackDamage} 點傷害，每層暈眩 ${stunPerStack}，並為 Patroklos 恢復所造成傷害 ${healMod} 的生命值。`,
-        fr: `Patroklos consume tous les cumuls de Chute des Cieux de chaque héros ennemi sur la carte. Une épée frappe chaque héros affecté, infligeant ${perStackDamage} par cumul, <c:stun>étourdissant</c:stun> pendant ${stunPerStack} par cumul, et soignant Patroklos de ${healMod} des dégâts infligés.`,
-        vi: `Patroklos hấp thụ toàn bộ cộng dồn Thiên Phạt từ mọi tướng địch trên bản đồ. Một thanh kiếm đánh trúng từng tướng bị ảnh hưởng, gây ${perStackDamage} mỗi cộng dồn, <c:stun>choáng</c:stun> ${stunPerStack} mỗi cộng dồn, và hồi máu cho Patroklos bằng ${healMod} sát thương gây ra.`,
-        id: `Patroklos menyerap semua stack Heavens Fall dari setiap hero musuh di peta. Sebuah pedang menghantam setiap hero yang terkena, memberikan ${perStackDamage} per stack, membuat <c:stun>stun</c:stun> selama ${stunPerStack} per stack, dan menyembuhkan Patroklos sebesar ${healMod} dari kerusakan yang diberikan.`,
-        kr: `파트로클로스가 맵에 있는 모든 적 영웅의 천벌 중첩을 흡수합니다. 영향을 받은 각 영웅에게 검이 내리쳐 중첩당 ${perStackDamage}의 피해를 입히고, 중첩당 ${stunPerStack} 동안 기절시키며, 입힌 피해의 ${healMod}만큼 파트로클로스를 치유합니다.`,
+        en: `Patroklos consumes all Heavens Fall stacks from every enemy hero on the map. One sword per consumed stack strikes the marked hero, each dealing ${perSwordDamage}, <c:stun>stunning</c:stun> for ${swordStun}, and healing Patroklos for ${healMod} of the damage dealt.`,
+        ru: `Патрокл поглощает все заряды Падения Небес со всех вражеских героев на карте. По отмеченному герою бьёт по одному мечу за каждый поглощённый заряд, каждый наносит ${perSwordDamage}, <c:stun>оглушает</c:stun> на ${swordStun} и исцеляет Патрокла на ${healMod} от нанесённого урона.`,
+        cz: `Patroklos pohltí všechny stacky Pádu nebes ze všech nepřátelských hrdinů na mapě. Na označeného hrdinu udeří jeden meč za každý pohlcený stack, každý způsobí ${perSwordDamage}, <c:stun>omráčí</c:stun> na ${swordStun} a vyléčí Patrokla o ${healMod} způsobeného poškození.`,
+        br: `Patroklos consome todos os acúmulos de Queda dos Céus de todos os heróis inimigos no mapa. Uma espada por acúmulo consumido atinge o herói marcado, cada uma causando ${perSwordDamage}, <c:stun>atordoando</c:stun> por ${swordStun}, e curando Patroklos em ${healMod} do dano causado.`,
+        zh: `Patroklos 吸收地圖上所有敵方英雄的天罰層數。每消耗一層便有一把劍擊中被標記的英雄，每把劍造成 ${perSwordDamage} 點傷害、暈眩 ${swordStun}，並為 Patroklos 恢復所造成傷害 ${healMod} 的生命值。`,
+        fr: `Patroklos consume tous les cumuls de Chute des Cieux de chaque héros ennemi sur la carte. Une épée par cumul consumé frappe le héros marqué, chacune infligeant ${perSwordDamage}, <c:stun>étourdissant</c:stun> pendant ${swordStun}, et soignant Patroklos de ${healMod} des dégâts infligés.`,
+        vi: `Patroklos hấp thụ toàn bộ cộng dồn Thiên Phạt từ mọi tướng địch trên bản đồ. Mỗi cộng dồn hấp thụ tạo ra một thanh kiếm đánh trúng tướng bị đánh dấu, mỗi thanh gây ${perSwordDamage}, <c:stun>choáng</c:stun> ${swordStun}, và hồi máu cho Patroklos bằng ${healMod} sát thương gây ra.`,
+        id: `Patroklos menyerap semua stack Heavens Fall dari setiap hero musuh di peta. Satu pedang per stack yang diserap menghantam hero yang ditandai, masing-masing memberikan ${perSwordDamage}, membuat <c:stun>stun</c:stun> selama ${swordStun}, dan menyembuhkan Patroklos sebesar ${healMod} dari kerusakan yang diberikan.`,
+        kr: `파트로클로스가 맵에 있는 모든 적 영웅의 천벌 중첩을 흡수합니다. 흡수한 중첩 하나당 검 한 자루가 표식이 있던 영웅에게 내리쳐 각각 ${perSwordDamage}의 피해를 입히고 ${swordStun} 동안 기절시키며, 입힌 피해의 ${healMod}만큼 파트로클로스를 치유합니다.`,
       }
     }
 
