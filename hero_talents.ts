@@ -1451,9 +1451,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.PATROKLOS: {
-      const crushingAdvanceSlow = fixed(PatroklosAbilityData.TALENT_T1_LEFT_CRUSHING_ADVANCE_SLOW_MOD * 100, 0)
-      const crushingAdvanceDuration = toSec(PatroklosAbilityData.TALENT_T1_EFFECT_DURATION)
-      const crushingAdvanceBonusStacks = PatroklosAbilityData.TALENT_T1_LEFT_CRUSHING_ADVANCE_BONUS_STACKS
+      const crushingAdvanceStun = toSec(PatroklosAbilityData.TALENT_T1_LEFT_CRUSHING_ADVANCE_STUN_DURATION)
 
       const vanguardShieldBonus = fixed(PatroklosAbilityData.TALENT_T1_RIGHT_VANGUARD_SHIELD_BONUS * 100, 0)
       const vanguardAllySpeed = fixed(PatroklosAbilityData.TALENT_T1_RIGHT_VANGUARD_ALLY_SPEED_MOD * 100, 0)
@@ -1473,7 +1471,6 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100 * lastJudgementMaxStacks,
         1
       )
-      const lastJudgementStun = toSec(PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_STUN_DURATION)
 
       return {
         tier1_left: {
@@ -1489,15 +1486,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `분쇄의 진격`,
           },
           description: {
-            en: `Vanguard also <c:slow>reduces the Movement Speed and Attack Speed of enemies hit by ${crushingAdvanceSlow}%</c:slow> for ${crushingAdvanceDuration}, and applies ${crushingAdvanceBonusStacks} additional stack of Heavens Fall.`,
-            ru: `Vanguard также <c:slow>снижает скорость передвижения и атаки задетых врагов на ${crushingAdvanceSlow}%</c:slow> на ${crushingAdvanceDuration} и накладывает ${crushingAdvanceBonusStacks} дополнительный заряд Падения Небес.`,
-            cz: `Vanguard nyní také <c:slow>sníží rychlost pohybu a útoku zasažených nepřátel o ${crushingAdvanceSlow}%</c:slow> na ${crushingAdvanceDuration} a aplikuje ${crushingAdvanceBonusStacks} další stack Pádu nebes.`,
-            br: `Vanguard também <c:slow>reduz a Velocidade de Movimento e de Ataque dos inimigos atingidos em ${crushingAdvanceSlow}%</c:slow> por ${crushingAdvanceDuration}, e aplica ${crushingAdvanceBonusStacks} acúmulo adicional de Queda dos Céus.`,
-            zh: `先鋒現在也會<c:slow>使被擊中的敵人移動速度與攻擊速度降低 ${crushingAdvanceSlow}%</c:slow>，持續 ${crushingAdvanceDuration}，並額外施加 ${crushingAdvanceBonusStacks} 層天罰。`,
-            fr: `Avant-garde <c:slow>réduit aussi la vitesse de déplacement et d'attaque des ennemis touchés de ${crushingAdvanceSlow}%</c:slow> pendant ${crushingAdvanceDuration}, et applique ${crushingAdvanceBonusStacks} cumul supplémentaire de Chute des Cieux.`,
-            vi: `Tiên Phong giờ cũng <c:slow>giảm ${crushingAdvanceSlow}% tốc độ di chuyển và tốc độ đánh của kẻ địch trúng đòn</c:slow> trong ${crushingAdvanceDuration}, và áp dụng thêm ${crushingAdvanceBonusStacks} cộng dồn Thiên Phạt.`,
-            id: `Vanguard kini juga <c:slow>mengurangi Kecepatan Gerak dan Kecepatan Serang musuh yang terkena sebesar ${crushingAdvanceSlow}%</c:slow> selama ${crushingAdvanceDuration}, serta menerapkan ${crushingAdvanceBonusStacks} stack tambahan Heavens Fall.`,
-            kr: `선봉은 ${crushingAdvanceDuration} 동안 <c:slow>명중한 적의 이동 속도와 공격 속도를 ${crushingAdvanceSlow}% 감소</c:slow>시키고, 천벌 중첩을 ${crushingAdvanceBonusStacks}회 추가로 적용합니다.`,
+            en: `Vanguard also <c:stun>stuns enemy heroes hit for ${crushingAdvanceStun}</c:stun>.`,
+            ru: `Vanguard также <c:stun>оглушает задетых вражеских героев на ${crushingAdvanceStun}</c:stun>.`,
+            cz: `Vanguard navíc <c:stun>omráčí zasažené nepřátelské hrdiny na ${crushingAdvanceStun}</c:stun>.`,
+            br: `Vanguard também <c:stun>atordoa os heróis inimigos atingidos por ${crushingAdvanceStun}</c:stun>.`,
+            zh: `先鋒現在還會<c:stun>將被擊中的敵方英雄暈眩 ${crushingAdvanceStun}</c:stun>。`,
+            fr: `Avant-garde <c:stun>étourdit aussi les héros ennemis touchés pendant ${crushingAdvanceStun}</c:stun>.`,
+            vi: `Tiên Phong còn <c:stun>choáng tướng địch trúng đòn trong ${crushingAdvanceStun}</c:stun>.`,
+            id: `Vanguard juga <c:stun>membuat hero musuh yang terkena stun selama ${crushingAdvanceStun}</c:stun>.`,
+            kr: `선봉이 <c:stun>명중한 적 영웅을 ${crushingAdvanceStun} 동안 기절</c:stun>시킵니다.`,
           },
         },
 
@@ -1564,15 +1561,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `최후의 심판`,
           },
           description: {
-            en: `Every sword of Divine Reckoning <c:stun>stuns for ${lastJudgementStun}</c:stun>, and targets hit with the maximum ${lastJudgementMaxStacks} stacks take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total).`,
-            ru: `Каждый меч Divine Reckoning <c:stun>оглушает на ${lastJudgementStun}</c:stun>, а цели, поражённые с максимальными ${lastJudgementMaxStacks} зарядами, получают от каждого меча ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%).`,
-            cz: `Každý meč Divine Reckoning <c:stun>omráčí na ${lastJudgementStun}</c:stun> a cíle zasažené s maximálními ${lastJudgementMaxStacks} stacky utrpí od každého meče ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%).`,
-            br: `Cada espada de Divine Reckoning <c:stun>atordoa por ${lastJudgementStun}</c:stun>, e alvos atingidos com o máximo de ${lastJudgementMaxStacks} acúmulos sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada (${lastJudgementTotalMaxHealthDamage}% no total).`,
-            zh: `神聖清算的每把劍都會<c:stun>暈眩 ${lastJudgementStun}</c:stun>，且擁有最大 ${lastJudgementMaxStacks} 層的目標每把劍還會受到<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。`,
-            fr: `Chaque épée de Jugement Divin <c:stun>étourdit pendant ${lastJudgementStun}</c:stun>, et les cibles touchées avec le maximum de ${lastJudgementMaxStacks} cumuls subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée (${lastJudgementTotalMaxHealthDamage}% au total).`,
-            vi: `Mỗi thanh kiếm của Thiên Phán <c:stun>choáng ${lastJudgementStun}</c:stun>, và mục tiêu trúng đòn với tối đa ${lastJudgementMaxStacks} cộng dồn còn chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm (tổng ${lastJudgementTotalMaxHealthDamage}%).`,
-            id: `Setiap pedang Divine Reckoning <c:stun>membuat stun selama ${lastJudgementStun}</c:stun>, dan target yang terkena dengan stack maksimal ${lastJudgementMaxStacks} juga menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang (total ${lastJudgementTotalMaxHealthDamage}%).`,
-            kr: `신성한 심판의 검은 검마다 <c:stun>${lastJudgementStun} 동안 기절</c:stun>시키고, 최대 ${lastJudgementMaxStacks}중첩으로 명중한 대상은 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%).`,
+            en: `Targets hit with the maximum ${lastJudgementMaxStacks} stacks of Heavens Fall take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword of Divine Reckoning</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total).`,
+            ru: `Цели, поражённые с максимальными ${lastJudgementMaxStacks} зарядами Падения Небес, получают от каждого меча Divine Reckoning ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%).`,
+            cz: `Cíle zasažené s maximálními ${lastJudgementMaxStacks} stacky Pádu nebes utrpí od každého meče Divine Reckoning ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%).`,
+            br: `Alvos atingidos com o máximo de ${lastJudgementMaxStacks} acúmulos de Queda dos Céus sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada de Divine Reckoning (${lastJudgementTotalMaxHealthDamage}% no total).`,
+            zh: `擁有最大 ${lastJudgementMaxStacks} 層天罰的目標，每把神聖清算的劍都會對其造成<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。`,
+            fr: `Les cibles touchées avec le maximum de ${lastJudgementMaxStacks} cumuls de Chute des Cieux subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée de Jugement Divin (${lastJudgementTotalMaxHealthDamage}% au total).`,
+            vi: `Mục tiêu trúng đòn với tối đa ${lastJudgementMaxStacks} cộng dồn Thiên Phạt chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm của Thiên Phán (tổng ${lastJudgementTotalMaxHealthDamage}%).`,
+            id: `Target yang terkena dengan stack maksimal ${lastJudgementMaxStacks} Heavens Fall menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang Divine Reckoning (total ${lastJudgementTotalMaxHealthDamage}%).`,
+            kr: `최대 ${lastJudgementMaxStacks}중첩의 천벌로 명중한 대상은 신성한 심판의 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%).`,
           },
         },
       }
