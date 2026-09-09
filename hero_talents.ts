@@ -1471,6 +1471,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100 * lastJudgementMaxStacks,
         1
       )
+      const divineReckoningHeal = fixed(PatroklosAbilityData.DIVINE_RECKONING_HEAL_MOD * 100, 0)
+      const lastJudgementHeal = fixed(PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_HEAL_MOD * 100, 0)
 
       return {
         tier1_left: {
@@ -1561,15 +1563,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `최후의 심판`,
           },
           description: {
-            en: `Targets hit with the maximum ${lastJudgementMaxStacks} stacks of Heavens Fall take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword of Divine Reckoning</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total).`,
-            ru: `Цели, поражённые с максимальными ${lastJudgementMaxStacks} зарядами Падения Небес, получают от каждого меча Divine Reckoning ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%).`,
-            cz: `Cíle zasažené s maximálními ${lastJudgementMaxStacks} stacky Pádu nebes utrpí od každého meče Divine Reckoning ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%).`,
-            br: `Alvos atingidos com o máximo de ${lastJudgementMaxStacks} acúmulos de Queda dos Céus sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada de Divine Reckoning (${lastJudgementTotalMaxHealthDamage}% no total).`,
-            zh: `擁有最大 ${lastJudgementMaxStacks} 層天罰的目標，每把神聖清算的劍都會對其造成<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。`,
-            fr: `Les cibles touchées avec le maximum de ${lastJudgementMaxStacks} cumuls de Chute des Cieux subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée de Jugement Divin (${lastJudgementTotalMaxHealthDamage}% au total).`,
-            vi: `Mục tiêu trúng đòn với tối đa ${lastJudgementMaxStacks} cộng dồn Thiên Phạt chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm của Thiên Phán (tổng ${lastJudgementTotalMaxHealthDamage}%).`,
-            id: `Target yang terkena dengan stack maksimal ${lastJudgementMaxStacks} Heavens Fall menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang Divine Reckoning (total ${lastJudgementTotalMaxHealthDamage}%).`,
-            kr: `최대 ${lastJudgementMaxStacks}중첩의 천벌로 명중한 대상은 신성한 심판의 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%).`,
+            en: `Targets hit with the maximum ${lastJudgementMaxStacks} stacks of Heavens Fall take <c:pure>${lastJudgementMaxHealthDamage}% of their max health as bonus pure damage from every sword of Divine Reckoning</c:pure> (${lastJudgementTotalMaxHealthDamage}% in total). Divine Reckoning also <c:heal>heals for ${lastJudgementHeal}% of the damage dealt</c:heal> instead of ${divineReckoningHeal}%.`,
+            ru: `Цели, поражённые с максимальными ${lastJudgementMaxStacks} зарядами Падения Небес, получают от каждого меча Divine Reckoning ${lastJudgementMaxHealthDamage}% от максимального здоровья дополнительным <c:pure>чистым уроном</c:pure> (всего ${lastJudgementTotalMaxHealthDamage}%). Divine Reckoning также <c:heal>исцеляет на ${lastJudgementHeal}% от нанесённого урона</c:heal> вместо ${divineReckoningHeal}%.`,
+            cz: `Cíle zasažené s maximálními ${lastJudgementMaxStacks} stacky Pádu nebes utrpí od každého meče Divine Reckoning ${lastJudgementMaxHealthDamage}% svého maximálního zdraví jako bonusové <c:pure>čisté poškození</c:pure> (celkem ${lastJudgementTotalMaxHealthDamage}%). Divine Reckoning navíc <c:heal>léčí za ${lastJudgementHeal}% způsobeného poškození</c:heal> místo ${divineReckoningHeal}%.`,
+            br: `Alvos atingidos com o máximo de ${lastJudgementMaxStacks} acúmulos de Queda dos Céus sofrem <c:pure>${lastJudgementMaxHealthDamage}% de sua vida máxima como dano puro</c:pure> adicional de cada espada de Divine Reckoning (${lastJudgementTotalMaxHealthDamage}% no total). Divine Reckoning também <c:heal>cura ${lastJudgementHeal}% do dano causado</c:heal> em vez de ${divineReckoningHeal}%.`,
+            zh: `擁有最大 ${lastJudgementMaxStacks} 層天罰的目標，每把神聖清算的劍都會對其造成<c:pure>其最大生命值 ${lastJudgementMaxHealthDamage}% 的額外真實傷害</c:pure>（總計 ${lastJudgementTotalMaxHealthDamage}%）。神聖清算的<c:heal>治療量提升為所造成傷害的 ${lastJudgementHeal}%</c:heal>，而非 ${divineReckoningHeal}%。`,
+            fr: `Les cibles touchées avec le maximum de ${lastJudgementMaxStacks} cumuls de Chute des Cieux subissent <c:pure>${lastJudgementMaxHealthDamage}% de leur santé maximale en dégâts purs</c:pure> bonus par épée de Jugement Divin (${lastJudgementTotalMaxHealthDamage}% au total). Jugement Divin <c:heal>soigne aussi de ${lastJudgementHeal}% des dégâts infligés</c:heal> au lieu de ${divineReckoningHeal}%.`,
+            vi: `Mục tiêu trúng đòn với tối đa ${lastJudgementMaxStacks} cộng dồn Thiên Phạt chịu thêm <c:pure>${lastJudgementMaxHealthDamage}% máu tối đa dưới dạng sát thương thuần túy</c:pure> từ mỗi thanh kiếm của Thiên Phán (tổng ${lastJudgementTotalMaxHealthDamage}%). Thiên Phán còn <c:heal>hồi máu bằng ${lastJudgementHeal}% sát thương gây ra</c:heal> thay vì ${divineReckoningHeal}%.`,
+            id: `Target yang terkena dengan stack maksimal ${lastJudgementMaxStacks} Heavens Fall menerima <c:pure>${lastJudgementMaxHealthDamage}% dari HP maksimalnya sebagai bonus pure damage</c:pure> dari setiap pedang Divine Reckoning (total ${lastJudgementTotalMaxHealthDamage}%). Divine Reckoning juga <c:heal>menyembuhkan ${lastJudgementHeal}% dari kerusakan yang diberikan</c:heal> alih-alih ${divineReckoningHeal}%.`,
+            kr: `최대 ${lastJudgementMaxStacks}중첩의 천벌로 명중한 대상은 신성한 심판의 검마다 최대 체력의 <c:pure>${lastJudgementMaxHealthDamage}%만큼 추가 고정 피해</c:pure>를 받습니다(총 ${lastJudgementTotalMaxHealthDamage}%). 또한 신성한 심판은 입힌 피해의 <c:heal>${divineReckoningHeal}%가 아닌 ${lastJudgementHeal}%만큼 치유</c:heal>합니다.`,
           },
         },
       }
