@@ -888,17 +888,17 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Vampiric_Rod: {
-      const leechValue = ItemAbilityData.VAMPIRIC_ROD_LEECH_BASE
-      const leechMod = fixed(ItemAbilityData.VAMPIRIC_ROD_MODIFIER * 100, 1)
+    case ItemList.Vampiric_Staff: {
+      const leechValue = ItemAbilityData.VAMPIRIC_STAFF_LEECH_BASE
+      const leechMod = fixed(ItemAbilityData.VAMPIRIC_STAFF_MODIFIER * 100, 1)
 
       return {
         name: {
-          en: 'Vampiric Rod',
-          ru: 'Вампирический жезл',
+          en: 'Vampiric Staff',
+          ru: 'Вампирический посох',
           br: 'Cajado Vampírico',
-          fr: 'Baguette vampirique',
-          zh: '吸血鬼法棒',
+          fr: 'Bâton vampirique',
+          zh: '吸血鬼法棍',
           cz: 'Vampýří hůl',
           vi: 'Gộc Hút Máu',
           id: 'Tongkat Vampir',
@@ -1412,21 +1412,21 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Sorcerers_Band: {
-      const executionThreshold = fixed(ItemAbilityData.SORCERERS_BAND_EXECUTE_THRESHOLD * 100, 0)
-      const killAbilityHaste = ItemAbilityData.SORCERERS_BAND_KILL_ABILITY_HASTE
+    case ItemList.Void_Band: {
+      const executionThreshold = fixed(ItemAbilityData.VOID_BAND_EXECUTE_THRESHOLD * 100, 0)
+      const killAbilityHaste = ItemAbilityData.VOID_BAND_KILL_ABILITY_HASTE
 
       return {
         name: {
-          en: "Sorcerer's Band",
-          ru: 'Перстень чародея',
-          br: 'Faixa do Feiticeiro',
-          fr: 'Bande du sorcier',
-          zh: '術士指環',
-          cz: 'Kouzelníkův prsten',
-          vi: 'Nhẫn Pháp Sư',
-          id: 'Cincin Penyihir',
-          kr: `마법사의 반지`,
+          en: 'Void Band',
+          ru: 'Перстень пустоты',
+          br: 'Faixa do Vazio',
+          fr: 'Bande du néant',
+          zh: '虛空指環',
+          cz: 'Prsten prázdnoty',
+          vi: 'Nhẫn Hư Vô',
+          id: 'Cincin Kehampaan',
+          kr: `공허의 반지`,
         },
         descPassive: {
           en: `Dealing <c:magical>magical damage</c:magical> instantly executes enemies below <c:health>${executionThreshold}% Health</c:health>.`,
@@ -2369,20 +2369,20 @@ const _getLocaleItemDescription = (
       }
     }
 
-    case ItemList.Kirins_Shield: {
-      const healthThreshold = fixed(ItemAbilityData.KIRINS_SHIELD_HEALTH_THRESHOLD * 100, 0)
+    case ItemList.Titans_Shield: {
+      const healthThreshold = fixed(ItemAbilityData.TITANS_SHIELD_HEALTH_THRESHOLD * 100, 0)
 
       return {
         name: {
-          en: "Kirin's Shield",
-          ru: 'Щит Кирина',
-          br: 'Escudo de Kirin',
-          cz: 'Kirinův štít',
-          zh: '麒麟之盾',
-          fr: 'Bouclier de Kirin',
-          vi: 'Khiên của Kirin',
-          id: 'Perisai Kirin',
-          kr: `기린의 방패`,
+          en: "Titan's Shield",
+          ru: 'Щит титана',
+          br: 'Escudo do Titan',
+          cz: 'Titánův štít',
+          zh: '泰坦之盾',
+          fr: 'Bouclier du titan',
+          vi: 'Khiên của Khổng Lồ',
+          id: 'Perisai Titan',
+          kr: `타이탄의 방패`,
         },
         descPassive: {
           en: `Damage from an enemy hero that would reduce your <c:health>Health below ${healthThreshold}%</c:health> is negated. You <c:dispel>remove all negative effects</c:dispel> and become <c:immune>immune to all damage</c:immune>, but are unable to attack or cast abilities during the immunity.`,
