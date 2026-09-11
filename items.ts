@@ -64,7 +64,7 @@ const _getLocaleItemDescription = (
           kr: `초보자의 지팡이`,
         },
       }
-    case ItemList.Iron_Ring:
+    case ItemList.Wooden_Ring:
       return {
         name: {
           en: 'Wooden Ring',
@@ -304,7 +304,7 @@ const _getLocaleItemDescription = (
           kr: `시간의 반지`,
         },
       }
-    case ItemList.apprentice_armor:
+    case ItemList.Apprentice_Armor:
       return {
         name: {
           en: 'Apprentice Armor',
@@ -332,7 +332,7 @@ const _getLocaleItemDescription = (
           kr: `강철 전사의 갑옷`,
         },
       }
-    case ItemList.Iron_Pendant:
+    case ItemList.Charming_Pendant:
       return {
         name: {
           en: 'Charming Pendant',
@@ -709,11 +709,11 @@ const _getLocaleItemDescription = (
       }
     }
     /** Wooden Bow */
-    case ItemList.Berserker_Bow: {
-      const attackSpeed = Math.floor(ItemAbilityData.BERSERKER_BOW_BONUS_ATTACK_SPEED * 100)
-      const maxStacks = ItemAbilityData.BERSERKER_BOW_MAXIMUM_STACKS
+    case ItemList.Berserkers_Bow: {
+      const attackSpeed = Math.floor(ItemAbilityData.BERSERKERS_BOW_BONUS_ATTACK_SPEED * 100)
+      const maxStacks = ItemAbilityData.BERSERKERS_BOW_MAXIMUM_STACKS
       const maxAttackSpeed = fixed(attackSpeed * maxStacks, 0)
-      const maxStacksLifesteal = Math.floor(ItemAbilityData.BERSERKER_BOW_MAX_STACKS_LIFESTEAL * 100)
+      const maxStacksLifesteal = Math.floor(ItemAbilityData.BERSERKERS_BOW_MAX_STACKS_LIFESTEAL * 100)
 
       return {
         name: {
@@ -834,7 +834,7 @@ const _getLocaleItemDescription = (
       }
     }
     case ItemList.Hunters_Longbow: {
-      const moveSpeed = fixed(ItemAbilityData.HUNTERS_BOW_MOVE_SPEED_BONUS * 100, 1)
+      const moveSpeed = fixed(ItemAbilityData.HUNTERS_LONGBOW_MOVE_SPEED_BONUS * 100, 1)
       return {
         name: {
           en: "Hunter's Longbow",
@@ -917,8 +917,8 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Kirin_Staff: {
-      const resistanceReduction = fixed(ItemAbilityData.KIRIN_STAFF_MAGIC_RESISTANCE_REDUCTION * 100, 1)
+    case ItemList.Kirins_Staff: {
+      const resistanceReduction = fixed(ItemAbilityData.KIRINS_STAFF_MAGIC_RESISTANCE_REDUCTION * 100, 1)
       return {
         name: {
           en: "Kirin's Staff",
@@ -1041,8 +1041,8 @@ const _getLocaleItemDescription = (
       }
     }
     case ItemList.Magic_Harpoon: {
-      const movementSpeedSlow = fixed(ItemAbilityData.MAGICAL_HARPOON_SLOW * 100, 1)
-      const attackSpeedSlow = fixed(ItemAbilityData.MAGICAL_HARPOON_ATTACK_SPEED * 100, 1)
+      const movementSpeedSlow = fixed(ItemAbilityData.MAGIC_HARPOON_SLOW * 100, 1)
+      const attackSpeedSlow = fixed(ItemAbilityData.MAGIC_HARPOON_ATTACK_SPEED * 100, 1)
 
       return {
         name: {
@@ -1087,7 +1087,7 @@ const _getLocaleItemDescription = (
         },
       }
     }
-    case ItemList.Orchid_of_Malevolence: {
+    case ItemList.Orchid_Of_Malevolence: {
       const damagePerc = fixed(ItemAbilityData.ORCHID_OF_MALEVOLENCE_DAMAGE_PERC * 100, 1)
 
       return {
@@ -1134,7 +1134,7 @@ const _getLocaleItemDescription = (
         descPassive: { en: getIronRodDescription() },
       }
     }
-    case ItemList.Divine_Staff_T2: {
+    case ItemList.Divine_Staff: {
       const heal = ItemAbilityData.DIVINE_STAFF_HEAL_T2
       const speed = fixed(ItemAbilityData.DIVINE_STAFF_BONUS_SPEED * 100, 1)
 
@@ -1852,45 +1852,45 @@ const _getLocaleItemDescription = (
         descActive: {
           en:
             `Become <c:immune>immune to all damage</c:immune> and <c:dispel>cleanse all negative effects</c:dispel>.\n\n` +
-            `<c:heal>Gain +${ItemAbilityData.TITAN_ARMOR_REGENERATION} Health Regeneration</c:heal>.\n\n` +
+            `<c:heal>Gain +${ItemAbilityData.TITANS_ARMOR_REGENERATION} Health Regeneration</c:heal>.\n\n` +
             `Cannot move or use Abilities, Attacks, or Items during the effect.`,
           ru:
             `Становитесь <c:immune>неуязвимы</c:immune> и <c:dispel>снимаете все негативные эффекты</c:dispel>.\n\n` +
-            `<c:heal>Получаете +${ItemAbilityData.TITAN_ARMOR_REGENERATION} регенерации здоровья</c:heal>.\n\n` +
+            `<c:heal>Получаете +${ItemAbilityData.TITANS_ARMOR_REGENERATION} регенерации здоровья</c:heal>.\n\n` +
             `Не можете двигаться или использовать способности, атаки и предметы во время действия.`,
 
           br:
             `Torna-se <c:immune>imune a todo dano</c:immune> e <c:dispel>remove todos os efeitos negativos</c:dispel>.\n\n` +
-            `<c:heal>Ganha +${ItemAbilityData.TITAN_ARMOR_REGENERATION} de Regeneração de Vida</c:heal>.\n\n` +
+            `<c:heal>Ganha +${ItemAbilityData.TITANS_ARMOR_REGENERATION} de Regeneração de Vida</c:heal>.\n\n` +
             `Não pode se mover ou usar Habilidades, Ataques ou Itens durante o efeito.`,
 
           fr:
             `Devient <c:immune>immunisé à tous les dégâts</c:immune> et <c:dispel>supprime tous les effets négatifs</c:dispel>.\n\n` +
-            `<c:heal>Gagne +${ItemAbilityData.TITAN_ARMOR_REGENERATION} de régénération de santé</c:heal>.\n\n` +
+            `<c:heal>Gagne +${ItemAbilityData.TITANS_ARMOR_REGENERATION} de régénération de santé</c:heal>.\n\n` +
             `Ne peut pas bouger ni utiliser des capacités, attaques ou objets pendant l'effet.`,
 
           zh:
             `<c:immune>免疫所有傷害</c:immune>並<c:dispel>移除所有負面效果</c:dispel>。\n\n` +
-            `<c:heal>獲得 +${ItemAbilityData.TITAN_ARMOR_REGENERATION} 生命恢復</c:heal>。\n\n` +
+            `<c:heal>獲得 +${ItemAbilityData.TITANS_ARMOR_REGENERATION} 生命恢復</c:heal>。\n\n` +
             `效果期間無法移動或使用技能、攻擊或道具。`,
 
           cz:
             `Staneš se <c:immune>imunní vůči veškerému poškození</c:immune> a <c:dispel>odstraníš všechny negativní efekty</c:dispel>.\n\n` +
-            `<c:heal>Získáš +${ItemAbilityData.TITAN_ARMOR_REGENERATION} regenerace zdraví</c:heal>.\n\n` +
+            `<c:heal>Získáš +${ItemAbilityData.TITANS_ARMOR_REGENERATION} regenerace zdraví</c:heal>.\n\n` +
             `Během efektu se nemůžeš pohybovat ani používat schopnosti, útoky ani předměty.`,
 
           vi:
             `<c:immune>Miễn nhiễm mọi sát thương</c:immune> và <c:dispel>loại bỏ tất cả hiệu ứng xấu</c:dispel>.\n\n` +
-            `<c:heal>Nhận +${ItemAbilityData.TITAN_ARMOR_REGENERATION} Hồi Máu</c:heal>.\n\n` +
+            `<c:heal>Nhận +${ItemAbilityData.TITANS_ARMOR_REGENERATION} Hồi Máu</c:heal>.\n\n` +
             `Không thể di chuyển hoặc sử dụng Kỹ năng, Đòn đánh hay Trang bị trong thời gian hiệu lực.`,
 
           id:
             `Menjadi <c:immune>kebal terhadap semua kerusakan</c:immune> dan <c:dispel>menghapus semua efek negatif</c:dispel>.\n\n` +
-            `<c:heal>Mendapatkan +${ItemAbilityData.TITAN_ARMOR_REGENERATION} Regenerasi Health</c:heal>.\n\n` +
+            `<c:heal>Mendapatkan +${ItemAbilityData.TITANS_ARMOR_REGENERATION} Regenerasi Health</c:heal>.\n\n` +
             `Tidak dapat bergerak atau menggunakan Kemampuan, Serangan, atau Item selama efek.`,
           kr:
             `<c:immune>모든 피해에 면역</c:immune>이 되고 <c:dispel>모든 부정적 효과를 정화</c:dispel>합니다.\n\n` +
-            `<c:heal>체력 재생 +${ItemAbilityData.TITAN_ARMOR_REGENERATION}</c:heal>을 얻습니다.\n\n` +
+            `<c:heal>체력 재생 +${ItemAbilityData.TITANS_ARMOR_REGENERATION}</c:heal>을 얻습니다.\n\n` +
             `효과 지속 중에는 이동하거나 스킬, 공격, 아이템을 사용할 수 없습니다.`,
         },
       }
@@ -2552,15 +2552,15 @@ const getFrigidCurseDescription = () => {
 
 const getObserverWardDescription = () => {
   const text: { [key: string]: string } = {
-    en: `Places an Observer Ward. <c:vision>Grants vision</c:vision> and reveals invisible units. Invisible to enemies. Destroyed if revealed.`,
-    ru: `Устанавливает Наблюдательный тотем. <c:vision>Даёт обзор</c:vision> и раскрывает невидимые цели. Невидим для врагов. Уничтожается при обнаружении.`,
-    br: `Coloca um Observer Ward. <c:vision>Concede visão</c:vision> e revela unidades invisíveis. Invisível para inimigos. É destruído ao ser revelado.`,
-    zh: `放置一個偵查守衛。提供<c:vision>視野</c:vision>並揭露隱形單位。對敵人隱形，被發現後會被摧毀。`,
-    cz: `Umístí pozorovací totem. <c:vision>Poskytuje vidění</c:vision> a odhaluje neviditelné jednotky. Je neviditelný pro nepřátele. Je zničen při odhalení.`,
-    fr: `Place une Ward d'observation. Accorde de la <c:vision>vision</c:vision> et révèle les unités invisibles. Invisible pour les ennemis. Détruite si révélée.`,
-    vi: `Đặt một Mắt Quan Sát. <c:vision>Cung cấp tầm nhìn</c:vision> và phát hiện đơn vị tàng hình. Vô hình với kẻ địch. Bị phá hủy khi bị phát hiện.`,
-    id: `Menempatkan Observer Ward. Memberikan visi dan mengungkap unit tak terlihat. Tidak terlihat oleh musuh. Dihancurkan jika terungkap.`,
-    kr: `감시 와드를 설치합니다. <c:vision>시야</c:vision>를 제공하고 보이지 않는 유닛을 드러냅니다. 적에게는 보이지 않습니다. 발각되면 파괴됩니다.`,
+    en: `Places an Observer Ward. <c:vision>Grants vision</c:vision> and <c:vision>reveals invisible units</c:vision>. Invisible to enemies. Destroyed if revealed.`,
+    ru: `Устанавливает Наблюдательный тотем. <c:vision>Даёт обзор</c:vision> и <c:vision>раскрывает невидимые цели</c:vision>. Невидим для врагов. Уничтожается при обнаружении.`,
+    br: `Coloca um Observer Ward. <c:vision>Concede visão</c:vision> e <c:vision>revela unidades invisíveis</c:vision>. Invisível para inimigos. É destruído ao ser revelado.`,
+    zh: `放置一個偵查守衛。提供<c:vision>視野</c:vision>並<c:vision>揭露隱形單位</c:vision>。對敵人隱形，被發現後會被摧毀。`,
+    cz: `Umístí pozorovací totem. <c:vision>Poskytuje vidění</c:vision> a <c:vision>odhaluje neviditelné jednotky</c:vision>. Je neviditelný pro nepřátele. Je zničen při odhalení.`,
+    fr: `Place une Ward d'observation. Accorde de la <c:vision>vision</c:vision> et <c:vision>révèle les unités invisibles</c:vision>. Invisible pour les ennemis. Détruite si révélée.`,
+    vi: `Đặt một Mắt Quan Sát. <c:vision>Cung cấp tầm nhìn</c:vision> và <c:vision>phát hiện đơn vị tàng hình</c:vision>. Vô hình với kẻ địch. Bị phá hủy khi bị phát hiện.`,
+    id: `Menempatkan Observer Ward. <c:vision>Memberikan visi</c:vision> dan <c:vision>mengungkap unit tak terlihat</c:vision>. Tidak terlihat oleh musuh. Dihancurkan jika terungkap.`,
+    kr: `감시 와드를 설치합니다. <c:vision>시야</c:vision>를 제공하고 <c:vision>보이지 않는 유닛을 드러냅니다</c:vision>. 적에게는 보이지 않습니다. 발각되면 파괴됩니다.`,
   }
 
   return text[LANG.value] ? text[LANG.value] : text['en']
