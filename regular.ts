@@ -7932,5 +7932,27 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: `Selalu Aktif`,
     kr: `항상 활성`,
   },
+  [LOCALE.WEBGL_UNSUPPORTED_TITLE]: {
+    en: `WebGL Not Supported`,
+    ru: `WebGL не поддерживается`,
+    br: `WebGL Não Suportado`,
+    fr: `WebGL non pris en charge`,
+    zh: `不支援 WebGL`,
+    cz: `WebGL není podporováno`,
+    vi: `Không hỗ trợ WebGL`,
+    id: `WebGL Tidak Didukung`,
+    kr: `WebGL 미지원`,
+  },
+  [LOCALE.WEBGL_UNSUPPORTED_MESSAGE]: {
+    en: `Your browser does not support WebGL. Please use a different browser to play.`,
+    ru: `Ваш браузер не поддерживает WebGL. Пожалуйста, используйте другой браузер для игры.`,
+    br: `Seu navegador não suporta WebGL. Use outro navegador para jogar.`,
+    fr: `Votre navigateur ne prend pas en charge WebGL. Veuillez utiliser un autre navigateur pour jouer.`,
+    zh: `你的瀏覽器不支援 WebGL，請改用其他瀏覽器遊玩。`,
+    cz: `Váš prohlížeč nepodporuje WebGL. Pro hraní prosím použijte jiný prohlížeč.`,
+    vi: `Trình duyệt của bạn không hỗ trợ WebGL. Vui lòng dùng trình duyệt khác để chơi.`,
+    id: `Peramban Anda tidak mendukung WebGL. Silakan gunakan peramban lain untuk bermain.`,
+    kr: `사용 중인 브라우저는 WebGL을 지원하지 않습니다. 다른 브라우저로 플레이해 주세요.`,
+  },
 }
 export default locale_data
