@@ -1387,9 +1387,7 @@ const _getSpellDescriptionLang = (
 
     case SpellList.PUPPETEER_PUPPET_DASH: {
       const baseDamage = getDamage(PuppeteerAbilityData.PUPPET_DASH_DAMAGE_MOD * damage)
-      const slowValue = getMovementSpeedValue(
-        `${fixed(PuppeteerAbilityData.PUPPET_DASH_SLOW_VALUE * 100, 1)}%`
-      )
+      const slowValue = getMovementSpeedValue(`${fixed(PuppeteerAbilityData.PUPPET_DASH_SLOW_VALUE * 100, 1)}%`)
       const slowDuration = getMovementSpeedDuration(PuppeteerAbilityData.PUPPET_DASH_SLOW_DURATION)
       const fixateDuration = getDuration(PuppeteerAbilityData.PUPPET_DASH_FIXATE_DURATION)
 

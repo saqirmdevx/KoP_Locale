@@ -985,6 +985,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Sát thương nhận vào',
     kr: `받은 피해량`,
   },
+  [LOCALE.POST_DAMAGE_ABSORBED]: {
+    en: 'Damage Absorbed',
+    ru: 'Поглощённый урон',
+    br: 'Dano Absorvido',
+    cz: 'Pohlcené poškození',
+    zh: '吸收傷害',
+    fr: 'Dégâts absorbés',
+    id: 'Damage Diserap',
+    vi: 'Sát thương hấp thụ',
+    kr: `흡수한 피해량`,
+  },
   [LOCALE.POST_TOWER_DAMAGE]: {
     en: 'Tower Damage',
     ru: 'Урон по башне',
