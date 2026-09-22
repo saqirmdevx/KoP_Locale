@@ -249,18 +249,18 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         Shared.DamageTypes.MAGICAL,
         KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const charmDuration = getControlDuration(KumihuAbilityData.ENH_CHARM_DURATION)
+      const charmDuration = getControlDuration(KumihuAbilityData.ENH_CHARM_DURATION, 'Charm')
 
       return {
-        en: `After using Arcane <c:dash>Dash</c:dash>, Kumihu's next Basic Attack deals a bonus ${enhancedDamage} and applies <c:control>Charm</c:control> on target for ${charmDuration}.`,
-        ru: `После использования Тайного <c:dash>рывка</c:dash> следующая базовая атака Кумиху нанесёт дополнительно ${enhancedDamage} и наложит <c:control>очарование</c:control> на цель на ${charmDuration}.`,
-        cz: `Po použití Tajemného <c:dash>skoku</c:dash> způsobí další základní útok Kumihu bonusových ${enhancedDamage} a <c:control>očaruje</c:control> cíl na ${charmDuration}.`,
-        zh: `使用奧術<c:dash>衝刺</c:dash>後，庫咪戶的下一次基本攻擊額外造成 ${enhancedDamage}，並對目標施加<c:control>魅惑</c:control> ${charmDuration}。`,
-        fr: `Après avoir utilisé la Ruée arcanique, la prochaine attaque de base de Kumihu inflige un bonus de ${enhancedDamage} et applique <c:control>Charme</c:control> à la cible pendant ${charmDuration}.`,
-        br: `Após usar o <c:dash>Avanço</c:dash> Arcano, o próximo ataque básico de Kumihu causa um bônus de ${enhancedDamage} e aplica <c:control>Encanto</c:control> no alvo por ${charmDuration}.`,
-        vi: `Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enhancedDamage} và áp dụng <c:control>Quyến Rũ</c:control> lên mục tiêu trong ${charmDuration}.`,
-        id: `Setelah menggunakan Arcane <c:dash>Dash</c:dash>, Serangan Dasar berikutnya Kumihu memberikan bonus ${enhancedDamage} dan menerapkan <c:control>Charm</c:control> pada target selama ${charmDuration}.`,
-        kr: `비전 <c:dash>돌진</c:dash>을 사용한 후 쿠미후의 다음 기본 공격은 추가로 ${enhancedDamage}의 피해를 입히고 대상에게 ${charmDuration} 동안 <c:control>매혹</c:control>을 적용합니다.`,
+        en: `After using Arcane <c:dash>Dash</c:dash>, Kumihu's next Basic Attack deals a bonus ${enhancedDamage} and applies <c:charm>Charm</c:charm> on target for ${charmDuration}.`,
+        ru: `После использования Тайного <c:dash>рывка</c:dash> следующая базовая атака Кумиху нанесёт дополнительно ${enhancedDamage} и наложит <c:charm>очарование</c:charm> на цель на ${charmDuration}.`,
+        cz: `Po použití Tajemného <c:dash>skoku</c:dash> způsobí další základní útok Kumihu bonusových ${enhancedDamage} a <c:charm>očaruje</c:charm> cíl na ${charmDuration}.`,
+        zh: `使用奧術<c:dash>衝刺</c:dash>後，庫咪戶的下一次基本攻擊額外造成 ${enhancedDamage}，並對目標施加<c:charm>魅惑</c:charm> ${charmDuration}。`,
+        fr: `Après avoir utilisé la Ruée arcanique, la prochaine attaque de base de Kumihu inflige un bonus de ${enhancedDamage} et applique <c:charm>Charme</c:charm> à la cible pendant ${charmDuration}.`,
+        br: `Após usar o <c:dash>Avanço</c:dash> Arcano, o próximo ataque básico de Kumihu causa um bônus de ${enhancedDamage} e aplica <c:charm>Encanto</c:charm> no alvo por ${charmDuration}.`,
+        vi: `Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enhancedDamage} và áp dụng <c:charm>Quyến Rũ</c:charm> lên mục tiêu trong ${charmDuration}.`,
+        id: `Setelah menggunakan Arcane <c:dash>Dash</c:dash>, Serangan Dasar berikutnya Kumihu memberikan bonus ${enhancedDamage} dan menerapkan <c:charm>Charm</c:charm> pada target selama ${charmDuration}.`,
+        kr: `비전 <c:dash>돌진</c:dash>을 사용한 후 쿠미후의 다음 기본 공격은 추가로 ${enhancedDamage}의 피해를 입히고 대상에게 ${charmDuration} 동안 <c:charm>매혹</c:charm>을 적용합니다.`,
       }
     }
 
@@ -269,7 +269,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
             ? SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION
-            : 0)
+            : 0),
+        'Knock Up'
       )
       const damageModifier =
         SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER +
@@ -281,15 +282,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       )
 
       return {
-        en: `Using an ability charges Sparrow's sword. Her next basic attack is replaced with a shockwave attack, <c:stun>knocking up</c:stun> enemies for ${knockUpDuration} and dealing ${enhancedDamage}.`,
-        ru: `Использование способности зачаровывает меч Спарроу. Её следующая базовая атака заменяется ударной волной, которая <c:stun>подбрасывает</c:stun> врагов на ${knockUpDuration} и наносит ${enhancedDamage}.`,
-        cz: `Použití schopnosti nabije meč Sparrow. Její další základní útok je nahrazen tlakovou vlnou, která <c:stun>vyhodí</c:stun> nepřátele do vzduchu na ${knockUpDuration} a způsobí ${enhancedDamage}.`,
-        zh: `使用技能會為史佩羅的劍充能。她的下一次基本攻擊將變為衝擊波攻擊，<c:stun>擊飛</c:stun>敵人 ${knockUpDuration}，並造成 ${enhancedDamage}。`,
-        fr: `L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une onde de choc qui <c:stun>projette les ennemis en l'air</c:stun> pendant ${knockUpDuration} et inflige ${enhancedDamage}.`,
-        br: `Usar uma habilidade carrega a espada de Sparrow. Seu próximo ataque básico é substituído por uma onda de choque que <c:stun>arremessa</c:stun> os inimigos para o ar por ${knockUpDuration} e causa ${enhancedDamage}.`,
-        vi: `Sử dụng một kỹ năng sẽ tích năng lượng cho kiếm của Sparrow. Đòn đánh thường tiếp theo của cô được thay thế bằng sóng kiếm, <c:stun>hất tung</c:stun> kẻ địch trong ${knockUpDuration} và gây ${enhancedDamage}.`,
-        id: `Menggunakan kemampuan mengisi pedang Sparrow. Serangan dasar berikutnya digantikan dengan serangan gelombang kejut yang <c:stun>melontarkan</c:stun> musuh ke udara selama ${knockUpDuration} dan memberikan ${enhancedDamage}.`,
-        kr: `스킬을 사용하면 스패로우의 검에 기운이 충전됩니다. 다음 기본 공격이 충격파 공격으로 대체되어 적을 ${knockUpDuration} 동안 <c:stun>공중으로 띄워 올리고</c:stun> ${enhancedDamage}의 피해를 입힙니다.`,
+        en: `Using an ability charges Sparrow's sword. Her next basic attack is replaced with a shockwave attack, <c:knockup>knocking up</c:knockup> enemies for ${knockUpDuration} and dealing ${enhancedDamage}.`,
+        ru: `Использование способности зачаровывает меч Спарроу. Её следующая базовая атака заменяется ударной волной, которая <c:knockup>подбрасывает</c:knockup> врагов на ${knockUpDuration} и наносит ${enhancedDamage}.`,
+        cz: `Použití schopnosti nabije meč Sparrow. Její další základní útok je nahrazen tlakovou vlnou, která <c:knockup>vyhodí</c:knockup> nepřátele do vzduchu na ${knockUpDuration} a způsobí ${enhancedDamage}.`,
+        zh: `使用技能會為史佩羅的劍充能。她的下一次基本攻擊將變為衝擊波攻擊，<c:knockup>擊飛</c:knockup>敵人 ${knockUpDuration}，並造成 ${enhancedDamage}。`,
+        fr: `L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une onde de choc qui <c:knockup>projette les ennemis en l'air</c:knockup> pendant ${knockUpDuration} et inflige ${enhancedDamage}.`,
+        br: `Usar uma habilidade carrega a espada de Sparrow. Seu próximo ataque básico é substituído por uma onda de choque que <c:knockup>arremessa</c:knockup> os inimigos para o ar por ${knockUpDuration} e causa ${enhancedDamage}.`,
+        vi: `Sử dụng một kỹ năng sẽ tích năng lượng cho kiếm của Sparrow. Đòn đánh thường tiếp theo của cô được thay thế bằng sóng kiếm, <c:knockup>hất tung</c:knockup> kẻ địch trong ${knockUpDuration} và gây ${enhancedDamage}.`,
+        id: `Menggunakan kemampuan mengisi pedang Sparrow. Serangan dasar berikutnya digantikan dengan serangan gelombang kejut yang <c:knockup>melontarkan</c:knockup> musuh ke udara selama ${knockUpDuration} dan memberikan ${enhancedDamage}.`,
+        kr: `스킬을 사용하면 스패로우의 검에 기운이 충전됩니다. 다음 기본 공격이 충격파 공격으로 대체되어 적을 ${knockUpDuration} 동안 <c:knockup>공중으로 띄워 올리고</c:knockup> ${enhancedDamage}의 피해를 입힙니다.`,
       }
     }
 
@@ -343,15 +344,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       const armorReduction = colorize(ThomasAbilityData.BLEED_ARMOR_REDUCTION)
 
       return {
-        en: `Landing ${bleedAttackCount} basic attacks on the same enemy hero causes them to bleed, dealing ${bleedDamage} over ${bleedDuration} and <c:physical>reducing their Armor by ${armorReduction}</c:physical> for the duration.`,
-        ru: `Попадание ${bleedAttackCount} базовыми атаками по одному вражескому герою вызывает у него кровотечение, наносящее ${bleedDamage} в течение ${bleedDuration} и <c:physical>снижающее его броню на ${armorReduction}</c:physical> на это время.`,
-        cz: `Zasažení stejného nepřátelského hrdiny ${bleedAttackCount} základními útoky způsobí krvácení, které udělí ${bleedDamage} po dobu ${bleedDuration} a <c:physical>sníží jeho obranu o ${armorReduction}</c:physical> po dobu trvání.`,
-        zh: `對同一敵方英雄命中 ${bleedAttackCount} 次基本攻擊會使其流血，在 ${bleedDuration} 內造成 ${bleedDamage}，並在持續期間<c:physical>減少其 ${armorReduction} 護甲</c:physical>。`,
-        fr: `Toucher le même héros ennemi avec ${bleedAttackCount} attaques de base le fait saigner, infligeant ${bleedDamage} sur ${bleedDuration} et <c:physical>réduisant son armure de ${armorReduction}</c:physical> pendant la durée.`,
-        br: `Acertar ${bleedAttackCount} ataques básicos no mesmo herói inimigo faz com que ele sangre, causando ${bleedDamage} ao longo de ${bleedDuration} e <c:physical>reduzindo sua Armadura em ${armorReduction}</c:physical> durante esse período.`,
-        vi: `Trúng ${bleedAttackCount} đòn đánh thường lên cùng một tướng địch khiến mục tiêu chảy máu, gây ${bleedDamage} trong ${bleedDuration} và <c:physical>giảm ${armorReduction} Giáp</c:physical> của mục tiêu trong thời gian đó.`,
-        id: `Mengenai hero musuh yang sama dengan ${bleedAttackCount} serangan dasar membuatnya berdarah, memberikan ${bleedDamage} selama ${bleedDuration} dan <c:physical>mengurangi Armor-nya sebesar ${armorReduction}</c:physical> selama durasi tersebut.`,
-        kr: `같은 적 영웅에게 기본 공격을 ${bleedAttackCount}회 명중시키면 출혈을 일으켜 ${bleedDuration}에 걸쳐 ${bleedDamage}의 피해를 입히고, 지속시간 동안 <c:physical>방어력을 ${armorReduction}만큼 감소</c:physical>시킵니다.`,
+        en: `Landing ${bleedAttackCount} basic attacks on the same enemy hero causes them to bleed, dealing ${bleedDamage} over ${bleedDuration} and <c:armor>reducing their Armor by ${armorReduction}</c:armor> for the duration.`,
+        ru: `Попадание ${bleedAttackCount} базовыми атаками по одному вражескому герою вызывает у него кровотечение, наносящее ${bleedDamage} в течение ${bleedDuration} и <c:armor>снижающее его броню на ${armorReduction}</c:armor> на это время.`,
+        cz: `Zasažení stejného nepřátelského hrdiny ${bleedAttackCount} základními útoky způsobí krvácení, které udělí ${bleedDamage} po dobu ${bleedDuration} a <c:armor>sníží jeho obranu o ${armorReduction}</c:armor> po dobu trvání.`,
+        zh: `對同一敵方英雄命中 ${bleedAttackCount} 次基本攻擊會使其流血，在 ${bleedDuration} 內造成 ${bleedDamage}，並在持續期間<c:armor>減少其 ${armorReduction} 護甲</c:armor>。`,
+        fr: `Toucher le même héros ennemi avec ${bleedAttackCount} attaques de base le fait saigner, infligeant ${bleedDamage} sur ${bleedDuration} et <c:armor>réduisant son armure de ${armorReduction}</c:armor> pendant la durée.`,
+        br: `Acertar ${bleedAttackCount} ataques básicos no mesmo herói inimigo faz com que ele sangre, causando ${bleedDamage} ao longo de ${bleedDuration} e <c:armor>reduzindo sua Armadura em ${armorReduction}</c:armor> durante esse período.`,
+        vi: `Trúng ${bleedAttackCount} đòn đánh thường lên cùng một tướng địch khiến mục tiêu chảy máu, gây ${bleedDamage} trong ${bleedDuration} và <c:armor>giảm ${armorReduction} Giáp</c:armor> của mục tiêu trong thời gian đó.`,
+        id: `Mengenai hero musuh yang sama dengan ${bleedAttackCount} serangan dasar membuatnya berdarah, memberikan ${bleedDamage} selama ${bleedDuration} dan <c:armor>mengurangi Armor-nya sebesar ${armorReduction}</c:armor> selama durasi tersebut.`,
+        kr: `같은 적 영웅에게 기본 공격을 ${bleedAttackCount}회 명중시키면 출혈을 일으켜 ${bleedDuration}에 걸쳐 ${bleedDamage}의 피해를 입히고, 지속시간 동안 <c:armor>방어력을 ${armorReduction}만큼 감소</c:armor>시킵니다.`,
       }
     }
 
@@ -392,12 +393,12 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       }
 
     case Shared.HEROES.HAZEL: {
-      const tenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_TENACITY * 100, 1)}%`)
-      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`)
+      const tenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_TENACITY * 100, 1)}%`, 'Tenacity Buff')
+      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`, 'Tenacity Buff')
       const bonusDuration = getDuration(HazelAbilityData.STONE_SKIN_CC_BONUS_DURATION)
       const movementSpeed = getBuffValue(
         `${fixed(HazelAbilityData.TALENT_T1_RIGHT_STONE_SKIN_MOVEMENT_SPEED * 100, 1)}%`
-      )
+      , 'Movement Speed Buff')
 
       return appendSentence(
         {
@@ -412,15 +413,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
           kr: `헤이즐은 ${tenacity}의 강인함을 보유합니다. 군중 제어(기절, 빙결, 속박, 매혹, 공포, 공중으로 띄우기 또는 침묵)에 걸릴 때마다 ${bonusDuration} 동안 추가로 ${bonusTenacity}의 강인함을 얻습니다.`,
         },
         {
-          en: ` Stone Skin also grants ${movementSpeed} <c:bonus>Movement Speed</c:bonus>.`,
-          ru: ` Каменная кожа также даёт ${movementSpeed} <c:bonus>скорости передвижения</c:bonus>.`,
-          cz: ` Kamenná kůže navíc poskytuje ${movementSpeed} <c:bonus>rychlosti pohybu</c:bonus>.`,
-          zh: `石膚額外提供 ${movementSpeed} <c:bonus>移動速度</c:bonus>。`,
-          fr: ` La Peau de pierre accorde aussi ${movementSpeed} de <c:bonus>vitesse de déplacement</c:bonus>.`,
-          br: ` Pele de Pedra também concede ${movementSpeed} de <c:bonus>Velocidade de Movimento</c:bonus>.`,
-          vi: ` Da Đá còn cấp thêm ${movementSpeed} <c:bonus>Tốc độ Di chuyển</c:bonus>.`,
-          id: ` Kulit Batu juga memberikan ${movementSpeed} <c:bonus>Kecepatan Gerak</c:bonus>.`,
-          kr: ` 돌 피부는 ${movementSpeed}의 <c:bonus>이동 속도</c:bonus>도 부여합니다.`,
+          en: ` Stone Skin also grants ${movementSpeed} <c:movespeed>Movement Speed</c:movespeed>.`,
+          ru: ` Каменная кожа также даёт ${movementSpeed} <c:movespeed>скорости передвижения</c:movespeed>.`,
+          cz: ` Kamenná kůže navíc poskytuje ${movementSpeed} <c:movespeed>rychlosti pohybu</c:movespeed>.`,
+          zh: `石膚額外提供 ${movementSpeed} <c:movespeed>移動速度</c:movespeed>。`,
+          fr: ` La Peau de pierre accorde aussi ${movementSpeed} de <c:movespeed>vitesse de déplacement</c:movespeed>.`,
+          br: ` Pele de Pedra também concede ${movementSpeed} de <c:movespeed>Velocidade de Movimento</c:movespeed>.`,
+          vi: ` Da Đá còn cấp thêm ${movementSpeed} <c:movespeed>Tốc độ Di chuyển</c:movespeed>.`,
+          id: ` Kulit Batu juga memberikan ${movementSpeed} <c:movespeed>Kecepatan Gerak</c:movespeed>.`,
+          kr: ` 돌 피부는 ${movementSpeed}의 <c:movespeed>이동 속도</c:movespeed>도 부여합니다.`,
         },
         hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
       )
@@ -492,7 +493,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
           MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0) ? MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS : 0)
       )
-      const abilityPowerPerSoul = getBuffValue(1)
+      const abilityPowerPerSoul = getBuffValue(1, 'Ability Power Buff')
       const soulDamage = getDamage(
         0,
         Shared.DamageTypes.MAGICAL,
@@ -500,15 +501,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       )
 
       return {
-        en: `Magdalene catches the souls of her victims: ${heroKillSouls} for a hero kill, ${assistSouls} for an assist and ${minionKillSouls} for a minion kill, storing up to ${maxSouls} souls. Each soul grants her ${abilityPowerPerSoul} Ability Power. When Magdalene dies, she releases a wave of souls in a small radius, dealing ${soulDamage} per soul to enemies and applying <c:control>Fear</c:control> for a short duration, and keeps half of her souls.`,
-        ru: `Магдалина собирает души своих жертв: ${heroKillSouls} за убийство героя, ${assistSouls} за содействие и ${minionKillSouls} за убийство миньона, храня до ${maxSouls} душ. Каждая душа даёт ей ${abilityPowerPerSoul} Силы умений. Когда Магдалина умирает, она высвобождает волну душ в небольшом радиусе, нанося ${soulDamage} за каждую душу врагам и накладывая <c:control>страх</c:control> на короткое время, при этом сохраняя половину своих душ.`,
-        cz: `Magdalena sbírá duše svých obětí: ${heroKillSouls} za zabití hrdiny, ${assistSouls} za asistenci a ${minionKillSouls} za zabití miniona, až do ${maxSouls} duší. Každá duše jí dává ${abilityPowerPerSoul} síly kouzel. Když Magdalena zemře, uvolní vlnu duší v malém okruhu, která způsobí ${soulDamage} za duši nepřátelům a na krátkou dobu je <c:control>vyděsí</c:control>, a polovinu svých duší si ponechá.`,
-        zh: `瑪格達琳收集受害者的靈魂：擊殺英雄獲得 ${heroKillSouls} 個、助攻獲得 ${assistSouls} 個、擊殺小兵獲得 ${minionKillSouls} 個，最多儲存 ${maxSouls} 個靈魂。每個靈魂提供 ${abilityPowerPerSoul} 點技能威力。瑪格達琳死亡時，會在小範圍內釋放靈魂之波，對敵人每個靈魂造成 ${soulDamage}，並使其<c:control>恐懼</c:control>一小段時間，同時保留一半的靈魂。`,
-        fr: `Magdalene capture les âmes de ses victimes : ${heroKillSouls} pour un héros tué, ${assistSouls} pour une assistance et ${minionKillSouls} pour un sbire tué, jusqu'à ${maxSouls} âmes. Chaque âme lui accorde ${abilityPowerPerSoul} de puissance des compétences. Lorsque Magdalene meurt, elle libère une vague d'âmes dans un petit rayon, infligeant ${soulDamage} par âme aux ennemis et leur appliquant <c:control>Peur</c:control> pendant une courte durée, et conserve la moitié de ses âmes.`,
-        br: `Magdalene captura as almas de suas vítimas: ${heroKillSouls} por um abate de herói, ${assistSouls} por uma assistência e ${minionKillSouls} por um abate de súdito, armazenando até ${maxSouls} almas. Cada alma concede ${abilityPowerPerSoul} de Poder de Habilidade. Quando Magdalene morre, ela libera uma onda de almas em uma pequena área, causando ${soulDamage} por alma aos inimigos e aplicando <c:control>Medo</c:control> por um curto período, e mantém metade de suas almas.`,
-        vi: `Magdalene thu giữ linh hồn của nạn nhân: ${heroKillSouls} khi hạ gục tướng, ${assistSouls} khi hỗ trợ và ${minionKillSouls} khi hạ gục lính, lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn cấp ${abilityPowerPerSoul} Sức mạnh Phép Thuật. Khi Magdalene chết, cô giải phóng một làn sóng linh hồn trong phạm vi nhỏ, gây ${soulDamage} cho kẻ địch với mỗi linh hồn và khiến chúng <c:control>sợ hãi</c:control> trong thời gian ngắn, đồng thời giữ lại một nửa số linh hồn.`,
-        id: `Magdalene menangkap jiwa korbannya: ${heroKillSouls} untuk membunuh hero, ${assistSouls} untuk assist, dan ${minionKillSouls} untuk membunuh minion, menyimpan hingga ${maxSouls} jiwa. Setiap jiwa memberinya ${abilityPowerPerSoul} Ability Power. Saat Magdalene mati, ia melepaskan gelombang jiwa dalam radius kecil, memberikan ${soulDamage} per jiwa kepada musuh dan membuat mereka <c:control>takut</c:control> untuk waktu singkat, serta mempertahankan setengah jiwanya.`,
-        kr: `마그달렌은 희생자의 영혼을 거둡니다. 영웅 처치 시 ${heroKillSouls}개, 어시스트 시 ${assistSouls}개, 미니언 처치 시 ${minionKillSouls}개를 얻으며 최대 ${maxSouls}개까지 저장합니다. 영혼 하나당 주문력이 ${abilityPowerPerSoul} 증가합니다. 마그달렌이 사망하면 좁은 범위에 영혼의 파동을 방출하여 적에게 영혼 하나당 ${soulDamage}의 피해를 입히고 짧은 시간 동안 <c:control>공포</c:control>를 적용하며, 영혼의 절반을 유지합니다.`,
+        en: `Magdalene catches the souls of her victims: ${heroKillSouls} for a hero kill, ${assistSouls} for an assist and ${minionKillSouls} for a minion kill, storing up to ${maxSouls} souls. Each soul grants her ${abilityPowerPerSoul} Ability Power. When Magdalene dies, she releases a wave of souls in a small radius, dealing ${soulDamage} per soul to enemies and applying <c:fear>Fear</c:fear> for a short duration, and keeps half of her souls.`,
+        ru: `Магдалина собирает души своих жертв: ${heroKillSouls} за убийство героя, ${assistSouls} за содействие и ${minionKillSouls} за убийство миньона, храня до ${maxSouls} душ. Каждая душа даёт ей ${abilityPowerPerSoul} Силы умений. Когда Магдалина умирает, она высвобождает волну душ в небольшом радиусе, нанося ${soulDamage} за каждую душу врагам и накладывая <c:fear>страх</c:fear> на короткое время, при этом сохраняя половину своих душ.`,
+        cz: `Magdalena sbírá duše svých obětí: ${heroKillSouls} za zabití hrdiny, ${assistSouls} za asistenci a ${minionKillSouls} za zabití miniona, až do ${maxSouls} duší. Každá duše jí dává ${abilityPowerPerSoul} síly kouzel. Když Magdalena zemře, uvolní vlnu duší v malém okruhu, která způsobí ${soulDamage} za duši nepřátelům a na krátkou dobu je <c:fear>vyděsí</c:fear>, a polovinu svých duší si ponechá.`,
+        zh: `瑪格達琳收集受害者的靈魂：擊殺英雄獲得 ${heroKillSouls} 個、助攻獲得 ${assistSouls} 個、擊殺小兵獲得 ${minionKillSouls} 個，最多儲存 ${maxSouls} 個靈魂。每個靈魂提供 ${abilityPowerPerSoul} 點技能威力。瑪格達琳死亡時，會在小範圍內釋放靈魂之波，對敵人每個靈魂造成 ${soulDamage}，並使其<c:fear>恐懼</c:fear>一小段時間，同時保留一半的靈魂。`,
+        fr: `Magdalene capture les âmes de ses victimes : ${heroKillSouls} pour un héros tué, ${assistSouls} pour une assistance et ${minionKillSouls} pour un sbire tué, jusqu'à ${maxSouls} âmes. Chaque âme lui accorde ${abilityPowerPerSoul} de puissance des compétences. Lorsque Magdalene meurt, elle libère une vague d'âmes dans un petit rayon, infligeant ${soulDamage} par âme aux ennemis et leur appliquant <c:fear>Peur</c:fear> pendant une courte durée, et conserve la moitié de ses âmes.`,
+        br: `Magdalene captura as almas de suas vítimas: ${heroKillSouls} por um abate de herói, ${assistSouls} por uma assistência e ${minionKillSouls} por um abate de súdito, armazenando até ${maxSouls} almas. Cada alma concede ${abilityPowerPerSoul} de Poder de Habilidade. Quando Magdalene morre, ela libera uma onda de almas em uma pequena área, causando ${soulDamage} por alma aos inimigos e aplicando <c:fear>Medo</c:fear> por um curto período, e mantém metade de suas almas.`,
+        vi: `Magdalene thu giữ linh hồn của nạn nhân: ${heroKillSouls} khi hạ gục tướng, ${assistSouls} khi hỗ trợ và ${minionKillSouls} khi hạ gục lính, lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn cấp ${abilityPowerPerSoul} Sức mạnh Phép Thuật. Khi Magdalene chết, cô giải phóng một làn sóng linh hồn trong phạm vi nhỏ, gây ${soulDamage} cho kẻ địch với mỗi linh hồn và khiến chúng <c:fear>sợ hãi</c:fear> trong thời gian ngắn, đồng thời giữ lại một nửa số linh hồn.`,
+        id: `Magdalene menangkap jiwa korbannya: ${heroKillSouls} untuk membunuh hero, ${assistSouls} untuk assist, dan ${minionKillSouls} untuk membunuh minion, menyimpan hingga ${maxSouls} jiwa. Setiap jiwa memberinya ${abilityPowerPerSoul} Ability Power. Saat Magdalene mati, ia melepaskan gelombang jiwa dalam radius kecil, memberikan ${soulDamage} per jiwa kepada musuh dan membuat mereka <c:fear>takut</c:fear> untuk waktu singkat, serta mempertahankan setengah jiwanya.`,
+        kr: `마그달렌은 희생자의 영혼을 거둡니다. 영웅 처치 시 ${heroKillSouls}개, 어시스트 시 ${assistSouls}개, 미니언 처치 시 ${minionKillSouls}개를 얻으며 최대 ${maxSouls}개까지 저장합니다. 영혼 하나당 주문력이 ${abilityPowerPerSoul} 증가합니다. 마그달렌이 사망하면 좁은 범위에 영혼의 파동을 방출하여 적에게 영혼 하나당 ${soulDamage}의 피해를 입히고 짧은 시간 동안 <c:fear>공포</c:fear>를 적용하며, 영혼의 절반을 유지합니다.`,
       }
     }
 
@@ -517,22 +518,22 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       const movementSpeedModifier =
         PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_MOVEMENT_SPEED +
         (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED : 0)
-      const bonusMovementSpeed = getBuffValue(`${fixed(movementSpeedModifier * 100, 1)}%`)
+      const bonusMovementSpeed = getBuffValue(`${fixed(movementSpeedModifier * 100, 1)}%`, 'Movement Speed Buff')
       const bonusArmor = getBuffValue(
         PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR +
           (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR : 0)
-      )
+      , 'Armor Buff')
 
       return {
-        en: `While Prim's Ball is attached to her, she gains ${bonusMovementSpeed} <c:bonus>bonus Movement Speed</c:bonus> and ${bonusArmor} <c:bonus>bonus Armor</c:bonus>.`,
-        ru: `Пока шар Прим прикреплён к ней, она получает ${bonusMovementSpeed} <c:bonus>бонуса к скорости передвижения</c:bonus> и ${bonusArmor} <c:bonus>бонуса к броне</c:bonus>.`,
-        cz: `Když je Primin míč připojen k Prim, získá ${bonusMovementSpeed} <c:bonus>bonus k rychlosti pohybu</c:bonus> a ${bonusArmor} <c:bonus>bonus k brnění</c:bonus>.`,
-        zh: `當普琳姆的球附著在她身上時，她獲得 ${bonusMovementSpeed} <c:bonus>額外移動速度</c:bonus>和 ${bonusArmor} <c:bonus>額外護甲</c:bonus>。`,
-        fr: `Lorsque la balle de Prim est attachée à elle, elle gagne ${bonusMovementSpeed} de <c:bonus>vitesse de déplacement bonus</c:bonus> et ${bonusArmor} d'<c:bonus>armure bonus</c:bonus>.`,
-        br: `Enquanto a Bola de Prim está anexada a ela, ela ganha ${bonusMovementSpeed} de <c:bonus>Velocidade de Movimento bônus</c:bonus> e ${bonusArmor} de <c:bonus>Armadura bônus</c:bonus>.`,
-        vi: `Khi Quả Cầu của Prim gắn vào cô, cô nhận ${bonusMovementSpeed} <c:bonus>Tốc độ Di chuyển cộng thêm</c:bonus> và ${bonusArmor} <c:bonus>Giáp cộng thêm</c:bonus>.`,
-        id: `Saat Bola Prim terpasang padanya, ia mendapatkan ${bonusMovementSpeed} <c:bonus>bonus Kecepatan Gerak</c:bonus> dan ${bonusArmor} <c:bonus>bonus Armor</c:bonus>.`,
-        kr: `프림의 공이 프림에게 부착되어 있는 동안 ${bonusMovementSpeed}의 <c:bonus>추가 이동 속도</c:bonus>와 ${bonusArmor}의 <c:bonus>추가 방어력</c:bonus>을 얻습니다.`,
+        en: `While Prim's Ball is attached to her, she gains ${bonusMovementSpeed} <c:movespeed>bonus Movement Speed</c:movespeed> and ${bonusArmor} <c:armor>bonus Armor</c:armor>.`,
+        ru: `Пока шар Прим прикреплён к ней, она получает ${bonusMovementSpeed} <c:movespeed>бонуса к скорости передвижения</c:movespeed> и ${bonusArmor} <c:armor>бонуса к броне</c:armor>.`,
+        cz: `Když je Primin míč připojen k Prim, získá ${bonusMovementSpeed} <c:movespeed>bonus k rychlosti pohybu</c:movespeed> a ${bonusArmor} <c:armor>bonus k brnění</c:armor>.`,
+        zh: `當普琳姆的球附著在她身上時，她獲得 ${bonusMovementSpeed} <c:movespeed>額外移動速度</c:movespeed>和 ${bonusArmor} <c:armor>額外護甲</c:armor>。`,
+        fr: `Lorsque la balle de Prim est attachée à elle, elle gagne ${bonusMovementSpeed} de <c:movespeed>vitesse de déplacement bonus</c:movespeed> et ${bonusArmor} d'<c:armor>armure bonus</c:armor>.`,
+        br: `Enquanto a Bola de Prim está anexada a ela, ela ganha ${bonusMovementSpeed} de <c:movespeed>Velocidade de Movimento bônus</c:movespeed> e ${bonusArmor} de <c:armor>Armadura bônus</c:armor>.`,
+        vi: `Khi Quả Cầu của Prim gắn vào cô, cô nhận ${bonusMovementSpeed} <c:movespeed>Tốc độ Di chuyển cộng thêm</c:movespeed> và ${bonusArmor} <c:armor>Giáp cộng thêm</c:armor>.`,
+        id: `Saat Bola Prim terpasang padanya, ia mendapatkan ${bonusMovementSpeed} <c:movespeed>bonus Kecepatan Gerak</c:movespeed> dan ${bonusArmor} <c:armor>bonus Armor</c:armor>.`,
+        kr: `프림의 공이 프림에게 부착되어 있는 동안 ${bonusMovementSpeed}의 <c:movespeed>추가 이동 속도</c:movespeed>와 ${bonusArmor}의 <c:armor>추가 방어력</c:armor>을 얻습니다.`,
       }
     }
 
@@ -583,8 +584,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.FLIN: {
-      const rangePerLevel = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL)
-      const currentRange = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL * level)
+      const rangePerLevel = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL, 'Attack Range Buff')
+      const currentRange = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL * level, 'Attack Range Buff')
 
       return {
         en: `Flin gains ${rangePerLevel} Attack Range per level, extending his Basic Attack, Precise Shot and Backstep arrows. Current bonus: ${currentRange} range.`,
@@ -600,22 +601,22 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.PUPPETEER: {
-      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`)
+      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`, 'Attack Speed Buff')
       const distanceStep = PuppeteerAbilityData.TENSION_DISTANCE_STEP
       const maxAttackSpeed = getBuffValue(
         `${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * PuppeteerAbilityData.TENSION_MAX_STACKS * 100, 0)}%`
-      )
+      , 'Attack Speed Buff')
 
       return {
-        en: `The Puppet gains ${attackSpeedPerStep} <c:bonus>Attack Speed</c:bonus> for every ${distanceStep} px between it and Puppeteer while fixated on a target, up to ${maxAttackSpeed}.`,
-        ru: `Пока Кукла фиксирована на цели, она получает ${attackSpeedPerStep} <c:bonus>скорости атаки</c:bonus> за каждые ${distanceStep} px расстояния между ней и Кукловодом, до ${maxAttackSpeed}.`,
-        cz: `Zatímco je Loutka fixována na cíl, získává ${attackSpeedPerStep} <c:bonus>rychlosti útoku</c:bonus> za každých ${distanceStep} px vzdálenosti mezi ní a Loutkářem, až do ${maxAttackSpeed}.`,
-        zh: `木偶固定於目標時，每與木偶師相距 ${distanceStep} px 即獲得 ${attackSpeedPerStep} <c:bonus>攻擊速度</c:bonus>，最多 ${maxAttackSpeed}。`,
-        fr: `Tant qu'elle est fixée sur une cible, la Marionnette gagne ${attackSpeedPerStep} de <c:bonus>vitesse d'attaque</c:bonus> tous les ${distanceStep} px de distance entre elle et le Marionnettiste, jusqu'à ${maxAttackSpeed}.`,
-        br: `Enquanto fixada em um alvo, a Marionete ganha ${attackSpeedPerStep} de <c:bonus>Velocidade de Ataque</c:bonus> a cada ${distanceStep} px de distância entre ela e o Marionetista, até ${maxAttackSpeed}.`,
-        vi: `Khi đang cố định vào mục tiêu, Con Rối nhận ${attackSpeedPerStep} <c:bonus>Tốc độ Đánh</c:bonus> cho mỗi ${distanceStep} px khoảng cách giữa nó và Puppeteer, tối đa ${maxAttackSpeed}.`,
-        id: `Saat terpaku pada target, Boneka mendapatkan ${attackSpeedPerStep} <c:bonus>Kecepatan Serang</c:bonus> untuk setiap ${distanceStep} px jarak antara Boneka dan Puppeteer, hingga ${maxAttackSpeed}.`,
-        kr: `인형이 대상에게 고정된 동안 인형술사와의 거리 ${distanceStep} px마다 ${attackSpeedPerStep}의 <c:bonus>공격 속도</c:bonus>를 얻으며, 최대 ${maxAttackSpeed}까지 증가합니다.`,
+        en: `The Puppet gains ${attackSpeedPerStep} <c:attackspeed>Attack Speed</c:attackspeed> for every ${distanceStep} px between it and Puppeteer while fixated on a target, up to ${maxAttackSpeed}.`,
+        ru: `Пока Кукла фиксирована на цели, она получает ${attackSpeedPerStep} <c:attackspeed>скорости атаки</c:attackspeed> за каждые ${distanceStep} px расстояния между ней и Кукловодом, до ${maxAttackSpeed}.`,
+        cz: `Zatímco je Loutka fixována na cíl, získává ${attackSpeedPerStep} <c:attackspeed>rychlosti útoku</c:attackspeed> za každých ${distanceStep} px vzdálenosti mezi ní a Loutkářem, až do ${maxAttackSpeed}.`,
+        zh: `木偶固定於目標時，每與木偶師相距 ${distanceStep} px 即獲得 ${attackSpeedPerStep} <c:attackspeed>攻擊速度</c:attackspeed>，最多 ${maxAttackSpeed}。`,
+        fr: `Tant qu'elle est fixée sur une cible, la Marionnette gagne ${attackSpeedPerStep} de <c:attackspeed>vitesse d'attaque</c:attackspeed> tous les ${distanceStep} px de distance entre elle et le Marionnettiste, jusqu'à ${maxAttackSpeed}.`,
+        br: `Enquanto fixada em um alvo, a Marionete ganha ${attackSpeedPerStep} de <c:attackspeed>Velocidade de Ataque</c:attackspeed> a cada ${distanceStep} px de distância entre ela e o Marionetista, até ${maxAttackSpeed}.`,
+        vi: `Khi đang cố định vào mục tiêu, Con Rối nhận ${attackSpeedPerStep} <c:attackspeed>Tốc độ Đánh</c:attackspeed> cho mỗi ${distanceStep} px khoảng cách giữa nó và Puppeteer, tối đa ${maxAttackSpeed}.`,
+        id: `Saat terpaku pada target, Boneka mendapatkan ${attackSpeedPerStep} <c:attackspeed>Kecepatan Serang</c:attackspeed> untuk setiap ${distanceStep} px jarak antara Boneka dan Puppeteer, hingga ${maxAttackSpeed}.`,
+        kr: `인형이 대상에게 고정된 동안 인형술사와의 거리 ${distanceStep} px마다 ${attackSpeedPerStep}의 <c:attackspeed>공격 속도</c:attackspeed>를 얻으며, 최대 ${maxAttackSpeed}까지 증가합니다.`,
       }
     }
 
