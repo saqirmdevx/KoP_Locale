@@ -1413,7 +1413,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             zh: `邪恶诅咒在 ${hastyCurseDelay}后爆炸，而非 ${curseDelay}。`,
             fr: `La Malédiction maléfique explose après ${hastyCurseDelay} au lieu de ${curseDelay}.`,
             br: `Maldição Malévola explode após ${hastyCurseDelay} em vez de ${curseDelay}.`,
-            vi: `Lời Nguyền Tà Ác phát nổ sau ${hastyCurseDelay} thay vì ${curseDelay}.`,
+            vi: `Lời Nguyền Ác Độc phát nổ sau ${hastyCurseDelay} thay vì ${curseDelay}.`,
             id: `Kutukan Jahat meledak setelah ${hastyCurseDelay} alih-alih ${curseDelay}.`,
             kr: `악의의 저주가 ${curseDelay} 대신 ${hastyCurseDelay} 후에 폭발합니다.`,
           },

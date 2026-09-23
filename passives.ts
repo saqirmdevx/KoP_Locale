@@ -99,7 +99,7 @@ const _getPassiveNameLang = (hero: Shared.HEROES): LocaleText => {
         zh: '靈魂捕手',
         fr: "Attrapeuse d'âmes",
         br: 'Caçadora de Almas',
-        vi: 'Kẻ Bắt Hồn',
+        vi: 'Kẻ Bắt Linh Hồn',
         id: 'Penangkap Jiwa',
         kr: '영혼 수집가',
       }
@@ -151,7 +151,7 @@ const _getPassiveNameLang = (hero: Shared.HEROES): LocaleText => {
         zh: '流血攻擊',
         fr: 'Attaque sanglante',
         br: 'Ataque Sangrento',
-        vi: 'Đòn Chảy Máu',
+        vi: 'Huyết Kiếm',
         id: 'Serangan Berdarah',
         kr: '출혈 공격',
       }
@@ -164,7 +164,7 @@ const _getPassiveNameLang = (hero: Shared.HEROES): LocaleText => {
         zh: '強化狀態',
         fr: 'État amélioré',
         br: 'Estado Aprimorado',
-        vi: 'Trạng thái Thức tỉnh',
+        vi: 'Cường Hóa',
         id: 'Keadaan Ditingkatkan',
         kr: '강화 상태',
       }
@@ -177,7 +177,7 @@ const _getPassiveNameLang = (hero: Shared.HEROES): LocaleText => {
         zh: '強化狀態',
         fr: 'État amélioré',
         br: 'Estado Aprimorado',
-        vi: 'Trạng thái Cường hóa',
+        vi: 'Cường Hóa',
         id: 'Keadaan Ditingkatkan',
         kr: '강화 상태',
       }
@@ -190,7 +190,7 @@ const _getPassiveNameLang = (hero: Shared.HEROES): LocaleText => {
         zh: 'Verdant Mark',
         fr: 'Verdant Mark',
         br: 'Verdant Mark',
-        vi: 'Verdant Mark',
+        vi: 'Nhiên Ấn',
         id: 'Verdant Mark',
         kr: '초록의 인장',
       }
@@ -325,7 +325,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `艾希特的基本攻擊<c:slow>降低敵人移動速度 ${movementSpeedSlow}% 與攻擊速度 ${attackSpeedSlow}%</c:slow>，持續 ${slowDuration}。`,
         fr: `Les attaques de base d'I'Ceat <c:slow>réduisent la vitesse de déplacement des ennemis de ${movementSpeedSlow}% et leur vitesse d'attaque de ${attackSpeedSlow}%</c:slow> pendant ${slowDuration}.`,
         br: `Os ataques básicos de I'Ceat <c:slow>reduzem a Velocidade de Movimento do inimigo em ${movementSpeedSlow}% e a Velocidade de Ataque em ${attackSpeedSlow}%</c:slow> por ${slowDuration}.`,
-        vi: `Đòn đánh thường của I'Ceat <c:slow>giảm ${movementSpeedSlow}% Tốc độ Di chuyển và ${attackSpeedSlow}% Tốc độ Tấn công của kẻ địch</c:slow> trong ${slowDuration}.`,
+        vi: `Đòn đánh thường của I'Ceat <c:slow>giảm ${movementSpeedSlow}% tốc chạy và ${attackSpeedSlow}% tốc đánh của kẻ địch</c:slow> trong ${slowDuration}.`,
         id: `Serangan dasar I'Ceat <c:slow>mengurangi Kecepatan Gerakan musuh sebesar ${movementSpeedSlow}% dan Kecepatan Serangan sebesar ${attackSpeedSlow}%</c:slow> selama ${slowDuration}.`,
         kr: `아이싯의 기본 공격은 ${slowDuration} 동안 <c:slow>적의 이동 속도를 ${movementSpeedSlow}%, 공격 속도를 ${attackSpeedSlow}%</c:slow>만큼 감소시킵니다.`,
       }
@@ -349,7 +349,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `對同一敵方英雄命中 ${bleedAttackCount} 次基本攻擊會使其流血，在 ${bleedDuration} 內造成 ${bleedDamage}，並在持續期間<c:physical>減少其 ${armorReduction} 護甲</c:physical>。`,
         fr: `Toucher le même héros ennemi avec ${bleedAttackCount} attaques de base le fait saigner, infligeant ${bleedDamage} sur ${bleedDuration} et <c:physical>réduisant son armure de ${armorReduction}</c:physical> pendant la durée.`,
         br: `Acertar ${bleedAttackCount} ataques básicos no mesmo herói inimigo faz com que ele sangre, causando ${bleedDamage} ao longo de ${bleedDuration} e <c:physical>reduzindo sua Armadura em ${armorReduction}</c:physical> durante esse período.`,
-        vi: `Trúng ${bleedAttackCount} đòn đánh thường lên cùng một tướng địch khiến mục tiêu chảy máu, gây ${bleedDamage} trong ${bleedDuration} và <c:physical>giảm ${armorReduction} Giáp</c:physical> của mục tiêu trong thời gian đó.`,
+        vi: `Trúng ${bleedAttackCount} đòn đánh thường lên cùng một tướng địch khiến mục tiêu chảy máu, gây ${bleedDamage} trong ${bleedDuration} và <c:physical>giảm ${armorReduction} giáp</c:physical> của mục tiêu trong thời gian đó.`,
         id: `Mengenai hero musuh yang sama dengan ${bleedAttackCount} serangan dasar membuatnya berdarah, memberikan ${bleedDamage} selama ${bleedDuration} dan <c:physical>mengurangi Armor-nya sebesar ${armorReduction}</c:physical> selama durasi tersebut.`,
         kr: `같은 적 영웅에게 기본 공격을 ${bleedAttackCount}회 명중시키면 출혈을 일으켜 ${bleedDuration}에 걸쳐 ${bleedDamage}의 피해를 입히고, 지속시간 동안 <c:physical>방어력을 ${armorReduction}만큼 감소</c:physical>시킵니다.`,
       }
@@ -372,7 +372,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `星光刀刃命中敵方英雄時，維爾進入強化狀態。她的下一次基本攻擊將利用星光魂魄額外造成 ${enhancedDamage}，並移除她的強化狀態。`,
         fr: `Toucher un héros ennemi avec les Lames astrales rend Veil améliorée. Sa prochaine attaque de base utilise son esprit astral pour infliger un bonus de ${enhancedDamage}, supprimant son état amélioré.`,
         br: `Atingir um herói inimigo com as Lâminas Astrais torna Veil Aprimorada. Seu próximo ataque básico usa seu espírito astral para causar um bônus de ${enhancedDamage}, removendo seu estado aprimorado.`,
-        vi: `Trúng tướng địch bằng Tinh Kiếm khiến Veil bước vào trạng thái thức tỉnh. Đòn đánh thường tiếp theo của cô sử dụng linh hồn thần bí để gây thêm ${enhancedDamage}, loại bỏ trạng thái thức tỉnh.`,
+        vi: `Trúng tướng địch bằng Tinh Kiếm cường hóa bộ kĩ năng của Veil. Đòn đánh thường tiếp theo của cô sử dụng linh hồn thần bí để gây thêm ${enhancedDamage}, loại bỏ trạng thái cường hóa.`,
         id: `Mengenai hero musuh dengan Astral Blades membuat Veil Ditingkatkan. Serangan dasar berikutnya menggunakan roh astralnya untuk memberikan bonus ${enhancedDamage}, menghapus keadaan ditingkatkan.`,
         kr: `성계의 칼날이 적 영웅에게 명중하면 베일이 강화 상태가 됩니다. 다음 기본 공격이 성계의 정령을 사용해 추가로 ${enhancedDamage}의 피해를 입히고 강화 상태를 해제합니다.`,
       }
@@ -386,7 +386,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `施放技能會使奇菈進入強化狀態，令她的下一次基本攻擊或技能獲得額外效果。`,
         fr: `Lancer une compétence rend Kira améliorée, conférant un effet supplémentaire à sa prochaine attaque de base ou compétence.`,
         br: `Conjurar uma habilidade torna Kira Aprimorada, concedendo um efeito adicional ao seu próximo ataque básico ou habilidade.`,
-        vi: `Sử dụng một kỹ năng khiến Kira bước vào trạng thái cường hóa, giúp đòn đánh thường hoặc kỹ năng tiếp theo của cô nhận thêm hiệu ứng.`,
+        vi: `Sử dụng một kỹ năng cường hóa bộ kĩ năng của Kira, đòn đánh thường hoặc kỹ năng tiếp theo của cô nhận thêm hiệu ứng.`,
         id: `Menggunakan kemampuan membuat Kira Ditingkatkan, memberikan efek tambahan pada serangan dasar atau kemampuan berikutnya.`,
         kr: `스킬을 사용하면 키라가 강화 상태가 되어 다음 기본 공격이나 스킬에 추가 효과가 부여됩니다.`,
       }
@@ -407,7 +407,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
           zh: `哈傑爾擁有 ${tenacity} 韌性。每當她受到控制效果（暈眩、凍結、禁錮、魅惑、恐懼、擊飛或沉默）時，額外獲得 ${bonusTenacity} 韌性，持續 ${bonusDuration}。`,
           fr: `Hazel possède ${tenacity} de ténacité. Chaque fois qu'elle subit un effet de contrôle (étourdissement, gel, enracinement, charme, peur, projection en l'air ou silence), elle gagne ${bonusTenacity} de ténacité supplémentaire pendant ${bonusDuration}.`,
           br: `Hazel possui ${tenacity} de Tenacidade. Sempre que ela sofre um efeito de controle (atordoamento, congelamento, enraizamento, encanto, medo, arremesso ou silêncio), ela ganha ${bonusTenacity} de Tenacidade adicional por ${bonusDuration}.`,
-          vi: `Hazel có ${tenacity} Kháng Khống Chế. Mỗi khi bị khống chế (choáng, đóng băng, trói chân, quyến rũ, sợ hãi, hất tung hoặc câm lặng), cô nhận thêm ${bonusTenacity} Kháng Khống Chế trong ${bonusDuration}.`,
+          vi: `Hazel có ${tenacity} kháng khống chế. Mỗi khi bị khống chế (choáng, đóng băng, trói chân, quyến rũ, sợ hãi, hất tung hoặc câm lặng), cô nhận thêm ${bonusTenacity} kháng khống chế trong ${bonusDuration}.`,
           id: `Hazel memiliki ${tenacity} Ketekunan. Setiap kali ia terkena crowd control (stun, beku, root, charm, takut, terlontar, atau bungkam), ia mendapatkan tambahan ${bonusTenacity} Ketekunan selama ${bonusDuration}.`,
           kr: `헤이즐은 ${tenacity}의 강인함을 보유합니다. 군중 제어(기절, 빙결, 속박, 매혹, 공포, 공중으로 띄우기 또는 침묵)에 걸릴 때마다 ${bonusDuration} 동안 추가로 ${bonusTenacity}의 강인함을 얻습니다.`,
         },
@@ -418,7 +418,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
           zh: `石膚額外提供 ${movementSpeed} <c:bonus>移動速度</c:bonus>。`,
           fr: ` La Peau de pierre accorde aussi ${movementSpeed} de <c:bonus>vitesse de déplacement</c:bonus>.`,
           br: ` Pele de Pedra também concede ${movementSpeed} de <c:bonus>Velocidade de Movimento</c:bonus>.`,
-          vi: ` Da Đá còn cấp thêm ${movementSpeed} <c:bonus>Tốc độ Di chuyển</c:bonus>.`,
+          vi: ` Da Đá còn cấp thêm ${movementSpeed} <c:bonus>tốc chạy</c:bonus>.`,
           id: ` Kulit Batu juga memberikan ${movementSpeed} <c:bonus>Kecepatan Gerak</c:bonus>.`,
           kr: ` 돌 피부는 ${movementSpeed}의 <c:bonus>이동 속도</c:bonus>도 부여합니다.`,
         },
@@ -506,7 +506,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `瑪格達琳收集受害者的靈魂：擊殺英雄獲得 ${heroKillSouls} 個、助攻獲得 ${assistSouls} 個、擊殺小兵獲得 ${minionKillSouls} 個，最多儲存 ${maxSouls} 個靈魂。每個靈魂提供 ${abilityPowerPerSoul} 點技能威力。瑪格達琳死亡時，會在小範圍內釋放靈魂之波，對敵人每個靈魂造成 ${soulDamage}，並使其<c:control>恐懼</c:control>一小段時間，同時保留一半的靈魂。`,
         fr: `Magdalene capture les âmes de ses victimes : ${heroKillSouls} pour un héros tué, ${assistSouls} pour une assistance et ${minionKillSouls} pour un sbire tué, jusqu'à ${maxSouls} âmes. Chaque âme lui accorde ${abilityPowerPerSoul} de puissance des compétences. Lorsque Magdalene meurt, elle libère une vague d'âmes dans un petit rayon, infligeant ${soulDamage} par âme aux ennemis et leur appliquant <c:control>Peur</c:control> pendant une courte durée, et conserve la moitié de ses âmes.`,
         br: `Magdalene captura as almas de suas vítimas: ${heroKillSouls} por um abate de herói, ${assistSouls} por uma assistência e ${minionKillSouls} por um abate de súdito, armazenando até ${maxSouls} almas. Cada alma concede ${abilityPowerPerSoul} de Poder de Habilidade. Quando Magdalene morre, ela libera uma onda de almas em uma pequena área, causando ${soulDamage} por alma aos inimigos e aplicando <c:control>Medo</c:control> por um curto período, e mantém metade de suas almas.`,
-        vi: `Magdalene thu giữ linh hồn của nạn nhân: ${heroKillSouls} khi hạ gục tướng, ${assistSouls} khi hỗ trợ và ${minionKillSouls} khi hạ gục lính, lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn cấp ${abilityPowerPerSoul} Sức mạnh Phép Thuật. Khi Magdalene chết, cô giải phóng một làn sóng linh hồn trong phạm vi nhỏ, gây ${soulDamage} cho kẻ địch với mỗi linh hồn và khiến chúng <c:control>sợ hãi</c:control> trong thời gian ngắn, đồng thời giữ lại một nửa số linh hồn.`,
+        vi: `Magdalene thu giữ linh hồn của nạn nhân: ${heroKillSouls} khi hạ gục tướng, ${assistSouls} khi hỗ trợ và ${minionKillSouls} khi hạ gục lính, lưu trữ tối đa ${maxSouls} linh hồn. Mỗi linh hồn cấp ${abilityPowerPerSoul} sức mạnh phép. Khi Magdalene chết, cô giải phóng một làn sóng linh hồn trong phạm vi nhỏ, gây ${soulDamage} cho kẻ địch với mỗi linh hồn và khiến chúng <c:control>khiếp sợ</c:control> trong thời gian ngắn, đồng thời giữ lại một nửa số linh hồn.`,
         id: `Magdalene menangkap jiwa korbannya: ${heroKillSouls} untuk membunuh hero, ${assistSouls} untuk assist, dan ${minionKillSouls} untuk membunuh minion, menyimpan hingga ${maxSouls} jiwa. Setiap jiwa memberinya ${abilityPowerPerSoul} Ability Power. Saat Magdalene mati, ia melepaskan gelombang jiwa dalam radius kecil, memberikan ${soulDamage} per jiwa kepada musuh dan membuat mereka <c:control>takut</c:control> untuk waktu singkat, serta mempertahankan setengah jiwanya.`,
         kr: `마그달렌은 희생자의 영혼을 거둡니다. 영웅 처치 시 ${heroKillSouls}개, 어시스트 시 ${assistSouls}개, 미니언 처치 시 ${minionKillSouls}개를 얻으며 최대 ${maxSouls}개까지 저장합니다. 영혼 하나당 주문력이 ${abilityPowerPerSoul} 증가합니다. 마그달렌이 사망하면 좁은 범위에 영혼의 파동을 방출하여 적에게 영혼 하나당 ${soulDamage}의 피해를 입히고 짧은 시간 동안 <c:control>공포</c:control>를 적용하며, 영혼의 절반을 유지합니다.`,
       }
@@ -530,7 +530,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `當普琳姆的球附著在她身上時，她獲得 ${bonusMovementSpeed} <c:bonus>額外移動速度</c:bonus>和 ${bonusArmor} <c:bonus>額外護甲</c:bonus>。`,
         fr: `Lorsque la balle de Prim est attachée à elle, elle gagne ${bonusMovementSpeed} de <c:bonus>vitesse de déplacement bonus</c:bonus> et ${bonusArmor} d'<c:bonus>armure bonus</c:bonus>.`,
         br: `Enquanto a Bola de Prim está anexada a ela, ela ganha ${bonusMovementSpeed} de <c:bonus>Velocidade de Movimento bônus</c:bonus> e ${bonusArmor} de <c:bonus>Armadura bônus</c:bonus>.`,
-        vi: `Khi Quả Cầu của Prim gắn vào cô, cô nhận ${bonusMovementSpeed} <c:bonus>Tốc độ Di chuyển cộng thêm</c:bonus> và ${bonusArmor} <c:bonus>Giáp cộng thêm</c:bonus>.`,
+        vi: `Khi cầu của Prim gắn vào cô, cô nhận ${bonusMovementSpeed} <c:bonus>tốc chạy</c:bonus> và ${bonusArmor} <c:bonus>giáp</c:bonus>.`,
         id: `Saat Bola Prim terpasang padanya, ia mendapatkan ${bonusMovementSpeed} <c:bonus>bonus Kecepatan Gerak</c:bonus> dan ${bonusArmor} <c:bonus>bonus Armor</c:bonus>.`,
         kr: `프림의 공이 프림에게 부착되어 있는 동안 ${bonusMovementSpeed}의 <c:bonus>추가 이동 속도</c:bonus>와 ${bonusArmor}의 <c:bonus>추가 방어력</c:bonus>을 얻습니다.`,
       }
@@ -576,7 +576,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `命中英雄会施加一层 Verdant Mark，持续 ${stackDuration}，最多叠加 ${maxStacks} 层。每层使目标韌性降低 ${tenacityPerStack}%（最多降低 ${tenacityMax}%）。负韌性反而会增加控制效果的持续时间。Bramble Snap 与 Wrath of the Grove 也会在命中前施加 ${groveMarkStacks} 层。`,
         fr: `Les coups portés aux héros appliquent un cumul de Verdant Mark pendant ${stackDuration}, jusqu'à ${maxStacks} cumuls. Chaque cumul réduit la ténacité de la cible de ${tenacityPerStack}% (jusqu'à ${tenacityMax}%). Une ténacité négative augmente au contraire la durée des effets de contrôle. Bramble Snap et Wrath of the Grove appliquent aussi ${groveMarkStacks} cumul avant de toucher.`,
         br: `Acertos em heróis aplicam um acúmulo de Verdant Mark por ${stackDuration}, até ${maxStacks} acúmulos. Cada acúmulo reduz a Tenacidade do alvo em ${tenacityPerStack}% (até ${tenacityMax}%). Tenacidade negativa aumenta a duração dos efeitos de controle. Bramble Snap e Wrath of the Grove também aplicam ${groveMarkStacks} acúmulo antes de acertar.`,
-        vi: `Đòn đánh trúng tướng áp dụng 1 cộng dồn Verdant Mark trong ${stackDuration}, tối đa ${maxStacks} cộng dồn. Mỗi cộng dồn giảm ${tenacityPerStack}% Kháng Khống Chế của mục tiêu (tối đa ${tenacityMax}%). Kháng Khống Chế âm sẽ làm tăng thời gian khống chế. Bramble Snap và Wrath of the Grove cũng áp dụng ${groveMarkStacks} cộng dồn trước khi đánh trúng.`,
+        vi: `Đòn đánh trúng tướng áp dụng 1 lần cộng dồn Nhiên Ấn trong ${stackDuration}, tối đa ${maxStacks} lần cộng dồn. Mỗi lần cộng dồn giảm ${tenacityPerStack}% kháng khống chế của mục tiêu (tối đa ${tenacityMax}%). Kháng khống chế âm sẽ làm tăng thời gian khống chế. Quật Gai và Thịnh Nộ Rừng Thiêng cũng áp dụng ${groveMarkStacks} lần cộng dồn trước khi đánh trúng.`,
         id: `Serangan yang mengenai hero menerapkan 1 stack Verdant Mark selama ${stackDuration}, hingga ${maxStacks} stack. Setiap stack mengurangi Ketekunan target sebesar ${tenacityPerStack}% (hingga ${tenacityMax}%). Ketekunan negatif justru akan meningkatkan durasi crowd control. Bramble Snap dan Wrath of the Grove juga menerapkan ${groveMarkStacks} stack sebelum mengenai.`,
         kr: `영웅을 명중시키면 ${stackDuration} 동안 지속되는 초록의 인장 중첩을 적용하며, 최대 ${maxStacks}중첩까지 쌓입니다. 중첩마다 대상의 강인함을 ${tenacityPerStack}%만큼 감소시킵니다(최대 ${tenacityMax}%). 강인함이 음수가 되면 오히려 군중 제어 지속시간이 증가합니다. 가시덩굴 올가미와 숲의 분노도 명중 전에 ${groveMarkStacks}중첩을 적용합니다.`,
       }
@@ -593,7 +593,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `弗林每升一級便獲得 ${rangePerLevel} 攻擊射程，延伸基本攻擊、精準射擊與躍退箭矢的距離。目前加成：${currentRange} 射程。`,
         fr: `Flin gagne ${rangePerLevel} de portée d'attaque par niveau, ce qui allonge son attaque de base, Tir de précision et les flèches de Pas en arrière. Bonus actuel : ${currentRange} de portée.`,
         br: `Flin ganha ${rangePerLevel} de Alcance de Ataque por nível, estendendo seu ataque básico, Tiro Preciso e as flechas do Passo Atrás. Bônus atual: ${currentRange} de alcance.`,
-        vi: `Flin nhận ${rangePerLevel} Tầm đánh mỗi cấp, kéo dài đòn đánh thường, Phát Bắn Chính Xác và mũi tên Bước Lùi. Hiện tại: ${currentRange} tầm đánh.`,
+        vi: `Flin nhận ${rangePerLevel} tầm đánh mỗi cấp, kéo dài đòn đánh thường, Tên Chuẩn Xác và mũi tên của Bước Lùi. Hiện tại: thêm ${currentRange} tầm đánh.`,
         id: `Flin memperoleh ${rangePerLevel} Jangkauan Serangan per level, memperpanjang Serangan Dasar, Precise Shot, dan panah Langkah Mundur. Bonus saat ini: ${currentRange} jangkauan.`,
         kr: `플린은 레벨마다 공격 사거리를 ${rangePerLevel} 얻어 기본 공격과 정밀 사격, 백스텝 화살의 사거리가 늘어납니다. 현재 보너스: 사거리 ${currentRange}.`,
       }
@@ -613,7 +613,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `木偶固定於目標時，每與木偶師相距 ${distanceStep} px 即獲得 ${attackSpeedPerStep} <c:bonus>攻擊速度</c:bonus>，最多 ${maxAttackSpeed}。`,
         fr: `Tant qu'elle est fixée sur une cible, la Marionnette gagne ${attackSpeedPerStep} de <c:bonus>vitesse d'attaque</c:bonus> tous les ${distanceStep} px de distance entre elle et le Marionnettiste, jusqu'à ${maxAttackSpeed}.`,
         br: `Enquanto fixada em um alvo, a Marionete ganha ${attackSpeedPerStep} de <c:bonus>Velocidade de Ataque</c:bonus> a cada ${distanceStep} px de distância entre ela e o Marionetista, até ${maxAttackSpeed}.`,
-        vi: `Khi đang cố định vào mục tiêu, Con Rối nhận ${attackSpeedPerStep} <c:bonus>Tốc độ Đánh</c:bonus> cho mỗi ${distanceStep} px khoảng cách giữa nó và Puppeteer, tối đa ${maxAttackSpeed}.`,
+        vi: `Khi đang cố định vào mục tiêu, Con Rối nhận ${attackSpeedPerStep} <c:bonus>tốc đánh</c:bonus> cho mỗi ${distanceStep} px khoảng cách giữa nó và Puppeteer, tối đa ${maxAttackSpeed}.`,
         id: `Saat terpaku pada target, Boneka mendapatkan ${attackSpeedPerStep} <c:bonus>Kecepatan Serang</c:bonus> untuk setiap ${distanceStep} px jarak antara Boneka dan Puppeteer, hingga ${maxAttackSpeed}.`,
         kr: `인형이 대상에게 고정된 동안 인형술사와의 거리 ${distanceStep} px마다 ${attackSpeedPerStep}의 <c:bonus>공격 속도</c:bonus>를 얻으며, 최대 ${maxAttackSpeed}까지 증가합니다.`,
       }
@@ -630,7 +630,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         zh: `命中會對敵方英雄施加一層天罰，最多疊加 ${maxStacks} 層。若在 ${refreshWindow} 內未被刷新，所有層數將被移除。`,
         fr: `Les coups appliquent un cumul de Chute des Cieux sur le héros ennemi, jusqu'à ${maxStacks} cumuls. Si non renouvelé sous ${refreshWindow}, tous les cumuls sont retirés.`,
         br: `Acertos aplicam um acúmulo de Queda dos Céus no herói inimigo, até ${maxStacks} acúmulos. Se não for renovado em ${refreshWindow}, todos os acúmulos são removidos.`,
-        vi: `Đòn đánh trúng áp dụng 1 cộng dồn Thiên Phạt lên tướng địch, tối đa ${maxStacks} cộng dồn. Nếu không được làm mới trong ${refreshWindow}, toàn bộ cộng dồn sẽ bị xóa.`,
+        vi: `Đòn đánh trúng áp dụng 1 cộng dồn Thiên Phạt lên tướng địch, tối đa ${maxStacks} cộng dồn. Nếu không được làm mới trong ${refreshWindow}, toàn bộ cộng dồn sẽ bị xóa bỏ.`,
         id: `Serangan yang mengenai menerapkan 1 stack Heavens Fall pada hero musuh, hingga ${maxStacks} stack. Jika tidak diperbarui dalam ${refreshWindow}, semua stack akan hilang.`,
         kr: `명중 시 적 영웅에게 천벌 중첩을 적용하며, 최대 ${maxStacks}중첩까지 쌓입니다. ${refreshWindow} 이내에 갱신되지 않으면 모든 중첩이 사라집니다.`,
       }

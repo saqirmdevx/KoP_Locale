@@ -892,7 +892,7 @@ const _getSpellDescriptionLang = (
         cz: `Alvar se teleportuje k nejbližšímu nepřátelskému hrdinovi s Božskou značkou, způsobí ${baseDamage}, odstraní Božskou značku a <c:slow>sníží rychlost pohybu</c:slow> na ${slowDuration}. Pokud poblíž nejsou žádní nepřátelé s Božskou značkou, tuto schopnost nelze použít.`,
         zh: `阿爾瓦瞬移到最近擁有神聖印記的敵方英雄身旁，造成 ${baseDamage}，移除神聖印記，並降低移動速度 ${slowDuration}。如果附近沒有擁有神聖印記的敵人，此技能無法使用。`,
         fr: `Alvar se téléporte vers le héros ennemi le plus proche avec Marque divine, inflige ${baseDamage}, supprime la Marque divine et <c:slow>réduit la vitesse de déplacement</c:slow> pendant ${slowDuration}. S'il n'y a aucun ennemi proche avec Marque divine, cette capacité ne peut pas être utilisée.`,
-        vi: `Alvar dịch chuyển đến tướng địch gần nhất có Thần Kích, gây ${baseDamage}, loại bỏ Thần Kích và <c:slow>giảm tốc chạy</c:slow> của chúng trong ${slowDuration}. Nếu không có kẻ địch nào gần đó có Thần Kích, kỹ năng này không thể kích hoạt.`,
+        vi: `Alvar dịch chuyển đến tướng địch gần nhất có Thần Ấn, gây ${baseDamage}, loại bỏ Thần Ấn và <c:slow>giảm tốc chạy</c:slow> của chúng trong ${slowDuration}. Nếu không có kẻ địch nào gần đó có Thần Kích, kỹ năng này không thể kích hoạt.`,
         id: `Alvar berteleportasi ke hero musuh terdekat dengan Divine Mark, memberikan ${baseDamage}, menghapus Divine Mark, dan <c:slow>mengurangi kecepatan gerak</c:slow> selama ${slowDuration}. Jika tidak ada musuh di dekat dengan Divine Mark, kemampuan ini tidak dapat digunakan.`,
         kr: `알바르가 신성의 인장이 있는 가장 가까운 적 영웅에게 순간이동하여 ${baseDamage}의 피해를 입히고, 신성의 인장을 제거하며, ${slowDuration} 동안 이동 속도를 감소시킵니다. 신성의 인장이 있는 적이 근처에 없으면 이 스킬을 사용할 수 없습니다.`,
       }
@@ -1256,7 +1256,7 @@ const _getSpellDescriptionLang = (
         br: `Karick desfere um golpe envolto em espinhos, aplicando ${groveMarkStacks} acúmulo de Verdant Mark antes de acertar e causando ${physicalDamage} instantaneamente em combate corpo a corpo. O alvo fica <c:control>enraizado</c:control> por ${rootDuration} e sofre ${magicalDamage} durante a duração do enraizamento.`,
         zh: `Karick 释放一次荆棘缠绕的近战打击，命中前先施加 ${groveMarkStacks} 层 Verdant Mark，并立即造成 ${physicalDamage}。目标被<c:control>缠绕</c:control> ${rootDuration}，并在缠绕期间承受 ${magicalDamage}。`,
         fr: `Karick assène une frappe liée aux épines, appliquant ${groveMarkStacks} cumul de Verdant Mark avant de toucher et infligeant instantanément ${physicalDamage} au corps à corps. La cible est <c:control>enracinée</c:control> pendant ${rootDuration} et subit ${magicalDamage} sur la durée de l'enracinement.`,
-        vi: `Karick tung đòn phủ gai, áp dụng ${groveMarkStacks} cộng dồn Nhiên Kích trước khi đánh trúng và ngay lập tức gây ${physicalDamage} tầm cận chiến. Mục tiêu bị <c:control>trói buộc</c:control> trong ${rootDuration} và chịu ${magicalDamage} trong suốt thời gian bị trói buộc.`,
+        vi: `Karick tung đòn phủ gai, áp dụng ${groveMarkStacks} cộng dồn Nhiên Ấn trước khi đánh trúng và ngay lập tức gây ${physicalDamage} tầm cận chiến. Mục tiêu bị <c:control>trói buộc</c:control> trong ${rootDuration} và chịu ${magicalDamage} trong suốt thời gian bị trói buộc.`,
         id: `Karick mengayunkan serangan berduri, menerapkan ${groveMarkStacks} stack Verdant Mark sebelum mengenai dan langsung memberikan ${physicalDamage} pada jarak dekat. Target di-<c:control>root</c:control> selama ${rootDuration} dan menerima ${magicalDamage} selama durasi root.`,
         kr: `카릭이 가시로 뒤덮인 일격을 날려 명중 전에 ${groveMarkStacks}중첩의 초록의 인장을 적용하고 근접 범위에 즉시 ${physicalDamage}의 피해를 입힙니다. 대상은 ${rootDuration} 동안 <c:control>속박</c:control>되며 속박 지속시간 동안 ${magicalDamage}의 피해를 받습니다.`,
       }
@@ -1280,7 +1280,7 @@ const _getSpellDescriptionLang = (
         br: `Karick conjura uma semente viva à sua frente. Após um breve atraso, ela irrompe em espinhos gigantes, aplicando ${groveMarkStacks} acúmulo de Verdant Mark antes de acertar, causando ${magicalDamage} e <c:stun>atordoando</c:stun> inimigos por ${stunDuration}.`,
         zh: `Karick 在前方施放一颗活体种子。短暂延迟后，种子爆发成巨大的荆棘，命中前先施加 ${groveMarkStacks} 层 Verdant Mark，造成 ${magicalDamage} 点伤害并使敌人眩晕 ${stunDuration}。`,
         fr: `Karick invoque une graine vivante devant lui. Après un court délai, elle éclate en ronces géantes, appliquant ${groveMarkStacks} cumul de Verdant Mark avant de toucher, infligeant ${magicalDamage} dégâts et <c:stun>étourdissant</c:stun> les ennemis pendant ${stunDuration}.`,
-        vi: `Karick triệu hồi một hạt giống trước mặt. Sau một khoảng trễ ngắn, nó bùng nổ thành những bụi gai khổng lồ, áp dụng ${groveMarkStacks} cộng dồn Nhiên Kích trước khi đánh trúng, gây ${magicalDamage} và làm <c:stun>choáng</c:stun> kẻ địch trong ${stunDuration}.`,
+        vi: `Karick triệu hồi một hạt giống trước mặt. Sau một khoảng trễ ngắn, nó bùng nổ thành những bụi gai khổng lồ, áp dụng ${groveMarkStacks} cộng dồn Nhiên Ấn trước khi đánh trúng, gây ${magicalDamage} và làm <c:stun>choáng</c:stun> kẻ địch trong ${stunDuration}.`,
         id: `Karick memanggil benih hidup di depannya. Setelah jeda singkat, benih itu meledak menjadi duri raksasa, menerapkan ${groveMarkStacks} stack Verdant Mark sebelum mengenai, memberikan ${magicalDamage} dan membuat musuh terkena <c:stun>stun</c:stun> selama ${stunDuration}.`,
         kr: `카릭이 앞에 살아있는 씨앗을 심습니다. 짧은 지연 후 거대한 가시덤불로 솟아올라 명중 전에 ${groveMarkStacks}중첩의 초록의 인장을 적용하고, ${magicalDamage}의 피해를 입히며 적을 ${stunDuration} 동안 기절시킵니다.`,
       }
@@ -1624,7 +1624,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         br: 'Tiro preciso',
         zh: '精準射擊',
         fr: 'Tir précis',
-        vi: 'Tên Chính Xác',
+        vi: 'Tên Chuẩn Xác',
         id: 'Tembakan Presisi',
         kr: `정밀 사격`,
       }
