@@ -93,7 +93,7 @@ const _getSpellDescriptionLang = (
         fr: `Kumihu lance une orbe spirituelle, infligeant ${base_damage}. L'orbe revient à elle après avoir atteint sa portée maximale, infligeant un autre ${base_damage}. Si l'Orbe spirituelle touche la cible deux fois, elle infligera ${bonusDmage} bonus.`,
         vi: `Kumihu ném ra Cầu Ma Thuật, gây ${base_damage}. Quả cầu trở lại với cô sau khi đạt đến khoảng cách tối đa, gây thêm ${base_damage}. Nếu trúng mục tiêu hai lần, cầu gây thêm ${bonusDmage}`,
         id: `Kumihu melemparkan bola roh, memberikan ${base_damage}. Bola kembali kepadanya setelah mencapai jangkauan maksimum, memberikan ${base_damage} lagi. Jika bola roh mengenai target dua kali, maka akan memberikan ${bonusDmage} <c:bonus>bonus damage</c:bonus>`,
-        kr: `쿠미후가 정령 구슬을 던져 ${base_damage}의 피해를 입힙니다. 구슬은 최대 사거리에 도달한 후 그녀에게 돌아오며, 다시 ${base_damage}의 피해를 입힙니다. 마법 구슬이 대상을 두 번 명중시키면 ${bonusDmage}의 추가 피해를 입힙니다.`,
+        kr: `쿠미후가 정령 구슬을 던져 ${base_damage}의 피해를 입힙니다. 구슬은 최대 사거리에 도달한 후 그녀에게 돌아오며, 다시 ${base_damage}의 피해를 입힙니다. 마법 구슬이 대상을 두 번 명중시키면 ${bonusDmage}의 <c:bonus>추가 피해</c:bonus>를 입힙니다.`,
       }
     }
 
@@ -102,8 +102,8 @@ const _getSpellDescriptionLang = (
       return {
         en: `Kumihu <c:dash>dashes</c:dash> forward. This will activate her Passive for ${dashAuraDuration}.`,
         ru: `Кумиху совершает <c:dash>рывок</c:dash> на короткую дистанцию. Это активирует её пассивную способность на ${dashAuraDuration}.`,
-        cz: `Kumihu vykročí dopředu a tím aktivuje svou pasivní schopnost na ${dashAuraDuration}.`,
-        br: `Kumihu da um avanço em uma curta distância. Isso irá ativar sua passiva por ${dashAuraDuration}.`,
+        cz: `Kumihu <c:dash>vykročí</c:dash> dopředu a tím aktivuje svou pasivní schopnost na ${dashAuraDuration}.`,
+        br: `Kumihu da um <c:dash>avanço</c:dash> em uma curta distância. Isso irá ativar sua passiva por ${dashAuraDuration}.`,
         zh: `庫咪戶向前<c:dash>衝刺</c:dash>，這會在 ${dashAuraDuration}內觸發她的被動技。`,
         fr: `Kumihu se précipite en avant. Cela activera sa compétence passive pendant ${dashAuraDuration}.`,
         vi: `Kumihu tốc biến về phía trước. Kích hoạt nội tại trong ${dashAuraDuration}.`,
@@ -135,7 +135,7 @@ const _getSpellDescriptionLang = (
       return {
         en: `Sparrow quickly <c:dash>dashes</c:dash> forward, harnessing the wind, dealing ${dashDamage} to enemy heroes and <c:stun>stunning</c:stun> them for ${stunduration}.`,
         ru: `Спарроу совершает стремительный <c:dash>рывок</c:dash>, <c:stun>оглушая</c:stun> задетых врагов на ${stunduration} и нанося им ${dashDamage}.`,
-        cz: `Sparrow se vrhne kupředu a vytasí svůj meč, čímž <c:stun>omráčí</c:stun> nepřátele které zasáhne na ${stunduration} a způsobí ${dashDamage} normalního poškozeni.`,
+        cz: `Sparrow se <c:dash>vrhne kupředu</c:dash> a vytasí svůj meč, čímž <c:stun>omráčí</c:stun> nepřátele které zasáhne na ${stunduration} a způsobí ${dashDamage} normalního poškozeni.`,
         br: `Sparrow <c:dash>avança</c:dash> na direção que está olhando,  <c:stun>atordoando</c:stun> os inimigos acertados por ${stunduration} e dando ${dashDamage}.`,
         zh: `史佩羅迅速向前<c:dash>衝刺</c:dash>，駕馭風暴，給予敵方英雄 ${dashDamage}並使他們暈眩 ${stunduration}。`,
         fr: `Sparrow se précipite rapidement en avant, utilisant le vent pour infliger ${dashDamage} et <c:stun>étourdir</c:stun> les ennemis touchés pendant ${stunduration}.`,
@@ -193,7 +193,8 @@ const _getSpellDescriptionLang = (
       const rootDuration = getControlDuration(
         hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
           ? ICeatAbilityData.ICICLE_ROOT_DURATION + ICeatAbilityData.TALENT_T1_LEFT_ICICLE_FREEZE_DURATION
-          : ICeatAbilityData.ICICLE_ROOT_DURATION
+          : ICeatAbilityData.ICICLE_ROOT_DURATION,
+        'Freeze'
       )
 
       return {
@@ -220,31 +221,31 @@ const _getSpellDescriptionLang = (
       const bonusSpeed = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0)
         ? ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED + ICeatAbilityData.TALENT_T1_RIGHT_COLD_EMBRACE_BONUS_MS
         : ICeatAbilityData.COLD_EMBRACE_BONUS_SPEED
-      const bonusMovementSpeed = getBuffValue(`${fixed(bonusSpeed * 100, 1)}%`)
+      const bonusMovementSpeed = getBuffValue(`${fixed(bonusSpeed * 100, 1)}%`, 'Movement Speed Buff')
 
       return {
         en:
-          `<b>First cast: </b>I'ceat slides on the ground, gaining ${bonusMovementSpeed} <c:bonus>bonus movement speed</c:bonus> for ${duration} and leaving behind an icy trail. Enemies standing on the icy trail take ${base_damage} per second and have reduced movement speed.<br/><br/>` +
+          `<b>First cast: </b>I'ceat slides on the ground, gaining ${bonusMovementSpeed} <c:movespeed>bonus movement speed</c:movespeed> for ${duration} and leaving behind an icy trail. Enemies standing on the icy trail take ${base_damage} per second and have reduced movement speed.<br/><br/>` +
           `<b>Second cast: </b>I'ceat stops sliding.`,
 
         ru:
-          `<b>Первое применение: </b>Ай'сит скользит по земле, получая ${bonusMovementSpeed} <c:bonus>бонуса к скорости передвижения</c:bonus> на ${duration} и оставляя за собой ледяной след. Враги, стоящие на ледяном следе, получают ${base_damage} урона в секунду и имеют сниженную скорость передвижения.<br/><br/>` +
+          `<b>Первое применение: </b>Ай'сит скользит по земле, получая ${bonusMovementSpeed} <c:movespeed>бонуса к скорости передвижения</c:movespeed> на ${duration} и оставляя за собой ледяной след. Враги, стоящие на ледяном следе, получают ${base_damage} урона в секунду и имеют сниженную скорость передвижения.<br/><br/>` +
           `<b>Повторное применение: </b>Ай'сит перестаёт скользить.`,
 
         cz:
-          `<b>První použití: </b>I'ceat klouže po zemi, získává ${bonusMovementSpeed} <c:bonus>bonus k rychlosti pohybu</c:bonus> na ${duration} a zanechává za sebou ledovou stopu. Nepřátelé stojící na ledové stopě dostávají ${base_damage} poškození za sekundu a mají <c:slow>sníženou rychlost pohybu</c:slow>.<br/><br/>` +
+          `<b>První použití: </b>I'ceat klouže po zemi, získává ${bonusMovementSpeed} <c:movespeed>bonus k rychlosti pohybu</c:movespeed> na ${duration} a zanechává za sebou ledovou stopu. Nepřátelé stojící na ledové stopě dostávají ${base_damage} poškození za sekundu a mají <c:slow>sníženou rychlost pohybu</c:slow>.<br/><br/>` +
           `<b>Druhé použití: </b>I'ceat přestane klouzat.`,
 
         br:
-          `<b>Primeira Ativação: </b>I'ceat desliza pelo chão, ganhando ${bonusMovementSpeed} de <c:bonus>bônus de velocidade de movimento</c:bonus> por ${duration} e deixando uma trilha de <c:control>gelo</c:control>. Inimigos na trilha de <c:control>gelo</c:control> recebem ${base_damage} por segundo e têm velocidade de movimento reduzida.<br/><br/>` +
+          `<b>Primeira Ativação: </b>I'ceat desliza pelo chão, ganhando ${bonusMovementSpeed} de <c:movespeed>bônus de velocidade de movimento</c:movespeed> por ${duration} e deixando uma trilha de gelo. Inimigos na trilha de gelo recebem ${base_damage} por segundo e têm velocidade de movimento reduzida.<br/><br/>` +
           `<b>Segunda Ativação: </b>I'ceat para de deslizar.`,
 
         zh:
-          `<b>第一次施放：</b>艾希特在地面滑行，獲得 ${bonusMovementSpeed} 額外移動速度，持續 ${duration}，並在身後留下冰霜軌跡。站在冰霜軌跡上的敵人每秒受到 ${base_damage}，並降低移動速度。<br/><br/>` +
+          `<b>第一次施放：</b>艾希特在地面滑行，獲得 ${bonusMovementSpeed} <c:movespeed>額外移動速度</c:movespeed>，持續 ${duration}，並在身後留下冰霜軌跡。站在冰霜軌跡上的敵人每秒受到 ${base_damage}，並降低移動速度。<br/><br/>` +
           `<b>第二次施放：</b>艾希特停止滑行。`,
 
         fr:
-          `<b>Première utilisation: </b>I'ceat glisse sur le sol, gagnant ${bonusMovementSpeed} de <c:bonus>bonus de vitesse de déplacement</c:bonus> pendant ${duration} et laissant derrière lui une traînée glacée. Les ennemis sur la traînée glacée subissent ${base_damage} par seconde et ont une vitesse de déplacement réduite.<br/><br/>` +
+          `<b>Première utilisation: </b>I'ceat glisse sur le sol, gagnant ${bonusMovementSpeed} de <c:movespeed>bonus de vitesse de déplacement</c:movespeed> pendant ${duration} et laissant derrière lui une traînée glacée. Les ennemis sur la traînée glacée subissent ${base_damage} par seconde et ont une vitesse de déplacement réduite.<br/><br/>` +
           `<b>Deuxième utilisation: </b>I'ceat arrête de glisser.`,
 
         vi:
@@ -252,9 +253,9 @@ const _getSpellDescriptionLang = (
           `<b>Kích hoạt lần hai: </b>I'ceat dừng trượt.`,
 
         id:
-          `<b>First cast: </b>I'ceat meluncur di tanah, mendapatkan ${bonusMovementSpeed} <c:bonus>bonus kecepatan bergerak</c:bonus> selama ${duration} dan meninggalkan jejak es. Musuh yang berdiri di atas jejak es menerima ${base_damage} per detik dan memiliki kecepatan gerak berkurang.<br/><br/>` +
+          `<b>First cast: </b>I'ceat meluncur di tanah, mendapatkan ${bonusMovementSpeed} <c:movespeed>bonus kecepatan bergerak</c:movespeed> selama ${duration} dan meninggalkan jejak es. Musuh yang berdiri di atas jejak es menerima ${base_damage} per detik dan memiliki kecepatan gerak berkurang.<br/><br/>` +
           `<b>Second cast: </b>I'ceat berhenti meluncur.`,
-        kr: `<b>첫 번째 시전: </b>아이싯이 땅 위를 미끄러지며 ${duration} 동안 ${bonusMovementSpeed}의 추가 이동 속도를 얻고 얼음 흔적을 남깁니다. 얼음 흔적 위에 서 있는 적은 초당 ${base_damage}의 피해를 입고 이동 속도가 감소합니다.<br/><br/><b>두 번째 시전: </b>아이싯이 미끄러지기를 멈춥니다.`,
+        kr: `<b>첫 번째 시전: </b>아이싯이 땅 위를 미끄러지며 ${duration} 동안 ${bonusMovementSpeed}의 <c:movespeed>추가 이동 속도</c:movespeed>를 얻고 얼음 흔적을 남깁니다. 얼음 흔적 위에 서 있는 적은 초당 ${base_damage}의 피해를 입고 이동 속도가 감소합니다.<br/><br/><b>두 번째 시전: </b>아이싯이 미끄러지기를 멈춥니다.`,
       }
     }
 
@@ -493,7 +494,7 @@ const _getSpellDescriptionLang = (
           `Усиление: Вэйл входит в астральное измерение, нанося дополнительно ${enh_dmg}, снижая скорость передвижения врагов и снимая своё усиленное состояние. <b>Астральный шаг имеет ${charges} заряда, которые восстанавливаются по одному.</b>`,
 
         cz:
-          `Veil se vysokou rychlostí vrhne vpřed a způsobí nepřátelským hrdinům ${base_damage} poškození.\n\n` +
+          `Veil se vysokou rychlostí <c:dash>vrhne vpřed</c:dash> a způsobí nepřátelským hrdinům ${base_damage} poškození.\n\n` +
           `Posílení: Veil vstoupí do astrální říše, způsobí dodatečných ${enh_dmg} poškození, sníží nepřátelům rychlost pohybu a odstraní svůj posílený stav. <b>Astrální krok má ${charges} nabití, která se obnovují postupně po jednom.</b>`,
 
         br:
@@ -513,7 +514,7 @@ const _getSpellDescriptionLang = (
           `Cường hóa: Veil bước vào tinh cõi, gây thêm ${enh_dmg}, giảm tốc chạy của kẻ địch và trở về trạng thái ban đầu. <b>Tinh Bộ có ${charges} lần tích trữ, hồi lại từng lượt một.</b>`,
 
         id:
-          `Veil melesat maju dengan kecepatan tinggi, memberikan ${base_damage} kepada hero musuh.\n\n` +
+          `Veil <c:dash>melesat</c:dash> maju dengan kecepatan tinggi, memberikan ${base_damage} kepada hero musuh.\n\n` +
           `Enhanced: Veil memasuki alam astral, memberikan tambahan ${enh_dmg}, mengurangi Movement Speed musuh, dan menghapus status enhanced miliknya. <b>Langkah Astral memiliki ${charges} charge yang terisi ulang satu per satu.</b>`,
         kr: `베일이 빠른 속도로 앞으로 <c:dash>돌진</c:dash>하여 적 영웅에게 ${base_damage}의 피해를 입힙니다.\n\n강화: 베일이 성계로 진입하여 추가로 ${enh_dmg}의 피해를 입히고 적의 이동 속도를 감소시키며 강화 상태를 해제합니다. <b>성계의 발걸음은 ${charges}개의 충전을 보유하며 한 번에 하나씩 재충전됩니다.</b>`,
       }
@@ -594,8 +595,11 @@ const _getSpellDescriptionLang = (
         KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
       )
       const bonusAttackSpeed = fixed(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100, 1)
-      const bonusAttackSpeedValue = getBuffValue(`${bonusAttackSpeed}%`)
-      const bonusMovementSpeed = getBuffValue(`${fixed(KiraAbilityData.ENHATTACK_MOVE_SPEED * 100, 1)}%`)
+      const bonusAttackSpeedValue = getBuffValue(`${bonusAttackSpeed}%`, 'Attack Speed Buff')
+      const bonusMovementSpeed = getBuffValue(
+        `${fixed(KiraAbilityData.ENHATTACK_MOVE_SPEED * 100, 1)}%`,
+        'Movement Speed Buff'
+      )
 
       return {
         en: `Kira fires a spark, dealing ${basic_damage}. \n\n<b>Enhanced: (Lightning Shock)</b> Kira also casts a lightning bolt at the nearest hero. If Lightning Shock hits an ally, it <c:heal>restores ${enh_damage_heal} health</c:heal> and grants ${bonusAttackSpeedValue} <c:bonus>bonus attack speed</c:bonus> and ${bonusMovementSpeed} <c:bonus>bonus movement speed</c:bonus> for a short duration.`,
@@ -650,34 +654,34 @@ const _getSpellDescriptionLang = (
       )
 
       const voidPhantasmDuration = getDuration(KiraAbilityData.VOID_PHANTASM_DURATION)
-      const voidPhantasmSilenceDuration = getControlDuration(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE)
+      const voidPhantasmSilenceDuration = getControlDuration(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE, 'Silence')
 
       return {
         en:
-          `Kira <c:dash>dashes</c:dash> forward, leaving behind a distorted afterimage. For ${voidPhantasmDuration}, she <c:bonus>gains bonus movement speed</c:bonus>. After the duration, she returns to the afterimage's position.` +
+          `Kira <c:dash>dashes</c:dash> forward, leaving behind a distorted afterimage. For ${voidPhantasmDuration}, she <c:movespeed>gains bonus movement speed</c:movespeed>. After the duration, she returns to the afterimage's position.` +
           `\n<br/><b>[Enhanced]: (Dynamic Afterimage)</b> Instead of Kira returning to the afterimage, the afterimage returns to Kira. The afterimage phases through enemies, dealing ${damage} and silencing them for ${voidPhantasmSilenceDuration}.`,
         br:
-          `Kira <c:dash>avança</c:dash> rapidamente, deixando para trás uma imagem distorcida. Por ${voidPhantasmDuration}, ela ganha <c:bonus>bônus de velocidade de movimento</c:bonus>. Após a duração, retorna à posição da imagem.` +
+          `Kira <c:dash>avança</c:dash> rapidamente, deixando para trás uma imagem distorcida. Por ${voidPhantasmDuration}, ela ganha <c:movespeed>bônus de velocidade de movimento</c:movespeed>. Após a duração, retorna à posição da imagem.` +
           `\n<br/><b>[Aprimorado]: (Imagem Dinâmica)</b> Em vez de Kira retornar à imagem, a imagem retorna até Kira. A imagem atravessa inimigos, causando ${damage} e silenciando-os por ${voidPhantasmSilenceDuration}.`,
         ru:
-          `Кира совершает <c:dash>рывок</c:dash> вперёд, оставляя позади искажённую копию. На ${voidPhantasmDuration} она получает <c:bonus>бонус к скорости передвижения</c:bonus>. По истечении времени возвращается к копии.` +
+          `Кира совершает <c:dash>рывок</c:dash> вперёд, оставляя позади искажённую копию. На ${voidPhantasmDuration} она получает <c:movespeed>бонус к скорости передвижения</c:movespeed>. По истечении времени возвращается к копии.` +
           `\n<br/><b>[Усиленная]: (Динамический фантом)</b> Вместо того чтобы Кира вернулась к копии, копия возвращается к Кире. Копия проходит через врагов, наносит ${damage} и накладывает немоту на ${voidPhantasmSilenceDuration}.`,
         cz:
-          `Kira se vrhne vpřed a zanechá za sebou zkreslený obraz. Po dobu ${voidPhantasmDuration} získá <c:bonus>bonus k rychlosti pohybu</c:bonus>. Po uplynutí doby se vrátí na pozici obrazu.` +
+          `Kira se <c:dash>vrhne vpřed</c:dash> a zanechá za sebou zkreslený obraz. Po dobu ${voidPhantasmDuration} získá <c:movespeed>bonus k rychlosti pohybu</c:movespeed>. Po uplynutí doby se vrátí na pozici obrazu.` +
           `\n<br/><b>[Vylepšené]: (Dynamický obraz)</b> Místo toho, aby se Kira vrátila k obrazu, se obraz vrátí ke Kiře. Obraz prochází nepřáteli, uděluje ${damage} a umlčuje je na ${voidPhantasmSilenceDuration}.`,
         zh:
-          `奇菈向前<c:dash>衝刺</c:dash>，留下扭曲殘影。在 ${voidPhantasmDuration} 期間，她獲得額外移動速度。時間結束後，她會回到殘影位置。` +
+          `奇菈向前<c:dash>衝刺</c:dash>，留下扭曲殘影。在 ${voidPhantasmDuration} 期間，她獲得<c:movespeed>額外移動速度</c:movespeed>。時間結束後，她會回到殘影位置。` +
           `\n<br/><b>[強化]：(動態殘影)</b> 奇菈不再回到殘影，而是殘影回到奇菈身邊。殘影會穿過敵人，造成 ${damage} 並沉默敵人 ${voidPhantasmSilenceDuration}。`,
         fr:
-          `Kira <c:dash>fonce</c:dash> en avant en laissant derrière elle une image déformée. Pendant ${voidPhantasmDuration}, elle gagne un <c:bonus>bonus de vitesse de déplacement</c:bonus>. À la fin, elle revient à la position de l'image.` +
+          `Kira <c:dash>fonce</c:dash> en avant en laissant derrière elle une image déformée. Pendant ${voidPhantasmDuration}, elle gagne un <c:movespeed>bonus de vitesse de déplacement</c:movespeed>. À la fin, elle revient à la position de l'image.` +
           `\n<br/><b>Amélioré : (Image dynamique)</b> Au lieu que Kira revienne à l'image, l'image revient vers Kira. L'image traverse les ennemis, inflige ${damage} et les silence pendant ${voidPhantasmSilenceDuration}.`,
         vi:
           `Kira tốc biến về phía trước, để lại ảo ảnh phía sau. Trong ${voidPhantasmDuration}, cô nhận thêm <c:bonus>tốc chạy</c:bonus>. Sau đó, cô quay lại vị trí của ảo ảnh.` +
           `\n<br/><b>Cường hóa: (Ảo ảnh động)</b> Thay vì quay lại ảo ảnh, ảo ảnh lướt đến Kira. Ảo ảnh xuyên địch, gây ${damage} và câm lặng chúng trong ${voidPhantasmSilenceDuration}.`,
         id:
-          `Kira melesat ke depan, meninggalkan bayangan terdistorsi. Selama ${voidPhantasmDuration}, dia mendapatkan <c:bonus>bonus kecepatan bergerak</c:bonus>. Setelah durasi berakhir, dia kembali ke posisi bayangan.` +
+          `Kira <c:dash>melesat</c:dash> ke depan, meninggalkan bayangan terdistorsi. Selama ${voidPhantasmDuration}, dia mendapatkan <c:movespeed>bonus kecepatan bergerak</c:movespeed>. Setelah durasi berakhir, dia kembali ke posisi bayangan.` +
           `\n<br/><b>Ditingkatkan: (Bayangan Dinamis)</b> Alih-alih Kira kembali ke bayangan, bayangan kembali ke posisi Kira. Bayangan menembus musuh, memberikan ${damage} dan membisukan mereka selama ${voidPhantasmSilenceDuration}.`,
-        kr: `키라가 앞으로 <c:dash>돌진</c:dash>하며 왜곡된 잔상을 남깁니다. ${voidPhantasmDuration} 동안 추가 이동 속도를 얻습니다. 지속시간이 끝나면 잔상의 위치로 돌아갑니다.\n<br/><b>[강화]: (역동적 잔상)</b> 키라가 잔상으로 돌아가는 대신, 잔상이 키라에게 돌아옵니다. 잔상은 적을 통과하며 ${damage}의 피해를 입히고 ${voidPhantasmSilenceDuration} 동안 침묵시킵니다.`,
+        kr: `키라가 앞으로 <c:dash>돌진</c:dash>하며 왜곡된 잔상을 남깁니다. ${voidPhantasmDuration} 동안 <c:movespeed>추가 이동 속도</c:movespeed>를 얻습니다. 지속시간이 끝나면 잔상의 위치로 돌아갑니다.\n<br/><b>[강화]: (역동적 잔상)</b> 키라가 잔상으로 돌아가는 대신, 잔상이 키라에게 돌아옵니다. 잔상은 적을 통과하며 ${damage}의 피해를 입히고 ${voidPhantasmSilenceDuration} 동안 침묵시킵니다.`,
       }
     }
 
@@ -746,9 +750,9 @@ const _getSpellDescriptionLang = (
       return {
         en: `Hazel swings her hammer upwards, unleashing the wrath of justice, dealing ${normalDamage}, knocking enemies upwards, and <c:stun>stunning</c:stun> for ${duration}.`,
         br: `Hazel canaliza poder na ponta de seu martelo, causando ${normalDamage} e <c:stun>atordoando</c:stun> inimigos por ${duration}.`,
-        ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} и <c:stun>подбрасывая</c:stun> врагов на ${duration}.`,
-        zh: `哈傑爾釋放正義之怒向上揮起鐵鎚，造成 ${normalDamage}並擊昇敵方使其暈眩 ${duration}。`,
-        cz: `Hazel zamává svým kladivem nahoru, uvolňuje hněv spravedlnosti, způsobuje ${normalDamage} a <c:control>odhazuje</c:control> nepřátele nahoru a <c:stun>omráčí</c:stun> na ${duration}.`,
+        ru: `Хейзел высвобождает гнев правосудия и взмахивает своим молотом, нанося ${normalDamage} и <c:knockup>подбрасывая</c:knockup> врагов на ${duration}.`,
+        zh: `哈傑爾釋放正義之怒向上揮起鐵鎚，造成 ${normalDamage}並擊昇敵方使其<c:stun>暈眩</c:stun> ${duration}。`,
+        cz: `Hazel zamává svým kladivem nahoru, uvolňuje hněv spravedlnosti, způsobuje ${normalDamage} a <c:knockup>odhazuje</c:knockup> nepřátele nahoru a <c:stun>omráčí</c:stun> na ${duration}.`,
         fr: `Hazel balance son marteau vers le haut, libérant la colère de la justice, infligeant ${normalDamage}, projetant les ennemis vers le haut et les <c:stun>étourdissant</c:stun> pendant ${duration}.`,
         vi: `Hazel vung búa của mình lên không trung, giải phóng cơn thịnh nộ công lý, gây ${normalDamage}, đẩy kẻ địch lên và làm <c:stun>choáng</c:stun> chúng trong ${duration}.`,
         id: `Hazel mengayunkan palunya ke atas, melepaskan kemarahan keadilan, memberikan ${normalDamage}, mendorong musuh ke atas, dan membius selama ${duration}.`,
@@ -814,14 +818,14 @@ const _getSpellDescriptionLang = (
         cz: `Arel hodí bombu, pokud se bomba dostane do kontaktu s nepřítelem, bomba se k němu přichytí a exploduje za ${bombDuration} a způsobí ${baseDamage} normální poškození všem okolním nepřátelům.
                 \nPokud je bomba připevněna k nepříteli a vy trafite nepřítele třikrát, bomba exploduje a způsobí ${triggerDamage} normální poškození a <c:stun>omráči</c:stun> nepřítele na ${slowDuration}`,
         zh: `艾瑞爾投擲一枚定時炸彈，如果炸彈接觸到敵方，炸彈會附著於該敵方並於 ${bombDuration}後爆炸，造成周圍所有敵方 ${baseDamage}。
-                \n射擊附著於敵方身上炸彈三發子彈時，炸彈會提早爆炸，造成 ${triggerDamage}並減緩他們速度 ${slowDuration}，然後使其暈眩 ${slowDuration}。`,
+                \n射擊附著於敵方身上炸彈三發子彈時，炸彈會提早爆炸，造成 ${triggerDamage}並<c:slow>減緩他們速度</c:slow> ${slowDuration}，然後使其<c:stun>暈眩</c:stun> ${slowDuration}。`,
         fr: `Arel lance une bombe à retardement, qui se fixe aux ennemis qui s'en approchent. Après ${bombDuration}, la bombe explose, infligeant ${baseDamage} dans une zone.
                 \nTirer sur une bombe attachée avec 3 balles déclenche la bombe prématurément, infligeant ${triggerDamage}, réduisant leur Vitesse de déplacement pendant ${slowDuration}, et les <c:stun>étourdissant</c:stun> pendant ${triggerStun}.`,
         vi: `Arel ném bom hẹn giờ, gắn vào kẻ địch tiếp cận. Sau ${bombDuration}, bom phát nổ, gây ${baseDamage} trong khu vực.
                 \nBắn vào quả bom đã gắn với 3 viên đạn kích hoạt bom nổ sớm, gây ${triggerDamage}, <c:slow>giảm tốc chạy</c:slow> của kẻ địch trong ${slowDuration} và làm <c:stun>choáng</c:stun> chúng trong ${triggerStun}.`,
         id: `Arel melontarkan bom berdetak, menempel pada musuh yang mendekat. Setelah ${bombDuration}, bom meledak, memberikan ${baseDamage} dalam area.
-                \nMenembak bom yang menempel dengan 3 peluru meledakkan bom lebih awal, memberikan ${triggerDamage}, <c:slow>mengurangi Kecepatan Gerak</c:slow> mereka selama ${slowDuration}, dan membius selama ${triggerStun}.`,
-        kr: `아렐이 시한폭탄을 던지며, 가까이 다가오는 적에게 부착됩니다. ${bombDuration} 후 폭탄이 폭발하여 범위 내에 ${baseDamage}의 피해를 입힙니다.\n부착된 폭탄에 총알 3발을 명중시키면 조기에 폭발하여 ${triggerDamage}의 피해를 입히고 ${slowDuration} 동안 이동 속도를 감소시키며 ${triggerStun} 동안 기절시킵니다.`,
+                \nMenembak bom yang menempel dengan 3 peluru meledakkan bom lebih awal, memberikan ${triggerDamage}, <c:slow>mengurangi Kecepatan Gerak</c:slow> mereka selama ${slowDuration}, dan <c:stun>membius</c:stun> selama ${triggerStun}.`,
+        kr: `아렐이 시한폭탄을 던지며, 가까이 다가오는 적에게 부착됩니다. ${bombDuration} 후 폭탄이 폭발하여 범위 내에 ${baseDamage}의 피해를 입힙니다.\n부착된 폭탄에 총알 3발을 명중시키면 조기에 폭발하여 ${triggerDamage}의 피해를 입히고 ${slowDuration} 동안 <c:slow>이동 속도</c:slow>를 감소시키며 ${triggerStun} 동안 <c:stun>기절</c:stun>시킵니다.`,
       }
     }
 
@@ -850,22 +854,25 @@ const _getSpellDescriptionLang = (
           : AlvarAbilityData.FURIOUS_KICK_STUN_DURATION
       )
       const buffDuration = getDuration(AlvarAbilityData.FURIOUS_KICK_BUFF_DURATION)
-      const bonusMovementSpeed = getBuffValue(`${fixed(AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED * 100, 1)}%`)
+      const bonusMovementSpeed = getBuffValue(
+        `${fixed(AlvarAbilityData.FURIOUS_KICK_BONUS_MOVE_SPEED * 100, 1)}%`,
+        'Movement Speed Buff'
+      )
 
       return {
-        en: `Alvar launches enemies backward with a powerful kick, dealing ${baseDamage} and <c:stun>stunning</c:stun> for ${duration}. \n\nApplies a stack of Divine Impact to all enemy heroes hit by Furious Kick.\n\nIn addition, Alvar grants himself and all nearby allies ${bonusMovementSpeed} <c:bonus>bonus Movement Speed</c:bonus> for ${buffDuration}`,
+        en: `Alvar launches enemies backward with a powerful kick, dealing ${baseDamage} and <c:stun>stunning</c:stun> for ${duration}. \n\nApplies a stack of Divine Impact to all enemy heroes hit by Furious Kick.\n\nIn addition, Alvar grants himself and all nearby allies ${bonusMovementSpeed} <c:movespeed>bonus Movement Speed</c:movespeed> for ${buffDuration}`,
         br: `Alvar lança seus inimigos para trás com um poderoso chute, causando ${baseDamage} e <c:stun>atordoando</c:stun> por ${duration}. \n\n
             Aplica um debuff em todos os personagens inimigos atingidos pelo chute furioso.\n
-            Além disso, Alvar concede a si mesmo e a todos os seus aliados próximos ${bonusMovementSpeed} de velocidade de movimento por ${buffDuration}`,
+            Além disso, Alvar concede a si mesmo e a todos os seus aliados próximos ${bonusMovementSpeed} de <c:movespeed>velocidade de movimento</c:movespeed> por ${buffDuration}`,
         ru: `Алвар отталкивает врагов за спину, нанося ${baseDamage} и <c:stun>оглушая</c:stun> на ${duration}. \n\n
             Накладывает 1 заряд ослабления на всех вражеских героев, попавших под удар.\n
-            Кроме того, Алвар даёт себе и всем своим союзникам ${bonusMovementSpeed} скорости передвижения на ${buffDuration}`,
+            Кроме того, Алвар даёт себе и всем своим союзникам ${bonusMovementSpeed} <c:movespeed>скорости передвижения</c:movespeed> на ${buffDuration}`,
         cz: `Alvar odhodí nepřátele silným kopem, způsobí ${baseDamage} normální poškození a <c:stun>omráčí</c:stun> na ${duration}. \n\n
             Aplikuje debuff na všechny nepřátelské hrdiny zasažené Furious Kick.\n
-            Kromě toho Alvar poskytuje sám sobě a všem svým blízkým spojencům ${bonusMovementSpeed} bonusové rychlosti pohybu na ${buffDuration}`,
-        zh: `阿爾瓦用一記強力的踢擊將敵人向後踢飛，造成 ${baseDamage}並暈眩 ${duration}。\n\n
+            Kromě toho Alvar poskytuje sám sobě a všem svým blízkým spojencům ${bonusMovementSpeed} bonusové <c:movespeed>rychlosti pohybu</c:movespeed> na ${buffDuration}`,
+        zh: `阿爾瓦用一記強力的踢擊將敵人向後踢飛，造成 ${baseDamage}並<c:stun>暈眩</c:stun> ${duration}。\n\n
             被狂怒踢擊擊中的敵方英雄將會疊加一次神聖衝擊。\n
-            此外阿爾瓦會給予自己和所有附近的盟友 ${bonusMovementSpeed}點移動速度加成，持續 ${buffDuration}。`,
+            此外阿爾瓦會給予自己和所有附近的盟友 ${bonusMovementSpeed}點<c:movespeed>移動速度加成</c:movespeed>，持續 ${buffDuration}。`,
         fr: `Alvar lance les ennemis en arrière avec un puissant coup de pied, infligeant ${baseDamage} et <c:stun>étourdissant</c:stun> pendant ${duration}. \n\n
             Applique une pile d'impact divin sur tous les héros ennemis touchés par Furious Kick.\n
             De plus, Alvar accorde à lui-même et à tous ses alliés proches ${bonusMovementSpeed} de vitesse de mouvement bonus pendant ${buffDuration}`,
@@ -874,8 +881,8 @@ const _getSpellDescriptionLang = (
             Ngoài ra, Alvar và tất cả đồng minh ở gần nhận ${bonusMovementSpeed} tốc chạy trong ${buffDuration}`,
         id: `Alvar meluncurkan musuh ke belakang dengan tendangan kuat, memberikan ${baseDamage} dan membius selama ${duration}. \n\n
             Mengaplikasikan tumpukan dampak ilahi pada semua pahlawan musuh yang terkena Furious Kick.\n
-            Selain itu Alvar memberikan dirinya dan semua sekutu terdekatnya ${bonusMovementSpeed} bonus kecepatan gerak selama ${buffDuration}`,
-        kr: `알바르가 강력한 발차기로 적을 뒤로 날려 ${baseDamage}의 피해를 입히고 ${duration} 동안 기절시킵니다. \n\n분노의 발차기에 맞은 모든 적 영웅에게 신성 충격 중첩을 적용합니다.\n\n또한 알바르는 자신과 주변의 모든 아군에게 ${buffDuration} 동안 ${bonusMovementSpeed}의 추가 이동 속도를 부여합니다`,
+            Selain itu Alvar memberikan dirinya dan semua sekutu terdekatnya ${bonusMovementSpeed} <c:movespeed>bonus kecepatan gerak</c:movespeed> selama ${buffDuration}`,
+        kr: `알바르가 강력한 발차기로 적을 뒤로 날려 ${baseDamage}의 피해를 입히고 ${duration} 동안 <c:stun>기절</c:stun>시킵니다. \n\n분노의 발차기에 맞은 모든 적 영웅에게 신성 충격 중첩을 적용합니다.\n\n또한 알바르는 자신과 주변의 모든 아군에게 ${buffDuration} 동안 ${bonusMovementSpeed}의 <c:movespeed>추가 이동 속도</c:movespeed>를 부여합니다`,
       }
     }
 
@@ -888,13 +895,13 @@ const _getSpellDescriptionLang = (
       return {
         en: `Alvar teleports to the closest enemy hero with Divine Mark, dealing ${baseDamage}, removing Divine Mark, and <c:slow>reducing movement speed</c:slow> for ${slowDuration}. If there are no nearby enemies with Divine Mark, this ability cannot be used.`,
         br: `Alvar se teletransporta para o herói inimigo mais próximo com Marca Divina, causando ${baseDamage}, removendo a Marca Divina e <c:slow>reduzindo a velocidade de movimento</c:slow> por ${slowDuration}. Se não houver inimigos próximos com Marca Divina, esta habilidade não pode ser usada.`,
-        ru: `Алвар телепортируется к ближайшему вражескому герою с Божественной Меткой, нанося ${baseDamage}, удаляя Божественную Метку и снижая скорость передвижения на ${slowDuration}. Если рядом нет врагов с Божественной Меткой, это умение нельзя использовать.`,
+        ru: `Алвар телепортируется к ближайшему вражескому герою с Божественной Меткой, нанося ${baseDamage}, удаляя Божественную Метку и <c:slow>снижая скорость передвижения</c:slow> на ${slowDuration}. Если рядом нет врагов с Божественной Меткой, это умение нельзя использовать.`,
         cz: `Alvar se teleportuje k nejbližšímu nepřátelskému hrdinovi s Božskou značkou, způsobí ${baseDamage}, odstraní Božskou značku a <c:slow>sníží rychlost pohybu</c:slow> na ${slowDuration}. Pokud poblíž nejsou žádní nepřátelé s Božskou značkou, tuto schopnost nelze použít.`,
-        zh: `阿爾瓦瞬移到最近擁有神聖印記的敵方英雄身旁，造成 ${baseDamage}，移除神聖印記，並降低移動速度 ${slowDuration}。如果附近沒有擁有神聖印記的敵人，此技能無法使用。`,
+        zh: `阿爾瓦瞬移到最近擁有神聖印記的敵方英雄身旁，造成 ${baseDamage}，移除神聖印記，並<c:slow>降低移動速度</c:slow> ${slowDuration}。如果附近沒有擁有神聖印記的敵人，此技能無法使用。`,
         fr: `Alvar se téléporte vers le héros ennemi le plus proche avec Marque divine, inflige ${baseDamage}, supprime la Marque divine et <c:slow>réduit la vitesse de déplacement</c:slow> pendant ${slowDuration}. S'il n'y a aucun ennemi proche avec Marque divine, cette capacité ne peut pas être utilisée.`,
         vi: `Alvar dịch chuyển đến tướng địch gần nhất có Thần Ấn, gây ${baseDamage}, loại bỏ Thần Ấn và <c:slow>giảm tốc chạy</c:slow> của chúng trong ${slowDuration}. Nếu không có kẻ địch nào gần đó có Thần Kích, kỹ năng này không thể kích hoạt.`,
         id: `Alvar berteleportasi ke hero musuh terdekat dengan Divine Mark, memberikan ${baseDamage}, menghapus Divine Mark, dan <c:slow>mengurangi kecepatan gerak</c:slow> selama ${slowDuration}. Jika tidak ada musuh di dekat dengan Divine Mark, kemampuan ini tidak dapat digunakan.`,
-        kr: `알바르가 신성의 인장이 있는 가장 가까운 적 영웅에게 순간이동하여 ${baseDamage}의 피해를 입히고, 신성의 인장을 제거하며, ${slowDuration} 동안 이동 속도를 감소시킵니다. 신성의 인장이 있는 적이 근처에 없으면 이 스킬을 사용할 수 없습니다.`,
+        kr: `알바르가 신성의 인장이 있는 가장 가까운 적 영웅에게 순간이동하여 ${baseDamage}의 피해를 입히고, 신성의 인장을 제거하며, ${slowDuration} 동안 <c:slow>이동 속도</c:slow>를 감소시킵니다. 신성의 인장이 있는 적이 근처에 없으면 이 스킬을 사용할 수 없습니다.`,
       }
     }
 
@@ -959,7 +966,7 @@ const _getSpellDescriptionLang = (
           `Foxy hodí granát, který exploduje, když se určitou rychlostí dotkne země. Pokud je rychlost pádu příliš vysoká, odskočí. Při výbuchu způsobí ${baseDamage} + ${apDamage}. \n` +
           'Když granát exploduje, srazí jednotky. Zpětný ráz je založen na vzdálenosti mezi jednotkou a granátem.',
         br:
-          `<b>Primeira conjuração: </b>Foxy lança uma granada que detona ao impactar o chão, causando ${baseDamage} + ${apDamage} em uma área e <c:stun>empurrando</c:stun> unidades. Se a velocidade de queda da granada for rápida o suficiente, ela quicará uma vez antes de detonar. ` +
+          `<b>Primeira conjuração: </b>Foxy lança uma granada que detona ao impactar o chão, causando ${baseDamage} + ${apDamage} em uma área e <c:knockback>empurrando</c:knockback> unidades. Se a velocidade de queda da granada for rápida o suficiente, ela quicará uma vez antes de detonar. ` +
           'O empurrão é baseado na distância entre a unidade inimiga e a granada.\n' +
           '<b>Segunda conjuração: </b>Detone a granada cedo.',
         zh:
@@ -967,7 +974,7 @@ const _getSpellDescriptionLang = (
           '擊退幅度基於敵方單位與手榴彈之間的距離。\n' +
           '<b>第二次施放: </b>提前引爆手榴彈。',
         fr:
-          `<b>Première utilisation: </b>Foxy lance une grenade qui explose au contact du sol, infligeant ${baseDamage} + ${apDamage} dans une zone et <c:stun>repoussant les unités</c:stun>. Si la vitesse de chute de la grenade est suffisamment rapide, elle rebondira une fois avant de détoner. ` +
+          `<b>Première utilisation: </b>Foxy lance une grenade qui explose au contact du sol, infligeant ${baseDamage} + ${apDamage} dans une zone et <c:knockback>repoussant les unités</c:knockback>. Si la vitesse de chute de la grenade est suffisamment rapide, elle rebondira une fois avant de détoner. ` +
           "Le repoussement est basé sur la distance entre l'unité ennemie et la grenade.\n" +
           '<b>Deuxième utilisation: </b>Détoner la grenade tôt.',
         vi:
@@ -1005,8 +1012,8 @@ const _getSpellDescriptionLang = (
         MagdaleneAbilityData.SCREAM_OF_PAIN_BASE_DAMAGE +
           MagdaleneAbilityData.SCREAM_OF_PAIN_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const silenceDuration = getControlDuration(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION)
-      const pushbackDuration = getControlDuration(MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION)
+      const silenceDuration = getControlDuration(MagdaleneAbilityData.SCREAM_OF_PAIN_SILENCE_DURATION, 'Silence')
+      const pushbackDuration = getControlDuration(MagdaleneAbilityData.SCREAM_OF_PAIN_PUSHBACK_DURATION, 'Fear')
 
       return {
         en: `Magdalene sends out an ear-splitting scream, dealing ${damage} to enemies in front of her, knocking them back, and silencing them for ${silenceDuration}. \nConsumes Haunted Ghost if the target is afflicted, deals additional damage and applies <c:control>fear</c:control> to the target for ${pushbackDuration}.`,
@@ -1161,7 +1168,7 @@ const _getSpellDescriptionLang = (
         SeerAbilityData.MALEVOLENT_SHIFT_BASE_DAMAGE + SeerAbilityData.MALEVOLENT_SHIFT_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const silenceDuration = getControlDuration(SeerAbilityData.MALEVOLENT_SHIFT_SILENCE_DURATION)
+      const silenceDuration = getControlDuration(SeerAbilityData.MALEVOLENT_SHIFT_SILENCE_DURATION, 'Silence')
       const mirrorDamage = fixed(SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_MIRROR_DAMAGE_MODIFIER * 100, 0)
 
       return appendSentence(
@@ -1246,7 +1253,7 @@ const _getSpellDescriptionLang = (
           KarickAbilityData.VERDANT_MARK_DAMAGE_PER_LEVEL * (level - 1)) *
           rootSeconds
       )
-      const rootDuration = getControlDuration(rootDurationMs)
+      const rootDuration = getControlDuration(rootDurationMs, 'Root')
       const groveMarkStacks = KarickAbilityData.GROVE_MARK_STACKS
 
       return {
@@ -1276,13 +1283,13 @@ const _getSpellDescriptionLang = (
       return {
         en: `Karick casts a living seed before him. After a brief delay, it erupts into towering briars, applying ${groveMarkStacks} Verdant Mark stack before hitting, dealing ${magicalDamage} and <c:stun>stunning</c:stun> enemies for ${stunDuration}.`,
         ru: `Карик призывает живое семя перед собой. После короткой задержки оно взрывается, порождая шипы, перед попаданием накладывая ${groveMarkStacks} заряд Verdant Mark, нанося ${magicalDamage} урона и <c:stun>оглушая</c:stun> врагов на ${stunDuration}.`,
-        cz: `Karick sesílá živé semeno před sebe. Po krátkém zpoždění <c:dash>vyrazí</c:dash> v mohutné trny, které před zásahem aplikují ${groveMarkStacks} stack Verdant Mark, způsobí ${magicalDamage} poškození a <c:stun>omráčí</c:stun> nepřátele na ${stunDuration}.`,
+        cz: `Karick sesílá živé semeno před sebe. Po krátkém zpoždění vyrazí v mohutné trny, které před zásahem aplikují ${groveMarkStacks} stack Verdant Mark, způsobí ${magicalDamage} poškození a <c:stun>omráčí</c:stun> nepřátele na ${stunDuration}.`,
         br: `Karick conjura uma semente viva à sua frente. Após um breve atraso, ela irrompe em espinhos gigantes, aplicando ${groveMarkStacks} acúmulo de Verdant Mark antes de acertar, causando ${magicalDamage} e <c:stun>atordoando</c:stun> inimigos por ${stunDuration}.`,
-        zh: `Karick 在前方施放一颗活体种子。短暂延迟后，种子爆发成巨大的荆棘，命中前先施加 ${groveMarkStacks} 层 Verdant Mark，造成 ${magicalDamage} 点伤害并使敌人眩晕 ${stunDuration}。`,
+        zh: `Karick 在前方施放一颗活体种子。短暂延迟后，种子爆发成巨大的荆棘，命中前先施加 ${groveMarkStacks} 层 Verdant Mark，造成 ${magicalDamage} 点伤害并使敌人<c:stun>眩晕</c:stun> ${stunDuration}。`,
         fr: `Karick invoque une graine vivante devant lui. Après un court délai, elle éclate en ronces géantes, appliquant ${groveMarkStacks} cumul de Verdant Mark avant de toucher, infligeant ${magicalDamage} dégâts et <c:stun>étourdissant</c:stun> les ennemis pendant ${stunDuration}.`,
         vi: `Karick triệu hồi một hạt giống trước mặt. Sau một khoảng trễ ngắn, nó bùng nổ thành những bụi gai khổng lồ, áp dụng ${groveMarkStacks} cộng dồn Nhiên Ấn trước khi đánh trúng, gây ${magicalDamage} và làm <c:stun>choáng</c:stun> kẻ địch trong ${stunDuration}.`,
         id: `Karick memanggil benih hidup di depannya. Setelah jeda singkat, benih itu meledak menjadi duri raksasa, menerapkan ${groveMarkStacks} stack Verdant Mark sebelum mengenai, memberikan ${magicalDamage} dan membuat musuh terkena <c:stun>stun</c:stun> selama ${stunDuration}.`,
-        kr: `카릭이 앞에 살아있는 씨앗을 심습니다. 짧은 지연 후 거대한 가시덤불로 솟아올라 명중 전에 ${groveMarkStacks}중첩의 초록의 인장을 적용하고, ${magicalDamage}의 피해를 입히며 적을 ${stunDuration} 동안 기절시킵니다.`,
+        kr: `카릭이 앞에 살아있는 씨앗을 심습니다. 짧은 지연 후 거대한 가시덤불로 솟아올라 명중 전에 ${groveMarkStacks}중첩의 초록의 인장을 적용하고, ${magicalDamage}의 피해를 입히며 적을 ${stunDuration} 동안 <c:stun>기절</c:stun>시킵니다.`,
       }
     }
 
@@ -1310,8 +1317,8 @@ const _getSpellDescriptionLang = (
 
       return {
         en: `<c:dash>Dashes</c:dash> the Puppet forward, up to ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} distance. It stops on the first unit hit, dealing ${baseDamage} and slowing by ${slowValue} for ${slowDuration}, then fixates on the target for ${fixateDuration} (or until it strays too far).`,
-        ru: `Отправляет Куклу рывком вперёд на расстояние до ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Она останавливается при первом попадании, нанося ${baseDamage} урона и <c:slow>замедляя</c:slow> на ${slowValue} на ${slowDuration}, затем фиксируется на цели на ${fixateDuration} (или пока не отдалится слишком сильно).`,
-        cz: `Vyšle Loutku vpřed až na vzdálenost ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Zastaví se při prvním zásahu, způsobí ${baseDamage} poškození a zpomalí o ${slowValue} na ${slowDuration}, poté se fixuje na cíl na ${fixateDuration} (nebo dokud se příliš nevzdálí).`,
+        ru: `Отправляет Куклу <c:dash>рывком</c:dash> вперёд на расстояние до ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Она останавливается при первом попадании, нанося ${baseDamage} урона и <c:slow>замедляя</c:slow> на ${slowValue} на ${slowDuration}, затем фиксируется на цели на ${fixateDuration} (или пока не отдалится слишком сильно).`,
+        cz: `<c:dash>Vyšle Loutku vpřed</c:dash> až na vzdálenost ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE}. Zastaví se při prvním zásahu, způsobí ${baseDamage} poškození a zpomalí o ${slowValue} na ${slowDuration}, poté se fixuje na cíl na ${fixateDuration} (nebo dokud se příliš nevzdálí).`,
         br: `<c:dash>Avança</c:dash> a Marionete para frente, até ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} de distância. Ela para na primeira unidade atingida, causando ${baseDamage} e reduzindo a velocidade em ${slowValue} por ${slowDuration}, depois fica fixada no alvo por ${fixateDuration} (ou até se afastar demais).`,
         zh: `令木偶向前<c:dash>衝刺</c:dash>，最遠 ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} 距離。命中第一個單位後停止，造成 ${baseDamage} 點傷害並減速 ${slowValue}，持續 ${slowDuration}，隨後固定於目標 ${fixateDuration}（或直到距離過遠）。`,
         fr: `Envoie la Marionnette en avant, jusqu'à ${PuppeteerAbilityData.PUPPET_DASH_MAX_DISTANCE} de distance. Elle s'arrête sur la première unité touchée, infligeant ${baseDamage} dégâts et <c:slow>ralentissant</c:slow> de ${slowValue} pendant ${slowDuration}, puis se fixe sur la cible pendant ${fixateDuration} (ou jusqu'à s'éloigner trop).`,
@@ -1361,7 +1368,7 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.PATROKLOS_VANGUARD: {
-      const shieldValue = getBuffValue(`${fixed(PatroklosAbilityData.VANGUARD_SHIELD_MOD * 100, 0)}%`)
+      const shieldValue = getBuffValue(`${fixed(PatroklosAbilityData.VANGUARD_SHIELD_MOD * 100, 0)}%`, 'Shield')
       const shieldDuration = getDuration(PatroklosAbilityData.VANGUARD_SHIELD_DURATION)
       const enemyDamage = getDamage(PatroklosAbilityData.VANGUARD_ENEMY_DAMAGE_MOD * damage)
       const slowValue = getMovementSpeedValue(`${fixed(PatroklosAbilityData.VANGUARD_SLOW_MOD * 100, 0)}%`)
@@ -1370,7 +1377,7 @@ const _getSpellDescriptionLang = (
       return {
         en: `Patroklos <c:dash>dashes</c:dash> forward, shielding himself for ${shieldValue} of his max health for ${shieldDuration}. Allies passed through during the <c:dash>dash</c:dash> are shielded the same way, based on Patroklos's health. Enemies hit take ${enemyDamage} and gain a stack of Heavens Fall. Enemy heroes hit are also <c:slow>slowed</c:slow> by ${slowValue} for ${slowDuration}.`,
         ru: `Патрокл совершает <c:dash>рывок</c:dash> вперёд, накладывая на себя щит в ${shieldValue} от максимального здоровья на ${shieldDuration}. Союзники, через которых он проходит во время <c:dash>рывка</c:dash>, получают такой же щит, основанный на здоровье Патрокла. Задетые враги получают ${enemyDamage} урона и заряд Падения Небес. Задетые вражеские герои также <c:slow>замедляются</c:slow> на ${slowValue} на ${slowDuration}.`,
-        cz: `Patroklos se vrhne vpřed a nasadí si štít ve výši ${shieldValue} svého maximálního zdraví na ${shieldDuration}. Spojenci, kterými během výpadu proletí, získají stejný štít založený na zdraví Patrokla. Zasažení nepřátelé utrpí ${enemyDamage} poškození a získají stack Pádu nebes. Zasažení nepřátelští hrdinové jsou navíc <c:slow>zpomaleni</c:slow> o ${slowValue} na ${slowDuration}.`,
+        cz: `Patroklos se <c:dash>vrhne vpřed</c:dash> a nasadí si štít ve výši ${shieldValue} svého maximálního zdraví na ${shieldDuration}. Spojenci, kterými během výpadu proletí, získají stejný štít založený na zdraví Patrokla. Zasažení nepřátelé utrpí ${enemyDamage} poškození a získají stack Pádu nebes. Zasažení nepřátelští hrdinové jsou navíc <c:slow>zpomaleni</c:slow> o ${slowValue} na ${slowDuration}.`,
         br: `Patroklos <c:dash>avança</c:dash> em uma investida, concedendo a si mesmo um escudo de ${shieldValue} de sua vida máxima por ${shieldDuration}. Aliados atravessados durante a investida recebem o mesmo escudo, baseado na vida de Patroklos. Inimigos atingidos sofrem ${enemyDamage} e ganham um acúmulo de Queda dos Céus. Heróis inimigos atingidos também são <c:slow>desacelerados</c:slow> em ${slowValue} por ${slowDuration}.`,
         zh: `Patroklos 向前<c:dash>衝刺</c:dash>，為自己施加相當於其最大生命值 ${shieldValue} 的護盾，持續 ${shieldDuration}。<c:dash>衝刺</c:dash>途中經過的友軍會獲得同樣基於 Patroklos 生命值的護盾。被擊中的敵人受到 ${enemyDamage} 點傷害並獲得一層天罰。被擊中的敵方英雄還會被<c:slow>減速</c:slow> ${slowValue}，持續 ${slowDuration}。`,
         fr: `Patroklos s'élance en avant, se conférant un bouclier équivalent à ${shieldValue} de sa santé maximale pendant ${shieldDuration}. Les alliés traversés pendant la ruée reçoivent le même bouclier, basé sur la santé de Patroklos. Les ennemis touchés subissent ${enemyDamage} dégâts et gagnent un cumul de Chute des Cieux. Les héros ennemis touchés sont également <c:slow>ralentis</c:slow> de ${slowValue} pendant ${slowDuration}.`,
@@ -1387,7 +1394,7 @@ const _getSpellDescriptionLang = (
         PatroklosAbilityData.DIVINE_RECKONING_BASE_DAMAGE,
         'AttackDamage'
       )
-      const healMod = getBuffValue(`${fixed(PatroklosAbilityData.DIVINE_RECKONING_HEAL_MOD * 100, 0)}%`)
+      const healMod = getBuffValue(`${fixed(PatroklosAbilityData.DIVINE_RECKONING_HEAL_MOD * 100, 0)}%`, 'Heal')
 
       return {
         en: `Patroklos consumes all Heavens Fall stacks from every enemy hero on the map. One sword per consumed stack strikes the marked hero, each dealing ${perSwordDamage} and healing Patroklos for ${healMod} of the damage dealt.`,
@@ -1469,13 +1476,13 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
       return {
         en: 'Arcane <c:dash>Dash</c:dash>',
         ru: 'Мистический <c:dash>рывок</c:dash>',
-        cz: 'Tajemný Krok',
+        cz: 'Tajemný <c:dash>Krok</c:dash>',
         br: 'Possessão Demoníaca',
         zh: '奧術<c:dash>衝刺</c:dash>',
-        fr: 'Charge arcanique',
-        vi: 'Phi Thân Ma Pháp',
-        id: 'Lari Cepat',
-        kr: `비전 돌진`,
+        fr: '<c:dash>Charge</c:dash> arcanique',
+        vi: '<c:dash>Phi Thân</c:dash> Ma Pháp',
+        id: '<c:dash>Lari Cepat</c:dash>',
+        kr: `비전 <c:dash>돌진</c:dash>`,
       }
 
     /** Sparrow */
@@ -1488,7 +1495,7 @@ const _getSpellNameLang = (id: SpellList): { [key in string]: string } => {
         zh: '腐壞之風',
         fr: 'Charge',
         vi: 'Tà Phong',
-        id: 'Lari Cepat',
+        id: '<c:dash>Lari Cepat</c:dash>',
         kr: `타락한 바람`,
       }
 

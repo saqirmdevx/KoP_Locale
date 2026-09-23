@@ -249,18 +249,18 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         Shared.DamageTypes.MAGICAL,
         KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const charmDuration = getControlDuration(KumihuAbilityData.ENH_CHARM_DURATION)
+      const charmDuration = getControlDuration(KumihuAbilityData.ENH_CHARM_DURATION, 'Charm')
 
       return {
-        en: `After using Arcane <c:dash>Dash</c:dash>, Kumihu's next Basic Attack deals a bonus ${enhancedDamage} and applies <c:control>Charm</c:control> on target for ${charmDuration}.`,
-        ru: `После использования Тайного <c:dash>рывка</c:dash> следующая базовая атака Кумиху нанесёт дополнительно ${enhancedDamage} и наложит <c:control>очарование</c:control> на цель на ${charmDuration}.`,
-        cz: `Po použití Tajemného <c:dash>skoku</c:dash> způsobí další základní útok Kumihu bonusových ${enhancedDamage} a <c:control>očaruje</c:control> cíl na ${charmDuration}.`,
-        zh: `使用奧術<c:dash>衝刺</c:dash>後，庫咪戶的下一次基本攻擊額外造成 ${enhancedDamage}，並對目標施加<c:control>魅惑</c:control> ${charmDuration}。`,
-        fr: `Après avoir utilisé la Ruée arcanique, la prochaine attaque de base de Kumihu inflige un bonus de ${enhancedDamage} et applique <c:control>Charme</c:control> à la cible pendant ${charmDuration}.`,
-        br: `Após usar o <c:dash>Avanço</c:dash> Arcano, o próximo ataque básico de Kumihu causa um bônus de ${enhancedDamage} e aplica <c:control>Encanto</c:control> no alvo por ${charmDuration}.`,
-        vi: `Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enhancedDamage} và áp dụng <c:control>Quyến Rũ</c:control> lên mục tiêu trong ${charmDuration}.`,
-        id: `Setelah menggunakan Arcane <c:dash>Dash</c:dash>, Serangan Dasar berikutnya Kumihu memberikan bonus ${enhancedDamage} dan menerapkan <c:control>Charm</c:control> pada target selama ${charmDuration}.`,
-        kr: `비전 <c:dash>돌진</c:dash>을 사용한 후 쿠미후의 다음 기본 공격은 추가로 ${enhancedDamage}의 피해를 입히고 대상에게 ${charmDuration} 동안 <c:control>매혹</c:control>을 적용합니다.`,
+        en: `After using Arcane <c:dash>Dash</c:dash>, Kumihu's next Basic Attack deals a bonus ${enhancedDamage} and applies <c:charm>Charm</c:charm> on target for ${charmDuration}.`,
+        ru: `После использования Тайного <c:dash>рывка</c:dash> следующая базовая атака Кумиху нанесёт дополнительно ${enhancedDamage} и наложит <c:charm>очарование</c:charm> на цель на ${charmDuration}.`,
+        cz: `Po použití Tajemného <c:dash>skoku</c:dash> způsobí další základní útok Kumihu bonusových ${enhancedDamage} a <c:charm>očaruje</c:charm> cíl na ${charmDuration}.`,
+        zh: `使用奧術<c:dash>衝刺</c:dash>後，庫咪戶的下一次基本攻擊額外造成 ${enhancedDamage}，並對目標施加<c:charm>魅惑</c:charm> ${charmDuration}。`,
+        fr: `Après avoir utilisé la Ruée arcanique, la prochaine attaque de base de Kumihu inflige un bonus de ${enhancedDamage} et applique <c:charm>Charme</c:charm> à la cible pendant ${charmDuration}.`,
+        br: `Após usar o <c:dash>Avanço</c:dash> Arcano, o próximo ataque básico de Kumihu causa um bônus de ${enhancedDamage} e aplica <c:charm>Encanto</c:charm> no alvo por ${charmDuration}.`,
+        vi: `Sau khi sử dụng Phi Thân Ma Pháp, đòn đánh thường tiếp theo của Kumihu gây thêm ${enhancedDamage} và áp dụng <c:charm>Quyến Rũ</c:charm> lên mục tiêu trong ${charmDuration}.`,
+        id: `Setelah menggunakan Arcane <c:dash>Dash</c:dash>, Serangan Dasar berikutnya Kumihu memberikan bonus ${enhancedDamage} dan menerapkan <c:charm>Charm</c:charm> pada target selama ${charmDuration}.`,
+        kr: `비전 <c:dash>돌진</c:dash>을 사용한 후 쿠미후의 다음 기본 공격은 추가로 ${enhancedDamage}의 피해를 입히고 대상에게 ${charmDuration} 동안 <c:charm>매혹</c:charm>을 적용합니다.`,
       }
     }
 
@@ -269,7 +269,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
         SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
             ? SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION
-            : 0)
+            : 0),
+        'Knock Up'
       )
       const damageModifier =
         SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER +
@@ -281,15 +282,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       )
 
       return {
-        en: `Using an ability charges Sparrow's sword. Her next basic attack is replaced with a shockwave attack, <c:stun>knocking up</c:stun> enemies for ${knockUpDuration} and dealing ${enhancedDamage}.`,
-        ru: `Использование способности зачаровывает меч Спарроу. Её следующая базовая атака заменяется ударной волной, которая <c:stun>подбрасывает</c:stun> врагов на ${knockUpDuration} и наносит ${enhancedDamage}.`,
-        cz: `Použití schopnosti nabije meč Sparrow. Její další základní útok je nahrazen tlakovou vlnou, která <c:stun>vyhodí</c:stun> nepřátele do vzduchu na ${knockUpDuration} a způsobí ${enhancedDamage}.`,
-        zh: `使用技能會為史佩羅的劍充能。她的下一次基本攻擊將變為衝擊波攻擊，<c:stun>擊飛</c:stun>敵人 ${knockUpDuration}，並造成 ${enhancedDamage}。`,
-        fr: `L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une onde de choc qui <c:stun>projette les ennemis en l'air</c:stun> pendant ${knockUpDuration} et inflige ${enhancedDamage}.`,
-        br: `Usar uma habilidade carrega a espada de Sparrow. Seu próximo ataque básico é substituído por uma onda de choque que <c:stun>arremessa</c:stun> os inimigos para o ar por ${knockUpDuration} e causa ${enhancedDamage}.`,
-        vi: `Sử dụng một kỹ năng sẽ tích năng lượng cho kiếm của Sparrow. Đòn đánh thường tiếp theo của cô được thay thế bằng sóng kiếm, <c:stun>hất tung</c:stun> kẻ địch trong ${knockUpDuration} và gây ${enhancedDamage}.`,
-        id: `Menggunakan kemampuan mengisi pedang Sparrow. Serangan dasar berikutnya digantikan dengan serangan gelombang kejut yang <c:stun>melontarkan</c:stun> musuh ke udara selama ${knockUpDuration} dan memberikan ${enhancedDamage}.`,
-        kr: `스킬을 사용하면 스패로우의 검에 기운이 충전됩니다. 다음 기본 공격이 충격파 공격으로 대체되어 적을 ${knockUpDuration} 동안 <c:stun>공중으로 띄워 올리고</c:stun> ${enhancedDamage}의 피해를 입힙니다.`,
+        en: `Using an ability charges Sparrow's sword. Her next basic attack is replaced with a shockwave attack, <c:knockup>knocking up</c:knockup> enemies for ${knockUpDuration} and dealing ${enhancedDamage}.`,
+        ru: `Использование способности зачаровывает меч Спарроу. Её следующая базовая атака заменяется ударной волной, которая <c:knockup>подбрасывает</c:knockup> врагов на ${knockUpDuration} и наносит ${enhancedDamage}.`,
+        cz: `Použití schopnosti nabije meč Sparrow. Její další základní útok je nahrazen tlakovou vlnou, která <c:knockup>vyhodí</c:knockup> nepřátele do vzduchu na ${knockUpDuration} a způsobí ${enhancedDamage}.`,
+        zh: `使用技能會為史佩羅的劍充能。她的下一次基本攻擊將變為衝擊波攻擊，<c:knockup>擊飛</c:knockup>敵人 ${knockUpDuration}，並造成 ${enhancedDamage}。`,
+        fr: `L'utilisation d'une compétence charge l'épée de Sparrow. Sa prochaine attaque de base est remplacée par une onde de choc qui <c:knockup>projette les ennemis en l'air</c:knockup> pendant ${knockUpDuration} et inflige ${enhancedDamage}.`,
+        br: `Usar uma habilidade carrega a espada de Sparrow. Seu próximo ataque básico é substituído por uma onda de choque que <c:knockup>arremessa</c:knockup> os inimigos para o ar por ${knockUpDuration} e causa ${enhancedDamage}.`,
+        vi: `Sử dụng một kỹ năng sẽ tích năng lượng cho kiếm của Sparrow. Đòn đánh thường tiếp theo của cô được thay thế bằng sóng kiếm, <c:knockup>hất tung</c:knockup> kẻ địch trong ${knockUpDuration} và gây ${enhancedDamage}.`,
+        id: `Menggunakan kemampuan mengisi pedang Sparrow. Serangan dasar berikutnya digantikan dengan serangan gelombang kejut yang <c:knockup>melontarkan</c:knockup> musuh ke udara selama ${knockUpDuration} dan memberikan ${enhancedDamage}.`,
+        kr: `스킬을 사용하면 스패로우의 검에 기운이 충전됩니다. 다음 기본 공격이 충격파 공격으로 대체되어 적을 ${knockUpDuration} 동안 <c:knockup>공중으로 띄워 올리고</c:knockup> ${enhancedDamage}의 피해를 입힙니다.`,
       }
     }
 
@@ -392,12 +393,12 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       }
 
     case Shared.HEROES.HAZEL: {
-      const tenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_TENACITY * 100, 1)}%`)
-      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`)
+      const tenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_TENACITY * 100, 1)}%`, 'Tenacity Buff')
+      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`, 'Tenacity Buff')
       const bonusDuration = getDuration(HazelAbilityData.STONE_SKIN_CC_BONUS_DURATION)
       const movementSpeed = getBuffValue(
         `${fixed(HazelAbilityData.TALENT_T1_RIGHT_STONE_SKIN_MOVEMENT_SPEED * 100, 1)}%`
-      )
+      , 'Movement Speed Buff')
 
       return appendSentence(
         {
@@ -492,7 +493,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
           MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0) ? MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS : 0)
       )
-      const abilityPowerPerSoul = getBuffValue(1)
+      const abilityPowerPerSoul = getBuffValue(1, 'Ability Power Buff')
       const soulDamage = getDamage(
         0,
         Shared.DamageTypes.MAGICAL,
@@ -517,11 +518,11 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       const movementSpeedModifier =
         PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_MOVEMENT_SPEED +
         (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED : 0)
-      const bonusMovementSpeed = getBuffValue(`${fixed(movementSpeedModifier * 100, 1)}%`)
+      const bonusMovementSpeed = getBuffValue(`${fixed(movementSpeedModifier * 100, 1)}%`, 'Movement Speed Buff')
       const bonusArmor = getBuffValue(
         PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR +
           (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR : 0)
-      )
+      , 'Armor Buff')
 
       return {
         en: `While Prim's Ball is attached to her, she gains ${bonusMovementSpeed} <c:bonus>bonus Movement Speed</c:bonus> and ${bonusArmor} <c:bonus>bonus Armor</c:bonus>.`,
@@ -583,8 +584,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.FLIN: {
-      const rangePerLevel = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL)
-      const currentRange = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL * level)
+      const rangePerLevel = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL, 'Attack Range Buff')
+      const currentRange = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL * level, 'Attack Range Buff')
 
       return {
         en: `Flin gains ${rangePerLevel} Attack Range per level, extending his Basic Attack, Precise Shot and Backstep arrows. Current bonus: ${currentRange} range.`,
@@ -600,11 +601,11 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.PUPPETEER: {
-      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`)
+      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`, 'Attack Speed Buff')
       const distanceStep = PuppeteerAbilityData.TENSION_DISTANCE_STEP
       const maxAttackSpeed = getBuffValue(
         `${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * PuppeteerAbilityData.TENSION_MAX_STACKS * 100, 0)}%`
-      )
+      , 'Attack Speed Buff')
 
       return {
         en: `The Puppet gains ${attackSpeedPerStep} <c:bonus>Attack Speed</c:bonus> for every ${distanceStep} px between it and Puppeteer while fixated on a target, up to ${maxAttackSpeed}.`,

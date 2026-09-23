@@ -757,19 +757,19 @@ const _getLocaleItemDescription = (
         },
         descPassive: {
           en:
-            `Dealing <c:magical>magical damage</c:magical> <c:bonus>grants ${moveSpeed}% Movement Speed</c:bonus> and applies Poison.\n\n` +
+            `Dealing <c:magical>magical damage</c:magical> <c:movespeed>grants ${moveSpeed}% Movement Speed</c:movespeed> and applies Poison.\n\n` +
             getPoisonBowDescription(true),
           ru:
-            `Нанесение <c:magical>магического урона</c:magical> <c:bonus>даёт ${moveSpeed}% скорости передвижения</c:bonus> и накладывает Яд.\n\n` +
+            `Нанесение <c:magical>магического урона</c:magical> <c:movespeed>даёт ${moveSpeed}% скорости передвижения</c:movespeed> и накладывает Яд.\n\n` +
             getPoisonBowDescription(true),
           br:
-            `Causar <c:magical>dano mágico</c:magical> <c:bonus>concede ${moveSpeed}% de Velocidade de Movimento</c:bonus> e aplica Veneno.\n\n` +
+            `Causar <c:magical>dano mágico</c:magical> <c:movespeed>concede ${moveSpeed}% de Velocidade de Movimento</c:movespeed> e aplica Veneno.\n\n` +
             getPoisonBowDescription(true),
           fr:
-            `Infliger des <c:magical>dégâts magiques</c:magical> <c:bonus>confère ${moveSpeed}% de vitesse de déplacement</c:bonus> et applique Poison.\n\n` +
+            `Infliger des <c:magical>dégâts magiques</c:magical> <c:movespeed>confère ${moveSpeed}% de vitesse de déplacement</c:movespeed> et applique Poison.\n\n` +
             getPoisonBowDescription(true),
           zh:
-            `造成<c:magical>魔法傷害</c:magical>會<c:bonus>獲得 ${moveSpeed}% 移動速度</c:bonus>並施加中毒效果。\n\n` +
+            `造成<c:magical>魔法傷害</c:magical>會<c:movespeed>獲得 ${moveSpeed}% 移動速度</c:movespeed>並施加中毒效果。\n\n` +
             getPoisonBowDescription(true),
           cz:
             `Způsobení <c:magical>magického poškození</c:magical> poskytuje ${moveSpeed}% rychlosti pohybu a aplikuje Jed.\n\n` +
@@ -1058,31 +1058,31 @@ const _getLocaleItemDescription = (
         },
         descPassive: {
           en:
-            `Attacks while Enhanced <c:slow>reduce Movement Speed by ${movementSpeedSlow}%</c:slow> and <c:slow>Attack Speed by ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Attacks while Enhanced <c:slow>reduce Movement Speed by ${movementSpeedSlow}%</c:slow> and <c:attackslow>Attack Speed by ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           ru:
-            `Атаки во время усиления <c:slow>снижают скорость передвижения на ${movementSpeedSlow}%</c:slow> и <c:slow>скорость атаки на ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Атаки во время усиления <c:slow>снижают скорость передвижения на ${movementSpeedSlow}%</c:slow> и <c:attackslow>скорость атаки на ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           br:
-            `Ataques enquanto aprimorado <c:slow>reduzem a Velocidade de Movimento em ${movementSpeedSlow}%</c:slow> e a <c:slow>Velocidade de Ataque em ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Ataques enquanto aprimorado <c:slow>reduzem a Velocidade de Movimento em ${movementSpeedSlow}%</c:slow> e a <c:attackslow>Velocidade de Ataque em ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           fr:
-            `Les attaques pendant l'effet amélioré <c:slow>réduisent la vitesse de déplacement de ${movementSpeedSlow}%</c:slow> et la <c:slow>vitesse d'attaque de ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Les attaques pendant l'effet amélioré <c:slow>réduisent la vitesse de déplacement de ${movementSpeedSlow}%</c:slow> et la <c:attackslow>vitesse d'attaque de ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           zh:
-            `強化期間的攻擊會<c:slow>降低 ${movementSpeedSlow}% 移動速度</c:slow>並<c:slow>降低 ${attackSpeedSlow}% 攻擊速度</c:slow>。\n\n` +
+            `強化期間的攻擊會<c:slow>降低 ${movementSpeedSlow}% 移動速度</c:slow>並<c:attackslow>降低 ${attackSpeedSlow}% 攻擊速度</c:attackslow>。\n\n` +
             getIronRodDescription(),
           cz:
-            `Útoky během posílení <c:slow>snižují rychlost pohybu o ${movementSpeedSlow}%</c:slow> a <c:slow>rychlost útoku o ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Útoky během posílení <c:slow>snižují rychlost pohybu o ${movementSpeedSlow}%</c:slow> a <c:attackslow>rychlost útoku o ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           vi:
             `Đòn đánh khi được cường hóa sẽ <c:slow>giảm ${movementSpeedSlow}% tốc chạy</c:slow> và <c:slow>giảm ${attackSpeedSlow}% tốc đánh</c:slow>.\n\n` +
             getIronRodDescription(),
           id:
-            `Serangan saat diperkuat <c:slow>mengurangi Movement Speed sebesar ${movementSpeedSlow}%</c:slow> dan <c:slow>Attack Speed sebesar ${attackSpeedSlow}%</c:slow>.\n\n` +
+            `Serangan saat diperkuat <c:slow>mengurangi Movement Speed sebesar ${movementSpeedSlow}%</c:slow> dan <c:attackslow>Attack Speed sebesar ${attackSpeedSlow}%</c:attackslow>.\n\n` +
             getIronRodDescription(),
           kr:
-            `강화 상태일 때 공격은 <c:slow>이동 속도를 ${movementSpeedSlow}%</c:slow>, <c:slow>공격 속도를 ${attackSpeedSlow}%</c:slow> 감소시킵니다.\n\n` +
+            `강화 상태일 때 공격은 <c:slow>이동 속도를 ${movementSpeedSlow}%</c:slow>, <c:attackslow>공격 속도를 ${attackSpeedSlow}%</c:attackslow> 감소시킵니다.\n\n` +
             getIronRodDescription(),
         },
       }
@@ -1104,31 +1104,31 @@ const _getLocaleItemDescription = (
         },
         descActive: {
           en:
-            `Fires a dark arrow that <c:control>silences</c:control> enemies.\n` +
+            `Fires a dark arrow that <c:silence>silences</c:silence> enemies.\n` +
             `After silence ends, deals <c:magical>${damagePerc}% of damage taken during silence as Magic Damage</c:magical>.`,
           ru:
-            `Выпускает тёмную стрелу, накладывающую <c:control>немоту</c:control>.\n` +
+            `Выпускает тёмную стрелу, накладывающую <c:silence>немоту</c:silence>.\n` +
             `После окончания немоты наносит <c:magical>${damagePerc}% полученного урона как дополнительный магический урон</c:magical>.`,
           br:
-            `Dispara uma flecha sombria que <c:control>silencia</c:control> inimigos.\n` +
+            `Dispara uma flecha sombria que <c:silence>silencia</c:silence> inimigos.\n` +
             `Após o fim do silêncio, causa <c:magical>${damagePerc}% do dano recebido como dano mágico bônus</c:magical>.`,
           fr:
-            `Tire une flèche sombre qui réduit au <c:control>silence</c:control>.\n` +
+            `Tire une flèche sombre qui réduit au <c:silence>silence</c:silence>.\n` +
             `À la fin, inflige <c:magical>${damagePerc}% des dégâts subis en dégâts magiques supplémentaires</c:magical>.`,
           zh:
-            `發射暗影箭，使敵人<c:control>沉默</c:control>。\n` +
+            `發射暗影箭，使敵人<c:silence>沉默</c:silence>。\n` +
             `沉默結束後，造成<c:magical>期間內所受傷害 ${damagePerc}% 的額外魔法傷害</c:magical>。`,
           cz:
-            `Vystřelí temný šíp, který <c:control>umlčí</c:control> nepřátele.\n` +
+            `Vystřelí temný šíp, který <c:silence>umlčí</c:silence> nepřátele.\n` +
             `Po skončení umlčení způsobí <c:magical>${damagePerc}% obdrženého poškození jako bonusové magické poškození</c:magical>.`,
           vi:
-            `Bắn mũi tên bóng tối, gây <c:control>câm lặng</c:control>.\n` +
+            `Bắn mũi tên bóng tối, gây <c:silence>câm lặng</c:silence>.\n` +
             `Sau khi kết thúc, gây <c:magical>${damagePerc}% sát thương đã nhận dưới dạng sát thương phép</c:magical>.`,
           id:
-            `Menembakkan panah <c:control>gelap</c:control> yang <c:control>membisukan</c:control> musuh.\n` +
+            `Menembakkan panah <c:silence>gelap</c:silence> yang <c:silence>membisukan</c:silence> musuh.\n` +
             `Setelah efek berakhir, memberikan <c:magical>${damagePerc}% dari damage yang diterima sebagai damage sihir tambahan</c:magical>.`,
           kr:
-            `어둠의 화살을 발사하여 적을 <c:control>침묵</c:control>시킵니다.\n` +
+            `어둠의 화살을 발사하여 적을 <c:silence>침묵</c:silence>시킵니다.\n` +
             `침묵이 끝나면 침묵 동안 <c:magical>받은 피해의 ${damagePerc}%를 추가 마법 피해</c:magical>로 입힙니다.`,
         },
         descPassive: { en: getIronRodDescription() },
@@ -1478,15 +1478,15 @@ const _getLocaleItemDescription = (
           kr: `활성화 시 앞으로 <c:dash>돌진</c:dash>합니다.`,
         },
         descPassive: {
-          en: `<c:bonus>Increases all healing by ${bonusHealing}%</c:bonus>.`,
-          ru: `<c:bonus>увеличивает всё исцеление на ${bonusHealing}%</c:bonus>.`,
-          br: `<c:bonus>Aumenta toda a cura em ${bonusHealing}%</c:bonus>.`,
-          fr: `<c:bonus>augmente tous les soins de ${bonusHealing}%</c:bonus>.`,
-          zh: `<c:bonus>提高所有治療效果 ${bonusHealing}%</c:bonus>。`,
-          cz: `<c:bonus>zvyšuje veškeré léčení o ${bonusHealing}%</c:bonus>.`,
-          vi: `<c:bonus>Tăng tất cả hiệu quả hồi máu thêm ${bonusHealing}%</c:bonus>.`,
-          id: `<c:bonus>Meningkatkan semua penyembuhan sebesar ${bonusHealing}%</c:bonus>.`,
-          kr: `<c:bonus>모든 치유량을 ${bonusHealing}%만큼 증가시킵니다</c:bonus>.`,
+          en: `<c:heal>Increases all healing by ${bonusHealing}%</c:heal>.`,
+          ru: `<c:heal>увеличивает всё исцеление на ${bonusHealing}%</c:heal>.`,
+          br: `<c:heal>Aumenta toda a cura em ${bonusHealing}%</c:heal>.`,
+          fr: `<c:heal>augmente tous les soins de ${bonusHealing}%</c:heal>.`,
+          zh: `<c:heal>提高所有治療效果 ${bonusHealing}%</c:heal>。`,
+          cz: `<c:heal>zvyšuje veškeré léčení o ${bonusHealing}%</c:heal>.`,
+          vi: `<c:heal>Tăng tất cả hiệu quả hồi máu thêm ${bonusHealing}%</c:heal>.`,
+          id: `<c:heal>Meningkatkan semua penyembuhan sebesar ${bonusHealing}%</c:heal>.`,
+          kr: `<c:heal>모든 치유량을 ${bonusHealing}%만큼 증가시킵니다</c:heal>.`,
         },
       }
     }
@@ -1504,9 +1504,9 @@ const _getLocaleItemDescription = (
           kr: `얼어붙은 여제의 반지`,
         },
         descActive: {
-          en: `Release a freezing wave, dealing <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} Magic Damage</c:magical>.\n\nApplies Frigid Curse if the target is not affected.\n<c:control>Freezes</c:control> the target if already affected.`,
+          en: `Release a freezing wave, dealing <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} Magic Damage</c:magical>.\n\nApplies Frigid Curse if the target is not affected.\n<c:freeze>Freezes</c:freeze> the target if already affected.`,
           ru: `Выпускает ледяную волну, наносящую <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} магического урона</c:magical>.\n\nНакладывает Морозное проклятие, если цель не под эффектом.\nЗамораживает цель, если эффект уже есть.`,
-          br: `Libera uma onda <c:control>congelante</c:control>, causando <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} de dano mágico</c:magical>.\n\nAplica Maldição do <c:control>Gelo</c:control> se o alvo não estiver afetado.\n<c:control>Congela</c:control> o alvo se já estiver afetado.`,
+          br: `Libera uma onda <c:freeze>congelante</c:freeze>, causando <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} de dano mágico</c:magical>.\n\nAplica Maldição do <c:freeze>Gelo</c:freeze> se o alvo não estiver afetado.\n<c:freeze>Congela</c:freeze> o alvo se já estiver afetado.`,
           fr: `Libère une onde glaciale, inflige <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} dégâts magiques</c:magical>.\n\nApplique Malédiction glaciale si la cible n'est pas affectée.\nGèle la cible si elle est déjà affectée.`,
           zh: `釋放寒冰波動，造成 <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} 魔法傷害</c:magical>。\n\n若目標未受寒冷詛咒影響，則施加詛咒。\n若已受影響，則凍結目標。`,
           cz: `Uvolní mrazivou vlnu, která způsobí <c:magical>${ItemAbilityData.RING_OF_THE_FROZEN_EMPRESS_DAMAGE} magického poškození</c:magical>.\n\nAplikuje Zmrzlou kletbu, pokud cíl není ovlivněn.\n<c:control>Zmrazí</c:control> cíl, pokud již ovlivněn je.`,
@@ -1532,15 +1532,15 @@ const _getLocaleItemDescription = (
           kr: `크로노스의 반지`,
         },
         descPassive: {
-          en: `<c:bonus>Reduces all cooldowns by ${cdReduction}</c:bonus>.`,
-          ru: `<c:bonus>Уменьшает все перезарядки на ${cdReduction}</c:bonus>.`,
-          br: `<c:bonus>Reduz todos os tempos de recarga em ${cdReduction}</c:bonus>.`,
-          fr: `<c:bonus>Réduit tous les temps de recharge de ${cdReduction}</c:bonus>.`,
-          zh: `<c:bonus>使所有冷卻時間減少 ${cdReduction}</c:bonus>。`,
-          cz: `<c:bonus>Zkracuje všechny doby obnovení o ${cdReduction}</c:bonus>.`,
-          vi: `<c:bonus>Giảm tất cả thời gian hồi chiêu ${cdReduction}</c:bonus>.`,
-          id: `<c:bonus>Mengurangi semua cooldown sebesar ${cdReduction}</c:bonus>.`,
-          kr: `<c:bonus>모든 재사용 대기시간을 ${cdReduction}만큼 감소</c:bonus>시킵니다.`,
+          en: `<c:cooldown>Reduces all cooldowns by ${cdReduction}</c:cooldown>.`,
+          ru: `<c:cooldown>Уменьшает все перезарядки на ${cdReduction}</c:cooldown>.`,
+          br: `<c:cooldown>Reduz todos os tempos de recarga em ${cdReduction}</c:cooldown>.`,
+          fr: `<c:cooldown>Réduit tous les temps de recharge de ${cdReduction}</c:cooldown>.`,
+          zh: `<c:cooldown>使所有冷卻時間減少 ${cdReduction}</c:cooldown>。`,
+          cz: `<c:cooldown>Zkracuje všechny doby obnovení o ${cdReduction}</c:cooldown>.`,
+          vi: `<c:cooldown>Giảm tất cả thời gian hồi chiêu ${cdReduction}</c:cooldown>.`,
+          id: `<c:cooldown>Mengurangi semua cooldown sebesar ${cdReduction}</c:cooldown>.`,
+          kr: `<c:cooldown>모든 재사용 대기시간을 ${cdReduction}만큼 감소</c:cooldown>시킵니다.`,
         },
         descPassive2: {
           en: `Resets Ability cooldowns (does not affect Item cooldowns).`,
@@ -2245,9 +2245,9 @@ const _getLocaleItemDescription = (
           kr: `가룬의 부적`,
         },
         descPassive: {
-          en: `Every ${cooldown}, gain a stack of Garun's Protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nTaking Normal Damage removes a stack.\nEach stack <c:bonus>grants +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} Armor</c:bonus>.`,
-          ru: `Каждые ${cooldown} даёт заряд Защиты Гаруна, до ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nПолучение обычного урона снимает заряд.\nКаждый заряд <c:bonus>даёт +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} брони</c:bonus>.`,
-          br: `A cada ${cooldown}, ganha um acúmulo de Proteção de Garun, até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nReceber Dano Normal remove um acúmulo.\nCada acúmulo <c:bonus>concede +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} de Armadura</c:bonus>.`,
+          en: `Every ${cooldown}, gain a stack of Garun's Protection, up to ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nTaking Normal Damage removes a stack.\nEach stack <c:armor>grants +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} Armor</c:armor>.`,
+          ru: `Каждые ${cooldown} даёт заряд Защиты Гаруна, до ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nПолучение обычного урона снимает заряд.\nКаждый заряд <c:armor>даёт +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} брони</c:armor>.`,
+          br: `A cada ${cooldown}, ganha um acúmulo de Proteção de Garun, até ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nReceber Dano Normal remove um acúmulo.\nCada acúmulo <c:armor>concede +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} de Armadura</c:armor>.`,
           fr: `Toutes les ${cooldown}, gagne une charge de Protection de Garun, jusqu'à ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nSubir des dégâts normaux retire une charge.\nChaque charge confère +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} d'armure.`,
           zh: `每 ${cooldown} 獲得一層加侖守護，最多 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS} 層。\n受到普通傷害會移除一層。\n每層提供 +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} 護甲。`,
           cz: `Každých ${cooldown} získáš vrstvu Garunovy ochrany, až do ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}.\nPřijetí normálního poškození odebere vrstvu.\nKaždá vrstva dává +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK} brnění.`,
@@ -2256,10 +2256,10 @@ const _getLocaleItemDescription = (
           kr: `${cooldown}마다 가룬의 보호 중첩을 얻으며, 최대 ${ItemAbilityData.GARUNS_CHARM_MAX_STACKS}까지 중첩됩니다.\n일반 피해를 받으면 중첩이 하나 사라집니다.\n중첩당 방어력 +${ItemAbilityData.GARUNS_CHARM_BONUS_ARMOR_STACK}을 부여합니다.`,
         },
         descPassive2: {
-          en: `<c:bonus>Grants +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor</c:bonus> to the carrier and nearby allies.`,
-          ru: `<c:bonus>даёт +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} брони</c:bonus> владельцу и ближайшим союзникам.`,
-          br: `<c:bonus>Concede +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura</c:bonus> ao portador e aliados próximos.`,
-          fr: `<c:bonus>accorde +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} d'armure</c:bonus> au porteur et aux alliés proches.`,
+          en: `<c:armor>Grants +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} Armor</c:armor> to the carrier and nearby allies.`,
+          ru: `<c:armor>даёт +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} брони</c:armor> владельцу и ближайшим союзникам.`,
+          br: `<c:armor>Concede +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} de Armadura</c:armor> ao portador e aliados próximos.`,
+          fr: `<c:armor>accorde +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} d'armure</c:armor> au porteur et aux alliés proches.`,
           zh: `為持有者和附近盟友提供 +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} 護甲。`,
           cz: `Dává +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} brnění nositeli a blízkým spojencům.`,
           vi: `Cung cấp +${ItemAbilityData.GARUNS_CHARM_AOE_ARMOR} giáp cho bản thân và đồng minh gần.`,

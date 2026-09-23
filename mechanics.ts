@@ -37,6 +37,8 @@ import {
   EXP_REWARD_KILL_MINION,
   EXP_REWARD_KILL_MINION_PER_LEVEL,
   EXP_REWARD_KILL_HERO,
+  EXP_REWARD_KILL_HERO_PER_TARGET_LEVEL,
+  EXP_REWARD_KILL_HERO_PER_LEVEL_GAP,
   GOLD_REWARD_KILL_HERO_BASE,
   MAX_LEVEL,
   BASE_HEAL_RADIUS,
@@ -73,6 +75,11 @@ import {
   RESPAWN_TIME_BASE,
   RESPAWN_TIME_PER_LEVEL,
   MIN_ATTACK_SPEED,
+  BASE_ATTACK_TIME,
+  LIMIT_MOVEMENT_SPEED,
+  RESISTANCE_CALCULATION_COEF,
+  RESISTANCE_CALCULATION_DIVISOR,
+  COOLDOWN_REDUCTION_CALCULATION_COEF,
   CRITICAL_DAMAGE_MOD_150,
   TALENT_TIER1_REQUIRED_LEVEL,
   TALENT_TIER1_SECOND_POINT_LEVEL,
@@ -82,10 +89,17 @@ import {
   ItemAbilityData,
   calculateResistanceReduction,
   calculateCooldownReduction,
+  calculateRealHealthRegen,
   // @ts-ignore
 } from 'shared'
 // @ts-ignore
-import { MechanicId, MechanicFigureLabel } from '../mechanicsData'
+import {
+  MechanicId,
+  MechanicFigureLabel,
+  MechanicVideoLabel,
+  MechanicChartId,
+  MechanicChartLabel,
+} from '../mechanicsData'
 // @ts-ignore
 import { LANG } from 'lang/lang'
 import { fixed } from './misc'
@@ -100,6 +114,12 @@ const mechanicIcon = (mechanic: string, file: string): string =>
   `<img class="inline-mechanic-icon" src="/assets/mainpage/learn/${mechanic}/${file}.png" alt="${file}" />`
 
 const gold = (value: string | number): string => `<c:bonus>${value}</c:bonus>${GOLD_ICON}`
+
+/** Where MechanicsList splits the body text to drop a chart or a clip in, so a video sits under
+ * the heading it illustrates rather than at the end of the mechanic (see MECHANIC_SLOT_PATTERN). */
+const chartSlot = (id: MechanicChartId): string => `<mechanic-chart:${id}>`
+
+const clipSlot = (...labels: MechanicVideoLabel[]): string => `<mechanic-clips:${labels.join(',')}>`
 
 const sec = (ms: number): string => String(fixed(ms / 1000, 2))
 const perc = (ratio: number): string => String(fixed(ratio * 100, 0))
@@ -279,15 +299,15 @@ const _getMechanicNameLang = (id: MechanicId): { [key in string]: string } => {
       }
     case MechanicId.STATS:
       return {
-        en: 'Stats & Formulas',
-        ru: 'Характеристики и формулы',
-        cz: 'Statistiky a vzorce',
-        br: 'Atributos e Fórmulas',
-        fr: 'Statistiques et formules',
-        zh: '屬性與公式',
-        vi: 'Chỉ số và Công thức',
-        id: 'Statistik & Rumus',
-        kr: `능력치와 공식`,
+        en: 'Stats',
+        ru: 'Характеристики',
+        cz: 'Statistiky',
+        br: 'Atributos',
+        fr: 'Statistiques',
+        zh: '屬性',
+        vi: 'Chỉ Số',
+        id: 'Statistik',
+        kr: `능력치`,
       }
     case MechanicId.TALENTS:
       return {
@@ -312,6 +332,68 @@ const _getMechanicNameLang = (id: MechanicId): { [key in string]: string } => {
         vi: 'Tầm nhìn và Tàng hình',
         id: 'Penglihatan & Tak Terlihat',
         kr: `시야와 은신`,
+      }
+
+    /** Grouped pages */
+    case MechanicId.OBJECTIVES:
+      return {
+        en: 'Objectives',
+        ru: 'Цели',
+        cz: 'Cíle',
+        br: 'Objetivos',
+        fr: 'Objectifs',
+        zh: '目標',
+        vi: 'Mục Tiêu',
+        id: 'Objektif',
+        kr: `목표`,
+      }
+    case MechanicId.GOLD_EXPERIENCE:
+      return {
+        en: 'Gold, Experience & Levels',
+        ru: 'Золото, опыт и уровни',
+        cz: 'Zlato, zkušenosti a úrovně',
+        br: 'Ouro, Experiência e Níveis',
+        fr: 'Or, expérience et niveaux',
+        zh: '金幣、經驗與等級',
+        vi: 'Vàng, Kinh Nghiệm và Cấp Độ',
+        id: 'Emas, Pengalaman & Level',
+        kr: `골드, 경험치와 레벨`,
+      }
+    case MechanicId.SHOP_ITEMS:
+      return {
+        en: 'Shop & Items',
+        ru: 'Магазин и предметы',
+        cz: 'Obchod a předměty',
+        br: 'Loja e Itens',
+        fr: 'Boutique et objets',
+        zh: '商店與裝備',
+        vi: 'Cửa Hàng và Trang Bị',
+        id: 'Toko & Item',
+        kr: `상점과 아이템`,
+      }
+    case MechanicId.RUNES:
+      return {
+        en: 'Runes',
+        ru: 'Руны',
+        cz: 'Runy',
+        br: 'Runas',
+        fr: 'Runes',
+        zh: '符文',
+        vi: 'Bùa',
+        id: 'Rune',
+        kr: `룬`,
+      }
+    case MechanicId.STATS_AND_FORMULAS:
+      return {
+        en: 'Stats & Formulas',
+        ru: 'Характеристики и формулы',
+        cz: 'Statistiky a vzorce',
+        br: 'Atributos e Fórmulas',
+        fr: 'Statistiques et formules',
+        zh: '屬性與公式',
+        vi: 'Chỉ Số và Công Thức',
+        id: 'Statistik & Rumus',
+        kr: `능력치와 공식`,
       }
     default:
       return { en: '' }
@@ -385,8 +467,10 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const perLevel = GOLDS_PER_COIN_PER_LEVEL + BONUS_GOLDS_PER_COIN_PER_LEVEL
       const coinLife = sec(MINION_COIN_LIFETIME)
 
+      const lastHitClips = clipSlot(MechanicVideoLabel.LAST_HIT, MechanicVideoLabel.PICK_UP_COIN)
+
       return {
-        en: `Buy items with gold. You start with ${gold(INITIAL_GOLDS)} and earn ${gold(GOLDS_PER_SEC)} every second.<h2>Last hits and coins</h2><ul><li><b>Last hit:</b> deal the killing blow to a minion to earn ${gold(lastHit)} immediately: ${gold(coin)} base + ${gold(BONUS_GOLD_PER_KILL_MINION)} bonus, plus ${gold(perLevel)} per minion level.</li><li><b>Missed last hit:</b> if a tower, passive effect, or minion kills it, a coin drops instead. Walk over it to collect it. Only the killing team can collect it.</li><li>A coin starts at ${gold(coin)} and gains ${gold(GOLDS_PER_COIN_PER_LEVEL)} per minion level. It disappears after <b>${coinLife}s</b>.</li><li><b>Siege minions</b> drop <b>two coins</b>.</li></ul><h2>Other rewards</h2><ul><li><b>First Blood:</b> ${gold(FIRST_BLOOD_GOLDS)} for the player who gets it.</li><li><b>Enemy tower destroyed:</b> ${gold(TOWER_KILL_GOLDS)} for each teammate.</li></ul>`,
+        en: `Buy items with gold. You start with ${gold(INITIAL_GOLDS)} and earn ${gold(GOLDS_PER_SEC)} every second.<h2>Last hits and coins</h2><ul><li><b>Last hit:</b> deal the killing blow to a minion to earn ${gold(lastHit)} immediately: ${gold(coin)} base + ${gold(BONUS_GOLD_PER_KILL_MINION)} bonus, plus ${gold(perLevel)} per minion level.</li><li><b>Missed last hit:</b> if a tower, passive effect, or minion kills it, a coin drops instead. Walk over it to collect it. Only the killing team can collect it.</li><li>A coin starts at ${gold(coin)} and gains ${gold(GOLDS_PER_COIN_PER_LEVEL)} per minion level. It disappears after <b>${coinLife}s</b>.</li><li><b>Siege minions</b> drop <b>two coins</b>.</li></ul>${lastHitClips}<h2>Other rewards</h2><ul><li><b>First Blood:</b> ${gold(FIRST_BLOOD_GOLDS)} for the player who gets it.</li><li><b>Enemy tower destroyed:</b> ${gold(TOWER_KILL_GOLDS)} for each teammate.</li></ul>`,
         ru: `Вы начинаете с ${gold(INITIAL_GOLDS)} и пассивно получаете ${gold(GOLDS_PER_SEC)} в секунду весь матч.<br/><br/><b>Добивание</b> — ваш основной доход: нанесите последний удар по миньону, и вы сразу получите ${gold(lastHit)} (${coin} + ${BONUS_GOLD_PER_KILL_MINION} бонусом, плюс ${perLevel} за каждый уровень миньона).<br/><br/>Если миньон погибает <b>без</b> добивания героем — от башни, пассивки или другого миньона — вместо этого на месте его смерти падает <b>монета</b>. Монета лежит <b>${coinLife} с</b> и стоит ${gold(coin)}; подобрать её может любой из команды убийцы, просто пройдя по ней. Осадные миньоны роняют две монеты.<br/><br/>• Первая кровь награждает этого игрока на ${gold(FIRST_BLOOD_GOLDS)}<br/>• Уничтожение вражеской башни награждает каждого игрока команды на ${gold(TOWER_KILL_GOLDS)}`,
         cz: `Začínáš s ${gold(INITIAL_GOLDS)} a po celý zápas pasivně získáváš ${gold(GOLDS_PER_SEC)} za sekundu.<br/><br/><b>Dobíjení</b> je tvůj hlavní příjem: zasaď jednotce poslední ránu a hned dostaneš ${gold(lastHit)} (${coin} + ${BONUS_GOLD_PER_KILL_MINION} bonus, plus ${perLevel} za každou úroveň jednotky).<br/><br/>Když jednotka zemře <b>bez</b> dobití hrdinou – věží, pasivní schopností nebo jinou jednotkou – místo toho na jejím místě spadne <b>mince</b>. Mince tam leží <b>${coinLife}s</b> a má hodnotu ${gold(coin)}; sebrat ji může kdokoli z týmu zabijáka tím, že po ní přejde. Obléhací jednotky pouštějí dvě mince.<br/><br/>• První krev odmění daného hráče částkou ${gold(FIRST_BLOOD_GOLDS)}<br/>• Zničení nepřátelské věže odmění každého hráče týmu částkou ${gold(TOWER_KILL_GOLDS)}`,
         br: `Você começa com ${gold(INITIAL_GOLDS)} e ganha ${gold(GOLDS_PER_SEC)} por segundo passivamente durante toda a partida.<br/><br/>Dar o <b>último golpe</b> é sua principal renda: acerte o golpe final em um lacaio e você recebe ${gold(lastHit)} na hora (${coin} + ${BONUS_GOLD_PER_KILL_MINION} de bônus, mais ${perLevel} por nível do lacaio).<br/><br/>Se um lacaio morrer <b>sem</b> que um herói dê o último golpe - para uma torre, uma passiva ou outro lacaio - ele deixa cair uma <b>moeda</b> onde caiu. A moeda fica ali por <b>${coinLife}s</b> e vale ${gold(coin)}; qualquer um do time que matou pode pegá-la passando por cima. Lacaios de cerco deixam duas moedas.<br/><br/>• O Primeiro Sangue recompensa aquele jogador com ${gold(FIRST_BLOOD_GOLDS)}<br/>• Destruir uma torre inimiga recompensa cada jogador do time com ${gold(TOWER_KILL_GOLDS)}`,
@@ -403,6 +487,13 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const minionExp = EXP_REWARD_KILL_MINION
       const perLevel = EXP_REWARD_KILL_MINION_PER_LEVEL
       const heroExp = EXP_REWARD_KILL_HERO
+      const perTargetLevel = EXP_REWARD_KILL_HERO_PER_TARGET_LEVEL
+      const perLevelGap = EXP_REWARD_KILL_HERO_PER_LEVEL_GAP
+      const streakPerKill = KILL_STREAK_BONUS_PER_STACK
+      const streakMax = KILL_STREAK_BONUS_MAX
+      const assistShare = perc(ASSIST_EXPERIENCE_MULTIPLIER)
+      const killChart = chartSlot(MechanicChartId.HERO_KILL_EXPERIENCE)
+      const levelChart = chartSlot(MechanicChartId.LEVEL_EXPERIENCE_REQUIRED)
 
       return {
         en: `Gain <b>experience</b> by staying within <c:range>${range} range</c:range> of dying enemy minions. <b>You do not need the last hit.</b> Stay too far away and you gain nothing.<ul><li><b>Minion:</b> <c:bonus>${minionExp} experience</c:bonus> + <c:bonus>${perLevel}</c:bonus> per minion level.</li><li><b>Hero:</b> <c:bonus>${heroExp} experience</c:bonus>, plus level and killstreak bonuses.</li></ul>Leveling up improves your base stats and unlocks talents. The maximum is <c:bonus>level ${MAX_LEVEL}</c:bonus>.`,
@@ -484,8 +575,10 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const channel = GOLD_RUNE_MAX_VALUE
       const expPerc = perc(GOLD_RUNE_EXP_MULTIPLIER)
 
+      const goldRuneClips = clipSlot(MechanicVideoLabel.GOLD_RUNE_CONTESTED, MechanicVideoLabel.GOLD_RUNE_UNCONTESTED)
+
       return {
-        en: `Capture the <b>Gold Rune</b> at the bottom middle of the map for team-wide rewards. It spawns every <b>${spawn}s</b>.<h2>How to capture</h2><ul><li>Stand within <c:range>${radius} range</c:range>. The team with <b>more heroes inside</b> moves the bar toward its side.</li><li><b>Equal teams:</b> progress pauses. <b>Nobody inside:</b> the bar moves back toward the middle.</li><li>Extra allies help outnumber enemies but <b>do not speed up capture</b>.</li><li>Capturing takes roughly <b>${channel}s of uncontested control</b>.</li></ul><h2>Team reward</h2>Every teammate receives ${gold(GOLD_RUNE_BASE_GOLDS)} + ${gold(GOLD_RUNE_GOLDS_PER_MINUTE)} per elapsed minute, plus <c:bonus>experience equal to ${expPerc}% of that gold</c:bonus>. You receive the reward even if you are elsewhere on the map.`,
+        en: `Capture the <b>Gold Rune</b> at the bottom middle of the map for team-wide rewards. It spawns every <b>${spawn}s</b>.${goldRuneClips}<h2>How to capture</h2><ul><li>Stand within <c:range>${radius} range</c:range>. The team with <b>more heroes inside</b> moves the bar toward its side.</li><li><b>Equal teams:</b> progress pauses. <b>Nobody inside:</b> the bar moves back toward the middle.</li><li>Extra allies help outnumber enemies but <b>do not speed up capture</b>.</li><li>Capturing takes roughly <b>${channel}s of uncontested control</b>.</li></ul><h2>Team reward</h2>Every teammate receives ${gold(GOLD_RUNE_BASE_GOLDS)} + ${gold(GOLD_RUNE_GOLDS_PER_MINUTE)} per elapsed minute, plus <c:bonus>experience equal to ${expPerc}% of that gold</c:bonus>. You receive the reward even if you are elsewhere on the map.`,
         ru: `Золотая руна появляется в нижней центральной части карты каждые <b>${spawn} с</b>. В отличие от рун силы её не подбирают — её <b>захватывают</b>.<br/><br/>Встаньте в <c:range>радиусе ${radius}</c:range>, чтобы двигать шкалу захвата в свою сторону. Прогресс идёт у команды, у которой в круге <b>больше героев</b>; при равенстве шкала замирает, а если внутри никого нет — постепенно возвращается к центру. Больше союзников <b>не</b> ускоряют захват — они лишь выигрывают подсчёт. <c:bonus>Примерно ${channel} секунды неоспариваемого контроля</c:bonus> завершают захват.<br/><br/>Награду получает <b>каждый игрок победившей команды</b>, где бы он ни был: ${gold(GOLD_RUNE_BASE_GOLDS)} плюс ${gold(GOLD_RUNE_GOLDS_PER_MINUTE)} за каждую прошедшую минуту, а также <c:bonus>опыт в размере ${expPerc}% от этого золота</c:bonus>. Награда растёт со временем матча, поэтому поздняя руна может стоить больше убийства.`,
         cz: `Zlatá runa se objeví dole uprostřed mapy každých <b>${spawn}s</b>. Na rozdíl od runy síly se nesbírá – <b>dobývá se</b>.<br/><br/>Postav se do <c:range>poloměru ${radius}</c:range> a posouvej ukazatel dobývání ke svému týmu. Postupuje tým, který má v kruhu <b>víc hrdinů</b>; při rovnosti se ukazatel zastaví a když uvnitř nikdo není, vrací se zpět ke středu. Víc spojenců dobývání <b>nezrychlí</b> – jen vyhrají počet. <c:bonus>Zhruba ${channel} sekundy nerušené kontroly</c:bonus> ji dokončí.<br/><br/>Odměnu dostane <b>každý hráč vítězného týmu</b>, ať je kdekoli: ${gold(GOLD_RUNE_BASE_GOLDS)} plus ${gold(GOLD_RUNE_GOLDS_PER_MINUTE)} za každou uplynulou minutu a <c:bonus>zkušenosti ve výši ${expPerc}% tohoto zlata</c:bonus>. Škáluje s délkou hry, takže pozdní runa může mít větší cenu než zabití.`,
         br: `A Runa de Ouro surge no centro inferior do mapa a cada <b>${spawn}s</b>. Diferente de uma Runa de Poder, ela não é coletada - é <b>capturada</b>.<br/><br/>Fique dentro do <c:range>raio de ${radius}</c:range> para empurrar a barra de captura para o seu time. O time com <b>mais heróis</b> no círculo progride; com números iguais a barra congela, e sem ninguém dentro ela volta para o meio. Trazer mais aliados <b>não</b> captura mais rápido - só vence a contagem. <c:bonus>Cerca de ${channel} segundos de controle sem disputa</c:bonus> finalizam.<br/><br/>A recompensa vai para <b>todos os jogadores do time vencedor</b>, onde quer que estejam: ${gold(GOLD_RUNE_BASE_GOLDS)} mais ${gold(GOLD_RUNE_GOLDS_PER_MINUTE)} por minuto decorrido, e <c:bonus>experiência equivalente a ${expPerc}% desse ouro</c:bonus>. Escala com o tempo de jogo, então uma runa tardia pode valer mais que um abate.`,
@@ -507,8 +600,10 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const respawnBase = sec(RESPAWN_TIME_BASE)
       const respawnPerLevel = sec(RESPAWN_TIME_PER_LEVEL)
 
+      const killClip = clipSlot(MechanicVideoLabel.KILL)
+
       return {
-        en: `Defeating an enemy hero earns gold and experience. Enemies with more gold and longer killstreaks are worth more.<h2>Kill rewards</h2><ul><li>${gold(base)} base gold + <b>5% of the victim's net worth</b> (their total wealth).</li><li>An adjustment based on the wealth difference between you and the victim.</li><li>A killstreak bonus of ${gold(streak)} per stack, up to ${gold(streakMax)}.</li></ul><h2>Assists</h2>Damage an enemy within <b>${assistWindow}s</b> before they die to earn an <b>assist</b>: <c:bonus>${assistGold}% of the gold</c:bonus> and <c:bonus>${assistExp}% of the experience</c:bonus>.<h2>Respawning</h2>The normal respawn timer is <b>${respawnBase}s</b> + <b>${respawnPerLevel}s for each level after level 1</b>. At <b>level ${MAX_LEVEL}</b>, that is about <b>${sec(RESPAWN_TIME_BASE + RESPAWN_TIME_PER_LEVEL * (MAX_LEVEL - 1))}s</b>.`,
+        en: `Defeating an enemy hero earns gold and experience. Enemies with more gold and longer killstreaks are worth more.<h2>Kill rewards</h2><ul><li>${gold(base)} base gold + <b>5% of the victim's net worth</b> (their total wealth).</li><li>An adjustment based on the wealth difference between you and the victim.</li><li>A killstreak bonus of ${gold(streak)} per stack, up to ${gold(streakMax)}.</li></ul>${killClip}<h2>Assists</h2>Damage an enemy within <b>${assistWindow}s</b> before they die to earn an <b>assist</b>: <c:bonus>${assistGold}% of the gold</c:bonus> and <c:bonus>${assistExp}% of the experience</c:bonus>.<h2>Respawning</h2>The normal respawn timer is <b>${respawnBase}s</b> + <b>${respawnPerLevel}s for each level after level 1</b>. At <b>level ${MAX_LEVEL}</b>, that is about <b>${sec(RESPAWN_TIME_BASE + RESPAWN_TIME_PER_LEVEL * (MAX_LEVEL - 1))}s</b>.`,
         ru: `Убийство даёт ${gold(base)} базовых плюс <b>5%</b> от ценности имущества жертвы, поправку на разницу в имуществе между вами и бонус за серию <b>${streak}</b> за каждое убийство в серии (не более <b>${streakMax}</b>). Убийство «раскормленного» врага стоит куда больше, чем убийство отстающего, — а собственная смерть при лидерстве возвращает эту ценность обратно.<br/><br/>Нанесение урона врагу, который погибает в течение <b>${assistWindow} с</b>, засчитывает <b>помощь</b> — <b>${assistGold}%</b> золота и <b>${assistExp}%</b> опыта.<br/><br/>Смерть наказывается таймером <b>${respawnBase} с</b> плюс <b>${respawnPerLevel} с</b> за уровень героя, поэтому смерть в конце игры обходится намного дороже. Смерть на ${MAX_LEVEL}-м уровне выключает вас примерно на ${sec(RESPAWN_TIME_BASE + RESPAWN_TIME_PER_LEVEL * (MAX_LEVEL - 1))} с — достаточно, чтобы потерять цель.`,
         cz: `Zabití vyplatí ${gold(base)} základních plus <b>5%</b> majetku oběti, úpravu podle rozdílu majetku mezi vámi a bonus za sérii <b>${streak}</b> za každé zabití v sérii (maximálně <b>${streakMax}</b>). Zabít nakrmeného nepřítele má mnohem větší cenu než zabít vyhladovělého – a vlastní smrt ve vedení tu hodnotu vrátí zpět.<br/><br/>Poškození nepřítele, který zemře do <b>${assistWindow}s</b>, ti započítá <b>asistenci</b> v hodnotě <b>${assistGold}%</b> zlata a <b>${assistExp}%</b> zkušeností.<br/><br/>Smrt se trestá časovačem <b>${respawnBase}s</b> plus <b>${respawnPerLevel}s</b> za úroveň hrdiny, takže pozdní smrt stojí mnohem víc než brzká. Smrt na úrovni ${MAX_LEVEL} tě vyřadí zhruba na ${sec(RESPAWN_TIME_BASE + RESPAWN_TIME_PER_LEVEL * (MAX_LEVEL - 1))}s – dost dlouho na ztrátu cíle.`,
         br: `Um abate paga ${gold(base)} de base mais <b>5%</b> do patrimônio da vítima, um ajuste pela diferença de patrimônio entre vocês, e um bônus de sequência de <b>${streak}</b> por abate na sequência (limitado a <b>${streakMax}</b>). Matar um inimigo alimentado vale muito mais do que matar um faminto - e morrer enquanto está à frente devolve esse valor.<br/><br/>Causar dano a um inimigo que morre em até <b>${assistWindow}s</b> concede uma <b>assistência</b>, valendo <b>${assistGold}%</b> do ouro e <b>${assistExp}%</b> da experiência.<br/><br/>A morte é punida com um tempo de <b>${respawnBase}s</b> mais <b>${respawnPerLevel}s</b> por nível do herói, então morrer no fim do jogo custa muito mais do que cedo. Morrer no nível ${MAX_LEVEL} te deixa fora por cerca de ${sec(RESPAWN_TIME_BASE + RESPAWN_TIME_PER_LEVEL * (MAX_LEVEL - 1))}s - tempo suficiente para perder um objetivo.`,
@@ -530,7 +625,7 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const siegeToHero = perc(SIEGE_DAMAGE_TO_HERO_MULTIPLIER)
 
       return {
-        en: `A hit's damage type determines which defence reduces it.<ul><li>${physicalIcon} <c:physical>Physical damage:</c:physical> reduced by <b>armor</b>. Deals <b>${toTower}% damage to towers</b>.</li><li>${magicalIcon} <c:magical>Magical damage:</c:magical> reduced by <b>magic defence</b>.</li><li><c:pure>Pure damage:</c:pure> ignores armor and magic defence. Towers deal this type, so those stats will not protect you from them.</li></ul><h2>Minion damage types</h2><ul><li><b>Basic:</b> deals <b>${basicToHero}% damage to heroes</b>.</li><li><b>Pierce:</b> ranged minion shots deal <b>${pierceToMinion}% damage to minions</b>.</li><li><b>Siege:</b> bombs deal <b>${siegeToTower}% damage to towers</b>, but only <b>${siegeToHero}% to heroes</b>.</li></ul>`,
+        en: `A hit's damage type determines which defence reduces it.<ul><li>${physicalIcon} <c:physical>Physical damage:</c:physical> reduced by <b>armor</b>. Deals <b>${toTower}% damage to towers</b>.</li><li>${magicalIcon} <c:magical>Magical damage:</c:magical> reduced by <b>Magic Resistance</b>.</li><li><c:pure>Pure damage:</c:pure> ignores armor and Magic Resistance. Towers deal this type, so those stats will not protect you from them.</li></ul><h2>Minion damage types</h2><ul><li><b>Basic:</b> deals <b>${basicToHero}% damage to heroes</b>.</li><li><b>Pierce:</b> ranged minion shots deal <b>${pierceToMinion}% damage to minions</b>.</li><li><b>Siege:</b> bombs deal <b>${siegeToTower}% damage to towers</b>, but only <b>${siegeToHero}% to heroes</b>.</li></ul>`,
         ru: `Каждый удар в игре имеет тип урона, и именно тип решает, какая защита применяется до вычитания любых чисел.<br/><br/>• ${physicalIcon} <c:physical>Физический урон</c:physical> снижается <b>бронёй</b> и наносит башням лишь <b>${toTower}%</b><br/>• ${magicalIcon} <c:magical>Магический урон</c:magical> снижается <b>магической защитой</b><br/>• <c:pure>Чистый урон</c:pure> игнорирует и то, и другое и <b>не может быть снижен ничем</b><br/><br/>Есть ещё три типа у не-геройских источников: <b>обычная атака</b> наносит героям <b>${basicToHero}%</b>, пробивающий выстрел дальнобойного миньона — <b>${pierceToMinion}%</b> по миньонам, а <b>осадная</b> бомба — <b>${siegeToTower}%</b> по башням, но лишь <b>${siegeToHero}%</b> по героям.<br/><br/>Поэтому башня бьёт так больно — её атака чистая — и поэтому набор брони против неё бесполезен.`,
         cz: `Každý zásah ve hře má typ poškození a právě typ určuje, která obrana se uplatní, ještě než se odečte jakékoli číslo.<br/><br/>• ${physicalIcon} <c:physical>Fyzické poškození</c:physical> snižuje <b>brnění</b> a věžím způsobí jen <b>${toTower}%</b><br/>• ${magicalIcon} <c:magical>Magické poškození</c:magical> snižuje <b>magická obrana</b><br/>• <c:pure>Čisté poškození</c:pure> ignoruje obojí a <b>nelze ho ničím snížit</b><br/><br/>U nehrdinských zdrojů existují další tři typy: <b>základní útok</b> způsobí hrdinům <b>${basicToHero}%</b>, probíjecí střela jednotky na dálku <b>${pierceToMinion}%</b> jednotkám a <b>obléhací</b> bomba <b>${siegeToTower}%</b> věžím, ale jen <b>${siegeToHero}%</b> hrdinům.<br/><br/>Proto věž bolí tak moc – její útok je čistý – a proto proti ní nakupování brnění nepomůže.`,
         br: `Todo acerto no jogo carrega um tipo de dano, e o tipo decide qual defesa se aplica antes de qualquer número ser subtraído.<br/><br/>• ${physicalIcon} <c:physical>Dano físico</c:physical> é reduzido por <b>armadura</b> e só causa <b>${toTower}%</b> em torres<br/>• ${magicalIcon} <c:magical>Dano mágico</c:magical> é reduzido por <b>defesa mágica</b><br/>• <c:pure>Dano puro</c:pure> ignora os dois e <b>não pode ser reduzido por nada</b><br/><br/>Existem mais três tipos em fontes que não são heróis: um <b>ataque básico</b> causa <b>${basicToHero}%</b> em heróis, o tiro <b>perfurante</b> do lacaio à distância causa <b>${pierceToMinion}%</b> em lacaios, e a bomba de <b>cerco</b> causa <b>${siegeToTower}%</b> em torres mas só <b>${siegeToHero}%</b> em heróis.<br/><br/>É por isso que uma torre dói tanto - o ataque dela é puro - e por que acumular armadura não ajuda contra ela.`,
@@ -549,6 +644,8 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const freezeIcon = mechanicIcon('cc', 'freeze')
       const slowIcon = mechanicIcon('cc', 'slow')
       const fearIcon = mechanicIcon('cc', 'fear')
+      const pullIcon = mechanicIcon('cc', 'pull')
+      const pushbackIcon = mechanicIcon('cc', 'pushback')
 
       return {
         en: `<b>Crowd control (CC)</b> limits movement or actions. Most effects can be <c:dispel>dispelled</c:dispel>. <b>Tenacity</b> reduces their duration.<ul><li>${stunIcon} <c:stun>Stun:</c:stun> stops movement, attacks, and abilities. Interrupts your current cast.</li><li>${rootIcon} <c:control>Root:</c:control> stops movement. You can still attack and cast.</li><li>${silenceIcon} <c:control>Silence:</c:control> stops abilities. You can still move and attack.</li><li>${freezeIcon} <c:control>Freeze:</c:control> freezes you in place.</li><li>${slowIcon} <c:slow>Slow:</c:slow> reduces movement speed.</li><li>${fearIcon} <c:control>Fear and Charm:</c:control> force you to move in a direction you cannot choose. Interrupt your current cast.</li><li><c:control>Knockback, Pushback, and Pull:</c:control> forcibly move you.</li></ul><b>Hard CC</b> means <c:stun>Stun</c:stun>, <c:control>Charm</c:control>, and <c:control>Fear</c:control>. Immunity to hard CC protects against these three.`,
@@ -575,18 +672,23 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const stunIcon = mechanicIcon('cc', 'stun')
       const freezeIcon = mechanicIcon('cc', 'freeze')
       const dotIcon = mechanicIcon('damage_types', 'ignite')
+      const kirinsDefender = mechanicIcon('dispelling', 'kirins_defender')
       const radius = ItemAbilityData.ACTIVE_EFFECT_RADIUS
+      const blockDuration = sec(ItemAbilityData.KIRINS_DEFENDER_DURATION)
+      const blockCooldown = sec(ItemAbilityData.KIRINS_DEFENDER_COOLDOWN)
+
+      const dispelItemClip = clipSlot(MechanicVideoLabel.DISPEL_ITEM)
 
       return {
-        en: `A <c:dispel>dispel</c:dispel> removes negative effects currently on you. It <b>does not prevent new effects</b>, so use it after an effect lands.<h2>Effects it removes</h2><ul><li>${slowIcon} <c:slow>Slows</c:slow>, ${rootIcon} <c:control>Roots</c:control>, and ${silenceIcon} <c:control>Silences</c:control>.</li><li>${freezeIcon} <c:control>Freezes</c:control>, ${stunIcon} <c:stun>Stuns</c:stun>, and other hard CC.</li><li>${dotIcon} <b>Damage over time</b>, such as poison or ignite.</li></ul>Some effects, such as <b>tower damage stacks</b>, <c:dispel>cannot be dispelled</c:dispel>.<h2>Items that dispel</h2><ul><li>${divine} <b>Divine Shield:</b> cleanses you and allies within <c:range>${radius} range</c:range>, then grants regeneration.</li><li>${antimagic} <b>Antimagic Cape:</b> cleanses you.</li><li>${vampiric} <b>Vampiric Armor:</b> cleanses you.</li><li>${titansShield} <b>Titan's Shield:</b> cleanses you.</li><li>${titansArmor} <b>Titan's Armor:</b> cleanses you.</li></ul>Your own <b>Base</b> also removes negative effects applied outside it.`,
-        ru: `<c:dispel>Очищение</c:dispel> разом снимает с героя все отрицательные эффекты:<br/><br/>• ${slowIcon} <c:slow>Замедления</c:slow><br/>• ${rootIcon} <c:control>Обездвиживание</c:control><br/>• ${silenceIcon} <c:control>Немоту</c:control><br/>• ${freezeIcon} <c:control>Заморозку</c:control><br/>• ${stunIcon} <c:stun>Оглушения</c:stun> и остальной жёсткий контроль<br/>• ${dotIcon} <c:physical>Урон со временем</c:physical>, например яд или поджог<br/><br/>Оно не защищает от следующего, поэтому всё решает тайминг: очищайтесь после того, как контроль наложен, а не до.<br/><br/>Очищение есть у пяти предметов:<br/>• ${divine} <b>Божественный щит</b> — единственное <b>массовое</b> очищение: снимает эффекты с вас <b>и со всех союзников</b> в <c:range>радиусе ${radius}</c:range>, а затем даёт бафф регенерации<br/>• ${antimagic} <b>Антимагический плащ</b> — очищает вас<br/>• ${vampiric} <b>Вампирская броня</b> — очищает вас<br/>• ${titansShield} <b>Щит титана</b> — очищает вас<br/>• ${titansArmor} <b>Броня титана</b> — очищает вас<br/><br/>Нахождение на своей <b>Базе</b> тоже снимает всё, что вы подцепили снаружи, — зачастую это самое дешёвое очищение в игре.`,
-        cz: `<c:dispel>Rozptýlení</c:dispel> naráz sundá z hrdiny všechny negativní efekty:<br/><br/>• ${slowIcon} <c:slow>Zpomalení</c:slow><br/>• ${rootIcon} <c:control>Znehybnění</c:control><br/>• ${silenceIcon} <c:control>Umlčení</c:control><br/>• ${freezeIcon} <c:control>Zmrazení</c:control><br/>• ${stunIcon} <c:stun>Omráčení</c:stun> a zbytek tvrdého ovládání<br/>• ${dotIcon} <c:physical>Poškození v čase</c:physical>, třeba jed nebo zapálení<br/><br/>Nezabrání dalšímu, takže celá dovednost je v načasování: rozptyl až potom, co ovládání dopadne, ne předtím.<br/><br/>Nese ho pět předmětů:<br/>• ${divine} <b>Božský štít</b> – jediné <b>plošné</b> rozptýlení: očistí tebe <b>i každého spojence</b> v <c:range>dosahu ${radius}</c:range> a nechá po sobě regenerační buff<br/>• ${antimagic} <b>Antimagický plášť</b> – rozptýlí tebe<br/>• ${vampiric} <b>Upíří brnění</b> – rozptýlí tebe<br/>• ${titansShield} <b>Titánův štít</b> – rozptýlí tebe<br/>• ${titansArmor} <b>Titánovo brnění</b> – rozptýlí tebe<br/><br/>Stání na vlastní <b>Základně</b> také očistí všechno, co jsi nabral venku – často nejlevnější rozptýlení ve hře.`,
-        br: `Uma <c:dispel>dissipação</c:dispel> remove todos os efeitos negativos de um herói de uma vez:<br/><br/>• ${slowIcon} <c:slow>Lentidões</c:slow><br/>• ${rootIcon} <c:control>Enraizamentos</c:control><br/>• ${silenceIcon} <c:control>Silêncios</c:control><br/>• ${freezeIcon} <c:control>Congelamentos</c:control><br/>• ${stunIcon} <c:stun>Atordoamentos</c:stun> e o resto do controle pesado<br/>• ${dotIcon} <c:physical>Dano ao longo do tempo</c:physical>, como veneno ou ignição<br/><br/>Ela não impede o próximo, então o tempo é toda a habilidade: dissipe depois que o controle acertar, não antes.<br/><br/>Cinco itens carregam uma:<br/>• ${divine} <b>Escudo Divino</b> - a única dissipação em <b>área</b>: limpa você <b>e todos os aliados</b> em <c:range>${radius} de alcance</c:range>, e ainda deixa um bônus de regeneração<br/>• ${antimagic} <b>Capa Antimagia</b> - dissipa você<br/>• ${vampiric} <b>Armadura Vampírica</b> - dissipa você<br/>• ${titansShield} <b>Escudo do Titã</b> - dissipa você<br/>• ${titansArmor} <b>Armadura do Titã</b> - dissipa você<br/><br/>Ficar na sua própria <b>Base</b> também limpa tudo que você pegou fora dela, muitas vezes a dissipação mais barata do jogo.`,
-        fr: `Une <c:dispel>dissipation</c:dispel> retire d'un coup tous les effets négatifs d'un héros :<br/><br/>• ${slowIcon} <c:slow>Ralentissements</c:slow><br/>• ${rootIcon} <c:control>Enracinements</c:control><br/>• ${silenceIcon} <c:control>Silences</c:control><br/>• ${freezeIcon} <c:control>Gels</c:control><br/>• ${stunIcon} <c:stun>Étourdissements</c:stun> et le reste du contrôle dur<br/>• ${dotIcon} <c:physical>Dégâts sur la durée</c:physical>, comme le poison ou l'embrasement<br/><br/>Elle n'empêche pas le suivant, donc tout est dans le timing : dissipez après que le contrôle a touché, pas avant.<br/><br/>Cinq objets en possèdent une :<br/>• ${divine} <b>Bouclier divin</b> - la seule dissipation de <b>zone</b> : il vous purge <b>ainsi que tous les alliés</b> dans un <c:range>rayon de ${radius}</c:range>, puis laisse un bonus de régénération<br/>• ${antimagic} <b>Cape antimagie</b> - vous dissipe<br/>• ${vampiric} <b>Armure vampirique</b> - vous dissipe<br/>• ${titansShield} <b>Bouclier du titan</b> - vous dissipe<br/>• ${titansArmor} <b>Armure du titan</b> - vous dissipe<br/><br/>Se tenir dans sa propre <b>Base</b> purge aussi tout ce que vous avez ramassé à l'extérieur : souvent la dissipation la moins chère du jeu.`,
-        zh: `<c:dispel>驅散</c:dispel>會一次移除英雄身上所有負面效果：<br/><br/>• ${slowIcon} <c:slow>減速</c:slow><br/>• ${rootIcon} <c:control>纏繞</c:control><br/>• ${silenceIcon} <c:control>沉默</c:control><br/>• ${freezeIcon} <c:control>冰凍</c:control><br/>• ${stunIcon} <c:stun>暈眩</c:stun>以及其餘硬控制<br/>• ${dotIcon} <c:physical>持續傷害</c:physical>，例如中毒或點燃<br/><br/>它無法阻擋下一個效果，因此時機就是全部技巧：在控制命中「之後」驅散，而非之前。<br/><br/>共有五件裝備具備驅散：<br/>• ${divine} <b>神聖護盾</b>——唯一的<b>範圍</b>驅散：淨化你<b>以及</b> <c:range>${radius} 範圍</c:range>內<b>所有隊友</b>，並留下回復增益<br/>• ${antimagic} <b>抗魔斗篷</b>——驅散自身<br/>• ${vampiric} <b>吸血護甲</b>——驅散自身<br/>• ${titansShield} <b>泰坦之盾</b>——驅散自身<br/>• ${titansArmor} <b>泰坦護甲</b>——驅散自身<br/><br/>站在自家<b>基地</b>同樣會清除你在外面沾染的一切，這通常是遊戲中最便宜的驅散。`,
-        vi: `<c:dispel>Giải hiệu ứng</c:dispel> gỡ sạch mọi hiệu ứng bất lợi khỏi một tướng cùng lúc:<br/><br/>• ${slowIcon} <c:slow>Làm chậm</c:slow><br/>• ${rootIcon} <c:control>Trói chân</c:control><br/>• ${silenceIcon} <c:control>Câm lặng</c:control><br/>• ${freezeIcon} <c:control>Đóng băng</c:control><br/>• ${stunIcon} <c:stun>Choáng</c:stun> và các hiệu ứng khống chế cứng còn lại<br/>• ${dotIcon} <c:physical>Sát thương theo thời gian</c:physical>, như độc hoặc thiêu đốt<br/><br/>Nó không ngăn được đòn tiếp theo, nên thời điểm là tất cả kỹ năng: giải sau khi khống chế trúng, không phải trước.<br/><br/>Năm trang bị có sẵn hiệu ứng này:<br/>• ${divine} <b>Khiên Thần Thánh</b> - giải <b>diện rộng</b> duy nhất: làm sạch cho bạn <b>và mọi đồng minh</b> trong <c:range>tầm ${radius}</c:range>, rồi để lại buff hồi phục<br/>• ${antimagic} <b>Áo Choàng Kháng Phép</b> - giải cho bạn<br/>• ${vampiric} <b>Giáp Hút Máu</b> - giải cho bạn<br/>• ${titansShield} <b>Khiên Titan</b> - giải cho bạn<br/>• ${titansArmor} <b>Giáp Titan</b> - giải cho bạn<br/><br/>Đứng trong <b>Căn Cứ</b> của mình cũng gỡ mọi thứ bạn dính bên ngoài - thường là cách giải rẻ nhất trong game.`,
-        id: `<c:dispel>Dispel</c:dispel> melepas semua efek negatif dari seorang hero sekaligus:<br/><br/>• ${slowIcon} <c:slow>Slow</c:slow><br/>• ${rootIcon} <c:control>Root</c:control><br/>• ${silenceIcon} <c:control>Silence</c:control><br/>• ${freezeIcon} <c:control>Freeze</c:control><br/>• ${stunIcon} <c:stun>Stun</c:stun> dan hard crowd control lainnya<br/>• ${dotIcon} <c:physical>Damage over time</c:physical>, seperti racun atau ignite<br/><br/>Ia tidak mencegah yang berikutnya, jadi waktunya adalah seluruh keahliannya: dispel setelah crowd control mengenai, bukan sebelumnya.<br/><br/>Lima item memilikinya:<br/>• ${divine} <b>Divine Shield</b> - satu-satunya dispel <b>area</b>: membersihkan kamu <b>dan semua sekutu</b> dalam <c:range>jangkauan ${radius}</c:range>, lalu meninggalkan buff regenerasi<br/>• ${antimagic} <b>Antimagic Cape</b> - dispel dirimu<br/>• ${vampiric} <b>Vampiric Armor</b> - dispel dirimu<br/>• ${titansShield} <b>Titan's Shield</b> - dispel dirimu<br/>• ${titansArmor} <b>Titan's Armor</b> - dispel dirimu<br/><br/>Berdiri di <b>Markas</b> sendiri juga membersihkan apa pun yang kamu dapat di luar, sering kali dispel termurah dalam permainan.`,
-        kr: `<c:dispel>정화</c:dispel>는 챔피언에게 걸린 모든 해로운 효과를 한 번에 벗겨냅니다:<br/><br/>• ${slowIcon} <c:slow>둔화</c:slow><br/>• ${rootIcon} <c:control>속박</c:control><br/>• ${silenceIcon} <c:control>침묵</c:control><br/>• ${freezeIcon} <c:control>빙결</c:control><br/>• ${stunIcon} <c:stun>기절</c:stun>을 비롯한 강력한 군중 제어<br/>• ${dotIcon} <c:physical>지속 피해</c:physical>(중독, 점화 등)<br/><br/>다음 효과를 막아 주지는 않으므로 타이밍이 전부입니다. 군중 제어가 적중한 뒤에 정화하세요, 그 전이 아니라.<br/><br/>다섯 개의 아이템이 정화를 제공합니다:<br/>• ${divine} <b>신성한 방패</b> - 유일한 <b>광역</b> 정화로, 자신 <b>과 ${radius} <c:range>범위</c:range> 내 모든 아군</b>을 정화하고 재생 버프를 남깁니다<br/>• ${antimagic} <b>마법 방어 망토</b> - 자신을 정화<br/>• ${vampiric} <b>흡혈 갑옷</b> - 자신을 정화<br/>• ${titansShield} <b>타이탄의 방패</b> - 자신을 정화<br/>• ${titansArmor} <b>타이탄의 갑옷</b> - 자신을 정화<br/><br/>아군 <b>기지</b>에 서 있어도 밖에서 얻은 모든 것이 정화되며, 대개 게임에서 가장 값싼 정화 수단입니다.`,
+        en: `A <c:dispel>dispel</c:dispel> removes negative effects currently on you. It <b>does not prevent new effects</b>, so use it after an effect lands.<h2>Effects it removes</h2><ul><li>${slowIcon} <c:slow>Slows</c:slow>, ${rootIcon} <c:control>Roots</c:control>, and ${silenceIcon} <c:control>Silences</c:control>.</li><li>${freezeIcon} <c:control>Freezes</c:control>, ${stunIcon} <c:stun>Stuns</c:stun>, and other hard CC.</li><li>${dotIcon} <b>Damage over time</b>, such as poison or ignite.</li></ul>Some effects, such as <b>tower damage stacks</b>, <c:dispel>cannot be dispelled</c:dispel>.<h2>Items that dispel</h2><ul><li>${divine} <b>Divine Shield:</b> cleanses you and allies within <c:range>${radius} range</c:range>, then grants regeneration.</li><li>${antimagic} <b>Antimagic Cape:</b> cleanses you.</li><li>${vampiric} <b>Vampiric Armor:</b> cleanses you.</li><li>${titansShield} <b>Titan's Shield:</b> cleanses you.</li><li>${titansArmor} <b>Titan's Armor:</b> cleanses you.</li></ul>Your own <b>Base</b> also removes negative effects applied outside it.${dispelItemClip}<h2>Blocking crowd control</h2>A dispel removes effects after they land. ${kirinsDefender} <b>Kirin's Defender</b> works the other way round: it <b>blocks the next crowd control effect</b> that hits you and grants <c:immune>immunity to crowd control</c:immune> for <b>${blockDuration}s</b>, at most once every <b>${blockCooldown}s</b>.`,
+        ru: `<c:dispel>Очищение</c:dispel> разом снимает с героя все отрицательные эффекты:<br/><br/>• ${slowIcon} <c:slow>Замедления</c:slow><br/>• ${rootIcon} <c:root>Обездвиживание</c:root><br/>• ${silenceIcon} <c:control>Немоту</c:control><br/>• ${freezeIcon} <c:control>Заморозку</c:control><br/>• ${stunIcon} <c:stun>Оглушения</c:stun> и остальной жёсткий контроль<br/>• ${dotIcon} <c:physical>Урон со временем</c:physical>, например яд или поджог<br/><br/>Оно не защищает от следующего, поэтому всё решает тайминг: очищайтесь после того, как контроль наложен, а не до.<br/><br/>Очищение есть у пяти предметов:<br/>• ${divine} <b>Божественный щит</b> — единственное <b>массовое</b> очищение: снимает эффекты с вас <b>и со всех союзников</b> в <c:range>радиусе ${radius}</c:range>, а затем даёт бафф регенерации<br/>• ${antimagic} <b>Антимагический плащ</b> — очищает вас<br/>• ${vampiric} <b>Вампирская броня</b> — очищает вас<br/>• ${titansShield} <b>Щит титана</b> — очищает вас<br/>• ${titansArmor} <b>Броня титана</b> — очищает вас<br/><br/>Нахождение на своей <b>Базе</b> тоже снимает всё, что вы подцепили снаружи, — зачастую это самое дешёвое очищение в игре.${dispelItemClip}<h2>Блокировка контроля</h2>Очищение снимает эффекты уже после того, как они наложены. ${kirinsDefender} <b>Защитник Кирина</b> работает наоборот: <b>блокирует следующий эффект контроля</b>, который в вас попадёт, и даёт <c:immune>иммунитет к контролю</c:immune> на <b>${blockDuration} с</b>, не чаще чем раз в <b>${blockCooldown} с</b>.`,
+        cz: `<c:dispel>Rozptýlení</c:dispel> naráz sundá z hrdiny všechny negativní efekty:<br/><br/>• ${slowIcon} <c:slow>Zpomalení</c:slow><br/>• ${rootIcon} <c:root>Znehybnění</c:root><br/>• ${silenceIcon} <c:silence>Umlčení</c:silence><br/>• ${freezeIcon} <c:freeze>Zmrazení</c:freeze><br/>• ${stunIcon} <c:stun>Omráčení</c:stun> a zbytek tvrdého ovládání<br/>• ${dotIcon} <c:physical>Poškození v čase</c:physical>, třeba jed nebo zapálení<br/><br/>Nezabrání dalšímu, takže celá dovednost je v načasování: rozptyl až potom, co ovládání dopadne, ne předtím.<br/><br/>Nese ho pět předmětů:<br/>• ${divine} <b>Božský štít</b> – jediné <b>plošné</b> rozptýlení: očistí tebe <b>i každého spojence</b> v <c:range>dosahu ${radius}</c:range> a nechá po sobě regenerační buff<br/>• ${antimagic} <b>Antimagický plášť</b> – rozptýlí tebe<br/>• ${vampiric} <b>Upíří brnění</b> – rozptýlí tebe<br/>• ${titansShield} <b>Titánův štít</b> – rozptýlí tebe<br/>• ${titansArmor} <b>Titánovo brnění</b> – rozptýlí tebe<br/><br/>Stání na vlastní <b>Základně</b> také očistí všechno, co jsi nabral venku – často nejlevnější rozptýlení ve hře.${dispelItemClip}<h2>Blokování ovládání</h2>Rozptýlení sundá efekty až potom, co dopadnou. ${kirinsDefender} <b>Kirinův obránce</b> funguje naopak: <b>zablokuje další efekt ovládání</b>, který tě zasáhne, a dá ti <c:immune>imunitu vůči ovládání</c:immune> na <b>${blockDuration}s</b>, nejvýše jednou za <b>${blockCooldown}s</b>.`,
+        br: `Uma <c:dispel>dissipação</c:dispel> remove todos os efeitos negativos de um herói de uma vez:<br/><br/>• ${slowIcon} <c:slow>Lentidões</c:slow><br/>• ${rootIcon} <c:control>Enraizamentos</c:control><br/>• ${silenceIcon} <c:control>Silêncios</c:control><br/>• ${freezeIcon} <c:control>Congelamentos</c:control><br/>• ${stunIcon} <c:stun>Atordoamentos</c:stun> e o resto do controle pesado<br/>• ${dotIcon} <c:physical>Dano ao longo do tempo</c:physical>, como veneno ou ignição<br/><br/>Ela não impede o próximo, então o tempo é toda a habilidade: dissipe depois que o controle acertar, não antes.<br/><br/>Cinco itens carregam uma:<br/>• ${divine} <b>Escudo Divino</b> - a única dissipação em <b>área</b>: limpa você <b>e todos os aliados</b> em <c:range>${radius} de alcance</c:range>, e ainda deixa um bônus de regeneração<br/>• ${antimagic} <b>Capa Antimagia</b> - dissipa você<br/>• ${vampiric} <b>Armadura Vampírica</b> - dissipa você<br/>• ${titansShield} <b>Escudo do Titã</b> - dissipa você<br/>• ${titansArmor} <b>Armadura do Titã</b> - dissipa você<br/><br/>Ficar na sua própria <b>Base</b> também limpa tudo que você pegou fora dela, muitas vezes a dissipação mais barata do jogo.${dispelItemClip}<h2>Bloqueando controle de grupo</h2>Uma dissipação remove efeitos depois que eles acertam. ${kirinsDefender} <b>Defensor de Kirin</b> faz o contrário: <b>bloqueia o próximo efeito de controle</b> que te atingir e concede <c:immune>imunidade a controle de grupo</c:immune> por <b>${blockDuration}s</b>, no máximo uma vez a cada <b>${blockCooldown}s</b>.`,
+        fr: `Une <c:dispel>dissipation</c:dispel> retire d'un coup tous les effets négatifs d'un héros :<br/><br/>• ${slowIcon} <c:slow>Ralentissements</c:slow><br/>• ${rootIcon} <c:control>Enracinements</c:control><br/>• ${silenceIcon} <c:control>Silences</c:control><br/>• ${freezeIcon} <c:control>Gels</c:control><br/>• ${stunIcon} <c:stun>Étourdissements</c:stun> et le reste du contrôle dur<br/>• ${dotIcon} <c:physical>Dégâts sur la durée</c:physical>, comme le poison ou l'embrasement<br/><br/>Elle n'empêche pas le suivant, donc tout est dans le timing : dissipez après que le contrôle a touché, pas avant.<br/><br/>Cinq objets en possèdent une :<br/>• ${divine} <b>Bouclier divin</b> - la seule dissipation de <b>zone</b> : il vous purge <b>ainsi que tous les alliés</b> dans un <c:range>rayon de ${radius}</c:range>, puis laisse un bonus de régénération<br/>• ${antimagic} <b>Cape antimagie</b> - vous dissipe<br/>• ${vampiric} <b>Armure vampirique</b> - vous dissipe<br/>• ${titansShield} <b>Bouclier du titan</b> - vous dissipe<br/>• ${titansArmor} <b>Armure du titan</b> - vous dissipe<br/><br/>Se tenir dans sa propre <b>Base</b> purge aussi tout ce que vous avez ramassé à l'extérieur : souvent la dissipation la moins chère du jeu.${dispelItemClip}<h2>Bloquer le contrôle de foule</h2>Une dissipation retire les effets après qu'ils ont touché. ${kirinsDefender} <b>Bouclier de Kirin</b> fait l'inverse : il <b>bloque le prochain effet de contrôle</b> qui vous touche et confère l'<c:immune>immunité au contrôle de foule</c:immune> pendant <b>${blockDuration}s</b>, au plus une fois toutes les <b>${blockCooldown}s</b>.`,
+        zh: `<c:dispel>驅散</c:dispel>會一次移除英雄身上所有負面效果：<br/><br/>• ${slowIcon} <c:slow>減速</c:slow><br/>• ${rootIcon} <c:root>纏繞</c:root><br/>• ${silenceIcon} <c:silence>沉默</c:silence><br/>• ${freezeIcon} <c:freeze>冰凍</c:freeze><br/>• ${stunIcon} <c:stun>暈眩</c:stun>以及其餘硬控制<br/>• ${dotIcon} <c:physical>持續傷害</c:physical>，例如中毒或點燃<br/><br/>它無法阻擋下一個效果，因此時機就是全部技巧：在控制命中「之後」驅散，而非之前。<br/><br/>共有五件裝備具備驅散：<br/>• ${divine} <b>神聖護盾</b>——唯一的<b>範圍</b>驅散：淨化你<b>以及</b> <c:range>${radius} 範圍</c:range>內<b>所有隊友</b>，並留下回復增益<br/>• ${antimagic} <b>抗魔斗篷</b>——驅散自身<br/>• ${vampiric} <b>吸血護甲</b>——驅散自身<br/>• ${titansShield} <b>泰坦之盾</b>——驅散自身<br/>• ${titansArmor} <b>泰坦護甲</b>——驅散自身<br/><br/>站在自家<b>基地</b>同樣會清除你在外面沾染的一切，這通常是遊戲中最便宜的驅散。${dispelItemClip}<h2>阻擋控制效果</h2>驅散是在效果命中之後才將其移除。${kirinsDefender} <b>麒麟的守護者</b>則相反：它會<b>阻擋下一個命中你的控制效果</b>，並給予 <b>${blockDuration} 秒</b><c:immune>控制免疫</c:immune>，每 <b>${blockCooldown} 秒</b>最多觸發一次。`,
+        vi: `<c:dispel>Giải hiệu ứng</c:dispel> gỡ sạch mọi hiệu ứng bất lợi khỏi một tướng cùng lúc:<br/><br/>• ${slowIcon} <c:slow>Làm chậm</c:slow><br/>• ${rootIcon} <c:root>Trói chân</c:root><br/>• ${silenceIcon} <c:silence>Câm lặng</c:silence><br/>• ${freezeIcon} <c:freeze>Đóng băng</c:freeze><br/>• ${stunIcon} <c:stun>Choáng</c:stun> và các hiệu ứng khống chế cứng còn lại<br/>• ${dotIcon} <c:physical>Sát thương theo thời gian</c:physical>, như độc hoặc thiêu đốt<br/><br/>Nó không ngăn được đòn tiếp theo, nên thời điểm là tất cả kỹ năng: giải sau khi khống chế trúng, không phải trước.<br/><br/>Năm trang bị có sẵn hiệu ứng này:<br/>• ${divine} <b>Khiên Thần Thánh</b> - giải <b>diện rộng</b> duy nhất: làm sạch cho bạn <b>và mọi đồng minh</b> trong <c:range>tầm ${radius}</c:range>, rồi để lại buff hồi phục<br/>• ${antimagic} <b>Áo Choàng Kháng Phép</b> - giải cho bạn<br/>• ${vampiric} <b>Giáp Hút Máu</b> - giải cho bạn<br/>• ${titansShield} <b>Khiên Titan</b> - giải cho bạn<br/>• ${titansArmor} <b>Giáp Titan</b> - giải cho bạn<br/><br/>Đứng trong <b>Căn Cứ</b> của mình cũng gỡ mọi thứ bạn dính bên ngoài - thường là cách giải rẻ nhất trong game.${dispelItemClip}<h2>Chặn khống chế</h2>Giải hiệu ứng chỉ gỡ hiệu ứng sau khi nó đã trúng. ${kirinsDefender} <b>Khiên Kirin</b> làm ngược lại: nó <b>chặn hiệu ứng khống chế tiếp theo</b> trúng bạn và cho <c:immune>miễn nhiễm khống chế</c:immune> trong <b>${blockDuration} giây</b>, tối đa một lần mỗi <b>${blockCooldown} giây</b>.`,
+        id: `<c:dispel>Dispel</c:dispel> melepas semua efek negatif dari seorang hero sekaligus:<br/><br/>• ${slowIcon} <c:slow>Slow</c:slow><br/>• ${rootIcon} <c:root>Root</c:root><br/>• ${silenceIcon} <c:silence>Silence</c:silence><br/>• ${freezeIcon} <c:freeze>Freeze</c:freeze><br/>• ${stunIcon} <c:stun>Stun</c:stun> dan hard crowd control lainnya<br/>• ${dotIcon} <c:physical>Damage over time</c:physical>, seperti racun atau ignite<br/><br/>Ia tidak mencegah yang berikutnya, jadi waktunya adalah seluruh keahliannya: dispel setelah crowd control mengenai, bukan sebelumnya.<br/><br/>Lima item memilikinya:<br/>• ${divine} <b>Divine Shield</b> - satu-satunya dispel <b>area</b>: membersihkan kamu <b>dan semua sekutu</b> dalam <c:range>jangkauan ${radius}</c:range>, lalu meninggalkan buff regenerasi<br/>• ${antimagic} <b>Antimagic Cape</b> - dispel dirimu<br/>• ${vampiric} <b>Vampiric Armor</b> - dispel dirimu<br/>• ${titansShield} <b>Titan's Shield</b> - dispel dirimu<br/>• ${titansArmor} <b>Titan's Armor</b> - dispel dirimu<br/><br/>Berdiri di <b>Markas</b> sendiri juga membersihkan apa pun yang kamu dapat di luar, sering kali dispel termurah dalam permainan.${dispelItemClip}<h2>Memblokir crowd control</h2>Dispel melepas efek setelah efek itu mengenai. ${kirinsDefender} <b>Pelindung Kirin</b> bekerja sebaliknya: ia <b>memblokir efek crowd control berikutnya</b> yang mengenaimu dan memberi <c:immune>kebal crowd control</c:immune> selama <b>${blockDuration} detik</b>, paling banyak sekali tiap <b>${blockCooldown} detik</b>.`,
+        kr: `<c:dispel>정화</c:dispel>는 챔피언에게 걸린 모든 해로운 효과를 한 번에 벗겨냅니다:<br/><br/>• ${slowIcon} <c:slow>둔화</c:slow><br/>• ${rootIcon} <c:root>속박</c:root><br/>• ${silenceIcon} <c:silence>침묵</c:silence><br/>• ${freezeIcon} <c:freeze>빙결</c:freeze><br/>• ${stunIcon} <c:stun>기절</c:stun>을 비롯한 강력한 군중 제어<br/>• ${dotIcon} <c:physical>지속 피해</c:physical>(중독, 점화 등)<br/><br/>다음 효과를 막아 주지는 않으므로 타이밍이 전부입니다. 군중 제어가 적중한 뒤에 정화하세요, 그 전이 아니라.<br/><br/>다섯 개의 아이템이 정화를 제공합니다:<br/>• ${divine} <b>신성한 방패</b> - 유일한 <b>광역</b> 정화로, 자신 <b>과 ${radius} <c:range>범위</c:range> 내 모든 아군</b>을 정화하고 재생 버프를 남깁니다<br/>• ${antimagic} <b>마법 방어 망토</b> - 자신을 정화<br/>• ${vampiric} <b>흡혈 갑옷</b> - 자신을 정화<br/>• ${titansShield} <b>타이탄의 방패</b> - 자신을 정화<br/>• ${titansArmor} <b>타이탄의 갑옷</b> - 자신을 정화<br/><br/>아군 <b>기지</b>에 서 있어도 밖에서 얻은 모든 것이 정화되며, 대개 게임에서 가장 값싼 정화 수단입니다.${dispelItemClip}<h2>군중 제어 차단</h2>정화는 효과가 적중한 뒤에 벗겨냅니다. ${kirinsDefender} <b>기린의 수호자</b>는 반대로 작동합니다. <b>다음에 적중하는 군중 제어 효과를 차단</b>하고 <b>${blockDuration}초</b> 동안 <c:immune>군중 제어 면역</c:immune>을 부여하며, <b>${blockCooldown}초</b>마다 최대 한 번 발동합니다.`,
       }
     }
 
@@ -610,6 +712,18 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const lowHaste = 20
       const midHaste = 50
       const critBonus = perc(CRITICAL_DAMAGE_MOD_150 - 1)
+      const critTotal = perc(CRITICAL_DAMAGE_MOD_150)
+      const katanaBonus = perc(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE)
+      const katanaCrit = perc(CRITICAL_DAMAGE_MOD_150 + ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE)
+      const katanaIcon = `<img class="inline-mechanic-icon" src="/assets/ui/game/items/CorruptedKatana.png" alt="Corrupted Katana" />`
+      /** The haste curve bottoms out rather than reaching zero, so a huge value reads the floor off it. */
+      const minCooldown = perc(calculateCooldownReduction(Number.MAX_SAFE_INTEGER))
+      const attackInterval = sec(BASE_ATTACK_TIME)
+      const slowestAttack = sec(BASE_ATTACK_TIME / MIN_ATTACK_SPEED)
+      const regenAtLevel1 = fixed(calculateRealHealthRegen(1, 1), 2)
+      const regenAtMaxLevel = fixed(calculateRealHealthRegen(1, MAX_LEVEL), 2)
+      const resistanceChart = chartSlot(MechanicChartId.RESISTANCES)
+      const healthRegenChart = chartSlot(MechanicChartId.HEALTH_REGEN)
 
       return {
         en: `<h2>Armor and magic defence</h2><b>Armor</b> reduces <c:physical>physical damage</c:physical>. <b>Magic defence</b> reduces <c:magical>magical damage</c:magical>. Both use the same curve: higher stats reduce more damage, but each extra point adds less percentage reduction.<ul><li><b>${lowArmor} resistance:</b> <c:bonus>${resist(lowArmor)}% less damage</c:bonus>.</li><li><b>${midArmor} resistance:</b> <c:bonus>${resist(midArmor)}% less damage</c:bonus>.</li><li><c:pure>Pure damage</c:pure> ignores both.</li></ul><h2>Ability haste</h2>Ability haste shortens cooldowns.<ul><li><b>${lowHaste} haste:</b> <c:bonus>${haste(lowHaste)}% shorter cooldowns</c:bonus>.</li><li><b>${midHaste} haste:</b> <c:bonus>${haste(midHaste)}% shorter cooldowns</c:bonus>.</li></ul>More haste keeps helping, but cannot reduce cooldowns to zero.<h2>Other stats</h2><ul><li><b>Attack speed:</b> cannot fall below <b>${MIN_ATTACK_SPEED}</b>.</li><li><b>Critical hits:</b> deal <c:bonus>+${critBonus}% damage</c:bonus>, or <c:bonus>${perc(CRITICAL_DAMAGE_MOD_150)}% of normal damage</c:bonus>.<br/><img class="inline-mechanic-icon" src="/assets/ui/game/items/CorruptedKatana.png" alt="Corrupted Katana" /> <b>Corrupted Katana</b> adds <c:bonus>${perc(ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE)} percentage points</c:bonus>, raising critical hits to <c:bonus>${perc(CRITICAL_DAMAGE_MOD_150 + ItemAbilityData.CORRUPTED_KATANA_BONUS_DAMAGE)}% of normal damage</c:bonus>.</li><li><b>Tenacity:</b> shortens crowd control applied to you.</li></ul>`,
@@ -648,15 +762,16 @@ const _getMechanicDescriptionLang = (id: MechanicId): { [key in string]: string 
       const towerVision = TOWER_VISION_AND_ATTACK_RANGE
       const wardVision = ItemAbilityData.WARD_VISION
       const wardDuration = sec(ItemAbilityData.WARD_DURATION)
-      const sentryVision = ItemAbilityData.SENTRY_WARD_VISION
-      const sentryDuration = sec(ItemAbilityData.SENTRY_WARD_DURATION)
       const voidArmorDuration = sec(ItemAbilityData.VOID_ARMOR_DURATION)
       const voidSwordRadius = ItemAbilityData.VOID_SWORD_RADIUS
       const observerIcon = mechanicIcon('vision', 'observer_ward')
-      const sentryIcon = mechanicIcon('vision', 'sentry_ward')
       const cloakIcon = mechanicIcon('vision', 'cloak_of_light')
       const voidArmorIcon = mechanicIcon('vision', 'void_armor')
       const voidSwordIcon = mechanicIcon('vision', 'void_sword')
+
+      const bushClip = clipSlot(MechanicVideoLabel.BUSH)
+      const wardClip = clipSlot(MechanicVideoLabel.WARD)
+      const voidSwordClip = clipSlot(MechanicVideoLabel.VOID_SWORD)
 
       return {
         en: `Your team can only see enemies inside its <c:vision>vision</c:vision>.<ul><li><b>Your hero:</b> <c:vision>${heroVision} vision range</c:vision>.</li><li><b>Towers:</b> <c:vision>${towerVision} vision range</c:vision>.</li><li><b>Minions:</b> reveal the lane as they move.</li></ul><b>Bushes</b> hide you from enemies outside them.<h2>Wards</h2>Place wards to watch an area while you are elsewhere. They are <b>consumables</b>, turn invisible shortly after placement, and can be destroyed when revealed.<ul><li>${observerIcon} <b>Observer Ward:</b> <c:vision>${wardVision} vision range</c:vision> for <b>${wardDuration}s</b>.</li><li>${sentryIcon} <b>Sentry Ward:</b> <c:vision>${sentryVision} vision range</c:vision> for <b>${sentryDuration}s</b>. Grants <c:vision>true sight</c:vision> to reveal invisible enemies.</li></ul><h2>Vision items</h2><ul><li>${cloakIcon} <b>Cloak of Light:</b> grants <c:vision>true sight</c:vision> while carried. Its active places a free observer ward.</li><li>${voidArmorIcon} <b>Void Armor:</b> its active grants <c:vision>invisibility</c:vision> for <b>${voidArmorDuration}s</b> and increases movement speed.</li><li>${voidSwordIcon} <b>Void Sword:</b> its active places a blade with <c:vision>${voidSwordRadius} vision range</c:vision> that buffs nearby allies.</li></ul><h2>Invisibility</h2><c:vision>Invisibility</c:vision> hides you from normal vision. <b>Towers and true sight still reveal you.</b>`,
@@ -810,15 +925,15 @@ const _getMechanicSectionDescriptionLang = (label: MechanicFigureLabel): { [key 
       const toHero = perc(BASIC_DAMAGE_TO_HERO_MULTIPLIER)
 
       return {
-        en: `Leads the wave and absorbs damage for the minions behind it.<ul><li><c:range>${range} attack range</c:range>.</li><li><b>Basic attacks</b> deal <b>${toHero}% damage to heroes</b>.</li></ul>`,
-        ru: `Идёт впереди волны и бьёт на <c:range>дистанции ${range}</c:range>, поэтому первым попадает под башню и первым умирает. Его удар — <b>обычная атака</b>, наносящая героям лишь <b>${toHero}%</b>: он нужен, чтобы держать линию и принимать урон, а не угрожать вам.`,
-        cz: `Jde v čele vlny a útočí na <c:range>vzdálenost ${range}</c:range>, takže na něj věž střílí první a první také umírá. Jeho zásah je <b>základní útok</b>, který hrdinům způsobí jen <b>${toHero}%</b> – je tu od toho, aby držel linii a schytával poškození, ne aby tě ohrožoval.`,
-        br: `Anda na frente da onda e golpeia a <c:range>${range} de alcance</c:range>, então é a primeira coisa que sua torre atira e a primeira a morrer. Seu golpe é um <b>ataque básico</b>, que acerta apenas <b>${toHero}%</b> contra heróis - ele existe para absorver dano e segurar a linha, não para te ameaçar.`,
-        fr: `Marche en tête de la vague et frappe à <c:range>${range} de portée</c:range> : c'est donc la première cible de votre tour et le premier à mourir. Son coup est une <b>attaque de base</b>, qui n'inflige que <b>${toHero}%</b> aux héros - il est là pour encaisser et tenir la ligne, pas pour vous menacer.`,
-        zh: `走在兵線最前方，於 <c:range>${range} 範圍</c:range>揮擊，因此是防禦塔最先攻擊、也最先陣亡的目標。它的攻擊屬於<b>普通攻擊</b>，對英雄僅造成 <b>${toHero}%</b>——它的職責是承受傷害與守住兵線，而非威脅你。`,
-        vi: `Đi đầu đợt lính và vung đòn ở <c:range>tầm ${range}</c:range>, nên nó là thứ đầu tiên trụ của bạn bắn và cũng là thứ chết đầu tiên. Đòn đánh của nó là <b>đòn đánh thường</b>, chỉ gây <b>${toHero}%</b> lên tướng - nó ở đó để hứng sát thương và giữ đường, không phải để đe dọa bạn.`,
-        id: `Berjalan di depan gelombang dan memukul pada <c:range>jangkauan ${range}</c:range>, jadi ia yang pertama ditembak menaramu dan yang pertama mati. Serangannya adalah <b>serangan dasar</b>, yang hanya masuk <b>${toHero}%</b> ke hero - ia ada untuk menyerap damage dan menahan lane, bukan untuk mengancammu.`,
-        kr: `웨이브 맨 앞에서 걸으며 <c:range>사거리 ${range}</c:range>에서 공격하므로, 아군 타워가 가장 먼저 때리고 가장 먼저 죽는 대상입니다. 공격은 <b>기본 공격</b>이라 챔피언에게는 <b>${toHero}%</b>만 들어갑니다. 위협이 아니라 피해를 받아내고 라인을 유지하기 위한 존재입니다.`,
+        en: `Leads the wave and absorbs damage for the minions behind it.<ul><li><c:attackrange>${range} attack range</c:attackrange>.</li><li><b>Basic attacks</b> deal <b>${toHero}% damage to heroes</b>.</li></ul>`,
+        ru: `Идёт впереди волны и бьёт на <c:attackrange>дистанции ${range}</c:attackrange>, поэтому первым попадает под башню и первым умирает. Его удар — <b>обычная атака</b>, наносящая героям лишь <b>${toHero}%</b>: он нужен, чтобы держать линию и принимать урон, а не угрожать вам.`,
+        cz: `Jde v čele vlny a útočí na <c:attackrange>vzdálenost ${range}</c:attackrange>, takže na něj věž střílí první a první také umírá. Jeho zásah je <b>základní útok</b>, který hrdinům způsobí jen <b>${toHero}%</b> – je tu od toho, aby držel linii a schytával poškození, ne aby tě ohrožoval.`,
+        br: `Anda na frente da onda e golpeia a <c:attackrange>${range} de alcance</c:attackrange>, então é a primeira coisa que sua torre atira e a primeira a morrer. Seu golpe é um <b>ataque básico</b>, que acerta apenas <b>${toHero}%</b> contra heróis - ele existe para absorver dano e segurar a linha, não para te ameaçar.`,
+        fr: `Marche en tête de la vague et frappe à <c:attackrange>${range} de portée</c:attackrange> : c'est donc la première cible de votre tour et le premier à mourir. Son coup est une <b>attaque de base</b>, qui n'inflige que <b>${toHero}%</b> aux héros - il est là pour encaisser et tenir la ligne, pas pour vous menacer.`,
+        zh: `走在兵線最前方，於 <c:attackrange>${range} 範圍</c:attackrange>揮擊，因此是防禦塔最先攻擊、也最先陣亡的目標。它的攻擊屬於<b>普通攻擊</b>，對英雄僅造成 <b>${toHero}%</b>——它的職責是承受傷害與守住兵線，而非威脅你。`,
+        vi: `Đi đầu đợt lính và vung đòn ở <c:attackrange>tầm ${range}</c:attackrange>, nên nó là thứ đầu tiên trụ của bạn bắn và cũng là thứ chết đầu tiên. Đòn đánh của nó là <b>đòn đánh thường</b>, chỉ gây <b>${toHero}%</b> lên tướng - nó ở đó để hứng sát thương và giữ đường, không phải để đe dọa bạn.`,
+        id: `Berjalan di depan gelombang dan memukul pada <c:attackrange>jangkauan ${range}</c:attackrange>, jadi ia yang pertama ditembak menaramu dan yang pertama mati. Serangannya adalah <b>serangan dasar</b>, yang hanya masuk <b>${toHero}%</b> ke hero - ia ada untuk menyerap damage dan menahan lane, bukan untuk mengancammu.`,
+        kr: `웨이브 맨 앞에서 걸으며 <c:attackrange>사거리 ${range}</c:attackrange>에서 공격하므로, 아군 타워가 가장 먼저 때리고 가장 먼저 죽는 대상입니다. 공격은 <b>기본 공격</b>이라 챔피언에게는 <b>${toHero}%</b>만 들어갑니다. 위협이 아니라 피해를 받아내고 라인을 유지하기 위한 존재입니다.`,
       }
     }
     case MechanicFigureLabel.MINION_RANGED: {
@@ -938,6 +1053,428 @@ const _getMechanicSectionDescriptionLang = (label: MechanicFigureLabel): { [key 
   }
 }
 
+const _getMechanicChartLabelLang = (label: MechanicChartLabel): { [key in string]: string } => {
+  switch (label) {
+    case MechanicChartLabel.AXIS_RESISTANCE_OR_HASTE:
+      return {
+        en: `Armor / Magic Resistance / Ability haste`,
+        ru: `Броня / Магическая защита / Ускорение способностей`,
+        cz: `Brnění / Magická obrana / Zrychlení schopností`,
+        br: `Armadura / Defesa mágica / Aceleração de habilidade`,
+        fr: `Armure / Défense magique / Accélération de compétences`,
+        zh: `護甲 / 魔法防禦 / 技能急速`,
+        vi: `Giáp / Kháng phép / Tốc biến kỹ năng`,
+        id: `Armor / Magic defense / Ability haste`,
+        kr: `방어력 / 마법 방어력 / 스킬 가속`,
+      }
+    case MechanicChartLabel.AXIS_HERO_LEVEL:
+      return {
+        en: `Hero level`,
+        ru: `Уровень героя`,
+        cz: `Úroveň hrdiny`,
+        br: `Nível do herói`,
+        fr: `Niveau du héros`,
+        zh: `英雄等級`,
+        vi: `Cấp của tướng`,
+        id: `Level hero`,
+        kr: `챔피언 레벨`,
+      }
+    case MechanicChartLabel.AXIS_ENEMY_HERO_LEVEL:
+      return {
+        en: `Enemy hero level`,
+        ru: `Уровень вражеского героя`,
+        cz: `Úroveň nepřátelského hrdiny`,
+        br: `Nível do herói inimigo`,
+        fr: `Niveau du héros ennemi`,
+        zh: `敵方英雄等級`,
+        vi: `Cấp của tướng địch`,
+        id: `Level hero musuh`,
+        kr: `적 챔피언 레벨`,
+      }
+    case MechanicChartLabel.AXIS_LEVEL_REACHED:
+      return {
+        en: `Level reached`,
+        ru: `Достигнутый уровень`,
+        cz: `Dosažená úroveň`,
+        br: `Nível alcançado`,
+        fr: `Niveau atteint`,
+        zh: `達到的等級`,
+        vi: `Cấp đạt được`,
+        id: `Level yang dicapai`,
+        kr: `도달 레벨`,
+      }
+    case MechanicChartLabel.AXIS_HEALTH_PER_SECOND:
+      return {
+        en: `Health per second`,
+        ru: `Здоровье в секунду`,
+        cz: `Životy za sekundu`,
+        br: `Vida por segundo`,
+        fr: `Points de vie par seconde`,
+        zh: `每秒生命回復`,
+        vi: `Máu mỗi giây`,
+        id: `Nyawa per detik`,
+        kr: `초당 체력`,
+      }
+    case MechanicChartLabel.AXIS_EXPERIENCE:
+      return {
+        en: `Experience`,
+        ru: `Опыт`,
+        cz: `Zkušenosti`,
+        br: `Experiência`,
+        fr: `Expérience`,
+        zh: `經驗`,
+        vi: `Kinh nghiệm`,
+        id: `Pengalaman`,
+        kr: `경험치`,
+      }
+    case MechanicChartLabel.SERIES_HEALTH_REGEN_LOW:
+      return {
+        en: `1 health regeneration`,
+        ru: `1 регенерации здоровья`,
+        cz: `1 regenerace životů`,
+        br: `1 de regeneração de vida`,
+        fr: `1 de régénération de vie`,
+        zh: `生命回復 1`,
+        vi: `1 hồi máu`,
+        id: `1 regenerasi nyawa`,
+        kr: `체력 재생 1`,
+      }
+    case MechanicChartLabel.SERIES_HEALTH_REGEN_HIGH:
+      return {
+        en: `10 health regeneration`,
+        ru: `10 регенерации здоровья`,
+        cz: `10 regenerace životů`,
+        br: `10 de regeneração de vida`,
+        fr: `10 de régénération de vie`,
+        zh: `生命回復 10`,
+        vi: `10 hồi máu`,
+        id: `10 regenerasi nyawa`,
+        kr: `체력 재생 10`,
+      }
+    case MechanicChartLabel.SERIES_NO_KILL_STREAK:
+      return {
+        en: `No kill streak`,
+        ru: `Без серии убийств`,
+        cz: `Bez série zabití`,
+        br: `Sem sequência de abates`,
+        fr: `Sans série d'éliminations`,
+        zh: `無連殺`,
+        vi: `Không có chuỗi hạ gục`,
+        id: `Tanpa killstreak`,
+        kr: `연속 처치 없음`,
+      }
+    case MechanicChartLabel.SERIES_KILL_STREAK_LOW:
+      return {
+        en: `3 kill streak`,
+        ru: `Серия из 3 убийств`,
+        cz: `Série 3 zabití`,
+        br: `Sequência de 3 abates`,
+        fr: `Série de 3 éliminations`,
+        zh: `3 連殺`,
+        vi: `Chuỗi 3 mạng`,
+        id: `Killstreak 3`,
+        kr: `3연속 처치`,
+      }
+    case MechanicChartLabel.SERIES_KILL_STREAK_HIGH:
+      return {
+        en: `5 kill streak`,
+        ru: `Серия из 5 убийств`,
+        cz: `Série 5 zabití`,
+        br: `Sequência de 5 abates`,
+        fr: `Série de 5 éliminations`,
+        zh: `5 連殺`,
+        vi: `Chuỗi 5 mạng`,
+        id: `Killstreak 5`,
+        kr: `5연속 처치`,
+      }
+    case MechanicChartLabel.SERIES_EXPERIENCE_REQUIRED:
+      return {
+        en: `Experience needed`,
+        ru: `Требуется опыта`,
+        cz: `Potřebné zkušenosti`,
+        br: `Experiência necessária`,
+        fr: `Expérience requise`,
+        zh: `所需經驗`,
+        vi: `Kinh nghiệm cần`,
+        id: `Pengalaman dibutuhkan`,
+        kr: `필요 경험치`,
+      }
+    default:
+      return { en: '' }
+  }
+}
+
+const _getMechanicVideoLabelLang = (label: MechanicVideoLabel): { [key in string]: string } => {
+  switch (label) {
+    case MechanicVideoLabel.LAST_HIT:
+      return {
+        en: 'Last hit',
+        ru: 'Добивание',
+        cz: 'Poslední zásah',
+        br: 'Último golpe',
+        fr: 'Dernier coup',
+        zh: '補刀',
+        vi: 'Kết liễu lính',
+        id: 'Last hit',
+        kr: '막타',
+      }
+    case MechanicVideoLabel.PICK_UP_COIN:
+      return {
+        en: 'Picking up a coin',
+        ru: 'Подбор монеты',
+        cz: 'Sběr mince',
+        br: 'Pegando a moeda',
+        fr: 'Ramasser la pièce',
+        zh: '撿取金幣',
+        vi: 'Nhặt đồng vàng',
+        id: 'Mengambil koin',
+        kr: '코인 집기',
+      }
+    case MechanicVideoLabel.POWER_RUNE:
+      return {
+        en: 'Picking up a Power Rune',
+        ru: 'Подбор руны силы',
+        cz: 'Sběr runy moci',
+        br: 'Pegando uma Runa de Poder',
+        fr: 'Ramasser une rune de puissance',
+        zh: '撿取強化符文',
+        vi: 'Nhặt Bùa Sức Mạnh',
+        id: 'Mengambil Power Rune',
+        kr: '강화 룬 획득',
+      }
+    case MechanicVideoLabel.GOLD_RUNE_CONTESTED:
+      return {
+        en: 'Contested capture',
+        ru: 'Оспариваемый захват',
+        cz: 'Sporné zabírání',
+        br: 'Captura disputada',
+        fr: 'Capture contestée',
+        zh: '爭奪中的佔領',
+        vi: 'Chiếm điểm bị tranh chấp',
+        id: 'Perebutan yang diperebutkan',
+        kr: '경합 중인 점령',
+      }
+    case MechanicVideoLabel.GOLD_RUNE_UNCONTESTED:
+      return {
+        en: 'Uncontested capture',
+        ru: 'Захват без помех',
+        cz: 'Nerušené zabírání',
+        br: 'Captura sem disputa',
+        fr: 'Capture sans opposition',
+        zh: '無人爭奪的佔領',
+        vi: 'Chiếm điểm không bị cản',
+        id: 'Perebutan tanpa lawan',
+        kr: '방해 없는 점령',
+      }
+    case MechanicVideoLabel.KILL:
+      return {
+        en: 'Killing an enemy hero',
+        ru: 'Убийство вражеского героя',
+        cz: 'Zabití nepřátelského hrdiny',
+        br: 'Abatendo um herói inimigo',
+        fr: 'Tuer un héros ennemi',
+        zh: '擊殺敵方英雄',
+        vi: 'Hạ gục tướng địch',
+        id: 'Membunuh hero musuh',
+        kr: '적 챔피언 처치',
+      }
+    case MechanicVideoLabel.CC_STUN:
+      return {
+        en: 'Stun',
+        ru: 'Оглушение',
+        cz: 'Omráčení',
+        br: 'Atordoamento',
+        fr: 'Étourdissement',
+        zh: '暈眩',
+        vi: 'Choáng',
+        id: 'Stun',
+        kr: '기절',
+      }
+    case MechanicVideoLabel.CC_SLOW:
+      return {
+        en: 'Slow',
+        ru: 'Замедление',
+        cz: 'Zpomalení',
+        br: 'Lentidão',
+        fr: 'Ralentissement',
+        zh: '減速',
+        vi: 'Làm chậm',
+        id: 'Slow',
+        kr: '둔화',
+      }
+    case MechanicVideoLabel.CC_SILENCE:
+      return {
+        en: 'Silence',
+        ru: 'Немота',
+        cz: 'Umlčení',
+        br: 'Silêncio',
+        fr: 'Silence',
+        zh: '沉默',
+        vi: 'Câm lặng',
+        id: 'Silence',
+        kr: '침묵',
+      }
+    case MechanicVideoLabel.CC_FREEZE:
+      return {
+        en: 'Freeze',
+        ru: 'Заморозка',
+        cz: 'Zmrazení',
+        br: 'Congelamento',
+        fr: 'Gel',
+        zh: '冰凍',
+        vi: 'Đóng băng',
+        id: 'Freeze',
+        kr: '빙결',
+      }
+    case MechanicVideoLabel.CC_FEAR:
+      return {
+        en: 'Fear',
+        ru: 'Страх',
+        cz: 'Strach',
+        br: 'Medo',
+        fr: 'Peur',
+        zh: '恐懼',
+        vi: 'Khiếp sợ',
+        id: 'Fear',
+        kr: '공포',
+      }
+    case MechanicVideoLabel.CC_CHARM:
+      return {
+        en: 'Charm',
+        ru: 'Очарование',
+        cz: 'Okouzlení',
+        br: 'Encanto',
+        fr: 'Charme',
+        zh: '魅惑',
+        vi: 'Mê hoặc',
+        id: 'Charm',
+        kr: '매혹',
+      }
+    case MechanicVideoLabel.CC_KNOCKBACK:
+      return {
+        en: 'Knockback',
+        ru: 'Отбрасывание',
+        cz: 'Odhození',
+        br: 'Repulsão',
+        fr: 'Repoussée',
+        zh: '擊退',
+        vi: 'Hất tung',
+        id: 'Knockback',
+        kr: '넉백',
+      }
+    case MechanicVideoLabel.CC_PULL:
+      return {
+        en: 'Pull',
+        ru: 'Притягивание',
+        cz: 'Přitažení',
+        br: 'Puxão',
+        fr: 'Attraction',
+        zh: '拉扯',
+        vi: 'Kéo',
+        id: 'Pull',
+        kr: '끌어당기기',
+      }
+    case MechanicVideoLabel.DISPEL_ITEM:
+      return {
+        en: 'Dispelling with an item',
+        ru: 'Очищение предметом',
+        cz: 'Rozptýlení předmětem',
+        br: 'Dissipando com um item',
+        fr: 'Dissipation avec un objet',
+        zh: '用裝備驅散',
+        vi: 'Giải hiệu ứng bằng trang bị',
+        id: 'Dispel dengan item',
+        kr: '아이템으로 정화',
+      }
+    case MechanicVideoLabel.KIRINS_DEFENDER_BLOCK:
+      return {
+        en: `Kirin's Defender blocks crowd control`,
+        ru: 'Защитник Кирина блокирует контроль',
+        cz: 'Kirinův obránce blokuje ovládání',
+        br: 'Defensor de Kirin bloqueia o controle',
+        fr: 'Bouclier de Kirin bloque le contrôle',
+        zh: '麒麟的守護者阻擋控制',
+        vi: 'Khiên Kirin chặn khống chế',
+        id: 'Pelindung Kirin memblokir crowd control',
+        kr: '기린의 수호자가 군중 제어를 차단',
+      }
+    case MechanicVideoLabel.AREL_COMBO:
+      return {
+        en: 'Arel - K J L J combo',
+        ru: 'Арел — комбо K J L J',
+        cz: 'Arel – kombo K J L J',
+        br: 'Arel - combo K J L J',
+        fr: 'Arel - combo K J L J',
+        zh: 'Arel——K J L J 連招',
+        vi: 'Arel - combo K J L J',
+        id: 'Arel - kombo K J L J',
+        kr: 'Arel - K J L J 콤보',
+      }
+    case MechanicVideoLabel.THOMAS_COMBO:
+      return {
+        en: 'Thomas - L J combo',
+        ru: 'Томас — комбо L J',
+        cz: 'Thomas – kombo L J',
+        br: 'Thomas - combo L J',
+        fr: 'Thomas - combo L J',
+        zh: 'Thomas——L J 連招',
+        vi: 'Thomas - combo L J',
+        id: 'Thomas - kombo L J',
+        kr: 'Thomas - L J 콤보',
+      }
+    case MechanicVideoLabel.TALENT_PICK:
+      return {
+        en: 'Choosing a talent',
+        ru: 'Выбор таланта',
+        cz: 'Výběr talentu',
+        br: 'Escolhendo um talento',
+        fr: 'Choisir un talent',
+        zh: '選擇天賦',
+        vi: 'Chọn thiên phú',
+        id: 'Memilih talent',
+        kr: '특성 선택',
+      }
+    case MechanicVideoLabel.BUSH:
+      return {
+        en: 'Hiding in a bush',
+        ru: 'Укрытие в кустах',
+        cz: 'Skrývání v keři',
+        br: 'Escondido no arbusto',
+        fr: 'Se cacher dans un buisson',
+        zh: '躲進草叢',
+        vi: 'Ẩn trong bụi cỏ',
+        id: 'Bersembunyi di semak',
+        kr: '수풀에 숨기',
+      }
+    case MechanicVideoLabel.WARD:
+      return {
+        en: 'Placing a ward',
+        ru: 'Установка варда',
+        cz: 'Položení wardu',
+        br: 'Colocando uma sentinela',
+        fr: 'Poser une balise',
+        zh: '放置守衛',
+        vi: 'Cắm mắt',
+        id: 'Memasang ward',
+        kr: '와드 설치',
+      }
+    case MechanicVideoLabel.VOID_SWORD:
+      return {
+        en: 'Void Sword vision',
+        ru: 'Обзор от Меча пустоты',
+        cz: 'Výhled z Meče prázdnoty',
+        br: 'Visão da Espada do Vazio',
+        fr: `Vision de l'Épée du vide`,
+        zh: '虛空之劍的視野',
+        vi: 'Tầm nhìn từ Kiếm Hư Không',
+        id: 'Penglihatan Void Sword',
+        kr: '공허의 검 시야',
+      }
+    default:
+      return { en: '' }
+  }
+}
+
 export const getMechanicSectionDescription = (label: MechanicFigureLabel): string => {
   const result = _getMechanicSectionDescriptionLang(label)
 
@@ -961,6 +1498,20 @@ export const getMechanicName = (id: MechanicId): string => {
 
 export const getMechanicDescription = (id: MechanicId): string => {
   const result = _getMechanicDescriptionLang(id)
+
+  if (result[LANG.value]) return result[LANG.value]
+  else return result['en']
+}
+
+export const getMechanicVideoLabel = (label: MechanicVideoLabel): string => {
+  const result = _getMechanicVideoLabelLang(label)
+
+  if (result[LANG.value]) return result[LANG.value]
+  else return result['en']
+}
+
+export const getMechanicChartLabel = (label: MechanicChartLabel): string => {
+  const result = _getMechanicChartLabelLang(label)
 
   if (result[LANG.value]) return result[LANG.value]
   else return result['en']
