@@ -449,17 +449,20 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     case Shared.HEROES.ALVAR: {
       const markDuration = getDuration(AlvarAbilityData.PASSIVE_DIVINE_IMPACT_DURATION)
       const markStacks = AlvarAbilityData.PASSIVE_DIVINE_IMPACT_STACKS
+      const movementSpeed = fixed(AlvarAbilityData.PASSIVE_DIVINE_MARK_MOVEMENT_SPEED_PER_STACK * 100)
+      const movementStacks = AlvarAbilityData.PASSIVE_DIVINE_MARK_MOVEMENT_SPEED_MAX_STACKS
+      const movementDuration = getDuration(AlvarAbilityData.PASSIVE_DIVINE_MARK_MOVEMENT_SPEED_DURATION)
 
       return {
-        en: `Alvar's Basic Attacks apply a stack of Divine Impact on enemy heroes, which lasts for ${markDuration}. At ${markStacks} stacks, the enemy receives a Divine Mark.`,
-        ru: `Базовые атаки Алвара накладывают на вражеских героев заряд Божественного удара на ${markDuration}. При ${markStacks} зарядах враг получает Божественную метку.`,
-        cz: `Základní útoky Alvara aplikují na nepřátelské hrdiny stack Božského úderu, který trvá ${markDuration}. Při ${markStacks} stacích nepřítel obdrží Božskou značku.`,
-        zh: `阿爾瓦的基本攻擊會對敵方英雄疊加一層神聖衝擊，持續 ${markDuration}。疊加至 ${markStacks} 層時，敵人將獲得神聖印記。`,
-        fr: `Les attaques de base d'Alvar appliquent une pile d'Impact divin sur les héros ennemis pendant ${markDuration}. À ${markStacks} piles, l'ennemi reçoit une Marque divine.`,
-        br: `Os ataques básicos de Alvar aplicam um acúmulo de Impacto Divino nos heróis inimigos, que dura ${markDuration}. Com ${markStacks} acúmulos, o inimigo recebe uma Marca Divina.`,
-        vi: `Đòn đánh thường của Alvar cộng dồn Thần Kích lên tướng địch, kéo dài ${markDuration}. Khi đạt ${markStacks} cộng dồn, kẻ địch nhận Thần Ấn.`,
-        id: `Serangan Dasar Alvar memberikan tumpukan Dampak Ilahi pada hero musuh, yang berlangsung selama ${markDuration}. Pada ${markStacks} tumpukan, musuh menerima Tanda Ilahi.`,
-        kr: `알바르의 기본 공격은 적 영웅에게 ${markDuration} 동안 지속되는 신성 충격 중첩을 적용합니다. ${markStacks}중첩이 되면 적은 신성의 인장을 받습니다.`,
+        en: `Basic Attacks stack Divine Impact on enemy heroes for ${markDuration}. At ${markStacks} stacks, apply Divine Mark and gain <c:movespeed>${movementSpeed}% Movement Speed</c:movespeed> for ${movementDuration}, stacking up to ${movementStacks} times.`,
+        ru: `Базовые атаки накапливают Божественный удар на вражеских героях на ${markDuration}. При ${markStacks} зарядах накладывают Божественную метку и дают <c:movespeed>${movementSpeed}% скорости передвижения</c:movespeed> на ${movementDuration}, суммируясь до ${movementStacks} раз.`,
+        cz: `Základní útoky hromadí Božský úder na nepřátelských hrdinech na ${markDuration}. Při ${markStacks} stacích aplikují Božskou značku a přidají <c:movespeed>${movementSpeed}% rychlosti pohybu</c:movespeed> na ${movementDuration}, až ${movementStacks}krát.`,
+        zh: `基本攻擊對敵方英雄疊加神聖衝擊，持續 ${markDuration}。達到 ${markStacks} 層時施加神聖印記，並獲得 <c:movespeed>${movementSpeed}% 移動速度</c:movespeed>，持續 ${movementDuration}，最多疊加 ${movementStacks} 次。`,
+        fr: `Les attaques de base cumulent Impact divin sur les héros ennemis pendant ${markDuration}. À ${markStacks} cumuls, appliquent Marque divine et accordent <c:movespeed>${movementSpeed}% de vitesse de déplacement</c:movespeed> pendant ${movementDuration}, cumulable ${movementStacks} fois.`,
+        br: `Ataques básicos acumulam Impacto Divino em heróis inimigos por ${markDuration}. Com ${markStacks} acúmulos, aplicam Marca Divina e concedem <c:movespeed>${movementSpeed}% de Velocidade de Movimento</c:movespeed> por ${movementDuration}, acumulando até ${movementStacks} vezes.`,
+        vi: `Đòn đánh thường cộng dồn Thần Kích lên tướng địch trong ${markDuration}. Đạt ${markStacks} cộng dồn sẽ áp dụng Thần Ấn và tăng <c:movespeed>${movementSpeed}% Tốc độ Di chuyển</c:movespeed> trong ${movementDuration}, cộng dồn tối đa ${movementStacks} lần.`,
+        id: `Serangan Dasar menumpuk Dampak Ilahi pada hero musuh selama ${markDuration}. Pada ${markStacks} tumpukan, terapkan Tanda Ilahi dan dapatkan <c:movespeed>${movementSpeed}% Kecepatan Gerakan</c:movespeed> selama ${movementDuration}, hingga ${movementStacks} tumpukan.`,
+        kr: `기본 공격이 적 영웅에게 ${markDuration} 동안 신성 충격을 중첩합니다. ${markStacks}중첩 시 신성의 인장을 부여하고 ${movementDuration} 동안 <c:movespeed>이동 속도가 ${movementSpeed}%</c:movespeed> 증가하며, 최대 ${movementStacks}회 중첩됩니다.`,
       }
     }
 

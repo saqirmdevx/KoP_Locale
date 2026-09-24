@@ -461,6 +461,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const pricklyVineStunBonus = toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
       const pricklyAttachDuration = toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)
       const floralAmbushDurationBonus = toSecRaw(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_DOT_DURATION)
+      const floralAmbushMovementSlow = fixed(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_MOVEMENT_SLOW * 100)
       return {
         tier1_left: {
           title: {
@@ -501,26 +502,26 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Floral Ambush Duration +${floralAmbushDurationBonus}s`,
-            ru: `Длительность Цветочной ловушки +${floralAmbushDurationBonus} сек.`,
-            cz: `Květinový útok trvání +${floralAmbushDurationBonus}s`,
-            zh: `鮮花伏擊持續時間 +${floralAmbushDurationBonus}秒`,
-            fr: `Durée de l'Embuscade florale +${floralAmbushDurationBonus}s`,
-            br: `Duração da Emboscada Floral +${floralAmbushDurationBonus}s`,
-            vi: `Thời lượng Hoa Phục Kích +${floralAmbushDurationBonus}s`,
-            id: `Durasi Emboscada Floral +${floralAmbushDurationBonus}s`,
-            kr: `꽃의 매복 지속시간 +${floralAmbushDurationBonus}초`,
+            en: `Grasping Bloom`,
+            ru: `Цепкое цветение`,
+            cz: `Svírající květ`,
+            zh: `纏繞花開`,
+            fr: `Floraison entravante`,
+            br: `Florescer Enredante`,
+            vi: `Hoa Níu Chân`,
+            id: `Mekar Membelit`,
+            kr: `휘감는 꽃`,
           },
           description: {
-            en: `Floral Ambush's seed bombs last ${floralAmbushDurationBonus}s longer, dealing their damage over time for longer and <c:bonus>increasing the total damage</c:bonus>.`,
-            ru: `Цветочные бомбы Цветочной ловушки держатся на ${floralAmbushDurationBonus} сек. дольше, дольше нанося периодический урон и <c:bonus>увеличивая общий урон</c:bonus>.`,
-            cz: `Semenné bomby Květinového útoku vydrží o ${floralAmbushDurationBonus}s déle, déle způsobují postupné poškození a <c:bonus>zvyšují celkové poškození</c:bonus>.`,
-            zh: `鮮花伏擊的種子炸彈持續時間延長 ${floralAmbushDurationBonus}秒，持續傷害時間更長，<c:bonus>提高總傷害</c:bonus>。`,
-            fr: `Les bombes de graines de l'Embuscade florale durent ${floralAmbushDurationBonus}s de plus, infligeant leurs dégâts sur la durée plus longtemps et <c:bonus>augmentant les dégâts totaux</c:bonus>.`,
-            br: `As bombas de semente da Emboscada Floral duram ${floralAmbushDurationBonus}s a mais, causando dano ao longo do tempo por mais tempo e <c:bonus>aumentando o dano total</c:bonus>.`,
-            vi: `Bom hạt của Hoa Phục Kích tồn tại lâu hơn ${floralAmbushDurationBonus}s, gây sát thương theo thời gian lâu hơn và <c:bonus>tăng tổng sát thương</c:bonus>.`,
-            id: `Bom benih Emboscada Floral bertahan ${floralAmbushDurationBonus}s lebih lama, memberikan kerusakan berkelanjutan lebih lama dan <c:bonus>meningkatkan total kerusakan</c:bonus>.`,
-            kr: `꽃의 매복 씨앗 폭탄이 ${floralAmbushDurationBonus}초 더 오래 지속되어 지속 피해를 더 길게 입히고 <c:bonus>총 피해량이 증가</c:bonus>합니다.`,
+            en: `Floral Ambush's damage-over-time effect lasts ${floralAmbushDurationBonus}s longer, <c:bonus>increasing its total damage</c:bonus>, and <c:slow>reduces the target's Movement Speed by ${floralAmbushMovementSlow}%</c:slow> for the entire duration.`,
+            ru: `Периодический урон Цветочной ловушки длится на ${floralAmbushDurationBonus} сек. дольше, <c:bonus>увеличивая общий урон</c:bonus>, и <c:slow>снижает скорость передвижения цели на ${floralAmbushMovementSlow}%</c:slow> на всё время действия.`,
+            cz: `Postupné poškození Květinového útoku trvá o ${floralAmbushDurationBonus}s déle, <c:bonus>zvyšuje celkové poškození</c:bonus> a po celou dobu <c:slow>snižuje rychlost pohybu cíle o ${floralAmbushMovementSlow}%</c:slow>.`,
+            zh: `鮮花伏擊的持續傷害延長 ${floralAmbushDurationBonus}秒，<c:bonus>提高總傷害</c:bonus>，並在整個持續期間<c:slow>降低目標移動速度 ${floralAmbushMovementSlow}%</c:slow>。`,
+            fr: `Les dégâts sur la durée de l'Embuscade florale durent ${floralAmbushDurationBonus}s de plus, <c:bonus>augmentant les dégâts totaux</c:bonus>, et <c:slow>réduisent la vitesse de déplacement de la cible de ${floralAmbushMovementSlow}%</c:slow> pendant toute la durée.`,
+            br: `O dano ao longo do tempo da Emboscada Floral dura ${floralAmbushDurationBonus}s a mais, <c:bonus>aumentando o dano total</c:bonus>, e <c:slow>reduz a Velocidade de Movimento do alvo em ${floralAmbushMovementSlow}%</c:slow> durante toda a duração.`,
+            vi: `Hiệu ứng sát thương theo thời gian của Hoa Phục Kích kéo dài thêm ${floralAmbushDurationBonus}s, <c:bonus>tăng tổng sát thương</c:bonus>, đồng thời <c:slow>giảm ${floralAmbushMovementSlow}% Tốc độ Di chuyển của mục tiêu</c:slow> trong toàn bộ thời gian hiệu lực.`,
+            id: `Efek kerusakan berkelanjutan Emboscada Floral berlangsung ${floralAmbushDurationBonus}s lebih lama, <c:bonus>meningkatkan total kerusakan</c:bonus>, dan <c:slow>mengurangi Kecepatan Gerakan target sebesar ${floralAmbushMovementSlow}%</c:slow> selama seluruh durasi.`,
+            kr: `꽃의 매복 지속 피해가 ${floralAmbushDurationBonus}초 더 오래 지속되어 <c:bonus>총 피해량이 증가</c:bonus>하고, 전체 지속시간 동안 <c:slow>대상의 이동 속도를 ${floralAmbushMovementSlow}% 감소</c:slow>시킵니다.`,
           },
         },
         tier2_right: {
@@ -1034,15 +1035,26 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `Lightning Shock Duration +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            ru: `+${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)} сек. к длительности Удара молнии`,
-            cz: `Úder blesku trvání +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            zh: `閃電衝擊持續時間 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}秒`,
-            fr: `Durée de l'impact de foudre +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            br: `Duração do Choque de Raios +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            vi: `Thời lượng Choáng Sét +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            id: `Durasi Pukulan Petir +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
-            kr: `번개 충격 지속시간 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}초`,
+            en: `Static Shock`,
+            ru: `Статический разряд`,
+            cz: `Statický výboj`,
+            zh: `靜電衝擊`,
+            fr: `Choc statique`,
+            br: `Choque Estático`,
+            vi: `Sốc Tĩnh Điện`,
+            id: `Kejutan Statis`,
+            kr: `정전기 충격`,
+          },
+          description: {
+            en: `When Kira and her afterimage reunite, nearby enemies take <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% of Lightning Shock's damage</c:magical>. Applies its <c:slow>slow</c:slow> and <c:attackslow>Attack Speed reduction</c:attackslow> for ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            ru: `Когда Кира воссоединяется со своим образом, ближайшие враги получают <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% урона Удара молнии</c:magical>. Применяет его <c:slow>замедление</c:slow> и <c:attackslow>снижение скорости атаки</c:attackslow> на ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            cz: `Když se Kira znovu spojí se svým obrazem, okolní nepřátelé utrpí <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% poškození Bleskového šoku</c:magical>. Použije jeho <c:slow>zpomalení</c:slow> a <c:attackslow>snížení rychlosti útoku</c:attackslow> na ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            zh: `奇菈與殘像會合時，附近敵人受到<c:magical>閃電衝擊 ${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% 的傷害</c:magical>，並受到其<c:slow>緩速</c:slow>與<c:attackslow>攻擊速度降低</c:attackslow>效果，持續 ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}。`,
+            fr: `Quand Kira et son image se rejoignent, les ennemis proches subissent <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% des dégâts du Choc électrique</c:magical>. Applique son <c:slow>ralentissement</c:slow> et sa <c:attackslow>réduction de vitesse d'attaque</c:attackslow> pendant ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            br: `Quando Kira e sua imagem se reencontram, inimigos próximos recebem <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% do dano do Choque Elétrico</c:magical>. Aplica sua <c:slow>lentidão</c:slow> e <c:attackslow>redução de Velocidade de Ataque</c:attackslow> por ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            vi: `Khi Kira và ảnh của cô tái hợp, kẻ địch gần đó chịu <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% sát thương Điện Kích</c:magical>. Áp dụng hiệu ứng <c:slow>làm chậm</c:slow> và <c:attackslow>giảm Tốc độ Tấn công</c:attackslow> của nó trong ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            id: `Saat Kira dan bayangannya bersatu kembali, musuh di sekitar menerima <c:magical>${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}% kerusakan Lightning Shock</c:magical>. Menerapkan efek <c:slow>lambat</c:slow> dan <c:attackslow>pengurangan Kecepatan Serangannya</c:attackslow> selama ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)}.`,
+            kr: `키라와 잔상이 다시 만나면 주변 적에게 <c:magical>전격 충격 피해의 ${fixed(KiraAbilityData.TALENT_T1_LEFT_STATIC_SHOCK_DAMAGE_MODIFIER * 100)}%</c:magical>를 줍니다. 전격 충격의 <c:slow>둔화</c:slow>와 <c:attackslow>공격 속도 감소</c:attackslow>를 ${toSec(KiraAbilityData.PASSIVE_ENHANCED_STATE_DURATION)} 동안 적용합니다.`,
           },
         },
         tier1_right: {
