@@ -245,11 +245,11 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
   switch (hero) {
     case Shared.HEROES.KUMIHU: {
       const enhancedDamage = getDamage(
-        KumihuAbilityData.ENH_ATTACK_MOD_DAMAGE * abilityPower,
+        KumihuAbilityData.PASSIVE_ENHANCED_ATTACK_MOD_DAMAGE * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KumihuAbilityData.ENH_ATTACK_BASE_DAMAGE + KumihuAbilityData.ENH_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
+        KumihuAbilityData.PASSIVE_ENHANCED_ATTACK_BASE_DAMAGE + KumihuAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const charmDuration = getControlDuration(KumihuAbilityData.ENH_CHARM_DURATION, 'Charm')
+      const charmDuration = getControlDuration(KumihuAbilityData.PASSIVE_ENHANCED_ATTACK_CHARM_DURATION, 'Charm')
 
       return {
         en: `After using Arcane <c:dash>Dash</c:dash>, Kumihu's next Basic Attack deals a bonus ${enhancedDamage} and applies <c:charm>Charm</c:charm> on target for ${charmDuration}.`,
@@ -266,19 +266,19 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
 
     case Shared.HEROES.SPARROW: {
       const knockUpDuration = getStunDuration(
-        SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION +
+        SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_KNOCKBACK_DURATION +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
             ? SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION
             : 0),
         'Knock Up'
       )
       const damageModifier =
-        SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER +
+        SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_DMG_MODIFIER +
         (hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? SparrowAbilityData.TALENT_T2_LEFT_ENHANCED_ATTACK_DMG_MODIFIER : 0)
       const enhancedDamage = getDamage(
         fixed(damageModifier * damage, 1),
         Shared.DamageTypes.PHYSICAL,
-        SparrowAbilityData.ENHANCED_ATTACK_BASE_DAMAGE
+        SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_BASE_DAMAGE
       )
 
       return {
@@ -296,7 +296,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
 
     case Shared.HEROES.BELLE: {
       const healPercentage = fixed(
-        (BelleAbilityData.FLORAL_AMBUSH_HEAL +
+        (BelleAbilityData.PASSIVE_FLORAL_REJUVENATION_HEAL +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0) ? BelleAbilityData.TALENT_T1_RIGHT_FLORAL_AMBUSH_HEAL : 0)) *
           100
       )
@@ -315,9 +315,9 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.ICEAT: {
-      const movementSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_MOVESPEED * 100, 1)
-      const attackSpeedSlow = fixed(ICeatAbilityData.AUTOATTACK_SLOW_ATTACKSPEED * 100, 1)
-      const slowDuration = getMovementSpeedDuration(ICeatAbilityData.AUTOATTACK_SLOW_DURATION)
+      const movementSpeedSlow = fixed(ICeatAbilityData.PASSIVE_ATTACK_SLOW_MOVESPEED * 100, 1)
+      const attackSpeedSlow = fixed(ICeatAbilityData.PASSIVE_ATTACK_SLOW_ATTACKSPEED * 100, 1)
+      const slowDuration = getMovementSpeedDuration(ICeatAbilityData.PASSIVE_ATTACK_SLOW_DURATION)
 
       return {
         en: `I'Ceat's basic attacks <c:slow>reduce enemy Movement Speed by ${movementSpeedSlow}% and Attack Speed by ${attackSpeedSlow}%</c:slow> for ${slowDuration}.`,
@@ -335,13 +335,13 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     case Shared.HEROES.THOMAS: {
       const bleedAttackCount = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
         ? ThomasAbilityData.TALENT_T2_LEFT_BLEED_ATTACK_COUNT
-        : ThomasAbilityData.BLEED_ATTACK_COUNT
+        : ThomasAbilityData.PASSIVE_BLEED_ATTACK_COUNT
       const bleedDamageModifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-        ? ThomasAbilityData.TALENT_T1_LEFT_BLEED_DAMAGE
-        : ThomasAbilityData.BLEED_DAMAGE
+        ? ThomasAbilityData.TALENT_T1_LEFT_BLEED_ATTACK_DAMAGE
+        : ThomasAbilityData.PASSIVE_BLEED_ATTACK_DAMAGE
       const bleedDamage = getDamage(bleedDamageModifier * damage, Shared.DamageTypes.PHYSICAL)
-      const bleedDuration = getDuration(ThomasAbilityData.BLEED_DAMAGE_DURATION)
-      const armorReduction = colorize(ThomasAbilityData.BLEED_ARMOR_REDUCTION)
+      const bleedDuration = getDuration(ThomasAbilityData.PASSIVE_BLEED_ATTACK_DAMAGE_DURATION)
+      const armorReduction = colorize(ThomasAbilityData.PASSIVE_BLEED_ATTACK_ARMOR_REDUCTION)
 
       return {
         en: `Landing ${bleedAttackCount} basic attacks on the same enemy hero causes them to bleed, dealing ${bleedDamage} over ${bleedDuration} and <c:armor>reducing their Armor by ${armorReduction}</c:armor> for the duration.`,
@@ -357,11 +357,11 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.VEIL: {
-      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1
+      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE : 1
       const enhancedDamage = getDamage(
-        fixed(VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier, 1),
+        fixed(VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_MODIFIER * abilityPower * modifier, 1),
         Shared.DamageTypes.MAGICAL,
-        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) *
+        (VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_BASE + VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_BASE_PER_LEVEL * (level - 1)) *
           modifier,
         'AbilityPower'
       )
@@ -393,9 +393,9 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
       }
 
     case Shared.HEROES.HAZEL: {
-      const tenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_TENACITY * 100, 1)}%`, 'Tenacity Buff')
-      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`, 'Tenacity Buff')
-      const bonusDuration = getDuration(HazelAbilityData.STONE_SKIN_CC_BONUS_DURATION)
+      const tenacity = getBuffValue(`${fixed(HazelAbilityData.PASSIVE_STONE_SKIN_TENACITY * 100, 1)}%`, 'Tenacity Buff')
+      const bonusTenacity = getBuffValue(`${fixed(HazelAbilityData.PASSIVE_STONE_SKIN_CC_BONUS_TENACITY * 100, 1)}%`, 'Tenacity Buff')
+      const bonusDuration = getDuration(HazelAbilityData.PASSIVE_STONE_SKIN_CC_BONUS_DURATION)
       const movementSpeed = getBuffValue(
         `${fixed(HazelAbilityData.TALENT_T1_RIGHT_STONE_SKIN_MOVEMENT_SPEED * 100, 1)}%`
       , 'Movement Speed Buff')
@@ -429,8 +429,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
 
     case Shared.HEROES.AREL: {
       const enhancedDamageModifier =
-        ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD +
-        (hasTalent(Shared.TALENT.LEFT_UPGRADE, 0) ? ArelAbilityData.TALENT_T1_LEFT_ENH_DAMAGE_MOD : 0)
+        ArelAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_MOD +
+        (hasTalent(Shared.TALENT.LEFT_UPGRADE, 0) ? ArelAbilityData.TALENT_T1_LEFT_ENHANCED_ATTACK_DAMAGE_MOD : 0)
       const enhancedDamage = getDamage(enhancedDamageModifier * damage)
 
       return {
@@ -447,8 +447,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.ALVAR: {
-      const markDuration = getDuration(AlvarAbilityData.MARK_DURATION)
-      const markStacks = AlvarAbilityData.MARK_STACKS
+      const markDuration = getDuration(AlvarAbilityData.PASSIVE_DIVINE_IMPACT_DURATION)
+      const markStacks = AlvarAbilityData.PASSIVE_DIVINE_IMPACT_STACKS
 
       return {
         en: `Alvar's Basic Attacks apply a stack of Divine Impact on enemy heroes, which lasts for ${markDuration}. At ${markStacks} stacks, the enemy receives a Divine Mark.`,
@@ -465,7 +465,7 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
 
     case Shared.HEROES.FOXY: {
       const cooldownReduction = getDuration(
-        FoxyAbilityData.GUNS_BLAZING_COOLDOWN_REDUCTION +
+        FoxyAbilityData.PASSIVE_GUNS_BLAZING_COOLDOWN_REDUCTION +
           (hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
             ? FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION
             : 0)
@@ -485,19 +485,19 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.MAGDALENE: {
-      const heroKillSouls = getBuffValue(MagdaleneAbilityData.MAGDALENE_PASSIVE_HERO_KILL_STACKS)
-      const assistSouls = getBuffValue(MagdaleneAbilityData.MAGDALENE_PASSIVE_HERO_KILL_STACKS / 2)
+      const heroKillSouls = getBuffValue(MagdaleneAbilityData.PASSIVE_SOUL_CATCHER_HERO_KILL_STACKS)
+      const assistSouls = getBuffValue(MagdaleneAbilityData.PASSIVE_SOUL_CATCHER_HERO_KILL_STACKS / 2)
       const minionKillSouls = getBuffValue(1)
       const maxSouls = getBuffValue(
-        MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS +
-          MagdaleneAbilityData.MAGDALENE_PASSIVE_MAXIMUM_STACKS_PER_LEVEL * level +
+        MagdaleneAbilityData.PASSIVE_SOUL_CATCHER_MAXIMUM_STACKS +
+          MagdaleneAbilityData.PASSIVE_SOUL_CATCHER_MAXIMUM_STACKS_PER_LEVEL * level +
           (hasTalent(Shared.TALENT.RIGHT_UPGRADE, 0) ? MagdaleneAbilityData.TALENT_T1_RIGHT_BONUS_STACKS : 0)
       )
       const abilityPowerPerSoul = getBuffValue(1, 'Ability Power Buff')
       const soulDamage = getDamage(
         0,
         Shared.DamageTypes.MAGICAL,
-        MagdaleneAbilityData.MAGDALENE_PASSIVE_DAMAGE_PER_STACK_ON_DEATH
+        MagdaleneAbilityData.PASSIVE_SOUL_CATCHER_DAMAGE_PER_STACK_ON_DEATH
       )
 
       return {
@@ -516,12 +516,12 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     case Shared.HEROES.PRIM: {
       const hasEnhancedProtection = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
       const movementSpeedModifier =
-        PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_MOVEMENT_SPEED +
-        (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED : 0)
+        PrimAbilityData.PASSIVE_BALL_PROTECTION_BONUS_MOVEMENT_SPEED +
+        (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_MOVEMENT_SPEED : 0)
       const bonusMovementSpeed = getBuffValue(`${fixed(movementSpeedModifier * 100, 1)}%`, 'Movement Speed Buff')
       const bonusArmor = getBuffValue(
-        PrimAbilityData.PRIM_BALL_ATTACHED_BONUS_ARMOR +
-          (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR : 0)
+        PrimAbilityData.PASSIVE_BALL_PROTECTION_BONUS_ARMOR +
+          (hasEnhancedProtection ? PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_ARMOR : 0)
       , 'Armor Buff')
 
       return {
@@ -539,15 +539,15 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
 
     case Shared.HEROES.SEER: {
       const curseDelay = getDuration(
-        SeerAbilityData.MALEVOLENT_CURSE_DELAY -
+        SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DELAY -
           (hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
             ? SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY_REDUCTION
             : 0)
       )
       const curseDamage = getDamage(
-        SeerAbilityData.MALEVOLENT_CURSE_DAMAGE_MODIFIER * abilityPower,
+        SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DAMAGE_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        SeerAbilityData.MALEVOLENT_CURSE_BASE_DAMAGE
+        SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_BASE_DAMAGE
       )
 
       return {
@@ -564,11 +564,11 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.KARICK: {
-      const stackDuration = getDuration(KarickAbilityData.VERDANT_MARK_STACK_DURATION)
-      const maxStacks = KarickAbilityData.VERDANT_MARK_MAX_STACKS
-      const tenacityPerStack = fixed(KarickAbilityData.VERDANT_MARK_TENACITY_REDUCTION_PER_STACK * 100, 0)
-      const tenacityMax = fixed(KarickAbilityData.VERDANT_MARK_TENACITY_REDUCTION_PER_STACK * 100 * maxStacks, 0)
-      const groveMarkStacks = KarickAbilityData.GROVE_MARK_STACKS
+      const stackDuration = getDuration(KarickAbilityData.PASSIVE_VERDANT_MARK_STACK_DURATION)
+      const maxStacks = KarickAbilityData.PASSIVE_VERDANT_MARK_MAX_STACKS
+      const tenacityPerStack = fixed(KarickAbilityData.PASSIVE_VERDANT_MARK_TENACITY_REDUCTION_PER_STACK * 100, 0)
+      const tenacityMax = fixed(KarickAbilityData.PASSIVE_VERDANT_MARK_TENACITY_REDUCTION_PER_STACK * 100 * maxStacks, 0)
+      const groveMarkStacks = KarickAbilityData.PASSIVE_VERDANT_MARK_STACKS_PER_ABILITY
 
       return {
         en: `Hero hits apply a stack of Verdant Mark for ${stackDuration}, up to ${maxStacks} stacks. Each stack reduces the target's Tenacity by ${tenacityPerStack}% (up to ${tenacityMax}%). Negative Tenacity increases Crowd Control duration instead. Bramble Snap and Wrath of the Grove also apply ${groveMarkStacks} stack before they hit.`,
@@ -584,8 +584,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.FLIN: {
-      const rangePerLevel = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL, 'Attack Range Buff')
-      const currentRange = getBuffValue(FlinAbilityData.ATTACK_RANGE_PER_LEVEL * level, 'Attack Range Buff')
+      const rangePerLevel = getBuffValue(FlinAbilityData.PASSIVE_EAGLE_EYE_ATTACK_RANGE_PER_LEVEL, 'Attack Range Buff')
+      const currentRange = getBuffValue(FlinAbilityData.PASSIVE_EAGLE_EYE_ATTACK_RANGE_PER_LEVEL * level, 'Attack Range Buff')
 
       return {
         en: `Flin gains ${rangePerLevel} Attack Range per level, extending his Basic Attack, Precise Shot and Backstep arrows. Current bonus: ${currentRange} range.`,
@@ -601,10 +601,10 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.PUPPETEER: {
-      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`, 'Attack Speed Buff')
-      const distanceStep = PuppeteerAbilityData.TENSION_DISTANCE_STEP
+      const attackSpeedPerStep = getBuffValue(`${fixed(PuppeteerAbilityData.PASSIVE_TENSION_ATTACK_SPEED_PER_STACK * 100, 0)}%`, 'Attack Speed Buff')
+      const distanceStep = PuppeteerAbilityData.PASSIVE_TENSION_DISTANCE_STEP
       const maxAttackSpeed = getBuffValue(
-        `${fixed(PuppeteerAbilityData.TENSION_ATTACK_SPEED_PER_STACK * PuppeteerAbilityData.TENSION_MAX_STACKS * 100, 0)}%`
+        `${fixed(PuppeteerAbilityData.PASSIVE_TENSION_ATTACK_SPEED_PER_STACK * PuppeteerAbilityData.PASSIVE_TENSION_MAX_STACKS * 100, 0)}%`
       , 'Attack Speed Buff')
 
       return {
@@ -621,8 +621,8 @@ const _getPassiveDescriptionLang = (hero: Shared.HEROES, unitStats: PassiveDescr
     }
 
     case Shared.HEROES.PATROKLOS: {
-      const maxStacks = PatroklosAbilityData.HEAVENS_FALL_MAX_STACKS
-      const refreshWindow = getDuration(PatroklosAbilityData.HEAVENS_FALL_REFRESH_WINDOW)
+      const maxStacks = PatroklosAbilityData.PASSIVE_HEAVENS_FALL_MAX_STACKS
+      const refreshWindow = getDuration(PatroklosAbilityData.PASSIVE_HEAVENS_FALL_REFRESH_WINDOW)
 
       return {
         en: `Hits apply a stack of Heavens Fall to the enemy hero, up to ${maxStacks} stacks. If not refreshed within ${refreshWindow}, all stacks are removed.`,

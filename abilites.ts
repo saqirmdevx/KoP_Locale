@@ -98,7 +98,7 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.KUMIHU_ARCANE_DASH: {
-      const dashAuraDuration = getDuration(KumihuAbilityData.DASH_AURA_DURATION)
+      const dashAuraDuration = getDuration(KumihuAbilityData.ARCANE_DASH_AURA_DURATION)
       return {
         en: `Kumihu <c:dash>dashes</c:dash> forward. This will activate her Passive for ${dashAuraDuration}.`,
         ru: `Кумиху совершает <c:dash>рывок</c:dash> на короткую дистанцию. Это активирует её пассивную способность на ${dashAuraDuration}.`,
@@ -130,8 +130,8 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.SPARROW_CORRUPTED_WIND: {
-      const dashDamage = getDamage(SparrowAbilityData.DASH_DAMAGE_MOD * damage)
-      const stunduration = getStunDuration(SparrowAbilityData.DASH_STUN_DURATION)
+      const dashDamage = getDamage(SparrowAbilityData.CORRUPTED_WIND_DAMAGE_MOD * damage)
+      const stunduration = getStunDuration(SparrowAbilityData.CORRUPTED_WIND_STUN_DURATION)
       return {
         en: `Sparrow quickly <c:dash>dashes</c:dash> forward, harnessing the wind, dealing ${dashDamage} to enemy heroes and <c:stun>stunning</c:stun> them for ${stunduration}.`,
         ru: `Спарроу совершает стремительный <c:dash>рывок</c:dash>, <c:stun>оглушая</c:stun> задетых врагов на ${stunduration} и нанося им ${dashDamage}.`,
@@ -146,13 +146,13 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.SPARROW_DEMONIC_WRATH: {
-      const damage = getDamage(0, abilityData.damageType, SparrowAbilityData.GROUND_SLAM_BASE_DAMAGE, 'None')
+      const damage = getDamage(0, abilityData.damageType, SparrowAbilityData.DEMONIC_WRATH_BASE_DAMAGE, 'None')
       const missingHealthPercentage = hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-        ? SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG +
-          SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_MISSING_HP_DMG
-        : SparrowAbilityData.GROUND_SLAM_PERC_MISSING_HP_DMG
+        ? SparrowAbilityData.DEMONIC_WRATH_PERC_MISSING_HP_DMG +
+          SparrowAbilityData.TALENT_T1_LEFT_DEMONIC_WRATH_MISSING_HP_DMG
+        : SparrowAbilityData.DEMONIC_WRATH_PERC_MISSING_HP_DMG
       const percDamage = getDamage(Math.floor(missingHealthPercentage * 100), abilityData.damageType, 0, 'None', true)
-      const grievousWoundsDuration = getDuration(SparrowAbilityData.GROUND_SLAM_GRIVEOUS_WOUND_DURATION)
+      const grievousWoundsDuration = getDuration(SparrowAbilityData.DEMONIC_WRATH_GRIVEOUS_WOUND_DURATION)
 
       return {
         en: `Sparrow unleashes the power of the demons, launching a corrupt wave from her sword, dealing ${damage} (plus a bonus ${percDamage} of target's missing health). Enemies hit suffer <c:healingreduction>Grievous Wounds</c:healingreduction>, reducing their Healing and Health Regeneration for ${grievousWoundsDuration}.`,
@@ -189,11 +189,11 @@ const _getSpellDescriptionLang = (
         ICeatAbilityData.ICICLE_BOLT_BASE_DAMAGE + ICeatAbilityData.ICICLE_BOLT_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const movementSpeedSlow = getMovementSpeedValue(`${fixed(ICeatAbilityData.ICICLE_SLOW_PER_STACK * 100, 1)}%`)
+      const movementSpeedSlow = getMovementSpeedValue(`${fixed(ICeatAbilityData.ICICLE_BOLT_SLOW_PER_STACK * 100, 1)}%`)
       const rootDuration = getControlDuration(
         hasTalent(Shared.TALENT.LEFT_UPGRADE, 0)
-          ? ICeatAbilityData.ICICLE_ROOT_DURATION + ICeatAbilityData.TALENT_T1_LEFT_ICICLE_FREEZE_DURATION
-          : ICeatAbilityData.ICICLE_ROOT_DURATION,
+          ? ICeatAbilityData.ICICLE_BOLT_ROOT_DURATION + ICeatAbilityData.TALENT_T1_LEFT_ICICLE_BOLT_FREEZE_DURATION
+          : ICeatAbilityData.ICICLE_BOLT_ROOT_DURATION,
         'Freeze'
       )
 
@@ -477,11 +477,11 @@ const _getSpellDescriptionLang = (
       const base_damage = getDamage(VeilAbilityData.ASTRAL_STEP_DAMAGE_MOD * damage)
       const charges = VeilAbilityData.ASTRAL_STEP_MAX_CHARGES
 
-      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE : 1
+      const modifier = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1) ? VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE : 1
       const enh_dmg = getDamage(
-        VeilAbilityData.ENHANCED_DAMAGE_MODIFIER * abilityPower * modifier,
+        VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_MODIFIER * abilityPower * modifier,
         Shared.DamageTypes.MAGICAL,
-        (VeilAbilityData.ENHANCED_DAMAGE_BASE + VeilAbilityData.ENHANCED_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier
+        (VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_BASE + VeilAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_BASE_PER_LEVEL * (level - 1)) * modifier
       )
 
       return {
@@ -590,14 +590,14 @@ const _getSpellDescriptionLang = (
       const basic_damage = getDamage(KiraAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
 
       const enh_damage_heal = getDamage(
-        KiraAbilityData.ENHATTACK_DAMAGE_MOD * abilityPower,
+        KiraAbilityData.PASSIVE_ENHANCED_STATE_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.HEAL,
-        KiraAbilityData.ENHATTACK_BASE_DAMAGE + KiraAbilityData.ENHATTACK_BASE_DAMAGE_PER_LEVEL * (level - 1)
+        KiraAbilityData.PASSIVE_ENHANCED_STATE_BASE_DAMAGE + KiraAbilityData.PASSIVE_ENHANCED_STATE_BASE_DAMAGE_PER_LEVEL * (level - 1)
       )
-      const bonusAttackSpeed = fixed(KiraAbilityData.ENHATTACK_ATTACK_SPEED * 100, 1)
+      const bonusAttackSpeed = fixed(KiraAbilityData.PASSIVE_ENHANCED_STATE_ATTACK_SPEED * 100, 1)
       const bonusAttackSpeedValue = getBuffValue(`${bonusAttackSpeed}%`, 'Attack Speed Buff')
       const bonusMovementSpeed = getBuffValue(
-        `${fixed(KiraAbilityData.ENHATTACK_MOVE_SPEED * 100, 1)}%`,
+        `${fixed(KiraAbilityData.PASSIVE_ENHANCED_STATE_MOVE_SPEED * 100, 1)}%`,
         'Movement Speed Buff'
       )
 
@@ -616,14 +616,14 @@ const _getSpellDescriptionLang = (
 
     case SpellList.KIRA_RAIN_OF_SPARKS: {
       const damage = getDamage(
-        KiraAbilityData.VOID_RAIN_DAMAGE_MOD * abilityPower,
+        KiraAbilityData.RAIN_OF_SPARKS_DAMAGE_MOD * abilityPower,
         Shared.DamageTypes.MAGICAL,
-        KiraAbilityData.VOID_RAIN_BASE_DAMAGE + KiraAbilityData.VOID_RAIN_DAMAGE_PER_LEVEL * (level - 1)
+        KiraAbilityData.RAIN_OF_SPARKS_BASE_DAMAGE + KiraAbilityData.RAIN_OF_SPARKS_DAMAGE_PER_LEVEL * (level - 1)
       )
 
       const count = hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-        ? KiraAbilityData.VOID_RAIN_COUNT + KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT
-        : KiraAbilityData.VOID_RAIN_COUNT
+        ? KiraAbilityData.RAIN_OF_SPARKS_COUNT + KiraAbilityData.TALENT_T2_RAIN_OF_SPARKS_BONUS_COUNT
+        : KiraAbilityData.RAIN_OF_SPARKS_COUNT
 
       return {
         en: `Kira summons ${count} electric missiles downwards at a 45° angle. Each electric missile pierces enemies and deals ${damage}.
@@ -648,13 +648,13 @@ const _getSpellDescriptionLang = (
 
     case SpellList.KIRA_STATIC_PHANTASM: {
       const damage = getDamage(
-        KiraAbilityData.VOID_PHANTASM_DAMAGE_MOD * abilityPower,
+        KiraAbilityData.STATIC_PHANTASM_DAMAGE_MOD * abilityPower,
         abilityData.damageType,
-        KiraAbilityData.VOID_PHANTASM_BASE_DAMAGE + KiraAbilityData.VOID_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)
+        KiraAbilityData.STATIC_PHANTASM_BASE_DAMAGE + KiraAbilityData.STATIC_PHANTASM_DAMAGE_PER_LEVEL * (level - 1)
       )
 
-      const voidPhantasmDuration = getDuration(KiraAbilityData.VOID_PHANTASM_DURATION)
-      const voidPhantasmSilenceDuration = getControlDuration(KiraAbilityData.VOID_PHANTASM_DURATION_SILENCE, 'Silence')
+      const voidPhantasmDuration = getDuration(KiraAbilityData.STATIC_PHANTASM_DURATION)
+      const voidPhantasmSilenceDuration = getControlDuration(KiraAbilityData.STATIC_PHANTASM_DURATION_SILENCE, 'Silence')
 
       return {
         en:
@@ -704,22 +704,22 @@ const _getSpellDescriptionLang = (
 
     case SpellList.HAZEL_TRIUMPHANT_UPHEAVAL: {
       const healthDamageMod = hasTalent(Shared.TALENT.RIGHT_UPGRADE, 1)
-        ? HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP + HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP
-        : HazelAbilityData.SHOCKWAVE_BONUS_DAMAGE_HP
+        ? HazelAbilityData.TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP + HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP
+        : HazelAbilityData.TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP
 
       const damage = getDamage(
         healthDamageMod * health,
         abilityData.damageType,
-        HazelAbilityData.SHOCKWAVE_BASE_DAMAGE,
+        HazelAbilityData.TRIUMPHANT_UPHEAVAL_BASE_DAMAGE,
         'Health'
       )
       const apDamage = getDamage(
-        HazelAbilityData.SHOCKWAVE_AP_SCALING * abilityPower,
+        HazelAbilityData.TRIUMPHANT_UPHEAVAL_AP_SCALING * abilityPower,
         abilityData.damageType,
         0,
         'AbilityPower'
       )
-      const delay = getDuration(HazelAbilityData.SHOCKWAVE_DELAY)
+      const delay = getDuration(HazelAbilityData.TRIUMPHANT_UPHEAVAL_DELAY)
 
       return {
         en: `Hazel begins to channel her energy. After ${delay}, she releases a shockwave which travels through the air, dealing ${damage} (Based on Hazel's max health) + ${apDamage} and <c:pull>pulling</c:pull> enemies towards Hazel.`,
@@ -737,14 +737,14 @@ const _getSpellDescriptionLang = (
     case SpellList.HAZEL_JUSTICES_WRATH: {
       const duration = getStunDuration(
         hasTalent(Shared.TALENT.LEFT_UPGRADE, 1)
-          ? HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION + HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION
-          : HazelAbilityData.HEROIC_SLASH_KNOCKBACK_DURATION
+          ? HazelAbilityData.JUSTICES_WRATH_KNOCKBACK_DURATION + HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION
+          : HazelAbilityData.JUSTICES_WRATH_KNOCKBACK_DURATION
       )
 
       const normalDamage = getDamage(
-        HazelAbilityData.HEROIC_SLASH_DAMAGE_MOD * damage,
+        HazelAbilityData.JUSTICES_WRATH_DAMAGE_MOD * damage,
         abilityData.damageType,
-        HazelAbilityData.HEROIC_SLASH_BASE_DAMAGE + HazelAbilityData.HEROIC_SLASH_BASE_PER_LEVEL * (level - 1)
+        HazelAbilityData.JUSTICES_WRATH_BASE_DAMAGE + HazelAbilityData.JUSTICES_WRATH_BASE_PER_LEVEL * (level - 1)
       )
 
       return {
@@ -940,14 +940,14 @@ const _getSpellDescriptionLang = (
 
     case SpellList.FOXY_EXPLOSIVE_GRENADE: {
       const baseDamage = getDamage(
-        FoxyAbilityData.GRANADE_DAMAGE_MODIFIER * damage,
+        FoxyAbilityData.EXPLOSIVE_GRENADE_DAMAGE_MODIFIER * damage,
         Shared.DamageTypes.PHYSICAL,
-        FoxyAbilityData.GRANADE_DAMAGE_BASE + FoxyAbilityData.GRANADE_DAMAGE_PER_LEVEL * (level - 1),
+        FoxyAbilityData.EXPLOSIVE_GRENADE_DAMAGE_BASE + FoxyAbilityData.EXPLOSIVE_GRENADE_DAMAGE_PER_LEVEL * (level - 1),
         'AttackDamage'
       )
 
       const apDamage = getDamage(
-        FoxyAbilityData.GRANADE_AP_MODIFIER * abilityPower,
+        FoxyAbilityData.EXPLOSIVE_GRENADE_AP_MODIFIER * abilityPower,
         Shared.DamageTypes.MAGICAL,
         0,
         'AbilityPower'
@@ -1146,7 +1146,7 @@ const _getSpellDescriptionLang = (
     }
 
     case SpellList.SEER_ATTACK: {
-      const baseDamage = getDamage(SeerAbilityData.ATTACK_DAMAGE_MOD * damage)
+      const baseDamage = getDamage(SeerAbilityData.AUTOATTACK_DAMAGE_MOD * damage)
 
       return {
         en: `Seer fires a bolt of energy that deals ${baseDamage} to the first enemy hit.`,
@@ -1247,14 +1247,14 @@ const _getSpellDescriptionLang = (
       /** The Root carries the magic damage as a per-second rate, so the target only takes the share its duration covers. */
       const rootSeconds = rootDurationMs / MILISECONDS_IN_SECOND
       const magicalDamage = getDamage(
-        KarickAbilityData.VERDANT_MARK_DAMAGE_MOD * abilityPower * rootSeconds,
+        KarickAbilityData.PASSIVE_VERDANT_MARK_DAMAGE_MOD * abilityPower * rootSeconds,
         Shared.DamageTypes.MAGICAL,
-        (KarickAbilityData.VERDANT_MARK_BASE_DAMAGE_PER_SEC +
-          KarickAbilityData.VERDANT_MARK_DAMAGE_PER_LEVEL * (level - 1)) *
+        (KarickAbilityData.PASSIVE_VERDANT_MARK_BASE_DAMAGE_PER_SEC +
+          KarickAbilityData.PASSIVE_VERDANT_MARK_DAMAGE_PER_LEVEL * (level - 1)) *
           rootSeconds
       )
       const rootDuration = getControlDuration(rootDurationMs, 'Root')
-      const groveMarkStacks = KarickAbilityData.GROVE_MARK_STACKS
+      const groveMarkStacks = KarickAbilityData.PASSIVE_VERDANT_MARK_STACKS_PER_ABILITY
 
       return {
         en: `Karick lashes out with a thornbound strike, applying ${groveMarkStacks} Verdant Mark stack before hitting and instantly dealing ${physicalDamage} in melee range. The target is <c:root>rooted</c:root> for ${rootDuration}, taking ${magicalDamage} over the Root's duration.`,
@@ -1278,7 +1278,7 @@ const _getSpellDescriptionLang = (
       )
 
       const stunDuration = getStunDuration(KarickAbilityData.WRATH_OF_THE_GROVE_STUN_DURATION)
-      const groveMarkStacks = KarickAbilityData.GROVE_MARK_STACKS
+      const groveMarkStacks = KarickAbilityData.PASSIVE_VERDANT_MARK_STACKS_PER_ABILITY
 
       return {
         en: `Karick casts a living seed before him. After a brief delay, it erupts into towering briars, applying ${groveMarkStacks} Verdant Mark stack before hitting, dealing ${magicalDamage} and <c:stun>stunning</c:stun> enemies for ${stunDuration}.`,

@@ -76,7 +76,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const magicalOrbCd = '-' + toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)
       const magicalOrbDoubleHitBonus = fixed(KumihuAbilityData.TALENT_T1_RIGHT_MAGICAL_ORB_DOUBLE_HIT_BONUS * 100, 1)
       const magicalOrbMarkDuration = toSec(KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_DURATION)
-      const dashCharges = KumihuAbilityData.TALENT_T2_LEFT_DASH_MAX_CHARGES
+      const dashCharges = KumihuAbilityData.TALENT_T2_LEFT_ARCANE_DASH_MAX_CHARGES
       return {
         tier1_left: {
           title: {
@@ -167,19 +167,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.SPARROW: {
-      const missingHealthBonus = fixed(SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_MISSING_HP_DMG * 100, 1)
-      const corruptedWindCooldown = '-' + toSecRaw(SparrowAbilityData.TALENT_T1_RIGHT_DASH_COOLDOWN)
-      const baseEnhancedAttackDamage = fixed(SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER * 100, 1)
+      const missingHealthBonus = fixed(SparrowAbilityData.TALENT_T1_LEFT_DEMONIC_WRATH_MISSING_HP_DMG * 100, 1)
+      const corruptedWindCooldown = '-' + toSecRaw(SparrowAbilityData.TALENT_T1_RIGHT_CORRUPTED_WIND_COOLDOWN)
+      const baseEnhancedAttackDamage = fixed(SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_DMG_MODIFIER * 100, 1)
       const enhancedAttackDamage = fixed(
-        (SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER +
+        (SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_DMG_MODIFIER +
           SparrowAbilityData.TALENT_T2_LEFT_ENHANCED_ATTACK_DMG_MODIFIER) *
           100,
         1
       )
       const knockUpBonus = toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION)
-      const baseKnockUpDuration = toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)
+      const baseKnockUpDuration = toSec(SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_KNOCKBACK_DURATION)
       const knockUpDuration = toSec(
-        SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION +
+        SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_KNOCKBACK_DURATION +
           SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION
       )
       return {
@@ -272,7 +272,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.ICEAT: {
-      const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T1_LEFT_ICICLE_FREEZE_DURATION)
+      const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T1_LEFT_ICICLE_BOLT_FREEZE_DURATION)
       const frozenAttackBonusDamage = fixed(ICeatAbilityData.TALENT_T2_LEFT_FROZEN_ATTACK_BONUS_DAMAGE_MOD * 100, 1)
       const deepFrostStacks = ICeatAbilityData.TALENT_T2_RIGHT_DEEP_FROST_STACKS_TO_FREEZE
       const deepFrostFreezeDuration = toSec(ICeatAbilityData.TALENT_T2_RIGHT_DEEP_FROST_FREEZE_DURATION)
@@ -368,7 +368,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.VEIL: {
       const astralStepCooldown = toSec(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)
-      const astralstepSlow = toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)
+      const astralstepSlow = toSecRaw(VeilAbilityData.TALENT_T1_LEFT_ASTRAL_STEP_SLOW_DURATION)
       const astralBladesCooldown = '-' + toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)
       return {
         tier1_left: {
@@ -399,18 +399,18 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Enhanced Damage +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            en: `Enhanced Damage +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
             ru: `+${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
+              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100,
               1
             )}% к урону от усиленных атак или Астрального шага`,
-            cz: `Zlepšené poškození +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            zh: `強化後傷害 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            fr: `Dégâts améliorés +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            br: `Dano Aprimorado +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            vi: `Sức mạnh Thức Tỉnh +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            id: `Kerusakan Ditingkatkan +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
-            kr: `강화된 피해 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            cz: `Zlepšené poškození +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            zh: `強化後傷害 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            fr: `Dégâts améliorés +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            br: `Dano Aprimorado +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            vi: `Sức mạnh Thức Tỉnh +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            id: `Kerusakan Ditingkatkan +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
+            kr: `강화된 피해 +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
           },
         },
         tier2_right: {
@@ -651,9 +651,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.THOMAS: {
       const carrotStun = toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)
-      const bleedDamage = fixed(ThomasAbilityData.TALENT_T1_LEFT_BLEED_DAMAGE * 100, 1)
+      const bleedDamage = fixed(ThomasAbilityData.TALENT_T1_LEFT_BLEED_ATTACK_DAMAGE * 100, 1)
       const bleedAttackCount = ThomasAbilityData.TALENT_T2_LEFT_BLEED_ATTACK_COUNT
-      const baseBleedAttackCount = ThomasAbilityData.BLEED_ATTACK_COUNT
+      const baseBleedAttackCount = ThomasAbilityData.PASSIVE_BLEED_ATTACK_COUNT
       return {
         tier1_left: {
           title: {
@@ -824,14 +824,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.AREL: {
-      const secondBulletBonusDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_ENH_DAMAGE_MOD * 100)
-      const secondBulletDamage = fixed(ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD * 100)
+      const secondBulletBonusDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_ENHANCED_ATTACK_DAMAGE_MOD * 100)
+      const secondBulletDamage = fixed(ArelAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_MOD * 100)
       const secondBulletUpgradedDamage = fixed(
-        (ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD + ArelAbilityData.TALENT_T1_LEFT_ENH_DAMAGE_MOD) * 100
+        (ArelAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_MOD + ArelAbilityData.TALENT_T1_LEFT_ENHANCED_ATTACK_DAMAGE_MOD) * 100
       )
       const tumbleCharges = ArelAbilityData.TALENT_T2_LEFT_TUMBLE_MAX_CHARGES
-      const freezingTrapDuration = toSec(ArelAbilityData.FREEZING_TRAP_DURATION)
-      const freezingTrapFreezeDuration = toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)
+      const freezingTrapDuration = toSec(ArelAbilityData.TALENT_T2_RIGHT_FREEZING_TRAP_DURATION)
+      const freezingTrapFreezeDuration = toSec(ArelAbilityData.TALENT_T2_RIGHT_FREEZING_TRAP_FREEZE_DURATION)
       return {
         tier1_left: {
           title: {
@@ -955,15 +955,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `승리의 방패`,
           },
           description: {
-            en: `Triumphant Upheaval grants Hazel a <c:heal>shield for ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% of the damage dealt</c:heal>, lasting ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            ru: `Триумфальный переворот даёт Хейзел <c:heal>щит на ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% от нанесённого урона</c:heal> длительностью ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}`,
-            cz: `Triumfální Povstání dá Hazel <c:heal>štít o ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% způsobeného poškození</c:heal> na ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            zh: `勝利的動盪為哈傑爾提供<c:heal>相當於造成傷害 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% 的護盾</c:heal>，持續 ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}。`,
-            fr: `Le Soulèvement triomphant accorde à Hazel un <c:heal>bouclier pour ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% des dégâts infligés</c:heal>, pendant ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            br: `O Levante Triunfante concede a Hazel um <c:heal>escudo de ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% do dano causado</c:heal>, durando ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            vi: `Triumphant Upheaval cấp cho Hazel một <c:heal>lá chắn bằng ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% sát thương gây ra</c:heal>, kéo dài ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            id: `Triumphant Upheaval memberikan Hazel <c:heal>perisai sebesar ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}% dari kerusakan yang diberikan</c:heal>, bertahan selama ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)}.`,
-            kr: `승리의 격변이 <c:heal>입힌 피해량의 ${HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD * 100}%에 해당하는 보호막</c:heal>을 ${toSec(HazelAbilityData.TALENT_T1_LEFT_SHOCKWAVE_SHIELD_DURATION)} 동안 부여합니다.`,
+            en: `Triumphant Upheaval grants Hazel a <c:heal>shield for ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% of the damage dealt</c:heal>, lasting ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            ru: `Триумфальный переворот даёт Хейзел <c:heal>щит на ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% от нанесённого урона</c:heal> длительностью ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}`,
+            cz: `Triumfální Povstání dá Hazel <c:heal>štít o ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% způsobeného poškození</c:heal> na ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            zh: `勝利的動盪為哈傑爾提供<c:heal>相當於造成傷害 ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% 的護盾</c:heal>，持續 ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}。`,
+            fr: `Le Soulèvement triomphant accorde à Hazel un <c:heal>bouclier pour ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% des dégâts infligés</c:heal>, pendant ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            br: `O Levante Triunfante concede a Hazel um <c:heal>escudo de ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% do dano causado</c:heal>, durando ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            vi: `Triumphant Upheaval cấp cho Hazel một <c:heal>lá chắn bằng ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% sát thương gây ra</c:heal>, kéo dài ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            id: `Triumphant Upheaval memberikan Hazel <c:heal>perisai sebesar ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}% dari kerusakan yang diberikan</c:heal>, bertahan selama ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)}.`,
+            kr: `승리의 격변이 <c:heal>입힌 피해량의 ${HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD * 100}%에 해당하는 보호막</c:heal>을 ${toSec(HazelAbilityData.TALENT_T1_LEFT_TRIUMPHANT_UPHEAVAL_SHIELD_DURATION)} 동안 부여합니다.`,
           },
         },
         tier1_right: {
@@ -992,15 +992,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Justice's Wrath Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            ru: `+${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)} сек. оглушения от Гнева правосудия`,
-            cz: `Hnev spravodlivosti omráčení +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            br: `Ira da Justiça Atordoamento +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            zh: `正義之怒暈眩 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}秒`,
-            fr: `Colère de la Justice Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            vi: `Sức Mạnh Công Lý Choáng +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            id: `Kemarahan Keadilan Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}s`,
-            kr: `정의의 분노 기절 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_HAMMER_STUN_DURATION)}초`,
+            en: `Justice's Wrath Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            ru: `+${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)} сек. оглушения от Гнева правосудия`,
+            cz: `Hnev spravodlivosti omráčení +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            br: `Ira da Justiça Atordoamento +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            zh: `正義之怒暈眩 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}秒`,
+            fr: `Colère de la Justice Étourdissement +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            vi: `Sức Mạnh Công Lý Choáng +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            id: `Kemarahan Keadilan Stun +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}s`,
+            kr: `정의의 분노 기절 +${toSecRaw(HazelAbilityData.TALENT_T2_LEFT_JUSTICES_WRATH_STUN_DURATION)}초`,
           },
         },
         tier2_right: {
@@ -1016,15 +1016,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
             kr: `강화된 승리의 격변`,
           },
           description: {
-            en: `Triumphant Upheaval deals an additional <c:physical>${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% of Hazel's max Health as damage</c:physical>.`,
-            ru: `Триумфальный переворот наносит <c:physical>дополнительный урон, равный ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% от максимального здоровья Хейзел</c:physical>.`,
-            cz: `Triumfální Povstání způsobí <c:physical>dodatečné poškození ve výši ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% max. zdraví Hazel</c:physical>.`,
-            br: `O Levante Triunfante causa <c:physical>dano adicional igual a ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% da Vida máxima de Hazel</c:physical>.`,
-            zh: `勝利的動盪額外造成<c:physical>相當於哈傑爾最大生命值 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% 的傷害</c:physical>。`,
-            fr: `Le Soulèvement triomphant inflige des <c:physical>dégâts supplémentaires égaux à ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% de la santé max de Hazel</c:physical>.`,
-            vi: `Khải Hoàn Chấn Động gây <c:physical>thêm sát thương bằng ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% Máu tối đa của Hazel</c:physical>.`,
-            id: `Triumphant Upheaval memberikan <c:physical>kerusakan tambahan sebesar ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}% dari Health maksimum Hazel</c:physical>.`,
-            kr: `승리의 격변이 <c:physical>헤이즐 최대 체력의 ${HazelAbilityData.TALENT_T2_RIGHT_SHOCKWAVE_BONUS_DAMAGE_HP * 100}%에 해당하는 추가 피해</c:physical>를 입힙니다.`,
+            en: `Triumphant Upheaval deals an additional <c:physical>${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% of Hazel's max Health as damage</c:physical>.`,
+            ru: `Триумфальный переворот наносит <c:physical>дополнительный урон, равный ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% от максимального здоровья Хейзел</c:physical>.`,
+            cz: `Triumfální Povstání způsobí <c:physical>dodatečné poškození ve výši ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% max. zdraví Hazel</c:physical>.`,
+            br: `O Levante Triunfante causa <c:physical>dano adicional igual a ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% da Vida máxima de Hazel</c:physical>.`,
+            zh: `勝利的動盪額外造成<c:physical>相當於哈傑爾最大生命值 ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% 的傷害</c:physical>。`,
+            fr: `Le Soulèvement triomphant inflige des <c:physical>dégâts supplémentaires égaux à ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% de la santé max de Hazel</c:physical>.`,
+            vi: `Khải Hoàn Chấn Động gây <c:physical>thêm sát thương bằng ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% Máu tối đa của Hazel</c:physical>.`,
+            id: `Triumphant Upheaval memberikan <c:physical>kerusakan tambahan sebesar ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}% dari Health maksimum Hazel</c:physical>.`,
+            kr: `승리의 격변이 <c:physical>헤이즐 최대 체력의 ${HazelAbilityData.TALENT_T2_RIGHT_TRIUMPHANT_UPHEAVAL_BONUS_DAMAGE_HP * 100}%에 해당하는 추가 피해</c:physical>를 입힙니다.`,
           },
         },
       }
@@ -1034,15 +1034,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       return {
         tier1_left: {
           title: {
-            en: `Lightning Shock Duration +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            ru: `+${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)} сек. к длительности Удара молнии`,
-            cz: `Úder blesku trvání +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            zh: `閃電衝擊持續時間 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}秒`,
-            fr: `Durée de l'impact de foudre +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            br: `Duração do Choque de Raios +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            vi: `Thời lượng Choáng Sét +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            id: `Durasi Pukulan Petir +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}s`,
-            kr: `번개 충격 지속시간 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENH_ATTACK_DURATION)}초`,
+            en: `Lightning Shock Duration +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            ru: `+${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)} сек. к длительности Удара молнии`,
+            cz: `Úder blesku trvání +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            zh: `閃電衝擊持續時間 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}秒`,
+            fr: `Durée de l'impact de foudre +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            br: `Duração do Choque de Raios +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            vi: `Thời lượng Choáng Sét +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            id: `Durasi Pukulan Petir +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}s`,
+            kr: `번개 충격 지속시간 +${toSecRaw(KiraAbilityData.TALENT_T1_LEFT_ENHANCED_STATE_DURATION)}초`,
           },
         },
         tier1_right: {
@@ -1100,13 +1100,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
 
     case Shared.HEROES.FOXY: {
-      const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)
-      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)
+      const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_EXPLOSIVE_GRENADE_DAMAGE_PERC * 100)
+      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_EXPLOSIVE_GRENADE_FREEZE_DURATION)
       const rapidFireMovementSpeed = fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_MOVEMENT_SPEED * 100)
-      const gunsBlazingBaseReduction = toSecRaw(FoxyAbilityData.GUNS_BLAZING_COOLDOWN_REDUCTION)
+      const gunsBlazingBaseReduction = toSecRaw(FoxyAbilityData.PASSIVE_GUNS_BLAZING_COOLDOWN_REDUCTION)
       const gunsBlazingTalentReduction = toSecRaw(FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION)
       const gunsBlazingTotalReduction = toSecRaw(
-        FoxyAbilityData.GUNS_BLAZING_COOLDOWN_REDUCTION + FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION
+        FoxyAbilityData.PASSIVE_GUNS_BLAZING_COOLDOWN_REDUCTION + FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION
       )
       return {
         tier1_left: {
@@ -1288,8 +1288,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.PRIM: {
-      const primBonusMovementSpeed = fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)
-      const primBonusArmor = PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
+      const primBonusMovementSpeed = fixed(PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_MOVEMENT_SPEED * 100, 1)
+      const primBonusArmor = PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_ARMOR
       const gravitationalPullBonus = fixed(
         PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
         1
@@ -1323,15 +1323,15 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier1_right: {
           title: {
-            en: `Ball max-range +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            ru: `+${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE} к максимальной дальности шара`,
-            cz: `Maximální dosah míče +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            zh: `球最大範圍 +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}像素`,
-            fr: `Portée maximale de la balle +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            br: `Alcance máximo da bola +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            vi: `Khoảng cách tối đa của Cầu +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            id: `Jarak maksimum bola +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
-            kr: `공 최대 사거리 +${PrimAbilityData.TALENT_T1_RIGHT_PRIM_ADDITIONAL_BALL_DISTANCE}px`,
+            en: `Ball max-range +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            ru: `+${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE} к максимальной дальности шара`,
+            cz: `Maximální dosah míče +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            zh: `球最大範圍 +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}像素`,
+            fr: `Portée maximale de la balle +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            br: `Alcance máximo da bola +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            vi: `Khoảng cách tối đa của Cầu +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            id: `Jarak maksimum bola +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
+            kr: `공 최대 사거리 +${PrimAbilityData.TALENT_T1_RIGHT_BALL_ADDITIONAL_DISTANCE}px`,
           },
         },
         tier2_right: {
@@ -1385,9 +1385,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.SEER: {
-      const curseDelay = toSec(SeerAbilityData.MALEVOLENT_CURSE_DELAY)
+      const curseDelay = toSec(SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DELAY)
       const hastyCurseDelay = toSec(
-        SeerAbilityData.MALEVOLENT_CURSE_DELAY - SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY_REDUCTION
+        SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DELAY - SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY_REDUCTION
       )
       const mirrorDamage = fixed(SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_MIRROR_DAMAGE_MODIFIER * 100, 0)
       const shiftCharges = SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_SHIFT_MAX_CHARGES
@@ -1504,8 +1504,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       )
       const brambleSnapRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_BRAMBLE_SNAP_ROOT_BONUS)
 
-      const additionalWrathDelay = toSec(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
-      const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
+      const additionalWrathDelay = toSec(KarickAbilityData.TALENT_T2_RIGHT_WRATH_OF_THE_GROVE_ADDITIONAL_DELAY)
+      const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_WRATH_OF_THE_GROVE_ADDITIONAL_MOD * 100, 0)
 
       return {
         tier1_left: {
@@ -1605,7 +1605,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const shredderMaxStacks = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_MAX_STACKS
       const shredderMaxArmor = fixed(shredderArmorPerStack * shredderMaxStacks)
       const shredderDuration = toSec(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
-      const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_FIXATE_DURATION_BONUS)
+      const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_PUPPET_DASH_FIXATE_DURATION_BONUS)
       const staticDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STATIC_DURATION_BONUS)
       const stunDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STUN_DURATION_BONUS)
 
@@ -1699,7 +1699,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const vanguardAllyDuration = toSec(PatroklosAbilityData.TALENT_T1_EFFECT_DURATION)
       const vanguardCharges = PatroklosAbilityData.TALENT_T2_LEFT_VANGUARD_MAX_CHARGES
 
-      const lastJudgementMaxStacks = PatroklosAbilityData.HEAVENS_FALL_MAX_STACKS
+      const lastJudgementMaxStacks = PatroklosAbilityData.PASSIVE_HEAVENS_FALL_MAX_STACKS
       const lastJudgementMaxHealthDamage = fixed(
         PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100,
         1
