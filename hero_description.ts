@@ -15,7 +15,7 @@ const hero_description_data: { [key in LOCALE]?: { [key in string]: string } } =
     zh: '即將加入，敬請期待！',
     fr: 'Sera bientôt ajouté!',
     id: 'Akan segera ditambahkan!',
-    vi: 'Sẽ được thêm vào sớm thôi!',
+    vi: 'Sẽ thêm vào sớm thôi!',
     kr: `곧 추가될 예정입니다!`,
   },
   [LOCALE.KUMIHU_DESCRIPTION]: {
@@ -26,7 +26,7 @@ const hero_description_data: { [key in LOCALE]?: { [key in string]: string } } =
     zh: '　　庫咪戶是一個偽裝成貌美女性的惡靈，總是渴求著新鮮的靈魂。萬分注意：一旦被靈魂球體逮到，只需眨眼之間，她就能現出真實面目將任何一絲存活的機會通通摧毀，縱使是最頑強的愚者也不例外。',
     fr: "Kumihu est un esprit maléfique se faisant passer pour une belle femme qui a toujours faim de nouvelles âmes. Mais attention : en un clin d'œil, elle peut montrer sa véritable forme, détruisant ainsi toute chance de survie, car la Sphère d'âme attrapera même les plus tenaces des fous.",
     id: 'Kumihu adalah roh jahat yang menyamar sebagai wanita cantik yang selalu lapar akan jiwa baru. Tapi hati-hati: dalam sekejap mata, dia bisa menunjukkan wujud aslinya, menghancurkan setiap kesempatan untuk bertahan hidup, karena Bola Jiwa akan menangkap bahkan orang bodoh yang paling gigih.',
-    vi: 'Kumihu là một tinh linh ác quỷ dưới hình dạng một người phụ nữ xinh đẹp, luôn khao khát những linh hồn mới. Nhưng hãy cẩn thận: chỉ trong nháy mắt, cô ta có thể hiện ra hình dạng thật của mình, phá hủy mọi cơ hội sống sót, vì Quả cầu Linh hồn sẽ bắt được ngay cả những kẻ kiên trì ngu ngốc nhất.',
+    vi: 'Kumihu là một tinh linh ác quỷ dưới hình dạng một người phụ nữ xinh đẹp, luôn khao khát những linh hồn mới. Nhưng hãy cẩn thận: chỉ trong nháy mắt, cô ta có thể hiện nguyên hình dạng thật của mình, phá hủy mọi cơ hội sống sót, vì Quả cầu Linh hồn sẽ bắt được ngay cả những kẻ dũng cảm nhất.',
     kr: `쿠미후는 아름다운 여인의 모습을 한 악령으로, 언제나 새로운 영혼에 굶주려 있다. 하지만 조심해야 한다. 그녀는 눈 깜짝할 사이에 본모습을 드러낼 수 있으며, 그녀의 영혼 구슬은 아무리 끈질긴 자라도 결국 사로잡아 생존의 기회를 완전히 앗아가 버린다.`,
   },
   [LOCALE.ICEAT_DESCRIPTION]: {
@@ -146,7 +146,7 @@ const hero_description_data: { [key in LOCALE]?: { [key in string]: string } } =
     fr: "Un marionnettiste errant qui ne voyage jamais seul. Lié à la marionnette de bois qu'il a sculptée et animée grâce à un art interdit, le Marionnettiste la commande à distance, tirant des fils invisibles pour frapper, traîner et entraver ses ennemis. Certains disent que la marionnette a désormais sa propre volonté.",
     br: 'Um marionetista errante que nunca viaja sozinho. Ligado à marionete de madeira que esculpiu e deu vida através de um ofício proibido, o Marionetista a comanda à distância, puxando fios invisíveis para atacar, arrastar e prender seus inimigos. Alguns dizem que a marionete agora tem vontade própria.',
     id: 'Seorang dalang pengembara yang tak pernah bepergian sendirian. Terikat pada boneka kayu yang ia ukir dan hidupkan lewat keahlian terlarang, Sang Dalang mengendalikannya dari kejauhan, menarik benang tak kasat mata untuk menyerang, menyeret, dan mengikat musuh-musuhnya.',
-    vi: 'Một người điều khiển rối lang thang không bao giờ đi một mình. Gắn liền với con rối gỗ mà anh đã khắc và thổi hồn bằng một thuật nghệ bị cấm, Bậc Thầy Rối điều khiển nó từ xa, kéo những sợi dây vô hình để tấn công, kéo lê và trói buộc kẻ thù.',
+    vi: 'Một kẻ điều khiển rối lang thang luôn có kẻ thờ phụng. Gắn liền với con rối gỗ mà hắn đã khắc và thổi hồn bằng một cấm thuật, Puppeteer điều khiển nó từ xa, kéo những sợi dây vô hình để tấn công, kéo lê và trói buộc kẻ thù.',
     kr: `결코 홀로 떠돌지 않는 방랑하는 인형사. 금지된 기술로 직접 깎아 생명을 불어넣은 나무 인형과 이어진 퍼펫티어는, 보이지 않는 실을 당겨 원거리에서 인형을 조종하며 적을 가격하고, 끌어당기고, 옭아맨다. 일각에서는 이제 그 인형이 스스로의 의지를 갖게 되어, 아무도 보지 않을 때면 주인에게 저항한다는 소문도 있다.`,
   },
   [LOCALE.PATROKLOS_DESCRIPTION]: {
@@ -157,7 +157,7 @@ const hero_description_data: { [key in LOCALE]?: { [key in string]: string } } =
     fr: "Patroklos restait inactif, rongé par une inertie tenace, regardant ses sujets combattre jour après jour. Quel genre de roi serait-il s'il demeurait retranché à l'arrière pendant que son peuple versait son sang ? Il fallait agir. Revêtu de la panoplie mythique léguée par les exploits légendaires de sa jeunesse — les mêmes aventures qui avaient forgé sa couronne — il résolut une fois de plus de se porter à l'avant-garde, marchant en avant non seulement pour préserver son royaume, mais pour une gloire éternelle.",
     br: 'Patroklos permanecia ocioso, consumido por uma inércia inquieta, observando seus súditos lutarem dia após dia. Que tipo de rei ele seria se permanecesse escondido na retaguarda enquanto seu povo derramava sangue? Agir era imperativo. Vestindo a armadura mítica legada pelas façanhas lendárias de sua juventude — aventuras que, no fim, forjaram sua coroa — ele decidiu mais uma vez liderar a vanguarda, marchando à frente não apenas para preservar seu reino, mas em busca de glória eterna.',
     id: 'Patroklos duduk diam, dilanda kegelisahan yang tak kunjung reda, sambil menyaksikan rakyatnya bertempur hari demi hari. Raja macam apa dirinya jika terus bersembunyi di garis belakang sementara rakyatnya menumpahkan darah? Bertindak adalah keharusan. Mengenakan baju zirah legendaris warisan petualangan masa mudanya—petualangan yang pada akhirnya membawanya ke mahkota—ia sekali lagi bertekad memimpin garis depan, maju bukan hanya demi menjaga kerajaannya, tetapi demi kejayaan abadi.',
-    vi: 'Patroklos ngồi yên, bị giày vò bởi sự bứt rứt không nguôi, nhìn thần dân của mình ngày ngày chinh chiến. Ông sẽ là vị vua như thế nào nếu cứ mãi ẩn mình phía sau trong khi dân chúng đổ máu? Hành động là điều tất yếu. Khoác lên mình bộ giáp huyền thoại thừa hưởng từ những chiến công lẫy lừng thời trai trẻ—những cuộc phiêu lưu đã tạo nên vương miện của ông—ông một lần nữa quyết tâm tiên phong ra tiền tuyến, tiến bước không chỉ để bảo vệ vương quốc mà còn vì vinh quang bất diệt.',
+    vi: 'Patroklos ngồi yên, bị giày vò bởi sự bứt rứt không nguôi, nhìn thần dân của mình ngày ngày chinh chiến. Ông sẽ là vị vua như thế nào nếu cứ mãi ẩn mình phía sau trong khi dân chúng đổ máu? Hành động là điều thiết yếu. Khoác lên mình bộ giáp huyền thoại thừa hưởng những chiến công lẫy lừng thời trai trẻ — những cuộc phiêu lưu đã tạo nên danh dự của ông — ông một lần nữa quyết tâm tiên phong ra tiền tuyến, tiến bước không chỉ để bảo vệ vương quốc của mình mà còn vì vinh quang bất diệt.',
     kr: `파트로클로스는 매일 백성들이 전투를 벌이는 모습을 지켜보며, 가라앉지 않는 초조함에 사로잡힌 채 가만히 앉아 있었다. 백성이 피를 흘리는 동안 후방에 몸을 숨기고 있다면, 그가 어떤 왕이라 할 수 있겠는가? 행동은 필수였다. 젊은 시절의 전설적인 무훈으로 물려받은 신화적인 갑주를 걸치고—바로 그 모험들이 결국 그의 왕관을 만들어냈다—그는 다시 한번 최전선에 서기로 결심했다. 왕국을 지키기 위해서만이 아니라, 영원한 영광을 위해.`,
   },
 }

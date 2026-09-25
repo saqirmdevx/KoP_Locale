@@ -290,7 +290,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '衝刺',
     fr: 'Dash',
     id: 'Serangan Mendatar',
-    vi: 'Tốc biến / Tốc Hành',
+    vi: 'Cơ động',
     kr: `돌진`,
   },
   [LOCALE.DAMAGE_TYPE_HEAL]: {
@@ -367,7 +367,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '充能次數',
     fr: 'Charges',
     id: 'Charge',
-    vi: 'Lượt dùng',
+    vi: 'Tích trữ',
     kr: `충전`,
   },
   [LOCALE.SELL]: {
@@ -411,7 +411,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '紅隊',
     fr: 'Équipe Rouge',
     id: 'Tim Merah',
-    vi: 'Đội Đỏ',
+    vi: 'Đội đỏ',
     kr: `레드팀`,
   },
   [LOCALE.BLUE_TEAM]: {
@@ -422,7 +422,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '藍隊',
     fr: 'Équipe Bleue',
     id: 'Tim Biru',
-    vi: 'Đội Xanh',
+    vi: 'Đội xanh',
     kr: `블루팀`,
   },
   [LOCALE.SECOND]: {
@@ -488,7 +488,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '流動號碼',
     fr: 'Nombres flottants',
     id: 'Angka Mengambang',
-    vi: 'Số Hữu Tỉ',
+    vi: 'Hiện chỉ số',
     kr: `떠다니는 숫자`,
   },
   [LOCALE.FULL_SCREEN]: {
@@ -510,7 +510,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '滑鼠支援',
     fr: 'Support de la souris',
     id: 'Dukungan Mouse',
-    vi: 'Chuột Hỗ trợ',
+    vi: 'Hỗ trợ chuột',
     cz: 'Podpora myši',
     ru: 'Поддержка мыши',
     br: 'Suporte para Mouse',
@@ -524,7 +524,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '全球聊天',
     fr: 'Chat mondial',
     id: 'Obrolan Global',
-    vi: 'Toàn cầu',
+    vi: 'Trò chuyện Toàn cầu',
     kr: `전체 채팅`,
   },
   [LOCALE.PLAY]: {
@@ -546,7 +546,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '排行榜',
     fr: 'Classement',
     id: 'Papan Peringkat',
-    vi: 'Bảng xếp hạng',
+    vi: 'Xếp hạng',
     kr: `리더보드`,
   },
   [LOCALE.HEROES]: {
@@ -557,7 +557,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '英雄名冊',
     fr: 'Héros',
     id: 'Pahlawan',
-    vi: 'Những tướng',
+    vi: 'Tướng',
     kr: `영웅`,
   },
   [LOCALE.HERO]: {
@@ -590,7 +590,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '隨機選角',
     fr: 'Choix aléatoire',
     id: 'Pilihan Acak',
-    vi: 'Lựa Chọn Ngẫu Nhiên',
+    vi: 'Lựa chọn ngẫu nhiên',
     kr: `무작위 선택`,
   },
   [LOCALE.LOCKED_IN]: {
@@ -611,7 +611,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Vyber Hrdinu',
     zh: '選擇英雄',
     fr: 'Choisir un héros',
-    vi: 'Chọn Tướng',
+    vi: 'Chọn tướng',
     id: 'Pilih Pahlawan',
     kr: `영웅 선택`,
   },
@@ -623,7 +623,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '禁掉英雄',
     fr: 'Bloquer le héros',
     id: 'Larangan Pahlawan',
-    vi: 'Cấm Tướng',
+    vi: 'Cấm tướng',
     kr: `영웅 밴`,
   },
   [LOCALE.ONLINE_PLAYERS]: {
@@ -634,7 +634,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '線上玩家數',
     fr: 'Joueurs en ligne',
     id: 'Pemain Daring',
-    vi: 'Người Chơi Trực Tuyến',
+    vi: 'Người chơi trực tuyến',
     kr: `온라인 플레이어`,
   },
   [LOCALE.MMR]: {
@@ -656,7 +656,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '總勝利次數',
     fr: 'Victoires totales',
     id: 'Total Kemenangan',
-    vi: 'Tổng số chiến thắng',
+    vi: 'Tổng trận thắng',
     kr: `총 승리 수`,
   },
   [LOCALE.GAME_WINS]: {
@@ -667,7 +667,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '勝利次數',
     fr: 'Victoires',
     id: 'Kemenangan',
-    vi: 'Chiến thắng',
+    vi: 'Thắng',
     kr: `승`,
   },
   [LOCALE.GAME_LOSSES]: {
@@ -678,7 +678,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '戰敗次數',
     fr: 'Défaites',
     id: 'Kekalahan',
-    vi: 'Thua cuộc',
+    vi: 'Thua',
     kr: `패`,
   },
   [LOCALE.LAST_ONLINE]: {
@@ -689,7 +689,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '最後上線',
     fr: 'Dernière connexion',
     id: 'Terakhir Online',
-    vi: 'Lần cuối online',
+    vi: 'Lần cuối trực tuyến',
     kr: `마지막 접속`,
   },
   [LOCALE.RANK]: {
@@ -700,7 +700,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '階級',
     fr: 'Classement',
     id: 'Peringkat',
-    vi: 'Xếp hạng',
+    vi: 'Đấu hạng',
     kr: `랭크`,
   },
   [LOCALE.PLAYER]: {
@@ -738,9 +738,11 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   },
   [LOCALE.LOADOUT]: {
     en: 'Loadout',
+    vi: 'Trang phục',
   },
   [LOCALE.LORE]: {
     en: 'Lore',
+    vi: 'Tiểu sử',
   },
   [LOCALE.PRACTICE_MATCH]: {
     en: 'Practice Hero',
@@ -750,7 +752,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '測試英雄',
     fr: 'Entraînement',
     id: 'Latihan Pahlawan',
-    vi: 'Thực hành Anh hùng',
+    vi: 'Luyện tướng',
     kr: `영웅 연습`,
   },
   [LOCALE.PRACTICE_SANDBOX]: {
@@ -761,7 +763,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '沙盒',
     fr: 'Bac à sable',
     id: 'Sandbox',
-    vi: 'Sandbox',
+    vi: 'Thử nghiệm',
     kr: `샌드박스`,
   },
   [LOCALE.PRACTICE_SHOW]: {
@@ -849,7 +851,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '重置生命/冷卻',
     fr: 'Réinitialiser PV/CD',
     id: 'Atur Ulang HP/CD',
-    vi: 'Đặt lại Máu/Hồi chiêu',
+    vi: 'Đặt lại máu/HC',
     kr: `체력/재사용 대기시간 초기화`,
   },
   [LOCALE.PRACTICE_LEVEL_MAX]: {
@@ -871,7 +873,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '切換假人攻擊',
     fr: "Basculer l'attaque du mannequin",
     id: 'Ubah serangan dummy',
-    vi: 'Bật/tắt tấn công hình nộm',
+    vi: 'Bật/tắt tấn công bù nhìn',
     kr: `허수아비 공격 전환`,
   },
   [LOCALE.PRACTICE_SPAWN_DUMMY]: {
@@ -882,7 +884,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '生成假人',
     fr: 'Apparaître mannequin',
     id: 'Munculkan dummy',
-    vi: 'Tạo hình nộm',
+    vi: 'Tạo bù nhìn',
     kr: `허수아비 생성`,
   },
   [LOCALE.PRACTICE_REMOVE_DUMMY]: {
@@ -893,7 +895,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '移除假人',
     fr: 'Retirer mannequin',
     id: 'Hapus dummy',
-    vi: 'Xóa hình nộm',
+    vi: 'Xóa bù nhìn',
     kr: `허수아비 제거`,
   },
   [LOCALE.PRACTICE_SPAWN_RUNE]: {
@@ -904,7 +906,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '生成符文',
     fr: 'Apparaître rune',
     id: 'Munculkan rune',
-    vi: 'Tạo rune',
+    vi: 'Tạo ngọc',
     kr: `룬 생성`,
   },
   [LOCALE.PRACTICE_LEAVING]: {
@@ -937,7 +939,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '法師',
     fr: 'MAGE',
     id: 'PENYIHIR',
-    vi: 'THUẬT SƯ',
+    vi: 'PHÁP SƯ',
     kr: `마법사`,
   },
   [LOCALE.TAG_ASSASSIN]: {
@@ -1026,7 +1028,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '對英雄傷害',
     fr: 'Dommages aux héros',
     id: 'Kerusakan Pahlawan',
-    vi: 'Sát thương lên tướng địch',
+    vi: 'Sát thương',
     kr: `영웅 피해량`,
   },
   [LOCALE.POST_DAMAGE_TAKEN]: {
@@ -1037,7 +1039,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '承受傷害',
     fr: 'Dégâts subis',
     id: 'Damage Diterima',
-    vi: 'Sát thương nhận vào',
+    vi: 'Sát thương nhận',
     kr: `받은 피해량`,
   },
   [LOCALE.POST_DAMAGE_ABSORBED]: {
@@ -1059,7 +1061,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '對城池傷害',
     fr: 'Dommages de la tour',
     id: 'Kerusakan Menara',
-    vi: 'Sát thương lên trụ địch',
+    vi: 'Sát thương trụ',
     kr: `포탑 피해량`,
   },
   [LOCALE.POST_MINIONS_KILLED]: {
@@ -1070,7 +1072,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '最後造成傷害',
     fr: 'Derniers coups',
     id: 'Serangan Terakhir',
-    vi: 'Lính ăn được',
+    vi: 'Last Hit',
     cz: 'Pěšáků zabito',
     ru: 'Миньонов убито',
     fr: 'Derniers coups',
@@ -1086,7 +1088,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Note',
     br: 'Nota',
     id: 'Nilai',
-    vi: 'Điểm',
+    vi: 'Hạng',
     kr: `등급`,
   },
   [LOCALE.MATCH_DETAILS_RESULT]: {
@@ -1152,7 +1154,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Valeur nette de l'équipe",
     br: 'Patrimônio da Equipe',
     id: 'Net Worth Tim',
-    vi: 'Tài sản đội',
+    vi: 'Tiền tổng đội',
     kr: `팀 총 자산`,
   },
   [LOCALE.MATCH_DETAILS_WIN_BY_SCORE]: {
@@ -1174,7 +1176,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Talents',
     br: 'Talentos',
     id: 'Talenta',
-    vi: 'Tài năng',
+    vi: 'Nhánh kỹ năng',
     kr: `특성`,
   },
   [LOCALE.MATCH_DETAILS_KDA_RATIO]: {
@@ -1229,7 +1231,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Aucune statistique disponible pour ce match',
     br: 'Nenhuma estatística disponível para esta partida',
     id: 'Tidak ada statistik yang tersedia untuk pertandingan ini',
-    vi: 'Không có thống kê cho trận đấu này',
+    vi: 'Không có thống kê cho trận này',
     kr: `이 매치에 대한 통계가 없습니다`,
   },
   [LOCALE.MATCH_DETAILS_STATISTICS_LOADING]: {
@@ -1251,7 +1253,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '獲得總價值',
     fr: 'Valeur nette totale',
     id: 'Total Kekayaan Bersih',
-    vi: 'Tổng Lượng Vàng',
+    vi: 'Tổng lượng vàng',
     kr: `총 자산`,
   },
   [LOCALE.POST_TOTAL_HEALING]: {
@@ -1262,7 +1264,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Celkové léčení',
     fr: 'Guérison totale',
     id: 'Total Penyembuhan',
-    vi: 'Tổng Số Hồi Máu',
+    vi: 'Tổng hồi máu',
     kr: `총 치유량`,
   },
   [LOCALE.POST_LEAVE_GAME]: {
@@ -1284,7 +1286,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '籃隊勝利！',
     fr: "L'équipe bleue a gagné!",
     id: 'Tim Biru menang!',
-    vi: 'Đội Xanh chiến thắng!',
+    vi: 'Đội xanh thắng!',
     kr: `블루팀 승리!`,
   },
   [LOCALE.POST_RED_TEAM_WIN]: {
@@ -1295,7 +1297,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '紅隊勝利！',
     fr: "L'équipe rouge a gagné !",
     id: 'Tim Merah menang!',
-    vi: 'Đội Đỏ chiến thắng!',
+    vi: 'Đội đỏ thắng!',
     kr: `레드팀 승리!`,
   },
   [LOCALE.CHAT_ALLIES]: {
@@ -1317,7 +1319,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '管理員',
     fr: 'MAÎTRE DE JEU',
     id: 'PEMAIN UTAMA',
-    vi: 'NHÀ PHÁT TRIỂN',
+    vi: 'ADMIN',
     kr: `게임 마스터`,
   },
   [LOCALE.POPUP_SELECT_SEND]: {
@@ -1451,7 +1453,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '购买巫师之靴、冰霜女皇之戒和恶毒药瓶。',
     fr: "Achetez les Chaussures de sorcier, l'Anneau de l'Impératrice glacée et une Fiole vile.",
     id: 'Beli Wizard Shoes, Ring of the Frozen Empress, dan Vile Flask.',
-    vi: 'Mua Giày Pháp Sư, Nhẫn Nữ Hoàng Băng Giá và Bình Độc.',
+    vi: 'Mua Giày Pháp Sư, Nhẫn của Nữ Hoàng Băng Giá và Bình Độc.',
     kr: `마법사의 신발, 얼어붙은 황후의 반지, 사악한 물약을 구매하세요.`,
   },
 
@@ -1487,7 +1489,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '站在金币符文上，直到你的队伍占领它。',
     fr: 'Restez sur la rune d’or jusqu’à ce que votre équipe la capture.',
     id: 'Berdiri di rune emas sampai timmu merebutnya.',
-    vi: 'Đứng trên rune vàng cho đến khi đội bạn chiếm được.',
+    vi: 'Đứng trên ngọc vàng cho đến khi đội bạn chiếm được.',
     kr: `황금 룬 위에 서서 팀이 점령할 때까지 기다리세요.`,
   },
 
@@ -1571,7 +1573,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '在英雄面板中花费你的新天赋点以继续。',
     fr: 'Dépensez votre nouveau point de talent dans le panneau du héros pour continuer.',
     id: 'Habiskan poin talent baru di panel hero untuk melanjutkan.',
-    vi: 'Hãy dùng điểm tài năng mới trong bảng tướng để tiếp tục.',
+    vi: 'Hãy chọn nhánh kỹ năng mới trong bảng tướng để tiếp tục.',
     kr: `영웅 패널에서 새로운 특성 포인트를 사용해 계속하세요.`,
   },
 
@@ -1595,7 +1597,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '按 {} 对敌方英雄使用冰霜女皇之戒。',
     fr: "Appuyez sur {} pour utiliser l'Anneau de l'Impératrice glacée sur le héros ennemi.",
     id: 'Tekan {} untuk menggunakan Ring of the Frozen Empress pada hero musuh.',
-    vi: 'Nhấn {} để dùng Nhẫn Nữ Hoàng Băng Giá lên tướng địch.',
+    vi: 'Nhấn {} để dùng Nhẫn của Nữ Hoàng Băng Giá lên tướng địch.',
     kr: `{}를 눌러 적 영웅에게 얼어붙은 황후의 반지를 사용하세요.`,
   },
 
@@ -1667,7 +1669,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '提示：金币符文从00:00开始每90秒刷新一次，并为团队提供金币和经验。',
     fr: 'Astuce : la rune d’or apparaît toutes les 90 secondes à partir de 00:00 et donne de l’or et de l’XP à l’équipe.',
     id: 'Tips: rune emas muncul setiap 90 detik sejak 00:00 dan memberi emas serta XP untuk tim.',
-    vi: 'Mẹo: rune vàng xuất hiện mỗi 90 giây từ 00:00 và cho vàng cùng kinh nghiệm cho cả đội.',
+    vi: 'Mẹo: ngọc vàng xuất hiện mỗi 90 giây từ 00:00 và cho vàng cùng kinh nghiệm cho cả đội.',
     kr: `팁: 황금 룬은 00:00부터 90초마다 등장하며 팀에게 골드와 경험치를 제공합니다.`,
   },
 
@@ -1679,7 +1681,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '选择你的经验水平',
     fr: 'Sélectionnez votre expérience',
     id: 'Pilih Tingkat Pengalamanmu',
-    vi: 'Chọn Trình Độ Của Bạn',
+    vi: 'Chọn trình độ của bạn',
     kr: `경험 수준을 선택하세요`,
   },
 
@@ -1774,7 +1776,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '游玩教程',
     fr: 'Jouer le tutoriel',
     id: 'Main Tutorial',
-    vi: 'Chơi hướng dẫn',
+    vi: 'Mở hướng dẫn',
     kr: `튜토리얼 플레이`,
   },
   [LOCALE.POPUP_SELECT_FAILED_QUEUE]: {
@@ -1862,7 +1864,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '初殺',
     fr: 'Premier Sang',
     id: 'Darah Pertama',
-    vi: 'Mạng Đầu Tiên',
+    vi: 'Chiến Công Đầu',
     kr: `퍼스트 블러드`,
   },
   [LOCALE.AN_DOUBLE_KILL]: {
@@ -1906,7 +1908,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '殺戮狂魔',
     fr: 'Série de meurtres',
     id: 'Pembunuhan Beruntun',
-    vi: 'Cuộc tàn sát',
+    vi: 'Chuỗi Hạ Gục',
     kr: `킬링 스프리`,
   },
   [LOCALE.AN_MEGA_KILL]: {
@@ -1928,7 +1930,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '主宰者',
     fr: 'Dominant',
     id: 'Mendominasi',
-    vi: 'Thống trị',
+    vi: 'Áp đảo',
     kr: `압도적`,
   },
   [LOCALE.AN_RAMPAGE]: {
@@ -1939,7 +1941,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '狂者',
     fr: 'Ravage',
     id: 'Kemarahan',
-    vi: 'Cuồng nộ',
+    vi: 'Càn Quét',
     cz: 'Krveprolití',
     ru: 'Буйство',
     br: 'RAMPAGE!',
@@ -1953,7 +1955,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '奪權者！',
     fr: 'OWNAGE!',
     id: 'KEPEMILIKAN!',
-    vi: 'BẤT KHẢ CHIẾN BẠI!',
+    vi: 'HỦY DIỆT!',
     kr: `압살!`,
   },
   [LOCALE.AN_GODLIKE]: {
@@ -1975,7 +1977,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '迅疾符文',
     fr: 'Rune de Hâte',
     id: 'Rune Kecepatan',
-    vi: 'Ngọc Tăng Tốc',
+    vi: 'Ngọc Hồi Chiêu',
     kr: `가속 룬`,
   },
   [LOCALE.DAMAGE_RUNE]: {
@@ -1986,7 +1988,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '傷害符文',
     fr: 'Rune de dégâts',
     id: 'Rune Kerusakan',
-    vi: 'Ngọc Tấn Công',
+    vi: 'Ngọc Sát Thương',
     kr: `피해 룬`,
   },
   [LOCALE.ARCANE_RUNE]: {
@@ -2030,7 +2032,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '隱身符文',
     fr: "Rune d'invisibilité",
     id: 'Rune Tak Bisa Terlihat',
-    vi: 'Ngọc Ẩn Danh',
+    vi: 'Ngọc Tàng Hình',
     kr: `은신 룬`,
   },
   [LOCALE.ABILITY_POWER]: {
@@ -2041,7 +2043,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '技能威力',
     fr: 'Puissance des compétences',
     id: 'Kekuatan Kemampuan',
-    vi: 'Sát thương Phép',
+    vi: 'Sức mạnh phép',
     kr: `주문력`,
   },
   [LOCALE.DAMAGE]: {
@@ -2052,7 +2054,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '攻擊傷害',
     fr: "Dégâts d'attaque",
     id: 'Kerusakan Serangan',
-    vi: 'Sát thương Vật lý',
+    vi: 'Sát thương vật lí',
     kr: `공격력`,
   },
   [LOCALE.ATTACK_SPEED]: {
@@ -2063,7 +2065,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '攻擊速度',
     fr: "Vitesse d'attaque",
     id: 'Kecepatan Serangan',
-    vi: 'Tốc độ Đánh',
+    vi: 'Tốc đánh',
     kr: `공격 속도`,
   },
   [LOCALE.CRITICAL_CHANCE]: {
@@ -2075,7 +2077,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Chance critique',
     br: 'Chance critique',
     id: 'Peluang Kritis',
-    vi: 'Tỷ lệ Chí Mạng',
+    vi: 'Chí mạng',
     kr: `치명타 확률`,
   },
   [LOCALE.ABILITY_HASTE]: {
@@ -2097,7 +2099,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '吸血值',
     fr: 'Vol de vie',
     id: 'Mencuri Kehidupan',
-    vi: 'Hút máu',
+    vi: 'Khát máu',
     kr: `흡혈`,
   },
   [LOCALE.MAGICAL_DEFENSE]: {
@@ -2108,7 +2110,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '技能傷害抗性',
     fr: 'Résistance magique',
     id: 'Ketahanan Sihir',
-    vi: 'Kháng Phép Thuật',
+    vi: 'Kháng phép',
     kr: `마법 저항력`,
   },
   [LOCALE.ARMOR]: {
@@ -2130,7 +2132,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '韌性',
     fr: 'Ténacité',
     id: 'Ketekunan',
-    vi: 'Kháng Khống Chế',
+    vi: 'Kháng khống chế',
     kr: `강인함`,
   },
   [LOCALE.HEALTH]: {
@@ -2165,7 +2167,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     ru: 'Скорость передвижения',
     br: 'Velocidade de movimento',
     id: 'Kecepatan Gerakan',
-    vi: 'Tốc độ di chuyển',
+    vi: 'Tốc chạy',
     kr: `이동 속도`,
   },
   [LOCALE.CONSUMABLE]: {
@@ -2220,7 +2222,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '二人協作',
     fr: 'Coopératif',
     id: 'Kooperatif',
-    vi: 'Đánh với máy',
+    vi: 'Đánh máy',
     kr: `협동`,
   },
   [LOCALE.SPECTATE]: {
@@ -2253,7 +2255,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Ouvrir le replay',
     br: 'Abrir Replay',
     id: 'Buka Replay',
-    vi: 'Mở Replay',
+    vi: 'Xem lại',
     kr: `리플레이 열기`,
   },
   [LOCALE.REPLAY_DOWNLOAD]: {
@@ -2319,7 +2321,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Pause',
     br: 'Pausar',
     id: 'Jeda',
-    vi: 'Tạm dừng',
+    vi: 'Dừng',
     kr: `일시정지`,
   },
   [LOCALE.WATCH]: {
@@ -2363,7 +2365,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '自由視角',
     fr: 'Caméra Libre',
     id: 'Kamera Bebas',
-    vi: 'Camera Tự Do',
+    vi: 'Camera tự do',
     kr: `자유 카메라`,
   },
   [LOCALE.FOLLOW_CAMERA]: {
@@ -2374,7 +2376,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '跟隨視角',
     fr: 'Caméra de Suivi',
     id: 'Kamera Mengikuti',
-    vi: 'Camera Theo Dõi',
+    vi: 'Camera theo tướng',
     kr: `추적 카메라`,
   },
   [LOCALE.CAMERA_SETTINGS]: {
@@ -2396,7 +2398,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '视野',
     fr: 'Vision',
     id: 'Visi',
-    vi: 'Tầm Nhìn',
+    vi: 'Tầm nhìn',
     kr: `시야`,
   },
   [LOCALE.NO_FOG_OF_WAR]: {
@@ -2407,7 +2409,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '無戰爭之霧',
     fr: 'Sans Brouillard de Guerre',
     id: 'Tanpa Fog of War',
-    vi: 'Không Sương Mù Chiến Tranh',
+    vi: 'Không sương mù',
     kr: `전장의 안개 없음`,
   },
   [LOCALE.TEAM_FOG]: {
@@ -2418,7 +2420,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '隊伍視野',
     fr: 'Brouillard de l’Équipe',
     id: 'Fog Tim',
-    vi: 'Sương Mù Theo Đội',
+    vi: 'Sương mù theo đội',
     kr: `팀 안개`,
   },
   [LOCALE.SPECTATOR_CHAT_MESSAGE]: {
@@ -2440,7 +2442,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '私人大廳',
     fr: 'Lobby privé',
     id: 'Lobi Pribadi',
-    vi: 'Phòng Riêng',
+    vi: 'Phòng riêng',
     kr: `비공개 로비`,
   },
   [LOCALE.PRIVATE_GAME]: {
@@ -2451,7 +2453,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '私人遊戲',
     fr: 'Partie privée',
     id: 'Permainan Pribadi',
-    vi: 'Trận Riêng',
+    vi: 'Phòng riêng',
     kr: `비공개 경기`,
   },
   [LOCALE.CREATE_LOBBY]: {
@@ -2528,7 +2530,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '閃電模式',
     fr: 'Mode Blitz',
     id: 'Mode Blitz',
-    vi: 'Chế độ đánh nhanh',
+    vi: 'Đánh nhanh',
     kr: `블리츠 모드`,
   },
   [LOCALE.LOBBY_INIT_GOLDS]: {
@@ -2594,7 +2596,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '隊長草案',
     fr: 'Draft du capitaine',
     id: 'Draft Kapten',
-    vi: 'Đánh Rank',
+    vi: 'Pick tổ đội',
     kr: `주장 드래프트`,
   },
   [LOCALE.DRAFT_ALL_RANDOM]: {
@@ -2616,7 +2618,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '選擇隊長！',
     fr: 'Sélectionnez le capitaine !',
     id: 'Pilih Kapten!',
-    vi: 'Chọn Đội Trưởng!',
+    vi: 'Chọn đội trưởng!',
     kr: `주장을 선택하세요!`,
   },
   [LOCALE.CAPTAIN_DRAFT_ENEMY_TURN_TO_BAN]: {
@@ -2627,7 +2629,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '輪到敵方禁角！',
     fr: "Tour de l'ennemi pour bannir!",
     id: 'Giliran musuh untuk melarang!',
-    vi: 'Lượt của đội địch cấm!',
+    vi: 'Đến lượt đội bạn cấm!',
     kr: `상대팀의 밴 차례!`,
   },
   [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_BAN]: {
@@ -2650,7 +2652,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '輪到敵方選角！',
     fr: "Tour de l'ennemi de choisir!",
     id: 'Giliran musuh untuk memilih!',
-    vi: 'Lượt của kẻ địch chọn!',
+    vi: 'Đến lượt kẻ địch chọn!',
     kr: `상대팀의 픽 차례!`,
   },
   [LOCALE.CAPTAIN_DRAFT_YOUR_TURN_TO_PICK]: {
@@ -2672,7 +2674,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '成為隊長！',
     fr: 'Devenez capitaine!',
     id: 'Jadilah Kapten!',
-    vi: 'Trở thành Đội trưởng!',
+    vi: 'Trở thành đội trưởng!',
     kr: `주장이 되세요!`,
   },
   [LOCALE.TOURNAMENT_GAME]: {
@@ -2738,7 +2740,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '本賽季活躍玩家排行',
     fr: 'Meilleurs joueurs actifs de la saison',
     id: 'Pemain aktif terbaik musim ini',
-    vi: 'Người chơi hoạt động hàng đầu mùa này',
+    vi: 'Người chơi hàng đầu mùa này',
     kr: `이번 시즌 활동 상위 플레이어`,
   },
   [LOCALE.LEADERBOARD_ALL_TIME]: {
@@ -2760,7 +2762,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '已完成任務',
     fr: 'Quêtes terminées',
     id: 'Misi Selesai',
-    vi: 'Nhiệm vụ đã hoàn thành',
+    vi: 'Nhiệm vụ hoàn thành',
     kr: `완료한 퀘스트`,
   },
   [LOCALE.PEAK]: {
@@ -2881,7 +2883,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Ostatní hráči neuvidí váš online stav ani poslední přihlášení ve vašem profilu, žebříčku ani v turnajích. Game Masteři to stále uvidí.',
     fr: 'Les autres joueurs ne verront pas votre statut en ligne ni votre dernière connexion sur votre profil, le classement ou dans les tournois. Les Game Masters pourront toujours le voir.',
     id: 'Pemain lain tidak akan melihat status online atau login terakhir Anda di profil, papan peringkat, atau turnamen. Game Master tetap dapat melihatnya.',
-    vi: 'Người chơi khác sẽ không thấy trạng thái trực tuyến hoặc lần đăng nhập cuối của bạn trên hồ sơ, bảng xếp hạng hoặc trong giải đấu. Game Master vẫn có thể thấy được.',
+    vi: 'Người chơi khác sẽ không thấy trạng thái trực tuyến hoặc lần đăng nhập cuối của bạn trên hồ sơ, bảng xếp hạng hoặc trong giải đấu. Admin vẫn có thể thấy được.',
     kr: `다른 플레이어는 프로필, 리더보드 또는 토너먼트에서 회원님의 온라인 상태나 마지막 로그인을 볼 수 없습니다. 게임 마스터(GM)는 계속 볼 수 있습니다.`,
   },
   [LOCALE.ST_IGNORE_FRIEND_REQUESTS]: {
@@ -2914,7 +2916,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Všechny předměty',
     fr: 'Tous les objets',
     id: 'Semua Item',
-    vi: 'Tất cả vật phẩm',
+    vi: 'Tất cả trang bị',
     kr: `모든 아이템`,
   },
   [LOCALE.ALL_HEROES]: {
@@ -2947,7 +2949,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Hlavní hlasitost',
     fr: 'Volume principal',
     id: 'Volume Utama',
-    vi: 'Âm lượng chính',
+    vi: 'Âm lượng tổng',
     kr: `마스터 볼륨`,
   },
   [LOCALE.MOVEMENT]: {
@@ -2980,7 +2982,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '物品',
     fr: 'Articles',
     id: 'Barang',
-    vi: 'Đồ',
+    vi: 'Trang bị',
     kr: `아이템`,
   },
   [LOCALE.FRIENDS]: {
@@ -3013,7 +3015,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Apprendre',
     br: 'Aprender',
     id: 'mempelajari',
-    vi: 'Học',
+    vi: 'Học hỏi',
     kr: `학습`,
   },
   [LOCALE.ST_KEYBIND_MOVEUP]: {
@@ -3090,7 +3092,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '物品',
     fr: 'Objet',
     id: 'Item',
-    vi: 'Đồ',
+    vi: 'Trang bị',
     kr: `아이템`,
   },
   [LOCALE.ST_KEYBIND_RECALL]: {
@@ -3101,8 +3103,8 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '召回',
     fr: 'Rappel',
     id: 'Panggil Kembali',
-    vi: 'Gọi lại',
-    br: 'Biến về',
+    vi: 'Biến về',
+    br: 'Recall',
     kr: `귀환`,
   },
   [LOCALE.SCOREBOARD]: {
@@ -3124,7 +3126,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Afficher le chat',
     br: 'Mostrar Chat',
     id: 'Tampilkan Obrolan',
-    vi: 'Hiện Chat',
+    vi: 'Hiện trò chuyện',
     kr: `채팅 표시`,
   },
   [LOCALE.VIDEO]: {
@@ -3190,7 +3192,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '背景音樂',
     fr: 'Musique de fond',
     id: 'Musik Latar Belakang',
-    vi: 'Nhạc Nền',
+    vi: 'Nhạc nền',
     kr: `배경 음악`,
   },
   [LOCALE.LOBBY_SHARE_GAME]: {
@@ -3201,7 +3203,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '複製邀請連結',
     fr: 'Copier le lien pour inviter des amis',
     id: 'Salin tautan untuk mengundang teman',
-    vi: 'Sao chép liên kết để mời bạn bè',
+    vi: 'Sao chép đường liên kết để mời bạn bè',
     kr: `친구 초대 링크 복사`,
   },
   [LOCALE.PLAYER_NAME_COPIED]: {
@@ -3234,7 +3236,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '加入困難電腦',
     fr: 'Ajouter un bot difficile',
     id: 'Tambahkan Bot Sulit',
-    vi: 'Thêm Bot Khó',
+    vi: 'Thêm bot khó',
     kr: `하드 봇 추가`,
   },
   [LOCALE.ST_UI_SCALE]: {
@@ -3300,7 +3302,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '/exit - 離開遊戲 (僅限於練習模式)',
     fr: '/exit - quitter le jeu (pratique seulement)',
     id: '/exit - keluar dari permainan (hanya untuk latihan)',
-    vi: '/exit - thoát khỏi trò chơi (chỉ dành cho tập luyện)',
+    vi: '/exit - thoát khỏi trò chơi (chỉ dành cho luyện tướng)',
     kr: `/exit - 게임을 종료합니다 (연습 모드 전용)`,
   },
   [LOCALE.CHAT_COMMAND_LFG]: {
@@ -3333,7 +3335,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Il n'y a aucun lobby personnalisé.",
     br: 'Não há salas personalizadas.',
     id: 'Tidak ada lobi khusus.',
-    vi: 'Không có phòng tùy chỉnh nào.',
+    vi: 'Không có phòng nào.',
     kr: `커스텀 로비가 없습니다.`,
   },
   [LOCALE.RANK_UNRANKED]: {
@@ -3465,7 +3467,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Vous avez été promu à un nouveau rang',
     br: 'Você foi promovido para um novo cargo',
     id: 'Anda telah dipromosikan ke pangkat baru',
-    vi: 'Bạn đã được thăng chức lên xếp hạng mới',
+    vi: 'Bạn đã được thăng chức lên hạng mới',
     kr: `새로운 랭크로 승급했습니다`,
   },
   [LOCALE.POPUP_YOUR_REWARD]: {
@@ -3487,7 +3489,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Maîtrise du héros',
     br: 'Maestria do herói',
     id: 'Penguasaan Pahlawan',
-    vi: 'Thành thạo Tướng',
+    vi: 'Tinh thông',
     kr: `영웅 숙련도`,
   },
   [LOCALE.REQUIRED_LEVEL]: {
@@ -3509,7 +3511,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Héros requis',
     br: 'Heróis Necessários',
     id: 'Pahlawan yang Diperlukan',
-    vi: 'Nhân vật cần thiết',
+    vi: 'Số tướng yêu cầu',
     kr: `필요 영웅`,
   },
   [LOCALE.TOWER]: {
@@ -3531,7 +3533,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Observer Ward',
     br: 'Ward de Observação',
     id: 'Observer Ward',
-    vi: 'Mắt Xăm Soi',
+    vi: 'Mắt Quan Sát',
     kr: `감시 와드`,
   },
   [LOCALE.SENTRY_WARD]: {
@@ -3542,7 +3544,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Totem de sentinelle',
     br: 'Totem de Sentinela',
     id: 'Ward Pengawas',
-    vi: 'Cắm Mắt Canh Gác',
+    vi: 'Mắt Canh Gác',
     kr: `정찰 와드`,
   },
   [LOCALE.COOLDOWN_REDUCTION]: {
@@ -3553,7 +3555,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Réduction du temps de recharge',
     br: 'Redução de Tempo de Recarga',
     id: 'Pengurangan Waktu Tunggu',
-    vi: 'Giảm Thời Gian Hồi Chiêu',
+    vi: 'Giảm hồi chiêu',
     kr: `재사용 대기시간 감소`,
   },
   [LOCALE.PHYSICAL_RESISTANCE]: {
@@ -3564,7 +3566,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Résistance aux dégâts normaux',
     br: 'Resistência a Danos Normais',
     id: 'Resistensi Kerusakan Normal',
-    vi: 'Kháng Sát Thương Vật Lý',
+    vi: 'Kháng sát thương vật lí',
     kr: `방어력`,
   },
   [LOCALE.PLAY_PAGE_LOBBIES]: {
@@ -3608,7 +3610,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Skins',
     br: 'Skins',
     id: 'Kulit',
-    vi: 'Skins',
+    vi: 'Trang phục',
     kr: `스킨`,
   },
   [LOCALE.SHOP_FRAMES]: {
@@ -3663,7 +3665,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Liste',
     br: 'Lista',
     id: 'Daftar',
-    vi: 'Danh sách',
+    vi: 'Danh sách bạn bè',
     kr: `목록`,
   },
   [LOCALE.FRIENDS_PAGE_REQUESTS]: {
@@ -3674,7 +3676,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Demandes',
     br: 'Pedidos',
     id: 'Permintaan',
-    vi: 'Yêu cầu',
+    vi: 'Yêu cầu kết bạn',
     kr: `요청`,
   },
   [LOCALE.FRIENDS_IN_GAME]: {
@@ -3685,7 +3687,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'En jeu ({})',
     br: 'No jogo ({})',
     id: 'Dalam Permainan ({})',
-    vi: 'Trong Trò Chơi ({})',
+    vi: 'Trong trò chơi ({})',
     kr: `게임 중 ({})`,
   },
   [LOCALE.FRIENDS_IN_QUEUE]: {
@@ -3696,7 +3698,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'En attente ({})',
     br: 'Na fila ({})',
     id: 'Dalam Antrian ({})',
-    vi: 'Trong hàng đợi ({})',
+    vi: 'Đang ghép trận ({})',
     kr: `대기열 중 ({})`,
   },
   [LOCALE.FRIENDS_IN_LOBBY]: {
@@ -3707,7 +3709,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Dans le lobby privé',
     br: 'No Lobby Privado',
     id: 'Di Lobby Pribadi',
-    vi: 'Trong Lobby Riêng',
+    vi: 'Trong phòng',
     kr: `비공개 로비 중`,
   },
   [LOCALE.FRIENDS_SPECTATING]: {
@@ -3718,7 +3720,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Partie en spectateur ({})',
     br: 'Assistindo Jogo ({})',
     id: 'Menonton Permainan ({})',
-    vi: 'Xem Trận Đấu ({})',
+    vi: 'Xem trận đấu ({})',
     kr: `게임 관전 중 ({})`,
   },
   [LOCALE.FRIENDS_ONLINE]: {
@@ -3839,7 +3841,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Rejoindre la file d'attente",
     br: 'Entrar na fila de batalha',
     id: 'Antre untuk Bertarung',
-    vi: 'Xếp hàng chiến đấu',
+    vi: 'Đợi ghép trận đấu',
     kr: `전투 대기열 참가`,
   },
   [LOCALE.FRIENDS_SEND_WHISPER]: {
@@ -3872,7 +3874,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Rejoindre le lobby',
     br: 'Entrar no Lobby',
     id: 'Gabung ke Lobby',
-    vi: 'Tham gia Lobby',
+    vi: 'Tham gia phòng',
     kr: `로비 참가`,
   },
   [LOCALE.FRIENDS_VIEW_PROFILE]: {
@@ -3916,7 +3918,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Spectateurs: {}',
     br: 'Espectadores: {}',
     id: 'Penonton: {}',
-    vi: 'Khán giả: {}',
+    vi: 'Người xem: {}',
     kr: `관전자: {}`,
   },
   [LOCALE.CHAT_SYSTEM_MUTED]: {
@@ -3927,7 +3929,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Vous êtes réduit au silence pendant {} minutes.',
     br: 'Você está silenciado por {} minutos.',
     id: 'Anda dibisukan selama {} menit.',
-    vi: 'Bạn bị tắt tiếng trong {} phút.',
+    vi: 'Bạn bị vô hiệu hóa trò chuyện trong {} phút.',
     kr: `{}분 동안 채팅이 금지되었습니다.`,
   },
   [LOCALE.CHAT_SYSTEM_RENAME]: {
@@ -3949,7 +3951,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: ' a quitté la partie !',
     br: ' saiu do jogo!',
     id: ' telah meninggalkan permainan!',
-    vi: ' đã rời khỏi trò chơi!',
+    vi: ' đã rời khỏi trận đấu!',
     kr: `님이 게임을 떠났습니다!`,
   },
   [LOCALE.CHAT_SYSTEM_PLAYER_RECONNECTED]: {
@@ -3971,7 +3973,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: ' a abandonné la partie !',
     br: ' abandonou a partida!',
     id: ' telah meninggalkan permainan!',
-    vi: ' đã bỏ trận đấu!',
+    vi: ' đã từ bỏ trận đấu!',
     kr: `님이 게임을 포기했습니다!`,
   },
   [LOCALE.ABANDON_GAME]: {
@@ -3993,7 +3995,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Votre signalement a été envoyé aux Maîtres de jeu.',
     br: 'Seu relatório foi enviado para os GameMasters.',
     id: 'Laporan Anda telah dikirim ke GameMasters.',
-    vi: 'Báo cáo của bạn đã được gửi đến Nhà phát triển.',
+    vi: 'Báo cáo của bạn đã được gửi đến Admin.',
     kr: `신고가 게임 마스터에게 전송되었습니다.`,
   },
   [LOCALE.CHAT_SYSTEM_REPORT_ERR]: {
@@ -4004,7 +4006,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Impossible d'envoyer votre rapport aux GameMasters.",
     br: 'Não foi possível enviar seu relatório para os GameMasters.',
     id: 'Tidak dapat mengirim laporan Anda ke GameMasters.',
-    vi: 'Không thể gửi báo cáo của bạn đến Nhà phát triển.',
+    vi: 'Không thể gửi báo cáo của bạn đến Admin.',
     kr: `신고를 게임 마스터에게 전송하지 못했습니다.`,
   },
   [LOCALE.CHAT_SYSTEM_LFG]: {
@@ -4092,7 +4094,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Le joueur {} a été réduit au silence !',
     br: 'O jogador {} foi silenciado!',
     id: 'Pemain {} telah dibisukan!',
-    vi: 'Người chơi {} đã bị tắt tiếng!',
+    vi: 'Người chơi {} đã bị vô hiệu hóa trò chuyện!',
     kr: `플레이어 {}가 채팅 금지되었습니다!`,
   },
   [LOCALE.CHAT_ADMIN_UNMUTE]: {
@@ -4103,7 +4105,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Le joueur {} a été réactivé !',
     br: 'O jogador {} foi desmutado!',
     id: 'Pemain {} telah dibuka suaranya!',
-    vi: 'Người chơi {} đã được mở âm thanh!',
+    vi: 'Người chơi {} đã được quyền trò chuyện!',
     kr: `플레이어 {}의 채팅 금지가 해제되었습니다!`,
   },
   [LOCALE.CHAT_ADMIN_KICK]: {
@@ -4114,7 +4116,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Le joueur {} a été expulsé !',
     br: 'O jogador {} foi expulso!',
     id: 'Pemain {} telah dikeluarkan!',
-    vi: 'Người chơi {} đã bị kick!',
+    vi: 'Người chơi {} đã bị đuổi!',
     kr: `플레이어 {}가 추방되었습니다!`,
   },
   [LOCALE.CHAT_ADMIN_RENAME]: {
@@ -4202,7 +4204,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Le joueur {} est restreint de la file Classée jusqu'à ce qu'il gagne {} parties normales !",
     br: 'O jogador {} foi restrito da fila Ranqueada até vencer {} partidas casuais!',
     id: 'Pemain {} telah dibatasi dari antrean Ranked hingga memenangkan {} game casual!',
-    vi: 'Người chơi {} đã bị hạn chế xếp hạng cho đến khi thắng {} trận thường!',
+    vi: 'Người chơi {} đã bị khóa đấu hạng cho đến khi thắng {} trận đấu thường!',
     kr: `플레이어 {}님은 일반 게임 {}판을 승리할 때까지 랭크 대기열 참가가 제한됩니다!`,
   },
   [LOCALE.CHAT_ADMIN_BANQUEUE_ERR]: {
@@ -4213,7 +4215,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Impossible de restreindre le joueur "{}" de la file Classée !',
     br: 'Não foi possível restringir o jogador "{}" da fila Ranqueada!',
     id: 'Tidak dapat membatasi pemain "{}" dari antrean Ranked!',
-    vi: 'Không thể hạn chế người chơi "{}" khỏi hàng đợi xếp hạng!',
+    vi: 'Không thể hạn chế người chơi "{}" khỏi ghép trận đấu hạng!',
     kr: `플레이어 "{}"님을 랭크 대기열에서 제한할 수 없습니다!`,
   },
   [LOCALE.CHAT_ADMIN_UNBANQUEUE]: {
@@ -4224,7 +4226,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Le joueur {} a retrouvé l'accès à la file Classée !",
     br: 'O jogador {} teve o acesso à fila Ranqueada restaurado!',
     id: 'Pemain {} telah dipulihkan ke antrean Ranked!',
-    vi: 'Người chơi {} đã được khôi phục hàng đợi xếp hạng!',
+    vi: 'Người chơi {} đã được khôi phục ghép trận đấu hạng!',
     kr: `플레이어 {}님의 랭크 대기열 참가 제한이 해제되었습니다!`,
   },
   [LOCALE.CHAT_ADMIN_UNBANQUEUE_ERR]: {
@@ -4235,7 +4237,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Impossible de restaurer le joueur "{}" dans la file Classée !',
     br: 'Não foi possível restaurar o jogador "{}" à fila Ranqueada!',
     id: 'Tidak dapat memulihkan pemain "{}" ke antrean Ranked!',
-    vi: 'Không thể khôi phục người chơi "{}" vào hàng đợi xếp hạng!',
+    vi: 'Không thể khôi phục người chơi "{}" vào ghép trận đấu hạng!',
     kr: `플레이어 "{}"님을 랭크 대기열로 복구할 수 없습니다!`,
   },
   [LOCALE.CHAT_ADMIN_MUTE_ERR]: {
@@ -4246,7 +4248,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Impossible de rendre muet le joueur "{}" !',
     br: 'Não foi possível silenciar o jogador "{}"!',
     id: 'Tidak dapat membisukan pemain "{}"!',
-    vi: 'Không thể tắt tiếng người chơi "{}"!',
+    vi: 'Không thể vô hiệu hóa trò chuyện người chơi "{}"!',
     kr: `플레이어 "{}"님을 음소거할 수 없습니다!`,
   },
   [LOCALE.CHAT_ADMIN_UNMUTE_ERR]: {
@@ -4257,7 +4259,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Impossible de réactiver le son du joueur "{}" !',
     br: 'Não foi possível desmutar o jogador "{}"!',
     id: 'Tidak dapat membatalkan bisu pemain "{}"!',
-    vi: 'Không thể bỏ tắt tiếng cho người chơi "{}"!',
+    vi: 'Không thể gỡ bỏ vô hiệu hóa trò chuyện cho người chơi "{}"!',
     kr: `플레이어 "{}"님의 음소거를 해제할 수 없습니다!`,
   },
   [LOCALE.CHAT_ADMIN_KICK_ERR]: {
@@ -4268,7 +4270,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Impossible de kicker le joueur "{}" !',
     br: 'Não foi possível expulsar o jogador "{}"!',
     id: 'Tidak dapat mengeluarkan pemain "{}"!',
-    vi: 'Không thể đá người chơi "{}"!',
+    vi: 'Không thể đuổi người chơi "{}"!',
     kr: `플레이어 "{}"님을 추방할 수 없습니다!`,
   },
   [LOCALE.CHAT_ADMIN_RENAME_ERR]: {
@@ -4301,7 +4303,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '主動',
     fr: 'Actif',
     id: 'Aktif',
-    vi: 'Chủ động',
+    vi: 'Kích hoạt',
     kr: `액티브`,
   },
   [LOCALE.PASSIVE]: {
@@ -4312,7 +4314,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '被動',
     fr: 'PASSIF',
     id: 'Pasif',
-    vi: 'Bị động',
+    vi: 'Nội tại',
     kr: `패시브`,
   },
   [LOCALE.WATCH_AD_BUTTON]: {
@@ -4334,7 +4336,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Oui ! Regarder la publicité',
     br: 'Sim! Assista ao anúncio',
     id: 'Ya! Tonton Iklan',
-    vi: 'Có! Xem Quảng Cáo',
+    vi: 'Có! Xem quảng cáo',
     kr: `네! 광고 보기`,
   },
   [LOCALE.WATCH_AD_DIALOG_TITLE]: {
@@ -4378,7 +4380,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Pour obtenir les dernières nouvelles, mises à jour et communiquer avec d'autres joueurs !",
     br: 'Para obter as últimas notícias, atualizações e se comunicar com outros jogadores!',
     id: 'Untuk mendapatkan berita terbaru, pembaruan, dan berkomunikasi dengan pemain lain!',
-    vi: 'Để nhận được tin tức mới nhất, cập nhật và giao tiếp với những người chơi khác!',
+    vi: 'Để nhận được tin tức mới nhất, cập nhật và trò chuyện với những người chơi khác!',
     kr: `최신 소식과 업데이트를 받아보고 다른 플레이어들과 소통해보세요!`,
   },
   [LOCALE.JOIN_DISCORD_MODAL_ACTION_BUTTON]: {
@@ -4400,7 +4402,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Très bas',
     br: 'Muito baixo',
     id: 'Sangat Rendah',
-    vi: 'Rất Thấp',
+    vi: 'Rất thấp',
     kr: `매우 낮음`,
   },
   [LOCALE.SETTINGS_LOW]: {
@@ -4422,7 +4424,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Moyen',
     br: 'Médio',
     id: 'Sedang',
-    vi: 'Vừa',
+    vi: 'Trung bình',
     kr: `중간`,
   },
   [LOCALE.SETTINGS_HIGH]: {
@@ -4444,7 +4446,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Ultra',
     br: 'Ultra',
     id: 'Ultra',
-    vi: 'Siêu',
+    vi: 'Rất cao',
     kr: `울트라`,
   },
   [LOCALE.ST_GAME_ZOOM]: {
@@ -4455,7 +4457,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Zoom du jeu',
     br: 'Zoom do jogo',
     id: 'Zoom Permainan',
-    vi: 'Thu Phóng Trò Chơi',
+    vi: 'Thu phóng trò chơi',
     kr: `게임 확대`,
   },
   [LOCALE.SETTINGS_GAME_ZOOM_REGULAR]: {
@@ -4477,7 +4479,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Rapproché',
     br: 'Ampliado',
     id: 'Diperbesar',
-    vi: 'Phóng To',
+    vi: 'Phóng to',
     kr: `확대`,
   },
   [LOCALE.QUICKCHAT]: {
@@ -4488,7 +4490,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Chat rapide',
     br: 'Bate-papo rápido',
     id: 'Obrolan Cepat',
-    vi: 'Trò Chuyện Nhanh',
+    vi: 'Trò chuyện nhanh',
     kr: `빠른 채팅`,
   },
   [LOCALE.CHAT_EMOTE_AUTOCOMPLETE_HINT]: {
@@ -4510,7 +4512,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Acheter un article',
     br: 'Comprar item',
     id: 'Beli barang',
-    vi: 'Mua đồ',
+    vi: 'Mua',
     kr: `아이템 구매`,
   },
   [LOCALE.PURCHASED]: {
@@ -4708,7 +4710,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Vous jouez en tant qu'invité",
     br: 'Você está jogando como convidado',
     id: 'Anda bermain sebagai tamu',
-    vi: 'Bạn đang chơi với tư cách khách',
+    vi: 'Bạn đang chơi với tài khoản khách',
     kr: `게스트로 플레이 중입니다`,
   },
   [LOCALE.GUEST_CLAIM_BANNER_ACTION]: {
@@ -4730,7 +4732,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Le compte existe déjà',
     br: 'Conta já existe',
     id: 'Akun Sudah Ada',
-    vi: 'Tài Khoản Đã Tồn Tại',
+    vi: 'Tài khoản đã tồn tại',
     kr: `이미 존재하는 계정`,
   },
   [LOCALE.GUEST_CLAIM_ACCOUNT_EXISTS_MESSAGE]: {
@@ -4741,7 +4743,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Ce compte a déjà une progression enregistrée. Continuer effacera votre progression d'invité actuelle.",
     br: 'Esta conta já possui progresso salvo. Continuar irá descartar seu progresso atual de convidado.',
     id: 'Akun ini sudah memiliki progres tersimpan. Melanjutkan akan menghapus progres tamu Anda saat ini.',
-    vi: 'Tài khoản này đã có tiến trình đã lưu. Tiếp tục sẽ xóa tiến trình khách hiện tại của bạn.',
+    vi: 'Tài khoản này đã có tiến trình đã lưu. Tiếp tục sẽ xóa tiến trình tài khoản khách hiện tại của bạn.',
     kr: `이 계정에는 이미 저장된 진행 상황이 있습니다. 계속 진행하면 현재 게스트 진행 상황이 삭제됩니다.`,
   },
   [LOCALE.GUEST_CLAIM_CONTINUE]: {
@@ -4763,7 +4765,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Échec de la connexion',
     br: 'Falha ao entrar',
     id: 'Gagal Masuk',
-    vi: 'Đăng Nhập Thất Bại',
+    vi: 'Đăng nhập thất bại',
     kr: `로그인 실패`,
   },
   [LOCALE.GUEST_CLAIM_ERROR_MESSAGE]: {
@@ -4785,7 +4787,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Supprimer l'ami",
     br: 'Remover amigo',
     id: 'Hapus Teman',
-    vi: 'Xóa bạn bè',
+    vi: 'Xóa kết bè',
     kr: `친구 삭제`,
   },
   [LOCALE.PURCHASE_ITEM_TITLE]: {
@@ -4796,7 +4798,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Confirmer l'achat",
     br: 'Confirmar compra',
     id: 'Konfirmasi pembelian',
-    vi: 'Xác nhận mua',
+    vi: 'Xác nhận',
     kr: `구매 확인`,
   },
   [LOCALE.RECEIVE_ITEM]: {
@@ -4807,7 +4809,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Vous avez reçu un nouvel article ! Félicitations !',
     br: 'Você recebeu um novo item! Parabéns!',
     id: 'Anda menerima item baru! Selamat!',
-    vi: 'Bạn đã nhận được một món đồ mới! Chúc mừng!',
+    vi: 'Bạn đã nhận được một món trang bị mới! Chúc mừng!',
     kr: `새로운 아이템을 획득했습니다! 축하합니다!`,
   },
   [LOCALE.OK]: {
@@ -4818,7 +4820,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "D'accord",
     br: 'OK',
     id: 'Baik',
-    vi: 'Được rồi',
+    vi: 'Được',
     kr: `확인`,
   },
   [LOCALE.SAFE_TO_LEAVE]: {
@@ -4840,7 +4842,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Se connecter avec un compte CrazyGames',
     br: 'Login com a conta CrazyGames',
     id: 'Masuk dengan Akun CrazyGames',
-    vi: 'Đăng nhập bằng Tài khoản CrazyGames',
+    vi: 'Đăng nhập bằng tài khoản CrazyGames',
     kr: `CrazyGames 계정으로 로그인`,
   },
   [LOCALE.DEATH_RECAP]: {
@@ -4851,7 +4853,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Récapitulatif de la mort',
     br: 'Recapitulação da morte',
     id: 'Ringkasan Kematian',
-    vi: 'Tóm tắt cái chết',
+    vi: 'Tóm tắt hạ gục',
     kr: `사망 요약`,
   },
   [LOCALE.DAYS]: {
@@ -4895,7 +4897,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '遊戲模式',
     fr: 'Mode de jeu',
     id: 'Mode Permainan',
-    vi: 'Chế độ trò chơi',
+    vi: 'Chế độ trận đấu',
     kr: `게임 모드`,
   },
   [LOCALE.LOBBY_MAX_DURATION_MINUTES]: {
@@ -4905,7 +4907,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     id: 'Durasi Maksimal (Menit)',
     ru: 'Максимальная длительность (минуты)',
     fr: 'Durée maximale (minutes)',
-    vi: 'Thời gian Cao Nhat (phút)',
+    vi: 'Thời gian cao nhất (phút)',
     zh: '最長時長(分鐘)',
     kr: `최대 시간(분)`,
   },
@@ -4917,7 +4919,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: 'Turnajová hra',
     fr: 'Partie de tournoi',
     id: 'Permainan Turnamen',
-    vi: 'Trận đấu Giải đấu',
+    vi: 'Giải đấu',
     kr: `토너먼트 게임`,
   },
   [LOCALE.LOBBY_MAX_POINTS]: {
@@ -4928,7 +4930,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '最大分數',
     fr: 'Points maximum',
     id: 'Poin Maksimal',
-    vi: 'Diểm Cao Nhat',
+    vi: 'Điểm cao nhất',
     kr: `최대 점수`,
   },
 
@@ -5007,7 +5009,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Soignez {} PV',
     br: 'Cure {} de PV',
     id: 'Sembuhkan {} HP',
-    vi: 'Hồi {} HP',
+    vi: 'Hồi {} máu',
     kr: `체력 {} 회복하기`,
   },
   [LOCALE.QUEST_TOWER_DAMAGE]: {
@@ -5039,7 +5041,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '贏得 {} 場積分賽',
     br: 'Vença {} partidas ranqueadas',
     id: 'Menangkan {} permainan ranked',
-    vi: 'Thắng {} trận xếp hạng',
+    vi: 'Thắng {} trận đấu hạng',
     fr: 'Gagnez {} parties classées',
     kr: `랭크 게임 {}판 승리하기`,
   },
@@ -5073,7 +5075,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: '(objet #{})',
     br: '(item #{})',
     id: '(item #{})',
-    vi: '(vật phẩm #{})',
+    vi: '(trang bị #{})',
     kr: `(아이템 #{})`,
   },
   [LOCALE.ACTIVE_QUESTS]: {
@@ -5106,7 +5108,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Progression',
     br: 'Progresso',
     id: 'Kemajuan',
-    vi: 'Tiến độ',
+    vi: 'Tiến trình',
     kr: `진행도`,
   },
   [LOCALE.QUEST_CLAIMED]: {
@@ -5172,7 +5174,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Suivi des quêtes en jeu (mort ou raccourci)',
     br: 'Painel de missões na partida (morto ou atalho)',
     id: 'Pelacak misi dalam pertandingan (saat mati / hotkey)',
-    vi: 'Theo dõi nhiệm vụ trong trận (khi chết hoặc phím tắt)',
+    vi: 'Theo dõi nhiệm vụ trong trận (khi chết hoặc sử dụng phím tắt)',
     kr: `게임 내 퀘스트 추적기 표시(사망 시 또는 전환 시)`,
   },
   [LOCALE.RECOMMENDED_BUILDS_TITLE]: {
@@ -5183,7 +5185,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Builds recommandés',
     br: 'Builds recomendadas',
     id: 'Build yang direkomendasikan',
-    vi: 'Lối lên đồ đề xuất',
+    vi: 'Trang bị đề xuất',
     kr: `추천 빌드`,
   },
   [LOCALE.RECOMMENDED_BUILDS_TOOLTIP]: {
@@ -5194,7 +5196,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Affiche uniquement les objets les plus pertinents dans la boutique et met en évidence les objets recommandés',
     br: 'Mostra apenas os itens mais relevantes na loja e destaca os itens recomendados',
     id: 'Tampilkan hanya item paling relevan di UI toko dan sorot item yang direkomendasikan',
-    vi: 'Chỉ hiển thị vật phẩm phù hợp nhất trong cửa hàng và làm nổi bật vật phẩm đề xuất',
+    vi: 'Chỉ hiển thị trang bị phù hợp nhất trong cửa hàng và làm nổi bật trang bị đề xuất',
     kr: `상점 UI에 가장 관련성 높은 아이템만 표시하고 추천 아이템을 강조 표시합니다`,
   },
   [LOCALE.ST_ENABLE_TIPS]: {
@@ -5205,7 +5207,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Activer les astuces',
     br: 'Ativar dicas',
     id: 'Aktifkan Tips',
-    vi: 'Bật mẹo',
+    vi: 'Mẹo',
     kr: `팁 활성화`,
   },
   [LOCALE.RECOMMENDED_ITEM_LABEL]: {
@@ -5216,7 +5218,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Objet recommandé',
     br: 'Item recomendado',
     id: 'Item yang direkomendasikan',
-    vi: 'Vật phẩm được đề xuất',
+    vi: 'Trang bị đề xuất',
     kr: `추천 아이템`,
   },
   [LOCALE.RECOMMENDED_ITEMS_FILTER_HINT]: {
@@ -5227,7 +5229,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Remarque : désactivez 'Afficher uniquement les objets recommandés' dans les paramètres pour tout voir.",
     br: "Observação: desative 'Mostrar apenas itens recomendados' nas Configurações para ver todos os itens.",
     id: "Catatan: nonaktifkan 'Tampilkan hanya item yang direkomendasikan' di Pengaturan untuk melihat semua item.",
-    vi: "Lưu ý: tắt 'Chỉ hiển thị vật phẩm được đề xuất' trong Cài đặt để xem tất cả vật phẩm.",
+    vi: "Lưu ý: tắt 'Trang bị đề xuất' trong Cài đặt để xem tất cả vật phẩm.",
     kr: `참고: 모든 아이템을 보려면 설정에서 '추천 아이템만 표시'를 꺼주세요.`,
   },
   [LOCALE.DEATH_TIP_KEYBINDS]: {
@@ -5238,7 +5240,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Vous pouvez personnaliser vos touches et le Chat rapide dans les Paramètres. Cliquez sur l'icône d'engrenage en haut à droite de l'écran.",
     br: 'Você pode personalizar seus atalhos e o Chat Rápido nas Configurações. Clique no ícone de engrenagem no canto superior direito da tela.',
     id: 'Kamu bisa menyesuaikan keybinding dan Quick Chat di Pengaturan. Klik ikon roda gigi di pojok kanan atas layar.',
-    vi: 'Bạn có thể tùy chỉnh phím tắt và Chat Nhanh trong Cài đặt. Nhấn vào biểu tượng bánh răng ở góc trên bên phải màn hình.',
+    vi: 'Bạn có thể tùy chỉnh phím tắt và trò chuyện nhanh trong Cài đặt. Nhấn vào biểu tượng bánh răng ở góc trên bên phải màn hình.',
     kr: `설정에서 키 바인딩과 빠른 채팅을 커스터마이즈할 수 있습니다. 화면 오른쪽 상단의 톱니바퀴 아이콘을 클릭하세요.`,
   },
   [LOCALE.DEATH_TIP_T3_ITEMS]: {
@@ -5249,7 +5251,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Chaque objet de Rang 3 possède un puissant effet passif ou actif qui peut considérablement améliorer votre héros. Choisissez vos objets avec soin.',
     br: 'Todo item de Nível 3 possui um efeito passivo ou ativo poderoso que pode melhorar drasticamente seu herói. Escolha seus itens com sabedoria.',
     id: 'Setiap item Tier 3 memiliki efek pasif atau aktif yang kuat dan dapat meningkatkan hero-mu secara drastis. Pilih itemmu dengan bijak.',
-    vi: 'Mỗi vật phẩm Bậc 3 đều có hiệu ứng bị động hoặc chủ động mạnh mẽ, có thể cải thiện đáng kể tướng của bạn. Hãy chọn vật phẩm thật khôn ngoan.',
+    vi: 'Mỗi trang bị Bậc 3 đều có hiệu ứng nội tại hoặc kích hoạt mạnh mẽ, có thể cải thiện đáng kể tướng của bạn. Hãy chọn vật phẩm thật khôn ngoan.',
     kr: `모든 티어 3 아이템에는 영웅을 크게 강화할 수 있는 강력한 패시브 또는 액티브 효과가 있습니다. 아이템을 신중하게 선택하세요.`,
   },
   [LOCALE.DEATH_TIP_SELL_ITEM]: {
@@ -5260,7 +5262,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Vous pouvez faire un clic droit sur un objet de votre inventaire pour le vendre.',
     br: 'Você pode clicar com o botão direito em um item no seu inventário para vendê-lo.',
     id: 'Kamu bisa klik kanan pada item di inventarismu untuk menjualnya.',
-    vi: 'Bạn có thể nhấn chuột phải vào một vật phẩm trong túi đồ để bán nó.',
+    vi: 'Bạn có thể nhấn chuột phải vào một trang bị trong túi đồ để bán nó.',
     kr: `인벤토리에 있는 아이템을 마우스 오른쪽 버튼으로 클릭하면 판매할 수 있습니다.`,
   },
   [LOCALE.DEATH_TIP_COMEBACK]: {
@@ -5293,7 +5295,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Une Rune d'or apparaît à 00:00 puis toutes les 90 secondes. Elle accorde de l'XP et de l'or à l'équipe qui la capture.",
     br: 'Uma Runa de Ouro surge em 00:00 e depois a cada 90 segundos. Ela concede XP e ouro para a equipe que a capturar.',
     id: 'Rune Emas muncul pada 00:00 dan kemudian setiap 90 detik. Rune ini memberi XP dan emas untuk tim yang mengambilnya.',
-    vi: 'Rune Vàng xuất hiện lúc 00:00 và sau đó cứ mỗi 90 giây. Nó cho kinh nghiệm và vàng cho đội nào bắt được nó.',
+    vi: 'Ngọc Vàng xuất hiện lúc 00:00 và sau đó cứ mỗi 90 giây. Nó cho kinh nghiệm và vàng cho đội nào lấy được nó.',
     kr: `골드 룬은 00:00에 등장하며, 이후 90초마다 다시 등장합니다. 이를 차지한 팀은 경험치와 골드를 얻습니다.`,
   },
   [LOCALE.DEATH_TIP_MINION_TANK_TOWER]: {
@@ -5315,7 +5317,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Achetez des consommables si vous avez un emplacement d'inventaire libre. Les Observer Wards, potions de soin et Vile Flasks peuvent changer le cours de la partie.",
     br: 'Compre consumíveis se tiver um slot de inventário livre. Observer Wards, Poções de Cura e Vile Flasks podem mudar o rumo da partida.',
     id: 'Beli consumable jika kamu punya slot inventaris kosong. Observer Ward, Healing Potion, dan Vile Flask bisa sangat menentukan jalannya pertandingan.',
-    vi: 'Hãy mua vật phẩm tiêu hao nếu bạn còn ô trống trong túi đồ. Mắt Xăm Soi, Bình Máu và Vile Flask có thể thay đổi cục diện trận đấu.',
+    vi: 'Hãy mua trang bị dùng một lần nếu bạn còn ô trống trong túi đồ. Mắt Quan Sát, Bình Máu và Bình Độc có thể thay đổi cục diện trận đấu.',
     kr: `인벤토리에 빈 슬롯이 있다면 소비 아이템을 구매하세요. 감시 와드, 회복 물약, 바일 플라스크는 판도를 바꿀 수 있습니다.`,
   },
   [LOCALE.DEATH_TIP_STACKING_POTIONS]: {
@@ -5326,7 +5328,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "La Potion de Magie et la Potion Corrompue accordent des bonus permanents de Dégâts d'Attaque et de Puissance des Sorts, cumulables jusqu'à 5 fois. Un excellent choix s'il vous reste un emplacement d'inventaire libre.",
     br: 'Potion of Magic e Corrupted Potion concedem bônus permanentes de Dano de Ataque e Poder de Habilidade, acumulando até 5 vezes. Ótimas escolhas se você tiver um slot de inventário vazio.',
     id: 'Potion of Magic dan Corrupted Potion memberi bonus permanen Attack Damage dan Ability Power, bisa menumpuk hingga 5 kali. Pilihan bagus jika kamu punya satu slot inventaris kosong.',
-    vi: 'Potion of Magic và Corrupted Potion cho chỉ số Sát Thương Vật Lý và Sức Mạnh Phép Thuật vĩnh viễn, cộng dồn tối đa 5 lần. Đây là lựa chọn tuyệt vời nếu bạn còn một ô trống trong túi đồ.',
+    vi: 'Thuốc Phép và Thuốc Sức Mạnh cho chỉ số sát thương vật lí và sức mạnh phép vĩnh viễn, cộng dồn tối đa 5 lần. Đây là lựa chọn tuyệt vời nếu bạn còn một ô trống trong túi đồ.',
     kr: `마법의 물약과 타락한 물약은 영구적으로 공격력과 주문력 보너스를 부여하며, 최대 5번까지 중첩됩니다. 인벤토리에 빈 슬롯이 하나 있다면 훌륭한 선택입니다.`,
   },
   [LOCALE.DEATH_TIP_ITEM_KEYBINDS]: {
@@ -5337,7 +5339,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Les objets peuvent être activés grâce aux touches affichées au-dessus d'eux.",
     br: 'Os itens podem ser ativados usando os atalhos exibidos acima deles.',
     id: 'Item bisa diaktifkan menggunakan keybind yang ditampilkan di atasnya.',
-    vi: 'Vật phẩm có thể được kích hoạt bằng phím tắt hiển thị phía trên chúng.',
+    vi: 'Trang bị có thể được kích hoạt bằng phím tắt hiển thị phía trên chúng.',
     kr: `아이템은 위에 표시된 키 바인딩을 사용해 활성화할 수 있습니다.`,
   },
   [LOCALE.DEATH_TIP_POWER_RUNE]: {
@@ -5348,7 +5350,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Une Rune de Pouvoir apparaît sur la plateforme du haut à 1:00 puis toutes les minutes. Elle offre une puissante amélioration temporaire.',
     br: 'Uma Runa de Poder surge na plataforma superior em 1:00 e depois a cada minuto. Ela concede um poderoso aprimoramento temporário.',
     id: 'Rune Kekuatan muncul di platform atas pada 1:00 dan kemudian setiap menit. Rune ini memberikan peningkatan sementara yang kuat.',
-    vi: 'Rune Sức Mạnh xuất hiện trên nền tảng phía trên lúc 1:00 và sau đó mỗi phút. Nó mang lại một sự tăng cường tạm thời mạnh mẽ.',
+    vi: 'Ngọc Sức Mạnh xuất hiện ở phía trên lúc 1:00 và sau đó mỗi phút. Nó mang lại một sự tăng cường chỉ số trong thời gian ngắn.',
     kr: `파워 룬은 1:00에 상단 플랫폼에 등장하며, 이후 매분 등장합니다. 강력한 일시적 강화 효과를 제공합니다.`,
   },
   [LOCALE.ST_KEYBIND_TOGGLE_IN_GAME_QUESTS]: {
@@ -5488,7 +5490,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Seul le chef du groupe peut lancer la recherche',
     br: 'Apenas o líder do grupo pode entrar na fila',
     id: 'Hanya ketua party yang bisa mulai matchmaking',
-    vi: 'Chỉ trưởng nhóm mới có thể tìm trận',
+    vi: 'Chỉ đội trưởng mới có thể tìm trận',
     kr: `파티장만 매치 대기열에 등록할 수 있습니다`,
   },
 
@@ -5500,7 +5502,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Seul le chef peut créer ou rejoindre des parties personnalisées',
     br: 'Apenas o líder pode criar ou entrar em lobbies personalizados',
     id: 'Hanya ketua party yang bisa membuat atau masuk lobby kustom',
-    vi: 'Chỉ trưởng nhóm có thể tạo hoặc vào phòng tùy chỉnh',
+    vi: 'Chỉ đội trưởng có thể tạo hoặc vào phòng riêng',
     kr: `파티장만 커스텀 로비를 생성하거나 참가할 수 있습니다`,
   },
 
@@ -5524,7 +5526,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Quelqu’un est déjà dans une partie personnalisée',
     br: 'Alguém já está em lobby personalizado',
     id: 'Seseorang di party sudah di lobby kustom',
-    vi: 'Có người đã ở trong phòng tùy chỉnh',
+    vi: 'Có người đã ở trong phòng riêng',
     kr: `파티원 중 한 명이 이미 커스텀 로비에 있습니다`,
   },
 
@@ -5536,7 +5538,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Quelqu’un du groupe est prêt pour un match de tournoi',
     br: 'Alguém no grupo está pronto para uma partida de torneio',
     id: 'Seseorang di party sudah siap untuk pertandingan turnamen',
-    vi: 'Có người trong tổ đội đã sẵn sàng cho trận giải đấu',
+    vi: 'Có người trong tổ đội đã sẵn sàng cho giải đấu',
     kr: `파티원 중 한 명이 토너먼트 경기 준비 상태입니다`,
   },
 
@@ -5560,7 +5562,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Quelqu’un dans le groupe est actuellement bloqué de la file Classée',
     br: 'Alguém no grupo está banido da fila Ranqueada agora',
     id: 'Seseorang di party sedang diblokir dari antrean Ranked',
-    vi: 'Có người trong nhóm hiện đang bị cấm xếp hạng',
+    vi: 'Có người trong tổ đội hiện đang bị cấm đấu hạng',
     kr: `파티원 중 한 명이 지금은 랭크 대기열에서 제한되어 있습니다`,
   },
 
@@ -5572,7 +5574,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Quelqu’un est hors ligne',
     br: 'Alguém está offline',
     id: 'Seseorang di party sedang offline',
-    vi: 'Có người đang offline',
+    vi: 'Có người ngoại tuyến',
     kr: `파티원 중 한 명이 오프라인 상태입니다`,
   },
 
@@ -5596,7 +5598,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Le joueur est hors ligne',
     br: 'Jogador está offline',
     id: 'Pemain sedang offline',
-    vi: 'Người chơi đang offline',
+    vi: 'Người chơi ngoại tuyến',
     kr: `플레이어가 오프라인 상태입니다`,
   },
 
@@ -5608,7 +5610,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Les invités ne peuvent pas utiliser le groupe',
     br: 'Jogadores convidados não podem usar grupo',
     id: 'Pemain tamu tidak bisa menggunakan party',
-    vi: 'Khách không thể dùng tổ đội',
+    vi: 'Khách không thể chơi tổ đội',
     kr: `게스트 플레이어는 파티를 사용할 수 없습니다`,
   },
 
@@ -5678,7 +5680,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "La file classée en groupe n'affronte que d'autres groupes.",
     br: 'A fila ranqueada em grupo enfrenta apenas outros grupos.',
     id: 'Queue ranked party hanya akan bertemu party lain.',
-    vi: 'Xếp hạng tổ đội chỉ ghép với các tổ đội khác.',
+    vi: 'Đấu hạng tổ đội chỉ ghép với các tổ đội khác.',
     kr: `파티 랭크 대기열은 다른 파티와만 매칭됩니다.`,
   },
 
@@ -5690,7 +5692,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Seul le chef du groupe peut lancer la recherche ou créer une partie personnalisée.',
     br: 'Apenas o líder do grupo pode entrar na fila ou criar um lobby personalizado.',
     id: 'Hanya ketua party yang bisa mulai matchmaking atau membuat lobby kustom.',
-    vi: 'Chỉ trưởng nhóm mới có thể tìm trận hoặc tạo phòng tùy chỉnh.',
+    vi: 'Chỉ đội trưởng mới có thể tìm trận hoặc tạo phòng riêng.',
     kr: `파티장만 매치 대기열에 등록하거나 커스텀 로비를 생성할 수 있습니다.`,
   },
 
@@ -5713,7 +5715,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Parties récentes en classement',
     br: 'Partidas recentes em ranque',
     id: 'Permainan Ranked Terbaru',
-    vi: 'Trận đã chơi gần đây',
+    vi: 'Trận gần đây',
     kr: `최근 랭크 게임`,
   },
   [LOCALE.GAME_LENGTH]: {
@@ -5746,7 +5748,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: 'Aucune partie en classement trouvée.',
     br: 'Nenhuma partida em ranque encontrada.',
     id: 'Tidak ada pertandingan rank yang ditemukan.',
-    vi: 'Không tìm thấy trận đã chơi gần đây.',
+    vi: 'Không tìm thấy các trận gần đây.',
     kr: `아직 랭크 매치를 찾을 수 없습니다.`,
   },
 
@@ -5847,7 +5849,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '您的檢舉已送出給遊戲管理員。',
     fr: 'Votre signalement a été envoyé aux GameMasters.',
     id: 'Laporan Anda telah dikirim ke GameMaster.',
-    vi: 'Báo cáo của bạn đã được gửi đến GameMaster.',
+    vi: 'Báo cáo của bạn đã được gửi đến Admin.',
     kr: `신고가 게임마스터에게 전송되었습니다.`,
   },
   [LOCALE.REPORT_PLAYER_ERR_NOT_IN_MATCH]: {
@@ -5968,7 +5970,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '遊戲管理員回覆',
     fr: 'Réponse du GameMaster',
     id: 'Jawaban GameMaster',
-    vi: 'Phản hồi từ GameMaster',
+    vi: 'Phản hồi từ Admin',
     kr: `게임마스터 답변`,
   },
   [LOCALE.TEAMS_TAB]: {
@@ -6276,7 +6278,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '你已經在一個團隊中。',
     fr: 'Vous êtes déjà dans une équipe.',
     id: 'Anda sudah berada di sebuah tim.',
-    vi: 'Bạn đã ở trong một đội.',
+    vi: 'Bạn đã ở trong một đội khác.',
     kr: `이미 팀에 속해 있습니다.`,
   },
   [LOCALE.TEAM_ERROR_NOT_IN_TEAM]: {
@@ -6496,7 +6498,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '最低玩家等級',
     fr: 'Niveau minimum du joueur',
     id: 'Level Pemain Minimum',
-    vi: 'Cấp độ người chơi tối thiểu',
+    vi: 'Cấp độ tối thiểu',
     kr: `최소 플레이어 레벨`,
   },
   [LOCALE.TOURNAMENT_MIN_MMR_LABEL]: {
@@ -6507,7 +6509,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '最低玩家MMR',
     fr: 'MMR minimum du joueur',
     id: 'MMR Pemain Minimum',
-    vi: 'MMR người chơi tối thiểu',
+    vi: 'MMR tối thiểu',
     kr: `최소 플레이어 MMR`,
   },
   [LOCALE.TOURNAMENT_STYLE_SINGLE_ELIM]: {
@@ -6628,7 +6630,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '只有遊戲管理員可以這麼做。',
     fr: 'Seul un Maître de Jeu peut faire cela.',
     id: 'Hanya Game Master yang dapat melakukan itu.',
-    vi: 'Chỉ Game Master mới có thể làm điều đó.',
+    vi: 'Chỉ Admin mới có thể làm điều đó.',
     kr: `게임마스터만 이 작업을 할 수 있습니다.`,
   },
   [LOCALE.TOURNAMENT_ERROR_OVERLAPPING_TIMEFRAME]: {
@@ -6771,7 +6773,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '賽程表',
     fr: 'Tableau',
     id: 'Bagan',
-    vi: 'Sơ đồ đấu',
+    vi: 'Sơ đồ trận đấu',
     kr: `대진표`,
   },
   [LOCALE.TOURNAMENT_HERO_STATS_TAB]: {
@@ -6793,7 +6795,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '賽程表將在報名結束後生成。',
     fr: 'Le tableau sera généré à la fin des inscriptions du tournoi.',
     id: 'Bagan akan dibuat setelah pendaftaran turnamen selesai.',
-    vi: 'Sơ đồ đấu sẽ được tạo khi đăng ký giải đấu kết thúc.',
+    vi: 'Sơ đồ trận đấu sẽ được tạo khi thời gian đăng ký giải đấu kết thúc.',
     kr: `대진표는 토너먼트 등록이 종료되면 생성됩니다.`,
   },
   [LOCALE.TOURNAMENT_NO_TEAMS_REGISTERED]: {
@@ -6848,7 +6850,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '此錦標賽尚未開放報名。',
     fr: 'Les inscriptions ne sont pas ouvertes pour ce tournoi.',
     id: 'Pendaftaran untuk turnamen ini belum dibuka.',
-    vi: 'Đăng ký cho giải đấu này chưa mở.',
+    vi: 'Đăng ký cho giải đấu này chưa được mở.',
     kr: `이 토너먼트는 등록이 열려 있지 않습니다.`,
   },
   [LOCALE.TOURNAMENT_CONFIRM_ROSTER_TITLE]: {
@@ -7024,7 +7026,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '請先離開目前的遊戲或自訂大廳，再準備錦標賽比賽。',
     fr: "Quittez d'abord votre partie ou lobby personnalisé, puis confirmez le match du tournoi.",
     id: 'Keluar dulu dari game atau custom lobby saat ini, lalu siap untuk pertandingan turnamen.',
-    vi: 'Hãy rời trận hiện tại hoặc phòng tùy chỉnh, rồi sẵn sàng cho trận giải đấu.',
+    vi: 'Hãy rời trận hiện tại hoặc phòng riêng, rồi sẵn sàng cho trận giải đấu.',
     kr: `현재 게임 또는 커스텀 로비를 먼저 나간 뒤 토너먼트 경기를 준비해 주세요.`,
   },
   [LOCALE.TOURNAMENT_MATCH_READY_BUTTON]: {
@@ -7211,7 +7213,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '勝',
     fr: 'V',
     id: 'M',
-    vi: 'T',
+    vi: 'W',
     kr: `승`,
   },
   [LOCALE.TOURNAMENT_GROUP_LOSSES_COLUMN]: {
@@ -7222,7 +7224,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '負',
     fr: 'D',
     id: 'K',
-    vi: 'B',
+    vi: 'L',
     kr: `패`,
   },
   [LOCALE.TOURNAMENT_GROUP_POINTS_COLUMN]: {
@@ -7277,7 +7279,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '總決賽',
     fr: 'Grande finale',
     id: 'Final Besar',
-    vi: 'Chung kết tổng',
+    vi: 'Chung kết',
     kr: `그랜드 파이널`,
   },
   [LOCALE.TOURNAMENT_ROUND_LABEL]: {
@@ -7431,7 +7433,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '初始金幣',
     fr: 'Or de départ',
     id: 'Emas Awal',
-    vi: 'Vàng khởi đầu',
+    vi: 'Vàng ban đầu',
     kr: `시작 골드`,
   },
   [LOCALE.TOURNAMENT_LOBBY_START_LEVEL_LABEL]: {
@@ -7442,7 +7444,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '初始等級',
     fr: 'Niveau de départ',
     id: 'Level Awal',
-    vi: 'Cấp độ khởi đầu',
+    vi: 'Cấp độ ban đầu',
     kr: `시작 레벨`,
   },
   [LOCALE.TOURNAMENT_LOBBY_ABILITY_HASTE_LABEL]: {
@@ -7453,7 +7455,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '技能急速',
     fr: 'Accélération des capacités',
     id: 'Percepatan Kemampuan',
-    vi: 'Tốc độ chiêu thức',
+    vi: 'Hồi chiêu',
     kr: `스킬 가속`,
   },
   [LOCALE.TOURNAMENT_LOBBY_MAX_POINTS_LABEL]: {
@@ -7486,7 +7488,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '盲選',
     fr: "Choix à l'aveugle",
     id: 'Pilihan Buta',
-    vi: 'Chọn tướng bí mật',
+    vi: 'Blind Pick',
     kr: `블라인드 픽`,
   },
   [LOCALE.TOURNAMENT_STATE_STARTED]: {
@@ -7552,7 +7554,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '標籤',
     fr: 'Tag',
     id: 'Tag',
-    vi: 'Tag',
+    vi: 'Thẻ',
     kr: `태그`,
   },
   [LOCALE.TOURNAMENT_TEAMS_TABLE_MEMBERS]: {
@@ -7662,7 +7664,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '冠軍',
     fr: 'Vainqueur',
     id: 'Pemenang',
-    vi: 'Nhà vô địch',
+    vi: 'Quán quân',
     kr: `우승자`,
   },
   [LOCALE.TOURNAMENT_FIRST_PLACE_REWARD_LABEL]: {
@@ -7706,7 +7708,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '報名將於 {} 開放',
     fr: 'Les inscriptions ouvrent {}',
     id: 'Pendaftaran dibuka {}',
-    vi: 'Đăng ký mở vào {}',
+    vi: 'Đăng ký giải đấu mở vào {}',
     kr: `등록이 {}에 시작됩니다`,
   },
   [LOCALE.TOURNAMENT_REGISTRATION_OPEN_NOW_LABEL]: {
@@ -7717,7 +7719,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '報名現已開放',
     fr: 'Les inscriptions sont ouvertes',
     id: 'Pendaftaran sedang dibuka',
-    vi: 'Đăng ký đang mở',
+    vi: 'Đăng ký giải đấu đang mở',
     kr: `지금 등록 가능합니다`,
   },
   [LOCALE.TOURNAMENT_REGISTRATION_CLOSED_STATUS_LABEL]: {
@@ -7728,7 +7730,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '報名已關閉',
     fr: 'Les inscriptions sont fermées',
     id: 'Pendaftaran ditutup',
-    vi: 'Đăng ký đã đóng',
+    vi: 'Đăng ký giải đấu đã đóng',
     kr: `등록이 마감되었습니다`,
   },
   [LOCALE.GM_REPORTS_EMPTY]: {
@@ -7859,7 +7861,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: `Bannissement de file (parties)`,
     zh: `排隊禁令（場次）`,
     cz: `Ban ve frontě (hry)`,
-    vi: `Cấm hàng chờ (trận)`,
+    vi: `Cấm ghép trận (trận)`,
     id: `Larangan Antrean (game)`,
     kr: `대기열 차단 (게임)`,
   },
@@ -7873,7 +7875,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: `Bannissement de file : {} partie(s)`,
     zh: `排隊禁令：{} 場`,
     cz: `Ban ve frontě: {} her`,
-    vi: `Cấm hàng chờ: {} trận`,
+    vi: `Cấm ghép trận: {} trận`,
     id: `Larangan Antrean: {} game`,
     kr: `대기열 차단: {}게임`,
   },
@@ -8116,7 +8118,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Pouze hodnocené`,
     fr: `Classé uniquement`,
     id: `Hanya peringkat`,
-    vi: `Chỉ xếp hạng`,
+    vi: `Chỉ đấu hạng`,
     kr: `랭크만`,
   },
   [LOCALE.PROFILE_TOP_HEROES]: {
@@ -8149,7 +8151,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Žádné zápasy za posledních 365 dní`,
     fr: `Aucun match au cours des 365 derniers jours`,
     id: `Tidak ada pertandingan dalam 365 hari terakhir`,
-    vi: `Không có trận nào trong 365 ngày gần nhất`,
+    vi: `Không có trận nào trong 365 ngày gần đây`,
     kr: `최근 365일 동안 경기가 없습니다`,
   },
   [LOCALE.PROFILE_RECENT_FORM]: {
@@ -8259,7 +8261,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Dosáhl hodnosti {}`,
     fr: `A atteint le rang {}`,
     id: `Mencapai peringkat {}`,
-    vi: `Đạt hạng {}`,
+    vi: `Hạng {}`,
     kr: `{} 랭크 달성`,
   },
   [LOCALE.ACTIVITY_HIGHEST_RANK]: {
@@ -8270,7 +8272,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Dosáhl nejvyšší hodnosti: {}!`,
     fr: `A atteint le rang le plus élevé : {} !`,
     id: `Mencapai peringkat tertinggi: {}!`,
-    vi: `Đạt hạng cao nhất: {}!`,
+    vi: `Hạng cao nhất: {}!`,
     kr: `최고 랭크 달성: {}!`,
   },
   [LOCALE.ACTIVITY_MASTERY_UP]: {
@@ -8325,7 +8327,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Vyhrál {} hodnocených zápasů v této sezóně`,
     fr: `A remporté {} matchs classés cette saison`,
     id: `Memenangkan {} pertandingan peringkat musim ini`,
-    vi: `Thắng {} trận xếp hạng mùa này`,
+    vi: `Thắng {} trận đấu hạng mùa này`,
     kr: `이번 시즌 랭크 {}승 달성`,
   },
   [LOCALE.ACTIVITY_LEVEL]: {
@@ -8633,7 +8635,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Přejmenovat za {} mincí nebo {} drahokamů`,
     fr: `Renommer pour {} pièces ou {} gemmes`,
     id: `Ganti nama dengan {} koin atau {} permata`,
-    vi: `Đổi tên với {} xu hoặc {} ngọc`,
+    vi: `Đổi tên với {} xu hoặc {} kim cương`,
     kr: `{} 코인 또는 {} 젬으로 이름 변경`,
   },
   [LOCALE.PROFILE_PEAK_MMR_HINT]: {
@@ -8677,7 +8679,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Typ hry`,
     fr: `Type de partie`,
     id: `Jenis permainan`,
-    vi: `Loại trận`,
+    vi: `Dạng trận đấu`,
     kr: `게임 유형`,
   },
   [LOCALE.MATCH_TABLE_KDA]: {
@@ -8699,7 +8701,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Poslední zásahy`,
     fr: `Derniers coups`,
     id: `Last hit`,
-    vi: `Kết liễu lính`,
+    vi: `Last hit`,
     kr: `막타`,
   },
   [LOCALE.MATCH_TABLE_GRADE]: {
@@ -8710,7 +8712,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Hodnocení`,
     fr: `Note`,
     id: `Nilai`,
-    vi: `Xếp loại`,
+    vi: `Hạng`,
     kr: `등급`,
   },
   [LOCALE.PROFILE_STATS_SEASON]: {
@@ -8732,7 +8734,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Celkově`,
     fr: `Depuis toujours`,
     id: `Sepanjang waktu`,
-    vi: `Toàn thời gian`,
+    vi: `Thời đại`,
     kr: `전체 기간`,
   },
   [LOCALE.PICTURE_ERROR_RATE_LIMITED]: {
@@ -8754,7 +8756,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Mechaniky`,
     fr: `Mécaniques`,
     id: `Mekanik`,
-    vi: `Cơ Chế`,
+    vi: `Cơ chế`,
     kr: `게임 메커니즘`,
   },
   [LOCALE.MECHANICS_BASICS]: {
@@ -8765,7 +8767,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Základy`,
     fr: `Bases`,
     id: `Dasar`,
-    vi: `Cơ Bản`,
+    vi: `Cơ bản`,
     kr: `기본`,
   },
   [LOCALE.MECHANICS_ADVANCED]: {
@@ -8776,7 +8778,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Pokročilé`,
     fr: `Avancé`,
     id: `Lanjutan`,
-    vi: `Nâng Cao`,
+    vi: `Nâng cao`,
     kr: `심화`,
   },
 }
