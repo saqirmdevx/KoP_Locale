@@ -76,7 +76,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const magicalOrbCd = '-' + toSecRaw(KumihuAbilityData.TALENT_T1_LEFT_MAGICAL_ORB_CD)
       const magicalOrbDoubleHitBonus = fixed(KumihuAbilityData.TALENT_T1_RIGHT_MAGICAL_ORB_DOUBLE_HIT_BONUS * 100, 1)
       const magicalOrbMarkDuration = toSec(KumihuAbilityData.MAGICAL_ORB_BONUS_DAMAGE_DURATION)
-      const dashCharges = KumihuAbilityData.TALENT_T2_LEFT_DASH_MAX_CHARGES
+      const dashCharges = KumihuAbilityData.TALENT_T2_LEFT_ARCANE_DASH_MAX_CHARGES
       return {
         tier1_left: {
           title: {
@@ -167,19 +167,19 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.SPARROW: {
-      const missingHealthBonus = fixed(SparrowAbilityData.TALENT_T1_LEFT_GROUND_SLAM_MISSING_HP_DMG * 100, 1)
-      const corruptedWindCooldown = '-' + toSecRaw(SparrowAbilityData.TALENT_T1_RIGHT_DASH_COOLDOWN)
-      const baseEnhancedAttackDamage = fixed(SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER * 100, 1)
+      const missingHealthBonus = fixed(SparrowAbilityData.TALENT_T1_LEFT_DEMONIC_WRATH_MISSING_HP_DMG * 100, 1)
+      const corruptedWindCooldown = '-' + toSecRaw(SparrowAbilityData.TALENT_T1_RIGHT_CORRUPTED_WIND_COOLDOWN)
+      const baseEnhancedAttackDamage = fixed(SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_DMG_MODIFIER * 100, 1)
       const enhancedAttackDamage = fixed(
-        (SparrowAbilityData.ENHANCED_ATTACK_DMG_MODIFIER +
+        (SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_DMG_MODIFIER +
           SparrowAbilityData.TALENT_T2_LEFT_ENHANCED_ATTACK_DMG_MODIFIER) *
           100,
         1
       )
       const knockUpBonus = toSecRaw(SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION)
-      const baseKnockUpDuration = toSec(SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION)
+      const baseKnockUpDuration = toSec(SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_KNOCKBACK_DURATION)
       const knockUpDuration = toSec(
-        SparrowAbilityData.ENHANCED_ATTACK_KNOCKBACK_DURATION +
+        SparrowAbilityData.PASSIVE_ENHANCED_ATTACK_KNOCKBACK_DURATION +
           SparrowAbilityData.TALENT_T2_RIGHT_ENHANCED_ATTACK_KNOCKBACK_DURATION
       )
       return {
@@ -272,7 +272,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.ICEAT: {
-      const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T1_LEFT_ICICLE_FREEZE_DURATION)
+      const icicleFreezeDuration = toSecRaw(ICeatAbilityData.TALENT_T1_LEFT_ICICLE_BOLT_FREEZE_DURATION)
       const frozenAttackBonusDamage = fixed(ICeatAbilityData.TALENT_T2_LEFT_FROZEN_ATTACK_BONUS_DAMAGE_MOD * 100, 1)
       const deepFrostStacks = ICeatAbilityData.TALENT_T2_RIGHT_DEEP_FROST_STACKS_TO_FREEZE
       const deepFrostFreezeDuration = toSec(ICeatAbilityData.TALENT_T2_RIGHT_DEEP_FROST_FREEZE_DURATION)
@@ -368,7 +368,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.VEIL: {
       const astralStepCooldown = toSec(VeilAbilityData.TALENT_T2_RIGHT_FUSED_ASTRAL_STEP_COOLDOWN)
-      const astralstepSlow = toSecRaw(VeilAbilityData.TALENT_T1_LEFT_VOID_STEP_SLOW_DURATION)
+      const astralstepSlow = toSecRaw(VeilAbilityData.TALENT_T1_LEFT_ASTRAL_STEP_SLOW_DURATION)
       const astralBladesCooldown = '-' + toSecRaw(VeilAbilityData.TALENT_T1_RIGHT_ASTRAL_BLADES_COOLDOWN)
       return {
         tier1_left: {
@@ -399,9 +399,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
         },
         tier2_left: {
           title: {
-            en: `Enhanced Damage +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
+            en: `Enhanced Damage +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100, 1)}%`,
             ru: `+${fixed(
-              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100,
+              (VeilAbilityData.TALENT_T2_LEFT_ENHANCED_STATE_DAMAGE - 1) * 100,
               1
             )}% к урону от усиленных атак или Астрального шага`,
             cz: `Zlepšené poškození +${fixed((VeilAbilityData.TALENT_T2_LEFT_ENHANCED_DAMAGE - 1) * 100, 1)}%`,
@@ -461,6 +461,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const pricklyVineStunBonus = toSecRaw(BelleAbilityData.TALENT_T1_LEFT_PRICKLY_VINE_STUN_BONUS)
       const pricklyAttachDuration = toSecRaw(BelleAbilityData.TALENT_T2_RIGHT_REDUCE_PRICKLY_VINE_ATTACH_DURATION)
       const floralAmbushDurationBonus = toSecRaw(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_DOT_DURATION)
+      const floralAmbushMovementSlow = fixed(BelleAbilityData.TALENT_T2_LEFT_FLORAL_AMBUSH_MOVEMENT_SLOW * 100)
       return {
         tier1_left: {
           title: {
@@ -651,9 +652,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
 
     case Shared.HEROES.THOMAS: {
       const carrotStun = toSecRaw(ThomasAbilityData.TALENT_T2_RIGHT_SHADOW_CARROT_STUN)
-      const bleedDamage = fixed(ThomasAbilityData.TALENT_T1_LEFT_BLEED_DAMAGE * 100, 1)
+      const bleedDamage = fixed(ThomasAbilityData.TALENT_T1_LEFT_BLEED_ATTACK_DAMAGE * 100, 1)
       const bleedAttackCount = ThomasAbilityData.TALENT_T2_LEFT_BLEED_ATTACK_COUNT
-      const baseBleedAttackCount = ThomasAbilityData.BLEED_ATTACK_COUNT
+      const baseBleedAttackCount = ThomasAbilityData.PASSIVE_BLEED_ATTACK_COUNT
       return {
         tier1_left: {
           title: {
@@ -824,14 +825,14 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.AREL: {
-      const secondBulletBonusDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_ENH_DAMAGE_MOD * 100)
-      const secondBulletDamage = fixed(ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD * 100)
+      const secondBulletBonusDamage = fixed(ArelAbilityData.TALENT_T1_LEFT_ENHANCED_ATTACK_DAMAGE_MOD * 100)
+      const secondBulletDamage = fixed(ArelAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_MOD * 100)
       const secondBulletUpgradedDamage = fixed(
-        (ArelAbilityData.AUTOATTACK_ENH_DAMAGE_MOD + ArelAbilityData.TALENT_T1_LEFT_ENH_DAMAGE_MOD) * 100
+        (ArelAbilityData.PASSIVE_ENHANCED_ATTACK_DAMAGE_MOD + ArelAbilityData.TALENT_T1_LEFT_ENHANCED_ATTACK_DAMAGE_MOD) * 100
       )
       const tumbleCharges = ArelAbilityData.TALENT_T2_LEFT_TUMBLE_MAX_CHARGES
-      const freezingTrapDuration = toSec(ArelAbilityData.FREEZING_TRAP_DURATION)
-      const freezingTrapFreezeDuration = toSec(ArelAbilityData.FREEZING_TRAP_FREEZE_DURATION)
+      const freezingTrapDuration = toSec(ArelAbilityData.TALENT_T2_RIGHT_FREEZING_TRAP_DURATION)
+      const freezingTrapFreezeDuration = toSec(ArelAbilityData.TALENT_T2_RIGHT_FREEZING_TRAP_FREEZE_DURATION)
       return {
         tier1_left: {
           title: {
@@ -1100,13 +1101,13 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
 
     case Shared.HEROES.FOXY: {
-      const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_GRANADE_DAMAGE_PERC * 100)
-      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_GRANADE_FREEZE_DURATION)
+      const incendiaryGrenadeDamage = fixed(FoxyAbilityData.TALENT_T1_LEFT_EXPLOSIVE_GRENADE_DAMAGE_PERC * 100)
+      const freezingGrenadeDuration = toSec(FoxyAbilityData.TALENT_T1_RIGHT_EXPLOSIVE_GRENADE_FREEZE_DURATION)
       const rapidFireMovementSpeed = fixed(FoxyAbilityData.TALENT_T2_RIGHT_RAPID_FIRE_MOVEMENT_SPEED * 100)
-      const gunsBlazingBaseReduction = toSecRaw(FoxyAbilityData.GUNS_BLAZING_COOLDOWN_REDUCTION)
+      const gunsBlazingBaseReduction = toSecRaw(FoxyAbilityData.PASSIVE_GUNS_BLAZING_COOLDOWN_REDUCTION)
       const gunsBlazingTalentReduction = toSecRaw(FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION)
       const gunsBlazingTotalReduction = toSecRaw(
-        FoxyAbilityData.GUNS_BLAZING_COOLDOWN_REDUCTION + FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION
+        FoxyAbilityData.PASSIVE_GUNS_BLAZING_COOLDOWN_REDUCTION + FoxyAbilityData.TALENT_T2_LEFT_GUNS_BLAZING_COOLDOWN_REDUCTION
       )
       return {
         tier1_left: {
@@ -1288,8 +1289,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
     }
 
     case Shared.HEROES.PRIM: {
-      const primBonusMovementSpeed = fixed(PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_MOVEMENT_SPEED * 100, 1)
-      const primBonusArmor = PrimAbilityData.TALENT_T1_LEFT_PRIM_BONUS_ARMOR
+      const primBonusMovementSpeed = fixed(PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_MOVEMENT_SPEED * 100, 1)
+      const primBonusArmor = PrimAbilityData.TALENT_T1_LEFT_BALL_PROTECTION_BONUS_ARMOR
       const gravitationalPullBonus = fixed(
         PrimAbilityData.TALENT_T2_RIGHT_GRAVITATIONAL_PULL_DAMAGE_AND_DURATION * 100,
         1
@@ -1385,9 +1386,9 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       }
     }
     case Shared.HEROES.SEER: {
-      const curseDelay = toSec(SeerAbilityData.MALEVOLENT_CURSE_DELAY)
+      const curseDelay = toSec(SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DELAY)
       const hastyCurseDelay = toSec(
-        SeerAbilityData.MALEVOLENT_CURSE_DELAY - SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY_REDUCTION
+        SeerAbilityData.PASSIVE_MALEVOLENT_CURSE_DELAY - SeerAbilityData.TALENT_T1_LEFT_MALEVOLENT_CURSE_DELAY_REDUCTION
       )
       const mirrorDamage = fixed(SeerAbilityData.TALENT_T1_RIGHT_MALEVOLENT_MIRROR_DAMAGE_MODIFIER * 100, 0)
       const shiftCharges = SeerAbilityData.TALENT_T2_LEFT_MALEVOLENT_SHIFT_MAX_CHARGES
@@ -1504,8 +1505,8 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       )
       const brambleSnapRootBonus = toSecRaw(KarickAbilityData.TALENT_T2_LEFT_BRAMBLE_SNAP_ROOT_BONUS)
 
-      const additionalWrathDelay = toSec(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_DELAY)
-      const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_ADDITIONAL_WRATH_MOD * 100, 0)
+      const additionalWrathDelay = toSec(KarickAbilityData.TALENT_T2_RIGHT_WRATH_OF_THE_GROVE_ADDITIONAL_DELAY)
+      const additionalWrathMod = fixed(KarickAbilityData.TALENT_T2_RIGHT_WRATH_OF_THE_GROVE_ADDITIONAL_MOD * 100, 0)
 
       return {
         tier1_left: {
@@ -1605,7 +1606,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const shredderMaxStacks = PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_MAX_STACKS
       const shredderMaxArmor = fixed(shredderArmorPerStack * shredderMaxStacks)
       const shredderDuration = toSec(PuppeteerAbilityData.TALENT_T1_RIGHT_SHREDDER_DURATION)
-      const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_FIXATE_DURATION_BONUS)
+      const fixateBonus = toSecRaw(PuppeteerAbilityData.TALENT_T2_LEFT_PUPPET_DASH_FIXATE_DURATION_BONUS)
       const staticDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STATIC_DURATION_BONUS)
       const stunDurationBonus = toSec(PuppeteerAbilityData.TALENT_T2_RIGHT_BINDING_THREAD_STUN_DURATION_BONUS)
 
@@ -1699,7 +1700,7 @@ const getHeroTalents = (hero: Shared.HEROES): ILocaleHeroTalent => {
       const vanguardAllyDuration = toSec(PatroklosAbilityData.TALENT_T1_EFFECT_DURATION)
       const vanguardCharges = PatroklosAbilityData.TALENT_T2_LEFT_VANGUARD_MAX_CHARGES
 
-      const lastJudgementMaxStacks = PatroklosAbilityData.HEAVENS_FALL_MAX_STACKS
+      const lastJudgementMaxStacks = PatroklosAbilityData.PASSIVE_HEAVENS_FALL_MAX_STACKS
       const lastJudgementMaxHealthDamage = fixed(
         PatroklosAbilityData.TALENT_T2_RIGHT_LAST_JUDGEMENT_MAX_HEALTH_DAMAGE_MOD * 100,
         1
