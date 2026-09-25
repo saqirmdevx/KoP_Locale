@@ -5243,6 +5243,17 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     vi: 'Mẹo',
     kr: `팁 활성화`,
   },
+  [LOCALE.ITEM_FULL_REFUND_REMAINING]: {
+    en: 'Full-price refund available for {}s',
+    ru: 'Возврат полной стоимости доступен ещё {} с',
+    cz: 'Vrácení plné ceny je dostupné ještě {} s',
+    zh: '還有 {} 秒可全額退款',
+    fr: 'Remboursement intégral disponible pendant encore {} s',
+    br: 'Reembolso integral disponível por mais {}s',
+    id: 'Pengembalian harga penuh tersedia selama {} detik lagi',
+    vi: 'Có thể hoàn toàn bộ giá trong {} giây nữa',
+    kr: '{}초 동안 전액 환불 가능',
+  },
   [LOCALE.RECOMMENDED_ITEM_LABEL]: {
     en: 'Recommended Item',
     ru: 'Рекомендуемый предмет',
