@@ -6,6 +6,39 @@ import { home_page } from './home_page'
 
 const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
   ...home_page,
+  [LOCALE.PROFILE_ALL_GAME_TYPES]: {
+    en: 'All game types',
+    ru: 'Все типы игр',
+    zh: '所有遊戲類型',
+    br: 'Todos os tipos de jogo',
+    cz: 'Všechny typy her',
+    fr: 'Tous les types de partie',
+    id: 'Semua jenis permainan',
+    vi: 'Tất cả loại trận',
+    kr: '모든 게임 유형',
+  },
+  [LOCALE.PROFILE_UNRANKED_ONLY]: {
+    en: 'Unranked only',
+    ru: 'Только нерейтинговые',
+    zh: '僅非排位',
+    br: 'Apenas não ranqueadas',
+    cz: 'Pouze nehodnocené',
+    fr: 'Non classé uniquement',
+    id: 'Hanya tanpa peringkat',
+    vi: 'Chỉ đấu thường',
+    kr: '일반 게임만',
+  },
+  [LOCALE.PROFILE_PRIVATE_ONLY]: {
+    en: 'Private only',
+    ru: 'Только приватные',
+    zh: '僅私人遊戲',
+    br: 'Apenas privadas',
+    cz: 'Pouze soukromé',
+    fr: 'Privé uniquement',
+    id: 'Hanya privat',
+    vi: 'Chỉ trận riêng',
+    kr: '비공개 게임만',
+  },
   [LOCALE.ST_LOBBY_BACKGROUND_MOTION]: {
     en: 'Lobby background motion',
     cz: 'Pohyb pozadí lobby',
@@ -1977,7 +2010,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     zh: '迅疾符文',
     fr: 'Rune de Hâte',
     id: 'Rune Kecepatan',
-    vi: 'Ngọc Hồi Chiêu',
+    vi: 'Ngọc Tăng Tốc',
     kr: `가속 룬`,
   },
   [LOCALE.DAMAGE_RUNE]: {
@@ -4787,7 +4820,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     fr: "Supprimer l'ami",
     br: 'Remover amigo',
     id: 'Hapus Teman',
-    vi: 'Xóa kết bè',
+    vi: 'Hủy kết bạn',
     kr: `친구 삭제`,
   },
   [LOCALE.PURCHASE_ITEM_TITLE]: {
@@ -8734,7 +8767,7 @@ const locale_data: { [key in LOCALE]: { [key in string]: string } } = {
     cz: `Celkově`,
     fr: `Depuis toujours`,
     id: `Sepanjang waktu`,
-    vi: `Thời đại`,
+    vi: `Toàn thời gian`,
     kr: `전체 기간`,
   },
   [LOCALE.PICTURE_ERROR_RATE_LIMITED]: {
